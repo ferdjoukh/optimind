@@ -1,0 +1,31 @@
+Workflow sumo_computing {
+	Language Python
+	BaseTask surrogate {
+		
+		Task gems_solver{
+			runner "gems.py"
+		}
+		
+		BaseTask sumo {
+			Task input{
+				Output map type File
+				Output flow type File
+				Output configuration type File  
+				runner "input.py"
+			}
+			
+			Task smartCity {
+				Connection map to "input.map"
+				Connection flow to "input.flow"
+				Connection config to "input.configuration"
+				Output stats type File 
+				runner "smartCity.py"
+			}
+			
+			Task PostProcessing {
+				Connection stats to "sumo.smartCity.stats"
+				runner "postProc.py"
+			}
+		}		
+	}
+}
