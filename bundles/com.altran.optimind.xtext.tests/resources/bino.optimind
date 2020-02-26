@@ -1,0 +1,68 @@
+Workflow Binomial {
+	tasks {
+		BaseTask Binomial {
+			children {
+				BaseTask bino {
+					children {						
+						BaseTask Inter{
+							children {
+								CustomTask fact_n {
+									inputs {
+										Setter i {}
+									}
+									outputs {
+										TaskOutput fact_n{}	
+									}	
+								},
+								CustomTask n_sub_k {
+									inputs {
+										Setter a {},
+										Setter b {}
+									}
+									outputs {
+										TaskOutput a_min_b{}	
+									}							
+								},
+								CustomTask fact_k {
+									inputs {
+										Setter k {}
+									}
+									outputs {
+										TaskOutput fact_k{}	
+									}
+								},
+								CustomTask fact_n_sub_k {
+									inputs {
+										Connection n {
+											taskoutput "n_sub_k.a_min_b"
+										}
+									}
+									outputs {
+										TaskOutput fact_n{}	
+									}
+								}
+							}	
+						},
+						
+						CustomTask recombine {
+							inputs {
+								Connection fact_n {
+									taskoutput "Inter.fact_n.fact_n"
+								},
+								Connection fact_n_sub_k {
+									taskoutput "Inter.fact_n_sub_k.fact_n"
+								},
+								Connection fact_k {
+									taskoutput "Inter.fact_k.fact_k"
+								}
+							}
+							outputs {
+								TaskOutput bino {}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

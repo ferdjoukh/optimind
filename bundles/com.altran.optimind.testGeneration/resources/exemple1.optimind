@@ -1,0 +1,6 @@
+Workflow izanaa {
+	Language Python
+	BaseTask izanaa {
+
+	}
+}			

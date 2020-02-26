@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.emf.ecp.view.model.provider.xmi.file">
+<file filePath="viewmodels/Output.view"/>
+
+<file filePath="viewmodels/Input.view"/>
+
+<file filePath="viewmodels/IsNotInitSetter.view"/>
+
+<file filePath="viewmodels/IsInitSetter.view"/>
+
+<file filePath="viewmodels/Nsetter.view"/>
+
+<file filePath="viewmodels/CustomTask.view"/>
+
+<file filePath="viewmodels/Connection.view"/>
+
+<file filePath="viewmodels/Setter.view"/>
+
+<file filePath="viewmodels/Workflow.view"/>
+
+<file filePath="viewmodels/LibraryTask.view"/>
+
+<file filePath="viewmodels/LibraryFunction.view"/>
+
+<file filePath="viewmodels/TaskInput.view"/>
+
+<file filePath="viewmodels/TaskOutput.view"/>
+
+<file filePath="viewmodels/BaseTask.view"/>
+
+<file filePath="viewmodels/SimpleTask.view"/>
+
+<file filePath="viewmodels/NamedElement.view"/>
+
+<file filePath="viewmodels/TypedElement.view"/>
+
+<file filePath="viewmodels/AbstractTask.view"/>
+
+   </extension>
+   <extension
+         point="org.eclipse.ui.editors">
+      <editor
+            class="org.eclipse.emfforms.spi.editor.GenericEditor"
+            default="false"
+            extensions="optimind"
+            id="com.altran.optimind.Emfforms.editor"
+            name="Optimind Workflow Input Editor">
+      </editor>
+   </extension>
+
+</plugin>

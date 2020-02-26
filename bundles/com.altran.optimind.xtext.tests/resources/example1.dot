@@ -1,0 +1,41 @@
+digraph azert {
+		
+			subgraph cluster0 {
+				style=filled;
+				color=lightblue;
+				label = "Binomial";
+				
+				//Children
+				subgraph cluster1 {
+					style=filled;
+					label = <<TABLE><TR><TD BGCOLOR="lightgrey">g</TD></TR></TABLE>>;
+					fillcolor=lightblue;
+					color=blue;
+									
+					//Children
+					amcic [shape=record,style=filled,color=black,fillcolor=white,label="{ n | {fact_n} | <fact_n> fact_n }"];
+					struct2 [shape=record,style=filled,color=black,fillcolor=white,label="{ {a|b|} | {n_sub_k} | <a_min_b> a_min_b}"];
+					struct3 [shape=record,style=filled,color=black,fillcolor=white,label="{ k | {fact_k} | <fact_k> fact_k}"];
+								
+				}
+				
+				struct4 [shape=none,margin=0,style=filled,color=black,fillcolor=none,label= <
+										<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+											<TR><TD BORDER="0"></TD><TD BORDER="0" PORT="n" BGCOLOR="yellow">n</TD>			
+											 <TD BORDER="0"></TD></TR>
+											<TR><TD BGCOLOR="white" COLSPAN="3">fact_n_sub_k</TD></TR>
+											<TR><TD BORDER="0"></TD><TD BORDER="0" PORT="fact_n" BGCOLOR="green">fact_n</TD>			
+											 <TD BORDER="0"></TD></TR>
+										</TABLE>
+										>];
+				//struct4 [shape=record,style=filled,color=black,fillcolor=white,label="{ <n> n | {fact_n_sub_k} | <fact_n> fact_n}"];				
+			}
+			
+			struct5 [shape=record,style=filled,color=black,fillcolor=white,label="{ {<fact_n> fact_n  | <fact_n_sub_k> fact_n_sub_k | <fact_k> fact_k} | {recombine} | C_n_p}"];
+			
+			struct2:a_min_b -> struct4:n;
+			amcic:fact_n -> struct5:fact_n;
+			struct3:fact_k -> struct5:fact_k;
+			struct4:fact_n -> struct5:fact_n_sub_k;
+				
+		}

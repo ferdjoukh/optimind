@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: TestGeneration
+Bundle-SymbolicName: com.altran.optimind.testGeneration
+Bundle-Version: 1.0.0.qualifier
+Export-Package: com.altran.optimind.testGeneration
+Require-Bundle: com.altran.optimind.model.workflow,
+ com.altran.optimind.model.workflow.edit,
+ com.altran.optimind.model.workflow.editor,
+ org.eclipse.emf

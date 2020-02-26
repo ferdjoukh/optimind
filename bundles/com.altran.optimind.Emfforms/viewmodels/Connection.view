@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.eclipse.emf.ecp.view.model:View xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:org.eclipse.emf.ecp.view.model="http://org/eclipse/emf/ecp/view/model/1180" xmi:id="_-XsTkCDfEeqD9twNhQbmsw" name="Connection">
+  <rootEClass href="http://www.altran.com/optimind/model.workflow#//Connection"/>
+  <children xsi:type="org.eclipse.emf.ecp.view.model:Control" xmi:id="_-X2roCDfEeqD9twNhQbmsw" name="Control name">
+    <domainModelReference xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference" xmi:id="_-X2roSDfEeqD9twNhQbmsw">
+      <domainModelEFeature xsi:type="ecore:EAttribute" href="http://www.altran.com/optimind/model.workflow#//NamedElement/name"/>
+    </domainModelReference>
+  </children>
+  <children xsi:type="org.eclipse.emf.ecp.view.model:Control" xmi:id="_-X2roiDfEeqD9twNhQbmsw" name="Control taskoutput">
+    <domainModelReference xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference" xmi:id="_-X2royDfEeqD9twNhQbmsw">
+      <domainModelEFeature xsi:type="ecore:EReference" href="http://www.altran.com/optimind/model.workflow#//Connection/taskoutput"/>
+    </domainModelReference>
+  </children>
+  <ecorePaths>/com.altran.optimind.model.workflow/model/workflow.ecore</ecorePaths>
+</org.eclipse.emf.ecp.view.model:View>

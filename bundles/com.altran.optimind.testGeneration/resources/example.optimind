@@ -1,0 +1,37 @@
+Workflow Binomial {	
+	Language Python
+    BaseTask Binomial {
+		BaseTask Intermediary {		
+			Task fact_n {
+				Setter n type int
+				Output fact_n type int
+				runner "fact.py"
+			}
+			Task n_sub_k {
+					Setter a type int
+					Setter b type int										
+					Output a_min_b type int	
+					runner "sub.py"													
+			}
+			Task fact_k {
+				Setter k type int
+				Output fact_k type int
+				runner "fact.py"									
+			}
+			Task fact_n_sub_k {
+				Connection n to "n_sub_k.a_min_b"
+				Output fact_n_sub_k type int
+				runner "sub.py"									
+			}	
+		}				
+		Task recombine {
+			Connection fact_n to "Binomial.Intermediary.fact_n.fact_n"
+			Connection fact_n_sub_k to "Intermediary.fact_n_sub_k.fact_n_sub_k"
+			Connection fact_k to "Intermediary.fact_k.fact_k"
+			Output result type int
+			runner "combine.py"							
+		}
+	}	
+	
+	
+}

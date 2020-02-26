@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workflow:Workflow
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:workflow="http://www.altran.com/optimind/model.workflow"
+    name="Exemple">
+  <baseTask
+      name="MainTask">
+    <children
+        xsi:type="workflow:CustomTask"
+        name="addition">
+      <inputs
+          xsi:type="workflow:Setter"
+          typeAsString="Integer"
+          name="a"/>
+      <inputs
+          xsi:type="workflow:Setter"
+          typeAsString="File"
+          name="file"/>
+    </children>
+  </baseTask>
+</workflow:Workflow>

@@ -1,0 +1,33 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: com.altran.optimind.xtext.ui
+Eclipse-BundleShape: dir
+Bundle-ManifestVersion: 2
+Bundle-Name: com.altran.optimind.xtext.ui
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: com.altran.optimind.xtext.ui; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: com.altran.optimind.xtext,
+ com.altran.optimind.xtext.ide,
+ org.eclipse.xtext.ui,
+ org.eclipse.xtext.ui.shared,
+ org.eclipse.xtext.ui.codetemplates.ui,
+ org.eclipse.ui.editors,
+ org.eclipse.ui.ide,
+ org.eclipse.ui,
+ org.eclipse.compare,
+ org.eclipse.xtext.builder,
+ org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
+ org.eclipse.xtend.lib;resolution:=optional,
+ org.eclipse.jdt.core,
+ org.eclipse.core.runtime,
+ org.eclipse.core.resources,
+ org.eclipse.pde.core,
+ org.eclipse.ui.forms
+Import-Package: org.apache.log4j
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: com.altran.optimind.xtext.ui.internal,
+ com.altran.ui.quickfix,
+ com.altran.ui.contentassist,
+ com.altran.ui.wizard
+Bundle-Activator: com.altran.optimind.xtext.ui.internal.XtextActivator

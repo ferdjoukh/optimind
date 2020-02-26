@@ -1,0 +1,7 @@
+str String
+int Integer
+boolean boolean
+float Float
+list List
+SSHClient SSHClient
+dict Dictionary

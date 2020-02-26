@@ -1,0 +1,290 @@
+Workflow Nastran {
+	Language Python
+	BaseTask nastran_workflow {
+		
+		BaseTask pre_proc_task {
+			
+			LibraryTask wing_mass_inertia_task {
+				
+				
+				Setter work_path type str value "\"projects\\Nastran\\workflow\""
+				Setter roll_min type int value "0"
+				Setter roll_int type int value "0"
+				Setter roll_max type int value "0"
+				Setter perc_min type int value "0"
+				Setter perc_int type int value "0"
+				Setter perc_max type int value "0"
+				Setter fuel_cons_min type int value "0"
+				Setter fuel_cons_int type int value "0"
+				Setter fuel_cons_max type int value "0"
+				Setter time_min type int value "0"
+				Setter time_int type int value "0"
+				Setter time_max type int value "0"
+				Setter sweep_angle_min type int value "0"
+				Setter sweep_angle_int type int value "0"
+				Setter sweep_angle_max type int value "0"
+				
+				Output sweep_roll_txt type str
+				Output sweep_perc_txt type str
+				Output sweep_fuel_cons_txt type str
+				Output sweep_time_txt type str
+				Output sweep_sweep_angle_txt type str 
+				
+				Libraryfunction wing_mass_inertia_func 
+			}
+			
+			LibraryTask updater_task {
+				
+				Setter working_path type str  value "\"projects\\Nastran\\workflow\"" 
+				
+				Connection roll_sweep to "wing_mass_inertia_task.sweep_roll_txt"
+				Connection perc_sweep to "wing_mass_inertia_task.sweep_perc_txt"
+				Connection fuel_sweep to "wing_mass_inertia_task.sweep_fuel_cons_txt"
+				Connection time_sweep to "wing_mass_inertia_task.sweep_time_txt"
+				Connection sweep_sweep to "wing_mass_inertia_task.sweep_sweep_angle_txt"
+				
+				Output sweep_roll_txt type str
+				Output sweep_perc_txt type str
+				Output sweep_fuel_cons_txt type str
+				Output sweep_time_txt type str
+				Output sweep_sweep_angle_txt type str
+				
+				Libraryfunction updater_func
+			}
+			
+			LibraryTask dir_builder_task {
+				
+				Setter working_path  type str value "\"projects\\Nastran\\workflow\"" 
+				
+				Connection roll_sweep to "updater_task.sweep_roll_txt"
+				Connection perc_sweep to "updater_task.sweep_perc_txt"
+				Connection fuel_sweep to "updater_task.sweep_fuel_cons_txt"
+				Connection time_sweep to "updater_task.sweep_time_txt"
+				Connection sweep_sweep to "updater_task.sweep_sweep_angle_txt"
+				
+				Output remote_cmd_list type list
+				Output input_files_list type list
+				Output output_files_list type list
+				
+				Libraryfunction dir_builder_func
+			}
+			
+		}
+		
+		BaseTask nastran_task {
+			
+			LibraryTask nastran_ssh {
+				
+				Connection remote_cmd_list to "pre_proc_task.dir_builder_task.remote_cmd_list"
+				Connection input_files to "pre_proc_task.dir_builder_task.input_files_list"
+				Connection output_files to"pre_proc_task.dir_builder_task.output_files_list"
+			
+				Setter username type str value "\"user\""
+				Setter password type str value "\"pwd\""
+				Setter hostname type str value "\"host\""
+				Setter output_workdir type str value "\"user\""
+				Setter remote_workdir type str value "\"projects\\Nastran\\workflow\"" //"\"\/home\/projets\/RESEARCH\/OPTIMIND\/Nastran_test\\""
+				
+				Output res type boolean
+				
+				Libraryfunction nastran_func
+				
+			}
+			
+		}
+		
+		BaseTask post_proc_task {
+			
+			LibraryTask results_recovery_task {
+				
+				Connection master_slot to "nastran_task.nastran_ssh.res"
+				
+				Setter working_path type str  value "work_dir"
+				Setter roll_sweep type str value "sweep_roll.txt"
+				Setter perc_sweep type str value "sweep_percentage.txt"
+				Setter fuel_sweep type str value "sweep_fuel_consumption.txt"
+				Setter time_sweep type str value "sweep_time.txt"
+				Setter sweep_sweep type str value "sweep_sweep_angle.txt"
+				
+		
+				Output roll_sweep_out type str
+				Output perc_sweep_out type str
+				Output fuel_sweep_out type str
+				Output time_sweep_out type str
+				Output sweep_sweep_out type str
+				
+				Libraryfunction results_recovery_func
+				
+			}
+			
+			LibraryTask shape_modes_reader_task {
+				
+				Connection roll_sweep to "results_recovery_task.roll_sweep_out"
+				Connection perc_sweep to "results_recovery_task.perc_sweep_out"
+				Connection fuel_sweep to "results_recovery_task.fuel_sweep_out"
+				Connection time_sweep to "results_recovery_task.time_sweep_out"
+				Connection sweep_sweep to "results_recovery_task.sweep_sweep_out"
+				
+				Setter working_path type str value "work_dir"
+				Setter results_file type str value "RESULTS"
+				
+				
+		
+				Output roll_sweep_out type str
+				Output perc_sweep_out type str
+				Output fuel_sweep_out type str
+				Output time_sweep_out type str
+				Output sweep_sweep_out type str
+				
+				Libraryfunction shape_modes_reader_func
+			}
+			
+			LibraryTask shape_modes_identification_task {
+				
+				Connection roll_infile to "shape_modes_reader_task.roll_sweep_out"
+				Connection perc_infile to "shape_modes_reader_task.perc_sweep_out"
+				Connection fuel_infile to "shape_modes_reader_task.fuel_sweep_out"
+				Connection time_infile to "shape_modes_reader_task.time_sweep_out"
+				Connection sweep_infile to "shape_modes_reader_task.sweep_sweep_out"
+				
+				Setter working_path type str value "work_dir"
+				Setter shape_mode_number type int value "0"
+				
+				Output res type boolean
+				
+				Libraryfunction shape_modes_identification_func
+				
+			}
+		}
+	}
+	
+	LibraryFunction wing_mass_inertia_func {
+		
+		function wing_mass_inertia
+		
+		Input work_path type str
+		Input roll_min type int
+		Input roll_int type int
+		Input roll_max type int
+		Input perc_min type int
+		Input perc_int type int
+		Input perc_max type int
+		Input fuel_cons_min type int
+		Input fuel_cons_int type int
+		Input fuel_cons_max type int
+		Input time_min type int
+		Input time_int type int
+		Input time_max type int
+		Input sweep_angle_min type int
+		Input sweep_angle_int type int
+		Input sweep_angle_max type int
+		
+		Output sweep_roll_txt type str
+		Output sweep_perc_txt type str
+		Output sweep_fuel_cons_txt type str
+		Output sweep_time_txt type str
+		Output sweep_sweep_angle_txt type str
+	}
+	
+	LibraryFunction updater_func {
+		
+		function updater
+		
+		Input working_path type str
+		Input roll_sweep type str
+		Input perc_sweep type str
+		Input fuel_sweep type str
+		Input time_sweep type str
+		Input sweep_sweep type str
+		
+		Output sweep_roll_txt type str
+		Output sweep_perc_txt type str
+		Output sweep_fuel_cons_txt type str
+		Output sweep_time_txt type str
+		Output sweep_sweep_angle_txt type str
+	}
+	
+	LibraryFunction dir_builder_func {
+		function dir_builder
+		
+		Input working_path type str
+		Input roll_sweep type str
+		Input perc_sweep type str
+		Input fuel_sweep type str
+		Input time_sweep type str
+		Input sweep_sweep type str
+		
+		Output remote_cmd_list type list
+		Output input_files_list type list
+		Output output_files_list type list
+		
+	}
+	
+	LibraryFunction nastran_func {
+		function nastran
+		
+		Input username type str
+		Input password type str
+		Input hostname type str
+		Input output_workdir type str
+		Input remote_workdir type str
+		Input remote_cmd_list type list
+		Input input_files type list
+		Input output_files type list
+		
+		Output res type boolean value "False"
+	}
+	
+	LibraryFunction shape_modes_reader_func {
+		function shape_modes_reader
+		
+		Input working_path type str
+		Input results_file type str
+		Input roll_sweep type str
+		Input perc_sweep type str
+		Input fuel_sweep type str
+		Input time_sweep type str
+		Input sweep_sweep type str
+		
+		Output roll_sweep_out type str
+		Output perc_sweep_out type str
+		Output fuel_sweep_out type str
+		Output time_sweep_out type str
+		Output sweep_sweep_out type str
+	}
+	
+	LibraryFunction shape_modes_identification_func {
+		
+		function shape_modes_identification
+		
+		Input working_path type str
+		Input shape_mode_number type int
+		Input roll_infile type str
+		Input perc_infile type str
+		Input fuel_infile type str
+		Input time_infile type str
+		Input sweep_infile type str
+		
+		Output res type boolean
+	}
+	
+	LibraryFunction results_recovery_func {
+		function results_recovery
+		
+		Input master_slot type boolean
+		Input working_path type str
+		Input roll_sweep type str
+		Input perc_sweep type str
+		Input fuel_sweep type str
+		Input time_sweep type str
+		Input sweep_sweep type str
+		
+		Output roll_sweep_out type str
+		Output perc_sweep_out type str
+		Output fuel_sweep_out type str
+		Output time_sweep_out type str
+		Output sweep_sweep_out type str
+		
+	}
+	
+}

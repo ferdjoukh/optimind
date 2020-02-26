@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.eclipse.emf.ecp.view.model:View xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:org.eclipse.emf.ecp.view.model="http://org/eclipse/emf/ecp/view/model/1180" xmi:id="_-WpxwCDfEeqD9twNhQbmsw" name="Workflow">
+  <rootEClass href="http://www.altran.com/optimind/model.workflow#//Workflow"/>
+  <children xsi:type="org.eclipse.emf.ecp.view.model:Control" xmi:id="_-WziwCDfEeqD9twNhQbmsw" name="Control name">
+    <domainModelReference xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference" xmi:id="_-WziwSDfEeqD9twNhQbmsw">
+      <domainModelEFeature xsi:type="ecore:EAttribute" href="http://www.altran.com/optimind/model.workflow#//NamedElement/name"/>
+    </domainModelReference>
+  </children>
+  <children xsi:type="org.eclipse.emf.ecp.view.model:Control" xmi:id="_-WziwiDfEeqD9twNhQbmsw" name="Control baseTask">
+    <domainModelReference xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference" xmi:id="_-WziwyDfEeqD9twNhQbmsw">
+      <domainModelEFeature xsi:type="ecore:EReference" href="http://www.altran.com/optimind/model.workflow#//Workflow/baseTask"/>
+    </domainModelReference>
+  </children>
+  <children xsi:type="org.eclipse.emf.ecp.view.model:Control" xmi:id="_-WzixCDfEeqD9twNhQbmsw" name="Control functions">
+    <domainModelReference xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference" xmi:id="_-WzixSDfEeqD9twNhQbmsw">
+      <domainModelEFeature xsi:type="ecore:EReference" href="http://www.altran.com/optimind/model.workflow#//Workflow/functions"/>
+    </domainModelReference>
+  </children>
+  <children xsi:type="org.eclipse.emf.ecp.view.model:Control" xmi:id="_-WzixiDfEeqD9twNhQbmsw" name="Control language">
+    <domainModelReference xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference" xmi:id="_-WzixyDfEeqD9twNhQbmsw">
+      <domainModelEFeature xsi:type="ecore:EAttribute" href="http://www.altran.com/optimind/model.workflow#//Workflow/language"/>
+    </domainModelReference>
+  </children>
+  <ecorePaths>/com.altran.optimind.model.workflow/model/workflow.ecore</ecorePaths>
+</org.eclipse.emf.ecp.view.model:View>

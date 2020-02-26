@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workflow:Workflow
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:workflow="http://www.altran.com/optimind/model.workflow"
+    name="">
+  <tasks xsi:type="workflow:BaseTask"
+      name="workflow">
+    <children
+        xsi:type="workflow:BaseTask"
+        name="Numerator"/>
+    <children
+        xsi:type="workflow:BaseTask"
+        name="Denominator"/>
+    <children
+        xsi:type="workflow:LibraryTask"
+        name="Division"/>
+  </tasks>
+</workflow:Workflow>

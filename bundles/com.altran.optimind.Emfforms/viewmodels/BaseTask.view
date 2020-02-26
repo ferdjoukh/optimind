@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<org.eclipse.emf.ecp.view.model:View xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:org.eclipse.emf.ecp.view.model="http://org/eclipse/emf/ecp/view/model/1180" xmi:id="_-TuZkCDfEeqD9twNhQbmsw" name="BaseTask">
+  <rootEClass href="http://www.altran.com/optimind/model.workflow#//BaseTask"/>
+  <children xsi:type="org.eclipse.emf.ecp.view.model:Control" xmi:id="_-T708CDfEeqD9twNhQbmsw" name="Control name">
+    <domainModelReference xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference" xmi:id="_-T708SDfEeqD9twNhQbmsw">
+      <domainModelEFeature xsi:type="ecore:EAttribute" href="http://www.altran.com/optimind/model.workflow#//NamedElement/name"/>
+    </domainModelReference>
+  </children>
+  <children xsi:type="org.eclipse.emf.ecp.view.model:Control" xmi:id="_-T708iDfEeqD9twNhQbmsw" name="Control inputs">
+    <domainModelReference xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference" xmi:id="_-T708yDfEeqD9twNhQbmsw">
+      <domainModelEFeature xsi:type="ecore:EReference" href="http://www.altran.com/optimind/model.workflow#//AbstractTask/inputs"/>
+    </domainModelReference>
+  </children>
+  <children xsi:type="org.eclipse.emf.ecp.view.model:Control" xmi:id="_-T709CDfEeqD9twNhQbmsw" name="Control outputs">
+    <domainModelReference xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference" xmi:id="_-T709SDfEeqD9twNhQbmsw">
+      <domainModelEFeature xsi:type="ecore:EReference" href="http://www.altran.com/optimind/model.workflow#//AbstractTask/outputs"/>
+    </domainModelReference>
+  </children>
+  <children xsi:type="org.eclipse.emf.ecp.view.model:Control" xmi:id="_-T709iDfEeqD9twNhQbmsw" name="Control status">
+    <domainModelReference xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference" xmi:id="_-T709yDfEeqD9twNhQbmsw">
+      <domainModelEFeature xsi:type="ecore:EAttribute" href="http://www.altran.com/optimind/model.workflow#//AbstractTask/status"/>
+    </domainModelReference>
+  </children>
+  <children xsi:type="org.eclipse.emf.ecp.view.model:Control" xmi:id="_-T70-CDfEeqD9twNhQbmsw" name="Control children">
+    <domainModelReference xsi:type="org.eclipse.emf.ecp.view.model:FeaturePathDomainModelReference" xmi:id="_-T70-SDfEeqD9twNhQbmsw">
+      <domainModelEFeature xsi:type="ecore:EReference" href="http://www.altran.com/optimind/model.workflow#//BaseTask/children"/>
+    </domainModelReference>
+  </children>
+  <ecorePaths>/com.altran.optimind.model.workflow/model/workflow.ecore</ecorePaths>
+</org.eclipse.emf.ecp.view.model:View>

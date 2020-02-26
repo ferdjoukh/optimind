@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated workflow -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated workflow -->
+      <editor
+            id="com.altran.optimind.model.workflow.presentation.WorkflowEditorID"
+            name="%_UI_WorkflowEditor_label"
+            icon="icons/full/obj16/WorkflowModelFile.gif"
+            extensions="workflow"
+            class="com.altran.optimind.model.workflow.presentation.WorkflowEditor"
+            contributorClass="com.altran.optimind.model.workflow.presentation.WorkflowActionBarContributor">
+      </editor>
+   </extension>
+</plugin>

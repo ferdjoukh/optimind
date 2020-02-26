@@ -1,0 +1,25 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.altran.optimind</groupId>
+		<artifactId>com.altran.optimind.parent</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+	</parent>
+	<artifactId>bundles</artifactId>
+	<packaging>pom</packaging>
+	
+	<modules>
+		<module>com.altran.optimind.Application</module>
+		<module>com.altran.optimind.model.workflow</module>
+		<module>com.altran.optimind.model.workflow.edit</module>
+		<module>com.altran.optimind.model.workflow.editor</module>
+		<module>com.altran.optimind.Emfforms</module>
+		<module>com.altran.optimind.xtext</module>
+		<module>com.altran.optimind.xtext.ide</module>
+		<module>com.altran.optimind.xtext.tests</module>
+		<module>com.altran.optimind.xtext.ui</module>
+		<module>com.altran.optimind.xtext.ui.tests</module>			
+	</modules>
+
+</project>

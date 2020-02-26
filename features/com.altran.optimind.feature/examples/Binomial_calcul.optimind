@@ -1,0 +1,66 @@
+Workflow Binomial_calcul {
+	Language Python
+	
+	BaseTask Binomial {
+		
+		BaseTask intermediary_task {
+			LibraryTask fact_n_task { 
+				
+				Setter n type int value "3"
+				Output fact_n type int
+				Libraryfunction Factorial
+				
+			}
+			
+			LibraryTask fact_p_task {
+				Setter n type int value "2"
+				Output fact_n type int
+				Libraryfunction Factorial
+			}
+			
+			LibraryTask sub_task {
+				Setter a type int value "3"
+				Setter b type int value "2"
+				Output a_minus_b type int
+				Libraryfunction DifFunction
+			}
+			
+			LibraryTask fact_n_minus_p_task {
+				Connection n to "sub_task.a_minus_b"
+				Output fact_n type int
+				Libraryfunction Factorial 
+			}
+			
+		}
+		
+		LibraryTask recombine_task {
+			Connection fact_n to"intermediary_task.fact_n_task.fact_n"
+			Connection fact_p to "intermediary_task.fact_p_task.fact_n"
+			Connection fact_n_minus_p to "intermediary_task.fact_n_minus_p_task.fact_n"
+			Output C_p_n type int
+			Libraryfunction RecombineFunction
+		}
+
+	}
+	
+	LibraryFunction Factorial  {
+		function factorial_funcLibr
+		Input n type int
+		Output fact_n type int
+	}
+	
+	LibraryFunction DifFunction {
+		function dif_func
+		Input a type int
+		Input b type int
+		Output a_minus_b type int
+	}
+	
+	LibraryFunction RecombineFunction {
+		function recombine_func
+		Input fact_n type int
+		Input fact_p type int
+		Input fact_n_minus_p type int
+		Output C_p_n type int
+	} 
+}

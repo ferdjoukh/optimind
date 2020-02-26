@@ -1,0 +1,7 @@
+Workflow azerty {
+	tasks {
+		BaseTask ssss {
+			
+		}
+	}
+}

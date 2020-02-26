@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: com.altran.optimind.xtext.ide
+Bundle-ManifestVersion: 2
+Bundle-Name: com.altran.optimind.xtext.ide
+Bundle-Vendor: ALTRAN
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: com.altran.optimind.xtext.ide; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: com.altran.optimind.xtext,
+ org.eclipse.xtext.ide,
+ org.eclipse.xtext.xbase.ide,
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: com.altran.ide;uses:="com.google.inject",
+ com.altran.ide.contentassist.antlr; uses:="org.eclipse.xtext.ide.editor.contentassist.antlr,  org.eclipse.xtext.ide.editor.contentassist.antlr.internal,  org.eclipse.xtext.ide.editor.partialEditing,  com.altran.ide.contentassist.antlr.internal,  com.altran.services,  org.eclipse.xtext",
+ com.altran.ide.contentassist.antlr.internal; uses:="org.eclipse.xtext.ide.editor.contentassist.antlr.internal,  org.antlr.runtime,  com.altran.services,  org.eclipse.xtext"
+

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/com.altran.optimind.model.workflow/src-gen" creationIcons="false"
+    editDirectory="/com.altran.optimind.model.workflow.edit/src-gen" editorDirectory="/com.altran.optimind.model.workflow.editor/src-gen"
+    modelPluginID="com.altran.optimind.model.workflow" modelName="Workflow" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0"
+    copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>workflow.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="Workflow" basePackage="com.altran.optimind.model" disposableProviderFactory="true"
+      ecorePackage="workflow.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="workflow.ecore#//TaskStatus">
+      <genEnumLiterals ecoreEnumLiteral="workflow.ecore#//TaskStatus/FINISHED"/>
+      <genEnumLiterals ecoreEnumLiteral="workflow.ecore#//TaskStatus/PREPARED"/>
+      <genEnumLiterals ecoreEnumLiteral="workflow.ecore#//TaskStatus/NOT_PREPARED"/>
+      <genEnumLiterals ecoreEnumLiteral="workflow.ecore#//TaskStatus/PROCESSING"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="workflow.ecore#//Language">
+      <genEnumLiterals ecoreEnumLiteral="workflow.ecore#//Language/Python"/>
+      <genEnumLiterals ecoreEnumLiteral="workflow.ecore#//Language/Java"/>
+    </genEnums>
+    <genClasses ecoreClass="workflow.ecore#//AbstractTask">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference workflow.ecore#//AbstractTask/inputs"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference workflow.ecore#//AbstractTask/outputs"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute workflow.ecore#//AbstractTask/status"/>
+    </genClasses>
+    <genClasses ecoreClass="workflow.ecore#//TypedElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute workflow.ecore#//TypedElement/typeAsString"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute workflow.ecore#//TypedElement/valueAsString"/>
+    </genClasses>
+    <genClasses ecoreClass="workflow.ecore#//NamedElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute workflow.ecore#//NamedElement/name"/>
+    </genClasses>
+    <genClasses ecoreClass="workflow.ecore#//SimpleTask"/>
+    <genClasses ecoreClass="workflow.ecore#//BaseTask">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference workflow.ecore#//BaseTask/children"/>
+    </genClasses>
+    <genClasses ecoreClass="workflow.ecore#//TaskOutput"/>
+    <genClasses ecoreClass="workflow.ecore#//TaskInput"/>
+    <genClasses ecoreClass="workflow.ecore#//LibraryFunction">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference workflow.ecore#//LibraryFunction/outputs"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference workflow.ecore#//LibraryFunction/inputs"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute workflow.ecore#//LibraryFunction/function"/>
+    </genClasses>
+    <genClasses ecoreClass="workflow.ecore#//LibraryTask">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference workflow.ecore#//LibraryTask/libraryfunction"/>
+    </genClasses>
+    <genClasses ecoreClass="workflow.ecore#//Workflow">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference workflow.ecore#//Workflow/baseTask"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference workflow.ecore#//Workflow/functions"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute workflow.ecore#//Workflow/language"/>
+    </genClasses>
+    <genClasses ecoreClass="workflow.ecore#//Setter"/>
+    <genClasses ecoreClass="workflow.ecore#//Connection">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference workflow.ecore#//Connection/taskoutput"/>
+    </genClasses>
+    <genClasses ecoreClass="workflow.ecore#//CustomTask">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute workflow.ecore#//CustomTask/runner"/>
+    </genClasses>
+    <genClasses ecoreClass="workflow.ecore#//Nsetter"/>
+    <genClasses ecoreClass="workflow.ecore#//IsInitSetter"/>
+    <genClasses ecoreClass="workflow.ecore#//IsNotInitSetter"/>
+    <genClasses ecoreClass="workflow.ecore#//Input"/>
+    <genClasses ecoreClass="workflow.ecore#//Output"/>
+  </genPackages>
+</genmodel:GenModel>

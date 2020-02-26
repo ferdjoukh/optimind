@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<BaseTask is_prepared="NOT_PREPARED" local_name="workflow" master_value="False" n="0" plugged_outputs="set()">
+		<errors/>
+		<WithOptionalDataObject/>
+		<AllMandatoryDataObject/>
+		<setters/>
+		<input_connectors/>
+		<children>
+			<BaseTask is_prepared="NOT_PREPARED" local_name="Numerator" master_value="False" n="0" plugged_outputs="set()">
+				<errors/>
+				<WithOptionalDataObject/>
+				<AllMandatoryDataObject/>
+				<setters/>
+				<input_connectors/>
+				<children/>
+				<children_status/>
+			</BaseTask>
+			<BaseTask is_prepared="NOT_PREPARED" local_name="Denominator" master_value="False" n="0" plugged_outputs="set()">
+				<errors/>
+				<WithOptionalDataObject/>
+				<AllMandatoryDataObject/>
+				<setters/>
+				<input_connectors/>
+				<children/>
+				<children_status/>
+			</BaseTask>
+			<LibraryTask is_prepared="NOT_PREPARED" is_single_output="true" library_function="xxxx" local_name="Division" master_value="False" n="0" plugged_outputs="set()">
+				<errors/>
+				<WithOptionalDataObject/>
+				<AllMandatoryDataObject/>
+				<setters/>
+				<input_connectors/>
+				<children/>
+				<children_status/>
+			</LibraryTask>
+		</children>
+		<children_status>
+			<child_status child_name="Numerator" status="NOT_PREPARED"/>
+			<child_status child_name="Denominator" status="NOT_PREPARED"/>
+			<child_status child_name="Division" status="NOT_PREPARED"/>
+		</children_status>
+	</BaseTask>
+</root>

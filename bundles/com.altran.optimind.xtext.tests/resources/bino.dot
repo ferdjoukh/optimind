@@ -1,0 +1,80 @@
+digraph Binomial {
+		
+			subgraph cluster0 {
+				style=filled;
+				fillcolor=lightblue;
+				color=blue;
+				label = "Binomial";
+				
+				//Children
+				subgraph cluster1 {
+					style=filled;
+					fillcolor=lightblue;
+					color=blue;
+					label = "bino";
+					
+					//Children
+					subgraph cluster2 {
+						style=filled;
+						fillcolor=lightblue;
+						color=blue;
+						label = "Inter";
+						
+						//Children
+						fact_n [shape=none,style=filled,color=black,fillcolor=none,label = <
+										<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+											<TR><TD BORDER="0"></TD><TD PORT="i" BGCOLOR="yellow" BORDER="0">i</TD>			
+											 <TD BORDER="0"></TD></TR>
+											<TR><TD BGCOLOR="white" COLSPAN="3">fact_n</TD></TR>
+											<TR><TD BORDER="0"></TD><TD PORT="fact_n" BGCOLOR="green" BORDER="0">fact_n</TD>			
+											 <TD BORDER="0"></TD></TR>
+										</TABLE>>];
+						n_sub_k [shape=none,style=filled,color=black,fillcolor=none,label = <
+										<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+											<TR><TD BORDER="0"></TD><TD PORT="a" BGCOLOR="yellow" BORDER="0">a</TD>			
+											<TD PORT="b" BGCOLOR="yellow" BORDER="0">b</TD>			
+											 <TD BORDER="0"></TD></TR>
+											<TR><TD BGCOLOR="white" COLSPAN="4">n_sub_k</TD></TR>
+											<TR><TD BORDER="0"></TD><TD PORT="a_min_b" BGCOLOR="green" BORDER="0">a_min_b</TD>			
+											 <TD BORDER="0"></TD></TR>
+										</TABLE>>];
+						fact_k [shape=none,style=filled,color=black,fillcolor=none,label = <
+										<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+											<TR><TD BORDER="0"></TD><TD PORT="k" BGCOLOR="yellow" BORDER="0">k</TD>			
+											 <TD BORDER="0"></TD></TR>
+											<TR><TD BGCOLOR="white" COLSPAN="3">fact_k</TD></TR>
+											<TR><TD BORDER="0"></TD><TD PORT="fact_k" BGCOLOR="green" BORDER="0">fact_k</TD>			
+											 <TD BORDER="0"></TD></TR>
+										</TABLE>>];
+						fact_n_sub_k [shape=none,style=filled,color=black,fillcolor=none,label = <
+										<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+											<TR><TD BORDER="0"></TD><TD PORT="n" BGCOLOR="yellow" BORDER="0">n</TD>			
+											 <TD BORDER="0"></TD></TR>
+											<TR><TD BGCOLOR="white" COLSPAN="3">fact_n_sub_k</TD></TR>
+											<TR><TD BORDER="0"></TD><TD PORT="fact_n" BGCOLOR="green" BORDER="0">fact_n</TD>			
+											 <TD BORDER="0"></TD></TR>
+										</TABLE>>];
+							
+					}
+					recombine [shape=none,style=filled,color=black,fillcolor=none,label = <
+									<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="4">
+										<TR><TD BORDER="0"></TD><TD PORT="fact_n" BGCOLOR="yellow" BORDER="0">fact_n</TD>			
+										<TD PORT="fact_n_sub_k" BGCOLOR="yellow" BORDER="0">fact_n_sub_k</TD>			
+										<TD PORT="fact_k" BGCOLOR="yellow" BORDER="0">fact_k</TD>			
+										 <TD BORDER="0"></TD></TR>
+										<TR><TD BGCOLOR="white" COLSPAN="5">recombine</TD></TR>
+										<TR><TD BORDER="0"></TD><TD PORT="bino" BGCOLOR="green" BORDER="0">bino</TD>			
+										 <TD BORDER="0"></TD></TR>
+									</TABLE>>];
+						
+				}
+					
+			}
+			
+			//Connections
+			
+			n_sub_k:a_min_b -> fact_n_sub_k:n ; 	
+			fact_n:fact_n -> recombine:fact_n ; 	
+			fact_n_sub_k:fact_n -> recombine:fact_n_sub_k ; 	
+			fact_k:fact_k -> recombine:fact_k ; 	
+		}
