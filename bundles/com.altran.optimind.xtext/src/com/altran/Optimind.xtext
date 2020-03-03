@@ -2,6 +2,7 @@
 grammar com.altran.Optimind with org.eclipse.xtext.common.Terminals
 
 import "http://www.altran.com/optimind/model.workflow"
+
 import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 
 Workflow returns Workflow:
