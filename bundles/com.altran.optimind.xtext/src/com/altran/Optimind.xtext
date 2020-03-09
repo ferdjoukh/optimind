@@ -43,7 +43,8 @@ AbstractStatement returns AbstractStatement:
 
 For returns For:
 	{For}
-	'For{'
+	'For'
+	'{'
 		'from' from=EInt
 		'to' to=EInt
 		'increment' increment=EInt
@@ -53,7 +54,8 @@ For returns For:
 
 While returns While:
 	{While}
-	'While{'
+	'While'
+	'{'
 		'condition' condition=EString
 		'do' abstracttask=AbstractTask
 	'}'
@@ -61,7 +63,8 @@ While returns While:
 
 If returns If:
 	{If}
-	'If{'
+	'If'
+	'{'
 		'condition' condition=EString
 		'then' then=AbstractTask
 		('else' else=AbstractTask)?
@@ -82,8 +85,9 @@ BaseTask returns BaseTask:
 	('status' status=TaskStatus)?
 	('inputs' '{' inputs+=TaskInput ("," inputs+=TaskInput)* '}')?
 	('outputs' '{' outputs+=TaskOutput ("," outputs+=TaskOutput)* '}')?
-	(children+=AbstractTask (children+=AbstractTask)*)? 
-	(abstractstatement+=AbstractStatement)? 
+	(children+=AbstractTask | abstractstatement+=AbstractStatement)*
+	//(children+=AbstractTask (children+=AbstractTask)*)? 
+	//(abstractstatement+=AbstractStatement)* 
 	'}';
 
 LibraryTask returns LibraryTask:

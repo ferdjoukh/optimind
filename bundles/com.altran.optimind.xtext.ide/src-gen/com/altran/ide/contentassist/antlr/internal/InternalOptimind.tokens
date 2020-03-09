@@ -2,8 +2,8 @@
 'BaseTask'=34
 'Connection'=44
 'FINISHED'=13
-'For{'=24
-'If{'=31
+'For'=24
+'If'=31
 'Input'=47
 'Java'=12
 'Language'=20
@@ -17,7 +17,7 @@
 'Python'=11
 'Setter'=43
 'Task'=41
-'While{'=29
+'While'=29
 'Workflow'=17
 'condition'=30
 'do'=28
