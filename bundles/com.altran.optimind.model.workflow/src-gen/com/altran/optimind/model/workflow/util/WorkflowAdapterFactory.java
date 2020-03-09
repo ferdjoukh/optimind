@@ -157,6 +157,26 @@ public class WorkflowAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseWhile(While object) {
+			return createWhileAdapter();
+		}
+
+		@Override
+		public Adapter caseAbstractStatement(AbstractStatement object) {
+			return createAbstractStatementAdapter();
+		}
+
+		@Override
+		public Adapter caseFor(For object) {
+			return createForAdapter();
+		}
+
+		@Override
+		public Adapter caseIf(If object) {
+			return createIfAdapter();
+		}
+
+		@Override
 		public Adapter defaultCase(EObject object) {
 			return createEObjectAdapter();
 		}
@@ -424,6 +444,62 @@ public class WorkflowAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createOutputAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link com.altran.optimind.model.workflow.While <em>While</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see com.altran.optimind.model.workflow.While
+	 * @generated
+	 */
+	public Adapter createWhileAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link com.altran.optimind.model.workflow.AbstractStatement <em>Abstract Statement</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see com.altran.optimind.model.workflow.AbstractStatement
+	 * @generated
+	 */
+	public Adapter createAbstractStatementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link com.altran.optimind.model.workflow.For <em>For</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see com.altran.optimind.model.workflow.For
+	 * @generated
+	 */
+	public Adapter createForAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link com.altran.optimind.model.workflow.If <em>If</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see com.altran.optimind.model.workflow.If
+	 * @generated
+	 */
+	public Adapter createIfAdapter() {
 		return null;
 	}
 

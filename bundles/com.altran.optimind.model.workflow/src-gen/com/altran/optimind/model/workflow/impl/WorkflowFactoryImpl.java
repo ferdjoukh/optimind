@@ -87,6 +87,12 @@ public class WorkflowFactoryImpl extends EFactoryImpl implements WorkflowFactory
 			return createInput();
 		case WorkflowPackage.OUTPUT:
 			return createOutput();
+		case WorkflowPackage.WHILE:
+			return createWhile();
+		case WorkflowPackage.FOR:
+			return createFor();
+		case WorkflowPackage.IF:
+			return createIf();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -274,6 +280,36 @@ public class WorkflowFactoryImpl extends EFactoryImpl implements WorkflowFactory
 	public Output createOutput() {
 		OutputImpl output = new OutputImpl();
 		return output;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public While createWhile() {
+		WhileImpl while_ = new WhileImpl();
+		return while_;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public For createFor() {
+		ForImpl for_ = new ForImpl();
+		return for_;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public If createIf() {
+		IfImpl if_ = new IfImpl();
+		return if_;
 	}
 
 	/**

@@ -418,6 +418,75 @@ public class WorkflowItemProviderAdapterFactory extends WorkflowAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link com.altran.optimind.model.workflow.While} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected WhileItemProvider whileItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link com.altran.optimind.model.workflow.While}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createWhileAdapter() {
+		if (whileItemProvider == null) {
+			whileItemProvider = new WhileItemProvider(this);
+		}
+
+		return whileItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link com.altran.optimind.model.workflow.For} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ForItemProvider forItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link com.altran.optimind.model.workflow.For}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createForAdapter() {
+		if (forItemProvider == null) {
+			forItemProvider = new ForItemProvider(this);
+		}
+
+		return forItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link com.altran.optimind.model.workflow.If} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected IfItemProvider ifItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link com.altran.optimind.model.workflow.If}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createIfAdapter() {
+		if (ifItemProvider == null) {
+			ifItemProvider = new IfItemProvider(this);
+		}
+
+		return ifItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -546,6 +615,12 @@ public class WorkflowItemProviderAdapterFactory extends WorkflowAdapterFactory
 			inputItemProvider.dispose();
 		if (outputItemProvider != null)
 			outputItemProvider.dispose();
+		if (whileItemProvider != null)
+			whileItemProvider.dispose();
+		if (forItemProvider != null)
+			forItemProvider.dispose();
+		if (ifItemProvider != null)
+			ifItemProvider.dispose();
 	}
 
 }

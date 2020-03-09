@@ -272,6 +272,42 @@ public class WorkflowSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
+		case WorkflowPackage.WHILE: {
+			While while_ = (While) theEObject;
+			T result = caseWhile(while_);
+			if (result == null)
+				result = caseAbstractStatement(while_);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case WorkflowPackage.ABSTRACT_STATEMENT: {
+			AbstractStatement abstractStatement = (AbstractStatement) theEObject;
+			T result = caseAbstractStatement(abstractStatement);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case WorkflowPackage.FOR: {
+			For for_ = (For) theEObject;
+			T result = caseFor(for_);
+			if (result == null)
+				result = caseWhile(for_);
+			if (result == null)
+				result = caseAbstractStatement(for_);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case WorkflowPackage.IF: {
+			If if_ = (If) theEObject;
+			T result = caseIf(if_);
+			if (result == null)
+				result = caseAbstractStatement(if_);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
 		default:
 			return defaultCase(theEObject);
 		}
@@ -544,6 +580,66 @@ public class WorkflowSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseOutput(Output object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>While</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>While</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseWhile(While object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Abstract Statement</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Abstract Statement</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAbstractStatement(AbstractStatement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>For</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>For</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseFor(For object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>If</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>If</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseIf(If object) {
 		return null;
 	}
 
