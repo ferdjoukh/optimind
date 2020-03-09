@@ -22,7 +22,7 @@ import org.eclipse.xtext.xbase.lib.CollectionLiterals;
 import org.eclipse.xtext.xbase.lib.ObjectExtensions;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
 
-@ProjectTemplate(label = "Empty Workflow", icon = "project_template.png", description = "<p><b>Empty Workflow</b></p>\r\n<p>This is the simplest Workflow you can create with Optimind. It contains only a Workflow and a name.</p>")
+@ProjectTemplate(label = "Empty Workflow", icon = "project_template.png", description = "<p><b>Empty Workflow</b></p>\n<p>This is the simplest Workflow you can create with Optimind. It contains only a Workflow and a name.</p>")
 @SuppressWarnings("all")
 public final class HelloWorldProject extends AbstractProjectTemplate {
   private final BooleanTemplateVariable advanced = this.check("Advanced:", false);

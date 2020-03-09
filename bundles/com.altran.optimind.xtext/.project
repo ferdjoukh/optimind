@@ -41,7 +41,7 @@
 		<link>
 			<name>com.altran.optimind.model.workflow</name>
 			<type>2</type>
-			<location>C:/Users/AdminEtu/Desktop/Project Workflow/Master-ICE/optimind_rcp/bundles/com.altran.optimind.model.workflow</location>
+			<location>C:/Users/AdminEtu/git/optimind/bundles/com.altran.optimind.model.workflow</location>
 		</link>
 	</linkedResources>
 </projectDescription>

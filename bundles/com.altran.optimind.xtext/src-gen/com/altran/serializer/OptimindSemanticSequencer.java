@@ -99,8 +99,7 @@ public class OptimindSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *         status=TaskStatus? 
 	 *         (inputs+=TaskInput inputs+=TaskInput*)? 
 	 *         (outputs+=TaskOutput outputs+=TaskOutput*)? 
-	 *         (children+=AbstractTask children+=AbstractTask*)? 
-	 *         abstractstatement+=AbstractStatement?
+	 *         (children+=AbstractTask | abstractstatement+=AbstractStatement)*
 	 *     )
 	 */
 	protected void sequence_BaseTask(ISerializationContext context, BaseTask semanticObject) {
@@ -154,10 +153,10 @@ public class OptimindSemanticSequencer extends AbstractDelegatingSemanticSequenc
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WorkflowPackage.Literals.WHILE__ABSTRACTTASK));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getForAccess().getFromEIntParserRuleCall_3_0(), semanticObject.getFrom());
-		feeder.accept(grammarAccess.getForAccess().getToEIntParserRuleCall_5_0(), semanticObject.getTo());
-		feeder.accept(grammarAccess.getForAccess().getIncrementEIntParserRuleCall_7_0(), semanticObject.getIncrement());
-		feeder.accept(grammarAccess.getForAccess().getAbstracttaskAbstractTaskParserRuleCall_9_0(), semanticObject.getAbstracttask());
+		feeder.accept(grammarAccess.getForAccess().getFromEIntParserRuleCall_4_0(), semanticObject.getFrom());
+		feeder.accept(grammarAccess.getForAccess().getToEIntParserRuleCall_6_0(), semanticObject.getTo());
+		feeder.accept(grammarAccess.getForAccess().getIncrementEIntParserRuleCall_8_0(), semanticObject.getIncrement());
+		feeder.accept(grammarAccess.getForAccess().getAbstracttaskAbstractTaskParserRuleCall_10_0(), semanticObject.getAbstracttask());
 		feeder.finish();
 	}
 	
@@ -271,8 +270,8 @@ public class OptimindSemanticSequencer extends AbstractDelegatingSemanticSequenc
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WorkflowPackage.Literals.WHILE__ABSTRACTTASK));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getWhileAccess().getConditionEStringParserRuleCall_3_0(), semanticObject.getCondition());
-		feeder.accept(grammarAccess.getWhileAccess().getAbstracttaskAbstractTaskParserRuleCall_5_0(), semanticObject.getAbstracttask());
+		feeder.accept(grammarAccess.getWhileAccess().getConditionEStringParserRuleCall_4_0(), semanticObject.getCondition());
+		feeder.accept(grammarAccess.getWhileAccess().getAbstracttaskAbstractTaskParserRuleCall_6_0(), semanticObject.getAbstracttask());
 		feeder.finish();
 	}
 	
