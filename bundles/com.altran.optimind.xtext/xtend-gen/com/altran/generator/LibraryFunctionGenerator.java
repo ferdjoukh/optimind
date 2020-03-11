@@ -49,33 +49,117 @@ public class LibraryFunctionGenerator {
   public void createLibFunctionFile(final LibraryFunction function) {
     boolean _equals = Objects.equal(this.language, Language.PYTHON);
     if (_equals) {
-      String _generateFileContent = this.generateFileContent(function);
+      String _generateFilePythonContent = this.generateFilePythonContent(function);
       String _name = function.getName();
       String _plus = (this.libraryFunctionPackagePath + _name);
       String _plus_1 = (_plus + ".");
       String _plus_2 = (_plus_1 + "py");
-      this.writeContent(_generateFileContent, _plus_2);
+      this.writeContent(_generateFilePythonContent, _plus_2);
     } else {
-      String _generateFileContent_1 = this.generateFileContent(function);
+      String _generateFileJavaContent = this.generateFileJavaContent(function);
       String _name_1 = function.getName();
       String _plus_3 = (this.libraryFunctionPackagePath + _name_1);
       String _plus_4 = (_plus_3 + ".");
       String _plus_5 = (_plus_4 + "java");
-      this.writeContent(_generateFileContent_1, _plus_5);
+      this.writeContent(_generateFileJavaContent, _plus_5);
     }
   }
   
-  public String generateFileContent(final LibraryFunction libfunction) {
+  public String generateFileJavaContent(final LibraryFunction libfunction) {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("# ==================================================================================================");
+    _builder.append("package scripts;");
     _builder.newLine();
-    _builder.append("# MODULE IMPORT");
+    _builder.append("// ==================================================================================================");
     _builder.newLine();
-    _builder.append("# ==================================================================================================");
+    _builder.append("// MODULE IMPORT");
     _builder.newLine();
+    _builder.append("// ==================================================================================================");
     _builder.newLine();
-    _builder.append("# ==================================================================================================");
+    _builder.append("\t\t\t\t\t\t");
     _builder.newLine();
+    _builder.append("// ==================================================================================================");
+    _builder.newLine();
+    EList<Input> inputs = libfunction.getInputs();
+    _builder.newLineIfNotEmpty();
+    int size = inputs.size();
+    _builder.newLineIfNotEmpty();
+    _builder.append("// ==================================================================================================");
+    _builder.newLine();
+    _builder.append("public class ");
+    String _name = libfunction.getName();
+    _builder.append(_name);
+    _builder.append(" ");
+    _builder.newLineIfNotEmpty();
+    _builder.append("// ==================================================================================================");
+    _builder.newLine();
+    _builder.append("{");
+    _builder.newLine();
+    _builder.append("\t");
+    String outputName = libfunction.getOutputs().get(0).getName();
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t");
+    _builder.append("public static int ");
+    _builder.append(outputName, "\t");
+    _builder.append(" (");
+    {
+      for(final Input input : inputs) {
+        _builder.append(" ");
+        String _typeAsString = input.getTypeAsString();
+        _builder.append(_typeAsString, "\t");
+        _builder.append(" ");
+        String _name_1 = input.getName();
+        _builder.append(_name_1, "\t");
+        {
+          if ((this.cammaCounter < (size - 1))) {
+            this.increamentCammaCounter();
+            _builder.append(",");
+          }
+        }
+      }
+    }
+    _builder.append(") {");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t\t\t\t\t\t");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("// Write your code after this line ");
+    _builder.newLine();
+    _builder.append("\t\t\t\t");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("return ");
+    _builder.append(outputName, "\t\t");
+    _builder.append("(");
+    {
+      for(final Input input_1 : inputs) {
+        String _name_2 = input_1.getName();
+        _builder.append(_name_2, "\t\t");
+        {
+          if ((this.cammaCounter < (size - 1))) {
+            this.increamentCammaCounter();
+            _builder.append(",");
+          }
+        }
+      }
+    }
+    _builder.append(");");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t\t");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.append("}");
+    _builder.newLine();
+    _builder.append("\t\t\t\t\t\t\t");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.newLine();
+    return _builder.toString();
+  }
+  
+  public String generateFilePythonContent(final LibraryFunction libfunction) {
+    StringConcatenation _builder = new StringConcatenation();
     _builder.newLine();
     _builder.newLine();
     _builder.append("# ==================================================================================================");

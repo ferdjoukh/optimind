@@ -39,22 +39,45 @@ class LibraryFunctionGenerator {
 	def createLibFunctionFile(LibraryFunction function) {
 		if(language == Language.PYTHON)
 		{
-			writeContent( generateFileContent(function), libraryFunctionPackagePath+function.name+"."+"py")		
+			writeContent( generateFilePythonContent(function), libraryFunctionPackagePath+function.name+"."+"py")		
 		}
 		else
 		{
-			writeContent( generateFileContent(function), libraryFunctionPackagePath+function.name+"."+"java")	
+			writeContent( generateFileJavaContent(function), libraryFunctionPackagePath+function.name+"."+"java")	
 		}
 		
 	}
-	
-	def String generateFileContent(LibraryFunction libfunction) {
+	def String generateFileJavaContent(LibraryFunction libfunction){
 		'''
-		# ==================================================================================================
-		# MODULE IMPORT
-		# ==================================================================================================
+		package scripts;
+		// ==================================================================================================
+		// MODULE IMPORT
+		// ==================================================================================================
+								
+		// ==================================================================================================
+		«var inputs= libfunction.inputs»
+		«var int size= inputs.size»
+		// ==================================================================================================
+		public class «libfunction.name» 
+		// ==================================================================================================
+		{
+			«var outputName=libfunction.outputs.get(0).name»
+			public static int «outputName» («FOR Input input : inputs» «input.typeAsString» «input.name»«IF cammaCounter<size-1»«increamentCammaCounter»,«ENDIF»«ENDFOR») {
+								
+				// Write your code after this line 
+						
+				return «outputName»(«FOR Input input : inputs»«input.name»«IF cammaCounter<size-1»«increamentCammaCounter»,«ENDIF»«ENDFOR»);
+				
+			}
+		}
+									
+				
+		'''
+	}
+	
+	def String generateFilePythonContent(LibraryFunction libfunction) {
 		
-		# ==================================================================================================
+		'''
 		
 		
 		# ==================================================================================================
