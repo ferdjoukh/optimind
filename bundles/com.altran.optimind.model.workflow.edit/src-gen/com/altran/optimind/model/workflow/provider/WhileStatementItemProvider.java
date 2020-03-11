@@ -2,7 +2,7 @@
  */
 package com.altran.optimind.model.workflow.provider;
 
-import com.altran.optimind.model.workflow.BaseTask;
+import com.altran.optimind.model.workflow.WhileStatement;
 import com.altran.optimind.model.workflow.WorkflowFactory;
 import com.altran.optimind.model.workflow.WorkflowPackage;
 
@@ -18,19 +18,19 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link com.altran.optimind.model.workflow.BaseTask} object.
+ * This is the item provider adapter for a {@link com.altran.optimind.model.workflow.WhileStatement} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class BaseTaskItemProvider extends AbstractTaskItemProvider {
+public class WhileStatementItemProvider extends AbstractStatementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public BaseTaskItemProvider(AdapterFactory adapterFactory) {
+	public WhileStatementItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -61,8 +61,7 @@ public class BaseTaskItemProvider extends AbstractTaskItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(WorkflowPackage.Literals.BASE_TASK__CHILDREN);
-			childrenFeatures.add(WorkflowPackage.Literals.BASE_TASK__ABSTRACTSTATEMENT);
+			childrenFeatures.add(WorkflowPackage.Literals.WHILE_STATEMENT__ABSTRACTTASK);
 		}
 		return childrenFeatures;
 	}
@@ -81,14 +80,14 @@ public class BaseTaskItemProvider extends AbstractTaskItemProvider {
 	}
 
 	/**
-	 * This returns BaseTask.gif.
+	 * This returns WhileStatement.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/BaseTask"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/WhileStatement"));
 	}
 
 	/**
@@ -109,9 +108,9 @@ public class BaseTaskItemProvider extends AbstractTaskItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((BaseTask) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_BaseTask_type")
-				: getString("_UI_BaseTask_type") + " " + label;
+		String label = ((WhileStatement) object).getName();
+		return label == null || label.length() == 0 ? getString("_UI_WhileStatement_type")
+				: getString("_UI_WhileStatement_type") + " " + label;
 	}
 
 	/**
@@ -125,9 +124,8 @@ public class BaseTaskItemProvider extends AbstractTaskItemProvider {
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(BaseTask.class)) {
-		case WorkflowPackage.BASE_TASK__CHILDREN:
-		case WorkflowPackage.BASE_TASK__ABSTRACTSTATEMENT:
+		switch (notification.getFeatureID(WhileStatement.class)) {
+		case WorkflowPackage.WHILE_STATEMENT__ABSTRACTTASK:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -145,23 +143,14 @@ public class BaseTaskItemProvider extends AbstractTaskItemProvider {
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(WorkflowPackage.Literals.BASE_TASK__CHILDREN,
+		newChildDescriptors.add(createChildParameter(WorkflowPackage.Literals.WHILE_STATEMENT__ABSTRACTTASK,
 				WorkflowFactory.eINSTANCE.createBaseTask()));
 
-		newChildDescriptors.add(createChildParameter(WorkflowPackage.Literals.BASE_TASK__CHILDREN,
+		newChildDescriptors.add(createChildParameter(WorkflowPackage.Literals.WHILE_STATEMENT__ABSTRACTTASK,
 				WorkflowFactory.eINSTANCE.createLibraryTask()));
 
-		newChildDescriptors.add(createChildParameter(WorkflowPackage.Literals.BASE_TASK__CHILDREN,
+		newChildDescriptors.add(createChildParameter(WorkflowPackage.Literals.WHILE_STATEMENT__ABSTRACTTASK,
 				WorkflowFactory.eINSTANCE.createCustomTask()));
-
-		newChildDescriptors.add(createChildParameter(WorkflowPackage.Literals.BASE_TASK__ABSTRACTSTATEMENT,
-				WorkflowFactory.eINSTANCE.createWhileStatement()));
-
-		newChildDescriptors.add(createChildParameter(WorkflowPackage.Literals.BASE_TASK__ABSTRACTSTATEMENT,
-				WorkflowFactory.eINSTANCE.createForStatement()));
-
-		newChildDescriptors.add(createChildParameter(WorkflowPackage.Literals.BASE_TASK__ABSTRACTSTATEMENT,
-				WorkflowFactory.eINSTANCE.createIfStatement()));
 	}
 
 }

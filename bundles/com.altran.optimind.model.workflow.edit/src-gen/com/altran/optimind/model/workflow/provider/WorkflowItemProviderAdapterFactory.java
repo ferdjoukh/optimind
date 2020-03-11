@@ -418,72 +418,72 @@ public class WorkflowItemProviderAdapterFactory extends WorkflowAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link com.altran.optimind.model.workflow.While} instances.
+	 * This keeps track of the one adapter used for all {@link com.altran.optimind.model.workflow.WhileStatement} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected WhileItemProvider whileItemProvider;
+	protected WhileStatementItemProvider whileStatementItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link com.altran.optimind.model.workflow.While}.
+	 * This creates an adapter for a {@link com.altran.optimind.model.workflow.WhileStatement}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createWhileAdapter() {
-		if (whileItemProvider == null) {
-			whileItemProvider = new WhileItemProvider(this);
+	public Adapter createWhileStatementAdapter() {
+		if (whileStatementItemProvider == null) {
+			whileStatementItemProvider = new WhileStatementItemProvider(this);
 		}
 
-		return whileItemProvider;
+		return whileStatementItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link com.altran.optimind.model.workflow.For} instances.
+	 * This keeps track of the one adapter used for all {@link com.altran.optimind.model.workflow.ForStatement} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ForItemProvider forItemProvider;
+	protected ForStatementItemProvider forStatementItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link com.altran.optimind.model.workflow.For}.
+	 * This creates an adapter for a {@link com.altran.optimind.model.workflow.ForStatement}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createForAdapter() {
-		if (forItemProvider == null) {
-			forItemProvider = new ForItemProvider(this);
+	public Adapter createForStatementAdapter() {
+		if (forStatementItemProvider == null) {
+			forStatementItemProvider = new ForStatementItemProvider(this);
 		}
 
-		return forItemProvider;
+		return forStatementItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link com.altran.optimind.model.workflow.If} instances.
+	 * This keeps track of the one adapter used for all {@link com.altran.optimind.model.workflow.IfStatement} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected IfItemProvider ifItemProvider;
+	protected IfStatementItemProvider ifStatementItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link com.altran.optimind.model.workflow.If}.
+	 * This creates an adapter for a {@link com.altran.optimind.model.workflow.IfStatement}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createIfAdapter() {
-		if (ifItemProvider == null) {
-			ifItemProvider = new IfItemProvider(this);
+	public Adapter createIfStatementAdapter() {
+		if (ifStatementItemProvider == null) {
+			ifStatementItemProvider = new IfStatementItemProvider(this);
 		}
 
-		return ifItemProvider;
+		return ifStatementItemProvider;
 	}
 
 	/**
@@ -615,12 +615,12 @@ public class WorkflowItemProviderAdapterFactory extends WorkflowAdapterFactory
 			inputItemProvider.dispose();
 		if (outputItemProvider != null)
 			outputItemProvider.dispose();
-		if (whileItemProvider != null)
-			whileItemProvider.dispose();
-		if (forItemProvider != null)
-			forItemProvider.dispose();
-		if (ifItemProvider != null)
-			ifItemProvider.dispose();
+		if (whileStatementItemProvider != null)
+			whileStatementItemProvider.dispose();
+		if (forStatementItemProvider != null)
+			forStatementItemProvider.dispose();
+		if (ifStatementItemProvider != null)
+			ifStatementItemProvider.dispose();
 	}
 
 }

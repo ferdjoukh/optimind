@@ -284,195 +284,223 @@ public class OptimindGrammarAccess extends AbstractGrammarElementFinder {
 	public class ForElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.altran.Optimind.For");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cForAction_0 = (Action)cGroup.eContents().get(0);
+		private final Action cForStatementAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cForKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Keyword cFromKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cFromAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cFromEIntParserRuleCall_4_0 = (RuleCall)cFromAssignment_4.eContents().get(0);
-		private final Keyword cToKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Assignment cToAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final RuleCall cToEIntParserRuleCall_6_0 = (RuleCall)cToAssignment_6.eContents().get(0);
-		private final Keyword cIncrementKeyword_7 = (Keyword)cGroup.eContents().get(7);
-		private final Assignment cIncrementAssignment_8 = (Assignment)cGroup.eContents().get(8);
-		private final RuleCall cIncrementEIntParserRuleCall_8_0 = (RuleCall)cIncrementAssignment_8.eContents().get(0);
-		private final Keyword cDoKeyword_9 = (Keyword)cGroup.eContents().get(9);
-		private final Assignment cAbstracttaskAssignment_10 = (Assignment)cGroup.eContents().get(10);
-		private final RuleCall cAbstracttaskAbstractTaskParserRuleCall_10_0 = (RuleCall)cAbstracttaskAssignment_10.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_11 = (Keyword)cGroup.eContents().get(11);
+		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cNameEStringParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Keyword cFromKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cFromAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cFromEIntParserRuleCall_5_0 = (RuleCall)cFromAssignment_5.eContents().get(0);
+		private final Keyword cToKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Assignment cToAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final RuleCall cToEIntParserRuleCall_7_0 = (RuleCall)cToAssignment_7.eContents().get(0);
+		private final Keyword cIncrementKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		private final Assignment cIncrementAssignment_9 = (Assignment)cGroup.eContents().get(9);
+		private final RuleCall cIncrementEIntParserRuleCall_9_0 = (RuleCall)cIncrementAssignment_9.eContents().get(0);
+		private final Keyword cDoKeyword_10 = (Keyword)cGroup.eContents().get(10);
+		private final Assignment cAbstracttaskAssignment_11 = (Assignment)cGroup.eContents().get(11);
+		private final RuleCall cAbstracttaskAbstractTaskParserRuleCall_11_0 = (RuleCall)cAbstracttaskAssignment_11.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_12 = (Keyword)cGroup.eContents().get(12);
 		
-		//For:
-		//	{For} 'For' '{' 'from' from=EInt 'to' to=EInt 'increment' increment=EInt 'do' abstracttask=AbstractTask '}';
+		//For ForStatement:
+		//	{ForStatement} 'For' name=EString '{' 'from' from=EInt 'to' to=EInt 'increment' increment=EInt 'do'
+		//	abstracttask=AbstractTask '}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{For} 'For' '{' 'from' from=EInt 'to' to=EInt 'increment' increment=EInt 'do' abstracttask=AbstractTask '}'
+		//{ForStatement} 'For' name=EString '{' 'from' from=EInt 'to' to=EInt 'increment' increment=EInt 'do'
+		//abstracttask=AbstractTask '}'
 		public Group getGroup() { return cGroup; }
 		
-		//{For}
-		public Action getForAction_0() { return cForAction_0; }
+		//{ForStatement}
+		public Action getForStatementAction_0() { return cForStatementAction_0; }
 		
 		//'For'
 		public Keyword getForKeyword_1() { return cForKeyword_1; }
 		
+		//name=EString
+		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+		
+		//EString
+		public RuleCall getNameEStringParserRuleCall_2_0() { return cNameEStringParserRuleCall_2_0; }
+		
 		//'{'
-		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
+		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
 		
 		//'from'
-		public Keyword getFromKeyword_3() { return cFromKeyword_3; }
+		public Keyword getFromKeyword_4() { return cFromKeyword_4; }
 		
 		//from=EInt
-		public Assignment getFromAssignment_4() { return cFromAssignment_4; }
+		public Assignment getFromAssignment_5() { return cFromAssignment_5; }
 		
 		//EInt
-		public RuleCall getFromEIntParserRuleCall_4_0() { return cFromEIntParserRuleCall_4_0; }
+		public RuleCall getFromEIntParserRuleCall_5_0() { return cFromEIntParserRuleCall_5_0; }
 		
 		//'to'
-		public Keyword getToKeyword_5() { return cToKeyword_5; }
+		public Keyword getToKeyword_6() { return cToKeyword_6; }
 		
 		//to=EInt
-		public Assignment getToAssignment_6() { return cToAssignment_6; }
+		public Assignment getToAssignment_7() { return cToAssignment_7; }
 		
 		//EInt
-		public RuleCall getToEIntParserRuleCall_6_0() { return cToEIntParserRuleCall_6_0; }
+		public RuleCall getToEIntParserRuleCall_7_0() { return cToEIntParserRuleCall_7_0; }
 		
 		//'increment'
-		public Keyword getIncrementKeyword_7() { return cIncrementKeyword_7; }
+		public Keyword getIncrementKeyword_8() { return cIncrementKeyword_8; }
 		
 		//increment=EInt
-		public Assignment getIncrementAssignment_8() { return cIncrementAssignment_8; }
+		public Assignment getIncrementAssignment_9() { return cIncrementAssignment_9; }
 		
 		//EInt
-		public RuleCall getIncrementEIntParserRuleCall_8_0() { return cIncrementEIntParserRuleCall_8_0; }
+		public RuleCall getIncrementEIntParserRuleCall_9_0() { return cIncrementEIntParserRuleCall_9_0; }
 		
 		//'do'
-		public Keyword getDoKeyword_9() { return cDoKeyword_9; }
+		public Keyword getDoKeyword_10() { return cDoKeyword_10; }
 		
 		//abstracttask=AbstractTask
-		public Assignment getAbstracttaskAssignment_10() { return cAbstracttaskAssignment_10; }
+		public Assignment getAbstracttaskAssignment_11() { return cAbstracttaskAssignment_11; }
 		
 		//AbstractTask
-		public RuleCall getAbstracttaskAbstractTaskParserRuleCall_10_0() { return cAbstracttaskAbstractTaskParserRuleCall_10_0; }
+		public RuleCall getAbstracttaskAbstractTaskParserRuleCall_11_0() { return cAbstracttaskAbstractTaskParserRuleCall_11_0; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_11() { return cRightCurlyBracketKeyword_11; }
+		public Keyword getRightCurlyBracketKeyword_12() { return cRightCurlyBracketKeyword_12; }
 	}
 	public class WhileElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.altran.Optimind.While");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cWhileAction_0 = (Action)cGroup.eContents().get(0);
+		private final Action cWhileStatementAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cWhileKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Keyword cConditionKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cConditionAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cConditionEStringParserRuleCall_4_0 = (RuleCall)cConditionAssignment_4.eContents().get(0);
-		private final Keyword cDoKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Assignment cAbstracttaskAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final RuleCall cAbstracttaskAbstractTaskParserRuleCall_6_0 = (RuleCall)cAbstracttaskAssignment_6.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cNameEStringParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Keyword cConditionKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cConditionAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cConditionEStringParserRuleCall_5_0 = (RuleCall)cConditionAssignment_5.eContents().get(0);
+		private final Keyword cDoKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Assignment cAbstracttaskAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final RuleCall cAbstracttaskAbstractTaskParserRuleCall_7_0 = (RuleCall)cAbstracttaskAssignment_7.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
 		
-		//While:
-		//	{While} 'While' '{' 'condition' condition=EString 'do' abstracttask=AbstractTask '}';
+		//While WhileStatement:
+		//	{WhileStatement} 'While' name=EString '{' 'condition' condition=EString 'do' abstracttask=AbstractTask '}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{While} 'While' '{' 'condition' condition=EString 'do' abstracttask=AbstractTask '}'
+		//{WhileStatement} 'While' name=EString '{' 'condition' condition=EString 'do' abstracttask=AbstractTask '}'
 		public Group getGroup() { return cGroup; }
 		
-		//{While}
-		public Action getWhileAction_0() { return cWhileAction_0; }
+		//{WhileStatement}
+		public Action getWhileStatementAction_0() { return cWhileStatementAction_0; }
 		
 		//'While'
 		public Keyword getWhileKeyword_1() { return cWhileKeyword_1; }
 		
-		//'{'
-		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
-		
-		//'condition'
-		public Keyword getConditionKeyword_3() { return cConditionKeyword_3; }
-		
-		//condition=EString
-		public Assignment getConditionAssignment_4() { return cConditionAssignment_4; }
+		//name=EString
+		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
 		
 		//EString
-		public RuleCall getConditionEStringParserRuleCall_4_0() { return cConditionEStringParserRuleCall_4_0; }
+		public RuleCall getNameEStringParserRuleCall_2_0() { return cNameEStringParserRuleCall_2_0; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
+		
+		//'condition'
+		public Keyword getConditionKeyword_4() { return cConditionKeyword_4; }
+		
+		//condition=EString
+		public Assignment getConditionAssignment_5() { return cConditionAssignment_5; }
+		
+		//EString
+		public RuleCall getConditionEStringParserRuleCall_5_0() { return cConditionEStringParserRuleCall_5_0; }
 		
 		//'do'
-		public Keyword getDoKeyword_5() { return cDoKeyword_5; }
+		public Keyword getDoKeyword_6() { return cDoKeyword_6; }
 		
 		//abstracttask=AbstractTask
-		public Assignment getAbstracttaskAssignment_6() { return cAbstracttaskAssignment_6; }
+		public Assignment getAbstracttaskAssignment_7() { return cAbstracttaskAssignment_7; }
 		
 		//AbstractTask
-		public RuleCall getAbstracttaskAbstractTaskParserRuleCall_6_0() { return cAbstracttaskAbstractTaskParserRuleCall_6_0; }
+		public RuleCall getAbstracttaskAbstractTaskParserRuleCall_7_0() { return cAbstracttaskAbstractTaskParserRuleCall_7_0; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_7() { return cRightCurlyBracketKeyword_7; }
+		public Keyword getRightCurlyBracketKeyword_8() { return cRightCurlyBracketKeyword_8; }
 	}
 	public class IfElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.altran.Optimind.If");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cIfAction_0 = (Action)cGroup.eContents().get(0);
+		private final Action cIfStatementAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cIfKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Keyword cConditionKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cConditionAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cConditionEStringParserRuleCall_4_0 = (RuleCall)cConditionAssignment_4.eContents().get(0);
-		private final Keyword cThenKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Assignment cThenAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final RuleCall cThenAbstractTaskParserRuleCall_6_0 = (RuleCall)cThenAssignment_6.eContents().get(0);
-		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
-		private final Keyword cElseKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
-		private final Assignment cElseAssignment_7_1 = (Assignment)cGroup_7.eContents().get(1);
-		private final RuleCall cElseAbstractTaskParserRuleCall_7_1_0 = (RuleCall)cElseAssignment_7_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cNameEStringParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Keyword cConditionKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cConditionAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cConditionEStringParserRuleCall_5_0 = (RuleCall)cConditionAssignment_5.eContents().get(0);
+		private final Keyword cThenKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Assignment cThenAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final RuleCall cThenAbstractTaskParserRuleCall_7_0 = (RuleCall)cThenAssignment_7.eContents().get(0);
+		private final Group cGroup_8 = (Group)cGroup.eContents().get(8);
+		private final Keyword cElseKeyword_8_0 = (Keyword)cGroup_8.eContents().get(0);
+		private final Assignment cElseAssignment_8_1 = (Assignment)cGroup_8.eContents().get(1);
+		private final RuleCall cElseAbstractTaskParserRuleCall_8_1_0 = (RuleCall)cElseAssignment_8_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_9 = (Keyword)cGroup.eContents().get(9);
 		
-		//If:
-		//	{If} 'If' '{' 'condition' condition=EString 'then' then=AbstractTask ('else' else=AbstractTask)? '}';
+		//If IfStatement:
+		//	{IfStatement} 'If' name=EString '{' 'condition' condition=EString 'then' then=AbstractTask ('else'
+		//	else=AbstractTask)? '}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{If} 'If' '{' 'condition' condition=EString 'then' then=AbstractTask ('else' else=AbstractTask)? '}'
+		//{IfStatement} 'If' name=EString '{' 'condition' condition=EString 'then' then=AbstractTask ('else' else=AbstractTask)?
+		//'}'
 		public Group getGroup() { return cGroup; }
 		
-		//{If}
-		public Action getIfAction_0() { return cIfAction_0; }
+		//{IfStatement}
+		public Action getIfStatementAction_0() { return cIfStatementAction_0; }
 		
 		//'If'
 		public Keyword getIfKeyword_1() { return cIfKeyword_1; }
 		
-		//'{'
-		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
-		
-		//'condition'
-		public Keyword getConditionKeyword_3() { return cConditionKeyword_3; }
-		
-		//condition=EString
-		public Assignment getConditionAssignment_4() { return cConditionAssignment_4; }
+		//name=EString
+		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
 		
 		//EString
-		public RuleCall getConditionEStringParserRuleCall_4_0() { return cConditionEStringParserRuleCall_4_0; }
+		public RuleCall getNameEStringParserRuleCall_2_0() { return cNameEStringParserRuleCall_2_0; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
+		
+		//'condition'
+		public Keyword getConditionKeyword_4() { return cConditionKeyword_4; }
+		
+		//condition=EString
+		public Assignment getConditionAssignment_5() { return cConditionAssignment_5; }
+		
+		//EString
+		public RuleCall getConditionEStringParserRuleCall_5_0() { return cConditionEStringParserRuleCall_5_0; }
 		
 		//'then'
-		public Keyword getThenKeyword_5() { return cThenKeyword_5; }
+		public Keyword getThenKeyword_6() { return cThenKeyword_6; }
 		
 		//then=AbstractTask
-		public Assignment getThenAssignment_6() { return cThenAssignment_6; }
+		public Assignment getThenAssignment_7() { return cThenAssignment_7; }
 		
 		//AbstractTask
-		public RuleCall getThenAbstractTaskParserRuleCall_6_0() { return cThenAbstractTaskParserRuleCall_6_0; }
+		public RuleCall getThenAbstractTaskParserRuleCall_7_0() { return cThenAbstractTaskParserRuleCall_7_0; }
 		
 		//('else' else=AbstractTask)?
-		public Group getGroup_7() { return cGroup_7; }
+		public Group getGroup_8() { return cGroup_8; }
 		
 		//'else'
-		public Keyword getElseKeyword_7_0() { return cElseKeyword_7_0; }
+		public Keyword getElseKeyword_8_0() { return cElseKeyword_8_0; }
 		
 		//else=AbstractTask
-		public Assignment getElseAssignment_7_1() { return cElseAssignment_7_1; }
+		public Assignment getElseAssignment_8_1() { return cElseAssignment_8_1; }
 		
 		//AbstractTask
-		public RuleCall getElseAbstractTaskParserRuleCall_7_1_0() { return cElseAbstractTaskParserRuleCall_7_1_0; }
+		public RuleCall getElseAbstractTaskParserRuleCall_8_1_0() { return cElseAbstractTaskParserRuleCall_8_1_0; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_8() { return cRightCurlyBracketKeyword_8; }
+		public Keyword getRightCurlyBracketKeyword_9() { return cRightCurlyBracketKeyword_9; }
 	}
 	public class BaseTaskElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.altran.Optimind.BaseTask");
@@ -1406,8 +1434,9 @@ public class OptimindGrammarAccess extends AbstractGrammarElementFinder {
 		return getAbstractStatementAccess().getRule();
 	}
 	
-	//For:
-	//	{For} 'For' '{' 'from' from=EInt 'to' to=EInt 'increment' increment=EInt 'do' abstracttask=AbstractTask '}';
+	//For ForStatement:
+	//	{ForStatement} 'For' name=EString '{' 'from' from=EInt 'to' to=EInt 'increment' increment=EInt 'do'
+	//	abstracttask=AbstractTask '}';
 	public ForElements getForAccess() {
 		return pFor;
 	}
@@ -1416,8 +1445,8 @@ public class OptimindGrammarAccess extends AbstractGrammarElementFinder {
 		return getForAccess().getRule();
 	}
 	
-	//While:
-	//	{While} 'While' '{' 'condition' condition=EString 'do' abstracttask=AbstractTask '}';
+	//While WhileStatement:
+	//	{WhileStatement} 'While' name=EString '{' 'condition' condition=EString 'do' abstracttask=AbstractTask '}';
 	public WhileElements getWhileAccess() {
 		return pWhile;
 	}
@@ -1426,8 +1455,9 @@ public class OptimindGrammarAccess extends AbstractGrammarElementFinder {
 		return getWhileAccess().getRule();
 	}
 	
-	//If:
-	//	{If} 'If' '{' 'condition' condition=EString 'then' then=AbstractTask ('else' else=AbstractTask)? '}';
+	//If IfStatement:
+	//	{IfStatement} 'If' name=EString '{' 'condition' condition=EString 'then' then=AbstractTask ('else'
+	//	else=AbstractTask)? '}';
 	public IfElements getIfAccess() {
 		return pIf;
 	}

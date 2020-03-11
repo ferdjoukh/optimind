@@ -108,7 +108,7 @@ public class WhileItemProvider extends AbstractStatementItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((While) object).getCondition();
+		String label = ((While) object).getName();
 		return label == null || label.length() == 0 ? getString("_UI_While_type")
 				: getString("_UI_While_type") + " " + label;
 	}

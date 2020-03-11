@@ -538,7 +538,7 @@ ruleFor returns [EObject current=null]
 		(
 			{
 				$current = forceCreateModelElement(
-					grammarAccess.getForAccess().getForAction_0(),
+					grammarAccess.getForAccess().getForStatementAction_0(),
 					$current);
 			}
 		)
@@ -546,20 +546,39 @@ ruleFor returns [EObject current=null]
 		{
 			newLeafNode(otherlv_1, grammarAccess.getForAccess().getForKeyword_1());
 		}
-		otherlv_2='{'
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getForAccess().getNameEStringParserRuleCall_2_0());
+				}
+				lv_name_2_0=ruleEString
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getForRule());
+					}
+					set(
+						$current,
+						"name",
+						lv_name_2_0,
+						"com.altran.Optimind.EString");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_3='{'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getForAccess().getLeftCurlyBracketKeyword_2());
+			newLeafNode(otherlv_3, grammarAccess.getForAccess().getLeftCurlyBracketKeyword_3());
 		}
-		otherlv_3='from'
+		otherlv_4='from'
 		{
-			newLeafNode(otherlv_3, grammarAccess.getForAccess().getFromKeyword_3());
+			newLeafNode(otherlv_4, grammarAccess.getForAccess().getFromKeyword_4());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getForAccess().getFromEIntParserRuleCall_4_0());
+					newCompositeNode(grammarAccess.getForAccess().getFromEIntParserRuleCall_5_0());
 				}
-				lv_from_4_0=ruleEInt
+				lv_from_5_0=ruleEInt
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getForRule());
@@ -567,22 +586,22 @@ ruleFor returns [EObject current=null]
 					set(
 						$current,
 						"from",
-						lv_from_4_0,
+						lv_from_5_0,
 						"com.altran.Optimind.EInt");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		otherlv_5='to'
+		otherlv_6='to'
 		{
-			newLeafNode(otherlv_5, grammarAccess.getForAccess().getToKeyword_5());
+			newLeafNode(otherlv_6, grammarAccess.getForAccess().getToKeyword_6());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getForAccess().getToEIntParserRuleCall_6_0());
+					newCompositeNode(grammarAccess.getForAccess().getToEIntParserRuleCall_7_0());
 				}
-				lv_to_6_0=ruleEInt
+				lv_to_7_0=ruleEInt
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getForRule());
@@ -590,22 +609,22 @@ ruleFor returns [EObject current=null]
 					set(
 						$current,
 						"to",
-						lv_to_6_0,
+						lv_to_7_0,
 						"com.altran.Optimind.EInt");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		otherlv_7='increment'
+		otherlv_8='increment'
 		{
-			newLeafNode(otherlv_7, grammarAccess.getForAccess().getIncrementKeyword_7());
+			newLeafNode(otherlv_8, grammarAccess.getForAccess().getIncrementKeyword_8());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getForAccess().getIncrementEIntParserRuleCall_8_0());
+					newCompositeNode(grammarAccess.getForAccess().getIncrementEIntParserRuleCall_9_0());
 				}
-				lv_increment_8_0=ruleEInt
+				lv_increment_9_0=ruleEInt
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getForRule());
@@ -613,22 +632,22 @@ ruleFor returns [EObject current=null]
 					set(
 						$current,
 						"increment",
-						lv_increment_8_0,
+						lv_increment_9_0,
 						"com.altran.Optimind.EInt");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		otherlv_9='do'
+		otherlv_10='do'
 		{
-			newLeafNode(otherlv_9, grammarAccess.getForAccess().getDoKeyword_9());
+			newLeafNode(otherlv_10, grammarAccess.getForAccess().getDoKeyword_10());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getForAccess().getAbstracttaskAbstractTaskParserRuleCall_10_0());
+					newCompositeNode(grammarAccess.getForAccess().getAbstracttaskAbstractTaskParserRuleCall_11_0());
 				}
-				lv_abstracttask_10_0=ruleAbstractTask
+				lv_abstracttask_11_0=ruleAbstractTask
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getForRule());
@@ -636,15 +655,15 @@ ruleFor returns [EObject current=null]
 					set(
 						$current,
 						"abstracttask",
-						lv_abstracttask_10_0,
+						lv_abstracttask_11_0,
 						"com.altran.Optimind.AbstractTask");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		otherlv_11='}'
+		otherlv_12='}'
 		{
-			newLeafNode(otherlv_11, grammarAccess.getForAccess().getRightCurlyBracketKeyword_11());
+			newLeafNode(otherlv_12, grammarAccess.getForAccess().getRightCurlyBracketKeyword_12());
 		}
 	)
 ;
@@ -668,7 +687,7 @@ ruleWhile returns [EObject current=null]
 		(
 			{
 				$current = forceCreateModelElement(
-					grammarAccess.getWhileAccess().getWhileAction_0(),
+					grammarAccess.getWhileAccess().getWhileStatementAction_0(),
 					$current);
 			}
 		)
@@ -676,20 +695,39 @@ ruleWhile returns [EObject current=null]
 		{
 			newLeafNode(otherlv_1, grammarAccess.getWhileAccess().getWhileKeyword_1());
 		}
-		otherlv_2='{'
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getWhileAccess().getNameEStringParserRuleCall_2_0());
+				}
+				lv_name_2_0=ruleEString
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getWhileRule());
+					}
+					set(
+						$current,
+						"name",
+						lv_name_2_0,
+						"com.altran.Optimind.EString");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_3='{'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getWhileAccess().getLeftCurlyBracketKeyword_2());
+			newLeafNode(otherlv_3, grammarAccess.getWhileAccess().getLeftCurlyBracketKeyword_3());
 		}
-		otherlv_3='condition'
+		otherlv_4='condition'
 		{
-			newLeafNode(otherlv_3, grammarAccess.getWhileAccess().getConditionKeyword_3());
+			newLeafNode(otherlv_4, grammarAccess.getWhileAccess().getConditionKeyword_4());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getWhileAccess().getConditionEStringParserRuleCall_4_0());
+					newCompositeNode(grammarAccess.getWhileAccess().getConditionEStringParserRuleCall_5_0());
 				}
-				lv_condition_4_0=ruleEString
+				lv_condition_5_0=ruleEString
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getWhileRule());
@@ -697,22 +735,22 @@ ruleWhile returns [EObject current=null]
 					set(
 						$current,
 						"condition",
-						lv_condition_4_0,
+						lv_condition_5_0,
 						"com.altran.Optimind.EString");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		otherlv_5='do'
+		otherlv_6='do'
 		{
-			newLeafNode(otherlv_5, grammarAccess.getWhileAccess().getDoKeyword_5());
+			newLeafNode(otherlv_6, grammarAccess.getWhileAccess().getDoKeyword_6());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getWhileAccess().getAbstracttaskAbstractTaskParserRuleCall_6_0());
+					newCompositeNode(grammarAccess.getWhileAccess().getAbstracttaskAbstractTaskParserRuleCall_7_0());
 				}
-				lv_abstracttask_6_0=ruleAbstractTask
+				lv_abstracttask_7_0=ruleAbstractTask
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getWhileRule());
@@ -720,15 +758,15 @@ ruleWhile returns [EObject current=null]
 					set(
 						$current,
 						"abstracttask",
-						lv_abstracttask_6_0,
+						lv_abstracttask_7_0,
 						"com.altran.Optimind.AbstractTask");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		otherlv_7='}'
+		otherlv_8='}'
 		{
-			newLeafNode(otherlv_7, grammarAccess.getWhileAccess().getRightCurlyBracketKeyword_7());
+			newLeafNode(otherlv_8, grammarAccess.getWhileAccess().getRightCurlyBracketKeyword_8());
 		}
 	)
 ;
@@ -752,7 +790,7 @@ ruleIf returns [EObject current=null]
 		(
 			{
 				$current = forceCreateModelElement(
-					grammarAccess.getIfAccess().getIfAction_0(),
+					grammarAccess.getIfAccess().getIfStatementAction_0(),
 					$current);
 			}
 		)
@@ -760,20 +798,39 @@ ruleIf returns [EObject current=null]
 		{
 			newLeafNode(otherlv_1, grammarAccess.getIfAccess().getIfKeyword_1());
 		}
-		otherlv_2='{'
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getIfAccess().getNameEStringParserRuleCall_2_0());
+				}
+				lv_name_2_0=ruleEString
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getIfRule());
+					}
+					set(
+						$current,
+						"name",
+						lv_name_2_0,
+						"com.altran.Optimind.EString");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_3='{'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getIfAccess().getLeftCurlyBracketKeyword_2());
+			newLeafNode(otherlv_3, grammarAccess.getIfAccess().getLeftCurlyBracketKeyword_3());
 		}
-		otherlv_3='condition'
+		otherlv_4='condition'
 		{
-			newLeafNode(otherlv_3, grammarAccess.getIfAccess().getConditionKeyword_3());
+			newLeafNode(otherlv_4, grammarAccess.getIfAccess().getConditionKeyword_4());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getIfAccess().getConditionEStringParserRuleCall_4_0());
+					newCompositeNode(grammarAccess.getIfAccess().getConditionEStringParserRuleCall_5_0());
 				}
-				lv_condition_4_0=ruleEString
+				lv_condition_5_0=ruleEString
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getIfRule());
@@ -781,22 +838,22 @@ ruleIf returns [EObject current=null]
 					set(
 						$current,
 						"condition",
-						lv_condition_4_0,
+						lv_condition_5_0,
 						"com.altran.Optimind.EString");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		otherlv_5='then'
+		otherlv_6='then'
 		{
-			newLeafNode(otherlv_5, grammarAccess.getIfAccess().getThenKeyword_5());
+			newLeafNode(otherlv_6, grammarAccess.getIfAccess().getThenKeyword_6());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getIfAccess().getThenAbstractTaskParserRuleCall_6_0());
+					newCompositeNode(grammarAccess.getIfAccess().getThenAbstractTaskParserRuleCall_7_0());
 				}
-				lv_then_6_0=ruleAbstractTask
+				lv_then_7_0=ruleAbstractTask
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getIfRule());
@@ -804,23 +861,23 @@ ruleIf returns [EObject current=null]
 					set(
 						$current,
 						"then",
-						lv_then_6_0,
+						lv_then_7_0,
 						"com.altran.Optimind.AbstractTask");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
 		(
-			otherlv_7='else'
+			otherlv_8='else'
 			{
-				newLeafNode(otherlv_7, grammarAccess.getIfAccess().getElseKeyword_7_0());
+				newLeafNode(otherlv_8, grammarAccess.getIfAccess().getElseKeyword_8_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getIfAccess().getElseAbstractTaskParserRuleCall_7_1_0());
+						newCompositeNode(grammarAccess.getIfAccess().getElseAbstractTaskParserRuleCall_8_1_0());
 					}
-					lv_else_8_0=ruleAbstractTask
+					lv_else_9_0=ruleAbstractTask
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getIfRule());
@@ -828,16 +885,16 @@ ruleIf returns [EObject current=null]
 						set(
 							$current,
 							"else",
-							lv_else_8_0,
+							lv_else_9_0,
 							"com.altran.Optimind.AbstractTask");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 		)?
-		otherlv_9='}'
+		otherlv_10='}'
 		{
-			newLeafNode(otherlv_9, grammarAccess.getIfAccess().getRightCurlyBracketKeyword_8());
+			newLeafNode(otherlv_10, grammarAccess.getIfAccess().getRightCurlyBracketKeyword_9());
 		}
 	)
 ;

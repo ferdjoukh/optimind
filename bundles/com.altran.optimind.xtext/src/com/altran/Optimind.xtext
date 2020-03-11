@@ -41,9 +41,10 @@ AbstractStatement returns AbstractStatement:
 	 For | While | If;
 
 
-For returns For:
-	{For}
+For returns ForStatement:
+	{ForStatement}
 	'For'
+	name=EString
 	'{'
 		'from' from=EInt
 		'to' to=EInt
@@ -52,18 +53,20 @@ For returns For:
 	'}'
 ;
 
-While returns While:
-	{While}
+While returns WhileStatement:
+	{WhileStatement}
 	'While'
+	name=EString
 	'{'
 		'condition' condition=EString
 		'do' abstracttask=AbstractTask
 	'}'
 ;
 
-If returns If:
-	{If}
+If returns IfStatement:
+	{IfStatement}
 	'If'
+	name=EString
 	'{'
 		'condition' condition=EString
 		'then' then=AbstractTask

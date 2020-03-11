@@ -157,31 +157,31 @@ public interface WorkflowFactory extends EFactory {
 	Output createOutput();
 
 	/**
-	 * Returns a new object of class '<em>While</em>'.
+	 * Returns a new object of class '<em>While Statement</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>While</em>'.
+	 * @return a new object of class '<em>While Statement</em>'.
 	 * @generated
 	 */
-	While createWhile();
+	WhileStatement createWhileStatement();
 
 	/**
-	 * Returns a new object of class '<em>For</em>'.
+	 * Returns a new object of class '<em>For Statement</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>For</em>'.
+	 * @return a new object of class '<em>For Statement</em>'.
 	 * @generated
 	 */
-	For createFor();
+	ForStatement createForStatement();
 
 	/**
-	 * Returns a new object of class '<em>If</em>'.
+	 * Returns a new object of class '<em>If Statement</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>If</em>'.
+	 * @return a new object of class '<em>If Statement</em>'.
 	 * @generated
 	 */
-	If createIf();
+	IfStatement createIfStatement();
 
 	/**
 	 * Returns the package supported by this factory.

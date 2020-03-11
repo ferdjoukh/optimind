@@ -272,11 +272,13 @@ public class WorkflowSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case WorkflowPackage.WHILE: {
-			While while_ = (While) theEObject;
-			T result = caseWhile(while_);
+		case WorkflowPackage.WHILE_STATEMENT: {
+			WhileStatement whileStatement = (WhileStatement) theEObject;
+			T result = caseWhileStatement(whileStatement);
 			if (result == null)
-				result = caseAbstractStatement(while_);
+				result = caseAbstractStatement(whileStatement);
+			if (result == null)
+				result = caseNamedElement(whileStatement);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -285,25 +287,31 @@ public class WorkflowSwitch<T> extends Switch<T> {
 			AbstractStatement abstractStatement = (AbstractStatement) theEObject;
 			T result = caseAbstractStatement(abstractStatement);
 			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case WorkflowPackage.FOR: {
-			For for_ = (For) theEObject;
-			T result = caseFor(for_);
-			if (result == null)
-				result = caseWhile(for_);
-			if (result == null)
-				result = caseAbstractStatement(for_);
+				result = caseNamedElement(abstractStatement);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case WorkflowPackage.IF: {
-			If if_ = (If) theEObject;
-			T result = caseIf(if_);
+		case WorkflowPackage.FOR_STATEMENT: {
+			ForStatement forStatement = (ForStatement) theEObject;
+			T result = caseForStatement(forStatement);
 			if (result == null)
-				result = caseAbstractStatement(if_);
+				result = caseWhileStatement(forStatement);
+			if (result == null)
+				result = caseAbstractStatement(forStatement);
+			if (result == null)
+				result = caseNamedElement(forStatement);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case WorkflowPackage.IF_STATEMENT: {
+			IfStatement ifStatement = (IfStatement) theEObject;
+			T result = caseIfStatement(ifStatement);
+			if (result == null)
+				result = caseAbstractStatement(ifStatement);
+			if (result == null)
+				result = caseNamedElement(ifStatement);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -584,17 +592,17 @@ public class WorkflowSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>While</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>While Statement</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>While</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>While Statement</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseWhile(While object) {
+	public T caseWhileStatement(WhileStatement object) {
 		return null;
 	}
 
@@ -614,32 +622,32 @@ public class WorkflowSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>For</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>For Statement</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>For</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>For Statement</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseFor(For object) {
+	public T caseForStatement(ForStatement object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>If</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>If Statement</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>If</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>If Statement</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseIf(If object) {
+	public T caseIfStatement(IfStatement object) {
 		return null;
 	}
 
