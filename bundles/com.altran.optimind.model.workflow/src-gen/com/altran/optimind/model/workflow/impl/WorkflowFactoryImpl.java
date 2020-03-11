@@ -87,12 +87,12 @@ public class WorkflowFactoryImpl extends EFactoryImpl implements WorkflowFactory
 			return createInput();
 		case WorkflowPackage.OUTPUT:
 			return createOutput();
-		case WorkflowPackage.WHILE:
-			return createWhile();
-		case WorkflowPackage.FOR:
-			return createFor();
-		case WorkflowPackage.IF:
-			return createIf();
+		case WorkflowPackage.WHILE_STATEMENT:
+			return createWhileStatement();
+		case WorkflowPackage.FOR_STATEMENT:
+			return createForStatement();
+		case WorkflowPackage.IF_STATEMENT:
+			return createIfStatement();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -287,9 +287,9 @@ public class WorkflowFactoryImpl extends EFactoryImpl implements WorkflowFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public While createWhile() {
-		WhileImpl while_ = new WhileImpl();
-		return while_;
+	public WhileStatement createWhileStatement() {
+		WhileStatementImpl whileStatement = new WhileStatementImpl();
+		return whileStatement;
 	}
 
 	/**
@@ -297,9 +297,9 @@ public class WorkflowFactoryImpl extends EFactoryImpl implements WorkflowFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public For createFor() {
-		ForImpl for_ = new ForImpl();
-		return for_;
+	public ForStatement createForStatement() {
+		ForStatementImpl forStatement = new ForStatementImpl();
+		return forStatement;
 	}
 
 	/**
@@ -307,9 +307,9 @@ public class WorkflowFactoryImpl extends EFactoryImpl implements WorkflowFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public If createIf() {
-		IfImpl if_ = new IfImpl();
-		return if_;
+	public IfStatement createIfStatement() {
+		IfStatementImpl ifStatement = new IfStatementImpl();
+		return ifStatement;
 	}
 
 	/**

@@ -109,7 +109,7 @@ public class IfItemProvider extends AbstractStatementItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((If) object).getCondition();
+		String label = ((If) object).getName();
 		return label == null || label.length() == 0 ? getString("_UI_If_type") : getString("_UI_If_type") + " " + label;
 	}
 

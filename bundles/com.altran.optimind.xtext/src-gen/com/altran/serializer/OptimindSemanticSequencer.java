@@ -6,15 +6,15 @@ package com.altran.serializer;
 import com.altran.optimind.model.workflow.BaseTask;
 import com.altran.optimind.model.workflow.Connection;
 import com.altran.optimind.model.workflow.CustomTask;
-import com.altran.optimind.model.workflow.For;
-import com.altran.optimind.model.workflow.If;
+import com.altran.optimind.model.workflow.ForStatement;
+import com.altran.optimind.model.workflow.IfStatement;
 import com.altran.optimind.model.workflow.Input;
 import com.altran.optimind.model.workflow.LibraryFunction;
 import com.altran.optimind.model.workflow.LibraryTask;
 import com.altran.optimind.model.workflow.Output;
 import com.altran.optimind.model.workflow.Setter;
 import com.altran.optimind.model.workflow.TaskOutput;
-import com.altran.optimind.model.workflow.While;
+import com.altran.optimind.model.workflow.WhileStatement;
 import com.altran.optimind.model.workflow.Workflow;
 import com.altran.optimind.model.workflow.WorkflowPackage;
 import com.altran.services.OptimindGrammarAccess;
@@ -53,11 +53,11 @@ public class OptimindSemanticSequencer extends AbstractDelegatingSemanticSequenc
 			case WorkflowPackage.CUSTOM_TASK:
 				sequence_CustomTask(context, (CustomTask) semanticObject); 
 				return; 
-			case WorkflowPackage.FOR:
-				sequence_For(context, (For) semanticObject); 
+			case WorkflowPackage.FOR_STATEMENT:
+				sequence_For(context, (ForStatement) semanticObject); 
 				return; 
-			case WorkflowPackage.IF:
-				sequence_If(context, (If) semanticObject); 
+			case WorkflowPackage.IF_STATEMENT:
+				sequence_If(context, (IfStatement) semanticObject); 
 				return; 
 			case WorkflowPackage.INPUT:
 				sequence_Input(context, (Input) semanticObject); 
@@ -77,8 +77,8 @@ public class OptimindSemanticSequencer extends AbstractDelegatingSemanticSequenc
 			case WorkflowPackage.TASK_OUTPUT:
 				sequence_TaskOutput(context, (TaskOutput) semanticObject); 
 				return; 
-			case WorkflowPackage.WHILE:
-				sequence_While(context, (While) semanticObject); 
+			case WorkflowPackage.WHILE_STATEMENT:
+				sequence_While(context, (WhileStatement) semanticObject); 
 				return; 
 			case WorkflowPackage.WORKFLOW:
 				sequence_Workflow(context, (Workflow) semanticObject); 
@@ -135,41 +135,44 @@ public class OptimindSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	
 	/**
 	 * Contexts:
-	 *     AbstractStatement returns For
-	 *     For returns For
+	 *     AbstractStatement returns ForStatement
+	 *     For returns ForStatement
 	 *
 	 * Constraint:
-	 *     (from=EInt to=EInt increment=EInt abstracttask=AbstractTask)
+	 *     (name=EString from=EInt to=EInt increment=EInt abstracttask=AbstractTask)
 	 */
-	protected void sequence_For(ISerializationContext context, For semanticObject) {
+	protected void sequence_For(ISerializationContext context, ForStatement semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, WorkflowPackage.Literals.FOR__FROM) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WorkflowPackage.Literals.FOR__FROM));
-			if (transientValues.isValueTransient(semanticObject, WorkflowPackage.Literals.FOR__TO) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WorkflowPackage.Literals.FOR__TO));
-			if (transientValues.isValueTransient(semanticObject, WorkflowPackage.Literals.FOR__INCREMENT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WorkflowPackage.Literals.FOR__INCREMENT));
-			if (transientValues.isValueTransient(semanticObject, WorkflowPackage.Literals.WHILE__ABSTRACTTASK) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WorkflowPackage.Literals.WHILE__ABSTRACTTASK));
+			if (transientValues.isValueTransient(semanticObject, WorkflowPackage.Literals.NAMED_ELEMENT__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WorkflowPackage.Literals.NAMED_ELEMENT__NAME));
+			if (transientValues.isValueTransient(semanticObject, WorkflowPackage.Literals.FOR_STATEMENT__FROM) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WorkflowPackage.Literals.FOR_STATEMENT__FROM));
+			if (transientValues.isValueTransient(semanticObject, WorkflowPackage.Literals.FOR_STATEMENT__TO) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WorkflowPackage.Literals.FOR_STATEMENT__TO));
+			if (transientValues.isValueTransient(semanticObject, WorkflowPackage.Literals.FOR_STATEMENT__INCREMENT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WorkflowPackage.Literals.FOR_STATEMENT__INCREMENT));
+			if (transientValues.isValueTransient(semanticObject, WorkflowPackage.Literals.WHILE_STATEMENT__ABSTRACTTASK) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WorkflowPackage.Literals.WHILE_STATEMENT__ABSTRACTTASK));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getForAccess().getFromEIntParserRuleCall_4_0(), semanticObject.getFrom());
-		feeder.accept(grammarAccess.getForAccess().getToEIntParserRuleCall_6_0(), semanticObject.getTo());
-		feeder.accept(grammarAccess.getForAccess().getIncrementEIntParserRuleCall_8_0(), semanticObject.getIncrement());
-		feeder.accept(grammarAccess.getForAccess().getAbstracttaskAbstractTaskParserRuleCall_10_0(), semanticObject.getAbstracttask());
+		feeder.accept(grammarAccess.getForAccess().getNameEStringParserRuleCall_2_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getForAccess().getFromEIntParserRuleCall_5_0(), semanticObject.getFrom());
+		feeder.accept(grammarAccess.getForAccess().getToEIntParserRuleCall_7_0(), semanticObject.getTo());
+		feeder.accept(grammarAccess.getForAccess().getIncrementEIntParserRuleCall_9_0(), semanticObject.getIncrement());
+		feeder.accept(grammarAccess.getForAccess().getAbstracttaskAbstractTaskParserRuleCall_11_0(), semanticObject.getAbstracttask());
 		feeder.finish();
 	}
 	
 	
 	/**
 	 * Contexts:
-	 *     AbstractStatement returns If
-	 *     If returns If
+	 *     AbstractStatement returns IfStatement
+	 *     If returns IfStatement
 	 *
 	 * Constraint:
-	 *     (condition=EString then=AbstractTask else=AbstractTask?)
+	 *     (name=EString condition=EString then=AbstractTask else=AbstractTask?)
 	 */
-	protected void sequence_If(ISerializationContext context, If semanticObject) {
+	protected void sequence_If(ISerializationContext context, IfStatement semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -256,22 +259,25 @@ public class OptimindSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	
 	/**
 	 * Contexts:
-	 *     AbstractStatement returns While
-	 *     While returns While
+	 *     AbstractStatement returns WhileStatement
+	 *     While returns WhileStatement
 	 *
 	 * Constraint:
-	 *     (condition=EString abstracttask=AbstractTask)
+	 *     (name=EString condition=EString abstracttask=AbstractTask)
 	 */
-	protected void sequence_While(ISerializationContext context, While semanticObject) {
+	protected void sequence_While(ISerializationContext context, WhileStatement semanticObject) {
 		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, WorkflowPackage.Literals.NAMED_ELEMENT__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WorkflowPackage.Literals.NAMED_ELEMENT__NAME));
 			if (transientValues.isValueTransient(semanticObject, WorkflowPackage.Literals.ABSTRACT_STATEMENT__CONDITION) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WorkflowPackage.Literals.ABSTRACT_STATEMENT__CONDITION));
-			if (transientValues.isValueTransient(semanticObject, WorkflowPackage.Literals.WHILE__ABSTRACTTASK) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WorkflowPackage.Literals.WHILE__ABSTRACTTASK));
+			if (transientValues.isValueTransient(semanticObject, WorkflowPackage.Literals.WHILE_STATEMENT__ABSTRACTTASK) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, WorkflowPackage.Literals.WHILE_STATEMENT__ABSTRACTTASK));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getWhileAccess().getConditionEStringParserRuleCall_4_0(), semanticObject.getCondition());
-		feeder.accept(grammarAccess.getWhileAccess().getAbstracttaskAbstractTaskParserRuleCall_6_0(), semanticObject.getAbstracttask());
+		feeder.accept(grammarAccess.getWhileAccess().getNameEStringParserRuleCall_2_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getWhileAccess().getConditionEStringParserRuleCall_5_0(), semanticObject.getCondition());
+		feeder.accept(grammarAccess.getWhileAccess().getAbstracttaskAbstractTaskParserRuleCall_7_0(), semanticObject.getAbstracttask());
 		feeder.finish();
 	}
 	

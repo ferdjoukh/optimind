@@ -4189,13 +4189,13 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
             // InternalOptimind.g:1335:1: ( () )
             // InternalOptimind.g:1336:2: ()
             {
-             before(grammarAccess.getForAccess().getForAction_0()); 
+             before(grammarAccess.getForAccess().getForStatementAction_0()); 
             // InternalOptimind.g:1337:2: ()
             // InternalOptimind.g:1337:3: 
             {
             }
 
-             after(grammarAccess.getForAccess().getForAction_0()); 
+             after(grammarAccess.getForAccess().getForStatementAction_0()); 
 
             }
 
@@ -4223,7 +4223,7 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
             // InternalOptimind.g:1349:1: ( rule__For__Group__1__Impl rule__For__Group__2 )
             // InternalOptimind.g:1350:2: rule__For__Group__1__Impl rule__For__Group__2
             {
-            pushFollow(FOLLOW_5);
+            pushFollow(FOLLOW_4);
             rule__For__Group__1__Impl();
 
             state._fsp--;
@@ -4298,7 +4298,7 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
             // InternalOptimind.g:1376:1: ( rule__For__Group__2__Impl rule__For__Group__3 )
             // InternalOptimind.g:1377:2: rule__For__Group__2__Impl rule__For__Group__3
             {
-            pushFollow(FOLLOW_13);
+            pushFollow(FOLLOW_5);
             rule__For__Group__2__Impl();
 
             state._fsp--;
@@ -4327,21 +4327,31 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__For__Group__2__Impl"
-    // InternalOptimind.g:1384:1: rule__For__Group__2__Impl : ( '{' ) ;
+    // InternalOptimind.g:1384:1: rule__For__Group__2__Impl : ( ( rule__For__NameAssignment_2 ) ) ;
     public final void rule__For__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:1388:1: ( ( '{' ) )
-            // InternalOptimind.g:1389:1: ( '{' )
+            // InternalOptimind.g:1388:1: ( ( ( rule__For__NameAssignment_2 ) ) )
+            // InternalOptimind.g:1389:1: ( ( rule__For__NameAssignment_2 ) )
             {
-            // InternalOptimind.g:1389:1: ( '{' )
-            // InternalOptimind.g:1390:2: '{'
+            // InternalOptimind.g:1389:1: ( ( rule__For__NameAssignment_2 ) )
+            // InternalOptimind.g:1390:2: ( rule__For__NameAssignment_2 )
             {
-             before(grammarAccess.getForAccess().getLeftCurlyBracketKeyword_2()); 
-            match(input,18,FOLLOW_2); 
-             after(grammarAccess.getForAccess().getLeftCurlyBracketKeyword_2()); 
+             before(grammarAccess.getForAccess().getNameAssignment_2()); 
+            // InternalOptimind.g:1391:2: ( rule__For__NameAssignment_2 )
+            // InternalOptimind.g:1391:3: rule__For__NameAssignment_2
+            {
+            pushFollow(FOLLOW_2);
+            rule__For__NameAssignment_2();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getForAccess().getNameAssignment_2()); 
 
             }
 
@@ -4373,7 +4383,7 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
             // InternalOptimind.g:1403:1: ( rule__For__Group__3__Impl rule__For__Group__4 )
             // InternalOptimind.g:1404:2: rule__For__Group__3__Impl rule__For__Group__4
             {
-            pushFollow(FOLLOW_14);
+            pushFollow(FOLLOW_13);
             rule__For__Group__3__Impl();
 
             state._fsp--;
@@ -4402,21 +4412,21 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__For__Group__3__Impl"
-    // InternalOptimind.g:1411:1: rule__For__Group__3__Impl : ( 'from' ) ;
+    // InternalOptimind.g:1411:1: rule__For__Group__3__Impl : ( '{' ) ;
     public final void rule__For__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:1415:1: ( ( 'from' ) )
-            // InternalOptimind.g:1416:1: ( 'from' )
+            // InternalOptimind.g:1415:1: ( ( '{' ) )
+            // InternalOptimind.g:1416:1: ( '{' )
             {
-            // InternalOptimind.g:1416:1: ( 'from' )
-            // InternalOptimind.g:1417:2: 'from'
+            // InternalOptimind.g:1416:1: ( '{' )
+            // InternalOptimind.g:1417:2: '{'
             {
-             before(grammarAccess.getForAccess().getFromKeyword_3()); 
-            match(input,25,FOLLOW_2); 
-             after(grammarAccess.getForAccess().getFromKeyword_3()); 
+             before(grammarAccess.getForAccess().getLeftCurlyBracketKeyword_3()); 
+            match(input,18,FOLLOW_2); 
+             after(grammarAccess.getForAccess().getLeftCurlyBracketKeyword_3()); 
 
             }
 
@@ -4448,7 +4458,7 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
             // InternalOptimind.g:1430:1: ( rule__For__Group__4__Impl rule__For__Group__5 )
             // InternalOptimind.g:1431:2: rule__For__Group__4__Impl rule__For__Group__5
             {
-            pushFollow(FOLLOW_15);
+            pushFollow(FOLLOW_14);
             rule__For__Group__4__Impl();
 
             state._fsp--;
@@ -4477,31 +4487,21 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__For__Group__4__Impl"
-    // InternalOptimind.g:1438:1: rule__For__Group__4__Impl : ( ( rule__For__FromAssignment_4 ) ) ;
+    // InternalOptimind.g:1438:1: rule__For__Group__4__Impl : ( 'from' ) ;
     public final void rule__For__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:1442:1: ( ( ( rule__For__FromAssignment_4 ) ) )
-            // InternalOptimind.g:1443:1: ( ( rule__For__FromAssignment_4 ) )
+            // InternalOptimind.g:1442:1: ( ( 'from' ) )
+            // InternalOptimind.g:1443:1: ( 'from' )
             {
-            // InternalOptimind.g:1443:1: ( ( rule__For__FromAssignment_4 ) )
-            // InternalOptimind.g:1444:2: ( rule__For__FromAssignment_4 )
+            // InternalOptimind.g:1443:1: ( 'from' )
+            // InternalOptimind.g:1444:2: 'from'
             {
-             before(grammarAccess.getForAccess().getFromAssignment_4()); 
-            // InternalOptimind.g:1445:2: ( rule__For__FromAssignment_4 )
-            // InternalOptimind.g:1445:3: rule__For__FromAssignment_4
-            {
-            pushFollow(FOLLOW_2);
-            rule__For__FromAssignment_4();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getForAccess().getFromAssignment_4()); 
+             before(grammarAccess.getForAccess().getFromKeyword_4()); 
+            match(input,25,FOLLOW_2); 
+             after(grammarAccess.getForAccess().getFromKeyword_4()); 
 
             }
 
@@ -4533,7 +4533,7 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
             // InternalOptimind.g:1457:1: ( rule__For__Group__5__Impl rule__For__Group__6 )
             // InternalOptimind.g:1458:2: rule__For__Group__5__Impl rule__For__Group__6
             {
-            pushFollow(FOLLOW_14);
+            pushFollow(FOLLOW_15);
             rule__For__Group__5__Impl();
 
             state._fsp--;
@@ -4562,21 +4562,31 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__For__Group__5__Impl"
-    // InternalOptimind.g:1465:1: rule__For__Group__5__Impl : ( 'to' ) ;
+    // InternalOptimind.g:1465:1: rule__For__Group__5__Impl : ( ( rule__For__FromAssignment_5 ) ) ;
     public final void rule__For__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:1469:1: ( ( 'to' ) )
-            // InternalOptimind.g:1470:1: ( 'to' )
+            // InternalOptimind.g:1469:1: ( ( ( rule__For__FromAssignment_5 ) ) )
+            // InternalOptimind.g:1470:1: ( ( rule__For__FromAssignment_5 ) )
             {
-            // InternalOptimind.g:1470:1: ( 'to' )
-            // InternalOptimind.g:1471:2: 'to'
+            // InternalOptimind.g:1470:1: ( ( rule__For__FromAssignment_5 ) )
+            // InternalOptimind.g:1471:2: ( rule__For__FromAssignment_5 )
             {
-             before(grammarAccess.getForAccess().getToKeyword_5()); 
-            match(input,26,FOLLOW_2); 
-             after(grammarAccess.getForAccess().getToKeyword_5()); 
+             before(grammarAccess.getForAccess().getFromAssignment_5()); 
+            // InternalOptimind.g:1472:2: ( rule__For__FromAssignment_5 )
+            // InternalOptimind.g:1472:3: rule__For__FromAssignment_5
+            {
+            pushFollow(FOLLOW_2);
+            rule__For__FromAssignment_5();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getForAccess().getFromAssignment_5()); 
 
             }
 
@@ -4608,7 +4618,7 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
             // InternalOptimind.g:1484:1: ( rule__For__Group__6__Impl rule__For__Group__7 )
             // InternalOptimind.g:1485:2: rule__For__Group__6__Impl rule__For__Group__7
             {
-            pushFollow(FOLLOW_16);
+            pushFollow(FOLLOW_14);
             rule__For__Group__6__Impl();
 
             state._fsp--;
@@ -4637,31 +4647,21 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__For__Group__6__Impl"
-    // InternalOptimind.g:1492:1: rule__For__Group__6__Impl : ( ( rule__For__ToAssignment_6 ) ) ;
+    // InternalOptimind.g:1492:1: rule__For__Group__6__Impl : ( 'to' ) ;
     public final void rule__For__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:1496:1: ( ( ( rule__For__ToAssignment_6 ) ) )
-            // InternalOptimind.g:1497:1: ( ( rule__For__ToAssignment_6 ) )
+            // InternalOptimind.g:1496:1: ( ( 'to' ) )
+            // InternalOptimind.g:1497:1: ( 'to' )
             {
-            // InternalOptimind.g:1497:1: ( ( rule__For__ToAssignment_6 ) )
-            // InternalOptimind.g:1498:2: ( rule__For__ToAssignment_6 )
+            // InternalOptimind.g:1497:1: ( 'to' )
+            // InternalOptimind.g:1498:2: 'to'
             {
-             before(grammarAccess.getForAccess().getToAssignment_6()); 
-            // InternalOptimind.g:1499:2: ( rule__For__ToAssignment_6 )
-            // InternalOptimind.g:1499:3: rule__For__ToAssignment_6
-            {
-            pushFollow(FOLLOW_2);
-            rule__For__ToAssignment_6();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getForAccess().getToAssignment_6()); 
+             before(grammarAccess.getForAccess().getToKeyword_6()); 
+            match(input,26,FOLLOW_2); 
+             after(grammarAccess.getForAccess().getToKeyword_6()); 
 
             }
 
@@ -4693,7 +4693,7 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
             // InternalOptimind.g:1511:1: ( rule__For__Group__7__Impl rule__For__Group__8 )
             // InternalOptimind.g:1512:2: rule__For__Group__7__Impl rule__For__Group__8
             {
-            pushFollow(FOLLOW_14);
+            pushFollow(FOLLOW_16);
             rule__For__Group__7__Impl();
 
             state._fsp--;
@@ -4722,21 +4722,31 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__For__Group__7__Impl"
-    // InternalOptimind.g:1519:1: rule__For__Group__7__Impl : ( 'increment' ) ;
+    // InternalOptimind.g:1519:1: rule__For__Group__7__Impl : ( ( rule__For__ToAssignment_7 ) ) ;
     public final void rule__For__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:1523:1: ( ( 'increment' ) )
-            // InternalOptimind.g:1524:1: ( 'increment' )
+            // InternalOptimind.g:1523:1: ( ( ( rule__For__ToAssignment_7 ) ) )
+            // InternalOptimind.g:1524:1: ( ( rule__For__ToAssignment_7 ) )
             {
-            // InternalOptimind.g:1524:1: ( 'increment' )
-            // InternalOptimind.g:1525:2: 'increment'
+            // InternalOptimind.g:1524:1: ( ( rule__For__ToAssignment_7 ) )
+            // InternalOptimind.g:1525:2: ( rule__For__ToAssignment_7 )
             {
-             before(grammarAccess.getForAccess().getIncrementKeyword_7()); 
-            match(input,27,FOLLOW_2); 
-             after(grammarAccess.getForAccess().getIncrementKeyword_7()); 
+             before(grammarAccess.getForAccess().getToAssignment_7()); 
+            // InternalOptimind.g:1526:2: ( rule__For__ToAssignment_7 )
+            // InternalOptimind.g:1526:3: rule__For__ToAssignment_7
+            {
+            pushFollow(FOLLOW_2);
+            rule__For__ToAssignment_7();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getForAccess().getToAssignment_7()); 
 
             }
 
@@ -4768,7 +4778,7 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
             // InternalOptimind.g:1538:1: ( rule__For__Group__8__Impl rule__For__Group__9 )
             // InternalOptimind.g:1539:2: rule__For__Group__8__Impl rule__For__Group__9
             {
-            pushFollow(FOLLOW_17);
+            pushFollow(FOLLOW_14);
             rule__For__Group__8__Impl();
 
             state._fsp--;
@@ -4797,31 +4807,21 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__For__Group__8__Impl"
-    // InternalOptimind.g:1546:1: rule__For__Group__8__Impl : ( ( rule__For__IncrementAssignment_8 ) ) ;
+    // InternalOptimind.g:1546:1: rule__For__Group__8__Impl : ( 'increment' ) ;
     public final void rule__For__Group__8__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:1550:1: ( ( ( rule__For__IncrementAssignment_8 ) ) )
-            // InternalOptimind.g:1551:1: ( ( rule__For__IncrementAssignment_8 ) )
+            // InternalOptimind.g:1550:1: ( ( 'increment' ) )
+            // InternalOptimind.g:1551:1: ( 'increment' )
             {
-            // InternalOptimind.g:1551:1: ( ( rule__For__IncrementAssignment_8 ) )
-            // InternalOptimind.g:1552:2: ( rule__For__IncrementAssignment_8 )
+            // InternalOptimind.g:1551:1: ( 'increment' )
+            // InternalOptimind.g:1552:2: 'increment'
             {
-             before(grammarAccess.getForAccess().getIncrementAssignment_8()); 
-            // InternalOptimind.g:1553:2: ( rule__For__IncrementAssignment_8 )
-            // InternalOptimind.g:1553:3: rule__For__IncrementAssignment_8
-            {
-            pushFollow(FOLLOW_2);
-            rule__For__IncrementAssignment_8();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getForAccess().getIncrementAssignment_8()); 
+             before(grammarAccess.getForAccess().getIncrementKeyword_8()); 
+            match(input,27,FOLLOW_2); 
+             after(grammarAccess.getForAccess().getIncrementKeyword_8()); 
 
             }
 
@@ -4853,7 +4853,7 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
             // InternalOptimind.g:1565:1: ( rule__For__Group__9__Impl rule__For__Group__10 )
             // InternalOptimind.g:1566:2: rule__For__Group__9__Impl rule__For__Group__10
             {
-            pushFollow(FOLLOW_18);
+            pushFollow(FOLLOW_17);
             rule__For__Group__9__Impl();
 
             state._fsp--;
@@ -4882,21 +4882,31 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__For__Group__9__Impl"
-    // InternalOptimind.g:1573:1: rule__For__Group__9__Impl : ( 'do' ) ;
+    // InternalOptimind.g:1573:1: rule__For__Group__9__Impl : ( ( rule__For__IncrementAssignment_9 ) ) ;
     public final void rule__For__Group__9__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:1577:1: ( ( 'do' ) )
-            // InternalOptimind.g:1578:1: ( 'do' )
+            // InternalOptimind.g:1577:1: ( ( ( rule__For__IncrementAssignment_9 ) ) )
+            // InternalOptimind.g:1578:1: ( ( rule__For__IncrementAssignment_9 ) )
             {
-            // InternalOptimind.g:1578:1: ( 'do' )
-            // InternalOptimind.g:1579:2: 'do'
+            // InternalOptimind.g:1578:1: ( ( rule__For__IncrementAssignment_9 ) )
+            // InternalOptimind.g:1579:2: ( rule__For__IncrementAssignment_9 )
             {
-             before(grammarAccess.getForAccess().getDoKeyword_9()); 
-            match(input,28,FOLLOW_2); 
-             after(grammarAccess.getForAccess().getDoKeyword_9()); 
+             before(grammarAccess.getForAccess().getIncrementAssignment_9()); 
+            // InternalOptimind.g:1580:2: ( rule__For__IncrementAssignment_9 )
+            // InternalOptimind.g:1580:3: rule__For__IncrementAssignment_9
+            {
+            pushFollow(FOLLOW_2);
+            rule__For__IncrementAssignment_9();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getForAccess().getIncrementAssignment_9()); 
 
             }
 
@@ -4928,7 +4938,7 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
             // InternalOptimind.g:1592:1: ( rule__For__Group__10__Impl rule__For__Group__11 )
             // InternalOptimind.g:1593:2: rule__For__Group__10__Impl rule__For__Group__11
             {
-            pushFollow(FOLLOW_19);
+            pushFollow(FOLLOW_18);
             rule__For__Group__10__Impl();
 
             state._fsp--;
@@ -4957,31 +4967,21 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__For__Group__10__Impl"
-    // InternalOptimind.g:1600:1: rule__For__Group__10__Impl : ( ( rule__For__AbstracttaskAssignment_10 ) ) ;
+    // InternalOptimind.g:1600:1: rule__For__Group__10__Impl : ( 'do' ) ;
     public final void rule__For__Group__10__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:1604:1: ( ( ( rule__For__AbstracttaskAssignment_10 ) ) )
-            // InternalOptimind.g:1605:1: ( ( rule__For__AbstracttaskAssignment_10 ) )
+            // InternalOptimind.g:1604:1: ( ( 'do' ) )
+            // InternalOptimind.g:1605:1: ( 'do' )
             {
-            // InternalOptimind.g:1605:1: ( ( rule__For__AbstracttaskAssignment_10 ) )
-            // InternalOptimind.g:1606:2: ( rule__For__AbstracttaskAssignment_10 )
+            // InternalOptimind.g:1605:1: ( 'do' )
+            // InternalOptimind.g:1606:2: 'do'
             {
-             before(grammarAccess.getForAccess().getAbstracttaskAssignment_10()); 
-            // InternalOptimind.g:1607:2: ( rule__For__AbstracttaskAssignment_10 )
-            // InternalOptimind.g:1607:3: rule__For__AbstracttaskAssignment_10
-            {
-            pushFollow(FOLLOW_2);
-            rule__For__AbstracttaskAssignment_10();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getForAccess().getAbstracttaskAssignment_10()); 
+             before(grammarAccess.getForAccess().getDoKeyword_10()); 
+            match(input,28,FOLLOW_2); 
+             after(grammarAccess.getForAccess().getDoKeyword_10()); 
 
             }
 
@@ -5004,17 +5004,22 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__For__Group__11"
-    // InternalOptimind.g:1615:1: rule__For__Group__11 : rule__For__Group__11__Impl ;
+    // InternalOptimind.g:1615:1: rule__For__Group__11 : rule__For__Group__11__Impl rule__For__Group__12 ;
     public final void rule__For__Group__11() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:1619:1: ( rule__For__Group__11__Impl )
-            // InternalOptimind.g:1620:2: rule__For__Group__11__Impl
+            // InternalOptimind.g:1619:1: ( rule__For__Group__11__Impl rule__For__Group__12 )
+            // InternalOptimind.g:1620:2: rule__For__Group__11__Impl rule__For__Group__12
             {
-            pushFollow(FOLLOW_2);
+            pushFollow(FOLLOW_19);
             rule__For__Group__11__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__For__Group__12();
 
             state._fsp--;
 
@@ -5037,21 +5042,31 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__For__Group__11__Impl"
-    // InternalOptimind.g:1626:1: rule__For__Group__11__Impl : ( '}' ) ;
+    // InternalOptimind.g:1627:1: rule__For__Group__11__Impl : ( ( rule__For__AbstracttaskAssignment_11 ) ) ;
     public final void rule__For__Group__11__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:1630:1: ( ( '}' ) )
-            // InternalOptimind.g:1631:1: ( '}' )
+            // InternalOptimind.g:1631:1: ( ( ( rule__For__AbstracttaskAssignment_11 ) ) )
+            // InternalOptimind.g:1632:1: ( ( rule__For__AbstracttaskAssignment_11 ) )
             {
-            // InternalOptimind.g:1631:1: ( '}' )
-            // InternalOptimind.g:1632:2: '}'
+            // InternalOptimind.g:1632:1: ( ( rule__For__AbstracttaskAssignment_11 ) )
+            // InternalOptimind.g:1633:2: ( rule__For__AbstracttaskAssignment_11 )
             {
-             before(grammarAccess.getForAccess().getRightCurlyBracketKeyword_11()); 
-            match(input,19,FOLLOW_2); 
-             after(grammarAccess.getForAccess().getRightCurlyBracketKeyword_11()); 
+             before(grammarAccess.getForAccess().getAbstracttaskAssignment_11()); 
+            // InternalOptimind.g:1634:2: ( rule__For__AbstracttaskAssignment_11 )
+            // InternalOptimind.g:1634:3: rule__For__AbstracttaskAssignment_11
+            {
+            pushFollow(FOLLOW_2);
+            rule__For__AbstracttaskAssignment_11();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getForAccess().getAbstracttaskAssignment_11()); 
 
             }
 
@@ -5073,15 +5088,85 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
     // $ANTLR end "rule__For__Group__11__Impl"
 
 
+    // $ANTLR start "rule__For__Group__12"
+    // InternalOptimind.g:1642:1: rule__For__Group__12 : rule__For__Group__12__Impl ;
+    public final void rule__For__Group__12() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalOptimind.g:1646:1: ( rule__For__Group__12__Impl )
+            // InternalOptimind.g:1647:2: rule__For__Group__12__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__For__Group__12__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__For__Group__12"
+
+
+    // $ANTLR start "rule__For__Group__12__Impl"
+    // InternalOptimind.g:1653:1: rule__For__Group__12__Impl : ( '}' ) ;
+    public final void rule__For__Group__12__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalOptimind.g:1657:1: ( ( '}' ) )
+            // InternalOptimind.g:1658:1: ( '}' )
+            {
+            // InternalOptimind.g:1658:1: ( '}' )
+            // InternalOptimind.g:1659:2: '}'
+            {
+             before(grammarAccess.getForAccess().getRightCurlyBracketKeyword_12()); 
+            match(input,19,FOLLOW_2); 
+             after(grammarAccess.getForAccess().getRightCurlyBracketKeyword_12()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__For__Group__12__Impl"
+
+
     // $ANTLR start "rule__While__Group__0"
-    // InternalOptimind.g:1642:1: rule__While__Group__0 : rule__While__Group__0__Impl rule__While__Group__1 ;
+    // InternalOptimind.g:1669:1: rule__While__Group__0 : rule__While__Group__0__Impl rule__While__Group__1 ;
     public final void rule__While__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:1646:1: ( rule__While__Group__0__Impl rule__While__Group__1 )
-            // InternalOptimind.g:1647:2: rule__While__Group__0__Impl rule__While__Group__1
+            // InternalOptimind.g:1673:1: ( rule__While__Group__0__Impl rule__While__Group__1 )
+            // InternalOptimind.g:1674:2: rule__While__Group__0__Impl rule__While__Group__1
             {
             pushFollow(FOLLOW_20);
             rule__While__Group__0__Impl();
@@ -5112,25 +5197,25 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__While__Group__0__Impl"
-    // InternalOptimind.g:1654:1: rule__While__Group__0__Impl : ( () ) ;
+    // InternalOptimind.g:1681:1: rule__While__Group__0__Impl : ( () ) ;
     public final void rule__While__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:1658:1: ( ( () ) )
-            // InternalOptimind.g:1659:1: ( () )
+            // InternalOptimind.g:1685:1: ( ( () ) )
+            // InternalOptimind.g:1686:1: ( () )
             {
-            // InternalOptimind.g:1659:1: ( () )
-            // InternalOptimind.g:1660:2: ()
+            // InternalOptimind.g:1686:1: ( () )
+            // InternalOptimind.g:1687:2: ()
             {
-             before(grammarAccess.getWhileAccess().getWhileAction_0()); 
-            // InternalOptimind.g:1661:2: ()
-            // InternalOptimind.g:1661:3: 
+             before(grammarAccess.getWhileAccess().getWhileStatementAction_0()); 
+            // InternalOptimind.g:1688:2: ()
+            // InternalOptimind.g:1688:3: 
             {
             }
 
-             after(grammarAccess.getWhileAccess().getWhileAction_0()); 
+             after(grammarAccess.getWhileAccess().getWhileStatementAction_0()); 
 
             }
 
@@ -5149,16 +5234,16 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__While__Group__1"
-    // InternalOptimind.g:1669:1: rule__While__Group__1 : rule__While__Group__1__Impl rule__While__Group__2 ;
+    // InternalOptimind.g:1696:1: rule__While__Group__1 : rule__While__Group__1__Impl rule__While__Group__2 ;
     public final void rule__While__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:1673:1: ( rule__While__Group__1__Impl rule__While__Group__2 )
-            // InternalOptimind.g:1674:2: rule__While__Group__1__Impl rule__While__Group__2
+            // InternalOptimind.g:1700:1: ( rule__While__Group__1__Impl rule__While__Group__2 )
+            // InternalOptimind.g:1701:2: rule__While__Group__1__Impl rule__While__Group__2
             {
-            pushFollow(FOLLOW_5);
+            pushFollow(FOLLOW_4);
             rule__While__Group__1__Impl();
 
             state._fsp--;
@@ -5187,17 +5272,17 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__While__Group__1__Impl"
-    // InternalOptimind.g:1681:1: rule__While__Group__1__Impl : ( 'While' ) ;
+    // InternalOptimind.g:1708:1: rule__While__Group__1__Impl : ( 'While' ) ;
     public final void rule__While__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:1685:1: ( ( 'While' ) )
-            // InternalOptimind.g:1686:1: ( 'While' )
+            // InternalOptimind.g:1712:1: ( ( 'While' ) )
+            // InternalOptimind.g:1713:1: ( 'While' )
             {
-            // InternalOptimind.g:1686:1: ( 'While' )
-            // InternalOptimind.g:1687:2: 'While'
+            // InternalOptimind.g:1713:1: ( 'While' )
+            // InternalOptimind.g:1714:2: 'While'
             {
              before(grammarAccess.getWhileAccess().getWhileKeyword_1()); 
             match(input,29,FOLLOW_2); 
@@ -5224,16 +5309,16 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__While__Group__2"
-    // InternalOptimind.g:1696:1: rule__While__Group__2 : rule__While__Group__2__Impl rule__While__Group__3 ;
+    // InternalOptimind.g:1723:1: rule__While__Group__2 : rule__While__Group__2__Impl rule__While__Group__3 ;
     public final void rule__While__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:1700:1: ( rule__While__Group__2__Impl rule__While__Group__3 )
-            // InternalOptimind.g:1701:2: rule__While__Group__2__Impl rule__While__Group__3
+            // InternalOptimind.g:1727:1: ( rule__While__Group__2__Impl rule__While__Group__3 )
+            // InternalOptimind.g:1728:2: rule__While__Group__2__Impl rule__While__Group__3
             {
-            pushFollow(FOLLOW_21);
+            pushFollow(FOLLOW_5);
             rule__While__Group__2__Impl();
 
             state._fsp--;
@@ -5262,21 +5347,31 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__While__Group__2__Impl"
-    // InternalOptimind.g:1708:1: rule__While__Group__2__Impl : ( '{' ) ;
+    // InternalOptimind.g:1735:1: rule__While__Group__2__Impl : ( ( rule__While__NameAssignment_2 ) ) ;
     public final void rule__While__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:1712:1: ( ( '{' ) )
-            // InternalOptimind.g:1713:1: ( '{' )
+            // InternalOptimind.g:1739:1: ( ( ( rule__While__NameAssignment_2 ) ) )
+            // InternalOptimind.g:1740:1: ( ( rule__While__NameAssignment_2 ) )
             {
-            // InternalOptimind.g:1713:1: ( '{' )
-            // InternalOptimind.g:1714:2: '{'
+            // InternalOptimind.g:1740:1: ( ( rule__While__NameAssignment_2 ) )
+            // InternalOptimind.g:1741:2: ( rule__While__NameAssignment_2 )
             {
-             before(grammarAccess.getWhileAccess().getLeftCurlyBracketKeyword_2()); 
-            match(input,18,FOLLOW_2); 
-             after(grammarAccess.getWhileAccess().getLeftCurlyBracketKeyword_2()); 
+             before(grammarAccess.getWhileAccess().getNameAssignment_2()); 
+            // InternalOptimind.g:1742:2: ( rule__While__NameAssignment_2 )
+            // InternalOptimind.g:1742:3: rule__While__NameAssignment_2
+            {
+            pushFollow(FOLLOW_2);
+            rule__While__NameAssignment_2();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getWhileAccess().getNameAssignment_2()); 
 
             }
 
@@ -5299,16 +5394,16 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__While__Group__3"
-    // InternalOptimind.g:1723:1: rule__While__Group__3 : rule__While__Group__3__Impl rule__While__Group__4 ;
+    // InternalOptimind.g:1750:1: rule__While__Group__3 : rule__While__Group__3__Impl rule__While__Group__4 ;
     public final void rule__While__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:1727:1: ( rule__While__Group__3__Impl rule__While__Group__4 )
-            // InternalOptimind.g:1728:2: rule__While__Group__3__Impl rule__While__Group__4
+            // InternalOptimind.g:1754:1: ( rule__While__Group__3__Impl rule__While__Group__4 )
+            // InternalOptimind.g:1755:2: rule__While__Group__3__Impl rule__While__Group__4
             {
-            pushFollow(FOLLOW_4);
+            pushFollow(FOLLOW_21);
             rule__While__Group__3__Impl();
 
             state._fsp--;
@@ -5337,21 +5432,21 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__While__Group__3__Impl"
-    // InternalOptimind.g:1735:1: rule__While__Group__3__Impl : ( 'condition' ) ;
+    // InternalOptimind.g:1762:1: rule__While__Group__3__Impl : ( '{' ) ;
     public final void rule__While__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:1739:1: ( ( 'condition' ) )
-            // InternalOptimind.g:1740:1: ( 'condition' )
+            // InternalOptimind.g:1766:1: ( ( '{' ) )
+            // InternalOptimind.g:1767:1: ( '{' )
             {
-            // InternalOptimind.g:1740:1: ( 'condition' )
-            // InternalOptimind.g:1741:2: 'condition'
+            // InternalOptimind.g:1767:1: ( '{' )
+            // InternalOptimind.g:1768:2: '{'
             {
-             before(grammarAccess.getWhileAccess().getConditionKeyword_3()); 
-            match(input,30,FOLLOW_2); 
-             after(grammarAccess.getWhileAccess().getConditionKeyword_3()); 
+             before(grammarAccess.getWhileAccess().getLeftCurlyBracketKeyword_3()); 
+            match(input,18,FOLLOW_2); 
+             after(grammarAccess.getWhileAccess().getLeftCurlyBracketKeyword_3()); 
 
             }
 
@@ -5374,16 +5469,16 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__While__Group__4"
-    // InternalOptimind.g:1750:1: rule__While__Group__4 : rule__While__Group__4__Impl rule__While__Group__5 ;
+    // InternalOptimind.g:1777:1: rule__While__Group__4 : rule__While__Group__4__Impl rule__While__Group__5 ;
     public final void rule__While__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:1754:1: ( rule__While__Group__4__Impl rule__While__Group__5 )
-            // InternalOptimind.g:1755:2: rule__While__Group__4__Impl rule__While__Group__5
+            // InternalOptimind.g:1781:1: ( rule__While__Group__4__Impl rule__While__Group__5 )
+            // InternalOptimind.g:1782:2: rule__While__Group__4__Impl rule__While__Group__5
             {
-            pushFollow(FOLLOW_17);
+            pushFollow(FOLLOW_4);
             rule__While__Group__4__Impl();
 
             state._fsp--;
@@ -5412,31 +5507,21 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__While__Group__4__Impl"
-    // InternalOptimind.g:1762:1: rule__While__Group__4__Impl : ( ( rule__While__ConditionAssignment_4 ) ) ;
+    // InternalOptimind.g:1789:1: rule__While__Group__4__Impl : ( 'condition' ) ;
     public final void rule__While__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:1766:1: ( ( ( rule__While__ConditionAssignment_4 ) ) )
-            // InternalOptimind.g:1767:1: ( ( rule__While__ConditionAssignment_4 ) )
+            // InternalOptimind.g:1793:1: ( ( 'condition' ) )
+            // InternalOptimind.g:1794:1: ( 'condition' )
             {
-            // InternalOptimind.g:1767:1: ( ( rule__While__ConditionAssignment_4 ) )
-            // InternalOptimind.g:1768:2: ( rule__While__ConditionAssignment_4 )
+            // InternalOptimind.g:1794:1: ( 'condition' )
+            // InternalOptimind.g:1795:2: 'condition'
             {
-             before(grammarAccess.getWhileAccess().getConditionAssignment_4()); 
-            // InternalOptimind.g:1769:2: ( rule__While__ConditionAssignment_4 )
-            // InternalOptimind.g:1769:3: rule__While__ConditionAssignment_4
-            {
-            pushFollow(FOLLOW_2);
-            rule__While__ConditionAssignment_4();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getWhileAccess().getConditionAssignment_4()); 
+             before(grammarAccess.getWhileAccess().getConditionKeyword_4()); 
+            match(input,30,FOLLOW_2); 
+             after(grammarAccess.getWhileAccess().getConditionKeyword_4()); 
 
             }
 
@@ -5459,16 +5544,16 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__While__Group__5"
-    // InternalOptimind.g:1777:1: rule__While__Group__5 : rule__While__Group__5__Impl rule__While__Group__6 ;
+    // InternalOptimind.g:1804:1: rule__While__Group__5 : rule__While__Group__5__Impl rule__While__Group__6 ;
     public final void rule__While__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:1781:1: ( rule__While__Group__5__Impl rule__While__Group__6 )
-            // InternalOptimind.g:1782:2: rule__While__Group__5__Impl rule__While__Group__6
+            // InternalOptimind.g:1808:1: ( rule__While__Group__5__Impl rule__While__Group__6 )
+            // InternalOptimind.g:1809:2: rule__While__Group__5__Impl rule__While__Group__6
             {
-            pushFollow(FOLLOW_18);
+            pushFollow(FOLLOW_17);
             rule__While__Group__5__Impl();
 
             state._fsp--;
@@ -5497,21 +5582,31 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__While__Group__5__Impl"
-    // InternalOptimind.g:1789:1: rule__While__Group__5__Impl : ( 'do' ) ;
+    // InternalOptimind.g:1816:1: rule__While__Group__5__Impl : ( ( rule__While__ConditionAssignment_5 ) ) ;
     public final void rule__While__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:1793:1: ( ( 'do' ) )
-            // InternalOptimind.g:1794:1: ( 'do' )
+            // InternalOptimind.g:1820:1: ( ( ( rule__While__ConditionAssignment_5 ) ) )
+            // InternalOptimind.g:1821:1: ( ( rule__While__ConditionAssignment_5 ) )
             {
-            // InternalOptimind.g:1794:1: ( 'do' )
-            // InternalOptimind.g:1795:2: 'do'
+            // InternalOptimind.g:1821:1: ( ( rule__While__ConditionAssignment_5 ) )
+            // InternalOptimind.g:1822:2: ( rule__While__ConditionAssignment_5 )
             {
-             before(grammarAccess.getWhileAccess().getDoKeyword_5()); 
-            match(input,28,FOLLOW_2); 
-             after(grammarAccess.getWhileAccess().getDoKeyword_5()); 
+             before(grammarAccess.getWhileAccess().getConditionAssignment_5()); 
+            // InternalOptimind.g:1823:2: ( rule__While__ConditionAssignment_5 )
+            // InternalOptimind.g:1823:3: rule__While__ConditionAssignment_5
+            {
+            pushFollow(FOLLOW_2);
+            rule__While__ConditionAssignment_5();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getWhileAccess().getConditionAssignment_5()); 
 
             }
 
@@ -5534,16 +5629,16 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__While__Group__6"
-    // InternalOptimind.g:1804:1: rule__While__Group__6 : rule__While__Group__6__Impl rule__While__Group__7 ;
+    // InternalOptimind.g:1831:1: rule__While__Group__6 : rule__While__Group__6__Impl rule__While__Group__7 ;
     public final void rule__While__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:1808:1: ( rule__While__Group__6__Impl rule__While__Group__7 )
-            // InternalOptimind.g:1809:2: rule__While__Group__6__Impl rule__While__Group__7
+            // InternalOptimind.g:1835:1: ( rule__While__Group__6__Impl rule__While__Group__7 )
+            // InternalOptimind.g:1836:2: rule__While__Group__6__Impl rule__While__Group__7
             {
-            pushFollow(FOLLOW_19);
+            pushFollow(FOLLOW_18);
             rule__While__Group__6__Impl();
 
             state._fsp--;
@@ -5572,31 +5667,21 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__While__Group__6__Impl"
-    // InternalOptimind.g:1816:1: rule__While__Group__6__Impl : ( ( rule__While__AbstracttaskAssignment_6 ) ) ;
+    // InternalOptimind.g:1843:1: rule__While__Group__6__Impl : ( 'do' ) ;
     public final void rule__While__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:1820:1: ( ( ( rule__While__AbstracttaskAssignment_6 ) ) )
-            // InternalOptimind.g:1821:1: ( ( rule__While__AbstracttaskAssignment_6 ) )
+            // InternalOptimind.g:1847:1: ( ( 'do' ) )
+            // InternalOptimind.g:1848:1: ( 'do' )
             {
-            // InternalOptimind.g:1821:1: ( ( rule__While__AbstracttaskAssignment_6 ) )
-            // InternalOptimind.g:1822:2: ( rule__While__AbstracttaskAssignment_6 )
+            // InternalOptimind.g:1848:1: ( 'do' )
+            // InternalOptimind.g:1849:2: 'do'
             {
-             before(grammarAccess.getWhileAccess().getAbstracttaskAssignment_6()); 
-            // InternalOptimind.g:1823:2: ( rule__While__AbstracttaskAssignment_6 )
-            // InternalOptimind.g:1823:3: rule__While__AbstracttaskAssignment_6
-            {
-            pushFollow(FOLLOW_2);
-            rule__While__AbstracttaskAssignment_6();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getWhileAccess().getAbstracttaskAssignment_6()); 
+             before(grammarAccess.getWhileAccess().getDoKeyword_6()); 
+            match(input,28,FOLLOW_2); 
+             after(grammarAccess.getWhileAccess().getDoKeyword_6()); 
 
             }
 
@@ -5619,17 +5704,22 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__While__Group__7"
-    // InternalOptimind.g:1831:1: rule__While__Group__7 : rule__While__Group__7__Impl ;
+    // InternalOptimind.g:1858:1: rule__While__Group__7 : rule__While__Group__7__Impl rule__While__Group__8 ;
     public final void rule__While__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:1835:1: ( rule__While__Group__7__Impl )
-            // InternalOptimind.g:1836:2: rule__While__Group__7__Impl
+            // InternalOptimind.g:1862:1: ( rule__While__Group__7__Impl rule__While__Group__8 )
+            // InternalOptimind.g:1863:2: rule__While__Group__7__Impl rule__While__Group__8
             {
-            pushFollow(FOLLOW_2);
+            pushFollow(FOLLOW_19);
             rule__While__Group__7__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__While__Group__8();
 
             state._fsp--;
 
@@ -5652,21 +5742,31 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__While__Group__7__Impl"
-    // InternalOptimind.g:1842:1: rule__While__Group__7__Impl : ( '}' ) ;
+    // InternalOptimind.g:1870:1: rule__While__Group__7__Impl : ( ( rule__While__AbstracttaskAssignment_7 ) ) ;
     public final void rule__While__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:1846:1: ( ( '}' ) )
-            // InternalOptimind.g:1847:1: ( '}' )
+            // InternalOptimind.g:1874:1: ( ( ( rule__While__AbstracttaskAssignment_7 ) ) )
+            // InternalOptimind.g:1875:1: ( ( rule__While__AbstracttaskAssignment_7 ) )
             {
-            // InternalOptimind.g:1847:1: ( '}' )
-            // InternalOptimind.g:1848:2: '}'
+            // InternalOptimind.g:1875:1: ( ( rule__While__AbstracttaskAssignment_7 ) )
+            // InternalOptimind.g:1876:2: ( rule__While__AbstracttaskAssignment_7 )
             {
-             before(grammarAccess.getWhileAccess().getRightCurlyBracketKeyword_7()); 
-            match(input,19,FOLLOW_2); 
-             after(grammarAccess.getWhileAccess().getRightCurlyBracketKeyword_7()); 
+             before(grammarAccess.getWhileAccess().getAbstracttaskAssignment_7()); 
+            // InternalOptimind.g:1877:2: ( rule__While__AbstracttaskAssignment_7 )
+            // InternalOptimind.g:1877:3: rule__While__AbstracttaskAssignment_7
+            {
+            pushFollow(FOLLOW_2);
+            rule__While__AbstracttaskAssignment_7();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getWhileAccess().getAbstracttaskAssignment_7()); 
 
             }
 
@@ -5688,15 +5788,85 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
     // $ANTLR end "rule__While__Group__7__Impl"
 
 
+    // $ANTLR start "rule__While__Group__8"
+    // InternalOptimind.g:1885:1: rule__While__Group__8 : rule__While__Group__8__Impl ;
+    public final void rule__While__Group__8() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalOptimind.g:1889:1: ( rule__While__Group__8__Impl )
+            // InternalOptimind.g:1890:2: rule__While__Group__8__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__While__Group__8__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__While__Group__8"
+
+
+    // $ANTLR start "rule__While__Group__8__Impl"
+    // InternalOptimind.g:1896:1: rule__While__Group__8__Impl : ( '}' ) ;
+    public final void rule__While__Group__8__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalOptimind.g:1900:1: ( ( '}' ) )
+            // InternalOptimind.g:1901:1: ( '}' )
+            {
+            // InternalOptimind.g:1901:1: ( '}' )
+            // InternalOptimind.g:1902:2: '}'
+            {
+             before(grammarAccess.getWhileAccess().getRightCurlyBracketKeyword_8()); 
+            match(input,19,FOLLOW_2); 
+             after(grammarAccess.getWhileAccess().getRightCurlyBracketKeyword_8()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__While__Group__8__Impl"
+
+
     // $ANTLR start "rule__If__Group__0"
-    // InternalOptimind.g:1858:1: rule__If__Group__0 : rule__If__Group__0__Impl rule__If__Group__1 ;
+    // InternalOptimind.g:1912:1: rule__If__Group__0 : rule__If__Group__0__Impl rule__If__Group__1 ;
     public final void rule__If__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:1862:1: ( rule__If__Group__0__Impl rule__If__Group__1 )
-            // InternalOptimind.g:1863:2: rule__If__Group__0__Impl rule__If__Group__1
+            // InternalOptimind.g:1916:1: ( rule__If__Group__0__Impl rule__If__Group__1 )
+            // InternalOptimind.g:1917:2: rule__If__Group__0__Impl rule__If__Group__1
             {
             pushFollow(FOLLOW_22);
             rule__If__Group__0__Impl();
@@ -5727,25 +5897,25 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__If__Group__0__Impl"
-    // InternalOptimind.g:1870:1: rule__If__Group__0__Impl : ( () ) ;
+    // InternalOptimind.g:1924:1: rule__If__Group__0__Impl : ( () ) ;
     public final void rule__If__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:1874:1: ( ( () ) )
-            // InternalOptimind.g:1875:1: ( () )
+            // InternalOptimind.g:1928:1: ( ( () ) )
+            // InternalOptimind.g:1929:1: ( () )
             {
-            // InternalOptimind.g:1875:1: ( () )
-            // InternalOptimind.g:1876:2: ()
+            // InternalOptimind.g:1929:1: ( () )
+            // InternalOptimind.g:1930:2: ()
             {
-             before(grammarAccess.getIfAccess().getIfAction_0()); 
-            // InternalOptimind.g:1877:2: ()
-            // InternalOptimind.g:1877:3: 
+             before(grammarAccess.getIfAccess().getIfStatementAction_0()); 
+            // InternalOptimind.g:1931:2: ()
+            // InternalOptimind.g:1931:3: 
             {
             }
 
-             after(grammarAccess.getIfAccess().getIfAction_0()); 
+             after(grammarAccess.getIfAccess().getIfStatementAction_0()); 
 
             }
 
@@ -5764,16 +5934,16 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__If__Group__1"
-    // InternalOptimind.g:1885:1: rule__If__Group__1 : rule__If__Group__1__Impl rule__If__Group__2 ;
+    // InternalOptimind.g:1939:1: rule__If__Group__1 : rule__If__Group__1__Impl rule__If__Group__2 ;
     public final void rule__If__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:1889:1: ( rule__If__Group__1__Impl rule__If__Group__2 )
-            // InternalOptimind.g:1890:2: rule__If__Group__1__Impl rule__If__Group__2
+            // InternalOptimind.g:1943:1: ( rule__If__Group__1__Impl rule__If__Group__2 )
+            // InternalOptimind.g:1944:2: rule__If__Group__1__Impl rule__If__Group__2
             {
-            pushFollow(FOLLOW_5);
+            pushFollow(FOLLOW_4);
             rule__If__Group__1__Impl();
 
             state._fsp--;
@@ -5802,17 +5972,17 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__If__Group__1__Impl"
-    // InternalOptimind.g:1897:1: rule__If__Group__1__Impl : ( 'If' ) ;
+    // InternalOptimind.g:1951:1: rule__If__Group__1__Impl : ( 'If' ) ;
     public final void rule__If__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:1901:1: ( ( 'If' ) )
-            // InternalOptimind.g:1902:1: ( 'If' )
+            // InternalOptimind.g:1955:1: ( ( 'If' ) )
+            // InternalOptimind.g:1956:1: ( 'If' )
             {
-            // InternalOptimind.g:1902:1: ( 'If' )
-            // InternalOptimind.g:1903:2: 'If'
+            // InternalOptimind.g:1956:1: ( 'If' )
+            // InternalOptimind.g:1957:2: 'If'
             {
              before(grammarAccess.getIfAccess().getIfKeyword_1()); 
             match(input,31,FOLLOW_2); 
@@ -5839,16 +6009,16 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__If__Group__2"
-    // InternalOptimind.g:1912:1: rule__If__Group__2 : rule__If__Group__2__Impl rule__If__Group__3 ;
+    // InternalOptimind.g:1966:1: rule__If__Group__2 : rule__If__Group__2__Impl rule__If__Group__3 ;
     public final void rule__If__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:1916:1: ( rule__If__Group__2__Impl rule__If__Group__3 )
-            // InternalOptimind.g:1917:2: rule__If__Group__2__Impl rule__If__Group__3
+            // InternalOptimind.g:1970:1: ( rule__If__Group__2__Impl rule__If__Group__3 )
+            // InternalOptimind.g:1971:2: rule__If__Group__2__Impl rule__If__Group__3
             {
-            pushFollow(FOLLOW_21);
+            pushFollow(FOLLOW_5);
             rule__If__Group__2__Impl();
 
             state._fsp--;
@@ -5877,21 +6047,31 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__If__Group__2__Impl"
-    // InternalOptimind.g:1924:1: rule__If__Group__2__Impl : ( '{' ) ;
+    // InternalOptimind.g:1978:1: rule__If__Group__2__Impl : ( ( rule__If__NameAssignment_2 ) ) ;
     public final void rule__If__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:1928:1: ( ( '{' ) )
-            // InternalOptimind.g:1929:1: ( '{' )
+            // InternalOptimind.g:1982:1: ( ( ( rule__If__NameAssignment_2 ) ) )
+            // InternalOptimind.g:1983:1: ( ( rule__If__NameAssignment_2 ) )
             {
-            // InternalOptimind.g:1929:1: ( '{' )
-            // InternalOptimind.g:1930:2: '{'
+            // InternalOptimind.g:1983:1: ( ( rule__If__NameAssignment_2 ) )
+            // InternalOptimind.g:1984:2: ( rule__If__NameAssignment_2 )
             {
-             before(grammarAccess.getIfAccess().getLeftCurlyBracketKeyword_2()); 
-            match(input,18,FOLLOW_2); 
-             after(grammarAccess.getIfAccess().getLeftCurlyBracketKeyword_2()); 
+             before(grammarAccess.getIfAccess().getNameAssignment_2()); 
+            // InternalOptimind.g:1985:2: ( rule__If__NameAssignment_2 )
+            // InternalOptimind.g:1985:3: rule__If__NameAssignment_2
+            {
+            pushFollow(FOLLOW_2);
+            rule__If__NameAssignment_2();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getIfAccess().getNameAssignment_2()); 
 
             }
 
@@ -5914,16 +6094,16 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__If__Group__3"
-    // InternalOptimind.g:1939:1: rule__If__Group__3 : rule__If__Group__3__Impl rule__If__Group__4 ;
+    // InternalOptimind.g:1993:1: rule__If__Group__3 : rule__If__Group__3__Impl rule__If__Group__4 ;
     public final void rule__If__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:1943:1: ( rule__If__Group__3__Impl rule__If__Group__4 )
-            // InternalOptimind.g:1944:2: rule__If__Group__3__Impl rule__If__Group__4
+            // InternalOptimind.g:1997:1: ( rule__If__Group__3__Impl rule__If__Group__4 )
+            // InternalOptimind.g:1998:2: rule__If__Group__3__Impl rule__If__Group__4
             {
-            pushFollow(FOLLOW_4);
+            pushFollow(FOLLOW_21);
             rule__If__Group__3__Impl();
 
             state._fsp--;
@@ -5952,21 +6132,21 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__If__Group__3__Impl"
-    // InternalOptimind.g:1951:1: rule__If__Group__3__Impl : ( 'condition' ) ;
+    // InternalOptimind.g:2005:1: rule__If__Group__3__Impl : ( '{' ) ;
     public final void rule__If__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:1955:1: ( ( 'condition' ) )
-            // InternalOptimind.g:1956:1: ( 'condition' )
+            // InternalOptimind.g:2009:1: ( ( '{' ) )
+            // InternalOptimind.g:2010:1: ( '{' )
             {
-            // InternalOptimind.g:1956:1: ( 'condition' )
-            // InternalOptimind.g:1957:2: 'condition'
+            // InternalOptimind.g:2010:1: ( '{' )
+            // InternalOptimind.g:2011:2: '{'
             {
-             before(grammarAccess.getIfAccess().getConditionKeyword_3()); 
-            match(input,30,FOLLOW_2); 
-             after(grammarAccess.getIfAccess().getConditionKeyword_3()); 
+             before(grammarAccess.getIfAccess().getLeftCurlyBracketKeyword_3()); 
+            match(input,18,FOLLOW_2); 
+             after(grammarAccess.getIfAccess().getLeftCurlyBracketKeyword_3()); 
 
             }
 
@@ -5989,16 +6169,16 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__If__Group__4"
-    // InternalOptimind.g:1966:1: rule__If__Group__4 : rule__If__Group__4__Impl rule__If__Group__5 ;
+    // InternalOptimind.g:2020:1: rule__If__Group__4 : rule__If__Group__4__Impl rule__If__Group__5 ;
     public final void rule__If__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:1970:1: ( rule__If__Group__4__Impl rule__If__Group__5 )
-            // InternalOptimind.g:1971:2: rule__If__Group__4__Impl rule__If__Group__5
+            // InternalOptimind.g:2024:1: ( rule__If__Group__4__Impl rule__If__Group__5 )
+            // InternalOptimind.g:2025:2: rule__If__Group__4__Impl rule__If__Group__5
             {
-            pushFollow(FOLLOW_23);
+            pushFollow(FOLLOW_4);
             rule__If__Group__4__Impl();
 
             state._fsp--;
@@ -6027,31 +6207,21 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__If__Group__4__Impl"
-    // InternalOptimind.g:1978:1: rule__If__Group__4__Impl : ( ( rule__If__ConditionAssignment_4 ) ) ;
+    // InternalOptimind.g:2032:1: rule__If__Group__4__Impl : ( 'condition' ) ;
     public final void rule__If__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:1982:1: ( ( ( rule__If__ConditionAssignment_4 ) ) )
-            // InternalOptimind.g:1983:1: ( ( rule__If__ConditionAssignment_4 ) )
+            // InternalOptimind.g:2036:1: ( ( 'condition' ) )
+            // InternalOptimind.g:2037:1: ( 'condition' )
             {
-            // InternalOptimind.g:1983:1: ( ( rule__If__ConditionAssignment_4 ) )
-            // InternalOptimind.g:1984:2: ( rule__If__ConditionAssignment_4 )
+            // InternalOptimind.g:2037:1: ( 'condition' )
+            // InternalOptimind.g:2038:2: 'condition'
             {
-             before(grammarAccess.getIfAccess().getConditionAssignment_4()); 
-            // InternalOptimind.g:1985:2: ( rule__If__ConditionAssignment_4 )
-            // InternalOptimind.g:1985:3: rule__If__ConditionAssignment_4
-            {
-            pushFollow(FOLLOW_2);
-            rule__If__ConditionAssignment_4();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getIfAccess().getConditionAssignment_4()); 
+             before(grammarAccess.getIfAccess().getConditionKeyword_4()); 
+            match(input,30,FOLLOW_2); 
+             after(grammarAccess.getIfAccess().getConditionKeyword_4()); 
 
             }
 
@@ -6074,16 +6244,16 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__If__Group__5"
-    // InternalOptimind.g:1993:1: rule__If__Group__5 : rule__If__Group__5__Impl rule__If__Group__6 ;
+    // InternalOptimind.g:2047:1: rule__If__Group__5 : rule__If__Group__5__Impl rule__If__Group__6 ;
     public final void rule__If__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:1997:1: ( rule__If__Group__5__Impl rule__If__Group__6 )
-            // InternalOptimind.g:1998:2: rule__If__Group__5__Impl rule__If__Group__6
+            // InternalOptimind.g:2051:1: ( rule__If__Group__5__Impl rule__If__Group__6 )
+            // InternalOptimind.g:2052:2: rule__If__Group__5__Impl rule__If__Group__6
             {
-            pushFollow(FOLLOW_18);
+            pushFollow(FOLLOW_23);
             rule__If__Group__5__Impl();
 
             state._fsp--;
@@ -6112,21 +6282,31 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__If__Group__5__Impl"
-    // InternalOptimind.g:2005:1: rule__If__Group__5__Impl : ( 'then' ) ;
+    // InternalOptimind.g:2059:1: rule__If__Group__5__Impl : ( ( rule__If__ConditionAssignment_5 ) ) ;
     public final void rule__If__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:2009:1: ( ( 'then' ) )
-            // InternalOptimind.g:2010:1: ( 'then' )
+            // InternalOptimind.g:2063:1: ( ( ( rule__If__ConditionAssignment_5 ) ) )
+            // InternalOptimind.g:2064:1: ( ( rule__If__ConditionAssignment_5 ) )
             {
-            // InternalOptimind.g:2010:1: ( 'then' )
-            // InternalOptimind.g:2011:2: 'then'
+            // InternalOptimind.g:2064:1: ( ( rule__If__ConditionAssignment_5 ) )
+            // InternalOptimind.g:2065:2: ( rule__If__ConditionAssignment_5 )
             {
-             before(grammarAccess.getIfAccess().getThenKeyword_5()); 
-            match(input,32,FOLLOW_2); 
-             after(grammarAccess.getIfAccess().getThenKeyword_5()); 
+             before(grammarAccess.getIfAccess().getConditionAssignment_5()); 
+            // InternalOptimind.g:2066:2: ( rule__If__ConditionAssignment_5 )
+            // InternalOptimind.g:2066:3: rule__If__ConditionAssignment_5
+            {
+            pushFollow(FOLLOW_2);
+            rule__If__ConditionAssignment_5();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getIfAccess().getConditionAssignment_5()); 
 
             }
 
@@ -6149,16 +6329,16 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__If__Group__6"
-    // InternalOptimind.g:2020:1: rule__If__Group__6 : rule__If__Group__6__Impl rule__If__Group__7 ;
+    // InternalOptimind.g:2074:1: rule__If__Group__6 : rule__If__Group__6__Impl rule__If__Group__7 ;
     public final void rule__If__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:2024:1: ( rule__If__Group__6__Impl rule__If__Group__7 )
-            // InternalOptimind.g:2025:2: rule__If__Group__6__Impl rule__If__Group__7
+            // InternalOptimind.g:2078:1: ( rule__If__Group__6__Impl rule__If__Group__7 )
+            // InternalOptimind.g:2079:2: rule__If__Group__6__Impl rule__If__Group__7
             {
-            pushFollow(FOLLOW_24);
+            pushFollow(FOLLOW_18);
             rule__If__Group__6__Impl();
 
             state._fsp--;
@@ -6187,31 +6367,21 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__If__Group__6__Impl"
-    // InternalOptimind.g:2032:1: rule__If__Group__6__Impl : ( ( rule__If__ThenAssignment_6 ) ) ;
+    // InternalOptimind.g:2086:1: rule__If__Group__6__Impl : ( 'then' ) ;
     public final void rule__If__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:2036:1: ( ( ( rule__If__ThenAssignment_6 ) ) )
-            // InternalOptimind.g:2037:1: ( ( rule__If__ThenAssignment_6 ) )
+            // InternalOptimind.g:2090:1: ( ( 'then' ) )
+            // InternalOptimind.g:2091:1: ( 'then' )
             {
-            // InternalOptimind.g:2037:1: ( ( rule__If__ThenAssignment_6 ) )
-            // InternalOptimind.g:2038:2: ( rule__If__ThenAssignment_6 )
+            // InternalOptimind.g:2091:1: ( 'then' )
+            // InternalOptimind.g:2092:2: 'then'
             {
-             before(grammarAccess.getIfAccess().getThenAssignment_6()); 
-            // InternalOptimind.g:2039:2: ( rule__If__ThenAssignment_6 )
-            // InternalOptimind.g:2039:3: rule__If__ThenAssignment_6
-            {
-            pushFollow(FOLLOW_2);
-            rule__If__ThenAssignment_6();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getIfAccess().getThenAssignment_6()); 
+             before(grammarAccess.getIfAccess().getThenKeyword_6()); 
+            match(input,32,FOLLOW_2); 
+             after(grammarAccess.getIfAccess().getThenKeyword_6()); 
 
             }
 
@@ -6234,14 +6404,14 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__If__Group__7"
-    // InternalOptimind.g:2047:1: rule__If__Group__7 : rule__If__Group__7__Impl rule__If__Group__8 ;
+    // InternalOptimind.g:2101:1: rule__If__Group__7 : rule__If__Group__7__Impl rule__If__Group__8 ;
     public final void rule__If__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:2051:1: ( rule__If__Group__7__Impl rule__If__Group__8 )
-            // InternalOptimind.g:2052:2: rule__If__Group__7__Impl rule__If__Group__8
+            // InternalOptimind.g:2105:1: ( rule__If__Group__7__Impl rule__If__Group__8 )
+            // InternalOptimind.g:2106:2: rule__If__Group__7__Impl rule__If__Group__8
             {
             pushFollow(FOLLOW_24);
             rule__If__Group__7__Impl();
@@ -6272,42 +6442,31 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__If__Group__7__Impl"
-    // InternalOptimind.g:2059:1: rule__If__Group__7__Impl : ( ( rule__If__Group_7__0 )? ) ;
+    // InternalOptimind.g:2113:1: rule__If__Group__7__Impl : ( ( rule__If__ThenAssignment_7 ) ) ;
     public final void rule__If__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:2063:1: ( ( ( rule__If__Group_7__0 )? ) )
-            // InternalOptimind.g:2064:1: ( ( rule__If__Group_7__0 )? )
+            // InternalOptimind.g:2117:1: ( ( ( rule__If__ThenAssignment_7 ) ) )
+            // InternalOptimind.g:2118:1: ( ( rule__If__ThenAssignment_7 ) )
             {
-            // InternalOptimind.g:2064:1: ( ( rule__If__Group_7__0 )? )
-            // InternalOptimind.g:2065:2: ( rule__If__Group_7__0 )?
+            // InternalOptimind.g:2118:1: ( ( rule__If__ThenAssignment_7 ) )
+            // InternalOptimind.g:2119:2: ( rule__If__ThenAssignment_7 )
             {
-             before(grammarAccess.getIfAccess().getGroup_7()); 
-            // InternalOptimind.g:2066:2: ( rule__If__Group_7__0 )?
-            int alt15=2;
-            int LA15_0 = input.LA(1);
+             before(grammarAccess.getIfAccess().getThenAssignment_7()); 
+            // InternalOptimind.g:2120:2: ( rule__If__ThenAssignment_7 )
+            // InternalOptimind.g:2120:3: rule__If__ThenAssignment_7
+            {
+            pushFollow(FOLLOW_2);
+            rule__If__ThenAssignment_7();
 
-            if ( (LA15_0==33) ) {
-                alt15=1;
-            }
-            switch (alt15) {
-                case 1 :
-                    // InternalOptimind.g:2066:3: rule__If__Group_7__0
-                    {
-                    pushFollow(FOLLOW_2);
-                    rule__If__Group_7__0();
+            state._fsp--;
 
-                    state._fsp--;
-
-
-                    }
-                    break;
 
             }
 
-             after(grammarAccess.getIfAccess().getGroup_7()); 
+             after(grammarAccess.getIfAccess().getThenAssignment_7()); 
 
             }
 
@@ -6330,17 +6489,22 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__If__Group__8"
-    // InternalOptimind.g:2074:1: rule__If__Group__8 : rule__If__Group__8__Impl ;
+    // InternalOptimind.g:2128:1: rule__If__Group__8 : rule__If__Group__8__Impl rule__If__Group__9 ;
     public final void rule__If__Group__8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:2078:1: ( rule__If__Group__8__Impl )
-            // InternalOptimind.g:2079:2: rule__If__Group__8__Impl
+            // InternalOptimind.g:2132:1: ( rule__If__Group__8__Impl rule__If__Group__9 )
+            // InternalOptimind.g:2133:2: rule__If__Group__8__Impl rule__If__Group__9
             {
-            pushFollow(FOLLOW_2);
+            pushFollow(FOLLOW_24);
             rule__If__Group__8__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__If__Group__9();
 
             state._fsp--;
 
@@ -6363,21 +6527,42 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__If__Group__8__Impl"
-    // InternalOptimind.g:2085:1: rule__If__Group__8__Impl : ( '}' ) ;
+    // InternalOptimind.g:2140:1: rule__If__Group__8__Impl : ( ( rule__If__Group_8__0 )? ) ;
     public final void rule__If__Group__8__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:2089:1: ( ( '}' ) )
-            // InternalOptimind.g:2090:1: ( '}' )
+            // InternalOptimind.g:2144:1: ( ( ( rule__If__Group_8__0 )? ) )
+            // InternalOptimind.g:2145:1: ( ( rule__If__Group_8__0 )? )
             {
-            // InternalOptimind.g:2090:1: ( '}' )
-            // InternalOptimind.g:2091:2: '}'
+            // InternalOptimind.g:2145:1: ( ( rule__If__Group_8__0 )? )
+            // InternalOptimind.g:2146:2: ( rule__If__Group_8__0 )?
             {
-             before(grammarAccess.getIfAccess().getRightCurlyBracketKeyword_8()); 
-            match(input,19,FOLLOW_2); 
-             after(grammarAccess.getIfAccess().getRightCurlyBracketKeyword_8()); 
+             before(grammarAccess.getIfAccess().getGroup_8()); 
+            // InternalOptimind.g:2147:2: ( rule__If__Group_8__0 )?
+            int alt15=2;
+            int LA15_0 = input.LA(1);
+
+            if ( (LA15_0==33) ) {
+                alt15=1;
+            }
+            switch (alt15) {
+                case 1 :
+                    // InternalOptimind.g:2147:3: rule__If__Group_8__0
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__If__Group_8__0();
+
+                    state._fsp--;
+
+
+                    }
+                    break;
+
+            }
+
+             after(grammarAccess.getIfAccess().getGroup_8()); 
 
             }
 
@@ -6399,23 +6584,93 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
     // $ANTLR end "rule__If__Group__8__Impl"
 
 
-    // $ANTLR start "rule__If__Group_7__0"
-    // InternalOptimind.g:2101:1: rule__If__Group_7__0 : rule__If__Group_7__0__Impl rule__If__Group_7__1 ;
-    public final void rule__If__Group_7__0() throws RecognitionException {
+    // $ANTLR start "rule__If__Group__9"
+    // InternalOptimind.g:2155:1: rule__If__Group__9 : rule__If__Group__9__Impl ;
+    public final void rule__If__Group__9() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:2105:1: ( rule__If__Group_7__0__Impl rule__If__Group_7__1 )
-            // InternalOptimind.g:2106:2: rule__If__Group_7__0__Impl rule__If__Group_7__1
+            // InternalOptimind.g:2159:1: ( rule__If__Group__9__Impl )
+            // InternalOptimind.g:2160:2: rule__If__Group__9__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__If__Group__9__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__If__Group__9"
+
+
+    // $ANTLR start "rule__If__Group__9__Impl"
+    // InternalOptimind.g:2166:1: rule__If__Group__9__Impl : ( '}' ) ;
+    public final void rule__If__Group__9__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalOptimind.g:2170:1: ( ( '}' ) )
+            // InternalOptimind.g:2171:1: ( '}' )
+            {
+            // InternalOptimind.g:2171:1: ( '}' )
+            // InternalOptimind.g:2172:2: '}'
+            {
+             before(grammarAccess.getIfAccess().getRightCurlyBracketKeyword_9()); 
+            match(input,19,FOLLOW_2); 
+             after(grammarAccess.getIfAccess().getRightCurlyBracketKeyword_9()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__If__Group__9__Impl"
+
+
+    // $ANTLR start "rule__If__Group_8__0"
+    // InternalOptimind.g:2182:1: rule__If__Group_8__0 : rule__If__Group_8__0__Impl rule__If__Group_8__1 ;
+    public final void rule__If__Group_8__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalOptimind.g:2186:1: ( rule__If__Group_8__0__Impl rule__If__Group_8__1 )
+            // InternalOptimind.g:2187:2: rule__If__Group_8__0__Impl rule__If__Group_8__1
             {
             pushFollow(FOLLOW_18);
-            rule__If__Group_7__0__Impl();
+            rule__If__Group_8__0__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__If__Group_7__1();
+            rule__If__Group_8__1();
 
             state._fsp--;
 
@@ -6434,25 +6689,25 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
         }
         return ;
     }
-    // $ANTLR end "rule__If__Group_7__0"
+    // $ANTLR end "rule__If__Group_8__0"
 
 
-    // $ANTLR start "rule__If__Group_7__0__Impl"
-    // InternalOptimind.g:2113:1: rule__If__Group_7__0__Impl : ( 'else' ) ;
-    public final void rule__If__Group_7__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__If__Group_8__0__Impl"
+    // InternalOptimind.g:2194:1: rule__If__Group_8__0__Impl : ( 'else' ) ;
+    public final void rule__If__Group_8__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:2117:1: ( ( 'else' ) )
-            // InternalOptimind.g:2118:1: ( 'else' )
+            // InternalOptimind.g:2198:1: ( ( 'else' ) )
+            // InternalOptimind.g:2199:1: ( 'else' )
             {
-            // InternalOptimind.g:2118:1: ( 'else' )
-            // InternalOptimind.g:2119:2: 'else'
+            // InternalOptimind.g:2199:1: ( 'else' )
+            // InternalOptimind.g:2200:2: 'else'
             {
-             before(grammarAccess.getIfAccess().getElseKeyword_7_0()); 
+             before(grammarAccess.getIfAccess().getElseKeyword_8_0()); 
             match(input,33,FOLLOW_2); 
-             after(grammarAccess.getIfAccess().getElseKeyword_7_0()); 
+             after(grammarAccess.getIfAccess().getElseKeyword_8_0()); 
 
             }
 
@@ -6471,21 +6726,21 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
         }
         return ;
     }
-    // $ANTLR end "rule__If__Group_7__0__Impl"
+    // $ANTLR end "rule__If__Group_8__0__Impl"
 
 
-    // $ANTLR start "rule__If__Group_7__1"
-    // InternalOptimind.g:2128:1: rule__If__Group_7__1 : rule__If__Group_7__1__Impl ;
-    public final void rule__If__Group_7__1() throws RecognitionException {
+    // $ANTLR start "rule__If__Group_8__1"
+    // InternalOptimind.g:2209:1: rule__If__Group_8__1 : rule__If__Group_8__1__Impl ;
+    public final void rule__If__Group_8__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:2132:1: ( rule__If__Group_7__1__Impl )
-            // InternalOptimind.g:2133:2: rule__If__Group_7__1__Impl
+            // InternalOptimind.g:2213:1: ( rule__If__Group_8__1__Impl )
+            // InternalOptimind.g:2214:2: rule__If__Group_8__1__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__If__Group_7__1__Impl();
+            rule__If__Group_8__1__Impl();
 
             state._fsp--;
 
@@ -6504,35 +6759,35 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
         }
         return ;
     }
-    // $ANTLR end "rule__If__Group_7__1"
+    // $ANTLR end "rule__If__Group_8__1"
 
 
-    // $ANTLR start "rule__If__Group_7__1__Impl"
-    // InternalOptimind.g:2139:1: rule__If__Group_7__1__Impl : ( ( rule__If__ElseAssignment_7_1 ) ) ;
-    public final void rule__If__Group_7__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__If__Group_8__1__Impl"
+    // InternalOptimind.g:2220:1: rule__If__Group_8__1__Impl : ( ( rule__If__ElseAssignment_8_1 ) ) ;
+    public final void rule__If__Group_8__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:2143:1: ( ( ( rule__If__ElseAssignment_7_1 ) ) )
-            // InternalOptimind.g:2144:1: ( ( rule__If__ElseAssignment_7_1 ) )
+            // InternalOptimind.g:2224:1: ( ( ( rule__If__ElseAssignment_8_1 ) ) )
+            // InternalOptimind.g:2225:1: ( ( rule__If__ElseAssignment_8_1 ) )
             {
-            // InternalOptimind.g:2144:1: ( ( rule__If__ElseAssignment_7_1 ) )
-            // InternalOptimind.g:2145:2: ( rule__If__ElseAssignment_7_1 )
+            // InternalOptimind.g:2225:1: ( ( rule__If__ElseAssignment_8_1 ) )
+            // InternalOptimind.g:2226:2: ( rule__If__ElseAssignment_8_1 )
             {
-             before(grammarAccess.getIfAccess().getElseAssignment_7_1()); 
-            // InternalOptimind.g:2146:2: ( rule__If__ElseAssignment_7_1 )
-            // InternalOptimind.g:2146:3: rule__If__ElseAssignment_7_1
+             before(grammarAccess.getIfAccess().getElseAssignment_8_1()); 
+            // InternalOptimind.g:2227:2: ( rule__If__ElseAssignment_8_1 )
+            // InternalOptimind.g:2227:3: rule__If__ElseAssignment_8_1
             {
             pushFollow(FOLLOW_2);
-            rule__If__ElseAssignment_7_1();
+            rule__If__ElseAssignment_8_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getIfAccess().getElseAssignment_7_1()); 
+             after(grammarAccess.getIfAccess().getElseAssignment_8_1()); 
 
             }
 
@@ -6551,18 +6806,18 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
         }
         return ;
     }
-    // $ANTLR end "rule__If__Group_7__1__Impl"
+    // $ANTLR end "rule__If__Group_8__1__Impl"
 
 
     // $ANTLR start "rule__BaseTask__Group__0"
-    // InternalOptimind.g:2155:1: rule__BaseTask__Group__0 : rule__BaseTask__Group__0__Impl rule__BaseTask__Group__1 ;
+    // InternalOptimind.g:2236:1: rule__BaseTask__Group__0 : rule__BaseTask__Group__0__Impl rule__BaseTask__Group__1 ;
     public final void rule__BaseTask__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:2159:1: ( rule__BaseTask__Group__0__Impl rule__BaseTask__Group__1 )
-            // InternalOptimind.g:2160:2: rule__BaseTask__Group__0__Impl rule__BaseTask__Group__1
+            // InternalOptimind.g:2240:1: ( rule__BaseTask__Group__0__Impl rule__BaseTask__Group__1 )
+            // InternalOptimind.g:2241:2: rule__BaseTask__Group__0__Impl rule__BaseTask__Group__1
             {
             pushFollow(FOLLOW_25);
             rule__BaseTask__Group__0__Impl();
@@ -6593,21 +6848,21 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BaseTask__Group__0__Impl"
-    // InternalOptimind.g:2167:1: rule__BaseTask__Group__0__Impl : ( () ) ;
+    // InternalOptimind.g:2248:1: rule__BaseTask__Group__0__Impl : ( () ) ;
     public final void rule__BaseTask__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:2171:1: ( ( () ) )
-            // InternalOptimind.g:2172:1: ( () )
+            // InternalOptimind.g:2252:1: ( ( () ) )
+            // InternalOptimind.g:2253:1: ( () )
             {
-            // InternalOptimind.g:2172:1: ( () )
-            // InternalOptimind.g:2173:2: ()
+            // InternalOptimind.g:2253:1: ( () )
+            // InternalOptimind.g:2254:2: ()
             {
              before(grammarAccess.getBaseTaskAccess().getBaseTaskAction_0()); 
-            // InternalOptimind.g:2174:2: ()
-            // InternalOptimind.g:2174:3: 
+            // InternalOptimind.g:2255:2: ()
+            // InternalOptimind.g:2255:3: 
             {
             }
 
@@ -6630,14 +6885,14 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BaseTask__Group__1"
-    // InternalOptimind.g:2182:1: rule__BaseTask__Group__1 : rule__BaseTask__Group__1__Impl rule__BaseTask__Group__2 ;
+    // InternalOptimind.g:2263:1: rule__BaseTask__Group__1 : rule__BaseTask__Group__1__Impl rule__BaseTask__Group__2 ;
     public final void rule__BaseTask__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:2186:1: ( rule__BaseTask__Group__1__Impl rule__BaseTask__Group__2 )
-            // InternalOptimind.g:2187:2: rule__BaseTask__Group__1__Impl rule__BaseTask__Group__2
+            // InternalOptimind.g:2267:1: ( rule__BaseTask__Group__1__Impl rule__BaseTask__Group__2 )
+            // InternalOptimind.g:2268:2: rule__BaseTask__Group__1__Impl rule__BaseTask__Group__2
             {
             pushFollow(FOLLOW_4);
             rule__BaseTask__Group__1__Impl();
@@ -6668,17 +6923,17 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BaseTask__Group__1__Impl"
-    // InternalOptimind.g:2194:1: rule__BaseTask__Group__1__Impl : ( 'BaseTask' ) ;
+    // InternalOptimind.g:2275:1: rule__BaseTask__Group__1__Impl : ( 'BaseTask' ) ;
     public final void rule__BaseTask__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:2198:1: ( ( 'BaseTask' ) )
-            // InternalOptimind.g:2199:1: ( 'BaseTask' )
+            // InternalOptimind.g:2279:1: ( ( 'BaseTask' ) )
+            // InternalOptimind.g:2280:1: ( 'BaseTask' )
             {
-            // InternalOptimind.g:2199:1: ( 'BaseTask' )
-            // InternalOptimind.g:2200:2: 'BaseTask'
+            // InternalOptimind.g:2280:1: ( 'BaseTask' )
+            // InternalOptimind.g:2281:2: 'BaseTask'
             {
              before(grammarAccess.getBaseTaskAccess().getBaseTaskKeyword_1()); 
             match(input,34,FOLLOW_2); 
@@ -6705,14 +6960,14 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BaseTask__Group__2"
-    // InternalOptimind.g:2209:1: rule__BaseTask__Group__2 : rule__BaseTask__Group__2__Impl rule__BaseTask__Group__3 ;
+    // InternalOptimind.g:2290:1: rule__BaseTask__Group__2 : rule__BaseTask__Group__2__Impl rule__BaseTask__Group__3 ;
     public final void rule__BaseTask__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:2213:1: ( rule__BaseTask__Group__2__Impl rule__BaseTask__Group__3 )
-            // InternalOptimind.g:2214:2: rule__BaseTask__Group__2__Impl rule__BaseTask__Group__3
+            // InternalOptimind.g:2294:1: ( rule__BaseTask__Group__2__Impl rule__BaseTask__Group__3 )
+            // InternalOptimind.g:2295:2: rule__BaseTask__Group__2__Impl rule__BaseTask__Group__3
             {
             pushFollow(FOLLOW_5);
             rule__BaseTask__Group__2__Impl();
@@ -6743,21 +6998,21 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BaseTask__Group__2__Impl"
-    // InternalOptimind.g:2221:1: rule__BaseTask__Group__2__Impl : ( ( rule__BaseTask__NameAssignment_2 ) ) ;
+    // InternalOptimind.g:2302:1: rule__BaseTask__Group__2__Impl : ( ( rule__BaseTask__NameAssignment_2 ) ) ;
     public final void rule__BaseTask__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:2225:1: ( ( ( rule__BaseTask__NameAssignment_2 ) ) )
-            // InternalOptimind.g:2226:1: ( ( rule__BaseTask__NameAssignment_2 ) )
+            // InternalOptimind.g:2306:1: ( ( ( rule__BaseTask__NameAssignment_2 ) ) )
+            // InternalOptimind.g:2307:1: ( ( rule__BaseTask__NameAssignment_2 ) )
             {
-            // InternalOptimind.g:2226:1: ( ( rule__BaseTask__NameAssignment_2 ) )
-            // InternalOptimind.g:2227:2: ( rule__BaseTask__NameAssignment_2 )
+            // InternalOptimind.g:2307:1: ( ( rule__BaseTask__NameAssignment_2 ) )
+            // InternalOptimind.g:2308:2: ( rule__BaseTask__NameAssignment_2 )
             {
              before(grammarAccess.getBaseTaskAccess().getNameAssignment_2()); 
-            // InternalOptimind.g:2228:2: ( rule__BaseTask__NameAssignment_2 )
-            // InternalOptimind.g:2228:3: rule__BaseTask__NameAssignment_2
+            // InternalOptimind.g:2309:2: ( rule__BaseTask__NameAssignment_2 )
+            // InternalOptimind.g:2309:3: rule__BaseTask__NameAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__BaseTask__NameAssignment_2();
@@ -6790,14 +7045,14 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BaseTask__Group__3"
-    // InternalOptimind.g:2236:1: rule__BaseTask__Group__3 : rule__BaseTask__Group__3__Impl rule__BaseTask__Group__4 ;
+    // InternalOptimind.g:2317:1: rule__BaseTask__Group__3 : rule__BaseTask__Group__3__Impl rule__BaseTask__Group__4 ;
     public final void rule__BaseTask__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:2240:1: ( rule__BaseTask__Group__3__Impl rule__BaseTask__Group__4 )
-            // InternalOptimind.g:2241:2: rule__BaseTask__Group__3__Impl rule__BaseTask__Group__4
+            // InternalOptimind.g:2321:1: ( rule__BaseTask__Group__3__Impl rule__BaseTask__Group__4 )
+            // InternalOptimind.g:2322:2: rule__BaseTask__Group__3__Impl rule__BaseTask__Group__4
             {
             pushFollow(FOLLOW_26);
             rule__BaseTask__Group__3__Impl();
@@ -6828,17 +7083,17 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BaseTask__Group__3__Impl"
-    // InternalOptimind.g:2248:1: rule__BaseTask__Group__3__Impl : ( '{' ) ;
+    // InternalOptimind.g:2329:1: rule__BaseTask__Group__3__Impl : ( '{' ) ;
     public final void rule__BaseTask__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:2252:1: ( ( '{' ) )
-            // InternalOptimind.g:2253:1: ( '{' )
+            // InternalOptimind.g:2333:1: ( ( '{' ) )
+            // InternalOptimind.g:2334:1: ( '{' )
             {
-            // InternalOptimind.g:2253:1: ( '{' )
-            // InternalOptimind.g:2254:2: '{'
+            // InternalOptimind.g:2334:1: ( '{' )
+            // InternalOptimind.g:2335:2: '{'
             {
              before(grammarAccess.getBaseTaskAccess().getLeftCurlyBracketKeyword_3()); 
             match(input,18,FOLLOW_2); 
@@ -6865,14 +7120,14 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BaseTask__Group__4"
-    // InternalOptimind.g:2263:1: rule__BaseTask__Group__4 : rule__BaseTask__Group__4__Impl rule__BaseTask__Group__5 ;
+    // InternalOptimind.g:2344:1: rule__BaseTask__Group__4 : rule__BaseTask__Group__4__Impl rule__BaseTask__Group__5 ;
     public final void rule__BaseTask__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:2267:1: ( rule__BaseTask__Group__4__Impl rule__BaseTask__Group__5 )
-            // InternalOptimind.g:2268:2: rule__BaseTask__Group__4__Impl rule__BaseTask__Group__5
+            // InternalOptimind.g:2348:1: ( rule__BaseTask__Group__4__Impl rule__BaseTask__Group__5 )
+            // InternalOptimind.g:2349:2: rule__BaseTask__Group__4__Impl rule__BaseTask__Group__5
             {
             pushFollow(FOLLOW_26);
             rule__BaseTask__Group__4__Impl();
@@ -6903,20 +7158,20 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BaseTask__Group__4__Impl"
-    // InternalOptimind.g:2275:1: rule__BaseTask__Group__4__Impl : ( ( rule__BaseTask__Group_4__0 )? ) ;
+    // InternalOptimind.g:2356:1: rule__BaseTask__Group__4__Impl : ( ( rule__BaseTask__Group_4__0 )? ) ;
     public final void rule__BaseTask__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:2279:1: ( ( ( rule__BaseTask__Group_4__0 )? ) )
-            // InternalOptimind.g:2280:1: ( ( rule__BaseTask__Group_4__0 )? )
+            // InternalOptimind.g:2360:1: ( ( ( rule__BaseTask__Group_4__0 )? ) )
+            // InternalOptimind.g:2361:1: ( ( rule__BaseTask__Group_4__0 )? )
             {
-            // InternalOptimind.g:2280:1: ( ( rule__BaseTask__Group_4__0 )? )
-            // InternalOptimind.g:2281:2: ( rule__BaseTask__Group_4__0 )?
+            // InternalOptimind.g:2361:1: ( ( rule__BaseTask__Group_4__0 )? )
+            // InternalOptimind.g:2362:2: ( rule__BaseTask__Group_4__0 )?
             {
              before(grammarAccess.getBaseTaskAccess().getGroup_4()); 
-            // InternalOptimind.g:2282:2: ( rule__BaseTask__Group_4__0 )?
+            // InternalOptimind.g:2363:2: ( rule__BaseTask__Group_4__0 )?
             int alt16=2;
             int LA16_0 = input.LA(1);
 
@@ -6925,7 +7180,7 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
             }
             switch (alt16) {
                 case 1 :
-                    // InternalOptimind.g:2282:3: rule__BaseTask__Group_4__0
+                    // InternalOptimind.g:2363:3: rule__BaseTask__Group_4__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__BaseTask__Group_4__0();
@@ -6961,14 +7216,14 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BaseTask__Group__5"
-    // InternalOptimind.g:2290:1: rule__BaseTask__Group__5 : rule__BaseTask__Group__5__Impl rule__BaseTask__Group__6 ;
+    // InternalOptimind.g:2371:1: rule__BaseTask__Group__5 : rule__BaseTask__Group__5__Impl rule__BaseTask__Group__6 ;
     public final void rule__BaseTask__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:2294:1: ( rule__BaseTask__Group__5__Impl rule__BaseTask__Group__6 )
-            // InternalOptimind.g:2295:2: rule__BaseTask__Group__5__Impl rule__BaseTask__Group__6
+            // InternalOptimind.g:2375:1: ( rule__BaseTask__Group__5__Impl rule__BaseTask__Group__6 )
+            // InternalOptimind.g:2376:2: rule__BaseTask__Group__5__Impl rule__BaseTask__Group__6
             {
             pushFollow(FOLLOW_26);
             rule__BaseTask__Group__5__Impl();
@@ -6999,20 +7254,20 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BaseTask__Group__5__Impl"
-    // InternalOptimind.g:2302:1: rule__BaseTask__Group__5__Impl : ( ( rule__BaseTask__Group_5__0 )? ) ;
+    // InternalOptimind.g:2383:1: rule__BaseTask__Group__5__Impl : ( ( rule__BaseTask__Group_5__0 )? ) ;
     public final void rule__BaseTask__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:2306:1: ( ( ( rule__BaseTask__Group_5__0 )? ) )
-            // InternalOptimind.g:2307:1: ( ( rule__BaseTask__Group_5__0 )? )
+            // InternalOptimind.g:2387:1: ( ( ( rule__BaseTask__Group_5__0 )? ) )
+            // InternalOptimind.g:2388:1: ( ( rule__BaseTask__Group_5__0 )? )
             {
-            // InternalOptimind.g:2307:1: ( ( rule__BaseTask__Group_5__0 )? )
-            // InternalOptimind.g:2308:2: ( rule__BaseTask__Group_5__0 )?
+            // InternalOptimind.g:2388:1: ( ( rule__BaseTask__Group_5__0 )? )
+            // InternalOptimind.g:2389:2: ( rule__BaseTask__Group_5__0 )?
             {
              before(grammarAccess.getBaseTaskAccess().getGroup_5()); 
-            // InternalOptimind.g:2309:2: ( rule__BaseTask__Group_5__0 )?
+            // InternalOptimind.g:2390:2: ( rule__BaseTask__Group_5__0 )?
             int alt17=2;
             int LA17_0 = input.LA(1);
 
@@ -7021,7 +7276,7 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
             }
             switch (alt17) {
                 case 1 :
-                    // InternalOptimind.g:2309:3: rule__BaseTask__Group_5__0
+                    // InternalOptimind.g:2390:3: rule__BaseTask__Group_5__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__BaseTask__Group_5__0();
@@ -7057,14 +7312,14 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BaseTask__Group__6"
-    // InternalOptimind.g:2317:1: rule__BaseTask__Group__6 : rule__BaseTask__Group__6__Impl rule__BaseTask__Group__7 ;
+    // InternalOptimind.g:2398:1: rule__BaseTask__Group__6 : rule__BaseTask__Group__6__Impl rule__BaseTask__Group__7 ;
     public final void rule__BaseTask__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:2321:1: ( rule__BaseTask__Group__6__Impl rule__BaseTask__Group__7 )
-            // InternalOptimind.g:2322:2: rule__BaseTask__Group__6__Impl rule__BaseTask__Group__7
+            // InternalOptimind.g:2402:1: ( rule__BaseTask__Group__6__Impl rule__BaseTask__Group__7 )
+            // InternalOptimind.g:2403:2: rule__BaseTask__Group__6__Impl rule__BaseTask__Group__7
             {
             pushFollow(FOLLOW_26);
             rule__BaseTask__Group__6__Impl();
@@ -7095,20 +7350,20 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BaseTask__Group__6__Impl"
-    // InternalOptimind.g:2329:1: rule__BaseTask__Group__6__Impl : ( ( rule__BaseTask__Group_6__0 )? ) ;
+    // InternalOptimind.g:2410:1: rule__BaseTask__Group__6__Impl : ( ( rule__BaseTask__Group_6__0 )? ) ;
     public final void rule__BaseTask__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:2333:1: ( ( ( rule__BaseTask__Group_6__0 )? ) )
-            // InternalOptimind.g:2334:1: ( ( rule__BaseTask__Group_6__0 )? )
+            // InternalOptimind.g:2414:1: ( ( ( rule__BaseTask__Group_6__0 )? ) )
+            // InternalOptimind.g:2415:1: ( ( rule__BaseTask__Group_6__0 )? )
             {
-            // InternalOptimind.g:2334:1: ( ( rule__BaseTask__Group_6__0 )? )
-            // InternalOptimind.g:2335:2: ( rule__BaseTask__Group_6__0 )?
+            // InternalOptimind.g:2415:1: ( ( rule__BaseTask__Group_6__0 )? )
+            // InternalOptimind.g:2416:2: ( rule__BaseTask__Group_6__0 )?
             {
              before(grammarAccess.getBaseTaskAccess().getGroup_6()); 
-            // InternalOptimind.g:2336:2: ( rule__BaseTask__Group_6__0 )?
+            // InternalOptimind.g:2417:2: ( rule__BaseTask__Group_6__0 )?
             int alt18=2;
             int LA18_0 = input.LA(1);
 
@@ -7117,7 +7372,7 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
             }
             switch (alt18) {
                 case 1 :
-                    // InternalOptimind.g:2336:3: rule__BaseTask__Group_6__0
+                    // InternalOptimind.g:2417:3: rule__BaseTask__Group_6__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__BaseTask__Group_6__0();
@@ -7153,14 +7408,14 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BaseTask__Group__7"
-    // InternalOptimind.g:2344:1: rule__BaseTask__Group__7 : rule__BaseTask__Group__7__Impl rule__BaseTask__Group__8 ;
+    // InternalOptimind.g:2425:1: rule__BaseTask__Group__7 : rule__BaseTask__Group__7__Impl rule__BaseTask__Group__8 ;
     public final void rule__BaseTask__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:2348:1: ( rule__BaseTask__Group__7__Impl rule__BaseTask__Group__8 )
-            // InternalOptimind.g:2349:2: rule__BaseTask__Group__7__Impl rule__BaseTask__Group__8
+            // InternalOptimind.g:2429:1: ( rule__BaseTask__Group__7__Impl rule__BaseTask__Group__8 )
+            // InternalOptimind.g:2430:2: rule__BaseTask__Group__7__Impl rule__BaseTask__Group__8
             {
             pushFollow(FOLLOW_26);
             rule__BaseTask__Group__7__Impl();
@@ -7191,20 +7446,20 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BaseTask__Group__7__Impl"
-    // InternalOptimind.g:2356:1: rule__BaseTask__Group__7__Impl : ( ( rule__BaseTask__Alternatives_7 )* ) ;
+    // InternalOptimind.g:2437:1: rule__BaseTask__Group__7__Impl : ( ( rule__BaseTask__Alternatives_7 )* ) ;
     public final void rule__BaseTask__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:2360:1: ( ( ( rule__BaseTask__Alternatives_7 )* ) )
-            // InternalOptimind.g:2361:1: ( ( rule__BaseTask__Alternatives_7 )* )
+            // InternalOptimind.g:2441:1: ( ( ( rule__BaseTask__Alternatives_7 )* ) )
+            // InternalOptimind.g:2442:1: ( ( rule__BaseTask__Alternatives_7 )* )
             {
-            // InternalOptimind.g:2361:1: ( ( rule__BaseTask__Alternatives_7 )* )
-            // InternalOptimind.g:2362:2: ( rule__BaseTask__Alternatives_7 )*
+            // InternalOptimind.g:2442:1: ( ( rule__BaseTask__Alternatives_7 )* )
+            // InternalOptimind.g:2443:2: ( rule__BaseTask__Alternatives_7 )*
             {
              before(grammarAccess.getBaseTaskAccess().getAlternatives_7()); 
-            // InternalOptimind.g:2363:2: ( rule__BaseTask__Alternatives_7 )*
+            // InternalOptimind.g:2444:2: ( rule__BaseTask__Alternatives_7 )*
             loop19:
             do {
                 int alt19=2;
@@ -7217,7 +7472,7 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
                 switch (alt19) {
             	case 1 :
-            	    // InternalOptimind.g:2363:3: rule__BaseTask__Alternatives_7
+            	    // InternalOptimind.g:2444:3: rule__BaseTask__Alternatives_7
             	    {
             	    pushFollow(FOLLOW_27);
             	    rule__BaseTask__Alternatives_7();
@@ -7256,14 +7511,14 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BaseTask__Group__8"
-    // InternalOptimind.g:2371:1: rule__BaseTask__Group__8 : rule__BaseTask__Group__8__Impl ;
+    // InternalOptimind.g:2452:1: rule__BaseTask__Group__8 : rule__BaseTask__Group__8__Impl ;
     public final void rule__BaseTask__Group__8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:2375:1: ( rule__BaseTask__Group__8__Impl )
-            // InternalOptimind.g:2376:2: rule__BaseTask__Group__8__Impl
+            // InternalOptimind.g:2456:1: ( rule__BaseTask__Group__8__Impl )
+            // InternalOptimind.g:2457:2: rule__BaseTask__Group__8__Impl
             {
             pushFollow(FOLLOW_2);
             rule__BaseTask__Group__8__Impl();
@@ -7289,17 +7544,17 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BaseTask__Group__8__Impl"
-    // InternalOptimind.g:2382:1: rule__BaseTask__Group__8__Impl : ( '}' ) ;
+    // InternalOptimind.g:2463:1: rule__BaseTask__Group__8__Impl : ( '}' ) ;
     public final void rule__BaseTask__Group__8__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:2386:1: ( ( '}' ) )
-            // InternalOptimind.g:2387:1: ( '}' )
+            // InternalOptimind.g:2467:1: ( ( '}' ) )
+            // InternalOptimind.g:2468:1: ( '}' )
             {
-            // InternalOptimind.g:2387:1: ( '}' )
-            // InternalOptimind.g:2388:2: '}'
+            // InternalOptimind.g:2468:1: ( '}' )
+            // InternalOptimind.g:2469:2: '}'
             {
              before(grammarAccess.getBaseTaskAccess().getRightCurlyBracketKeyword_8()); 
             match(input,19,FOLLOW_2); 
@@ -7326,14 +7581,14 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BaseTask__Group_4__0"
-    // InternalOptimind.g:2398:1: rule__BaseTask__Group_4__0 : rule__BaseTask__Group_4__0__Impl rule__BaseTask__Group_4__1 ;
+    // InternalOptimind.g:2479:1: rule__BaseTask__Group_4__0 : rule__BaseTask__Group_4__0__Impl rule__BaseTask__Group_4__1 ;
     public final void rule__BaseTask__Group_4__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:2402:1: ( rule__BaseTask__Group_4__0__Impl rule__BaseTask__Group_4__1 )
-            // InternalOptimind.g:2403:2: rule__BaseTask__Group_4__0__Impl rule__BaseTask__Group_4__1
+            // InternalOptimind.g:2483:1: ( rule__BaseTask__Group_4__0__Impl rule__BaseTask__Group_4__1 )
+            // InternalOptimind.g:2484:2: rule__BaseTask__Group_4__0__Impl rule__BaseTask__Group_4__1
             {
             pushFollow(FOLLOW_28);
             rule__BaseTask__Group_4__0__Impl();
@@ -7364,17 +7619,17 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BaseTask__Group_4__0__Impl"
-    // InternalOptimind.g:2410:1: rule__BaseTask__Group_4__0__Impl : ( 'status' ) ;
+    // InternalOptimind.g:2491:1: rule__BaseTask__Group_4__0__Impl : ( 'status' ) ;
     public final void rule__BaseTask__Group_4__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:2414:1: ( ( 'status' ) )
-            // InternalOptimind.g:2415:1: ( 'status' )
+            // InternalOptimind.g:2495:1: ( ( 'status' ) )
+            // InternalOptimind.g:2496:1: ( 'status' )
             {
-            // InternalOptimind.g:2415:1: ( 'status' )
-            // InternalOptimind.g:2416:2: 'status'
+            // InternalOptimind.g:2496:1: ( 'status' )
+            // InternalOptimind.g:2497:2: 'status'
             {
              before(grammarAccess.getBaseTaskAccess().getStatusKeyword_4_0()); 
             match(input,35,FOLLOW_2); 
@@ -7401,14 +7656,14 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BaseTask__Group_4__1"
-    // InternalOptimind.g:2425:1: rule__BaseTask__Group_4__1 : rule__BaseTask__Group_4__1__Impl ;
+    // InternalOptimind.g:2506:1: rule__BaseTask__Group_4__1 : rule__BaseTask__Group_4__1__Impl ;
     public final void rule__BaseTask__Group_4__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:2429:1: ( rule__BaseTask__Group_4__1__Impl )
-            // InternalOptimind.g:2430:2: rule__BaseTask__Group_4__1__Impl
+            // InternalOptimind.g:2510:1: ( rule__BaseTask__Group_4__1__Impl )
+            // InternalOptimind.g:2511:2: rule__BaseTask__Group_4__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__BaseTask__Group_4__1__Impl();
@@ -7434,21 +7689,21 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BaseTask__Group_4__1__Impl"
-    // InternalOptimind.g:2436:1: rule__BaseTask__Group_4__1__Impl : ( ( rule__BaseTask__StatusAssignment_4_1 ) ) ;
+    // InternalOptimind.g:2517:1: rule__BaseTask__Group_4__1__Impl : ( ( rule__BaseTask__StatusAssignment_4_1 ) ) ;
     public final void rule__BaseTask__Group_4__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:2440:1: ( ( ( rule__BaseTask__StatusAssignment_4_1 ) ) )
-            // InternalOptimind.g:2441:1: ( ( rule__BaseTask__StatusAssignment_4_1 ) )
+            // InternalOptimind.g:2521:1: ( ( ( rule__BaseTask__StatusAssignment_4_1 ) ) )
+            // InternalOptimind.g:2522:1: ( ( rule__BaseTask__StatusAssignment_4_1 ) )
             {
-            // InternalOptimind.g:2441:1: ( ( rule__BaseTask__StatusAssignment_4_1 ) )
-            // InternalOptimind.g:2442:2: ( rule__BaseTask__StatusAssignment_4_1 )
+            // InternalOptimind.g:2522:1: ( ( rule__BaseTask__StatusAssignment_4_1 ) )
+            // InternalOptimind.g:2523:2: ( rule__BaseTask__StatusAssignment_4_1 )
             {
              before(grammarAccess.getBaseTaskAccess().getStatusAssignment_4_1()); 
-            // InternalOptimind.g:2443:2: ( rule__BaseTask__StatusAssignment_4_1 )
-            // InternalOptimind.g:2443:3: rule__BaseTask__StatusAssignment_4_1
+            // InternalOptimind.g:2524:2: ( rule__BaseTask__StatusAssignment_4_1 )
+            // InternalOptimind.g:2524:3: rule__BaseTask__StatusAssignment_4_1
             {
             pushFollow(FOLLOW_2);
             rule__BaseTask__StatusAssignment_4_1();
@@ -7481,14 +7736,14 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BaseTask__Group_5__0"
-    // InternalOptimind.g:2452:1: rule__BaseTask__Group_5__0 : rule__BaseTask__Group_5__0__Impl rule__BaseTask__Group_5__1 ;
+    // InternalOptimind.g:2533:1: rule__BaseTask__Group_5__0 : rule__BaseTask__Group_5__0__Impl rule__BaseTask__Group_5__1 ;
     public final void rule__BaseTask__Group_5__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:2456:1: ( rule__BaseTask__Group_5__0__Impl rule__BaseTask__Group_5__1 )
-            // InternalOptimind.g:2457:2: rule__BaseTask__Group_5__0__Impl rule__BaseTask__Group_5__1
+            // InternalOptimind.g:2537:1: ( rule__BaseTask__Group_5__0__Impl rule__BaseTask__Group_5__1 )
+            // InternalOptimind.g:2538:2: rule__BaseTask__Group_5__0__Impl rule__BaseTask__Group_5__1
             {
             pushFollow(FOLLOW_5);
             rule__BaseTask__Group_5__0__Impl();
@@ -7519,17 +7774,17 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BaseTask__Group_5__0__Impl"
-    // InternalOptimind.g:2464:1: rule__BaseTask__Group_5__0__Impl : ( 'inputs' ) ;
+    // InternalOptimind.g:2545:1: rule__BaseTask__Group_5__0__Impl : ( 'inputs' ) ;
     public final void rule__BaseTask__Group_5__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:2468:1: ( ( 'inputs' ) )
-            // InternalOptimind.g:2469:1: ( 'inputs' )
+            // InternalOptimind.g:2549:1: ( ( 'inputs' ) )
+            // InternalOptimind.g:2550:1: ( 'inputs' )
             {
-            // InternalOptimind.g:2469:1: ( 'inputs' )
-            // InternalOptimind.g:2470:2: 'inputs'
+            // InternalOptimind.g:2550:1: ( 'inputs' )
+            // InternalOptimind.g:2551:2: 'inputs'
             {
              before(grammarAccess.getBaseTaskAccess().getInputsKeyword_5_0()); 
             match(input,36,FOLLOW_2); 
@@ -7556,14 +7811,14 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BaseTask__Group_5__1"
-    // InternalOptimind.g:2479:1: rule__BaseTask__Group_5__1 : rule__BaseTask__Group_5__1__Impl rule__BaseTask__Group_5__2 ;
+    // InternalOptimind.g:2560:1: rule__BaseTask__Group_5__1 : rule__BaseTask__Group_5__1__Impl rule__BaseTask__Group_5__2 ;
     public final void rule__BaseTask__Group_5__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:2483:1: ( rule__BaseTask__Group_5__1__Impl rule__BaseTask__Group_5__2 )
-            // InternalOptimind.g:2484:2: rule__BaseTask__Group_5__1__Impl rule__BaseTask__Group_5__2
+            // InternalOptimind.g:2564:1: ( rule__BaseTask__Group_5__1__Impl rule__BaseTask__Group_5__2 )
+            // InternalOptimind.g:2565:2: rule__BaseTask__Group_5__1__Impl rule__BaseTask__Group_5__2
             {
             pushFollow(FOLLOW_29);
             rule__BaseTask__Group_5__1__Impl();
@@ -7594,17 +7849,17 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BaseTask__Group_5__1__Impl"
-    // InternalOptimind.g:2491:1: rule__BaseTask__Group_5__1__Impl : ( '{' ) ;
+    // InternalOptimind.g:2572:1: rule__BaseTask__Group_5__1__Impl : ( '{' ) ;
     public final void rule__BaseTask__Group_5__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:2495:1: ( ( '{' ) )
-            // InternalOptimind.g:2496:1: ( '{' )
+            // InternalOptimind.g:2576:1: ( ( '{' ) )
+            // InternalOptimind.g:2577:1: ( '{' )
             {
-            // InternalOptimind.g:2496:1: ( '{' )
-            // InternalOptimind.g:2497:2: '{'
+            // InternalOptimind.g:2577:1: ( '{' )
+            // InternalOptimind.g:2578:2: '{'
             {
              before(grammarAccess.getBaseTaskAccess().getLeftCurlyBracketKeyword_5_1()); 
             match(input,18,FOLLOW_2); 
@@ -7631,14 +7886,14 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BaseTask__Group_5__2"
-    // InternalOptimind.g:2506:1: rule__BaseTask__Group_5__2 : rule__BaseTask__Group_5__2__Impl rule__BaseTask__Group_5__3 ;
+    // InternalOptimind.g:2587:1: rule__BaseTask__Group_5__2 : rule__BaseTask__Group_5__2__Impl rule__BaseTask__Group_5__3 ;
     public final void rule__BaseTask__Group_5__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:2510:1: ( rule__BaseTask__Group_5__2__Impl rule__BaseTask__Group_5__3 )
-            // InternalOptimind.g:2511:2: rule__BaseTask__Group_5__2__Impl rule__BaseTask__Group_5__3
+            // InternalOptimind.g:2591:1: ( rule__BaseTask__Group_5__2__Impl rule__BaseTask__Group_5__3 )
+            // InternalOptimind.g:2592:2: rule__BaseTask__Group_5__2__Impl rule__BaseTask__Group_5__3
             {
             pushFollow(FOLLOW_30);
             rule__BaseTask__Group_5__2__Impl();
@@ -7669,21 +7924,21 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BaseTask__Group_5__2__Impl"
-    // InternalOptimind.g:2518:1: rule__BaseTask__Group_5__2__Impl : ( ( rule__BaseTask__InputsAssignment_5_2 ) ) ;
+    // InternalOptimind.g:2599:1: rule__BaseTask__Group_5__2__Impl : ( ( rule__BaseTask__InputsAssignment_5_2 ) ) ;
     public final void rule__BaseTask__Group_5__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:2522:1: ( ( ( rule__BaseTask__InputsAssignment_5_2 ) ) )
-            // InternalOptimind.g:2523:1: ( ( rule__BaseTask__InputsAssignment_5_2 ) )
+            // InternalOptimind.g:2603:1: ( ( ( rule__BaseTask__InputsAssignment_5_2 ) ) )
+            // InternalOptimind.g:2604:1: ( ( rule__BaseTask__InputsAssignment_5_2 ) )
             {
-            // InternalOptimind.g:2523:1: ( ( rule__BaseTask__InputsAssignment_5_2 ) )
-            // InternalOptimind.g:2524:2: ( rule__BaseTask__InputsAssignment_5_2 )
+            // InternalOptimind.g:2604:1: ( ( rule__BaseTask__InputsAssignment_5_2 ) )
+            // InternalOptimind.g:2605:2: ( rule__BaseTask__InputsAssignment_5_2 )
             {
              before(grammarAccess.getBaseTaskAccess().getInputsAssignment_5_2()); 
-            // InternalOptimind.g:2525:2: ( rule__BaseTask__InputsAssignment_5_2 )
-            // InternalOptimind.g:2525:3: rule__BaseTask__InputsAssignment_5_2
+            // InternalOptimind.g:2606:2: ( rule__BaseTask__InputsAssignment_5_2 )
+            // InternalOptimind.g:2606:3: rule__BaseTask__InputsAssignment_5_2
             {
             pushFollow(FOLLOW_2);
             rule__BaseTask__InputsAssignment_5_2();
@@ -7716,14 +7971,14 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BaseTask__Group_5__3"
-    // InternalOptimind.g:2533:1: rule__BaseTask__Group_5__3 : rule__BaseTask__Group_5__3__Impl rule__BaseTask__Group_5__4 ;
+    // InternalOptimind.g:2614:1: rule__BaseTask__Group_5__3 : rule__BaseTask__Group_5__3__Impl rule__BaseTask__Group_5__4 ;
     public final void rule__BaseTask__Group_5__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:2537:1: ( rule__BaseTask__Group_5__3__Impl rule__BaseTask__Group_5__4 )
-            // InternalOptimind.g:2538:2: rule__BaseTask__Group_5__3__Impl rule__BaseTask__Group_5__4
+            // InternalOptimind.g:2618:1: ( rule__BaseTask__Group_5__3__Impl rule__BaseTask__Group_5__4 )
+            // InternalOptimind.g:2619:2: rule__BaseTask__Group_5__3__Impl rule__BaseTask__Group_5__4
             {
             pushFollow(FOLLOW_30);
             rule__BaseTask__Group_5__3__Impl();
@@ -7754,20 +8009,20 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BaseTask__Group_5__3__Impl"
-    // InternalOptimind.g:2545:1: rule__BaseTask__Group_5__3__Impl : ( ( rule__BaseTask__Group_5_3__0 )* ) ;
+    // InternalOptimind.g:2626:1: rule__BaseTask__Group_5__3__Impl : ( ( rule__BaseTask__Group_5_3__0 )* ) ;
     public final void rule__BaseTask__Group_5__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:2549:1: ( ( ( rule__BaseTask__Group_5_3__0 )* ) )
-            // InternalOptimind.g:2550:1: ( ( rule__BaseTask__Group_5_3__0 )* )
+            // InternalOptimind.g:2630:1: ( ( ( rule__BaseTask__Group_5_3__0 )* ) )
+            // InternalOptimind.g:2631:1: ( ( rule__BaseTask__Group_5_3__0 )* )
             {
-            // InternalOptimind.g:2550:1: ( ( rule__BaseTask__Group_5_3__0 )* )
-            // InternalOptimind.g:2551:2: ( rule__BaseTask__Group_5_3__0 )*
+            // InternalOptimind.g:2631:1: ( ( rule__BaseTask__Group_5_3__0 )* )
+            // InternalOptimind.g:2632:2: ( rule__BaseTask__Group_5_3__0 )*
             {
              before(grammarAccess.getBaseTaskAccess().getGroup_5_3()); 
-            // InternalOptimind.g:2552:2: ( rule__BaseTask__Group_5_3__0 )*
+            // InternalOptimind.g:2633:2: ( rule__BaseTask__Group_5_3__0 )*
             loop20:
             do {
                 int alt20=2;
@@ -7780,7 +8035,7 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
                 switch (alt20) {
             	case 1 :
-            	    // InternalOptimind.g:2552:3: rule__BaseTask__Group_5_3__0
+            	    // InternalOptimind.g:2633:3: rule__BaseTask__Group_5_3__0
             	    {
             	    pushFollow(FOLLOW_31);
             	    rule__BaseTask__Group_5_3__0();
@@ -7819,14 +8074,14 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BaseTask__Group_5__4"
-    // InternalOptimind.g:2560:1: rule__BaseTask__Group_5__4 : rule__BaseTask__Group_5__4__Impl ;
+    // InternalOptimind.g:2641:1: rule__BaseTask__Group_5__4 : rule__BaseTask__Group_5__4__Impl ;
     public final void rule__BaseTask__Group_5__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:2564:1: ( rule__BaseTask__Group_5__4__Impl )
-            // InternalOptimind.g:2565:2: rule__BaseTask__Group_5__4__Impl
+            // InternalOptimind.g:2645:1: ( rule__BaseTask__Group_5__4__Impl )
+            // InternalOptimind.g:2646:2: rule__BaseTask__Group_5__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__BaseTask__Group_5__4__Impl();
@@ -7852,17 +8107,17 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BaseTask__Group_5__4__Impl"
-    // InternalOptimind.g:2571:1: rule__BaseTask__Group_5__4__Impl : ( '}' ) ;
+    // InternalOptimind.g:2652:1: rule__BaseTask__Group_5__4__Impl : ( '}' ) ;
     public final void rule__BaseTask__Group_5__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:2575:1: ( ( '}' ) )
-            // InternalOptimind.g:2576:1: ( '}' )
+            // InternalOptimind.g:2656:1: ( ( '}' ) )
+            // InternalOptimind.g:2657:1: ( '}' )
             {
-            // InternalOptimind.g:2576:1: ( '}' )
-            // InternalOptimind.g:2577:2: '}'
+            // InternalOptimind.g:2657:1: ( '}' )
+            // InternalOptimind.g:2658:2: '}'
             {
              before(grammarAccess.getBaseTaskAccess().getRightCurlyBracketKeyword_5_4()); 
             match(input,19,FOLLOW_2); 
@@ -7889,14 +8144,14 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BaseTask__Group_5_3__0"
-    // InternalOptimind.g:2587:1: rule__BaseTask__Group_5_3__0 : rule__BaseTask__Group_5_3__0__Impl rule__BaseTask__Group_5_3__1 ;
+    // InternalOptimind.g:2668:1: rule__BaseTask__Group_5_3__0 : rule__BaseTask__Group_5_3__0__Impl rule__BaseTask__Group_5_3__1 ;
     public final void rule__BaseTask__Group_5_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:2591:1: ( rule__BaseTask__Group_5_3__0__Impl rule__BaseTask__Group_5_3__1 )
-            // InternalOptimind.g:2592:2: rule__BaseTask__Group_5_3__0__Impl rule__BaseTask__Group_5_3__1
+            // InternalOptimind.g:2672:1: ( rule__BaseTask__Group_5_3__0__Impl rule__BaseTask__Group_5_3__1 )
+            // InternalOptimind.g:2673:2: rule__BaseTask__Group_5_3__0__Impl rule__BaseTask__Group_5_3__1
             {
             pushFollow(FOLLOW_29);
             rule__BaseTask__Group_5_3__0__Impl();
@@ -7927,17 +8182,17 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BaseTask__Group_5_3__0__Impl"
-    // InternalOptimind.g:2599:1: rule__BaseTask__Group_5_3__0__Impl : ( ',' ) ;
+    // InternalOptimind.g:2680:1: rule__BaseTask__Group_5_3__0__Impl : ( ',' ) ;
     public final void rule__BaseTask__Group_5_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:2603:1: ( ( ',' ) )
-            // InternalOptimind.g:2604:1: ( ',' )
+            // InternalOptimind.g:2684:1: ( ( ',' ) )
+            // InternalOptimind.g:2685:1: ( ',' )
             {
-            // InternalOptimind.g:2604:1: ( ',' )
-            // InternalOptimind.g:2605:2: ','
+            // InternalOptimind.g:2685:1: ( ',' )
+            // InternalOptimind.g:2686:2: ','
             {
              before(grammarAccess.getBaseTaskAccess().getCommaKeyword_5_3_0()); 
             match(input,37,FOLLOW_2); 
@@ -7964,14 +8219,14 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BaseTask__Group_5_3__1"
-    // InternalOptimind.g:2614:1: rule__BaseTask__Group_5_3__1 : rule__BaseTask__Group_5_3__1__Impl ;
+    // InternalOptimind.g:2695:1: rule__BaseTask__Group_5_3__1 : rule__BaseTask__Group_5_3__1__Impl ;
     public final void rule__BaseTask__Group_5_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:2618:1: ( rule__BaseTask__Group_5_3__1__Impl )
-            // InternalOptimind.g:2619:2: rule__BaseTask__Group_5_3__1__Impl
+            // InternalOptimind.g:2699:1: ( rule__BaseTask__Group_5_3__1__Impl )
+            // InternalOptimind.g:2700:2: rule__BaseTask__Group_5_3__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__BaseTask__Group_5_3__1__Impl();
@@ -7997,21 +8252,21 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BaseTask__Group_5_3__1__Impl"
-    // InternalOptimind.g:2625:1: rule__BaseTask__Group_5_3__1__Impl : ( ( rule__BaseTask__InputsAssignment_5_3_1 ) ) ;
+    // InternalOptimind.g:2706:1: rule__BaseTask__Group_5_3__1__Impl : ( ( rule__BaseTask__InputsAssignment_5_3_1 ) ) ;
     public final void rule__BaseTask__Group_5_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:2629:1: ( ( ( rule__BaseTask__InputsAssignment_5_3_1 ) ) )
-            // InternalOptimind.g:2630:1: ( ( rule__BaseTask__InputsAssignment_5_3_1 ) )
+            // InternalOptimind.g:2710:1: ( ( ( rule__BaseTask__InputsAssignment_5_3_1 ) ) )
+            // InternalOptimind.g:2711:1: ( ( rule__BaseTask__InputsAssignment_5_3_1 ) )
             {
-            // InternalOptimind.g:2630:1: ( ( rule__BaseTask__InputsAssignment_5_3_1 ) )
-            // InternalOptimind.g:2631:2: ( rule__BaseTask__InputsAssignment_5_3_1 )
+            // InternalOptimind.g:2711:1: ( ( rule__BaseTask__InputsAssignment_5_3_1 ) )
+            // InternalOptimind.g:2712:2: ( rule__BaseTask__InputsAssignment_5_3_1 )
             {
              before(grammarAccess.getBaseTaskAccess().getInputsAssignment_5_3_1()); 
-            // InternalOptimind.g:2632:2: ( rule__BaseTask__InputsAssignment_5_3_1 )
-            // InternalOptimind.g:2632:3: rule__BaseTask__InputsAssignment_5_3_1
+            // InternalOptimind.g:2713:2: ( rule__BaseTask__InputsAssignment_5_3_1 )
+            // InternalOptimind.g:2713:3: rule__BaseTask__InputsAssignment_5_3_1
             {
             pushFollow(FOLLOW_2);
             rule__BaseTask__InputsAssignment_5_3_1();
@@ -8044,14 +8299,14 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BaseTask__Group_6__0"
-    // InternalOptimind.g:2641:1: rule__BaseTask__Group_6__0 : rule__BaseTask__Group_6__0__Impl rule__BaseTask__Group_6__1 ;
+    // InternalOptimind.g:2722:1: rule__BaseTask__Group_6__0 : rule__BaseTask__Group_6__0__Impl rule__BaseTask__Group_6__1 ;
     public final void rule__BaseTask__Group_6__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:2645:1: ( rule__BaseTask__Group_6__0__Impl rule__BaseTask__Group_6__1 )
-            // InternalOptimind.g:2646:2: rule__BaseTask__Group_6__0__Impl rule__BaseTask__Group_6__1
+            // InternalOptimind.g:2726:1: ( rule__BaseTask__Group_6__0__Impl rule__BaseTask__Group_6__1 )
+            // InternalOptimind.g:2727:2: rule__BaseTask__Group_6__0__Impl rule__BaseTask__Group_6__1
             {
             pushFollow(FOLLOW_5);
             rule__BaseTask__Group_6__0__Impl();
@@ -8082,17 +8337,17 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BaseTask__Group_6__0__Impl"
-    // InternalOptimind.g:2653:1: rule__BaseTask__Group_6__0__Impl : ( 'outputs' ) ;
+    // InternalOptimind.g:2734:1: rule__BaseTask__Group_6__0__Impl : ( 'outputs' ) ;
     public final void rule__BaseTask__Group_6__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:2657:1: ( ( 'outputs' ) )
-            // InternalOptimind.g:2658:1: ( 'outputs' )
+            // InternalOptimind.g:2738:1: ( ( 'outputs' ) )
+            // InternalOptimind.g:2739:1: ( 'outputs' )
             {
-            // InternalOptimind.g:2658:1: ( 'outputs' )
-            // InternalOptimind.g:2659:2: 'outputs'
+            // InternalOptimind.g:2739:1: ( 'outputs' )
+            // InternalOptimind.g:2740:2: 'outputs'
             {
              before(grammarAccess.getBaseTaskAccess().getOutputsKeyword_6_0()); 
             match(input,38,FOLLOW_2); 
@@ -8119,14 +8374,14 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BaseTask__Group_6__1"
-    // InternalOptimind.g:2668:1: rule__BaseTask__Group_6__1 : rule__BaseTask__Group_6__1__Impl rule__BaseTask__Group_6__2 ;
+    // InternalOptimind.g:2749:1: rule__BaseTask__Group_6__1 : rule__BaseTask__Group_6__1__Impl rule__BaseTask__Group_6__2 ;
     public final void rule__BaseTask__Group_6__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:2672:1: ( rule__BaseTask__Group_6__1__Impl rule__BaseTask__Group_6__2 )
-            // InternalOptimind.g:2673:2: rule__BaseTask__Group_6__1__Impl rule__BaseTask__Group_6__2
+            // InternalOptimind.g:2753:1: ( rule__BaseTask__Group_6__1__Impl rule__BaseTask__Group_6__2 )
+            // InternalOptimind.g:2754:2: rule__BaseTask__Group_6__1__Impl rule__BaseTask__Group_6__2
             {
             pushFollow(FOLLOW_10);
             rule__BaseTask__Group_6__1__Impl();
@@ -8157,17 +8412,17 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BaseTask__Group_6__1__Impl"
-    // InternalOptimind.g:2680:1: rule__BaseTask__Group_6__1__Impl : ( '{' ) ;
+    // InternalOptimind.g:2761:1: rule__BaseTask__Group_6__1__Impl : ( '{' ) ;
     public final void rule__BaseTask__Group_6__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:2684:1: ( ( '{' ) )
-            // InternalOptimind.g:2685:1: ( '{' )
+            // InternalOptimind.g:2765:1: ( ( '{' ) )
+            // InternalOptimind.g:2766:1: ( '{' )
             {
-            // InternalOptimind.g:2685:1: ( '{' )
-            // InternalOptimind.g:2686:2: '{'
+            // InternalOptimind.g:2766:1: ( '{' )
+            // InternalOptimind.g:2767:2: '{'
             {
              before(grammarAccess.getBaseTaskAccess().getLeftCurlyBracketKeyword_6_1()); 
             match(input,18,FOLLOW_2); 
@@ -8194,14 +8449,14 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BaseTask__Group_6__2"
-    // InternalOptimind.g:2695:1: rule__BaseTask__Group_6__2 : rule__BaseTask__Group_6__2__Impl rule__BaseTask__Group_6__3 ;
+    // InternalOptimind.g:2776:1: rule__BaseTask__Group_6__2 : rule__BaseTask__Group_6__2__Impl rule__BaseTask__Group_6__3 ;
     public final void rule__BaseTask__Group_6__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:2699:1: ( rule__BaseTask__Group_6__2__Impl rule__BaseTask__Group_6__3 )
-            // InternalOptimind.g:2700:2: rule__BaseTask__Group_6__2__Impl rule__BaseTask__Group_6__3
+            // InternalOptimind.g:2780:1: ( rule__BaseTask__Group_6__2__Impl rule__BaseTask__Group_6__3 )
+            // InternalOptimind.g:2781:2: rule__BaseTask__Group_6__2__Impl rule__BaseTask__Group_6__3
             {
             pushFollow(FOLLOW_30);
             rule__BaseTask__Group_6__2__Impl();
@@ -8232,21 +8487,21 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BaseTask__Group_6__2__Impl"
-    // InternalOptimind.g:2707:1: rule__BaseTask__Group_6__2__Impl : ( ( rule__BaseTask__OutputsAssignment_6_2 ) ) ;
+    // InternalOptimind.g:2788:1: rule__BaseTask__Group_6__2__Impl : ( ( rule__BaseTask__OutputsAssignment_6_2 ) ) ;
     public final void rule__BaseTask__Group_6__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:2711:1: ( ( ( rule__BaseTask__OutputsAssignment_6_2 ) ) )
-            // InternalOptimind.g:2712:1: ( ( rule__BaseTask__OutputsAssignment_6_2 ) )
+            // InternalOptimind.g:2792:1: ( ( ( rule__BaseTask__OutputsAssignment_6_2 ) ) )
+            // InternalOptimind.g:2793:1: ( ( rule__BaseTask__OutputsAssignment_6_2 ) )
             {
-            // InternalOptimind.g:2712:1: ( ( rule__BaseTask__OutputsAssignment_6_2 ) )
-            // InternalOptimind.g:2713:2: ( rule__BaseTask__OutputsAssignment_6_2 )
+            // InternalOptimind.g:2793:1: ( ( rule__BaseTask__OutputsAssignment_6_2 ) )
+            // InternalOptimind.g:2794:2: ( rule__BaseTask__OutputsAssignment_6_2 )
             {
              before(grammarAccess.getBaseTaskAccess().getOutputsAssignment_6_2()); 
-            // InternalOptimind.g:2714:2: ( rule__BaseTask__OutputsAssignment_6_2 )
-            // InternalOptimind.g:2714:3: rule__BaseTask__OutputsAssignment_6_2
+            // InternalOptimind.g:2795:2: ( rule__BaseTask__OutputsAssignment_6_2 )
+            // InternalOptimind.g:2795:3: rule__BaseTask__OutputsAssignment_6_2
             {
             pushFollow(FOLLOW_2);
             rule__BaseTask__OutputsAssignment_6_2();
@@ -8279,14 +8534,14 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BaseTask__Group_6__3"
-    // InternalOptimind.g:2722:1: rule__BaseTask__Group_6__3 : rule__BaseTask__Group_6__3__Impl rule__BaseTask__Group_6__4 ;
+    // InternalOptimind.g:2803:1: rule__BaseTask__Group_6__3 : rule__BaseTask__Group_6__3__Impl rule__BaseTask__Group_6__4 ;
     public final void rule__BaseTask__Group_6__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:2726:1: ( rule__BaseTask__Group_6__3__Impl rule__BaseTask__Group_6__4 )
-            // InternalOptimind.g:2727:2: rule__BaseTask__Group_6__3__Impl rule__BaseTask__Group_6__4
+            // InternalOptimind.g:2807:1: ( rule__BaseTask__Group_6__3__Impl rule__BaseTask__Group_6__4 )
+            // InternalOptimind.g:2808:2: rule__BaseTask__Group_6__3__Impl rule__BaseTask__Group_6__4
             {
             pushFollow(FOLLOW_30);
             rule__BaseTask__Group_6__3__Impl();
@@ -8317,20 +8572,20 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BaseTask__Group_6__3__Impl"
-    // InternalOptimind.g:2734:1: rule__BaseTask__Group_6__3__Impl : ( ( rule__BaseTask__Group_6_3__0 )* ) ;
+    // InternalOptimind.g:2815:1: rule__BaseTask__Group_6__3__Impl : ( ( rule__BaseTask__Group_6_3__0 )* ) ;
     public final void rule__BaseTask__Group_6__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:2738:1: ( ( ( rule__BaseTask__Group_6_3__0 )* ) )
-            // InternalOptimind.g:2739:1: ( ( rule__BaseTask__Group_6_3__0 )* )
+            // InternalOptimind.g:2819:1: ( ( ( rule__BaseTask__Group_6_3__0 )* ) )
+            // InternalOptimind.g:2820:1: ( ( rule__BaseTask__Group_6_3__0 )* )
             {
-            // InternalOptimind.g:2739:1: ( ( rule__BaseTask__Group_6_3__0 )* )
-            // InternalOptimind.g:2740:2: ( rule__BaseTask__Group_6_3__0 )*
+            // InternalOptimind.g:2820:1: ( ( rule__BaseTask__Group_6_3__0 )* )
+            // InternalOptimind.g:2821:2: ( rule__BaseTask__Group_6_3__0 )*
             {
              before(grammarAccess.getBaseTaskAccess().getGroup_6_3()); 
-            // InternalOptimind.g:2741:2: ( rule__BaseTask__Group_6_3__0 )*
+            // InternalOptimind.g:2822:2: ( rule__BaseTask__Group_6_3__0 )*
             loop21:
             do {
                 int alt21=2;
@@ -8343,7 +8598,7 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
                 switch (alt21) {
             	case 1 :
-            	    // InternalOptimind.g:2741:3: rule__BaseTask__Group_6_3__0
+            	    // InternalOptimind.g:2822:3: rule__BaseTask__Group_6_3__0
             	    {
             	    pushFollow(FOLLOW_31);
             	    rule__BaseTask__Group_6_3__0();
@@ -8382,14 +8637,14 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BaseTask__Group_6__4"
-    // InternalOptimind.g:2749:1: rule__BaseTask__Group_6__4 : rule__BaseTask__Group_6__4__Impl ;
+    // InternalOptimind.g:2830:1: rule__BaseTask__Group_6__4 : rule__BaseTask__Group_6__4__Impl ;
     public final void rule__BaseTask__Group_6__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:2753:1: ( rule__BaseTask__Group_6__4__Impl )
-            // InternalOptimind.g:2754:2: rule__BaseTask__Group_6__4__Impl
+            // InternalOptimind.g:2834:1: ( rule__BaseTask__Group_6__4__Impl )
+            // InternalOptimind.g:2835:2: rule__BaseTask__Group_6__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__BaseTask__Group_6__4__Impl();
@@ -8415,17 +8670,17 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BaseTask__Group_6__4__Impl"
-    // InternalOptimind.g:2760:1: rule__BaseTask__Group_6__4__Impl : ( '}' ) ;
+    // InternalOptimind.g:2841:1: rule__BaseTask__Group_6__4__Impl : ( '}' ) ;
     public final void rule__BaseTask__Group_6__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:2764:1: ( ( '}' ) )
-            // InternalOptimind.g:2765:1: ( '}' )
+            // InternalOptimind.g:2845:1: ( ( '}' ) )
+            // InternalOptimind.g:2846:1: ( '}' )
             {
-            // InternalOptimind.g:2765:1: ( '}' )
-            // InternalOptimind.g:2766:2: '}'
+            // InternalOptimind.g:2846:1: ( '}' )
+            // InternalOptimind.g:2847:2: '}'
             {
              before(grammarAccess.getBaseTaskAccess().getRightCurlyBracketKeyword_6_4()); 
             match(input,19,FOLLOW_2); 
@@ -8452,14 +8707,14 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BaseTask__Group_6_3__0"
-    // InternalOptimind.g:2776:1: rule__BaseTask__Group_6_3__0 : rule__BaseTask__Group_6_3__0__Impl rule__BaseTask__Group_6_3__1 ;
+    // InternalOptimind.g:2857:1: rule__BaseTask__Group_6_3__0 : rule__BaseTask__Group_6_3__0__Impl rule__BaseTask__Group_6_3__1 ;
     public final void rule__BaseTask__Group_6_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:2780:1: ( rule__BaseTask__Group_6_3__0__Impl rule__BaseTask__Group_6_3__1 )
-            // InternalOptimind.g:2781:2: rule__BaseTask__Group_6_3__0__Impl rule__BaseTask__Group_6_3__1
+            // InternalOptimind.g:2861:1: ( rule__BaseTask__Group_6_3__0__Impl rule__BaseTask__Group_6_3__1 )
+            // InternalOptimind.g:2862:2: rule__BaseTask__Group_6_3__0__Impl rule__BaseTask__Group_6_3__1
             {
             pushFollow(FOLLOW_10);
             rule__BaseTask__Group_6_3__0__Impl();
@@ -8490,17 +8745,17 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BaseTask__Group_6_3__0__Impl"
-    // InternalOptimind.g:2788:1: rule__BaseTask__Group_6_3__0__Impl : ( ',' ) ;
+    // InternalOptimind.g:2869:1: rule__BaseTask__Group_6_3__0__Impl : ( ',' ) ;
     public final void rule__BaseTask__Group_6_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:2792:1: ( ( ',' ) )
-            // InternalOptimind.g:2793:1: ( ',' )
+            // InternalOptimind.g:2873:1: ( ( ',' ) )
+            // InternalOptimind.g:2874:1: ( ',' )
             {
-            // InternalOptimind.g:2793:1: ( ',' )
-            // InternalOptimind.g:2794:2: ','
+            // InternalOptimind.g:2874:1: ( ',' )
+            // InternalOptimind.g:2875:2: ','
             {
              before(grammarAccess.getBaseTaskAccess().getCommaKeyword_6_3_0()); 
             match(input,37,FOLLOW_2); 
@@ -8527,14 +8782,14 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BaseTask__Group_6_3__1"
-    // InternalOptimind.g:2803:1: rule__BaseTask__Group_6_3__1 : rule__BaseTask__Group_6_3__1__Impl ;
+    // InternalOptimind.g:2884:1: rule__BaseTask__Group_6_3__1 : rule__BaseTask__Group_6_3__1__Impl ;
     public final void rule__BaseTask__Group_6_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:2807:1: ( rule__BaseTask__Group_6_3__1__Impl )
-            // InternalOptimind.g:2808:2: rule__BaseTask__Group_6_3__1__Impl
+            // InternalOptimind.g:2888:1: ( rule__BaseTask__Group_6_3__1__Impl )
+            // InternalOptimind.g:2889:2: rule__BaseTask__Group_6_3__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__BaseTask__Group_6_3__1__Impl();
@@ -8560,21 +8815,21 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BaseTask__Group_6_3__1__Impl"
-    // InternalOptimind.g:2814:1: rule__BaseTask__Group_6_3__1__Impl : ( ( rule__BaseTask__OutputsAssignment_6_3_1 ) ) ;
+    // InternalOptimind.g:2895:1: rule__BaseTask__Group_6_3__1__Impl : ( ( rule__BaseTask__OutputsAssignment_6_3_1 ) ) ;
     public final void rule__BaseTask__Group_6_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:2818:1: ( ( ( rule__BaseTask__OutputsAssignment_6_3_1 ) ) )
-            // InternalOptimind.g:2819:1: ( ( rule__BaseTask__OutputsAssignment_6_3_1 ) )
+            // InternalOptimind.g:2899:1: ( ( ( rule__BaseTask__OutputsAssignment_6_3_1 ) ) )
+            // InternalOptimind.g:2900:1: ( ( rule__BaseTask__OutputsAssignment_6_3_1 ) )
             {
-            // InternalOptimind.g:2819:1: ( ( rule__BaseTask__OutputsAssignment_6_3_1 ) )
-            // InternalOptimind.g:2820:2: ( rule__BaseTask__OutputsAssignment_6_3_1 )
+            // InternalOptimind.g:2900:1: ( ( rule__BaseTask__OutputsAssignment_6_3_1 ) )
+            // InternalOptimind.g:2901:2: ( rule__BaseTask__OutputsAssignment_6_3_1 )
             {
              before(grammarAccess.getBaseTaskAccess().getOutputsAssignment_6_3_1()); 
-            // InternalOptimind.g:2821:2: ( rule__BaseTask__OutputsAssignment_6_3_1 )
-            // InternalOptimind.g:2821:3: rule__BaseTask__OutputsAssignment_6_3_1
+            // InternalOptimind.g:2902:2: ( rule__BaseTask__OutputsAssignment_6_3_1 )
+            // InternalOptimind.g:2902:3: rule__BaseTask__OutputsAssignment_6_3_1
             {
             pushFollow(FOLLOW_2);
             rule__BaseTask__OutputsAssignment_6_3_1();
@@ -8607,14 +8862,14 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__LibraryTask__Group__0"
-    // InternalOptimind.g:2830:1: rule__LibraryTask__Group__0 : rule__LibraryTask__Group__0__Impl rule__LibraryTask__Group__1 ;
+    // InternalOptimind.g:2911:1: rule__LibraryTask__Group__0 : rule__LibraryTask__Group__0__Impl rule__LibraryTask__Group__1 ;
     public final void rule__LibraryTask__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:2834:1: ( rule__LibraryTask__Group__0__Impl rule__LibraryTask__Group__1 )
-            // InternalOptimind.g:2835:2: rule__LibraryTask__Group__0__Impl rule__LibraryTask__Group__1
+            // InternalOptimind.g:2915:1: ( rule__LibraryTask__Group__0__Impl rule__LibraryTask__Group__1 )
+            // InternalOptimind.g:2916:2: rule__LibraryTask__Group__0__Impl rule__LibraryTask__Group__1
             {
             pushFollow(FOLLOW_32);
             rule__LibraryTask__Group__0__Impl();
@@ -8645,21 +8900,21 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__LibraryTask__Group__0__Impl"
-    // InternalOptimind.g:2842:1: rule__LibraryTask__Group__0__Impl : ( () ) ;
+    // InternalOptimind.g:2923:1: rule__LibraryTask__Group__0__Impl : ( () ) ;
     public final void rule__LibraryTask__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:2846:1: ( ( () ) )
-            // InternalOptimind.g:2847:1: ( () )
+            // InternalOptimind.g:2927:1: ( ( () ) )
+            // InternalOptimind.g:2928:1: ( () )
             {
-            // InternalOptimind.g:2847:1: ( () )
-            // InternalOptimind.g:2848:2: ()
+            // InternalOptimind.g:2928:1: ( () )
+            // InternalOptimind.g:2929:2: ()
             {
              before(grammarAccess.getLibraryTaskAccess().getLibraryTaskAction_0()); 
-            // InternalOptimind.g:2849:2: ()
-            // InternalOptimind.g:2849:3: 
+            // InternalOptimind.g:2930:2: ()
+            // InternalOptimind.g:2930:3: 
             {
             }
 
@@ -8682,14 +8937,14 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__LibraryTask__Group__1"
-    // InternalOptimind.g:2857:1: rule__LibraryTask__Group__1 : rule__LibraryTask__Group__1__Impl rule__LibraryTask__Group__2 ;
+    // InternalOptimind.g:2938:1: rule__LibraryTask__Group__1 : rule__LibraryTask__Group__1__Impl rule__LibraryTask__Group__2 ;
     public final void rule__LibraryTask__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:2861:1: ( rule__LibraryTask__Group__1__Impl rule__LibraryTask__Group__2 )
-            // InternalOptimind.g:2862:2: rule__LibraryTask__Group__1__Impl rule__LibraryTask__Group__2
+            // InternalOptimind.g:2942:1: ( rule__LibraryTask__Group__1__Impl rule__LibraryTask__Group__2 )
+            // InternalOptimind.g:2943:2: rule__LibraryTask__Group__1__Impl rule__LibraryTask__Group__2
             {
             pushFollow(FOLLOW_4);
             rule__LibraryTask__Group__1__Impl();
@@ -8720,17 +8975,17 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__LibraryTask__Group__1__Impl"
-    // InternalOptimind.g:2869:1: rule__LibraryTask__Group__1__Impl : ( 'LibraryTask' ) ;
+    // InternalOptimind.g:2950:1: rule__LibraryTask__Group__1__Impl : ( 'LibraryTask' ) ;
     public final void rule__LibraryTask__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:2873:1: ( ( 'LibraryTask' ) )
-            // InternalOptimind.g:2874:1: ( 'LibraryTask' )
+            // InternalOptimind.g:2954:1: ( ( 'LibraryTask' ) )
+            // InternalOptimind.g:2955:1: ( 'LibraryTask' )
             {
-            // InternalOptimind.g:2874:1: ( 'LibraryTask' )
-            // InternalOptimind.g:2875:2: 'LibraryTask'
+            // InternalOptimind.g:2955:1: ( 'LibraryTask' )
+            // InternalOptimind.g:2956:2: 'LibraryTask'
             {
              before(grammarAccess.getLibraryTaskAccess().getLibraryTaskKeyword_1()); 
             match(input,39,FOLLOW_2); 
@@ -8757,14 +9012,14 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__LibraryTask__Group__2"
-    // InternalOptimind.g:2884:1: rule__LibraryTask__Group__2 : rule__LibraryTask__Group__2__Impl rule__LibraryTask__Group__3 ;
+    // InternalOptimind.g:2965:1: rule__LibraryTask__Group__2 : rule__LibraryTask__Group__2__Impl rule__LibraryTask__Group__3 ;
     public final void rule__LibraryTask__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:2888:1: ( rule__LibraryTask__Group__2__Impl rule__LibraryTask__Group__3 )
-            // InternalOptimind.g:2889:2: rule__LibraryTask__Group__2__Impl rule__LibraryTask__Group__3
+            // InternalOptimind.g:2969:1: ( rule__LibraryTask__Group__2__Impl rule__LibraryTask__Group__3 )
+            // InternalOptimind.g:2970:2: rule__LibraryTask__Group__2__Impl rule__LibraryTask__Group__3
             {
             pushFollow(FOLLOW_5);
             rule__LibraryTask__Group__2__Impl();
@@ -8795,21 +9050,21 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__LibraryTask__Group__2__Impl"
-    // InternalOptimind.g:2896:1: rule__LibraryTask__Group__2__Impl : ( ( rule__LibraryTask__NameAssignment_2 ) ) ;
+    // InternalOptimind.g:2977:1: rule__LibraryTask__Group__2__Impl : ( ( rule__LibraryTask__NameAssignment_2 ) ) ;
     public final void rule__LibraryTask__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:2900:1: ( ( ( rule__LibraryTask__NameAssignment_2 ) ) )
-            // InternalOptimind.g:2901:1: ( ( rule__LibraryTask__NameAssignment_2 ) )
+            // InternalOptimind.g:2981:1: ( ( ( rule__LibraryTask__NameAssignment_2 ) ) )
+            // InternalOptimind.g:2982:1: ( ( rule__LibraryTask__NameAssignment_2 ) )
             {
-            // InternalOptimind.g:2901:1: ( ( rule__LibraryTask__NameAssignment_2 ) )
-            // InternalOptimind.g:2902:2: ( rule__LibraryTask__NameAssignment_2 )
+            // InternalOptimind.g:2982:1: ( ( rule__LibraryTask__NameAssignment_2 ) )
+            // InternalOptimind.g:2983:2: ( rule__LibraryTask__NameAssignment_2 )
             {
              before(grammarAccess.getLibraryTaskAccess().getNameAssignment_2()); 
-            // InternalOptimind.g:2903:2: ( rule__LibraryTask__NameAssignment_2 )
-            // InternalOptimind.g:2903:3: rule__LibraryTask__NameAssignment_2
+            // InternalOptimind.g:2984:2: ( rule__LibraryTask__NameAssignment_2 )
+            // InternalOptimind.g:2984:3: rule__LibraryTask__NameAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__LibraryTask__NameAssignment_2();
@@ -8842,14 +9097,14 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__LibraryTask__Group__3"
-    // InternalOptimind.g:2911:1: rule__LibraryTask__Group__3 : rule__LibraryTask__Group__3__Impl rule__LibraryTask__Group__4 ;
+    // InternalOptimind.g:2992:1: rule__LibraryTask__Group__3 : rule__LibraryTask__Group__3__Impl rule__LibraryTask__Group__4 ;
     public final void rule__LibraryTask__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:2915:1: ( rule__LibraryTask__Group__3__Impl rule__LibraryTask__Group__4 )
-            // InternalOptimind.g:2916:2: rule__LibraryTask__Group__3__Impl rule__LibraryTask__Group__4
+            // InternalOptimind.g:2996:1: ( rule__LibraryTask__Group__3__Impl rule__LibraryTask__Group__4 )
+            // InternalOptimind.g:2997:2: rule__LibraryTask__Group__3__Impl rule__LibraryTask__Group__4
             {
             pushFollow(FOLLOW_33);
             rule__LibraryTask__Group__3__Impl();
@@ -8880,17 +9135,17 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__LibraryTask__Group__3__Impl"
-    // InternalOptimind.g:2923:1: rule__LibraryTask__Group__3__Impl : ( '{' ) ;
+    // InternalOptimind.g:3004:1: rule__LibraryTask__Group__3__Impl : ( '{' ) ;
     public final void rule__LibraryTask__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:2927:1: ( ( '{' ) )
-            // InternalOptimind.g:2928:1: ( '{' )
+            // InternalOptimind.g:3008:1: ( ( '{' ) )
+            // InternalOptimind.g:3009:1: ( '{' )
             {
-            // InternalOptimind.g:2928:1: ( '{' )
-            // InternalOptimind.g:2929:2: '{'
+            // InternalOptimind.g:3009:1: ( '{' )
+            // InternalOptimind.g:3010:2: '{'
             {
              before(grammarAccess.getLibraryTaskAccess().getLeftCurlyBracketKeyword_3()); 
             match(input,18,FOLLOW_2); 
@@ -8917,14 +9172,14 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__LibraryTask__Group__4"
-    // InternalOptimind.g:2938:1: rule__LibraryTask__Group__4 : rule__LibraryTask__Group__4__Impl rule__LibraryTask__Group__5 ;
+    // InternalOptimind.g:3019:1: rule__LibraryTask__Group__4 : rule__LibraryTask__Group__4__Impl rule__LibraryTask__Group__5 ;
     public final void rule__LibraryTask__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:2942:1: ( rule__LibraryTask__Group__4__Impl rule__LibraryTask__Group__5 )
-            // InternalOptimind.g:2943:2: rule__LibraryTask__Group__4__Impl rule__LibraryTask__Group__5
+            // InternalOptimind.g:3023:1: ( rule__LibraryTask__Group__4__Impl rule__LibraryTask__Group__5 )
+            // InternalOptimind.g:3024:2: rule__LibraryTask__Group__4__Impl rule__LibraryTask__Group__5
             {
             pushFollow(FOLLOW_33);
             rule__LibraryTask__Group__4__Impl();
@@ -8955,20 +9210,20 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__LibraryTask__Group__4__Impl"
-    // InternalOptimind.g:2950:1: rule__LibraryTask__Group__4__Impl : ( ( rule__LibraryTask__Group_4__0 )? ) ;
+    // InternalOptimind.g:3031:1: rule__LibraryTask__Group__4__Impl : ( ( rule__LibraryTask__Group_4__0 )? ) ;
     public final void rule__LibraryTask__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:2954:1: ( ( ( rule__LibraryTask__Group_4__0 )? ) )
-            // InternalOptimind.g:2955:1: ( ( rule__LibraryTask__Group_4__0 )? )
+            // InternalOptimind.g:3035:1: ( ( ( rule__LibraryTask__Group_4__0 )? ) )
+            // InternalOptimind.g:3036:1: ( ( rule__LibraryTask__Group_4__0 )? )
             {
-            // InternalOptimind.g:2955:1: ( ( rule__LibraryTask__Group_4__0 )? )
-            // InternalOptimind.g:2956:2: ( rule__LibraryTask__Group_4__0 )?
+            // InternalOptimind.g:3036:1: ( ( rule__LibraryTask__Group_4__0 )? )
+            // InternalOptimind.g:3037:2: ( rule__LibraryTask__Group_4__0 )?
             {
              before(grammarAccess.getLibraryTaskAccess().getGroup_4()); 
-            // InternalOptimind.g:2957:2: ( rule__LibraryTask__Group_4__0 )?
+            // InternalOptimind.g:3038:2: ( rule__LibraryTask__Group_4__0 )?
             int alt22=2;
             int LA22_0 = input.LA(1);
 
@@ -8977,7 +9232,7 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
             }
             switch (alt22) {
                 case 1 :
-                    // InternalOptimind.g:2957:3: rule__LibraryTask__Group_4__0
+                    // InternalOptimind.g:3038:3: rule__LibraryTask__Group_4__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__LibraryTask__Group_4__0();
@@ -9013,14 +9268,14 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__LibraryTask__Group__5"
-    // InternalOptimind.g:2965:1: rule__LibraryTask__Group__5 : rule__LibraryTask__Group__5__Impl rule__LibraryTask__Group__6 ;
+    // InternalOptimind.g:3046:1: rule__LibraryTask__Group__5 : rule__LibraryTask__Group__5__Impl rule__LibraryTask__Group__6 ;
     public final void rule__LibraryTask__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:2969:1: ( rule__LibraryTask__Group__5__Impl rule__LibraryTask__Group__6 )
-            // InternalOptimind.g:2970:2: rule__LibraryTask__Group__5__Impl rule__LibraryTask__Group__6
+            // InternalOptimind.g:3050:1: ( rule__LibraryTask__Group__5__Impl rule__LibraryTask__Group__6 )
+            // InternalOptimind.g:3051:2: rule__LibraryTask__Group__5__Impl rule__LibraryTask__Group__6
             {
             pushFollow(FOLLOW_33);
             rule__LibraryTask__Group__5__Impl();
@@ -9051,20 +9306,20 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__LibraryTask__Group__5__Impl"
-    // InternalOptimind.g:2977:1: rule__LibraryTask__Group__5__Impl : ( ( rule__LibraryTask__Group_5__0 )? ) ;
+    // InternalOptimind.g:3058:1: rule__LibraryTask__Group__5__Impl : ( ( rule__LibraryTask__Group_5__0 )? ) ;
     public final void rule__LibraryTask__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:2981:1: ( ( ( rule__LibraryTask__Group_5__0 )? ) )
-            // InternalOptimind.g:2982:1: ( ( rule__LibraryTask__Group_5__0 )? )
+            // InternalOptimind.g:3062:1: ( ( ( rule__LibraryTask__Group_5__0 )? ) )
+            // InternalOptimind.g:3063:1: ( ( rule__LibraryTask__Group_5__0 )? )
             {
-            // InternalOptimind.g:2982:1: ( ( rule__LibraryTask__Group_5__0 )? )
-            // InternalOptimind.g:2983:2: ( rule__LibraryTask__Group_5__0 )?
+            // InternalOptimind.g:3063:1: ( ( rule__LibraryTask__Group_5__0 )? )
+            // InternalOptimind.g:3064:2: ( rule__LibraryTask__Group_5__0 )?
             {
              before(grammarAccess.getLibraryTaskAccess().getGroup_5()); 
-            // InternalOptimind.g:2984:2: ( rule__LibraryTask__Group_5__0 )?
+            // InternalOptimind.g:3065:2: ( rule__LibraryTask__Group_5__0 )?
             int alt23=2;
             int LA23_0 = input.LA(1);
 
@@ -9073,7 +9328,7 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
             }
             switch (alt23) {
                 case 1 :
-                    // InternalOptimind.g:2984:3: rule__LibraryTask__Group_5__0
+                    // InternalOptimind.g:3065:3: rule__LibraryTask__Group_5__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__LibraryTask__Group_5__0();
@@ -9109,14 +9364,14 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__LibraryTask__Group__6"
-    // InternalOptimind.g:2992:1: rule__LibraryTask__Group__6 : rule__LibraryTask__Group__6__Impl rule__LibraryTask__Group__7 ;
+    // InternalOptimind.g:3073:1: rule__LibraryTask__Group__6 : rule__LibraryTask__Group__6__Impl rule__LibraryTask__Group__7 ;
     public final void rule__LibraryTask__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:2996:1: ( rule__LibraryTask__Group__6__Impl rule__LibraryTask__Group__7 )
-            // InternalOptimind.g:2997:2: rule__LibraryTask__Group__6__Impl rule__LibraryTask__Group__7
+            // InternalOptimind.g:3077:1: ( rule__LibraryTask__Group__6__Impl rule__LibraryTask__Group__7 )
+            // InternalOptimind.g:3078:2: rule__LibraryTask__Group__6__Impl rule__LibraryTask__Group__7
             {
             pushFollow(FOLLOW_33);
             rule__LibraryTask__Group__6__Impl();
@@ -9147,20 +9402,20 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__LibraryTask__Group__6__Impl"
-    // InternalOptimind.g:3004:1: rule__LibraryTask__Group__6__Impl : ( ( rule__LibraryTask__Group_6__0 )? ) ;
+    // InternalOptimind.g:3085:1: rule__LibraryTask__Group__6__Impl : ( ( rule__LibraryTask__Group_6__0 )? ) ;
     public final void rule__LibraryTask__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:3008:1: ( ( ( rule__LibraryTask__Group_6__0 )? ) )
-            // InternalOptimind.g:3009:1: ( ( rule__LibraryTask__Group_6__0 )? )
+            // InternalOptimind.g:3089:1: ( ( ( rule__LibraryTask__Group_6__0 )? ) )
+            // InternalOptimind.g:3090:1: ( ( rule__LibraryTask__Group_6__0 )? )
             {
-            // InternalOptimind.g:3009:1: ( ( rule__LibraryTask__Group_6__0 )? )
-            // InternalOptimind.g:3010:2: ( rule__LibraryTask__Group_6__0 )?
+            // InternalOptimind.g:3090:1: ( ( rule__LibraryTask__Group_6__0 )? )
+            // InternalOptimind.g:3091:2: ( rule__LibraryTask__Group_6__0 )?
             {
              before(grammarAccess.getLibraryTaskAccess().getGroup_6()); 
-            // InternalOptimind.g:3011:2: ( rule__LibraryTask__Group_6__0 )?
+            // InternalOptimind.g:3092:2: ( rule__LibraryTask__Group_6__0 )?
             int alt24=2;
             int LA24_0 = input.LA(1);
 
@@ -9169,7 +9424,7 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
             }
             switch (alt24) {
                 case 1 :
-                    // InternalOptimind.g:3011:3: rule__LibraryTask__Group_6__0
+                    // InternalOptimind.g:3092:3: rule__LibraryTask__Group_6__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__LibraryTask__Group_6__0();
@@ -9205,14 +9460,14 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__LibraryTask__Group__7"
-    // InternalOptimind.g:3019:1: rule__LibraryTask__Group__7 : rule__LibraryTask__Group__7__Impl rule__LibraryTask__Group__8 ;
+    // InternalOptimind.g:3100:1: rule__LibraryTask__Group__7 : rule__LibraryTask__Group__7__Impl rule__LibraryTask__Group__8 ;
     public final void rule__LibraryTask__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:3023:1: ( rule__LibraryTask__Group__7__Impl rule__LibraryTask__Group__8 )
-            // InternalOptimind.g:3024:2: rule__LibraryTask__Group__7__Impl rule__LibraryTask__Group__8
+            // InternalOptimind.g:3104:1: ( rule__LibraryTask__Group__7__Impl rule__LibraryTask__Group__8 )
+            // InternalOptimind.g:3105:2: rule__LibraryTask__Group__7__Impl rule__LibraryTask__Group__8
             {
             pushFollow(FOLLOW_33);
             rule__LibraryTask__Group__7__Impl();
@@ -9243,20 +9498,20 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__LibraryTask__Group__7__Impl"
-    // InternalOptimind.g:3031:1: rule__LibraryTask__Group__7__Impl : ( ( rule__LibraryTask__Group_7__0 )? ) ;
+    // InternalOptimind.g:3112:1: rule__LibraryTask__Group__7__Impl : ( ( rule__LibraryTask__Group_7__0 )? ) ;
     public final void rule__LibraryTask__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:3035:1: ( ( ( rule__LibraryTask__Group_7__0 )? ) )
-            // InternalOptimind.g:3036:1: ( ( rule__LibraryTask__Group_7__0 )? )
+            // InternalOptimind.g:3116:1: ( ( ( rule__LibraryTask__Group_7__0 )? ) )
+            // InternalOptimind.g:3117:1: ( ( rule__LibraryTask__Group_7__0 )? )
             {
-            // InternalOptimind.g:3036:1: ( ( rule__LibraryTask__Group_7__0 )? )
-            // InternalOptimind.g:3037:2: ( rule__LibraryTask__Group_7__0 )?
+            // InternalOptimind.g:3117:1: ( ( rule__LibraryTask__Group_7__0 )? )
+            // InternalOptimind.g:3118:2: ( rule__LibraryTask__Group_7__0 )?
             {
              before(grammarAccess.getLibraryTaskAccess().getGroup_7()); 
-            // InternalOptimind.g:3038:2: ( rule__LibraryTask__Group_7__0 )?
+            // InternalOptimind.g:3119:2: ( rule__LibraryTask__Group_7__0 )?
             int alt25=2;
             int LA25_0 = input.LA(1);
 
@@ -9265,7 +9520,7 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
             }
             switch (alt25) {
                 case 1 :
-                    // InternalOptimind.g:3038:3: rule__LibraryTask__Group_7__0
+                    // InternalOptimind.g:3119:3: rule__LibraryTask__Group_7__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__LibraryTask__Group_7__0();
@@ -9301,14 +9556,14 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__LibraryTask__Group__8"
-    // InternalOptimind.g:3046:1: rule__LibraryTask__Group__8 : rule__LibraryTask__Group__8__Impl ;
+    // InternalOptimind.g:3127:1: rule__LibraryTask__Group__8 : rule__LibraryTask__Group__8__Impl ;
     public final void rule__LibraryTask__Group__8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:3050:1: ( rule__LibraryTask__Group__8__Impl )
-            // InternalOptimind.g:3051:2: rule__LibraryTask__Group__8__Impl
+            // InternalOptimind.g:3131:1: ( rule__LibraryTask__Group__8__Impl )
+            // InternalOptimind.g:3132:2: rule__LibraryTask__Group__8__Impl
             {
             pushFollow(FOLLOW_2);
             rule__LibraryTask__Group__8__Impl();
@@ -9334,17 +9589,17 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__LibraryTask__Group__8__Impl"
-    // InternalOptimind.g:3057:1: rule__LibraryTask__Group__8__Impl : ( '}' ) ;
+    // InternalOptimind.g:3138:1: rule__LibraryTask__Group__8__Impl : ( '}' ) ;
     public final void rule__LibraryTask__Group__8__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:3061:1: ( ( '}' ) )
-            // InternalOptimind.g:3062:1: ( '}' )
+            // InternalOptimind.g:3142:1: ( ( '}' ) )
+            // InternalOptimind.g:3143:1: ( '}' )
             {
-            // InternalOptimind.g:3062:1: ( '}' )
-            // InternalOptimind.g:3063:2: '}'
+            // InternalOptimind.g:3143:1: ( '}' )
+            // InternalOptimind.g:3144:2: '}'
             {
              before(grammarAccess.getLibraryTaskAccess().getRightCurlyBracketKeyword_8()); 
             match(input,19,FOLLOW_2); 
@@ -9371,14 +9626,14 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__LibraryTask__Group_4__0"
-    // InternalOptimind.g:3073:1: rule__LibraryTask__Group_4__0 : rule__LibraryTask__Group_4__0__Impl rule__LibraryTask__Group_4__1 ;
+    // InternalOptimind.g:3154:1: rule__LibraryTask__Group_4__0 : rule__LibraryTask__Group_4__0__Impl rule__LibraryTask__Group_4__1 ;
     public final void rule__LibraryTask__Group_4__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:3077:1: ( rule__LibraryTask__Group_4__0__Impl rule__LibraryTask__Group_4__1 )
-            // InternalOptimind.g:3078:2: rule__LibraryTask__Group_4__0__Impl rule__LibraryTask__Group_4__1
+            // InternalOptimind.g:3158:1: ( rule__LibraryTask__Group_4__0__Impl rule__LibraryTask__Group_4__1 )
+            // InternalOptimind.g:3159:2: rule__LibraryTask__Group_4__0__Impl rule__LibraryTask__Group_4__1
             {
             pushFollow(FOLLOW_28);
             rule__LibraryTask__Group_4__0__Impl();
@@ -9409,17 +9664,17 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__LibraryTask__Group_4__0__Impl"
-    // InternalOptimind.g:3085:1: rule__LibraryTask__Group_4__0__Impl : ( 'status' ) ;
+    // InternalOptimind.g:3166:1: rule__LibraryTask__Group_4__0__Impl : ( 'status' ) ;
     public final void rule__LibraryTask__Group_4__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:3089:1: ( ( 'status' ) )
-            // InternalOptimind.g:3090:1: ( 'status' )
+            // InternalOptimind.g:3170:1: ( ( 'status' ) )
+            // InternalOptimind.g:3171:1: ( 'status' )
             {
-            // InternalOptimind.g:3090:1: ( 'status' )
-            // InternalOptimind.g:3091:2: 'status'
+            // InternalOptimind.g:3171:1: ( 'status' )
+            // InternalOptimind.g:3172:2: 'status'
             {
              before(grammarAccess.getLibraryTaskAccess().getStatusKeyword_4_0()); 
             match(input,35,FOLLOW_2); 
@@ -9446,14 +9701,14 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__LibraryTask__Group_4__1"
-    // InternalOptimind.g:3100:1: rule__LibraryTask__Group_4__1 : rule__LibraryTask__Group_4__1__Impl ;
+    // InternalOptimind.g:3181:1: rule__LibraryTask__Group_4__1 : rule__LibraryTask__Group_4__1__Impl ;
     public final void rule__LibraryTask__Group_4__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:3104:1: ( rule__LibraryTask__Group_4__1__Impl )
-            // InternalOptimind.g:3105:2: rule__LibraryTask__Group_4__1__Impl
+            // InternalOptimind.g:3185:1: ( rule__LibraryTask__Group_4__1__Impl )
+            // InternalOptimind.g:3186:2: rule__LibraryTask__Group_4__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__LibraryTask__Group_4__1__Impl();
@@ -9479,21 +9734,21 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__LibraryTask__Group_4__1__Impl"
-    // InternalOptimind.g:3111:1: rule__LibraryTask__Group_4__1__Impl : ( ( rule__LibraryTask__StatusAssignment_4_1 ) ) ;
+    // InternalOptimind.g:3192:1: rule__LibraryTask__Group_4__1__Impl : ( ( rule__LibraryTask__StatusAssignment_4_1 ) ) ;
     public final void rule__LibraryTask__Group_4__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:3115:1: ( ( ( rule__LibraryTask__StatusAssignment_4_1 ) ) )
-            // InternalOptimind.g:3116:1: ( ( rule__LibraryTask__StatusAssignment_4_1 ) )
+            // InternalOptimind.g:3196:1: ( ( ( rule__LibraryTask__StatusAssignment_4_1 ) ) )
+            // InternalOptimind.g:3197:1: ( ( rule__LibraryTask__StatusAssignment_4_1 ) )
             {
-            // InternalOptimind.g:3116:1: ( ( rule__LibraryTask__StatusAssignment_4_1 ) )
-            // InternalOptimind.g:3117:2: ( rule__LibraryTask__StatusAssignment_4_1 )
+            // InternalOptimind.g:3197:1: ( ( rule__LibraryTask__StatusAssignment_4_1 ) )
+            // InternalOptimind.g:3198:2: ( rule__LibraryTask__StatusAssignment_4_1 )
             {
              before(grammarAccess.getLibraryTaskAccess().getStatusAssignment_4_1()); 
-            // InternalOptimind.g:3118:2: ( rule__LibraryTask__StatusAssignment_4_1 )
-            // InternalOptimind.g:3118:3: rule__LibraryTask__StatusAssignment_4_1
+            // InternalOptimind.g:3199:2: ( rule__LibraryTask__StatusAssignment_4_1 )
+            // InternalOptimind.g:3199:3: rule__LibraryTask__StatusAssignment_4_1
             {
             pushFollow(FOLLOW_2);
             rule__LibraryTask__StatusAssignment_4_1();
@@ -9526,14 +9781,14 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__LibraryTask__Group_5__0"
-    // InternalOptimind.g:3127:1: rule__LibraryTask__Group_5__0 : rule__LibraryTask__Group_5__0__Impl rule__LibraryTask__Group_5__1 ;
+    // InternalOptimind.g:3208:1: rule__LibraryTask__Group_5__0 : rule__LibraryTask__Group_5__0__Impl rule__LibraryTask__Group_5__1 ;
     public final void rule__LibraryTask__Group_5__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:3131:1: ( rule__LibraryTask__Group_5__0__Impl rule__LibraryTask__Group_5__1 )
-            // InternalOptimind.g:3132:2: rule__LibraryTask__Group_5__0__Impl rule__LibraryTask__Group_5__1
+            // InternalOptimind.g:3212:1: ( rule__LibraryTask__Group_5__0__Impl rule__LibraryTask__Group_5__1 )
+            // InternalOptimind.g:3213:2: rule__LibraryTask__Group_5__0__Impl rule__LibraryTask__Group_5__1
             {
             pushFollow(FOLLOW_29);
             rule__LibraryTask__Group_5__0__Impl();
@@ -9564,21 +9819,21 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__LibraryTask__Group_5__0__Impl"
-    // InternalOptimind.g:3139:1: rule__LibraryTask__Group_5__0__Impl : ( ( rule__LibraryTask__InputsAssignment_5_0 ) ) ;
+    // InternalOptimind.g:3220:1: rule__LibraryTask__Group_5__0__Impl : ( ( rule__LibraryTask__InputsAssignment_5_0 ) ) ;
     public final void rule__LibraryTask__Group_5__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:3143:1: ( ( ( rule__LibraryTask__InputsAssignment_5_0 ) ) )
-            // InternalOptimind.g:3144:1: ( ( rule__LibraryTask__InputsAssignment_5_0 ) )
+            // InternalOptimind.g:3224:1: ( ( ( rule__LibraryTask__InputsAssignment_5_0 ) ) )
+            // InternalOptimind.g:3225:1: ( ( rule__LibraryTask__InputsAssignment_5_0 ) )
             {
-            // InternalOptimind.g:3144:1: ( ( rule__LibraryTask__InputsAssignment_5_0 ) )
-            // InternalOptimind.g:3145:2: ( rule__LibraryTask__InputsAssignment_5_0 )
+            // InternalOptimind.g:3225:1: ( ( rule__LibraryTask__InputsAssignment_5_0 ) )
+            // InternalOptimind.g:3226:2: ( rule__LibraryTask__InputsAssignment_5_0 )
             {
              before(grammarAccess.getLibraryTaskAccess().getInputsAssignment_5_0()); 
-            // InternalOptimind.g:3146:2: ( rule__LibraryTask__InputsAssignment_5_0 )
-            // InternalOptimind.g:3146:3: rule__LibraryTask__InputsAssignment_5_0
+            // InternalOptimind.g:3227:2: ( rule__LibraryTask__InputsAssignment_5_0 )
+            // InternalOptimind.g:3227:3: rule__LibraryTask__InputsAssignment_5_0
             {
             pushFollow(FOLLOW_2);
             rule__LibraryTask__InputsAssignment_5_0();
@@ -9611,14 +9866,14 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__LibraryTask__Group_5__1"
-    // InternalOptimind.g:3154:1: rule__LibraryTask__Group_5__1 : rule__LibraryTask__Group_5__1__Impl ;
+    // InternalOptimind.g:3235:1: rule__LibraryTask__Group_5__1 : rule__LibraryTask__Group_5__1__Impl ;
     public final void rule__LibraryTask__Group_5__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:3158:1: ( rule__LibraryTask__Group_5__1__Impl )
-            // InternalOptimind.g:3159:2: rule__LibraryTask__Group_5__1__Impl
+            // InternalOptimind.g:3239:1: ( rule__LibraryTask__Group_5__1__Impl )
+            // InternalOptimind.g:3240:2: rule__LibraryTask__Group_5__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__LibraryTask__Group_5__1__Impl();
@@ -9644,20 +9899,20 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__LibraryTask__Group_5__1__Impl"
-    // InternalOptimind.g:3165:1: rule__LibraryTask__Group_5__1__Impl : ( ( rule__LibraryTask__InputsAssignment_5_1 )* ) ;
+    // InternalOptimind.g:3246:1: rule__LibraryTask__Group_5__1__Impl : ( ( rule__LibraryTask__InputsAssignment_5_1 )* ) ;
     public final void rule__LibraryTask__Group_5__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:3169:1: ( ( ( rule__LibraryTask__InputsAssignment_5_1 )* ) )
-            // InternalOptimind.g:3170:1: ( ( rule__LibraryTask__InputsAssignment_5_1 )* )
+            // InternalOptimind.g:3250:1: ( ( ( rule__LibraryTask__InputsAssignment_5_1 )* ) )
+            // InternalOptimind.g:3251:1: ( ( rule__LibraryTask__InputsAssignment_5_1 )* )
             {
-            // InternalOptimind.g:3170:1: ( ( rule__LibraryTask__InputsAssignment_5_1 )* )
-            // InternalOptimind.g:3171:2: ( rule__LibraryTask__InputsAssignment_5_1 )*
+            // InternalOptimind.g:3251:1: ( ( rule__LibraryTask__InputsAssignment_5_1 )* )
+            // InternalOptimind.g:3252:2: ( rule__LibraryTask__InputsAssignment_5_1 )*
             {
              before(grammarAccess.getLibraryTaskAccess().getInputsAssignment_5_1()); 
-            // InternalOptimind.g:3172:2: ( rule__LibraryTask__InputsAssignment_5_1 )*
+            // InternalOptimind.g:3253:2: ( rule__LibraryTask__InputsAssignment_5_1 )*
             loop26:
             do {
                 int alt26=2;
@@ -9670,7 +9925,7 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
                 switch (alt26) {
             	case 1 :
-            	    // InternalOptimind.g:3172:3: rule__LibraryTask__InputsAssignment_5_1
+            	    // InternalOptimind.g:3253:3: rule__LibraryTask__InputsAssignment_5_1
             	    {
             	    pushFollow(FOLLOW_34);
             	    rule__LibraryTask__InputsAssignment_5_1();
@@ -9709,14 +9964,14 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__LibraryTask__Group_6__0"
-    // InternalOptimind.g:3181:1: rule__LibraryTask__Group_6__0 : rule__LibraryTask__Group_6__0__Impl rule__LibraryTask__Group_6__1 ;
+    // InternalOptimind.g:3262:1: rule__LibraryTask__Group_6__0 : rule__LibraryTask__Group_6__0__Impl rule__LibraryTask__Group_6__1 ;
     public final void rule__LibraryTask__Group_6__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:3185:1: ( rule__LibraryTask__Group_6__0__Impl rule__LibraryTask__Group_6__1 )
-            // InternalOptimind.g:3186:2: rule__LibraryTask__Group_6__0__Impl rule__LibraryTask__Group_6__1
+            // InternalOptimind.g:3266:1: ( rule__LibraryTask__Group_6__0__Impl rule__LibraryTask__Group_6__1 )
+            // InternalOptimind.g:3267:2: rule__LibraryTask__Group_6__0__Impl rule__LibraryTask__Group_6__1
             {
             pushFollow(FOLLOW_10);
             rule__LibraryTask__Group_6__0__Impl();
@@ -9747,21 +10002,21 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__LibraryTask__Group_6__0__Impl"
-    // InternalOptimind.g:3193:1: rule__LibraryTask__Group_6__0__Impl : ( ( rule__LibraryTask__OutputsAssignment_6_0 ) ) ;
+    // InternalOptimind.g:3274:1: rule__LibraryTask__Group_6__0__Impl : ( ( rule__LibraryTask__OutputsAssignment_6_0 ) ) ;
     public final void rule__LibraryTask__Group_6__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:3197:1: ( ( ( rule__LibraryTask__OutputsAssignment_6_0 ) ) )
-            // InternalOptimind.g:3198:1: ( ( rule__LibraryTask__OutputsAssignment_6_0 ) )
+            // InternalOptimind.g:3278:1: ( ( ( rule__LibraryTask__OutputsAssignment_6_0 ) ) )
+            // InternalOptimind.g:3279:1: ( ( rule__LibraryTask__OutputsAssignment_6_0 ) )
             {
-            // InternalOptimind.g:3198:1: ( ( rule__LibraryTask__OutputsAssignment_6_0 ) )
-            // InternalOptimind.g:3199:2: ( rule__LibraryTask__OutputsAssignment_6_0 )
+            // InternalOptimind.g:3279:1: ( ( rule__LibraryTask__OutputsAssignment_6_0 ) )
+            // InternalOptimind.g:3280:2: ( rule__LibraryTask__OutputsAssignment_6_0 )
             {
              before(grammarAccess.getLibraryTaskAccess().getOutputsAssignment_6_0()); 
-            // InternalOptimind.g:3200:2: ( rule__LibraryTask__OutputsAssignment_6_0 )
-            // InternalOptimind.g:3200:3: rule__LibraryTask__OutputsAssignment_6_0
+            // InternalOptimind.g:3281:2: ( rule__LibraryTask__OutputsAssignment_6_0 )
+            // InternalOptimind.g:3281:3: rule__LibraryTask__OutputsAssignment_6_0
             {
             pushFollow(FOLLOW_2);
             rule__LibraryTask__OutputsAssignment_6_0();
@@ -9794,14 +10049,14 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__LibraryTask__Group_6__1"
-    // InternalOptimind.g:3208:1: rule__LibraryTask__Group_6__1 : rule__LibraryTask__Group_6__1__Impl ;
+    // InternalOptimind.g:3289:1: rule__LibraryTask__Group_6__1 : rule__LibraryTask__Group_6__1__Impl ;
     public final void rule__LibraryTask__Group_6__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:3212:1: ( rule__LibraryTask__Group_6__1__Impl )
-            // InternalOptimind.g:3213:2: rule__LibraryTask__Group_6__1__Impl
+            // InternalOptimind.g:3293:1: ( rule__LibraryTask__Group_6__1__Impl )
+            // InternalOptimind.g:3294:2: rule__LibraryTask__Group_6__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__LibraryTask__Group_6__1__Impl();
@@ -9827,20 +10082,20 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__LibraryTask__Group_6__1__Impl"
-    // InternalOptimind.g:3219:1: rule__LibraryTask__Group_6__1__Impl : ( ( rule__LibraryTask__OutputsAssignment_6_1 )* ) ;
+    // InternalOptimind.g:3300:1: rule__LibraryTask__Group_6__1__Impl : ( ( rule__LibraryTask__OutputsAssignment_6_1 )* ) ;
     public final void rule__LibraryTask__Group_6__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:3223:1: ( ( ( rule__LibraryTask__OutputsAssignment_6_1 )* ) )
-            // InternalOptimind.g:3224:1: ( ( rule__LibraryTask__OutputsAssignment_6_1 )* )
+            // InternalOptimind.g:3304:1: ( ( ( rule__LibraryTask__OutputsAssignment_6_1 )* ) )
+            // InternalOptimind.g:3305:1: ( ( rule__LibraryTask__OutputsAssignment_6_1 )* )
             {
-            // InternalOptimind.g:3224:1: ( ( rule__LibraryTask__OutputsAssignment_6_1 )* )
-            // InternalOptimind.g:3225:2: ( rule__LibraryTask__OutputsAssignment_6_1 )*
+            // InternalOptimind.g:3305:1: ( ( rule__LibraryTask__OutputsAssignment_6_1 )* )
+            // InternalOptimind.g:3306:2: ( rule__LibraryTask__OutputsAssignment_6_1 )*
             {
              before(grammarAccess.getLibraryTaskAccess().getOutputsAssignment_6_1()); 
-            // InternalOptimind.g:3226:2: ( rule__LibraryTask__OutputsAssignment_6_1 )*
+            // InternalOptimind.g:3307:2: ( rule__LibraryTask__OutputsAssignment_6_1 )*
             loop27:
             do {
                 int alt27=2;
@@ -9853,7 +10108,7 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
                 switch (alt27) {
             	case 1 :
-            	    // InternalOptimind.g:3226:3: rule__LibraryTask__OutputsAssignment_6_1
+            	    // InternalOptimind.g:3307:3: rule__LibraryTask__OutputsAssignment_6_1
             	    {
             	    pushFollow(FOLLOW_35);
             	    rule__LibraryTask__OutputsAssignment_6_1();
@@ -9892,14 +10147,14 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__LibraryTask__Group_7__0"
-    // InternalOptimind.g:3235:1: rule__LibraryTask__Group_7__0 : rule__LibraryTask__Group_7__0__Impl rule__LibraryTask__Group_7__1 ;
+    // InternalOptimind.g:3316:1: rule__LibraryTask__Group_7__0 : rule__LibraryTask__Group_7__0__Impl rule__LibraryTask__Group_7__1 ;
     public final void rule__LibraryTask__Group_7__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:3239:1: ( rule__LibraryTask__Group_7__0__Impl rule__LibraryTask__Group_7__1 )
-            // InternalOptimind.g:3240:2: rule__LibraryTask__Group_7__0__Impl rule__LibraryTask__Group_7__1
+            // InternalOptimind.g:3320:1: ( rule__LibraryTask__Group_7__0__Impl rule__LibraryTask__Group_7__1 )
+            // InternalOptimind.g:3321:2: rule__LibraryTask__Group_7__0__Impl rule__LibraryTask__Group_7__1
             {
             pushFollow(FOLLOW_4);
             rule__LibraryTask__Group_7__0__Impl();
@@ -9930,17 +10185,17 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__LibraryTask__Group_7__0__Impl"
-    // InternalOptimind.g:3247:1: rule__LibraryTask__Group_7__0__Impl : ( 'Libraryfunction' ) ;
+    // InternalOptimind.g:3328:1: rule__LibraryTask__Group_7__0__Impl : ( 'Libraryfunction' ) ;
     public final void rule__LibraryTask__Group_7__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:3251:1: ( ( 'Libraryfunction' ) )
-            // InternalOptimind.g:3252:1: ( 'Libraryfunction' )
+            // InternalOptimind.g:3332:1: ( ( 'Libraryfunction' ) )
+            // InternalOptimind.g:3333:1: ( 'Libraryfunction' )
             {
-            // InternalOptimind.g:3252:1: ( 'Libraryfunction' )
-            // InternalOptimind.g:3253:2: 'Libraryfunction'
+            // InternalOptimind.g:3333:1: ( 'Libraryfunction' )
+            // InternalOptimind.g:3334:2: 'Libraryfunction'
             {
              before(grammarAccess.getLibraryTaskAccess().getLibraryfunctionKeyword_7_0()); 
             match(input,40,FOLLOW_2); 
@@ -9967,14 +10222,14 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__LibraryTask__Group_7__1"
-    // InternalOptimind.g:3262:1: rule__LibraryTask__Group_7__1 : rule__LibraryTask__Group_7__1__Impl ;
+    // InternalOptimind.g:3343:1: rule__LibraryTask__Group_7__1 : rule__LibraryTask__Group_7__1__Impl ;
     public final void rule__LibraryTask__Group_7__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:3266:1: ( rule__LibraryTask__Group_7__1__Impl )
-            // InternalOptimind.g:3267:2: rule__LibraryTask__Group_7__1__Impl
+            // InternalOptimind.g:3347:1: ( rule__LibraryTask__Group_7__1__Impl )
+            // InternalOptimind.g:3348:2: rule__LibraryTask__Group_7__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__LibraryTask__Group_7__1__Impl();
@@ -10000,21 +10255,21 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__LibraryTask__Group_7__1__Impl"
-    // InternalOptimind.g:3273:1: rule__LibraryTask__Group_7__1__Impl : ( ( rule__LibraryTask__LibraryfunctionAssignment_7_1 ) ) ;
+    // InternalOptimind.g:3354:1: rule__LibraryTask__Group_7__1__Impl : ( ( rule__LibraryTask__LibraryfunctionAssignment_7_1 ) ) ;
     public final void rule__LibraryTask__Group_7__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:3277:1: ( ( ( rule__LibraryTask__LibraryfunctionAssignment_7_1 ) ) )
-            // InternalOptimind.g:3278:1: ( ( rule__LibraryTask__LibraryfunctionAssignment_7_1 ) )
+            // InternalOptimind.g:3358:1: ( ( ( rule__LibraryTask__LibraryfunctionAssignment_7_1 ) ) )
+            // InternalOptimind.g:3359:1: ( ( rule__LibraryTask__LibraryfunctionAssignment_7_1 ) )
             {
-            // InternalOptimind.g:3278:1: ( ( rule__LibraryTask__LibraryfunctionAssignment_7_1 ) )
-            // InternalOptimind.g:3279:2: ( rule__LibraryTask__LibraryfunctionAssignment_7_1 )
+            // InternalOptimind.g:3359:1: ( ( rule__LibraryTask__LibraryfunctionAssignment_7_1 ) )
+            // InternalOptimind.g:3360:2: ( rule__LibraryTask__LibraryfunctionAssignment_7_1 )
             {
              before(grammarAccess.getLibraryTaskAccess().getLibraryfunctionAssignment_7_1()); 
-            // InternalOptimind.g:3280:2: ( rule__LibraryTask__LibraryfunctionAssignment_7_1 )
-            // InternalOptimind.g:3280:3: rule__LibraryTask__LibraryfunctionAssignment_7_1
+            // InternalOptimind.g:3361:2: ( rule__LibraryTask__LibraryfunctionAssignment_7_1 )
+            // InternalOptimind.g:3361:3: rule__LibraryTask__LibraryfunctionAssignment_7_1
             {
             pushFollow(FOLLOW_2);
             rule__LibraryTask__LibraryfunctionAssignment_7_1();
@@ -10047,14 +10302,14 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__CustomTask__Group__0"
-    // InternalOptimind.g:3289:1: rule__CustomTask__Group__0 : rule__CustomTask__Group__0__Impl rule__CustomTask__Group__1 ;
+    // InternalOptimind.g:3370:1: rule__CustomTask__Group__0 : rule__CustomTask__Group__0__Impl rule__CustomTask__Group__1 ;
     public final void rule__CustomTask__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:3293:1: ( rule__CustomTask__Group__0__Impl rule__CustomTask__Group__1 )
-            // InternalOptimind.g:3294:2: rule__CustomTask__Group__0__Impl rule__CustomTask__Group__1
+            // InternalOptimind.g:3374:1: ( rule__CustomTask__Group__0__Impl rule__CustomTask__Group__1 )
+            // InternalOptimind.g:3375:2: rule__CustomTask__Group__0__Impl rule__CustomTask__Group__1
             {
             pushFollow(FOLLOW_18);
             rule__CustomTask__Group__0__Impl();
@@ -10085,21 +10340,21 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__CustomTask__Group__0__Impl"
-    // InternalOptimind.g:3301:1: rule__CustomTask__Group__0__Impl : ( () ) ;
+    // InternalOptimind.g:3382:1: rule__CustomTask__Group__0__Impl : ( () ) ;
     public final void rule__CustomTask__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:3305:1: ( ( () ) )
-            // InternalOptimind.g:3306:1: ( () )
+            // InternalOptimind.g:3386:1: ( ( () ) )
+            // InternalOptimind.g:3387:1: ( () )
             {
-            // InternalOptimind.g:3306:1: ( () )
-            // InternalOptimind.g:3307:2: ()
+            // InternalOptimind.g:3387:1: ( () )
+            // InternalOptimind.g:3388:2: ()
             {
              before(grammarAccess.getCustomTaskAccess().getCustomTaskAction_0()); 
-            // InternalOptimind.g:3308:2: ()
-            // InternalOptimind.g:3308:3: 
+            // InternalOptimind.g:3389:2: ()
+            // InternalOptimind.g:3389:3: 
             {
             }
 
@@ -10122,14 +10377,14 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__CustomTask__Group__1"
-    // InternalOptimind.g:3316:1: rule__CustomTask__Group__1 : rule__CustomTask__Group__1__Impl rule__CustomTask__Group__2 ;
+    // InternalOptimind.g:3397:1: rule__CustomTask__Group__1 : rule__CustomTask__Group__1__Impl rule__CustomTask__Group__2 ;
     public final void rule__CustomTask__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:3320:1: ( rule__CustomTask__Group__1__Impl rule__CustomTask__Group__2 )
-            // InternalOptimind.g:3321:2: rule__CustomTask__Group__1__Impl rule__CustomTask__Group__2
+            // InternalOptimind.g:3401:1: ( rule__CustomTask__Group__1__Impl rule__CustomTask__Group__2 )
+            // InternalOptimind.g:3402:2: rule__CustomTask__Group__1__Impl rule__CustomTask__Group__2
             {
             pushFollow(FOLLOW_4);
             rule__CustomTask__Group__1__Impl();
@@ -10160,17 +10415,17 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__CustomTask__Group__1__Impl"
-    // InternalOptimind.g:3328:1: rule__CustomTask__Group__1__Impl : ( 'Task' ) ;
+    // InternalOptimind.g:3409:1: rule__CustomTask__Group__1__Impl : ( 'Task' ) ;
     public final void rule__CustomTask__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:3332:1: ( ( 'Task' ) )
-            // InternalOptimind.g:3333:1: ( 'Task' )
+            // InternalOptimind.g:3413:1: ( ( 'Task' ) )
+            // InternalOptimind.g:3414:1: ( 'Task' )
             {
-            // InternalOptimind.g:3333:1: ( 'Task' )
-            // InternalOptimind.g:3334:2: 'Task'
+            // InternalOptimind.g:3414:1: ( 'Task' )
+            // InternalOptimind.g:3415:2: 'Task'
             {
              before(grammarAccess.getCustomTaskAccess().getTaskKeyword_1()); 
             match(input,41,FOLLOW_2); 
@@ -10197,14 +10452,14 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__CustomTask__Group__2"
-    // InternalOptimind.g:3343:1: rule__CustomTask__Group__2 : rule__CustomTask__Group__2__Impl rule__CustomTask__Group__3 ;
+    // InternalOptimind.g:3424:1: rule__CustomTask__Group__2 : rule__CustomTask__Group__2__Impl rule__CustomTask__Group__3 ;
     public final void rule__CustomTask__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:3347:1: ( rule__CustomTask__Group__2__Impl rule__CustomTask__Group__3 )
-            // InternalOptimind.g:3348:2: rule__CustomTask__Group__2__Impl rule__CustomTask__Group__3
+            // InternalOptimind.g:3428:1: ( rule__CustomTask__Group__2__Impl rule__CustomTask__Group__3 )
+            // InternalOptimind.g:3429:2: rule__CustomTask__Group__2__Impl rule__CustomTask__Group__3
             {
             pushFollow(FOLLOW_5);
             rule__CustomTask__Group__2__Impl();
@@ -10235,21 +10490,21 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__CustomTask__Group__2__Impl"
-    // InternalOptimind.g:3355:1: rule__CustomTask__Group__2__Impl : ( ( rule__CustomTask__NameAssignment_2 ) ) ;
+    // InternalOptimind.g:3436:1: rule__CustomTask__Group__2__Impl : ( ( rule__CustomTask__NameAssignment_2 ) ) ;
     public final void rule__CustomTask__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:3359:1: ( ( ( rule__CustomTask__NameAssignment_2 ) ) )
-            // InternalOptimind.g:3360:1: ( ( rule__CustomTask__NameAssignment_2 ) )
+            // InternalOptimind.g:3440:1: ( ( ( rule__CustomTask__NameAssignment_2 ) ) )
+            // InternalOptimind.g:3441:1: ( ( rule__CustomTask__NameAssignment_2 ) )
             {
-            // InternalOptimind.g:3360:1: ( ( rule__CustomTask__NameAssignment_2 ) )
-            // InternalOptimind.g:3361:2: ( rule__CustomTask__NameAssignment_2 )
+            // InternalOptimind.g:3441:1: ( ( rule__CustomTask__NameAssignment_2 ) )
+            // InternalOptimind.g:3442:2: ( rule__CustomTask__NameAssignment_2 )
             {
              before(grammarAccess.getCustomTaskAccess().getNameAssignment_2()); 
-            // InternalOptimind.g:3362:2: ( rule__CustomTask__NameAssignment_2 )
-            // InternalOptimind.g:3362:3: rule__CustomTask__NameAssignment_2
+            // InternalOptimind.g:3443:2: ( rule__CustomTask__NameAssignment_2 )
+            // InternalOptimind.g:3443:3: rule__CustomTask__NameAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__CustomTask__NameAssignment_2();
@@ -10282,14 +10537,14 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__CustomTask__Group__3"
-    // InternalOptimind.g:3370:1: rule__CustomTask__Group__3 : rule__CustomTask__Group__3__Impl rule__CustomTask__Group__4 ;
+    // InternalOptimind.g:3451:1: rule__CustomTask__Group__3 : rule__CustomTask__Group__3__Impl rule__CustomTask__Group__4 ;
     public final void rule__CustomTask__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:3374:1: ( rule__CustomTask__Group__3__Impl rule__CustomTask__Group__4 )
-            // InternalOptimind.g:3375:2: rule__CustomTask__Group__3__Impl rule__CustomTask__Group__4
+            // InternalOptimind.g:3455:1: ( rule__CustomTask__Group__3__Impl rule__CustomTask__Group__4 )
+            // InternalOptimind.g:3456:2: rule__CustomTask__Group__3__Impl rule__CustomTask__Group__4
             {
             pushFollow(FOLLOW_36);
             rule__CustomTask__Group__3__Impl();
@@ -10320,17 +10575,17 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__CustomTask__Group__3__Impl"
-    // InternalOptimind.g:3382:1: rule__CustomTask__Group__3__Impl : ( '{' ) ;
+    // InternalOptimind.g:3463:1: rule__CustomTask__Group__3__Impl : ( '{' ) ;
     public final void rule__CustomTask__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:3386:1: ( ( '{' ) )
-            // InternalOptimind.g:3387:1: ( '{' )
+            // InternalOptimind.g:3467:1: ( ( '{' ) )
+            // InternalOptimind.g:3468:1: ( '{' )
             {
-            // InternalOptimind.g:3387:1: ( '{' )
-            // InternalOptimind.g:3388:2: '{'
+            // InternalOptimind.g:3468:1: ( '{' )
+            // InternalOptimind.g:3469:2: '{'
             {
              before(grammarAccess.getCustomTaskAccess().getLeftCurlyBracketKeyword_3()); 
             match(input,18,FOLLOW_2); 
@@ -10357,14 +10612,14 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__CustomTask__Group__4"
-    // InternalOptimind.g:3397:1: rule__CustomTask__Group__4 : rule__CustomTask__Group__4__Impl rule__CustomTask__Group__5 ;
+    // InternalOptimind.g:3478:1: rule__CustomTask__Group__4 : rule__CustomTask__Group__4__Impl rule__CustomTask__Group__5 ;
     public final void rule__CustomTask__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:3401:1: ( rule__CustomTask__Group__4__Impl rule__CustomTask__Group__5 )
-            // InternalOptimind.g:3402:2: rule__CustomTask__Group__4__Impl rule__CustomTask__Group__5
+            // InternalOptimind.g:3482:1: ( rule__CustomTask__Group__4__Impl rule__CustomTask__Group__5 )
+            // InternalOptimind.g:3483:2: rule__CustomTask__Group__4__Impl rule__CustomTask__Group__5
             {
             pushFollow(FOLLOW_36);
             rule__CustomTask__Group__4__Impl();
@@ -10395,20 +10650,20 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__CustomTask__Group__4__Impl"
-    // InternalOptimind.g:3409:1: rule__CustomTask__Group__4__Impl : ( ( rule__CustomTask__Group_4__0 )? ) ;
+    // InternalOptimind.g:3490:1: rule__CustomTask__Group__4__Impl : ( ( rule__CustomTask__Group_4__0 )? ) ;
     public final void rule__CustomTask__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:3413:1: ( ( ( rule__CustomTask__Group_4__0 )? ) )
-            // InternalOptimind.g:3414:1: ( ( rule__CustomTask__Group_4__0 )? )
+            // InternalOptimind.g:3494:1: ( ( ( rule__CustomTask__Group_4__0 )? ) )
+            // InternalOptimind.g:3495:1: ( ( rule__CustomTask__Group_4__0 )? )
             {
-            // InternalOptimind.g:3414:1: ( ( rule__CustomTask__Group_4__0 )? )
-            // InternalOptimind.g:3415:2: ( rule__CustomTask__Group_4__0 )?
+            // InternalOptimind.g:3495:1: ( ( rule__CustomTask__Group_4__0 )? )
+            // InternalOptimind.g:3496:2: ( rule__CustomTask__Group_4__0 )?
             {
              before(grammarAccess.getCustomTaskAccess().getGroup_4()); 
-            // InternalOptimind.g:3416:2: ( rule__CustomTask__Group_4__0 )?
+            // InternalOptimind.g:3497:2: ( rule__CustomTask__Group_4__0 )?
             int alt28=2;
             int LA28_0 = input.LA(1);
 
@@ -10417,7 +10672,7 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
             }
             switch (alt28) {
                 case 1 :
-                    // InternalOptimind.g:3416:3: rule__CustomTask__Group_4__0
+                    // InternalOptimind.g:3497:3: rule__CustomTask__Group_4__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__CustomTask__Group_4__0();
@@ -10453,14 +10708,14 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__CustomTask__Group__5"
-    // InternalOptimind.g:3424:1: rule__CustomTask__Group__5 : rule__CustomTask__Group__5__Impl rule__CustomTask__Group__6 ;
+    // InternalOptimind.g:3505:1: rule__CustomTask__Group__5 : rule__CustomTask__Group__5__Impl rule__CustomTask__Group__6 ;
     public final void rule__CustomTask__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:3428:1: ( rule__CustomTask__Group__5__Impl rule__CustomTask__Group__6 )
-            // InternalOptimind.g:3429:2: rule__CustomTask__Group__5__Impl rule__CustomTask__Group__6
+            // InternalOptimind.g:3509:1: ( rule__CustomTask__Group__5__Impl rule__CustomTask__Group__6 )
+            // InternalOptimind.g:3510:2: rule__CustomTask__Group__5__Impl rule__CustomTask__Group__6
             {
             pushFollow(FOLLOW_36);
             rule__CustomTask__Group__5__Impl();
@@ -10491,20 +10746,20 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__CustomTask__Group__5__Impl"
-    // InternalOptimind.g:3436:1: rule__CustomTask__Group__5__Impl : ( ( rule__CustomTask__Group_5__0 )? ) ;
+    // InternalOptimind.g:3517:1: rule__CustomTask__Group__5__Impl : ( ( rule__CustomTask__Group_5__0 )? ) ;
     public final void rule__CustomTask__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:3440:1: ( ( ( rule__CustomTask__Group_5__0 )? ) )
-            // InternalOptimind.g:3441:1: ( ( rule__CustomTask__Group_5__0 )? )
+            // InternalOptimind.g:3521:1: ( ( ( rule__CustomTask__Group_5__0 )? ) )
+            // InternalOptimind.g:3522:1: ( ( rule__CustomTask__Group_5__0 )? )
             {
-            // InternalOptimind.g:3441:1: ( ( rule__CustomTask__Group_5__0 )? )
-            // InternalOptimind.g:3442:2: ( rule__CustomTask__Group_5__0 )?
+            // InternalOptimind.g:3522:1: ( ( rule__CustomTask__Group_5__0 )? )
+            // InternalOptimind.g:3523:2: ( rule__CustomTask__Group_5__0 )?
             {
              before(grammarAccess.getCustomTaskAccess().getGroup_5()); 
-            // InternalOptimind.g:3443:2: ( rule__CustomTask__Group_5__0 )?
+            // InternalOptimind.g:3524:2: ( rule__CustomTask__Group_5__0 )?
             int alt29=2;
             int LA29_0 = input.LA(1);
 
@@ -10513,7 +10768,7 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
             }
             switch (alt29) {
                 case 1 :
-                    // InternalOptimind.g:3443:3: rule__CustomTask__Group_5__0
+                    // InternalOptimind.g:3524:3: rule__CustomTask__Group_5__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__CustomTask__Group_5__0();
@@ -10549,14 +10804,14 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__CustomTask__Group__6"
-    // InternalOptimind.g:3451:1: rule__CustomTask__Group__6 : rule__CustomTask__Group__6__Impl rule__CustomTask__Group__7 ;
+    // InternalOptimind.g:3532:1: rule__CustomTask__Group__6 : rule__CustomTask__Group__6__Impl rule__CustomTask__Group__7 ;
     public final void rule__CustomTask__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:3455:1: ( rule__CustomTask__Group__6__Impl rule__CustomTask__Group__7 )
-            // InternalOptimind.g:3456:2: rule__CustomTask__Group__6__Impl rule__CustomTask__Group__7
+            // InternalOptimind.g:3536:1: ( rule__CustomTask__Group__6__Impl rule__CustomTask__Group__7 )
+            // InternalOptimind.g:3537:2: rule__CustomTask__Group__6__Impl rule__CustomTask__Group__7
             {
             pushFollow(FOLLOW_36);
             rule__CustomTask__Group__6__Impl();
@@ -10587,20 +10842,20 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__CustomTask__Group__6__Impl"
-    // InternalOptimind.g:3463:1: rule__CustomTask__Group__6__Impl : ( ( rule__CustomTask__Group_6__0 )? ) ;
+    // InternalOptimind.g:3544:1: rule__CustomTask__Group__6__Impl : ( ( rule__CustomTask__Group_6__0 )? ) ;
     public final void rule__CustomTask__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:3467:1: ( ( ( rule__CustomTask__Group_6__0 )? ) )
-            // InternalOptimind.g:3468:1: ( ( rule__CustomTask__Group_6__0 )? )
+            // InternalOptimind.g:3548:1: ( ( ( rule__CustomTask__Group_6__0 )? ) )
+            // InternalOptimind.g:3549:1: ( ( rule__CustomTask__Group_6__0 )? )
             {
-            // InternalOptimind.g:3468:1: ( ( rule__CustomTask__Group_6__0 )? )
-            // InternalOptimind.g:3469:2: ( rule__CustomTask__Group_6__0 )?
+            // InternalOptimind.g:3549:1: ( ( rule__CustomTask__Group_6__0 )? )
+            // InternalOptimind.g:3550:2: ( rule__CustomTask__Group_6__0 )?
             {
              before(grammarAccess.getCustomTaskAccess().getGroup_6()); 
-            // InternalOptimind.g:3470:2: ( rule__CustomTask__Group_6__0 )?
+            // InternalOptimind.g:3551:2: ( rule__CustomTask__Group_6__0 )?
             int alt30=2;
             int LA30_0 = input.LA(1);
 
@@ -10609,7 +10864,7 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
             }
             switch (alt30) {
                 case 1 :
-                    // InternalOptimind.g:3470:3: rule__CustomTask__Group_6__0
+                    // InternalOptimind.g:3551:3: rule__CustomTask__Group_6__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__CustomTask__Group_6__0();
@@ -10645,14 +10900,14 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__CustomTask__Group__7"
-    // InternalOptimind.g:3478:1: rule__CustomTask__Group__7 : rule__CustomTask__Group__7__Impl rule__CustomTask__Group__8 ;
+    // InternalOptimind.g:3559:1: rule__CustomTask__Group__7 : rule__CustomTask__Group__7__Impl rule__CustomTask__Group__8 ;
     public final void rule__CustomTask__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:3482:1: ( rule__CustomTask__Group__7__Impl rule__CustomTask__Group__8 )
-            // InternalOptimind.g:3483:2: rule__CustomTask__Group__7__Impl rule__CustomTask__Group__8
+            // InternalOptimind.g:3563:1: ( rule__CustomTask__Group__7__Impl rule__CustomTask__Group__8 )
+            // InternalOptimind.g:3564:2: rule__CustomTask__Group__7__Impl rule__CustomTask__Group__8
             {
             pushFollow(FOLLOW_36);
             rule__CustomTask__Group__7__Impl();
@@ -10683,20 +10938,20 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__CustomTask__Group__7__Impl"
-    // InternalOptimind.g:3490:1: rule__CustomTask__Group__7__Impl : ( ( rule__CustomTask__Group_7__0 )? ) ;
+    // InternalOptimind.g:3571:1: rule__CustomTask__Group__7__Impl : ( ( rule__CustomTask__Group_7__0 )? ) ;
     public final void rule__CustomTask__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:3494:1: ( ( ( rule__CustomTask__Group_7__0 )? ) )
-            // InternalOptimind.g:3495:1: ( ( rule__CustomTask__Group_7__0 )? )
+            // InternalOptimind.g:3575:1: ( ( ( rule__CustomTask__Group_7__0 )? ) )
+            // InternalOptimind.g:3576:1: ( ( rule__CustomTask__Group_7__0 )? )
             {
-            // InternalOptimind.g:3495:1: ( ( rule__CustomTask__Group_7__0 )? )
-            // InternalOptimind.g:3496:2: ( rule__CustomTask__Group_7__0 )?
+            // InternalOptimind.g:3576:1: ( ( rule__CustomTask__Group_7__0 )? )
+            // InternalOptimind.g:3577:2: ( rule__CustomTask__Group_7__0 )?
             {
              before(grammarAccess.getCustomTaskAccess().getGroup_7()); 
-            // InternalOptimind.g:3497:2: ( rule__CustomTask__Group_7__0 )?
+            // InternalOptimind.g:3578:2: ( rule__CustomTask__Group_7__0 )?
             int alt31=2;
             int LA31_0 = input.LA(1);
 
@@ -10705,7 +10960,7 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
             }
             switch (alt31) {
                 case 1 :
-                    // InternalOptimind.g:3497:3: rule__CustomTask__Group_7__0
+                    // InternalOptimind.g:3578:3: rule__CustomTask__Group_7__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__CustomTask__Group_7__0();
@@ -10741,14 +10996,14 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__CustomTask__Group__8"
-    // InternalOptimind.g:3505:1: rule__CustomTask__Group__8 : rule__CustomTask__Group__8__Impl ;
+    // InternalOptimind.g:3586:1: rule__CustomTask__Group__8 : rule__CustomTask__Group__8__Impl ;
     public final void rule__CustomTask__Group__8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:3509:1: ( rule__CustomTask__Group__8__Impl )
-            // InternalOptimind.g:3510:2: rule__CustomTask__Group__8__Impl
+            // InternalOptimind.g:3590:1: ( rule__CustomTask__Group__8__Impl )
+            // InternalOptimind.g:3591:2: rule__CustomTask__Group__8__Impl
             {
             pushFollow(FOLLOW_2);
             rule__CustomTask__Group__8__Impl();
@@ -10774,17 +11029,17 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__CustomTask__Group__8__Impl"
-    // InternalOptimind.g:3516:1: rule__CustomTask__Group__8__Impl : ( '}' ) ;
+    // InternalOptimind.g:3597:1: rule__CustomTask__Group__8__Impl : ( '}' ) ;
     public final void rule__CustomTask__Group__8__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:3520:1: ( ( '}' ) )
-            // InternalOptimind.g:3521:1: ( '}' )
+            // InternalOptimind.g:3601:1: ( ( '}' ) )
+            // InternalOptimind.g:3602:1: ( '}' )
             {
-            // InternalOptimind.g:3521:1: ( '}' )
-            // InternalOptimind.g:3522:2: '}'
+            // InternalOptimind.g:3602:1: ( '}' )
+            // InternalOptimind.g:3603:2: '}'
             {
              before(grammarAccess.getCustomTaskAccess().getRightCurlyBracketKeyword_8()); 
             match(input,19,FOLLOW_2); 
@@ -10811,14 +11066,14 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__CustomTask__Group_4__0"
-    // InternalOptimind.g:3532:1: rule__CustomTask__Group_4__0 : rule__CustomTask__Group_4__0__Impl rule__CustomTask__Group_4__1 ;
+    // InternalOptimind.g:3613:1: rule__CustomTask__Group_4__0 : rule__CustomTask__Group_4__0__Impl rule__CustomTask__Group_4__1 ;
     public final void rule__CustomTask__Group_4__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:3536:1: ( rule__CustomTask__Group_4__0__Impl rule__CustomTask__Group_4__1 )
-            // InternalOptimind.g:3537:2: rule__CustomTask__Group_4__0__Impl rule__CustomTask__Group_4__1
+            // InternalOptimind.g:3617:1: ( rule__CustomTask__Group_4__0__Impl rule__CustomTask__Group_4__1 )
+            // InternalOptimind.g:3618:2: rule__CustomTask__Group_4__0__Impl rule__CustomTask__Group_4__1
             {
             pushFollow(FOLLOW_28);
             rule__CustomTask__Group_4__0__Impl();
@@ -10849,17 +11104,17 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__CustomTask__Group_4__0__Impl"
-    // InternalOptimind.g:3544:1: rule__CustomTask__Group_4__0__Impl : ( 'status' ) ;
+    // InternalOptimind.g:3625:1: rule__CustomTask__Group_4__0__Impl : ( 'status' ) ;
     public final void rule__CustomTask__Group_4__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:3548:1: ( ( 'status' ) )
-            // InternalOptimind.g:3549:1: ( 'status' )
+            // InternalOptimind.g:3629:1: ( ( 'status' ) )
+            // InternalOptimind.g:3630:1: ( 'status' )
             {
-            // InternalOptimind.g:3549:1: ( 'status' )
-            // InternalOptimind.g:3550:2: 'status'
+            // InternalOptimind.g:3630:1: ( 'status' )
+            // InternalOptimind.g:3631:2: 'status'
             {
              before(grammarAccess.getCustomTaskAccess().getStatusKeyword_4_0()); 
             match(input,35,FOLLOW_2); 
@@ -10886,14 +11141,14 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__CustomTask__Group_4__1"
-    // InternalOptimind.g:3559:1: rule__CustomTask__Group_4__1 : rule__CustomTask__Group_4__1__Impl ;
+    // InternalOptimind.g:3640:1: rule__CustomTask__Group_4__1 : rule__CustomTask__Group_4__1__Impl ;
     public final void rule__CustomTask__Group_4__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:3563:1: ( rule__CustomTask__Group_4__1__Impl )
-            // InternalOptimind.g:3564:2: rule__CustomTask__Group_4__1__Impl
+            // InternalOptimind.g:3644:1: ( rule__CustomTask__Group_4__1__Impl )
+            // InternalOptimind.g:3645:2: rule__CustomTask__Group_4__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__CustomTask__Group_4__1__Impl();
@@ -10919,21 +11174,21 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__CustomTask__Group_4__1__Impl"
-    // InternalOptimind.g:3570:1: rule__CustomTask__Group_4__1__Impl : ( ( rule__CustomTask__StatusAssignment_4_1 ) ) ;
+    // InternalOptimind.g:3651:1: rule__CustomTask__Group_4__1__Impl : ( ( rule__CustomTask__StatusAssignment_4_1 ) ) ;
     public final void rule__CustomTask__Group_4__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:3574:1: ( ( ( rule__CustomTask__StatusAssignment_4_1 ) ) )
-            // InternalOptimind.g:3575:1: ( ( rule__CustomTask__StatusAssignment_4_1 ) )
+            // InternalOptimind.g:3655:1: ( ( ( rule__CustomTask__StatusAssignment_4_1 ) ) )
+            // InternalOptimind.g:3656:1: ( ( rule__CustomTask__StatusAssignment_4_1 ) )
             {
-            // InternalOptimind.g:3575:1: ( ( rule__CustomTask__StatusAssignment_4_1 ) )
-            // InternalOptimind.g:3576:2: ( rule__CustomTask__StatusAssignment_4_1 )
+            // InternalOptimind.g:3656:1: ( ( rule__CustomTask__StatusAssignment_4_1 ) )
+            // InternalOptimind.g:3657:2: ( rule__CustomTask__StatusAssignment_4_1 )
             {
              before(grammarAccess.getCustomTaskAccess().getStatusAssignment_4_1()); 
-            // InternalOptimind.g:3577:2: ( rule__CustomTask__StatusAssignment_4_1 )
-            // InternalOptimind.g:3577:3: rule__CustomTask__StatusAssignment_4_1
+            // InternalOptimind.g:3658:2: ( rule__CustomTask__StatusAssignment_4_1 )
+            // InternalOptimind.g:3658:3: rule__CustomTask__StatusAssignment_4_1
             {
             pushFollow(FOLLOW_2);
             rule__CustomTask__StatusAssignment_4_1();
@@ -10966,14 +11221,14 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__CustomTask__Group_5__0"
-    // InternalOptimind.g:3586:1: rule__CustomTask__Group_5__0 : rule__CustomTask__Group_5__0__Impl rule__CustomTask__Group_5__1 ;
+    // InternalOptimind.g:3667:1: rule__CustomTask__Group_5__0 : rule__CustomTask__Group_5__0__Impl rule__CustomTask__Group_5__1 ;
     public final void rule__CustomTask__Group_5__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:3590:1: ( rule__CustomTask__Group_5__0__Impl rule__CustomTask__Group_5__1 )
-            // InternalOptimind.g:3591:2: rule__CustomTask__Group_5__0__Impl rule__CustomTask__Group_5__1
+            // InternalOptimind.g:3671:1: ( rule__CustomTask__Group_5__0__Impl rule__CustomTask__Group_5__1 )
+            // InternalOptimind.g:3672:2: rule__CustomTask__Group_5__0__Impl rule__CustomTask__Group_5__1
             {
             pushFollow(FOLLOW_29);
             rule__CustomTask__Group_5__0__Impl();
@@ -11004,21 +11259,21 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__CustomTask__Group_5__0__Impl"
-    // InternalOptimind.g:3598:1: rule__CustomTask__Group_5__0__Impl : ( ( rule__CustomTask__InputsAssignment_5_0 ) ) ;
+    // InternalOptimind.g:3679:1: rule__CustomTask__Group_5__0__Impl : ( ( rule__CustomTask__InputsAssignment_5_0 ) ) ;
     public final void rule__CustomTask__Group_5__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:3602:1: ( ( ( rule__CustomTask__InputsAssignment_5_0 ) ) )
-            // InternalOptimind.g:3603:1: ( ( rule__CustomTask__InputsAssignment_5_0 ) )
+            // InternalOptimind.g:3683:1: ( ( ( rule__CustomTask__InputsAssignment_5_0 ) ) )
+            // InternalOptimind.g:3684:1: ( ( rule__CustomTask__InputsAssignment_5_0 ) )
             {
-            // InternalOptimind.g:3603:1: ( ( rule__CustomTask__InputsAssignment_5_0 ) )
-            // InternalOptimind.g:3604:2: ( rule__CustomTask__InputsAssignment_5_0 )
+            // InternalOptimind.g:3684:1: ( ( rule__CustomTask__InputsAssignment_5_0 ) )
+            // InternalOptimind.g:3685:2: ( rule__CustomTask__InputsAssignment_5_0 )
             {
              before(grammarAccess.getCustomTaskAccess().getInputsAssignment_5_0()); 
-            // InternalOptimind.g:3605:2: ( rule__CustomTask__InputsAssignment_5_0 )
-            // InternalOptimind.g:3605:3: rule__CustomTask__InputsAssignment_5_0
+            // InternalOptimind.g:3686:2: ( rule__CustomTask__InputsAssignment_5_0 )
+            // InternalOptimind.g:3686:3: rule__CustomTask__InputsAssignment_5_0
             {
             pushFollow(FOLLOW_2);
             rule__CustomTask__InputsAssignment_5_0();
@@ -11051,14 +11306,14 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__CustomTask__Group_5__1"
-    // InternalOptimind.g:3613:1: rule__CustomTask__Group_5__1 : rule__CustomTask__Group_5__1__Impl ;
+    // InternalOptimind.g:3694:1: rule__CustomTask__Group_5__1 : rule__CustomTask__Group_5__1__Impl ;
     public final void rule__CustomTask__Group_5__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:3617:1: ( rule__CustomTask__Group_5__1__Impl )
-            // InternalOptimind.g:3618:2: rule__CustomTask__Group_5__1__Impl
+            // InternalOptimind.g:3698:1: ( rule__CustomTask__Group_5__1__Impl )
+            // InternalOptimind.g:3699:2: rule__CustomTask__Group_5__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__CustomTask__Group_5__1__Impl();
@@ -11084,20 +11339,20 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__CustomTask__Group_5__1__Impl"
-    // InternalOptimind.g:3624:1: rule__CustomTask__Group_5__1__Impl : ( ( rule__CustomTask__InputsAssignment_5_1 )* ) ;
+    // InternalOptimind.g:3705:1: rule__CustomTask__Group_5__1__Impl : ( ( rule__CustomTask__InputsAssignment_5_1 )* ) ;
     public final void rule__CustomTask__Group_5__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:3628:1: ( ( ( rule__CustomTask__InputsAssignment_5_1 )* ) )
-            // InternalOptimind.g:3629:1: ( ( rule__CustomTask__InputsAssignment_5_1 )* )
+            // InternalOptimind.g:3709:1: ( ( ( rule__CustomTask__InputsAssignment_5_1 )* ) )
+            // InternalOptimind.g:3710:1: ( ( rule__CustomTask__InputsAssignment_5_1 )* )
             {
-            // InternalOptimind.g:3629:1: ( ( rule__CustomTask__InputsAssignment_5_1 )* )
-            // InternalOptimind.g:3630:2: ( rule__CustomTask__InputsAssignment_5_1 )*
+            // InternalOptimind.g:3710:1: ( ( rule__CustomTask__InputsAssignment_5_1 )* )
+            // InternalOptimind.g:3711:2: ( rule__CustomTask__InputsAssignment_5_1 )*
             {
              before(grammarAccess.getCustomTaskAccess().getInputsAssignment_5_1()); 
-            // InternalOptimind.g:3631:2: ( rule__CustomTask__InputsAssignment_5_1 )*
+            // InternalOptimind.g:3712:2: ( rule__CustomTask__InputsAssignment_5_1 )*
             loop32:
             do {
                 int alt32=2;
@@ -11110,7 +11365,7 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
                 switch (alt32) {
             	case 1 :
-            	    // InternalOptimind.g:3631:3: rule__CustomTask__InputsAssignment_5_1
+            	    // InternalOptimind.g:3712:3: rule__CustomTask__InputsAssignment_5_1
             	    {
             	    pushFollow(FOLLOW_34);
             	    rule__CustomTask__InputsAssignment_5_1();
@@ -11149,14 +11404,14 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__CustomTask__Group_6__0"
-    // InternalOptimind.g:3640:1: rule__CustomTask__Group_6__0 : rule__CustomTask__Group_6__0__Impl rule__CustomTask__Group_6__1 ;
+    // InternalOptimind.g:3721:1: rule__CustomTask__Group_6__0 : rule__CustomTask__Group_6__0__Impl rule__CustomTask__Group_6__1 ;
     public final void rule__CustomTask__Group_6__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:3644:1: ( rule__CustomTask__Group_6__0__Impl rule__CustomTask__Group_6__1 )
-            // InternalOptimind.g:3645:2: rule__CustomTask__Group_6__0__Impl rule__CustomTask__Group_6__1
+            // InternalOptimind.g:3725:1: ( rule__CustomTask__Group_6__0__Impl rule__CustomTask__Group_6__1 )
+            // InternalOptimind.g:3726:2: rule__CustomTask__Group_6__0__Impl rule__CustomTask__Group_6__1
             {
             pushFollow(FOLLOW_10);
             rule__CustomTask__Group_6__0__Impl();
@@ -11187,21 +11442,21 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__CustomTask__Group_6__0__Impl"
-    // InternalOptimind.g:3652:1: rule__CustomTask__Group_6__0__Impl : ( ( rule__CustomTask__OutputsAssignment_6_0 ) ) ;
+    // InternalOptimind.g:3733:1: rule__CustomTask__Group_6__0__Impl : ( ( rule__CustomTask__OutputsAssignment_6_0 ) ) ;
     public final void rule__CustomTask__Group_6__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:3656:1: ( ( ( rule__CustomTask__OutputsAssignment_6_0 ) ) )
-            // InternalOptimind.g:3657:1: ( ( rule__CustomTask__OutputsAssignment_6_0 ) )
+            // InternalOptimind.g:3737:1: ( ( ( rule__CustomTask__OutputsAssignment_6_0 ) ) )
+            // InternalOptimind.g:3738:1: ( ( rule__CustomTask__OutputsAssignment_6_0 ) )
             {
-            // InternalOptimind.g:3657:1: ( ( rule__CustomTask__OutputsAssignment_6_0 ) )
-            // InternalOptimind.g:3658:2: ( rule__CustomTask__OutputsAssignment_6_0 )
+            // InternalOptimind.g:3738:1: ( ( rule__CustomTask__OutputsAssignment_6_0 ) )
+            // InternalOptimind.g:3739:2: ( rule__CustomTask__OutputsAssignment_6_0 )
             {
              before(grammarAccess.getCustomTaskAccess().getOutputsAssignment_6_0()); 
-            // InternalOptimind.g:3659:2: ( rule__CustomTask__OutputsAssignment_6_0 )
-            // InternalOptimind.g:3659:3: rule__CustomTask__OutputsAssignment_6_0
+            // InternalOptimind.g:3740:2: ( rule__CustomTask__OutputsAssignment_6_0 )
+            // InternalOptimind.g:3740:3: rule__CustomTask__OutputsAssignment_6_0
             {
             pushFollow(FOLLOW_2);
             rule__CustomTask__OutputsAssignment_6_0();
@@ -11234,14 +11489,14 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__CustomTask__Group_6__1"
-    // InternalOptimind.g:3667:1: rule__CustomTask__Group_6__1 : rule__CustomTask__Group_6__1__Impl ;
+    // InternalOptimind.g:3748:1: rule__CustomTask__Group_6__1 : rule__CustomTask__Group_6__1__Impl ;
     public final void rule__CustomTask__Group_6__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:3671:1: ( rule__CustomTask__Group_6__1__Impl )
-            // InternalOptimind.g:3672:2: rule__CustomTask__Group_6__1__Impl
+            // InternalOptimind.g:3752:1: ( rule__CustomTask__Group_6__1__Impl )
+            // InternalOptimind.g:3753:2: rule__CustomTask__Group_6__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__CustomTask__Group_6__1__Impl();
@@ -11267,20 +11522,20 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__CustomTask__Group_6__1__Impl"
-    // InternalOptimind.g:3678:1: rule__CustomTask__Group_6__1__Impl : ( ( rule__CustomTask__OutputsAssignment_6_1 )* ) ;
+    // InternalOptimind.g:3759:1: rule__CustomTask__Group_6__1__Impl : ( ( rule__CustomTask__OutputsAssignment_6_1 )* ) ;
     public final void rule__CustomTask__Group_6__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:3682:1: ( ( ( rule__CustomTask__OutputsAssignment_6_1 )* ) )
-            // InternalOptimind.g:3683:1: ( ( rule__CustomTask__OutputsAssignment_6_1 )* )
+            // InternalOptimind.g:3763:1: ( ( ( rule__CustomTask__OutputsAssignment_6_1 )* ) )
+            // InternalOptimind.g:3764:1: ( ( rule__CustomTask__OutputsAssignment_6_1 )* )
             {
-            // InternalOptimind.g:3683:1: ( ( rule__CustomTask__OutputsAssignment_6_1 )* )
-            // InternalOptimind.g:3684:2: ( rule__CustomTask__OutputsAssignment_6_1 )*
+            // InternalOptimind.g:3764:1: ( ( rule__CustomTask__OutputsAssignment_6_1 )* )
+            // InternalOptimind.g:3765:2: ( rule__CustomTask__OutputsAssignment_6_1 )*
             {
              before(grammarAccess.getCustomTaskAccess().getOutputsAssignment_6_1()); 
-            // InternalOptimind.g:3685:2: ( rule__CustomTask__OutputsAssignment_6_1 )*
+            // InternalOptimind.g:3766:2: ( rule__CustomTask__OutputsAssignment_6_1 )*
             loop33:
             do {
                 int alt33=2;
@@ -11293,7 +11548,7 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
                 switch (alt33) {
             	case 1 :
-            	    // InternalOptimind.g:3685:3: rule__CustomTask__OutputsAssignment_6_1
+            	    // InternalOptimind.g:3766:3: rule__CustomTask__OutputsAssignment_6_1
             	    {
             	    pushFollow(FOLLOW_35);
             	    rule__CustomTask__OutputsAssignment_6_1();
@@ -11332,14 +11587,14 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__CustomTask__Group_7__0"
-    // InternalOptimind.g:3694:1: rule__CustomTask__Group_7__0 : rule__CustomTask__Group_7__0__Impl rule__CustomTask__Group_7__1 ;
+    // InternalOptimind.g:3775:1: rule__CustomTask__Group_7__0 : rule__CustomTask__Group_7__0__Impl rule__CustomTask__Group_7__1 ;
     public final void rule__CustomTask__Group_7__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:3698:1: ( rule__CustomTask__Group_7__0__Impl rule__CustomTask__Group_7__1 )
-            // InternalOptimind.g:3699:2: rule__CustomTask__Group_7__0__Impl rule__CustomTask__Group_7__1
+            // InternalOptimind.g:3779:1: ( rule__CustomTask__Group_7__0__Impl rule__CustomTask__Group_7__1 )
+            // InternalOptimind.g:3780:2: rule__CustomTask__Group_7__0__Impl rule__CustomTask__Group_7__1
             {
             pushFollow(FOLLOW_4);
             rule__CustomTask__Group_7__0__Impl();
@@ -11370,17 +11625,17 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__CustomTask__Group_7__0__Impl"
-    // InternalOptimind.g:3706:1: rule__CustomTask__Group_7__0__Impl : ( 'runner' ) ;
+    // InternalOptimind.g:3787:1: rule__CustomTask__Group_7__0__Impl : ( 'runner' ) ;
     public final void rule__CustomTask__Group_7__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:3710:1: ( ( 'runner' ) )
-            // InternalOptimind.g:3711:1: ( 'runner' )
+            // InternalOptimind.g:3791:1: ( ( 'runner' ) )
+            // InternalOptimind.g:3792:1: ( 'runner' )
             {
-            // InternalOptimind.g:3711:1: ( 'runner' )
-            // InternalOptimind.g:3712:2: 'runner'
+            // InternalOptimind.g:3792:1: ( 'runner' )
+            // InternalOptimind.g:3793:2: 'runner'
             {
              before(grammarAccess.getCustomTaskAccess().getRunnerKeyword_7_0()); 
             match(input,42,FOLLOW_2); 
@@ -11407,14 +11662,14 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__CustomTask__Group_7__1"
-    // InternalOptimind.g:3721:1: rule__CustomTask__Group_7__1 : rule__CustomTask__Group_7__1__Impl ;
+    // InternalOptimind.g:3802:1: rule__CustomTask__Group_7__1 : rule__CustomTask__Group_7__1__Impl ;
     public final void rule__CustomTask__Group_7__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:3725:1: ( rule__CustomTask__Group_7__1__Impl )
-            // InternalOptimind.g:3726:2: rule__CustomTask__Group_7__1__Impl
+            // InternalOptimind.g:3806:1: ( rule__CustomTask__Group_7__1__Impl )
+            // InternalOptimind.g:3807:2: rule__CustomTask__Group_7__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__CustomTask__Group_7__1__Impl();
@@ -11440,21 +11695,21 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__CustomTask__Group_7__1__Impl"
-    // InternalOptimind.g:3732:1: rule__CustomTask__Group_7__1__Impl : ( ( rule__CustomTask__RunnerAssignment_7_1 ) ) ;
+    // InternalOptimind.g:3813:1: rule__CustomTask__Group_7__1__Impl : ( ( rule__CustomTask__RunnerAssignment_7_1 ) ) ;
     public final void rule__CustomTask__Group_7__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:3736:1: ( ( ( rule__CustomTask__RunnerAssignment_7_1 ) ) )
-            // InternalOptimind.g:3737:1: ( ( rule__CustomTask__RunnerAssignment_7_1 ) )
+            // InternalOptimind.g:3817:1: ( ( ( rule__CustomTask__RunnerAssignment_7_1 ) ) )
+            // InternalOptimind.g:3818:1: ( ( rule__CustomTask__RunnerAssignment_7_1 ) )
             {
-            // InternalOptimind.g:3737:1: ( ( rule__CustomTask__RunnerAssignment_7_1 ) )
-            // InternalOptimind.g:3738:2: ( rule__CustomTask__RunnerAssignment_7_1 )
+            // InternalOptimind.g:3818:1: ( ( rule__CustomTask__RunnerAssignment_7_1 ) )
+            // InternalOptimind.g:3819:2: ( rule__CustomTask__RunnerAssignment_7_1 )
             {
              before(grammarAccess.getCustomTaskAccess().getRunnerAssignment_7_1()); 
-            // InternalOptimind.g:3739:2: ( rule__CustomTask__RunnerAssignment_7_1 )
-            // InternalOptimind.g:3739:3: rule__CustomTask__RunnerAssignment_7_1
+            // InternalOptimind.g:3820:2: ( rule__CustomTask__RunnerAssignment_7_1 )
+            // InternalOptimind.g:3820:3: rule__CustomTask__RunnerAssignment_7_1
             {
             pushFollow(FOLLOW_2);
             rule__CustomTask__RunnerAssignment_7_1();
@@ -11487,14 +11742,14 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Setter__Group__0"
-    // InternalOptimind.g:3748:1: rule__Setter__Group__0 : rule__Setter__Group__0__Impl rule__Setter__Group__1 ;
+    // InternalOptimind.g:3829:1: rule__Setter__Group__0 : rule__Setter__Group__0__Impl rule__Setter__Group__1 ;
     public final void rule__Setter__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:3752:1: ( rule__Setter__Group__0__Impl rule__Setter__Group__1 )
-            // InternalOptimind.g:3753:2: rule__Setter__Group__0__Impl rule__Setter__Group__1
+            // InternalOptimind.g:3833:1: ( rule__Setter__Group__0__Impl rule__Setter__Group__1 )
+            // InternalOptimind.g:3834:2: rule__Setter__Group__0__Impl rule__Setter__Group__1
             {
             pushFollow(FOLLOW_37);
             rule__Setter__Group__0__Impl();
@@ -11525,21 +11780,21 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Setter__Group__0__Impl"
-    // InternalOptimind.g:3760:1: rule__Setter__Group__0__Impl : ( () ) ;
+    // InternalOptimind.g:3841:1: rule__Setter__Group__0__Impl : ( () ) ;
     public final void rule__Setter__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:3764:1: ( ( () ) )
-            // InternalOptimind.g:3765:1: ( () )
+            // InternalOptimind.g:3845:1: ( ( () ) )
+            // InternalOptimind.g:3846:1: ( () )
             {
-            // InternalOptimind.g:3765:1: ( () )
-            // InternalOptimind.g:3766:2: ()
+            // InternalOptimind.g:3846:1: ( () )
+            // InternalOptimind.g:3847:2: ()
             {
              before(grammarAccess.getSetterAccess().getSetterAction_0()); 
-            // InternalOptimind.g:3767:2: ()
-            // InternalOptimind.g:3767:3: 
+            // InternalOptimind.g:3848:2: ()
+            // InternalOptimind.g:3848:3: 
             {
             }
 
@@ -11562,14 +11817,14 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Setter__Group__1"
-    // InternalOptimind.g:3775:1: rule__Setter__Group__1 : rule__Setter__Group__1__Impl rule__Setter__Group__2 ;
+    // InternalOptimind.g:3856:1: rule__Setter__Group__1 : rule__Setter__Group__1__Impl rule__Setter__Group__2 ;
     public final void rule__Setter__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:3779:1: ( rule__Setter__Group__1__Impl rule__Setter__Group__2 )
-            // InternalOptimind.g:3780:2: rule__Setter__Group__1__Impl rule__Setter__Group__2
+            // InternalOptimind.g:3860:1: ( rule__Setter__Group__1__Impl rule__Setter__Group__2 )
+            // InternalOptimind.g:3861:2: rule__Setter__Group__1__Impl rule__Setter__Group__2
             {
             pushFollow(FOLLOW_4);
             rule__Setter__Group__1__Impl();
@@ -11600,17 +11855,17 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Setter__Group__1__Impl"
-    // InternalOptimind.g:3787:1: rule__Setter__Group__1__Impl : ( 'Setter' ) ;
+    // InternalOptimind.g:3868:1: rule__Setter__Group__1__Impl : ( 'Setter' ) ;
     public final void rule__Setter__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:3791:1: ( ( 'Setter' ) )
-            // InternalOptimind.g:3792:1: ( 'Setter' )
+            // InternalOptimind.g:3872:1: ( ( 'Setter' ) )
+            // InternalOptimind.g:3873:1: ( 'Setter' )
             {
-            // InternalOptimind.g:3792:1: ( 'Setter' )
-            // InternalOptimind.g:3793:2: 'Setter'
+            // InternalOptimind.g:3873:1: ( 'Setter' )
+            // InternalOptimind.g:3874:2: 'Setter'
             {
              before(grammarAccess.getSetterAccess().getSetterKeyword_1()); 
             match(input,43,FOLLOW_2); 
@@ -11637,14 +11892,14 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Setter__Group__2"
-    // InternalOptimind.g:3802:1: rule__Setter__Group__2 : rule__Setter__Group__2__Impl rule__Setter__Group__3 ;
+    // InternalOptimind.g:3883:1: rule__Setter__Group__2 : rule__Setter__Group__2__Impl rule__Setter__Group__3 ;
     public final void rule__Setter__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:3806:1: ( rule__Setter__Group__2__Impl rule__Setter__Group__3 )
-            // InternalOptimind.g:3807:2: rule__Setter__Group__2__Impl rule__Setter__Group__3
+            // InternalOptimind.g:3887:1: ( rule__Setter__Group__2__Impl rule__Setter__Group__3 )
+            // InternalOptimind.g:3888:2: rule__Setter__Group__2__Impl rule__Setter__Group__3
             {
             pushFollow(FOLLOW_11);
             rule__Setter__Group__2__Impl();
@@ -11675,21 +11930,21 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Setter__Group__2__Impl"
-    // InternalOptimind.g:3814:1: rule__Setter__Group__2__Impl : ( ( rule__Setter__NameAssignment_2 ) ) ;
+    // InternalOptimind.g:3895:1: rule__Setter__Group__2__Impl : ( ( rule__Setter__NameAssignment_2 ) ) ;
     public final void rule__Setter__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:3818:1: ( ( ( rule__Setter__NameAssignment_2 ) ) )
-            // InternalOptimind.g:3819:1: ( ( rule__Setter__NameAssignment_2 ) )
+            // InternalOptimind.g:3899:1: ( ( ( rule__Setter__NameAssignment_2 ) ) )
+            // InternalOptimind.g:3900:1: ( ( rule__Setter__NameAssignment_2 ) )
             {
-            // InternalOptimind.g:3819:1: ( ( rule__Setter__NameAssignment_2 ) )
-            // InternalOptimind.g:3820:2: ( rule__Setter__NameAssignment_2 )
+            // InternalOptimind.g:3900:1: ( ( rule__Setter__NameAssignment_2 ) )
+            // InternalOptimind.g:3901:2: ( rule__Setter__NameAssignment_2 )
             {
              before(grammarAccess.getSetterAccess().getNameAssignment_2()); 
-            // InternalOptimind.g:3821:2: ( rule__Setter__NameAssignment_2 )
-            // InternalOptimind.g:3821:3: rule__Setter__NameAssignment_2
+            // InternalOptimind.g:3902:2: ( rule__Setter__NameAssignment_2 )
+            // InternalOptimind.g:3902:3: rule__Setter__NameAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__Setter__NameAssignment_2();
@@ -11722,14 +11977,14 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Setter__Group__3"
-    // InternalOptimind.g:3829:1: rule__Setter__Group__3 : rule__Setter__Group__3__Impl rule__Setter__Group__4 ;
+    // InternalOptimind.g:3910:1: rule__Setter__Group__3 : rule__Setter__Group__3__Impl rule__Setter__Group__4 ;
     public final void rule__Setter__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:3833:1: ( rule__Setter__Group__3__Impl rule__Setter__Group__4 )
-            // InternalOptimind.g:3834:2: rule__Setter__Group__3__Impl rule__Setter__Group__4
+            // InternalOptimind.g:3914:1: ( rule__Setter__Group__3__Impl rule__Setter__Group__4 )
+            // InternalOptimind.g:3915:2: rule__Setter__Group__3__Impl rule__Setter__Group__4
             {
             pushFollow(FOLLOW_11);
             rule__Setter__Group__3__Impl();
@@ -11760,20 +12015,20 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Setter__Group__3__Impl"
-    // InternalOptimind.g:3841:1: rule__Setter__Group__3__Impl : ( ( rule__Setter__Group_3__0 )? ) ;
+    // InternalOptimind.g:3922:1: rule__Setter__Group__3__Impl : ( ( rule__Setter__Group_3__0 )? ) ;
     public final void rule__Setter__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:3845:1: ( ( ( rule__Setter__Group_3__0 )? ) )
-            // InternalOptimind.g:3846:1: ( ( rule__Setter__Group_3__0 )? )
+            // InternalOptimind.g:3926:1: ( ( ( rule__Setter__Group_3__0 )? ) )
+            // InternalOptimind.g:3927:1: ( ( rule__Setter__Group_3__0 )? )
             {
-            // InternalOptimind.g:3846:1: ( ( rule__Setter__Group_3__0 )? )
-            // InternalOptimind.g:3847:2: ( rule__Setter__Group_3__0 )?
+            // InternalOptimind.g:3927:1: ( ( rule__Setter__Group_3__0 )? )
+            // InternalOptimind.g:3928:2: ( rule__Setter__Group_3__0 )?
             {
              before(grammarAccess.getSetterAccess().getGroup_3()); 
-            // InternalOptimind.g:3848:2: ( rule__Setter__Group_3__0 )?
+            // InternalOptimind.g:3929:2: ( rule__Setter__Group_3__0 )?
             int alt34=2;
             int LA34_0 = input.LA(1);
 
@@ -11782,7 +12037,7 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
             }
             switch (alt34) {
                 case 1 :
-                    // InternalOptimind.g:3848:3: rule__Setter__Group_3__0
+                    // InternalOptimind.g:3929:3: rule__Setter__Group_3__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__Setter__Group_3__0();
@@ -11818,14 +12073,14 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Setter__Group__4"
-    // InternalOptimind.g:3856:1: rule__Setter__Group__4 : rule__Setter__Group__4__Impl ;
+    // InternalOptimind.g:3937:1: rule__Setter__Group__4 : rule__Setter__Group__4__Impl ;
     public final void rule__Setter__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:3860:1: ( rule__Setter__Group__4__Impl )
-            // InternalOptimind.g:3861:2: rule__Setter__Group__4__Impl
+            // InternalOptimind.g:3941:1: ( rule__Setter__Group__4__Impl )
+            // InternalOptimind.g:3942:2: rule__Setter__Group__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Setter__Group__4__Impl();
@@ -11851,20 +12106,20 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Setter__Group__4__Impl"
-    // InternalOptimind.g:3867:1: rule__Setter__Group__4__Impl : ( ( rule__Setter__Group_4__0 )? ) ;
+    // InternalOptimind.g:3948:1: rule__Setter__Group__4__Impl : ( ( rule__Setter__Group_4__0 )? ) ;
     public final void rule__Setter__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:3871:1: ( ( ( rule__Setter__Group_4__0 )? ) )
-            // InternalOptimind.g:3872:1: ( ( rule__Setter__Group_4__0 )? )
+            // InternalOptimind.g:3952:1: ( ( ( rule__Setter__Group_4__0 )? ) )
+            // InternalOptimind.g:3953:1: ( ( rule__Setter__Group_4__0 )? )
             {
-            // InternalOptimind.g:3872:1: ( ( rule__Setter__Group_4__0 )? )
-            // InternalOptimind.g:3873:2: ( rule__Setter__Group_4__0 )?
+            // InternalOptimind.g:3953:1: ( ( rule__Setter__Group_4__0 )? )
+            // InternalOptimind.g:3954:2: ( rule__Setter__Group_4__0 )?
             {
              before(grammarAccess.getSetterAccess().getGroup_4()); 
-            // InternalOptimind.g:3874:2: ( rule__Setter__Group_4__0 )?
+            // InternalOptimind.g:3955:2: ( rule__Setter__Group_4__0 )?
             int alt35=2;
             int LA35_0 = input.LA(1);
 
@@ -11873,7 +12128,7 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
             }
             switch (alt35) {
                 case 1 :
-                    // InternalOptimind.g:3874:3: rule__Setter__Group_4__0
+                    // InternalOptimind.g:3955:3: rule__Setter__Group_4__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__Setter__Group_4__0();
@@ -11909,14 +12164,14 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Setter__Group_3__0"
-    // InternalOptimind.g:3883:1: rule__Setter__Group_3__0 : rule__Setter__Group_3__0__Impl rule__Setter__Group_3__1 ;
+    // InternalOptimind.g:3964:1: rule__Setter__Group_3__0 : rule__Setter__Group_3__0__Impl rule__Setter__Group_3__1 ;
     public final void rule__Setter__Group_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:3887:1: ( rule__Setter__Group_3__0__Impl rule__Setter__Group_3__1 )
-            // InternalOptimind.g:3888:2: rule__Setter__Group_3__0__Impl rule__Setter__Group_3__1
+            // InternalOptimind.g:3968:1: ( rule__Setter__Group_3__0__Impl rule__Setter__Group_3__1 )
+            // InternalOptimind.g:3969:2: rule__Setter__Group_3__0__Impl rule__Setter__Group_3__1
             {
             pushFollow(FOLLOW_4);
             rule__Setter__Group_3__0__Impl();
@@ -11947,17 +12202,17 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Setter__Group_3__0__Impl"
-    // InternalOptimind.g:3895:1: rule__Setter__Group_3__0__Impl : ( 'type' ) ;
+    // InternalOptimind.g:3976:1: rule__Setter__Group_3__0__Impl : ( 'type' ) ;
     public final void rule__Setter__Group_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:3899:1: ( ( 'type' ) )
-            // InternalOptimind.g:3900:1: ( 'type' )
+            // InternalOptimind.g:3980:1: ( ( 'type' ) )
+            // InternalOptimind.g:3981:1: ( 'type' )
             {
-            // InternalOptimind.g:3900:1: ( 'type' )
-            // InternalOptimind.g:3901:2: 'type'
+            // InternalOptimind.g:3981:1: ( 'type' )
+            // InternalOptimind.g:3982:2: 'type'
             {
              before(grammarAccess.getSetterAccess().getTypeKeyword_3_0()); 
             match(input,22,FOLLOW_2); 
@@ -11984,14 +12239,14 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Setter__Group_3__1"
-    // InternalOptimind.g:3910:1: rule__Setter__Group_3__1 : rule__Setter__Group_3__1__Impl ;
+    // InternalOptimind.g:3991:1: rule__Setter__Group_3__1 : rule__Setter__Group_3__1__Impl ;
     public final void rule__Setter__Group_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:3914:1: ( rule__Setter__Group_3__1__Impl )
-            // InternalOptimind.g:3915:2: rule__Setter__Group_3__1__Impl
+            // InternalOptimind.g:3995:1: ( rule__Setter__Group_3__1__Impl )
+            // InternalOptimind.g:3996:2: rule__Setter__Group_3__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Setter__Group_3__1__Impl();
@@ -12017,21 +12272,21 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Setter__Group_3__1__Impl"
-    // InternalOptimind.g:3921:1: rule__Setter__Group_3__1__Impl : ( ( rule__Setter__TypeAsStringAssignment_3_1 ) ) ;
+    // InternalOptimind.g:4002:1: rule__Setter__Group_3__1__Impl : ( ( rule__Setter__TypeAsStringAssignment_3_1 ) ) ;
     public final void rule__Setter__Group_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:3925:1: ( ( ( rule__Setter__TypeAsStringAssignment_3_1 ) ) )
-            // InternalOptimind.g:3926:1: ( ( rule__Setter__TypeAsStringAssignment_3_1 ) )
+            // InternalOptimind.g:4006:1: ( ( ( rule__Setter__TypeAsStringAssignment_3_1 ) ) )
+            // InternalOptimind.g:4007:1: ( ( rule__Setter__TypeAsStringAssignment_3_1 ) )
             {
-            // InternalOptimind.g:3926:1: ( ( rule__Setter__TypeAsStringAssignment_3_1 ) )
-            // InternalOptimind.g:3927:2: ( rule__Setter__TypeAsStringAssignment_3_1 )
+            // InternalOptimind.g:4007:1: ( ( rule__Setter__TypeAsStringAssignment_3_1 ) )
+            // InternalOptimind.g:4008:2: ( rule__Setter__TypeAsStringAssignment_3_1 )
             {
              before(grammarAccess.getSetterAccess().getTypeAsStringAssignment_3_1()); 
-            // InternalOptimind.g:3928:2: ( rule__Setter__TypeAsStringAssignment_3_1 )
-            // InternalOptimind.g:3928:3: rule__Setter__TypeAsStringAssignment_3_1
+            // InternalOptimind.g:4009:2: ( rule__Setter__TypeAsStringAssignment_3_1 )
+            // InternalOptimind.g:4009:3: rule__Setter__TypeAsStringAssignment_3_1
             {
             pushFollow(FOLLOW_2);
             rule__Setter__TypeAsStringAssignment_3_1();
@@ -12064,14 +12319,14 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Setter__Group_4__0"
-    // InternalOptimind.g:3937:1: rule__Setter__Group_4__0 : rule__Setter__Group_4__0__Impl rule__Setter__Group_4__1 ;
+    // InternalOptimind.g:4018:1: rule__Setter__Group_4__0 : rule__Setter__Group_4__0__Impl rule__Setter__Group_4__1 ;
     public final void rule__Setter__Group_4__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:3941:1: ( rule__Setter__Group_4__0__Impl rule__Setter__Group_4__1 )
-            // InternalOptimind.g:3942:2: rule__Setter__Group_4__0__Impl rule__Setter__Group_4__1
+            // InternalOptimind.g:4022:1: ( rule__Setter__Group_4__0__Impl rule__Setter__Group_4__1 )
+            // InternalOptimind.g:4023:2: rule__Setter__Group_4__0__Impl rule__Setter__Group_4__1
             {
             pushFollow(FOLLOW_4);
             rule__Setter__Group_4__0__Impl();
@@ -12102,17 +12357,17 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Setter__Group_4__0__Impl"
-    // InternalOptimind.g:3949:1: rule__Setter__Group_4__0__Impl : ( 'value' ) ;
+    // InternalOptimind.g:4030:1: rule__Setter__Group_4__0__Impl : ( 'value' ) ;
     public final void rule__Setter__Group_4__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:3953:1: ( ( 'value' ) )
-            // InternalOptimind.g:3954:1: ( 'value' )
+            // InternalOptimind.g:4034:1: ( ( 'value' ) )
+            // InternalOptimind.g:4035:1: ( 'value' )
             {
-            // InternalOptimind.g:3954:1: ( 'value' )
-            // InternalOptimind.g:3955:2: 'value'
+            // InternalOptimind.g:4035:1: ( 'value' )
+            // InternalOptimind.g:4036:2: 'value'
             {
              before(grammarAccess.getSetterAccess().getValueKeyword_4_0()); 
             match(input,23,FOLLOW_2); 
@@ -12139,14 +12394,14 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Setter__Group_4__1"
-    // InternalOptimind.g:3964:1: rule__Setter__Group_4__1 : rule__Setter__Group_4__1__Impl ;
+    // InternalOptimind.g:4045:1: rule__Setter__Group_4__1 : rule__Setter__Group_4__1__Impl ;
     public final void rule__Setter__Group_4__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:3968:1: ( rule__Setter__Group_4__1__Impl )
-            // InternalOptimind.g:3969:2: rule__Setter__Group_4__1__Impl
+            // InternalOptimind.g:4049:1: ( rule__Setter__Group_4__1__Impl )
+            // InternalOptimind.g:4050:2: rule__Setter__Group_4__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Setter__Group_4__1__Impl();
@@ -12172,21 +12427,21 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Setter__Group_4__1__Impl"
-    // InternalOptimind.g:3975:1: rule__Setter__Group_4__1__Impl : ( ( rule__Setter__ValueAsStringAssignment_4_1 ) ) ;
+    // InternalOptimind.g:4056:1: rule__Setter__Group_4__1__Impl : ( ( rule__Setter__ValueAsStringAssignment_4_1 ) ) ;
     public final void rule__Setter__Group_4__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:3979:1: ( ( ( rule__Setter__ValueAsStringAssignment_4_1 ) ) )
-            // InternalOptimind.g:3980:1: ( ( rule__Setter__ValueAsStringAssignment_4_1 ) )
+            // InternalOptimind.g:4060:1: ( ( ( rule__Setter__ValueAsStringAssignment_4_1 ) ) )
+            // InternalOptimind.g:4061:1: ( ( rule__Setter__ValueAsStringAssignment_4_1 ) )
             {
-            // InternalOptimind.g:3980:1: ( ( rule__Setter__ValueAsStringAssignment_4_1 ) )
-            // InternalOptimind.g:3981:2: ( rule__Setter__ValueAsStringAssignment_4_1 )
+            // InternalOptimind.g:4061:1: ( ( rule__Setter__ValueAsStringAssignment_4_1 ) )
+            // InternalOptimind.g:4062:2: ( rule__Setter__ValueAsStringAssignment_4_1 )
             {
              before(grammarAccess.getSetterAccess().getValueAsStringAssignment_4_1()); 
-            // InternalOptimind.g:3982:2: ( rule__Setter__ValueAsStringAssignment_4_1 )
-            // InternalOptimind.g:3982:3: rule__Setter__ValueAsStringAssignment_4_1
+            // InternalOptimind.g:4063:2: ( rule__Setter__ValueAsStringAssignment_4_1 )
+            // InternalOptimind.g:4063:3: rule__Setter__ValueAsStringAssignment_4_1
             {
             pushFollow(FOLLOW_2);
             rule__Setter__ValueAsStringAssignment_4_1();
@@ -12219,14 +12474,14 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Connection__Group__0"
-    // InternalOptimind.g:3991:1: rule__Connection__Group__0 : rule__Connection__Group__0__Impl rule__Connection__Group__1 ;
+    // InternalOptimind.g:4072:1: rule__Connection__Group__0 : rule__Connection__Group__0__Impl rule__Connection__Group__1 ;
     public final void rule__Connection__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:3995:1: ( rule__Connection__Group__0__Impl rule__Connection__Group__1 )
-            // InternalOptimind.g:3996:2: rule__Connection__Group__0__Impl rule__Connection__Group__1
+            // InternalOptimind.g:4076:1: ( rule__Connection__Group__0__Impl rule__Connection__Group__1 )
+            // InternalOptimind.g:4077:2: rule__Connection__Group__0__Impl rule__Connection__Group__1
             {
             pushFollow(FOLLOW_29);
             rule__Connection__Group__0__Impl();
@@ -12257,21 +12512,21 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Connection__Group__0__Impl"
-    // InternalOptimind.g:4003:1: rule__Connection__Group__0__Impl : ( () ) ;
+    // InternalOptimind.g:4084:1: rule__Connection__Group__0__Impl : ( () ) ;
     public final void rule__Connection__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:4007:1: ( ( () ) )
-            // InternalOptimind.g:4008:1: ( () )
+            // InternalOptimind.g:4088:1: ( ( () ) )
+            // InternalOptimind.g:4089:1: ( () )
             {
-            // InternalOptimind.g:4008:1: ( () )
-            // InternalOptimind.g:4009:2: ()
+            // InternalOptimind.g:4089:1: ( () )
+            // InternalOptimind.g:4090:2: ()
             {
              before(grammarAccess.getConnectionAccess().getConnectionAction_0()); 
-            // InternalOptimind.g:4010:2: ()
-            // InternalOptimind.g:4010:3: 
+            // InternalOptimind.g:4091:2: ()
+            // InternalOptimind.g:4091:3: 
             {
             }
 
@@ -12294,14 +12549,14 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Connection__Group__1"
-    // InternalOptimind.g:4018:1: rule__Connection__Group__1 : rule__Connection__Group__1__Impl rule__Connection__Group__2 ;
+    // InternalOptimind.g:4099:1: rule__Connection__Group__1 : rule__Connection__Group__1__Impl rule__Connection__Group__2 ;
     public final void rule__Connection__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:4022:1: ( rule__Connection__Group__1__Impl rule__Connection__Group__2 )
-            // InternalOptimind.g:4023:2: rule__Connection__Group__1__Impl rule__Connection__Group__2
+            // InternalOptimind.g:4103:1: ( rule__Connection__Group__1__Impl rule__Connection__Group__2 )
+            // InternalOptimind.g:4104:2: rule__Connection__Group__1__Impl rule__Connection__Group__2
             {
             pushFollow(FOLLOW_4);
             rule__Connection__Group__1__Impl();
@@ -12332,17 +12587,17 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Connection__Group__1__Impl"
-    // InternalOptimind.g:4030:1: rule__Connection__Group__1__Impl : ( 'Connection' ) ;
+    // InternalOptimind.g:4111:1: rule__Connection__Group__1__Impl : ( 'Connection' ) ;
     public final void rule__Connection__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:4034:1: ( ( 'Connection' ) )
-            // InternalOptimind.g:4035:1: ( 'Connection' )
+            // InternalOptimind.g:4115:1: ( ( 'Connection' ) )
+            // InternalOptimind.g:4116:1: ( 'Connection' )
             {
-            // InternalOptimind.g:4035:1: ( 'Connection' )
-            // InternalOptimind.g:4036:2: 'Connection'
+            // InternalOptimind.g:4116:1: ( 'Connection' )
+            // InternalOptimind.g:4117:2: 'Connection'
             {
              before(grammarAccess.getConnectionAccess().getConnectionKeyword_1()); 
             match(input,44,FOLLOW_2); 
@@ -12369,14 +12624,14 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Connection__Group__2"
-    // InternalOptimind.g:4045:1: rule__Connection__Group__2 : rule__Connection__Group__2__Impl rule__Connection__Group__3 ;
+    // InternalOptimind.g:4126:1: rule__Connection__Group__2 : rule__Connection__Group__2__Impl rule__Connection__Group__3 ;
     public final void rule__Connection__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:4049:1: ( rule__Connection__Group__2__Impl rule__Connection__Group__3 )
-            // InternalOptimind.g:4050:2: rule__Connection__Group__2__Impl rule__Connection__Group__3
+            // InternalOptimind.g:4130:1: ( rule__Connection__Group__2__Impl rule__Connection__Group__3 )
+            // InternalOptimind.g:4131:2: rule__Connection__Group__2__Impl rule__Connection__Group__3
             {
             pushFollow(FOLLOW_15);
             rule__Connection__Group__2__Impl();
@@ -12407,21 +12662,21 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Connection__Group__2__Impl"
-    // InternalOptimind.g:4057:1: rule__Connection__Group__2__Impl : ( ( rule__Connection__NameAssignment_2 ) ) ;
+    // InternalOptimind.g:4138:1: rule__Connection__Group__2__Impl : ( ( rule__Connection__NameAssignment_2 ) ) ;
     public final void rule__Connection__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:4061:1: ( ( ( rule__Connection__NameAssignment_2 ) ) )
-            // InternalOptimind.g:4062:1: ( ( rule__Connection__NameAssignment_2 ) )
+            // InternalOptimind.g:4142:1: ( ( ( rule__Connection__NameAssignment_2 ) ) )
+            // InternalOptimind.g:4143:1: ( ( rule__Connection__NameAssignment_2 ) )
             {
-            // InternalOptimind.g:4062:1: ( ( rule__Connection__NameAssignment_2 ) )
-            // InternalOptimind.g:4063:2: ( rule__Connection__NameAssignment_2 )
+            // InternalOptimind.g:4143:1: ( ( rule__Connection__NameAssignment_2 ) )
+            // InternalOptimind.g:4144:2: ( rule__Connection__NameAssignment_2 )
             {
              before(grammarAccess.getConnectionAccess().getNameAssignment_2()); 
-            // InternalOptimind.g:4064:2: ( rule__Connection__NameAssignment_2 )
-            // InternalOptimind.g:4064:3: rule__Connection__NameAssignment_2
+            // InternalOptimind.g:4145:2: ( rule__Connection__NameAssignment_2 )
+            // InternalOptimind.g:4145:3: rule__Connection__NameAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__Connection__NameAssignment_2();
@@ -12454,14 +12709,14 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Connection__Group__3"
-    // InternalOptimind.g:4072:1: rule__Connection__Group__3 : rule__Connection__Group__3__Impl ;
+    // InternalOptimind.g:4153:1: rule__Connection__Group__3 : rule__Connection__Group__3__Impl ;
     public final void rule__Connection__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:4076:1: ( rule__Connection__Group__3__Impl )
-            // InternalOptimind.g:4077:2: rule__Connection__Group__3__Impl
+            // InternalOptimind.g:4157:1: ( rule__Connection__Group__3__Impl )
+            // InternalOptimind.g:4158:2: rule__Connection__Group__3__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Connection__Group__3__Impl();
@@ -12487,20 +12742,20 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Connection__Group__3__Impl"
-    // InternalOptimind.g:4083:1: rule__Connection__Group__3__Impl : ( ( rule__Connection__Group_3__0 )? ) ;
+    // InternalOptimind.g:4164:1: rule__Connection__Group__3__Impl : ( ( rule__Connection__Group_3__0 )? ) ;
     public final void rule__Connection__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:4087:1: ( ( ( rule__Connection__Group_3__0 )? ) )
-            // InternalOptimind.g:4088:1: ( ( rule__Connection__Group_3__0 )? )
+            // InternalOptimind.g:4168:1: ( ( ( rule__Connection__Group_3__0 )? ) )
+            // InternalOptimind.g:4169:1: ( ( rule__Connection__Group_3__0 )? )
             {
-            // InternalOptimind.g:4088:1: ( ( rule__Connection__Group_3__0 )? )
-            // InternalOptimind.g:4089:2: ( rule__Connection__Group_3__0 )?
+            // InternalOptimind.g:4169:1: ( ( rule__Connection__Group_3__0 )? )
+            // InternalOptimind.g:4170:2: ( rule__Connection__Group_3__0 )?
             {
              before(grammarAccess.getConnectionAccess().getGroup_3()); 
-            // InternalOptimind.g:4090:2: ( rule__Connection__Group_3__0 )?
+            // InternalOptimind.g:4171:2: ( rule__Connection__Group_3__0 )?
             int alt36=2;
             int LA36_0 = input.LA(1);
 
@@ -12509,7 +12764,7 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
             }
             switch (alt36) {
                 case 1 :
-                    // InternalOptimind.g:4090:3: rule__Connection__Group_3__0
+                    // InternalOptimind.g:4171:3: rule__Connection__Group_3__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__Connection__Group_3__0();
@@ -12545,14 +12800,14 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Connection__Group_3__0"
-    // InternalOptimind.g:4099:1: rule__Connection__Group_3__0 : rule__Connection__Group_3__0__Impl rule__Connection__Group_3__1 ;
+    // InternalOptimind.g:4180:1: rule__Connection__Group_3__0 : rule__Connection__Group_3__0__Impl rule__Connection__Group_3__1 ;
     public final void rule__Connection__Group_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:4103:1: ( rule__Connection__Group_3__0__Impl rule__Connection__Group_3__1 )
-            // InternalOptimind.g:4104:2: rule__Connection__Group_3__0__Impl rule__Connection__Group_3__1
+            // InternalOptimind.g:4184:1: ( rule__Connection__Group_3__0__Impl rule__Connection__Group_3__1 )
+            // InternalOptimind.g:4185:2: rule__Connection__Group_3__0__Impl rule__Connection__Group_3__1
             {
             pushFollow(FOLLOW_4);
             rule__Connection__Group_3__0__Impl();
@@ -12583,17 +12838,17 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Connection__Group_3__0__Impl"
-    // InternalOptimind.g:4111:1: rule__Connection__Group_3__0__Impl : ( 'to' ) ;
+    // InternalOptimind.g:4192:1: rule__Connection__Group_3__0__Impl : ( 'to' ) ;
     public final void rule__Connection__Group_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:4115:1: ( ( 'to' ) )
-            // InternalOptimind.g:4116:1: ( 'to' )
+            // InternalOptimind.g:4196:1: ( ( 'to' ) )
+            // InternalOptimind.g:4197:1: ( 'to' )
             {
-            // InternalOptimind.g:4116:1: ( 'to' )
-            // InternalOptimind.g:4117:2: 'to'
+            // InternalOptimind.g:4197:1: ( 'to' )
+            // InternalOptimind.g:4198:2: 'to'
             {
              before(grammarAccess.getConnectionAccess().getToKeyword_3_0()); 
             match(input,26,FOLLOW_2); 
@@ -12620,14 +12875,14 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Connection__Group_3__1"
-    // InternalOptimind.g:4126:1: rule__Connection__Group_3__1 : rule__Connection__Group_3__1__Impl ;
+    // InternalOptimind.g:4207:1: rule__Connection__Group_3__1 : rule__Connection__Group_3__1__Impl ;
     public final void rule__Connection__Group_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:4130:1: ( rule__Connection__Group_3__1__Impl )
-            // InternalOptimind.g:4131:2: rule__Connection__Group_3__1__Impl
+            // InternalOptimind.g:4211:1: ( rule__Connection__Group_3__1__Impl )
+            // InternalOptimind.g:4212:2: rule__Connection__Group_3__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Connection__Group_3__1__Impl();
@@ -12653,21 +12908,21 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Connection__Group_3__1__Impl"
-    // InternalOptimind.g:4137:1: rule__Connection__Group_3__1__Impl : ( ( rule__Connection__TaskoutputAssignment_3_1 ) ) ;
+    // InternalOptimind.g:4218:1: rule__Connection__Group_3__1__Impl : ( ( rule__Connection__TaskoutputAssignment_3_1 ) ) ;
     public final void rule__Connection__Group_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:4141:1: ( ( ( rule__Connection__TaskoutputAssignment_3_1 ) ) )
-            // InternalOptimind.g:4142:1: ( ( rule__Connection__TaskoutputAssignment_3_1 ) )
+            // InternalOptimind.g:4222:1: ( ( ( rule__Connection__TaskoutputAssignment_3_1 ) ) )
+            // InternalOptimind.g:4223:1: ( ( rule__Connection__TaskoutputAssignment_3_1 ) )
             {
-            // InternalOptimind.g:4142:1: ( ( rule__Connection__TaskoutputAssignment_3_1 ) )
-            // InternalOptimind.g:4143:2: ( rule__Connection__TaskoutputAssignment_3_1 )
+            // InternalOptimind.g:4223:1: ( ( rule__Connection__TaskoutputAssignment_3_1 ) )
+            // InternalOptimind.g:4224:2: ( rule__Connection__TaskoutputAssignment_3_1 )
             {
              before(grammarAccess.getConnectionAccess().getTaskoutputAssignment_3_1()); 
-            // InternalOptimind.g:4144:2: ( rule__Connection__TaskoutputAssignment_3_1 )
-            // InternalOptimind.g:4144:3: rule__Connection__TaskoutputAssignment_3_1
+            // InternalOptimind.g:4225:2: ( rule__Connection__TaskoutputAssignment_3_1 )
+            // InternalOptimind.g:4225:3: rule__Connection__TaskoutputAssignment_3_1
             {
             pushFollow(FOLLOW_2);
             rule__Connection__TaskoutputAssignment_3_1();
@@ -12700,14 +12955,14 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__LibraryFunction__Group__0"
-    // InternalOptimind.g:4153:1: rule__LibraryFunction__Group__0 : rule__LibraryFunction__Group__0__Impl rule__LibraryFunction__Group__1 ;
+    // InternalOptimind.g:4234:1: rule__LibraryFunction__Group__0 : rule__LibraryFunction__Group__0__Impl rule__LibraryFunction__Group__1 ;
     public final void rule__LibraryFunction__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:4157:1: ( rule__LibraryFunction__Group__0__Impl rule__LibraryFunction__Group__1 )
-            // InternalOptimind.g:4158:2: rule__LibraryFunction__Group__0__Impl rule__LibraryFunction__Group__1
+            // InternalOptimind.g:4238:1: ( rule__LibraryFunction__Group__0__Impl rule__LibraryFunction__Group__1 )
+            // InternalOptimind.g:4239:2: rule__LibraryFunction__Group__0__Impl rule__LibraryFunction__Group__1
             {
             pushFollow(FOLLOW_8);
             rule__LibraryFunction__Group__0__Impl();
@@ -12738,21 +12993,21 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__LibraryFunction__Group__0__Impl"
-    // InternalOptimind.g:4165:1: rule__LibraryFunction__Group__0__Impl : ( () ) ;
+    // InternalOptimind.g:4246:1: rule__LibraryFunction__Group__0__Impl : ( () ) ;
     public final void rule__LibraryFunction__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:4169:1: ( ( () ) )
-            // InternalOptimind.g:4170:1: ( () )
+            // InternalOptimind.g:4250:1: ( ( () ) )
+            // InternalOptimind.g:4251:1: ( () )
             {
-            // InternalOptimind.g:4170:1: ( () )
-            // InternalOptimind.g:4171:2: ()
+            // InternalOptimind.g:4251:1: ( () )
+            // InternalOptimind.g:4252:2: ()
             {
              before(grammarAccess.getLibraryFunctionAccess().getLibraryFunctionAction_0()); 
-            // InternalOptimind.g:4172:2: ()
-            // InternalOptimind.g:4172:3: 
+            // InternalOptimind.g:4253:2: ()
+            // InternalOptimind.g:4253:3: 
             {
             }
 
@@ -12775,14 +13030,14 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__LibraryFunction__Group__1"
-    // InternalOptimind.g:4180:1: rule__LibraryFunction__Group__1 : rule__LibraryFunction__Group__1__Impl rule__LibraryFunction__Group__2 ;
+    // InternalOptimind.g:4261:1: rule__LibraryFunction__Group__1 : rule__LibraryFunction__Group__1__Impl rule__LibraryFunction__Group__2 ;
     public final void rule__LibraryFunction__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:4184:1: ( rule__LibraryFunction__Group__1__Impl rule__LibraryFunction__Group__2 )
-            // InternalOptimind.g:4185:2: rule__LibraryFunction__Group__1__Impl rule__LibraryFunction__Group__2
+            // InternalOptimind.g:4265:1: ( rule__LibraryFunction__Group__1__Impl rule__LibraryFunction__Group__2 )
+            // InternalOptimind.g:4266:2: rule__LibraryFunction__Group__1__Impl rule__LibraryFunction__Group__2
             {
             pushFollow(FOLLOW_4);
             rule__LibraryFunction__Group__1__Impl();
@@ -12813,17 +13068,17 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__LibraryFunction__Group__1__Impl"
-    // InternalOptimind.g:4192:1: rule__LibraryFunction__Group__1__Impl : ( 'LibraryFunction' ) ;
+    // InternalOptimind.g:4273:1: rule__LibraryFunction__Group__1__Impl : ( 'LibraryFunction' ) ;
     public final void rule__LibraryFunction__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:4196:1: ( ( 'LibraryFunction' ) )
-            // InternalOptimind.g:4197:1: ( 'LibraryFunction' )
+            // InternalOptimind.g:4277:1: ( ( 'LibraryFunction' ) )
+            // InternalOptimind.g:4278:1: ( 'LibraryFunction' )
             {
-            // InternalOptimind.g:4197:1: ( 'LibraryFunction' )
-            // InternalOptimind.g:4198:2: 'LibraryFunction'
+            // InternalOptimind.g:4278:1: ( 'LibraryFunction' )
+            // InternalOptimind.g:4279:2: 'LibraryFunction'
             {
              before(grammarAccess.getLibraryFunctionAccess().getLibraryFunctionKeyword_1()); 
             match(input,45,FOLLOW_2); 
@@ -12850,14 +13105,14 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__LibraryFunction__Group__2"
-    // InternalOptimind.g:4207:1: rule__LibraryFunction__Group__2 : rule__LibraryFunction__Group__2__Impl rule__LibraryFunction__Group__3 ;
+    // InternalOptimind.g:4288:1: rule__LibraryFunction__Group__2 : rule__LibraryFunction__Group__2__Impl rule__LibraryFunction__Group__3 ;
     public final void rule__LibraryFunction__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:4211:1: ( rule__LibraryFunction__Group__2__Impl rule__LibraryFunction__Group__3 )
-            // InternalOptimind.g:4212:2: rule__LibraryFunction__Group__2__Impl rule__LibraryFunction__Group__3
+            // InternalOptimind.g:4292:1: ( rule__LibraryFunction__Group__2__Impl rule__LibraryFunction__Group__3 )
+            // InternalOptimind.g:4293:2: rule__LibraryFunction__Group__2__Impl rule__LibraryFunction__Group__3
             {
             pushFollow(FOLLOW_5);
             rule__LibraryFunction__Group__2__Impl();
@@ -12888,21 +13143,21 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__LibraryFunction__Group__2__Impl"
-    // InternalOptimind.g:4219:1: rule__LibraryFunction__Group__2__Impl : ( ( rule__LibraryFunction__NameAssignment_2 ) ) ;
+    // InternalOptimind.g:4300:1: rule__LibraryFunction__Group__2__Impl : ( ( rule__LibraryFunction__NameAssignment_2 ) ) ;
     public final void rule__LibraryFunction__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:4223:1: ( ( ( rule__LibraryFunction__NameAssignment_2 ) ) )
-            // InternalOptimind.g:4224:1: ( ( rule__LibraryFunction__NameAssignment_2 ) )
+            // InternalOptimind.g:4304:1: ( ( ( rule__LibraryFunction__NameAssignment_2 ) ) )
+            // InternalOptimind.g:4305:1: ( ( rule__LibraryFunction__NameAssignment_2 ) )
             {
-            // InternalOptimind.g:4224:1: ( ( rule__LibraryFunction__NameAssignment_2 ) )
-            // InternalOptimind.g:4225:2: ( rule__LibraryFunction__NameAssignment_2 )
+            // InternalOptimind.g:4305:1: ( ( rule__LibraryFunction__NameAssignment_2 ) )
+            // InternalOptimind.g:4306:2: ( rule__LibraryFunction__NameAssignment_2 )
             {
              before(grammarAccess.getLibraryFunctionAccess().getNameAssignment_2()); 
-            // InternalOptimind.g:4226:2: ( rule__LibraryFunction__NameAssignment_2 )
-            // InternalOptimind.g:4226:3: rule__LibraryFunction__NameAssignment_2
+            // InternalOptimind.g:4307:2: ( rule__LibraryFunction__NameAssignment_2 )
+            // InternalOptimind.g:4307:3: rule__LibraryFunction__NameAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__LibraryFunction__NameAssignment_2();
@@ -12935,14 +13190,14 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__LibraryFunction__Group__3"
-    // InternalOptimind.g:4234:1: rule__LibraryFunction__Group__3 : rule__LibraryFunction__Group__3__Impl rule__LibraryFunction__Group__4 ;
+    // InternalOptimind.g:4315:1: rule__LibraryFunction__Group__3 : rule__LibraryFunction__Group__3__Impl rule__LibraryFunction__Group__4 ;
     public final void rule__LibraryFunction__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:4238:1: ( rule__LibraryFunction__Group__3__Impl rule__LibraryFunction__Group__4 )
-            // InternalOptimind.g:4239:2: rule__LibraryFunction__Group__3__Impl rule__LibraryFunction__Group__4
+            // InternalOptimind.g:4319:1: ( rule__LibraryFunction__Group__3__Impl rule__LibraryFunction__Group__4 )
+            // InternalOptimind.g:4320:2: rule__LibraryFunction__Group__3__Impl rule__LibraryFunction__Group__4
             {
             pushFollow(FOLLOW_38);
             rule__LibraryFunction__Group__3__Impl();
@@ -12973,17 +13228,17 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__LibraryFunction__Group__3__Impl"
-    // InternalOptimind.g:4246:1: rule__LibraryFunction__Group__3__Impl : ( '{' ) ;
+    // InternalOptimind.g:4327:1: rule__LibraryFunction__Group__3__Impl : ( '{' ) ;
     public final void rule__LibraryFunction__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:4250:1: ( ( '{' ) )
-            // InternalOptimind.g:4251:1: ( '{' )
+            // InternalOptimind.g:4331:1: ( ( '{' ) )
+            // InternalOptimind.g:4332:1: ( '{' )
             {
-            // InternalOptimind.g:4251:1: ( '{' )
-            // InternalOptimind.g:4252:2: '{'
+            // InternalOptimind.g:4332:1: ( '{' )
+            // InternalOptimind.g:4333:2: '{'
             {
              before(grammarAccess.getLibraryFunctionAccess().getLeftCurlyBracketKeyword_3()); 
             match(input,18,FOLLOW_2); 
@@ -13010,14 +13265,14 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__LibraryFunction__Group__4"
-    // InternalOptimind.g:4261:1: rule__LibraryFunction__Group__4 : rule__LibraryFunction__Group__4__Impl rule__LibraryFunction__Group__5 ;
+    // InternalOptimind.g:4342:1: rule__LibraryFunction__Group__4 : rule__LibraryFunction__Group__4__Impl rule__LibraryFunction__Group__5 ;
     public final void rule__LibraryFunction__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:4265:1: ( rule__LibraryFunction__Group__4__Impl rule__LibraryFunction__Group__5 )
-            // InternalOptimind.g:4266:2: rule__LibraryFunction__Group__4__Impl rule__LibraryFunction__Group__5
+            // InternalOptimind.g:4346:1: ( rule__LibraryFunction__Group__4__Impl rule__LibraryFunction__Group__5 )
+            // InternalOptimind.g:4347:2: rule__LibraryFunction__Group__4__Impl rule__LibraryFunction__Group__5
             {
             pushFollow(FOLLOW_4);
             rule__LibraryFunction__Group__4__Impl();
@@ -13048,17 +13303,17 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__LibraryFunction__Group__4__Impl"
-    // InternalOptimind.g:4273:1: rule__LibraryFunction__Group__4__Impl : ( 'function' ) ;
+    // InternalOptimind.g:4354:1: rule__LibraryFunction__Group__4__Impl : ( 'function' ) ;
     public final void rule__LibraryFunction__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:4277:1: ( ( 'function' ) )
-            // InternalOptimind.g:4278:1: ( 'function' )
+            // InternalOptimind.g:4358:1: ( ( 'function' ) )
+            // InternalOptimind.g:4359:1: ( 'function' )
             {
-            // InternalOptimind.g:4278:1: ( 'function' )
-            // InternalOptimind.g:4279:2: 'function'
+            // InternalOptimind.g:4359:1: ( 'function' )
+            // InternalOptimind.g:4360:2: 'function'
             {
              before(grammarAccess.getLibraryFunctionAccess().getFunctionKeyword_4()); 
             match(input,46,FOLLOW_2); 
@@ -13085,14 +13340,14 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__LibraryFunction__Group__5"
-    // InternalOptimind.g:4288:1: rule__LibraryFunction__Group__5 : rule__LibraryFunction__Group__5__Impl rule__LibraryFunction__Group__6 ;
+    // InternalOptimind.g:4369:1: rule__LibraryFunction__Group__5 : rule__LibraryFunction__Group__5__Impl rule__LibraryFunction__Group__6 ;
     public final void rule__LibraryFunction__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:4292:1: ( rule__LibraryFunction__Group__5__Impl rule__LibraryFunction__Group__6 )
-            // InternalOptimind.g:4293:2: rule__LibraryFunction__Group__5__Impl rule__LibraryFunction__Group__6
+            // InternalOptimind.g:4373:1: ( rule__LibraryFunction__Group__5__Impl rule__LibraryFunction__Group__6 )
+            // InternalOptimind.g:4374:2: rule__LibraryFunction__Group__5__Impl rule__LibraryFunction__Group__6
             {
             pushFollow(FOLLOW_39);
             rule__LibraryFunction__Group__5__Impl();
@@ -13123,21 +13378,21 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__LibraryFunction__Group__5__Impl"
-    // InternalOptimind.g:4300:1: rule__LibraryFunction__Group__5__Impl : ( ( rule__LibraryFunction__FunctionAssignment_5 ) ) ;
+    // InternalOptimind.g:4381:1: rule__LibraryFunction__Group__5__Impl : ( ( rule__LibraryFunction__FunctionAssignment_5 ) ) ;
     public final void rule__LibraryFunction__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:4304:1: ( ( ( rule__LibraryFunction__FunctionAssignment_5 ) ) )
-            // InternalOptimind.g:4305:1: ( ( rule__LibraryFunction__FunctionAssignment_5 ) )
+            // InternalOptimind.g:4385:1: ( ( ( rule__LibraryFunction__FunctionAssignment_5 ) ) )
+            // InternalOptimind.g:4386:1: ( ( rule__LibraryFunction__FunctionAssignment_5 ) )
             {
-            // InternalOptimind.g:4305:1: ( ( rule__LibraryFunction__FunctionAssignment_5 ) )
-            // InternalOptimind.g:4306:2: ( rule__LibraryFunction__FunctionAssignment_5 )
+            // InternalOptimind.g:4386:1: ( ( rule__LibraryFunction__FunctionAssignment_5 ) )
+            // InternalOptimind.g:4387:2: ( rule__LibraryFunction__FunctionAssignment_5 )
             {
              before(grammarAccess.getLibraryFunctionAccess().getFunctionAssignment_5()); 
-            // InternalOptimind.g:4307:2: ( rule__LibraryFunction__FunctionAssignment_5 )
-            // InternalOptimind.g:4307:3: rule__LibraryFunction__FunctionAssignment_5
+            // InternalOptimind.g:4388:2: ( rule__LibraryFunction__FunctionAssignment_5 )
+            // InternalOptimind.g:4388:3: rule__LibraryFunction__FunctionAssignment_5
             {
             pushFollow(FOLLOW_2);
             rule__LibraryFunction__FunctionAssignment_5();
@@ -13170,14 +13425,14 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__LibraryFunction__Group__6"
-    // InternalOptimind.g:4315:1: rule__LibraryFunction__Group__6 : rule__LibraryFunction__Group__6__Impl rule__LibraryFunction__Group__7 ;
+    // InternalOptimind.g:4396:1: rule__LibraryFunction__Group__6 : rule__LibraryFunction__Group__6__Impl rule__LibraryFunction__Group__7 ;
     public final void rule__LibraryFunction__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:4319:1: ( rule__LibraryFunction__Group__6__Impl rule__LibraryFunction__Group__7 )
-            // InternalOptimind.g:4320:2: rule__LibraryFunction__Group__6__Impl rule__LibraryFunction__Group__7
+            // InternalOptimind.g:4400:1: ( rule__LibraryFunction__Group__6__Impl rule__LibraryFunction__Group__7 )
+            // InternalOptimind.g:4401:2: rule__LibraryFunction__Group__6__Impl rule__LibraryFunction__Group__7
             {
             pushFollow(FOLLOW_39);
             rule__LibraryFunction__Group__6__Impl();
@@ -13208,20 +13463,20 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__LibraryFunction__Group__6__Impl"
-    // InternalOptimind.g:4327:1: rule__LibraryFunction__Group__6__Impl : ( ( rule__LibraryFunction__Group_6__0 )? ) ;
+    // InternalOptimind.g:4408:1: rule__LibraryFunction__Group__6__Impl : ( ( rule__LibraryFunction__Group_6__0 )? ) ;
     public final void rule__LibraryFunction__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:4331:1: ( ( ( rule__LibraryFunction__Group_6__0 )? ) )
-            // InternalOptimind.g:4332:1: ( ( rule__LibraryFunction__Group_6__0 )? )
+            // InternalOptimind.g:4412:1: ( ( ( rule__LibraryFunction__Group_6__0 )? ) )
+            // InternalOptimind.g:4413:1: ( ( rule__LibraryFunction__Group_6__0 )? )
             {
-            // InternalOptimind.g:4332:1: ( ( rule__LibraryFunction__Group_6__0 )? )
-            // InternalOptimind.g:4333:2: ( rule__LibraryFunction__Group_6__0 )?
+            // InternalOptimind.g:4413:1: ( ( rule__LibraryFunction__Group_6__0 )? )
+            // InternalOptimind.g:4414:2: ( rule__LibraryFunction__Group_6__0 )?
             {
              before(grammarAccess.getLibraryFunctionAccess().getGroup_6()); 
-            // InternalOptimind.g:4334:2: ( rule__LibraryFunction__Group_6__0 )?
+            // InternalOptimind.g:4415:2: ( rule__LibraryFunction__Group_6__0 )?
             int alt37=2;
             int LA37_0 = input.LA(1);
 
@@ -13230,7 +13485,7 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
             }
             switch (alt37) {
                 case 1 :
-                    // InternalOptimind.g:4334:3: rule__LibraryFunction__Group_6__0
+                    // InternalOptimind.g:4415:3: rule__LibraryFunction__Group_6__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__LibraryFunction__Group_6__0();
@@ -13266,14 +13521,14 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__LibraryFunction__Group__7"
-    // InternalOptimind.g:4342:1: rule__LibraryFunction__Group__7 : rule__LibraryFunction__Group__7__Impl rule__LibraryFunction__Group__8 ;
+    // InternalOptimind.g:4423:1: rule__LibraryFunction__Group__7 : rule__LibraryFunction__Group__7__Impl rule__LibraryFunction__Group__8 ;
     public final void rule__LibraryFunction__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:4346:1: ( rule__LibraryFunction__Group__7__Impl rule__LibraryFunction__Group__8 )
-            // InternalOptimind.g:4347:2: rule__LibraryFunction__Group__7__Impl rule__LibraryFunction__Group__8
+            // InternalOptimind.g:4427:1: ( rule__LibraryFunction__Group__7__Impl rule__LibraryFunction__Group__8 )
+            // InternalOptimind.g:4428:2: rule__LibraryFunction__Group__7__Impl rule__LibraryFunction__Group__8
             {
             pushFollow(FOLLOW_39);
             rule__LibraryFunction__Group__7__Impl();
@@ -13304,20 +13559,20 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__LibraryFunction__Group__7__Impl"
-    // InternalOptimind.g:4354:1: rule__LibraryFunction__Group__7__Impl : ( ( rule__LibraryFunction__Group_7__0 )? ) ;
+    // InternalOptimind.g:4435:1: rule__LibraryFunction__Group__7__Impl : ( ( rule__LibraryFunction__Group_7__0 )? ) ;
     public final void rule__LibraryFunction__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:4358:1: ( ( ( rule__LibraryFunction__Group_7__0 )? ) )
-            // InternalOptimind.g:4359:1: ( ( rule__LibraryFunction__Group_7__0 )? )
+            // InternalOptimind.g:4439:1: ( ( ( rule__LibraryFunction__Group_7__0 )? ) )
+            // InternalOptimind.g:4440:1: ( ( rule__LibraryFunction__Group_7__0 )? )
             {
-            // InternalOptimind.g:4359:1: ( ( rule__LibraryFunction__Group_7__0 )? )
-            // InternalOptimind.g:4360:2: ( rule__LibraryFunction__Group_7__0 )?
+            // InternalOptimind.g:4440:1: ( ( rule__LibraryFunction__Group_7__0 )? )
+            // InternalOptimind.g:4441:2: ( rule__LibraryFunction__Group_7__0 )?
             {
              before(grammarAccess.getLibraryFunctionAccess().getGroup_7()); 
-            // InternalOptimind.g:4361:2: ( rule__LibraryFunction__Group_7__0 )?
+            // InternalOptimind.g:4442:2: ( rule__LibraryFunction__Group_7__0 )?
             int alt38=2;
             int LA38_0 = input.LA(1);
 
@@ -13326,7 +13581,7 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
             }
             switch (alt38) {
                 case 1 :
-                    // InternalOptimind.g:4361:3: rule__LibraryFunction__Group_7__0
+                    // InternalOptimind.g:4442:3: rule__LibraryFunction__Group_7__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__LibraryFunction__Group_7__0();
@@ -13362,14 +13617,14 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__LibraryFunction__Group__8"
-    // InternalOptimind.g:4369:1: rule__LibraryFunction__Group__8 : rule__LibraryFunction__Group__8__Impl ;
+    // InternalOptimind.g:4450:1: rule__LibraryFunction__Group__8 : rule__LibraryFunction__Group__8__Impl ;
     public final void rule__LibraryFunction__Group__8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:4373:1: ( rule__LibraryFunction__Group__8__Impl )
-            // InternalOptimind.g:4374:2: rule__LibraryFunction__Group__8__Impl
+            // InternalOptimind.g:4454:1: ( rule__LibraryFunction__Group__8__Impl )
+            // InternalOptimind.g:4455:2: rule__LibraryFunction__Group__8__Impl
             {
             pushFollow(FOLLOW_2);
             rule__LibraryFunction__Group__8__Impl();
@@ -13395,17 +13650,17 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__LibraryFunction__Group__8__Impl"
-    // InternalOptimind.g:4380:1: rule__LibraryFunction__Group__8__Impl : ( '}' ) ;
+    // InternalOptimind.g:4461:1: rule__LibraryFunction__Group__8__Impl : ( '}' ) ;
     public final void rule__LibraryFunction__Group__8__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:4384:1: ( ( '}' ) )
-            // InternalOptimind.g:4385:1: ( '}' )
+            // InternalOptimind.g:4465:1: ( ( '}' ) )
+            // InternalOptimind.g:4466:1: ( '}' )
             {
-            // InternalOptimind.g:4385:1: ( '}' )
-            // InternalOptimind.g:4386:2: '}'
+            // InternalOptimind.g:4466:1: ( '}' )
+            // InternalOptimind.g:4467:2: '}'
             {
              before(grammarAccess.getLibraryFunctionAccess().getRightCurlyBracketKeyword_8()); 
             match(input,19,FOLLOW_2); 
@@ -13432,14 +13687,14 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__LibraryFunction__Group_6__0"
-    // InternalOptimind.g:4396:1: rule__LibraryFunction__Group_6__0 : rule__LibraryFunction__Group_6__0__Impl rule__LibraryFunction__Group_6__1 ;
+    // InternalOptimind.g:4477:1: rule__LibraryFunction__Group_6__0 : rule__LibraryFunction__Group_6__0__Impl rule__LibraryFunction__Group_6__1 ;
     public final void rule__LibraryFunction__Group_6__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:4400:1: ( rule__LibraryFunction__Group_6__0__Impl rule__LibraryFunction__Group_6__1 )
-            // InternalOptimind.g:4401:2: rule__LibraryFunction__Group_6__0__Impl rule__LibraryFunction__Group_6__1
+            // InternalOptimind.g:4481:1: ( rule__LibraryFunction__Group_6__0__Impl rule__LibraryFunction__Group_6__1 )
+            // InternalOptimind.g:4482:2: rule__LibraryFunction__Group_6__0__Impl rule__LibraryFunction__Group_6__1
             {
             pushFollow(FOLLOW_40);
             rule__LibraryFunction__Group_6__0__Impl();
@@ -13470,21 +13725,21 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__LibraryFunction__Group_6__0__Impl"
-    // InternalOptimind.g:4408:1: rule__LibraryFunction__Group_6__0__Impl : ( ( rule__LibraryFunction__InputsAssignment_6_0 ) ) ;
+    // InternalOptimind.g:4489:1: rule__LibraryFunction__Group_6__0__Impl : ( ( rule__LibraryFunction__InputsAssignment_6_0 ) ) ;
     public final void rule__LibraryFunction__Group_6__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:4412:1: ( ( ( rule__LibraryFunction__InputsAssignment_6_0 ) ) )
-            // InternalOptimind.g:4413:1: ( ( rule__LibraryFunction__InputsAssignment_6_0 ) )
+            // InternalOptimind.g:4493:1: ( ( ( rule__LibraryFunction__InputsAssignment_6_0 ) ) )
+            // InternalOptimind.g:4494:1: ( ( rule__LibraryFunction__InputsAssignment_6_0 ) )
             {
-            // InternalOptimind.g:4413:1: ( ( rule__LibraryFunction__InputsAssignment_6_0 ) )
-            // InternalOptimind.g:4414:2: ( rule__LibraryFunction__InputsAssignment_6_0 )
+            // InternalOptimind.g:4494:1: ( ( rule__LibraryFunction__InputsAssignment_6_0 ) )
+            // InternalOptimind.g:4495:2: ( rule__LibraryFunction__InputsAssignment_6_0 )
             {
              before(grammarAccess.getLibraryFunctionAccess().getInputsAssignment_6_0()); 
-            // InternalOptimind.g:4415:2: ( rule__LibraryFunction__InputsAssignment_6_0 )
-            // InternalOptimind.g:4415:3: rule__LibraryFunction__InputsAssignment_6_0
+            // InternalOptimind.g:4496:2: ( rule__LibraryFunction__InputsAssignment_6_0 )
+            // InternalOptimind.g:4496:3: rule__LibraryFunction__InputsAssignment_6_0
             {
             pushFollow(FOLLOW_2);
             rule__LibraryFunction__InputsAssignment_6_0();
@@ -13517,14 +13772,14 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__LibraryFunction__Group_6__1"
-    // InternalOptimind.g:4423:1: rule__LibraryFunction__Group_6__1 : rule__LibraryFunction__Group_6__1__Impl ;
+    // InternalOptimind.g:4504:1: rule__LibraryFunction__Group_6__1 : rule__LibraryFunction__Group_6__1__Impl ;
     public final void rule__LibraryFunction__Group_6__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:4427:1: ( rule__LibraryFunction__Group_6__1__Impl )
-            // InternalOptimind.g:4428:2: rule__LibraryFunction__Group_6__1__Impl
+            // InternalOptimind.g:4508:1: ( rule__LibraryFunction__Group_6__1__Impl )
+            // InternalOptimind.g:4509:2: rule__LibraryFunction__Group_6__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__LibraryFunction__Group_6__1__Impl();
@@ -13550,20 +13805,20 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__LibraryFunction__Group_6__1__Impl"
-    // InternalOptimind.g:4434:1: rule__LibraryFunction__Group_6__1__Impl : ( ( rule__LibraryFunction__InputsAssignment_6_1 )* ) ;
+    // InternalOptimind.g:4515:1: rule__LibraryFunction__Group_6__1__Impl : ( ( rule__LibraryFunction__InputsAssignment_6_1 )* ) ;
     public final void rule__LibraryFunction__Group_6__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:4438:1: ( ( ( rule__LibraryFunction__InputsAssignment_6_1 )* ) )
-            // InternalOptimind.g:4439:1: ( ( rule__LibraryFunction__InputsAssignment_6_1 )* )
+            // InternalOptimind.g:4519:1: ( ( ( rule__LibraryFunction__InputsAssignment_6_1 )* ) )
+            // InternalOptimind.g:4520:1: ( ( rule__LibraryFunction__InputsAssignment_6_1 )* )
             {
-            // InternalOptimind.g:4439:1: ( ( rule__LibraryFunction__InputsAssignment_6_1 )* )
-            // InternalOptimind.g:4440:2: ( rule__LibraryFunction__InputsAssignment_6_1 )*
+            // InternalOptimind.g:4520:1: ( ( rule__LibraryFunction__InputsAssignment_6_1 )* )
+            // InternalOptimind.g:4521:2: ( rule__LibraryFunction__InputsAssignment_6_1 )*
             {
              before(grammarAccess.getLibraryFunctionAccess().getInputsAssignment_6_1()); 
-            // InternalOptimind.g:4441:2: ( rule__LibraryFunction__InputsAssignment_6_1 )*
+            // InternalOptimind.g:4522:2: ( rule__LibraryFunction__InputsAssignment_6_1 )*
             loop39:
             do {
                 int alt39=2;
@@ -13576,7 +13831,7 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
                 switch (alt39) {
             	case 1 :
-            	    // InternalOptimind.g:4441:3: rule__LibraryFunction__InputsAssignment_6_1
+            	    // InternalOptimind.g:4522:3: rule__LibraryFunction__InputsAssignment_6_1
             	    {
             	    pushFollow(FOLLOW_41);
             	    rule__LibraryFunction__InputsAssignment_6_1();
@@ -13615,14 +13870,14 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__LibraryFunction__Group_7__0"
-    // InternalOptimind.g:4450:1: rule__LibraryFunction__Group_7__0 : rule__LibraryFunction__Group_7__0__Impl rule__LibraryFunction__Group_7__1 ;
+    // InternalOptimind.g:4531:1: rule__LibraryFunction__Group_7__0 : rule__LibraryFunction__Group_7__0__Impl rule__LibraryFunction__Group_7__1 ;
     public final void rule__LibraryFunction__Group_7__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:4454:1: ( rule__LibraryFunction__Group_7__0__Impl rule__LibraryFunction__Group_7__1 )
-            // InternalOptimind.g:4455:2: rule__LibraryFunction__Group_7__0__Impl rule__LibraryFunction__Group_7__1
+            // InternalOptimind.g:4535:1: ( rule__LibraryFunction__Group_7__0__Impl rule__LibraryFunction__Group_7__1 )
+            // InternalOptimind.g:4536:2: rule__LibraryFunction__Group_7__0__Impl rule__LibraryFunction__Group_7__1
             {
             pushFollow(FOLLOW_10);
             rule__LibraryFunction__Group_7__0__Impl();
@@ -13653,21 +13908,21 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__LibraryFunction__Group_7__0__Impl"
-    // InternalOptimind.g:4462:1: rule__LibraryFunction__Group_7__0__Impl : ( ( rule__LibraryFunction__OutputsAssignment_7_0 ) ) ;
+    // InternalOptimind.g:4543:1: rule__LibraryFunction__Group_7__0__Impl : ( ( rule__LibraryFunction__OutputsAssignment_7_0 ) ) ;
     public final void rule__LibraryFunction__Group_7__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:4466:1: ( ( ( rule__LibraryFunction__OutputsAssignment_7_0 ) ) )
-            // InternalOptimind.g:4467:1: ( ( rule__LibraryFunction__OutputsAssignment_7_0 ) )
+            // InternalOptimind.g:4547:1: ( ( ( rule__LibraryFunction__OutputsAssignment_7_0 ) ) )
+            // InternalOptimind.g:4548:1: ( ( rule__LibraryFunction__OutputsAssignment_7_0 ) )
             {
-            // InternalOptimind.g:4467:1: ( ( rule__LibraryFunction__OutputsAssignment_7_0 ) )
-            // InternalOptimind.g:4468:2: ( rule__LibraryFunction__OutputsAssignment_7_0 )
+            // InternalOptimind.g:4548:1: ( ( rule__LibraryFunction__OutputsAssignment_7_0 ) )
+            // InternalOptimind.g:4549:2: ( rule__LibraryFunction__OutputsAssignment_7_0 )
             {
              before(grammarAccess.getLibraryFunctionAccess().getOutputsAssignment_7_0()); 
-            // InternalOptimind.g:4469:2: ( rule__LibraryFunction__OutputsAssignment_7_0 )
-            // InternalOptimind.g:4469:3: rule__LibraryFunction__OutputsAssignment_7_0
+            // InternalOptimind.g:4550:2: ( rule__LibraryFunction__OutputsAssignment_7_0 )
+            // InternalOptimind.g:4550:3: rule__LibraryFunction__OutputsAssignment_7_0
             {
             pushFollow(FOLLOW_2);
             rule__LibraryFunction__OutputsAssignment_7_0();
@@ -13700,14 +13955,14 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__LibraryFunction__Group_7__1"
-    // InternalOptimind.g:4477:1: rule__LibraryFunction__Group_7__1 : rule__LibraryFunction__Group_7__1__Impl ;
+    // InternalOptimind.g:4558:1: rule__LibraryFunction__Group_7__1 : rule__LibraryFunction__Group_7__1__Impl ;
     public final void rule__LibraryFunction__Group_7__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:4481:1: ( rule__LibraryFunction__Group_7__1__Impl )
-            // InternalOptimind.g:4482:2: rule__LibraryFunction__Group_7__1__Impl
+            // InternalOptimind.g:4562:1: ( rule__LibraryFunction__Group_7__1__Impl )
+            // InternalOptimind.g:4563:2: rule__LibraryFunction__Group_7__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__LibraryFunction__Group_7__1__Impl();
@@ -13733,20 +13988,20 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__LibraryFunction__Group_7__1__Impl"
-    // InternalOptimind.g:4488:1: rule__LibraryFunction__Group_7__1__Impl : ( ( rule__LibraryFunction__OutputsAssignment_7_1 )* ) ;
+    // InternalOptimind.g:4569:1: rule__LibraryFunction__Group_7__1__Impl : ( ( rule__LibraryFunction__OutputsAssignment_7_1 )* ) ;
     public final void rule__LibraryFunction__Group_7__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:4492:1: ( ( ( rule__LibraryFunction__OutputsAssignment_7_1 )* ) )
-            // InternalOptimind.g:4493:1: ( ( rule__LibraryFunction__OutputsAssignment_7_1 )* )
+            // InternalOptimind.g:4573:1: ( ( ( rule__LibraryFunction__OutputsAssignment_7_1 )* ) )
+            // InternalOptimind.g:4574:1: ( ( rule__LibraryFunction__OutputsAssignment_7_1 )* )
             {
-            // InternalOptimind.g:4493:1: ( ( rule__LibraryFunction__OutputsAssignment_7_1 )* )
-            // InternalOptimind.g:4494:2: ( rule__LibraryFunction__OutputsAssignment_7_1 )*
+            // InternalOptimind.g:4574:1: ( ( rule__LibraryFunction__OutputsAssignment_7_1 )* )
+            // InternalOptimind.g:4575:2: ( rule__LibraryFunction__OutputsAssignment_7_1 )*
             {
              before(grammarAccess.getLibraryFunctionAccess().getOutputsAssignment_7_1()); 
-            // InternalOptimind.g:4495:2: ( rule__LibraryFunction__OutputsAssignment_7_1 )*
+            // InternalOptimind.g:4576:2: ( rule__LibraryFunction__OutputsAssignment_7_1 )*
             loop40:
             do {
                 int alt40=2;
@@ -13759,7 +14014,7 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
                 switch (alt40) {
             	case 1 :
-            	    // InternalOptimind.g:4495:3: rule__LibraryFunction__OutputsAssignment_7_1
+            	    // InternalOptimind.g:4576:3: rule__LibraryFunction__OutputsAssignment_7_1
             	    {
             	    pushFollow(FOLLOW_35);
             	    rule__LibraryFunction__OutputsAssignment_7_1();
@@ -13798,14 +14053,14 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Input__Group__0"
-    // InternalOptimind.g:4504:1: rule__Input__Group__0 : rule__Input__Group__0__Impl rule__Input__Group__1 ;
+    // InternalOptimind.g:4585:1: rule__Input__Group__0 : rule__Input__Group__0__Impl rule__Input__Group__1 ;
     public final void rule__Input__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:4508:1: ( rule__Input__Group__0__Impl rule__Input__Group__1 )
-            // InternalOptimind.g:4509:2: rule__Input__Group__0__Impl rule__Input__Group__1
+            // InternalOptimind.g:4589:1: ( rule__Input__Group__0__Impl rule__Input__Group__1 )
+            // InternalOptimind.g:4590:2: rule__Input__Group__0__Impl rule__Input__Group__1
             {
             pushFollow(FOLLOW_40);
             rule__Input__Group__0__Impl();
@@ -13836,21 +14091,21 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Input__Group__0__Impl"
-    // InternalOptimind.g:4516:1: rule__Input__Group__0__Impl : ( () ) ;
+    // InternalOptimind.g:4597:1: rule__Input__Group__0__Impl : ( () ) ;
     public final void rule__Input__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:4520:1: ( ( () ) )
-            // InternalOptimind.g:4521:1: ( () )
+            // InternalOptimind.g:4601:1: ( ( () ) )
+            // InternalOptimind.g:4602:1: ( () )
             {
-            // InternalOptimind.g:4521:1: ( () )
-            // InternalOptimind.g:4522:2: ()
+            // InternalOptimind.g:4602:1: ( () )
+            // InternalOptimind.g:4603:2: ()
             {
              before(grammarAccess.getInputAccess().getInputAction_0()); 
-            // InternalOptimind.g:4523:2: ()
-            // InternalOptimind.g:4523:3: 
+            // InternalOptimind.g:4604:2: ()
+            // InternalOptimind.g:4604:3: 
             {
             }
 
@@ -13873,14 +14128,14 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Input__Group__1"
-    // InternalOptimind.g:4531:1: rule__Input__Group__1 : rule__Input__Group__1__Impl rule__Input__Group__2 ;
+    // InternalOptimind.g:4612:1: rule__Input__Group__1 : rule__Input__Group__1__Impl rule__Input__Group__2 ;
     public final void rule__Input__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:4535:1: ( rule__Input__Group__1__Impl rule__Input__Group__2 )
-            // InternalOptimind.g:4536:2: rule__Input__Group__1__Impl rule__Input__Group__2
+            // InternalOptimind.g:4616:1: ( rule__Input__Group__1__Impl rule__Input__Group__2 )
+            // InternalOptimind.g:4617:2: rule__Input__Group__1__Impl rule__Input__Group__2
             {
             pushFollow(FOLLOW_4);
             rule__Input__Group__1__Impl();
@@ -13911,17 +14166,17 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Input__Group__1__Impl"
-    // InternalOptimind.g:4543:1: rule__Input__Group__1__Impl : ( 'Input' ) ;
+    // InternalOptimind.g:4624:1: rule__Input__Group__1__Impl : ( 'Input' ) ;
     public final void rule__Input__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:4547:1: ( ( 'Input' ) )
-            // InternalOptimind.g:4548:1: ( 'Input' )
+            // InternalOptimind.g:4628:1: ( ( 'Input' ) )
+            // InternalOptimind.g:4629:1: ( 'Input' )
             {
-            // InternalOptimind.g:4548:1: ( 'Input' )
-            // InternalOptimind.g:4549:2: 'Input'
+            // InternalOptimind.g:4629:1: ( 'Input' )
+            // InternalOptimind.g:4630:2: 'Input'
             {
              before(grammarAccess.getInputAccess().getInputKeyword_1()); 
             match(input,47,FOLLOW_2); 
@@ -13948,14 +14203,14 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Input__Group__2"
-    // InternalOptimind.g:4558:1: rule__Input__Group__2 : rule__Input__Group__2__Impl rule__Input__Group__3 ;
+    // InternalOptimind.g:4639:1: rule__Input__Group__2 : rule__Input__Group__2__Impl rule__Input__Group__3 ;
     public final void rule__Input__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:4562:1: ( rule__Input__Group__2__Impl rule__Input__Group__3 )
-            // InternalOptimind.g:4563:2: rule__Input__Group__2__Impl rule__Input__Group__3
+            // InternalOptimind.g:4643:1: ( rule__Input__Group__2__Impl rule__Input__Group__3 )
+            // InternalOptimind.g:4644:2: rule__Input__Group__2__Impl rule__Input__Group__3
             {
             pushFollow(FOLLOW_11);
             rule__Input__Group__2__Impl();
@@ -13986,21 +14241,21 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Input__Group__2__Impl"
-    // InternalOptimind.g:4570:1: rule__Input__Group__2__Impl : ( ( rule__Input__NameAssignment_2 ) ) ;
+    // InternalOptimind.g:4651:1: rule__Input__Group__2__Impl : ( ( rule__Input__NameAssignment_2 ) ) ;
     public final void rule__Input__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:4574:1: ( ( ( rule__Input__NameAssignment_2 ) ) )
-            // InternalOptimind.g:4575:1: ( ( rule__Input__NameAssignment_2 ) )
+            // InternalOptimind.g:4655:1: ( ( ( rule__Input__NameAssignment_2 ) ) )
+            // InternalOptimind.g:4656:1: ( ( rule__Input__NameAssignment_2 ) )
             {
-            // InternalOptimind.g:4575:1: ( ( rule__Input__NameAssignment_2 ) )
-            // InternalOptimind.g:4576:2: ( rule__Input__NameAssignment_2 )
+            // InternalOptimind.g:4656:1: ( ( rule__Input__NameAssignment_2 ) )
+            // InternalOptimind.g:4657:2: ( rule__Input__NameAssignment_2 )
             {
              before(grammarAccess.getInputAccess().getNameAssignment_2()); 
-            // InternalOptimind.g:4577:2: ( rule__Input__NameAssignment_2 )
-            // InternalOptimind.g:4577:3: rule__Input__NameAssignment_2
+            // InternalOptimind.g:4658:2: ( rule__Input__NameAssignment_2 )
+            // InternalOptimind.g:4658:3: rule__Input__NameAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__Input__NameAssignment_2();
@@ -14033,14 +14288,14 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Input__Group__3"
-    // InternalOptimind.g:4585:1: rule__Input__Group__3 : rule__Input__Group__3__Impl rule__Input__Group__4 ;
+    // InternalOptimind.g:4666:1: rule__Input__Group__3 : rule__Input__Group__3__Impl rule__Input__Group__4 ;
     public final void rule__Input__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:4589:1: ( rule__Input__Group__3__Impl rule__Input__Group__4 )
-            // InternalOptimind.g:4590:2: rule__Input__Group__3__Impl rule__Input__Group__4
+            // InternalOptimind.g:4670:1: ( rule__Input__Group__3__Impl rule__Input__Group__4 )
+            // InternalOptimind.g:4671:2: rule__Input__Group__3__Impl rule__Input__Group__4
             {
             pushFollow(FOLLOW_11);
             rule__Input__Group__3__Impl();
@@ -14071,20 +14326,20 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Input__Group__3__Impl"
-    // InternalOptimind.g:4597:1: rule__Input__Group__3__Impl : ( ( rule__Input__Group_3__0 )? ) ;
+    // InternalOptimind.g:4678:1: rule__Input__Group__3__Impl : ( ( rule__Input__Group_3__0 )? ) ;
     public final void rule__Input__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:4601:1: ( ( ( rule__Input__Group_3__0 )? ) )
-            // InternalOptimind.g:4602:1: ( ( rule__Input__Group_3__0 )? )
+            // InternalOptimind.g:4682:1: ( ( ( rule__Input__Group_3__0 )? ) )
+            // InternalOptimind.g:4683:1: ( ( rule__Input__Group_3__0 )? )
             {
-            // InternalOptimind.g:4602:1: ( ( rule__Input__Group_3__0 )? )
-            // InternalOptimind.g:4603:2: ( rule__Input__Group_3__0 )?
+            // InternalOptimind.g:4683:1: ( ( rule__Input__Group_3__0 )? )
+            // InternalOptimind.g:4684:2: ( rule__Input__Group_3__0 )?
             {
              before(grammarAccess.getInputAccess().getGroup_3()); 
-            // InternalOptimind.g:4604:2: ( rule__Input__Group_3__0 )?
+            // InternalOptimind.g:4685:2: ( rule__Input__Group_3__0 )?
             int alt41=2;
             int LA41_0 = input.LA(1);
 
@@ -14093,7 +14348,7 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
             }
             switch (alt41) {
                 case 1 :
-                    // InternalOptimind.g:4604:3: rule__Input__Group_3__0
+                    // InternalOptimind.g:4685:3: rule__Input__Group_3__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__Input__Group_3__0();
@@ -14129,14 +14384,14 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Input__Group__4"
-    // InternalOptimind.g:4612:1: rule__Input__Group__4 : rule__Input__Group__4__Impl ;
+    // InternalOptimind.g:4693:1: rule__Input__Group__4 : rule__Input__Group__4__Impl ;
     public final void rule__Input__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:4616:1: ( rule__Input__Group__4__Impl )
-            // InternalOptimind.g:4617:2: rule__Input__Group__4__Impl
+            // InternalOptimind.g:4697:1: ( rule__Input__Group__4__Impl )
+            // InternalOptimind.g:4698:2: rule__Input__Group__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Input__Group__4__Impl();
@@ -14162,20 +14417,20 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Input__Group__4__Impl"
-    // InternalOptimind.g:4623:1: rule__Input__Group__4__Impl : ( ( rule__Input__Group_4__0 )? ) ;
+    // InternalOptimind.g:4704:1: rule__Input__Group__4__Impl : ( ( rule__Input__Group_4__0 )? ) ;
     public final void rule__Input__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:4627:1: ( ( ( rule__Input__Group_4__0 )? ) )
-            // InternalOptimind.g:4628:1: ( ( rule__Input__Group_4__0 )? )
+            // InternalOptimind.g:4708:1: ( ( ( rule__Input__Group_4__0 )? ) )
+            // InternalOptimind.g:4709:1: ( ( rule__Input__Group_4__0 )? )
             {
-            // InternalOptimind.g:4628:1: ( ( rule__Input__Group_4__0 )? )
-            // InternalOptimind.g:4629:2: ( rule__Input__Group_4__0 )?
+            // InternalOptimind.g:4709:1: ( ( rule__Input__Group_4__0 )? )
+            // InternalOptimind.g:4710:2: ( rule__Input__Group_4__0 )?
             {
              before(grammarAccess.getInputAccess().getGroup_4()); 
-            // InternalOptimind.g:4630:2: ( rule__Input__Group_4__0 )?
+            // InternalOptimind.g:4711:2: ( rule__Input__Group_4__0 )?
             int alt42=2;
             int LA42_0 = input.LA(1);
 
@@ -14184,7 +14439,7 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
             }
             switch (alt42) {
                 case 1 :
-                    // InternalOptimind.g:4630:3: rule__Input__Group_4__0
+                    // InternalOptimind.g:4711:3: rule__Input__Group_4__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__Input__Group_4__0();
@@ -14220,14 +14475,14 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Input__Group_3__0"
-    // InternalOptimind.g:4639:1: rule__Input__Group_3__0 : rule__Input__Group_3__0__Impl rule__Input__Group_3__1 ;
+    // InternalOptimind.g:4720:1: rule__Input__Group_3__0 : rule__Input__Group_3__0__Impl rule__Input__Group_3__1 ;
     public final void rule__Input__Group_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:4643:1: ( rule__Input__Group_3__0__Impl rule__Input__Group_3__1 )
-            // InternalOptimind.g:4644:2: rule__Input__Group_3__0__Impl rule__Input__Group_3__1
+            // InternalOptimind.g:4724:1: ( rule__Input__Group_3__0__Impl rule__Input__Group_3__1 )
+            // InternalOptimind.g:4725:2: rule__Input__Group_3__0__Impl rule__Input__Group_3__1
             {
             pushFollow(FOLLOW_4);
             rule__Input__Group_3__0__Impl();
@@ -14258,17 +14513,17 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Input__Group_3__0__Impl"
-    // InternalOptimind.g:4651:1: rule__Input__Group_3__0__Impl : ( 'type' ) ;
+    // InternalOptimind.g:4732:1: rule__Input__Group_3__0__Impl : ( 'type' ) ;
     public final void rule__Input__Group_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:4655:1: ( ( 'type' ) )
-            // InternalOptimind.g:4656:1: ( 'type' )
+            // InternalOptimind.g:4736:1: ( ( 'type' ) )
+            // InternalOptimind.g:4737:1: ( 'type' )
             {
-            // InternalOptimind.g:4656:1: ( 'type' )
-            // InternalOptimind.g:4657:2: 'type'
+            // InternalOptimind.g:4737:1: ( 'type' )
+            // InternalOptimind.g:4738:2: 'type'
             {
              before(grammarAccess.getInputAccess().getTypeKeyword_3_0()); 
             match(input,22,FOLLOW_2); 
@@ -14295,14 +14550,14 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Input__Group_3__1"
-    // InternalOptimind.g:4666:1: rule__Input__Group_3__1 : rule__Input__Group_3__1__Impl ;
+    // InternalOptimind.g:4747:1: rule__Input__Group_3__1 : rule__Input__Group_3__1__Impl ;
     public final void rule__Input__Group_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:4670:1: ( rule__Input__Group_3__1__Impl )
-            // InternalOptimind.g:4671:2: rule__Input__Group_3__1__Impl
+            // InternalOptimind.g:4751:1: ( rule__Input__Group_3__1__Impl )
+            // InternalOptimind.g:4752:2: rule__Input__Group_3__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Input__Group_3__1__Impl();
@@ -14328,21 +14583,21 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Input__Group_3__1__Impl"
-    // InternalOptimind.g:4677:1: rule__Input__Group_3__1__Impl : ( ( rule__Input__TypeAsStringAssignment_3_1 ) ) ;
+    // InternalOptimind.g:4758:1: rule__Input__Group_3__1__Impl : ( ( rule__Input__TypeAsStringAssignment_3_1 ) ) ;
     public final void rule__Input__Group_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:4681:1: ( ( ( rule__Input__TypeAsStringAssignment_3_1 ) ) )
-            // InternalOptimind.g:4682:1: ( ( rule__Input__TypeAsStringAssignment_3_1 ) )
+            // InternalOptimind.g:4762:1: ( ( ( rule__Input__TypeAsStringAssignment_3_1 ) ) )
+            // InternalOptimind.g:4763:1: ( ( rule__Input__TypeAsStringAssignment_3_1 ) )
             {
-            // InternalOptimind.g:4682:1: ( ( rule__Input__TypeAsStringAssignment_3_1 ) )
-            // InternalOptimind.g:4683:2: ( rule__Input__TypeAsStringAssignment_3_1 )
+            // InternalOptimind.g:4763:1: ( ( rule__Input__TypeAsStringAssignment_3_1 ) )
+            // InternalOptimind.g:4764:2: ( rule__Input__TypeAsStringAssignment_3_1 )
             {
              before(grammarAccess.getInputAccess().getTypeAsStringAssignment_3_1()); 
-            // InternalOptimind.g:4684:2: ( rule__Input__TypeAsStringAssignment_3_1 )
-            // InternalOptimind.g:4684:3: rule__Input__TypeAsStringAssignment_3_1
+            // InternalOptimind.g:4765:2: ( rule__Input__TypeAsStringAssignment_3_1 )
+            // InternalOptimind.g:4765:3: rule__Input__TypeAsStringAssignment_3_1
             {
             pushFollow(FOLLOW_2);
             rule__Input__TypeAsStringAssignment_3_1();
@@ -14375,14 +14630,14 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Input__Group_4__0"
-    // InternalOptimind.g:4693:1: rule__Input__Group_4__0 : rule__Input__Group_4__0__Impl rule__Input__Group_4__1 ;
+    // InternalOptimind.g:4774:1: rule__Input__Group_4__0 : rule__Input__Group_4__0__Impl rule__Input__Group_4__1 ;
     public final void rule__Input__Group_4__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:4697:1: ( rule__Input__Group_4__0__Impl rule__Input__Group_4__1 )
-            // InternalOptimind.g:4698:2: rule__Input__Group_4__0__Impl rule__Input__Group_4__1
+            // InternalOptimind.g:4778:1: ( rule__Input__Group_4__0__Impl rule__Input__Group_4__1 )
+            // InternalOptimind.g:4779:2: rule__Input__Group_4__0__Impl rule__Input__Group_4__1
             {
             pushFollow(FOLLOW_4);
             rule__Input__Group_4__0__Impl();
@@ -14413,17 +14668,17 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Input__Group_4__0__Impl"
-    // InternalOptimind.g:4705:1: rule__Input__Group_4__0__Impl : ( 'value' ) ;
+    // InternalOptimind.g:4786:1: rule__Input__Group_4__0__Impl : ( 'value' ) ;
     public final void rule__Input__Group_4__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:4709:1: ( ( 'value' ) )
-            // InternalOptimind.g:4710:1: ( 'value' )
+            // InternalOptimind.g:4790:1: ( ( 'value' ) )
+            // InternalOptimind.g:4791:1: ( 'value' )
             {
-            // InternalOptimind.g:4710:1: ( 'value' )
-            // InternalOptimind.g:4711:2: 'value'
+            // InternalOptimind.g:4791:1: ( 'value' )
+            // InternalOptimind.g:4792:2: 'value'
             {
              before(grammarAccess.getInputAccess().getValueKeyword_4_0()); 
             match(input,23,FOLLOW_2); 
@@ -14450,14 +14705,14 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Input__Group_4__1"
-    // InternalOptimind.g:4720:1: rule__Input__Group_4__1 : rule__Input__Group_4__1__Impl ;
+    // InternalOptimind.g:4801:1: rule__Input__Group_4__1 : rule__Input__Group_4__1__Impl ;
     public final void rule__Input__Group_4__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:4724:1: ( rule__Input__Group_4__1__Impl )
-            // InternalOptimind.g:4725:2: rule__Input__Group_4__1__Impl
+            // InternalOptimind.g:4805:1: ( rule__Input__Group_4__1__Impl )
+            // InternalOptimind.g:4806:2: rule__Input__Group_4__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Input__Group_4__1__Impl();
@@ -14483,21 +14738,21 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Input__Group_4__1__Impl"
-    // InternalOptimind.g:4731:1: rule__Input__Group_4__1__Impl : ( ( rule__Input__ValueAsStringAssignment_4_1 ) ) ;
+    // InternalOptimind.g:4812:1: rule__Input__Group_4__1__Impl : ( ( rule__Input__ValueAsStringAssignment_4_1 ) ) ;
     public final void rule__Input__Group_4__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:4735:1: ( ( ( rule__Input__ValueAsStringAssignment_4_1 ) ) )
-            // InternalOptimind.g:4736:1: ( ( rule__Input__ValueAsStringAssignment_4_1 ) )
+            // InternalOptimind.g:4816:1: ( ( ( rule__Input__ValueAsStringAssignment_4_1 ) ) )
+            // InternalOptimind.g:4817:1: ( ( rule__Input__ValueAsStringAssignment_4_1 ) )
             {
-            // InternalOptimind.g:4736:1: ( ( rule__Input__ValueAsStringAssignment_4_1 ) )
-            // InternalOptimind.g:4737:2: ( rule__Input__ValueAsStringAssignment_4_1 )
+            // InternalOptimind.g:4817:1: ( ( rule__Input__ValueAsStringAssignment_4_1 ) )
+            // InternalOptimind.g:4818:2: ( rule__Input__ValueAsStringAssignment_4_1 )
             {
              before(grammarAccess.getInputAccess().getValueAsStringAssignment_4_1()); 
-            // InternalOptimind.g:4738:2: ( rule__Input__ValueAsStringAssignment_4_1 )
-            // InternalOptimind.g:4738:3: rule__Input__ValueAsStringAssignment_4_1
+            // InternalOptimind.g:4819:2: ( rule__Input__ValueAsStringAssignment_4_1 )
+            // InternalOptimind.g:4819:3: rule__Input__ValueAsStringAssignment_4_1
             {
             pushFollow(FOLLOW_2);
             rule__Input__ValueAsStringAssignment_4_1();
@@ -14530,14 +14785,14 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Output__Group__0"
-    // InternalOptimind.g:4747:1: rule__Output__Group__0 : rule__Output__Group__0__Impl rule__Output__Group__1 ;
+    // InternalOptimind.g:4828:1: rule__Output__Group__0 : rule__Output__Group__0__Impl rule__Output__Group__1 ;
     public final void rule__Output__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:4751:1: ( rule__Output__Group__0__Impl rule__Output__Group__1 )
-            // InternalOptimind.g:4752:2: rule__Output__Group__0__Impl rule__Output__Group__1
+            // InternalOptimind.g:4832:1: ( rule__Output__Group__0__Impl rule__Output__Group__1 )
+            // InternalOptimind.g:4833:2: rule__Output__Group__0__Impl rule__Output__Group__1
             {
             pushFollow(FOLLOW_10);
             rule__Output__Group__0__Impl();
@@ -14568,21 +14823,21 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Output__Group__0__Impl"
-    // InternalOptimind.g:4759:1: rule__Output__Group__0__Impl : ( () ) ;
+    // InternalOptimind.g:4840:1: rule__Output__Group__0__Impl : ( () ) ;
     public final void rule__Output__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:4763:1: ( ( () ) )
-            // InternalOptimind.g:4764:1: ( () )
+            // InternalOptimind.g:4844:1: ( ( () ) )
+            // InternalOptimind.g:4845:1: ( () )
             {
-            // InternalOptimind.g:4764:1: ( () )
-            // InternalOptimind.g:4765:2: ()
+            // InternalOptimind.g:4845:1: ( () )
+            // InternalOptimind.g:4846:2: ()
             {
              before(grammarAccess.getOutputAccess().getOutputAction_0()); 
-            // InternalOptimind.g:4766:2: ()
-            // InternalOptimind.g:4766:3: 
+            // InternalOptimind.g:4847:2: ()
+            // InternalOptimind.g:4847:3: 
             {
             }
 
@@ -14605,14 +14860,14 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Output__Group__1"
-    // InternalOptimind.g:4774:1: rule__Output__Group__1 : rule__Output__Group__1__Impl rule__Output__Group__2 ;
+    // InternalOptimind.g:4855:1: rule__Output__Group__1 : rule__Output__Group__1__Impl rule__Output__Group__2 ;
     public final void rule__Output__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:4778:1: ( rule__Output__Group__1__Impl rule__Output__Group__2 )
-            // InternalOptimind.g:4779:2: rule__Output__Group__1__Impl rule__Output__Group__2
+            // InternalOptimind.g:4859:1: ( rule__Output__Group__1__Impl rule__Output__Group__2 )
+            // InternalOptimind.g:4860:2: rule__Output__Group__1__Impl rule__Output__Group__2
             {
             pushFollow(FOLLOW_4);
             rule__Output__Group__1__Impl();
@@ -14643,17 +14898,17 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Output__Group__1__Impl"
-    // InternalOptimind.g:4786:1: rule__Output__Group__1__Impl : ( 'Output' ) ;
+    // InternalOptimind.g:4867:1: rule__Output__Group__1__Impl : ( 'Output' ) ;
     public final void rule__Output__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:4790:1: ( ( 'Output' ) )
-            // InternalOptimind.g:4791:1: ( 'Output' )
+            // InternalOptimind.g:4871:1: ( ( 'Output' ) )
+            // InternalOptimind.g:4872:1: ( 'Output' )
             {
-            // InternalOptimind.g:4791:1: ( 'Output' )
-            // InternalOptimind.g:4792:2: 'Output'
+            // InternalOptimind.g:4872:1: ( 'Output' )
+            // InternalOptimind.g:4873:2: 'Output'
             {
              before(grammarAccess.getOutputAccess().getOutputKeyword_1()); 
             match(input,21,FOLLOW_2); 
@@ -14680,14 +14935,14 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Output__Group__2"
-    // InternalOptimind.g:4801:1: rule__Output__Group__2 : rule__Output__Group__2__Impl rule__Output__Group__3 ;
+    // InternalOptimind.g:4882:1: rule__Output__Group__2 : rule__Output__Group__2__Impl rule__Output__Group__3 ;
     public final void rule__Output__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:4805:1: ( rule__Output__Group__2__Impl rule__Output__Group__3 )
-            // InternalOptimind.g:4806:2: rule__Output__Group__2__Impl rule__Output__Group__3
+            // InternalOptimind.g:4886:1: ( rule__Output__Group__2__Impl rule__Output__Group__3 )
+            // InternalOptimind.g:4887:2: rule__Output__Group__2__Impl rule__Output__Group__3
             {
             pushFollow(FOLLOW_11);
             rule__Output__Group__2__Impl();
@@ -14718,21 +14973,21 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Output__Group__2__Impl"
-    // InternalOptimind.g:4813:1: rule__Output__Group__2__Impl : ( ( rule__Output__NameAssignment_2 ) ) ;
+    // InternalOptimind.g:4894:1: rule__Output__Group__2__Impl : ( ( rule__Output__NameAssignment_2 ) ) ;
     public final void rule__Output__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:4817:1: ( ( ( rule__Output__NameAssignment_2 ) ) )
-            // InternalOptimind.g:4818:1: ( ( rule__Output__NameAssignment_2 ) )
+            // InternalOptimind.g:4898:1: ( ( ( rule__Output__NameAssignment_2 ) ) )
+            // InternalOptimind.g:4899:1: ( ( rule__Output__NameAssignment_2 ) )
             {
-            // InternalOptimind.g:4818:1: ( ( rule__Output__NameAssignment_2 ) )
-            // InternalOptimind.g:4819:2: ( rule__Output__NameAssignment_2 )
+            // InternalOptimind.g:4899:1: ( ( rule__Output__NameAssignment_2 ) )
+            // InternalOptimind.g:4900:2: ( rule__Output__NameAssignment_2 )
             {
              before(grammarAccess.getOutputAccess().getNameAssignment_2()); 
-            // InternalOptimind.g:4820:2: ( rule__Output__NameAssignment_2 )
-            // InternalOptimind.g:4820:3: rule__Output__NameAssignment_2
+            // InternalOptimind.g:4901:2: ( rule__Output__NameAssignment_2 )
+            // InternalOptimind.g:4901:3: rule__Output__NameAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__Output__NameAssignment_2();
@@ -14765,14 +15020,14 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Output__Group__3"
-    // InternalOptimind.g:4828:1: rule__Output__Group__3 : rule__Output__Group__3__Impl rule__Output__Group__4 ;
+    // InternalOptimind.g:4909:1: rule__Output__Group__3 : rule__Output__Group__3__Impl rule__Output__Group__4 ;
     public final void rule__Output__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:4832:1: ( rule__Output__Group__3__Impl rule__Output__Group__4 )
-            // InternalOptimind.g:4833:2: rule__Output__Group__3__Impl rule__Output__Group__4
+            // InternalOptimind.g:4913:1: ( rule__Output__Group__3__Impl rule__Output__Group__4 )
+            // InternalOptimind.g:4914:2: rule__Output__Group__3__Impl rule__Output__Group__4
             {
             pushFollow(FOLLOW_11);
             rule__Output__Group__3__Impl();
@@ -14803,20 +15058,20 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Output__Group__3__Impl"
-    // InternalOptimind.g:4840:1: rule__Output__Group__3__Impl : ( ( rule__Output__Group_3__0 )? ) ;
+    // InternalOptimind.g:4921:1: rule__Output__Group__3__Impl : ( ( rule__Output__Group_3__0 )? ) ;
     public final void rule__Output__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:4844:1: ( ( ( rule__Output__Group_3__0 )? ) )
-            // InternalOptimind.g:4845:1: ( ( rule__Output__Group_3__0 )? )
+            // InternalOptimind.g:4925:1: ( ( ( rule__Output__Group_3__0 )? ) )
+            // InternalOptimind.g:4926:1: ( ( rule__Output__Group_3__0 )? )
             {
-            // InternalOptimind.g:4845:1: ( ( rule__Output__Group_3__0 )? )
-            // InternalOptimind.g:4846:2: ( rule__Output__Group_3__0 )?
+            // InternalOptimind.g:4926:1: ( ( rule__Output__Group_3__0 )? )
+            // InternalOptimind.g:4927:2: ( rule__Output__Group_3__0 )?
             {
              before(grammarAccess.getOutputAccess().getGroup_3()); 
-            // InternalOptimind.g:4847:2: ( rule__Output__Group_3__0 )?
+            // InternalOptimind.g:4928:2: ( rule__Output__Group_3__0 )?
             int alt43=2;
             int LA43_0 = input.LA(1);
 
@@ -14825,7 +15080,7 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
             }
             switch (alt43) {
                 case 1 :
-                    // InternalOptimind.g:4847:3: rule__Output__Group_3__0
+                    // InternalOptimind.g:4928:3: rule__Output__Group_3__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__Output__Group_3__0();
@@ -14861,14 +15116,14 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Output__Group__4"
-    // InternalOptimind.g:4855:1: rule__Output__Group__4 : rule__Output__Group__4__Impl ;
+    // InternalOptimind.g:4936:1: rule__Output__Group__4 : rule__Output__Group__4__Impl ;
     public final void rule__Output__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:4859:1: ( rule__Output__Group__4__Impl )
-            // InternalOptimind.g:4860:2: rule__Output__Group__4__Impl
+            // InternalOptimind.g:4940:1: ( rule__Output__Group__4__Impl )
+            // InternalOptimind.g:4941:2: rule__Output__Group__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Output__Group__4__Impl();
@@ -14894,20 +15149,20 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Output__Group__4__Impl"
-    // InternalOptimind.g:4866:1: rule__Output__Group__4__Impl : ( ( rule__Output__Group_4__0 )? ) ;
+    // InternalOptimind.g:4947:1: rule__Output__Group__4__Impl : ( ( rule__Output__Group_4__0 )? ) ;
     public final void rule__Output__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:4870:1: ( ( ( rule__Output__Group_4__0 )? ) )
-            // InternalOptimind.g:4871:1: ( ( rule__Output__Group_4__0 )? )
+            // InternalOptimind.g:4951:1: ( ( ( rule__Output__Group_4__0 )? ) )
+            // InternalOptimind.g:4952:1: ( ( rule__Output__Group_4__0 )? )
             {
-            // InternalOptimind.g:4871:1: ( ( rule__Output__Group_4__0 )? )
-            // InternalOptimind.g:4872:2: ( rule__Output__Group_4__0 )?
+            // InternalOptimind.g:4952:1: ( ( rule__Output__Group_4__0 )? )
+            // InternalOptimind.g:4953:2: ( rule__Output__Group_4__0 )?
             {
              before(grammarAccess.getOutputAccess().getGroup_4()); 
-            // InternalOptimind.g:4873:2: ( rule__Output__Group_4__0 )?
+            // InternalOptimind.g:4954:2: ( rule__Output__Group_4__0 )?
             int alt44=2;
             int LA44_0 = input.LA(1);
 
@@ -14916,7 +15171,7 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
             }
             switch (alt44) {
                 case 1 :
-                    // InternalOptimind.g:4873:3: rule__Output__Group_4__0
+                    // InternalOptimind.g:4954:3: rule__Output__Group_4__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__Output__Group_4__0();
@@ -14952,14 +15207,14 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Output__Group_3__0"
-    // InternalOptimind.g:4882:1: rule__Output__Group_3__0 : rule__Output__Group_3__0__Impl rule__Output__Group_3__1 ;
+    // InternalOptimind.g:4963:1: rule__Output__Group_3__0 : rule__Output__Group_3__0__Impl rule__Output__Group_3__1 ;
     public final void rule__Output__Group_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:4886:1: ( rule__Output__Group_3__0__Impl rule__Output__Group_3__1 )
-            // InternalOptimind.g:4887:2: rule__Output__Group_3__0__Impl rule__Output__Group_3__1
+            // InternalOptimind.g:4967:1: ( rule__Output__Group_3__0__Impl rule__Output__Group_3__1 )
+            // InternalOptimind.g:4968:2: rule__Output__Group_3__0__Impl rule__Output__Group_3__1
             {
             pushFollow(FOLLOW_4);
             rule__Output__Group_3__0__Impl();
@@ -14990,17 +15245,17 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Output__Group_3__0__Impl"
-    // InternalOptimind.g:4894:1: rule__Output__Group_3__0__Impl : ( 'type' ) ;
+    // InternalOptimind.g:4975:1: rule__Output__Group_3__0__Impl : ( 'type' ) ;
     public final void rule__Output__Group_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:4898:1: ( ( 'type' ) )
-            // InternalOptimind.g:4899:1: ( 'type' )
+            // InternalOptimind.g:4979:1: ( ( 'type' ) )
+            // InternalOptimind.g:4980:1: ( 'type' )
             {
-            // InternalOptimind.g:4899:1: ( 'type' )
-            // InternalOptimind.g:4900:2: 'type'
+            // InternalOptimind.g:4980:1: ( 'type' )
+            // InternalOptimind.g:4981:2: 'type'
             {
              before(grammarAccess.getOutputAccess().getTypeKeyword_3_0()); 
             match(input,22,FOLLOW_2); 
@@ -15027,14 +15282,14 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Output__Group_3__1"
-    // InternalOptimind.g:4909:1: rule__Output__Group_3__1 : rule__Output__Group_3__1__Impl ;
+    // InternalOptimind.g:4990:1: rule__Output__Group_3__1 : rule__Output__Group_3__1__Impl ;
     public final void rule__Output__Group_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:4913:1: ( rule__Output__Group_3__1__Impl )
-            // InternalOptimind.g:4914:2: rule__Output__Group_3__1__Impl
+            // InternalOptimind.g:4994:1: ( rule__Output__Group_3__1__Impl )
+            // InternalOptimind.g:4995:2: rule__Output__Group_3__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Output__Group_3__1__Impl();
@@ -15060,21 +15315,21 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Output__Group_3__1__Impl"
-    // InternalOptimind.g:4920:1: rule__Output__Group_3__1__Impl : ( ( rule__Output__TypeAsStringAssignment_3_1 ) ) ;
+    // InternalOptimind.g:5001:1: rule__Output__Group_3__1__Impl : ( ( rule__Output__TypeAsStringAssignment_3_1 ) ) ;
     public final void rule__Output__Group_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:4924:1: ( ( ( rule__Output__TypeAsStringAssignment_3_1 ) ) )
-            // InternalOptimind.g:4925:1: ( ( rule__Output__TypeAsStringAssignment_3_1 ) )
+            // InternalOptimind.g:5005:1: ( ( ( rule__Output__TypeAsStringAssignment_3_1 ) ) )
+            // InternalOptimind.g:5006:1: ( ( rule__Output__TypeAsStringAssignment_3_1 ) )
             {
-            // InternalOptimind.g:4925:1: ( ( rule__Output__TypeAsStringAssignment_3_1 ) )
-            // InternalOptimind.g:4926:2: ( rule__Output__TypeAsStringAssignment_3_1 )
+            // InternalOptimind.g:5006:1: ( ( rule__Output__TypeAsStringAssignment_3_1 ) )
+            // InternalOptimind.g:5007:2: ( rule__Output__TypeAsStringAssignment_3_1 )
             {
              before(grammarAccess.getOutputAccess().getTypeAsStringAssignment_3_1()); 
-            // InternalOptimind.g:4927:2: ( rule__Output__TypeAsStringAssignment_3_1 )
-            // InternalOptimind.g:4927:3: rule__Output__TypeAsStringAssignment_3_1
+            // InternalOptimind.g:5008:2: ( rule__Output__TypeAsStringAssignment_3_1 )
+            // InternalOptimind.g:5008:3: rule__Output__TypeAsStringAssignment_3_1
             {
             pushFollow(FOLLOW_2);
             rule__Output__TypeAsStringAssignment_3_1();
@@ -15107,14 +15362,14 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Output__Group_4__0"
-    // InternalOptimind.g:4936:1: rule__Output__Group_4__0 : rule__Output__Group_4__0__Impl rule__Output__Group_4__1 ;
+    // InternalOptimind.g:5017:1: rule__Output__Group_4__0 : rule__Output__Group_4__0__Impl rule__Output__Group_4__1 ;
     public final void rule__Output__Group_4__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:4940:1: ( rule__Output__Group_4__0__Impl rule__Output__Group_4__1 )
-            // InternalOptimind.g:4941:2: rule__Output__Group_4__0__Impl rule__Output__Group_4__1
+            // InternalOptimind.g:5021:1: ( rule__Output__Group_4__0__Impl rule__Output__Group_4__1 )
+            // InternalOptimind.g:5022:2: rule__Output__Group_4__0__Impl rule__Output__Group_4__1
             {
             pushFollow(FOLLOW_4);
             rule__Output__Group_4__0__Impl();
@@ -15145,17 +15400,17 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Output__Group_4__0__Impl"
-    // InternalOptimind.g:4948:1: rule__Output__Group_4__0__Impl : ( 'value' ) ;
+    // InternalOptimind.g:5029:1: rule__Output__Group_4__0__Impl : ( 'value' ) ;
     public final void rule__Output__Group_4__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:4952:1: ( ( 'value' ) )
-            // InternalOptimind.g:4953:1: ( 'value' )
+            // InternalOptimind.g:5033:1: ( ( 'value' ) )
+            // InternalOptimind.g:5034:1: ( 'value' )
             {
-            // InternalOptimind.g:4953:1: ( 'value' )
-            // InternalOptimind.g:4954:2: 'value'
+            // InternalOptimind.g:5034:1: ( 'value' )
+            // InternalOptimind.g:5035:2: 'value'
             {
              before(grammarAccess.getOutputAccess().getValueKeyword_4_0()); 
             match(input,23,FOLLOW_2); 
@@ -15182,14 +15437,14 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Output__Group_4__1"
-    // InternalOptimind.g:4963:1: rule__Output__Group_4__1 : rule__Output__Group_4__1__Impl ;
+    // InternalOptimind.g:5044:1: rule__Output__Group_4__1 : rule__Output__Group_4__1__Impl ;
     public final void rule__Output__Group_4__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:4967:1: ( rule__Output__Group_4__1__Impl )
-            // InternalOptimind.g:4968:2: rule__Output__Group_4__1__Impl
+            // InternalOptimind.g:5048:1: ( rule__Output__Group_4__1__Impl )
+            // InternalOptimind.g:5049:2: rule__Output__Group_4__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Output__Group_4__1__Impl();
@@ -15215,21 +15470,21 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Output__Group_4__1__Impl"
-    // InternalOptimind.g:4974:1: rule__Output__Group_4__1__Impl : ( ( rule__Output__ValueAsStringAssignment_4_1 ) ) ;
+    // InternalOptimind.g:5055:1: rule__Output__Group_4__1__Impl : ( ( rule__Output__ValueAsStringAssignment_4_1 ) ) ;
     public final void rule__Output__Group_4__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:4978:1: ( ( ( rule__Output__ValueAsStringAssignment_4_1 ) ) )
-            // InternalOptimind.g:4979:1: ( ( rule__Output__ValueAsStringAssignment_4_1 ) )
+            // InternalOptimind.g:5059:1: ( ( ( rule__Output__ValueAsStringAssignment_4_1 ) ) )
+            // InternalOptimind.g:5060:1: ( ( rule__Output__ValueAsStringAssignment_4_1 ) )
             {
-            // InternalOptimind.g:4979:1: ( ( rule__Output__ValueAsStringAssignment_4_1 ) )
-            // InternalOptimind.g:4980:2: ( rule__Output__ValueAsStringAssignment_4_1 )
+            // InternalOptimind.g:5060:1: ( ( rule__Output__ValueAsStringAssignment_4_1 ) )
+            // InternalOptimind.g:5061:2: ( rule__Output__ValueAsStringAssignment_4_1 )
             {
              before(grammarAccess.getOutputAccess().getValueAsStringAssignment_4_1()); 
-            // InternalOptimind.g:4981:2: ( rule__Output__ValueAsStringAssignment_4_1 )
-            // InternalOptimind.g:4981:3: rule__Output__ValueAsStringAssignment_4_1
+            // InternalOptimind.g:5062:2: ( rule__Output__ValueAsStringAssignment_4_1 )
+            // InternalOptimind.g:5062:3: rule__Output__ValueAsStringAssignment_4_1
             {
             pushFollow(FOLLOW_2);
             rule__Output__ValueAsStringAssignment_4_1();
@@ -15262,17 +15517,17 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Workflow__NameAssignment_2"
-    // InternalOptimind.g:4990:1: rule__Workflow__NameAssignment_2 : ( ruleEString ) ;
+    // InternalOptimind.g:5071:1: rule__Workflow__NameAssignment_2 : ( ruleEString ) ;
     public final void rule__Workflow__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:4994:1: ( ( ruleEString ) )
-            // InternalOptimind.g:4995:2: ( ruleEString )
+            // InternalOptimind.g:5075:1: ( ( ruleEString ) )
+            // InternalOptimind.g:5076:2: ( ruleEString )
             {
-            // InternalOptimind.g:4995:2: ( ruleEString )
-            // InternalOptimind.g:4996:3: ruleEString
+            // InternalOptimind.g:5076:2: ( ruleEString )
+            // InternalOptimind.g:5077:3: ruleEString
             {
              before(grammarAccess.getWorkflowAccess().getNameEStringParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -15303,17 +15558,17 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Workflow__LanguageAssignment_4_1"
-    // InternalOptimind.g:5005:1: rule__Workflow__LanguageAssignment_4_1 : ( ruleProgLanguage ) ;
+    // InternalOptimind.g:5086:1: rule__Workflow__LanguageAssignment_4_1 : ( ruleProgLanguage ) ;
     public final void rule__Workflow__LanguageAssignment_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:5009:1: ( ( ruleProgLanguage ) )
-            // InternalOptimind.g:5010:2: ( ruleProgLanguage )
+            // InternalOptimind.g:5090:1: ( ( ruleProgLanguage ) )
+            // InternalOptimind.g:5091:2: ( ruleProgLanguage )
             {
-            // InternalOptimind.g:5010:2: ( ruleProgLanguage )
-            // InternalOptimind.g:5011:3: ruleProgLanguage
+            // InternalOptimind.g:5091:2: ( ruleProgLanguage )
+            // InternalOptimind.g:5092:3: ruleProgLanguage
             {
              before(grammarAccess.getWorkflowAccess().getLanguageProgLanguageEnumRuleCall_4_1_0()); 
             pushFollow(FOLLOW_2);
@@ -15344,17 +15599,17 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Workflow__BaseTaskAssignment_5"
-    // InternalOptimind.g:5020:1: rule__Workflow__BaseTaskAssignment_5 : ( ruleBaseTask ) ;
+    // InternalOptimind.g:5101:1: rule__Workflow__BaseTaskAssignment_5 : ( ruleBaseTask ) ;
     public final void rule__Workflow__BaseTaskAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:5024:1: ( ( ruleBaseTask ) )
-            // InternalOptimind.g:5025:2: ( ruleBaseTask )
+            // InternalOptimind.g:5105:1: ( ( ruleBaseTask ) )
+            // InternalOptimind.g:5106:2: ( ruleBaseTask )
             {
-            // InternalOptimind.g:5025:2: ( ruleBaseTask )
-            // InternalOptimind.g:5026:3: ruleBaseTask
+            // InternalOptimind.g:5106:2: ( ruleBaseTask )
+            // InternalOptimind.g:5107:3: ruleBaseTask
             {
              before(grammarAccess.getWorkflowAccess().getBaseTaskBaseTaskParserRuleCall_5_0()); 
             pushFollow(FOLLOW_2);
@@ -15385,17 +15640,17 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Workflow__FunctionsAssignment_6_0"
-    // InternalOptimind.g:5035:1: rule__Workflow__FunctionsAssignment_6_0 : ( ruleLibraryFunction ) ;
+    // InternalOptimind.g:5116:1: rule__Workflow__FunctionsAssignment_6_0 : ( ruleLibraryFunction ) ;
     public final void rule__Workflow__FunctionsAssignment_6_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:5039:1: ( ( ruleLibraryFunction ) )
-            // InternalOptimind.g:5040:2: ( ruleLibraryFunction )
+            // InternalOptimind.g:5120:1: ( ( ruleLibraryFunction ) )
+            // InternalOptimind.g:5121:2: ( ruleLibraryFunction )
             {
-            // InternalOptimind.g:5040:2: ( ruleLibraryFunction )
-            // InternalOptimind.g:5041:3: ruleLibraryFunction
+            // InternalOptimind.g:5121:2: ( ruleLibraryFunction )
+            // InternalOptimind.g:5122:3: ruleLibraryFunction
             {
              before(grammarAccess.getWorkflowAccess().getFunctionsLibraryFunctionParserRuleCall_6_0_0()); 
             pushFollow(FOLLOW_2);
@@ -15426,17 +15681,17 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Workflow__FunctionsAssignment_6_1"
-    // InternalOptimind.g:5050:1: rule__Workflow__FunctionsAssignment_6_1 : ( ruleLibraryFunction ) ;
+    // InternalOptimind.g:5131:1: rule__Workflow__FunctionsAssignment_6_1 : ( ruleLibraryFunction ) ;
     public final void rule__Workflow__FunctionsAssignment_6_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:5054:1: ( ( ruleLibraryFunction ) )
-            // InternalOptimind.g:5055:2: ( ruleLibraryFunction )
+            // InternalOptimind.g:5135:1: ( ( ruleLibraryFunction ) )
+            // InternalOptimind.g:5136:2: ( ruleLibraryFunction )
             {
-            // InternalOptimind.g:5055:2: ( ruleLibraryFunction )
-            // InternalOptimind.g:5056:3: ruleLibraryFunction
+            // InternalOptimind.g:5136:2: ( ruleLibraryFunction )
+            // InternalOptimind.g:5137:3: ruleLibraryFunction
             {
              before(grammarAccess.getWorkflowAccess().getFunctionsLibraryFunctionParserRuleCall_6_1_0()); 
             pushFollow(FOLLOW_2);
@@ -15467,17 +15722,17 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__TaskOutput__NameAssignment_2"
-    // InternalOptimind.g:5065:1: rule__TaskOutput__NameAssignment_2 : ( ruleEString ) ;
+    // InternalOptimind.g:5146:1: rule__TaskOutput__NameAssignment_2 : ( ruleEString ) ;
     public final void rule__TaskOutput__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:5069:1: ( ( ruleEString ) )
-            // InternalOptimind.g:5070:2: ( ruleEString )
+            // InternalOptimind.g:5150:1: ( ( ruleEString ) )
+            // InternalOptimind.g:5151:2: ( ruleEString )
             {
-            // InternalOptimind.g:5070:2: ( ruleEString )
-            // InternalOptimind.g:5071:3: ruleEString
+            // InternalOptimind.g:5151:2: ( ruleEString )
+            // InternalOptimind.g:5152:3: ruleEString
             {
              before(grammarAccess.getTaskOutputAccess().getNameEStringParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -15508,17 +15763,17 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__TaskOutput__TypeAsStringAssignment_3_1"
-    // InternalOptimind.g:5080:1: rule__TaskOutput__TypeAsStringAssignment_3_1 : ( ruleType ) ;
+    // InternalOptimind.g:5161:1: rule__TaskOutput__TypeAsStringAssignment_3_1 : ( ruleType ) ;
     public final void rule__TaskOutput__TypeAsStringAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:5084:1: ( ( ruleType ) )
-            // InternalOptimind.g:5085:2: ( ruleType )
+            // InternalOptimind.g:5165:1: ( ( ruleType ) )
+            // InternalOptimind.g:5166:2: ( ruleType )
             {
-            // InternalOptimind.g:5085:2: ( ruleType )
-            // InternalOptimind.g:5086:3: ruleType
+            // InternalOptimind.g:5166:2: ( ruleType )
+            // InternalOptimind.g:5167:3: ruleType
             {
              before(grammarAccess.getTaskOutputAccess().getTypeAsStringTypeParserRuleCall_3_1_0()); 
             pushFollow(FOLLOW_2);
@@ -15549,17 +15804,17 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__TaskOutput__ValueAsStringAssignment_4_1"
-    // InternalOptimind.g:5095:1: rule__TaskOutput__ValueAsStringAssignment_4_1 : ( ruleEString ) ;
+    // InternalOptimind.g:5176:1: rule__TaskOutput__ValueAsStringAssignment_4_1 : ( ruleEString ) ;
     public final void rule__TaskOutput__ValueAsStringAssignment_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:5099:1: ( ( ruleEString ) )
-            // InternalOptimind.g:5100:2: ( ruleEString )
+            // InternalOptimind.g:5180:1: ( ( ruleEString ) )
+            // InternalOptimind.g:5181:2: ( ruleEString )
             {
-            // InternalOptimind.g:5100:2: ( ruleEString )
-            // InternalOptimind.g:5101:3: ruleEString
+            // InternalOptimind.g:5181:2: ( ruleEString )
+            // InternalOptimind.g:5182:3: ruleEString
             {
              before(grammarAccess.getTaskOutputAccess().getValueAsStringEStringParserRuleCall_4_1_0()); 
             pushFollow(FOLLOW_2);
@@ -15589,190 +15844,26 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
     // $ANTLR end "rule__TaskOutput__ValueAsStringAssignment_4_1"
 
 
-    // $ANTLR start "rule__For__FromAssignment_4"
-    // InternalOptimind.g:5110:1: rule__For__FromAssignment_4 : ( ruleEInt ) ;
-    public final void rule__For__FromAssignment_4() throws RecognitionException {
+    // $ANTLR start "rule__For__NameAssignment_2"
+    // InternalOptimind.g:5191:1: rule__For__NameAssignment_2 : ( ruleEString ) ;
+    public final void rule__For__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:5114:1: ( ( ruleEInt ) )
-            // InternalOptimind.g:5115:2: ( ruleEInt )
+            // InternalOptimind.g:5195:1: ( ( ruleEString ) )
+            // InternalOptimind.g:5196:2: ( ruleEString )
             {
-            // InternalOptimind.g:5115:2: ( ruleEInt )
-            // InternalOptimind.g:5116:3: ruleEInt
+            // InternalOptimind.g:5196:2: ( ruleEString )
+            // InternalOptimind.g:5197:3: ruleEString
             {
-             before(grammarAccess.getForAccess().getFromEIntParserRuleCall_4_0()); 
-            pushFollow(FOLLOW_2);
-            ruleEInt();
-
-            state._fsp--;
-
-             after(grammarAccess.getForAccess().getFromEIntParserRuleCall_4_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__For__FromAssignment_4"
-
-
-    // $ANTLR start "rule__For__ToAssignment_6"
-    // InternalOptimind.g:5125:1: rule__For__ToAssignment_6 : ( ruleEInt ) ;
-    public final void rule__For__ToAssignment_6() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalOptimind.g:5129:1: ( ( ruleEInt ) )
-            // InternalOptimind.g:5130:2: ( ruleEInt )
-            {
-            // InternalOptimind.g:5130:2: ( ruleEInt )
-            // InternalOptimind.g:5131:3: ruleEInt
-            {
-             before(grammarAccess.getForAccess().getToEIntParserRuleCall_6_0()); 
-            pushFollow(FOLLOW_2);
-            ruleEInt();
-
-            state._fsp--;
-
-             after(grammarAccess.getForAccess().getToEIntParserRuleCall_6_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__For__ToAssignment_6"
-
-
-    // $ANTLR start "rule__For__IncrementAssignment_8"
-    // InternalOptimind.g:5140:1: rule__For__IncrementAssignment_8 : ( ruleEInt ) ;
-    public final void rule__For__IncrementAssignment_8() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalOptimind.g:5144:1: ( ( ruleEInt ) )
-            // InternalOptimind.g:5145:2: ( ruleEInt )
-            {
-            // InternalOptimind.g:5145:2: ( ruleEInt )
-            // InternalOptimind.g:5146:3: ruleEInt
-            {
-             before(grammarAccess.getForAccess().getIncrementEIntParserRuleCall_8_0()); 
-            pushFollow(FOLLOW_2);
-            ruleEInt();
-
-            state._fsp--;
-
-             after(grammarAccess.getForAccess().getIncrementEIntParserRuleCall_8_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__For__IncrementAssignment_8"
-
-
-    // $ANTLR start "rule__For__AbstracttaskAssignment_10"
-    // InternalOptimind.g:5155:1: rule__For__AbstracttaskAssignment_10 : ( ruleAbstractTask ) ;
-    public final void rule__For__AbstracttaskAssignment_10() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalOptimind.g:5159:1: ( ( ruleAbstractTask ) )
-            // InternalOptimind.g:5160:2: ( ruleAbstractTask )
-            {
-            // InternalOptimind.g:5160:2: ( ruleAbstractTask )
-            // InternalOptimind.g:5161:3: ruleAbstractTask
-            {
-             before(grammarAccess.getForAccess().getAbstracttaskAbstractTaskParserRuleCall_10_0()); 
-            pushFollow(FOLLOW_2);
-            ruleAbstractTask();
-
-            state._fsp--;
-
-             after(grammarAccess.getForAccess().getAbstracttaskAbstractTaskParserRuleCall_10_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__For__AbstracttaskAssignment_10"
-
-
-    // $ANTLR start "rule__While__ConditionAssignment_4"
-    // InternalOptimind.g:5170:1: rule__While__ConditionAssignment_4 : ( ruleEString ) ;
-    public final void rule__While__ConditionAssignment_4() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalOptimind.g:5174:1: ( ( ruleEString ) )
-            // InternalOptimind.g:5175:2: ( ruleEString )
-            {
-            // InternalOptimind.g:5175:2: ( ruleEString )
-            // InternalOptimind.g:5176:3: ruleEString
-            {
-             before(grammarAccess.getWhileAccess().getConditionEStringParserRuleCall_4_0()); 
+             before(grammarAccess.getForAccess().getNameEStringParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
             ruleEString();
 
             state._fsp--;
 
-             after(grammarAccess.getWhileAccess().getConditionEStringParserRuleCall_4_0()); 
+             after(grammarAccess.getForAccess().getNameEStringParserRuleCall_2_0()); 
 
             }
 
@@ -15791,29 +15882,152 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
         }
         return ;
     }
-    // $ANTLR end "rule__While__ConditionAssignment_4"
+    // $ANTLR end "rule__For__NameAssignment_2"
 
 
-    // $ANTLR start "rule__While__AbstracttaskAssignment_6"
-    // InternalOptimind.g:5185:1: rule__While__AbstracttaskAssignment_6 : ( ruleAbstractTask ) ;
-    public final void rule__While__AbstracttaskAssignment_6() throws RecognitionException {
+    // $ANTLR start "rule__For__FromAssignment_5"
+    // InternalOptimind.g:5206:1: rule__For__FromAssignment_5 : ( ruleEInt ) ;
+    public final void rule__For__FromAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:5189:1: ( ( ruleAbstractTask ) )
-            // InternalOptimind.g:5190:2: ( ruleAbstractTask )
+            // InternalOptimind.g:5210:1: ( ( ruleEInt ) )
+            // InternalOptimind.g:5211:2: ( ruleEInt )
             {
-            // InternalOptimind.g:5190:2: ( ruleAbstractTask )
-            // InternalOptimind.g:5191:3: ruleAbstractTask
+            // InternalOptimind.g:5211:2: ( ruleEInt )
+            // InternalOptimind.g:5212:3: ruleEInt
             {
-             before(grammarAccess.getWhileAccess().getAbstracttaskAbstractTaskParserRuleCall_6_0()); 
+             before(grammarAccess.getForAccess().getFromEIntParserRuleCall_5_0()); 
+            pushFollow(FOLLOW_2);
+            ruleEInt();
+
+            state._fsp--;
+
+             after(grammarAccess.getForAccess().getFromEIntParserRuleCall_5_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__For__FromAssignment_5"
+
+
+    // $ANTLR start "rule__For__ToAssignment_7"
+    // InternalOptimind.g:5221:1: rule__For__ToAssignment_7 : ( ruleEInt ) ;
+    public final void rule__For__ToAssignment_7() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalOptimind.g:5225:1: ( ( ruleEInt ) )
+            // InternalOptimind.g:5226:2: ( ruleEInt )
+            {
+            // InternalOptimind.g:5226:2: ( ruleEInt )
+            // InternalOptimind.g:5227:3: ruleEInt
+            {
+             before(grammarAccess.getForAccess().getToEIntParserRuleCall_7_0()); 
+            pushFollow(FOLLOW_2);
+            ruleEInt();
+
+            state._fsp--;
+
+             after(grammarAccess.getForAccess().getToEIntParserRuleCall_7_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__For__ToAssignment_7"
+
+
+    // $ANTLR start "rule__For__IncrementAssignment_9"
+    // InternalOptimind.g:5236:1: rule__For__IncrementAssignment_9 : ( ruleEInt ) ;
+    public final void rule__For__IncrementAssignment_9() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalOptimind.g:5240:1: ( ( ruleEInt ) )
+            // InternalOptimind.g:5241:2: ( ruleEInt )
+            {
+            // InternalOptimind.g:5241:2: ( ruleEInt )
+            // InternalOptimind.g:5242:3: ruleEInt
+            {
+             before(grammarAccess.getForAccess().getIncrementEIntParserRuleCall_9_0()); 
+            pushFollow(FOLLOW_2);
+            ruleEInt();
+
+            state._fsp--;
+
+             after(grammarAccess.getForAccess().getIncrementEIntParserRuleCall_9_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__For__IncrementAssignment_9"
+
+
+    // $ANTLR start "rule__For__AbstracttaskAssignment_11"
+    // InternalOptimind.g:5251:1: rule__For__AbstracttaskAssignment_11 : ( ruleAbstractTask ) ;
+    public final void rule__For__AbstracttaskAssignment_11() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalOptimind.g:5255:1: ( ( ruleAbstractTask ) )
+            // InternalOptimind.g:5256:2: ( ruleAbstractTask )
+            {
+            // InternalOptimind.g:5256:2: ( ruleAbstractTask )
+            // InternalOptimind.g:5257:3: ruleAbstractTask
+            {
+             before(grammarAccess.getForAccess().getAbstracttaskAbstractTaskParserRuleCall_11_0()); 
             pushFollow(FOLLOW_2);
             ruleAbstractTask();
 
             state._fsp--;
 
-             after(grammarAccess.getWhileAccess().getAbstracttaskAbstractTaskParserRuleCall_6_0()); 
+             after(grammarAccess.getForAccess().getAbstracttaskAbstractTaskParserRuleCall_11_0()); 
 
             }
 
@@ -15832,29 +16046,29 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
         }
         return ;
     }
-    // $ANTLR end "rule__While__AbstracttaskAssignment_6"
+    // $ANTLR end "rule__For__AbstracttaskAssignment_11"
 
 
-    // $ANTLR start "rule__If__ConditionAssignment_4"
-    // InternalOptimind.g:5200:1: rule__If__ConditionAssignment_4 : ( ruleEString ) ;
-    public final void rule__If__ConditionAssignment_4() throws RecognitionException {
+    // $ANTLR start "rule__While__NameAssignment_2"
+    // InternalOptimind.g:5266:1: rule__While__NameAssignment_2 : ( ruleEString ) ;
+    public final void rule__While__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:5204:1: ( ( ruleEString ) )
-            // InternalOptimind.g:5205:2: ( ruleEString )
+            // InternalOptimind.g:5270:1: ( ( ruleEString ) )
+            // InternalOptimind.g:5271:2: ( ruleEString )
             {
-            // InternalOptimind.g:5205:2: ( ruleEString )
-            // InternalOptimind.g:5206:3: ruleEString
+            // InternalOptimind.g:5271:2: ( ruleEString )
+            // InternalOptimind.g:5272:3: ruleEString
             {
-             before(grammarAccess.getIfAccess().getConditionEStringParserRuleCall_4_0()); 
+             before(grammarAccess.getWhileAccess().getNameEStringParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
             ruleEString();
 
             state._fsp--;
 
-             after(grammarAccess.getIfAccess().getConditionEStringParserRuleCall_4_0()); 
+             after(grammarAccess.getWhileAccess().getNameEStringParserRuleCall_2_0()); 
 
             }
 
@@ -15873,29 +16087,70 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
         }
         return ;
     }
-    // $ANTLR end "rule__If__ConditionAssignment_4"
+    // $ANTLR end "rule__While__NameAssignment_2"
 
 
-    // $ANTLR start "rule__If__ThenAssignment_6"
-    // InternalOptimind.g:5215:1: rule__If__ThenAssignment_6 : ( ruleAbstractTask ) ;
-    public final void rule__If__ThenAssignment_6() throws RecognitionException {
+    // $ANTLR start "rule__While__ConditionAssignment_5"
+    // InternalOptimind.g:5281:1: rule__While__ConditionAssignment_5 : ( ruleEString ) ;
+    public final void rule__While__ConditionAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:5219:1: ( ( ruleAbstractTask ) )
-            // InternalOptimind.g:5220:2: ( ruleAbstractTask )
+            // InternalOptimind.g:5285:1: ( ( ruleEString ) )
+            // InternalOptimind.g:5286:2: ( ruleEString )
             {
-            // InternalOptimind.g:5220:2: ( ruleAbstractTask )
-            // InternalOptimind.g:5221:3: ruleAbstractTask
+            // InternalOptimind.g:5286:2: ( ruleEString )
+            // InternalOptimind.g:5287:3: ruleEString
             {
-             before(grammarAccess.getIfAccess().getThenAbstractTaskParserRuleCall_6_0()); 
+             before(grammarAccess.getWhileAccess().getConditionEStringParserRuleCall_5_0()); 
+            pushFollow(FOLLOW_2);
+            ruleEString();
+
+            state._fsp--;
+
+             after(grammarAccess.getWhileAccess().getConditionEStringParserRuleCall_5_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__While__ConditionAssignment_5"
+
+
+    // $ANTLR start "rule__While__AbstracttaskAssignment_7"
+    // InternalOptimind.g:5296:1: rule__While__AbstracttaskAssignment_7 : ( ruleAbstractTask ) ;
+    public final void rule__While__AbstracttaskAssignment_7() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalOptimind.g:5300:1: ( ( ruleAbstractTask ) )
+            // InternalOptimind.g:5301:2: ( ruleAbstractTask )
+            {
+            // InternalOptimind.g:5301:2: ( ruleAbstractTask )
+            // InternalOptimind.g:5302:3: ruleAbstractTask
+            {
+             before(grammarAccess.getWhileAccess().getAbstracttaskAbstractTaskParserRuleCall_7_0()); 
             pushFollow(FOLLOW_2);
             ruleAbstractTask();
 
             state._fsp--;
 
-             after(grammarAccess.getIfAccess().getThenAbstractTaskParserRuleCall_6_0()); 
+             after(grammarAccess.getWhileAccess().getAbstracttaskAbstractTaskParserRuleCall_7_0()); 
 
             }
 
@@ -15914,29 +16169,111 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
         }
         return ;
     }
-    // $ANTLR end "rule__If__ThenAssignment_6"
+    // $ANTLR end "rule__While__AbstracttaskAssignment_7"
 
 
-    // $ANTLR start "rule__If__ElseAssignment_7_1"
-    // InternalOptimind.g:5230:1: rule__If__ElseAssignment_7_1 : ( ruleAbstractTask ) ;
-    public final void rule__If__ElseAssignment_7_1() throws RecognitionException {
+    // $ANTLR start "rule__If__NameAssignment_2"
+    // InternalOptimind.g:5311:1: rule__If__NameAssignment_2 : ( ruleEString ) ;
+    public final void rule__If__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:5234:1: ( ( ruleAbstractTask ) )
-            // InternalOptimind.g:5235:2: ( ruleAbstractTask )
+            // InternalOptimind.g:5315:1: ( ( ruleEString ) )
+            // InternalOptimind.g:5316:2: ( ruleEString )
             {
-            // InternalOptimind.g:5235:2: ( ruleAbstractTask )
-            // InternalOptimind.g:5236:3: ruleAbstractTask
+            // InternalOptimind.g:5316:2: ( ruleEString )
+            // InternalOptimind.g:5317:3: ruleEString
             {
-             before(grammarAccess.getIfAccess().getElseAbstractTaskParserRuleCall_7_1_0()); 
+             before(grammarAccess.getIfAccess().getNameEStringParserRuleCall_2_0()); 
+            pushFollow(FOLLOW_2);
+            ruleEString();
+
+            state._fsp--;
+
+             after(grammarAccess.getIfAccess().getNameEStringParserRuleCall_2_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__If__NameAssignment_2"
+
+
+    // $ANTLR start "rule__If__ConditionAssignment_5"
+    // InternalOptimind.g:5326:1: rule__If__ConditionAssignment_5 : ( ruleEString ) ;
+    public final void rule__If__ConditionAssignment_5() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalOptimind.g:5330:1: ( ( ruleEString ) )
+            // InternalOptimind.g:5331:2: ( ruleEString )
+            {
+            // InternalOptimind.g:5331:2: ( ruleEString )
+            // InternalOptimind.g:5332:3: ruleEString
+            {
+             before(grammarAccess.getIfAccess().getConditionEStringParserRuleCall_5_0()); 
+            pushFollow(FOLLOW_2);
+            ruleEString();
+
+            state._fsp--;
+
+             after(grammarAccess.getIfAccess().getConditionEStringParserRuleCall_5_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__If__ConditionAssignment_5"
+
+
+    // $ANTLR start "rule__If__ThenAssignment_7"
+    // InternalOptimind.g:5341:1: rule__If__ThenAssignment_7 : ( ruleAbstractTask ) ;
+    public final void rule__If__ThenAssignment_7() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalOptimind.g:5345:1: ( ( ruleAbstractTask ) )
+            // InternalOptimind.g:5346:2: ( ruleAbstractTask )
+            {
+            // InternalOptimind.g:5346:2: ( ruleAbstractTask )
+            // InternalOptimind.g:5347:3: ruleAbstractTask
+            {
+             before(grammarAccess.getIfAccess().getThenAbstractTaskParserRuleCall_7_0()); 
             pushFollow(FOLLOW_2);
             ruleAbstractTask();
 
             state._fsp--;
 
-             after(grammarAccess.getIfAccess().getElseAbstractTaskParserRuleCall_7_1_0()); 
+             after(grammarAccess.getIfAccess().getThenAbstractTaskParserRuleCall_7_0()); 
 
             }
 
@@ -15955,21 +16292,62 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
         }
         return ;
     }
-    // $ANTLR end "rule__If__ElseAssignment_7_1"
+    // $ANTLR end "rule__If__ThenAssignment_7"
+
+
+    // $ANTLR start "rule__If__ElseAssignment_8_1"
+    // InternalOptimind.g:5356:1: rule__If__ElseAssignment_8_1 : ( ruleAbstractTask ) ;
+    public final void rule__If__ElseAssignment_8_1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalOptimind.g:5360:1: ( ( ruleAbstractTask ) )
+            // InternalOptimind.g:5361:2: ( ruleAbstractTask )
+            {
+            // InternalOptimind.g:5361:2: ( ruleAbstractTask )
+            // InternalOptimind.g:5362:3: ruleAbstractTask
+            {
+             before(grammarAccess.getIfAccess().getElseAbstractTaskParserRuleCall_8_1_0()); 
+            pushFollow(FOLLOW_2);
+            ruleAbstractTask();
+
+            state._fsp--;
+
+             after(grammarAccess.getIfAccess().getElseAbstractTaskParserRuleCall_8_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__If__ElseAssignment_8_1"
 
 
     // $ANTLR start "rule__BaseTask__NameAssignment_2"
-    // InternalOptimind.g:5245:1: rule__BaseTask__NameAssignment_2 : ( ruleEString ) ;
+    // InternalOptimind.g:5371:1: rule__BaseTask__NameAssignment_2 : ( ruleEString ) ;
     public final void rule__BaseTask__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:5249:1: ( ( ruleEString ) )
-            // InternalOptimind.g:5250:2: ( ruleEString )
+            // InternalOptimind.g:5375:1: ( ( ruleEString ) )
+            // InternalOptimind.g:5376:2: ( ruleEString )
             {
-            // InternalOptimind.g:5250:2: ( ruleEString )
-            // InternalOptimind.g:5251:3: ruleEString
+            // InternalOptimind.g:5376:2: ( ruleEString )
+            // InternalOptimind.g:5377:3: ruleEString
             {
              before(grammarAccess.getBaseTaskAccess().getNameEStringParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -16000,17 +16378,17 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BaseTask__StatusAssignment_4_1"
-    // InternalOptimind.g:5260:1: rule__BaseTask__StatusAssignment_4_1 : ( ruleTaskStatus ) ;
+    // InternalOptimind.g:5386:1: rule__BaseTask__StatusAssignment_4_1 : ( ruleTaskStatus ) ;
     public final void rule__BaseTask__StatusAssignment_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:5264:1: ( ( ruleTaskStatus ) )
-            // InternalOptimind.g:5265:2: ( ruleTaskStatus )
+            // InternalOptimind.g:5390:1: ( ( ruleTaskStatus ) )
+            // InternalOptimind.g:5391:2: ( ruleTaskStatus )
             {
-            // InternalOptimind.g:5265:2: ( ruleTaskStatus )
-            // InternalOptimind.g:5266:3: ruleTaskStatus
+            // InternalOptimind.g:5391:2: ( ruleTaskStatus )
+            // InternalOptimind.g:5392:3: ruleTaskStatus
             {
              before(grammarAccess.getBaseTaskAccess().getStatusTaskStatusEnumRuleCall_4_1_0()); 
             pushFollow(FOLLOW_2);
@@ -16041,17 +16419,17 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BaseTask__InputsAssignment_5_2"
-    // InternalOptimind.g:5275:1: rule__BaseTask__InputsAssignment_5_2 : ( ruleTaskInput ) ;
+    // InternalOptimind.g:5401:1: rule__BaseTask__InputsAssignment_5_2 : ( ruleTaskInput ) ;
     public final void rule__BaseTask__InputsAssignment_5_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:5279:1: ( ( ruleTaskInput ) )
-            // InternalOptimind.g:5280:2: ( ruleTaskInput )
+            // InternalOptimind.g:5405:1: ( ( ruleTaskInput ) )
+            // InternalOptimind.g:5406:2: ( ruleTaskInput )
             {
-            // InternalOptimind.g:5280:2: ( ruleTaskInput )
-            // InternalOptimind.g:5281:3: ruleTaskInput
+            // InternalOptimind.g:5406:2: ( ruleTaskInput )
+            // InternalOptimind.g:5407:3: ruleTaskInput
             {
              before(grammarAccess.getBaseTaskAccess().getInputsTaskInputParserRuleCall_5_2_0()); 
             pushFollow(FOLLOW_2);
@@ -16082,17 +16460,17 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BaseTask__InputsAssignment_5_3_1"
-    // InternalOptimind.g:5290:1: rule__BaseTask__InputsAssignment_5_3_1 : ( ruleTaskInput ) ;
+    // InternalOptimind.g:5416:1: rule__BaseTask__InputsAssignment_5_3_1 : ( ruleTaskInput ) ;
     public final void rule__BaseTask__InputsAssignment_5_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:5294:1: ( ( ruleTaskInput ) )
-            // InternalOptimind.g:5295:2: ( ruleTaskInput )
+            // InternalOptimind.g:5420:1: ( ( ruleTaskInput ) )
+            // InternalOptimind.g:5421:2: ( ruleTaskInput )
             {
-            // InternalOptimind.g:5295:2: ( ruleTaskInput )
-            // InternalOptimind.g:5296:3: ruleTaskInput
+            // InternalOptimind.g:5421:2: ( ruleTaskInput )
+            // InternalOptimind.g:5422:3: ruleTaskInput
             {
              before(grammarAccess.getBaseTaskAccess().getInputsTaskInputParserRuleCall_5_3_1_0()); 
             pushFollow(FOLLOW_2);
@@ -16123,17 +16501,17 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BaseTask__OutputsAssignment_6_2"
-    // InternalOptimind.g:5305:1: rule__BaseTask__OutputsAssignment_6_2 : ( ruleTaskOutput ) ;
+    // InternalOptimind.g:5431:1: rule__BaseTask__OutputsAssignment_6_2 : ( ruleTaskOutput ) ;
     public final void rule__BaseTask__OutputsAssignment_6_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:5309:1: ( ( ruleTaskOutput ) )
-            // InternalOptimind.g:5310:2: ( ruleTaskOutput )
+            // InternalOptimind.g:5435:1: ( ( ruleTaskOutput ) )
+            // InternalOptimind.g:5436:2: ( ruleTaskOutput )
             {
-            // InternalOptimind.g:5310:2: ( ruleTaskOutput )
-            // InternalOptimind.g:5311:3: ruleTaskOutput
+            // InternalOptimind.g:5436:2: ( ruleTaskOutput )
+            // InternalOptimind.g:5437:3: ruleTaskOutput
             {
              before(grammarAccess.getBaseTaskAccess().getOutputsTaskOutputParserRuleCall_6_2_0()); 
             pushFollow(FOLLOW_2);
@@ -16164,17 +16542,17 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BaseTask__OutputsAssignment_6_3_1"
-    // InternalOptimind.g:5320:1: rule__BaseTask__OutputsAssignment_6_3_1 : ( ruleTaskOutput ) ;
+    // InternalOptimind.g:5446:1: rule__BaseTask__OutputsAssignment_6_3_1 : ( ruleTaskOutput ) ;
     public final void rule__BaseTask__OutputsAssignment_6_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:5324:1: ( ( ruleTaskOutput ) )
-            // InternalOptimind.g:5325:2: ( ruleTaskOutput )
+            // InternalOptimind.g:5450:1: ( ( ruleTaskOutput ) )
+            // InternalOptimind.g:5451:2: ( ruleTaskOutput )
             {
-            // InternalOptimind.g:5325:2: ( ruleTaskOutput )
-            // InternalOptimind.g:5326:3: ruleTaskOutput
+            // InternalOptimind.g:5451:2: ( ruleTaskOutput )
+            // InternalOptimind.g:5452:3: ruleTaskOutput
             {
              before(grammarAccess.getBaseTaskAccess().getOutputsTaskOutputParserRuleCall_6_3_1_0()); 
             pushFollow(FOLLOW_2);
@@ -16205,17 +16583,17 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BaseTask__ChildrenAssignment_7_0"
-    // InternalOptimind.g:5335:1: rule__BaseTask__ChildrenAssignment_7_0 : ( ruleAbstractTask ) ;
+    // InternalOptimind.g:5461:1: rule__BaseTask__ChildrenAssignment_7_0 : ( ruleAbstractTask ) ;
     public final void rule__BaseTask__ChildrenAssignment_7_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:5339:1: ( ( ruleAbstractTask ) )
-            // InternalOptimind.g:5340:2: ( ruleAbstractTask )
+            // InternalOptimind.g:5465:1: ( ( ruleAbstractTask ) )
+            // InternalOptimind.g:5466:2: ( ruleAbstractTask )
             {
-            // InternalOptimind.g:5340:2: ( ruleAbstractTask )
-            // InternalOptimind.g:5341:3: ruleAbstractTask
+            // InternalOptimind.g:5466:2: ( ruleAbstractTask )
+            // InternalOptimind.g:5467:3: ruleAbstractTask
             {
              before(grammarAccess.getBaseTaskAccess().getChildrenAbstractTaskParserRuleCall_7_0_0()); 
             pushFollow(FOLLOW_2);
@@ -16246,17 +16624,17 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__BaseTask__AbstractstatementAssignment_7_1"
-    // InternalOptimind.g:5350:1: rule__BaseTask__AbstractstatementAssignment_7_1 : ( ruleAbstractStatement ) ;
+    // InternalOptimind.g:5476:1: rule__BaseTask__AbstractstatementAssignment_7_1 : ( ruleAbstractStatement ) ;
     public final void rule__BaseTask__AbstractstatementAssignment_7_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:5354:1: ( ( ruleAbstractStatement ) )
-            // InternalOptimind.g:5355:2: ( ruleAbstractStatement )
+            // InternalOptimind.g:5480:1: ( ( ruleAbstractStatement ) )
+            // InternalOptimind.g:5481:2: ( ruleAbstractStatement )
             {
-            // InternalOptimind.g:5355:2: ( ruleAbstractStatement )
-            // InternalOptimind.g:5356:3: ruleAbstractStatement
+            // InternalOptimind.g:5481:2: ( ruleAbstractStatement )
+            // InternalOptimind.g:5482:3: ruleAbstractStatement
             {
              before(grammarAccess.getBaseTaskAccess().getAbstractstatementAbstractStatementParserRuleCall_7_1_0()); 
             pushFollow(FOLLOW_2);
@@ -16287,17 +16665,17 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__LibraryTask__NameAssignment_2"
-    // InternalOptimind.g:5365:1: rule__LibraryTask__NameAssignment_2 : ( ruleEString ) ;
+    // InternalOptimind.g:5491:1: rule__LibraryTask__NameAssignment_2 : ( ruleEString ) ;
     public final void rule__LibraryTask__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:5369:1: ( ( ruleEString ) )
-            // InternalOptimind.g:5370:2: ( ruleEString )
+            // InternalOptimind.g:5495:1: ( ( ruleEString ) )
+            // InternalOptimind.g:5496:2: ( ruleEString )
             {
-            // InternalOptimind.g:5370:2: ( ruleEString )
-            // InternalOptimind.g:5371:3: ruleEString
+            // InternalOptimind.g:5496:2: ( ruleEString )
+            // InternalOptimind.g:5497:3: ruleEString
             {
              before(grammarAccess.getLibraryTaskAccess().getNameEStringParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -16328,17 +16706,17 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__LibraryTask__StatusAssignment_4_1"
-    // InternalOptimind.g:5380:1: rule__LibraryTask__StatusAssignment_4_1 : ( ruleTaskStatus ) ;
+    // InternalOptimind.g:5506:1: rule__LibraryTask__StatusAssignment_4_1 : ( ruleTaskStatus ) ;
     public final void rule__LibraryTask__StatusAssignment_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:5384:1: ( ( ruleTaskStatus ) )
-            // InternalOptimind.g:5385:2: ( ruleTaskStatus )
+            // InternalOptimind.g:5510:1: ( ( ruleTaskStatus ) )
+            // InternalOptimind.g:5511:2: ( ruleTaskStatus )
             {
-            // InternalOptimind.g:5385:2: ( ruleTaskStatus )
-            // InternalOptimind.g:5386:3: ruleTaskStatus
+            // InternalOptimind.g:5511:2: ( ruleTaskStatus )
+            // InternalOptimind.g:5512:3: ruleTaskStatus
             {
              before(grammarAccess.getLibraryTaskAccess().getStatusTaskStatusEnumRuleCall_4_1_0()); 
             pushFollow(FOLLOW_2);
@@ -16369,17 +16747,17 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__LibraryTask__InputsAssignment_5_0"
-    // InternalOptimind.g:5395:1: rule__LibraryTask__InputsAssignment_5_0 : ( ruleTaskInput ) ;
+    // InternalOptimind.g:5521:1: rule__LibraryTask__InputsAssignment_5_0 : ( ruleTaskInput ) ;
     public final void rule__LibraryTask__InputsAssignment_5_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:5399:1: ( ( ruleTaskInput ) )
-            // InternalOptimind.g:5400:2: ( ruleTaskInput )
+            // InternalOptimind.g:5525:1: ( ( ruleTaskInput ) )
+            // InternalOptimind.g:5526:2: ( ruleTaskInput )
             {
-            // InternalOptimind.g:5400:2: ( ruleTaskInput )
-            // InternalOptimind.g:5401:3: ruleTaskInput
+            // InternalOptimind.g:5526:2: ( ruleTaskInput )
+            // InternalOptimind.g:5527:3: ruleTaskInput
             {
              before(grammarAccess.getLibraryTaskAccess().getInputsTaskInputParserRuleCall_5_0_0()); 
             pushFollow(FOLLOW_2);
@@ -16410,17 +16788,17 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__LibraryTask__InputsAssignment_5_1"
-    // InternalOptimind.g:5410:1: rule__LibraryTask__InputsAssignment_5_1 : ( ruleTaskInput ) ;
+    // InternalOptimind.g:5536:1: rule__LibraryTask__InputsAssignment_5_1 : ( ruleTaskInput ) ;
     public final void rule__LibraryTask__InputsAssignment_5_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:5414:1: ( ( ruleTaskInput ) )
-            // InternalOptimind.g:5415:2: ( ruleTaskInput )
+            // InternalOptimind.g:5540:1: ( ( ruleTaskInput ) )
+            // InternalOptimind.g:5541:2: ( ruleTaskInput )
             {
-            // InternalOptimind.g:5415:2: ( ruleTaskInput )
-            // InternalOptimind.g:5416:3: ruleTaskInput
+            // InternalOptimind.g:5541:2: ( ruleTaskInput )
+            // InternalOptimind.g:5542:3: ruleTaskInput
             {
              before(grammarAccess.getLibraryTaskAccess().getInputsTaskInputParserRuleCall_5_1_0()); 
             pushFollow(FOLLOW_2);
@@ -16451,17 +16829,17 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__LibraryTask__OutputsAssignment_6_0"
-    // InternalOptimind.g:5425:1: rule__LibraryTask__OutputsAssignment_6_0 : ( ruleTaskOutput ) ;
+    // InternalOptimind.g:5551:1: rule__LibraryTask__OutputsAssignment_6_0 : ( ruleTaskOutput ) ;
     public final void rule__LibraryTask__OutputsAssignment_6_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:5429:1: ( ( ruleTaskOutput ) )
-            // InternalOptimind.g:5430:2: ( ruleTaskOutput )
+            // InternalOptimind.g:5555:1: ( ( ruleTaskOutput ) )
+            // InternalOptimind.g:5556:2: ( ruleTaskOutput )
             {
-            // InternalOptimind.g:5430:2: ( ruleTaskOutput )
-            // InternalOptimind.g:5431:3: ruleTaskOutput
+            // InternalOptimind.g:5556:2: ( ruleTaskOutput )
+            // InternalOptimind.g:5557:3: ruleTaskOutput
             {
              before(grammarAccess.getLibraryTaskAccess().getOutputsTaskOutputParserRuleCall_6_0_0()); 
             pushFollow(FOLLOW_2);
@@ -16492,17 +16870,17 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__LibraryTask__OutputsAssignment_6_1"
-    // InternalOptimind.g:5440:1: rule__LibraryTask__OutputsAssignment_6_1 : ( ruleTaskOutput ) ;
+    // InternalOptimind.g:5566:1: rule__LibraryTask__OutputsAssignment_6_1 : ( ruleTaskOutput ) ;
     public final void rule__LibraryTask__OutputsAssignment_6_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:5444:1: ( ( ruleTaskOutput ) )
-            // InternalOptimind.g:5445:2: ( ruleTaskOutput )
+            // InternalOptimind.g:5570:1: ( ( ruleTaskOutput ) )
+            // InternalOptimind.g:5571:2: ( ruleTaskOutput )
             {
-            // InternalOptimind.g:5445:2: ( ruleTaskOutput )
-            // InternalOptimind.g:5446:3: ruleTaskOutput
+            // InternalOptimind.g:5571:2: ( ruleTaskOutput )
+            // InternalOptimind.g:5572:3: ruleTaskOutput
             {
              before(grammarAccess.getLibraryTaskAccess().getOutputsTaskOutputParserRuleCall_6_1_0()); 
             pushFollow(FOLLOW_2);
@@ -16533,21 +16911,21 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__LibraryTask__LibraryfunctionAssignment_7_1"
-    // InternalOptimind.g:5455:1: rule__LibraryTask__LibraryfunctionAssignment_7_1 : ( ( ruleEString ) ) ;
+    // InternalOptimind.g:5581:1: rule__LibraryTask__LibraryfunctionAssignment_7_1 : ( ( ruleEString ) ) ;
     public final void rule__LibraryTask__LibraryfunctionAssignment_7_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:5459:1: ( ( ( ruleEString ) ) )
-            // InternalOptimind.g:5460:2: ( ( ruleEString ) )
+            // InternalOptimind.g:5585:1: ( ( ( ruleEString ) ) )
+            // InternalOptimind.g:5586:2: ( ( ruleEString ) )
             {
-            // InternalOptimind.g:5460:2: ( ( ruleEString ) )
-            // InternalOptimind.g:5461:3: ( ruleEString )
+            // InternalOptimind.g:5586:2: ( ( ruleEString ) )
+            // InternalOptimind.g:5587:3: ( ruleEString )
             {
              before(grammarAccess.getLibraryTaskAccess().getLibraryfunctionLibraryFunctionCrossReference_7_1_0()); 
-            // InternalOptimind.g:5462:3: ( ruleEString )
-            // InternalOptimind.g:5463:4: ruleEString
+            // InternalOptimind.g:5588:3: ( ruleEString )
+            // InternalOptimind.g:5589:4: ruleEString
             {
              before(grammarAccess.getLibraryTaskAccess().getLibraryfunctionLibraryFunctionEStringParserRuleCall_7_1_0_1()); 
             pushFollow(FOLLOW_2);
@@ -16582,17 +16960,17 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__CustomTask__NameAssignment_2"
-    // InternalOptimind.g:5474:1: rule__CustomTask__NameAssignment_2 : ( ruleEString ) ;
+    // InternalOptimind.g:5600:1: rule__CustomTask__NameAssignment_2 : ( ruleEString ) ;
     public final void rule__CustomTask__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:5478:1: ( ( ruleEString ) )
-            // InternalOptimind.g:5479:2: ( ruleEString )
+            // InternalOptimind.g:5604:1: ( ( ruleEString ) )
+            // InternalOptimind.g:5605:2: ( ruleEString )
             {
-            // InternalOptimind.g:5479:2: ( ruleEString )
-            // InternalOptimind.g:5480:3: ruleEString
+            // InternalOptimind.g:5605:2: ( ruleEString )
+            // InternalOptimind.g:5606:3: ruleEString
             {
              before(grammarAccess.getCustomTaskAccess().getNameEStringParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -16623,17 +17001,17 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__CustomTask__StatusAssignment_4_1"
-    // InternalOptimind.g:5489:1: rule__CustomTask__StatusAssignment_4_1 : ( ruleTaskStatus ) ;
+    // InternalOptimind.g:5615:1: rule__CustomTask__StatusAssignment_4_1 : ( ruleTaskStatus ) ;
     public final void rule__CustomTask__StatusAssignment_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:5493:1: ( ( ruleTaskStatus ) )
-            // InternalOptimind.g:5494:2: ( ruleTaskStatus )
+            // InternalOptimind.g:5619:1: ( ( ruleTaskStatus ) )
+            // InternalOptimind.g:5620:2: ( ruleTaskStatus )
             {
-            // InternalOptimind.g:5494:2: ( ruleTaskStatus )
-            // InternalOptimind.g:5495:3: ruleTaskStatus
+            // InternalOptimind.g:5620:2: ( ruleTaskStatus )
+            // InternalOptimind.g:5621:3: ruleTaskStatus
             {
              before(grammarAccess.getCustomTaskAccess().getStatusTaskStatusEnumRuleCall_4_1_0()); 
             pushFollow(FOLLOW_2);
@@ -16664,17 +17042,17 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__CustomTask__InputsAssignment_5_0"
-    // InternalOptimind.g:5504:1: rule__CustomTask__InputsAssignment_5_0 : ( ruleTaskInput ) ;
+    // InternalOptimind.g:5630:1: rule__CustomTask__InputsAssignment_5_0 : ( ruleTaskInput ) ;
     public final void rule__CustomTask__InputsAssignment_5_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:5508:1: ( ( ruleTaskInput ) )
-            // InternalOptimind.g:5509:2: ( ruleTaskInput )
+            // InternalOptimind.g:5634:1: ( ( ruleTaskInput ) )
+            // InternalOptimind.g:5635:2: ( ruleTaskInput )
             {
-            // InternalOptimind.g:5509:2: ( ruleTaskInput )
-            // InternalOptimind.g:5510:3: ruleTaskInput
+            // InternalOptimind.g:5635:2: ( ruleTaskInput )
+            // InternalOptimind.g:5636:3: ruleTaskInput
             {
              before(grammarAccess.getCustomTaskAccess().getInputsTaskInputParserRuleCall_5_0_0()); 
             pushFollow(FOLLOW_2);
@@ -16705,17 +17083,17 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__CustomTask__InputsAssignment_5_1"
-    // InternalOptimind.g:5519:1: rule__CustomTask__InputsAssignment_5_1 : ( ruleTaskInput ) ;
+    // InternalOptimind.g:5645:1: rule__CustomTask__InputsAssignment_5_1 : ( ruleTaskInput ) ;
     public final void rule__CustomTask__InputsAssignment_5_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:5523:1: ( ( ruleTaskInput ) )
-            // InternalOptimind.g:5524:2: ( ruleTaskInput )
+            // InternalOptimind.g:5649:1: ( ( ruleTaskInput ) )
+            // InternalOptimind.g:5650:2: ( ruleTaskInput )
             {
-            // InternalOptimind.g:5524:2: ( ruleTaskInput )
-            // InternalOptimind.g:5525:3: ruleTaskInput
+            // InternalOptimind.g:5650:2: ( ruleTaskInput )
+            // InternalOptimind.g:5651:3: ruleTaskInput
             {
              before(grammarAccess.getCustomTaskAccess().getInputsTaskInputParserRuleCall_5_1_0()); 
             pushFollow(FOLLOW_2);
@@ -16746,17 +17124,17 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__CustomTask__OutputsAssignment_6_0"
-    // InternalOptimind.g:5534:1: rule__CustomTask__OutputsAssignment_6_0 : ( ruleTaskOutput ) ;
+    // InternalOptimind.g:5660:1: rule__CustomTask__OutputsAssignment_6_0 : ( ruleTaskOutput ) ;
     public final void rule__CustomTask__OutputsAssignment_6_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:5538:1: ( ( ruleTaskOutput ) )
-            // InternalOptimind.g:5539:2: ( ruleTaskOutput )
+            // InternalOptimind.g:5664:1: ( ( ruleTaskOutput ) )
+            // InternalOptimind.g:5665:2: ( ruleTaskOutput )
             {
-            // InternalOptimind.g:5539:2: ( ruleTaskOutput )
-            // InternalOptimind.g:5540:3: ruleTaskOutput
+            // InternalOptimind.g:5665:2: ( ruleTaskOutput )
+            // InternalOptimind.g:5666:3: ruleTaskOutput
             {
              before(grammarAccess.getCustomTaskAccess().getOutputsTaskOutputParserRuleCall_6_0_0()); 
             pushFollow(FOLLOW_2);
@@ -16787,17 +17165,17 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__CustomTask__OutputsAssignment_6_1"
-    // InternalOptimind.g:5549:1: rule__CustomTask__OutputsAssignment_6_1 : ( ruleTaskOutput ) ;
+    // InternalOptimind.g:5675:1: rule__CustomTask__OutputsAssignment_6_1 : ( ruleTaskOutput ) ;
     public final void rule__CustomTask__OutputsAssignment_6_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:5553:1: ( ( ruleTaskOutput ) )
-            // InternalOptimind.g:5554:2: ( ruleTaskOutput )
+            // InternalOptimind.g:5679:1: ( ( ruleTaskOutput ) )
+            // InternalOptimind.g:5680:2: ( ruleTaskOutput )
             {
-            // InternalOptimind.g:5554:2: ( ruleTaskOutput )
-            // InternalOptimind.g:5555:3: ruleTaskOutput
+            // InternalOptimind.g:5680:2: ( ruleTaskOutput )
+            // InternalOptimind.g:5681:3: ruleTaskOutput
             {
              before(grammarAccess.getCustomTaskAccess().getOutputsTaskOutputParserRuleCall_6_1_0()); 
             pushFollow(FOLLOW_2);
@@ -16828,17 +17206,17 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__CustomTask__RunnerAssignment_7_1"
-    // InternalOptimind.g:5564:1: rule__CustomTask__RunnerAssignment_7_1 : ( ruleEString ) ;
+    // InternalOptimind.g:5690:1: rule__CustomTask__RunnerAssignment_7_1 : ( ruleEString ) ;
     public final void rule__CustomTask__RunnerAssignment_7_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:5568:1: ( ( ruleEString ) )
-            // InternalOptimind.g:5569:2: ( ruleEString )
+            // InternalOptimind.g:5694:1: ( ( ruleEString ) )
+            // InternalOptimind.g:5695:2: ( ruleEString )
             {
-            // InternalOptimind.g:5569:2: ( ruleEString )
-            // InternalOptimind.g:5570:3: ruleEString
+            // InternalOptimind.g:5695:2: ( ruleEString )
+            // InternalOptimind.g:5696:3: ruleEString
             {
              before(grammarAccess.getCustomTaskAccess().getRunnerEStringParserRuleCall_7_1_0()); 
             pushFollow(FOLLOW_2);
@@ -16869,17 +17247,17 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Setter__NameAssignment_2"
-    // InternalOptimind.g:5579:1: rule__Setter__NameAssignment_2 : ( ruleEString ) ;
+    // InternalOptimind.g:5705:1: rule__Setter__NameAssignment_2 : ( ruleEString ) ;
     public final void rule__Setter__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:5583:1: ( ( ruleEString ) )
-            // InternalOptimind.g:5584:2: ( ruleEString )
+            // InternalOptimind.g:5709:1: ( ( ruleEString ) )
+            // InternalOptimind.g:5710:2: ( ruleEString )
             {
-            // InternalOptimind.g:5584:2: ( ruleEString )
-            // InternalOptimind.g:5585:3: ruleEString
+            // InternalOptimind.g:5710:2: ( ruleEString )
+            // InternalOptimind.g:5711:3: ruleEString
             {
              before(grammarAccess.getSetterAccess().getNameEStringParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -16910,17 +17288,17 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Setter__TypeAsStringAssignment_3_1"
-    // InternalOptimind.g:5594:1: rule__Setter__TypeAsStringAssignment_3_1 : ( ruleType ) ;
+    // InternalOptimind.g:5720:1: rule__Setter__TypeAsStringAssignment_3_1 : ( ruleType ) ;
     public final void rule__Setter__TypeAsStringAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:5598:1: ( ( ruleType ) )
-            // InternalOptimind.g:5599:2: ( ruleType )
+            // InternalOptimind.g:5724:1: ( ( ruleType ) )
+            // InternalOptimind.g:5725:2: ( ruleType )
             {
-            // InternalOptimind.g:5599:2: ( ruleType )
-            // InternalOptimind.g:5600:3: ruleType
+            // InternalOptimind.g:5725:2: ( ruleType )
+            // InternalOptimind.g:5726:3: ruleType
             {
              before(grammarAccess.getSetterAccess().getTypeAsStringTypeParserRuleCall_3_1_0()); 
             pushFollow(FOLLOW_2);
@@ -16951,17 +17329,17 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Setter__ValueAsStringAssignment_4_1"
-    // InternalOptimind.g:5609:1: rule__Setter__ValueAsStringAssignment_4_1 : ( ruleEString ) ;
+    // InternalOptimind.g:5735:1: rule__Setter__ValueAsStringAssignment_4_1 : ( ruleEString ) ;
     public final void rule__Setter__ValueAsStringAssignment_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:5613:1: ( ( ruleEString ) )
-            // InternalOptimind.g:5614:2: ( ruleEString )
+            // InternalOptimind.g:5739:1: ( ( ruleEString ) )
+            // InternalOptimind.g:5740:2: ( ruleEString )
             {
-            // InternalOptimind.g:5614:2: ( ruleEString )
-            // InternalOptimind.g:5615:3: ruleEString
+            // InternalOptimind.g:5740:2: ( ruleEString )
+            // InternalOptimind.g:5741:3: ruleEString
             {
              before(grammarAccess.getSetterAccess().getValueAsStringEStringParserRuleCall_4_1_0()); 
             pushFollow(FOLLOW_2);
@@ -16992,17 +17370,17 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Connection__NameAssignment_2"
-    // InternalOptimind.g:5624:1: rule__Connection__NameAssignment_2 : ( ruleEString ) ;
+    // InternalOptimind.g:5750:1: rule__Connection__NameAssignment_2 : ( ruleEString ) ;
     public final void rule__Connection__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:5628:1: ( ( ruleEString ) )
-            // InternalOptimind.g:5629:2: ( ruleEString )
+            // InternalOptimind.g:5754:1: ( ( ruleEString ) )
+            // InternalOptimind.g:5755:2: ( ruleEString )
             {
-            // InternalOptimind.g:5629:2: ( ruleEString )
-            // InternalOptimind.g:5630:3: ruleEString
+            // InternalOptimind.g:5755:2: ( ruleEString )
+            // InternalOptimind.g:5756:3: ruleEString
             {
              before(grammarAccess.getConnectionAccess().getNameEStringParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -17033,21 +17411,21 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Connection__TaskoutputAssignment_3_1"
-    // InternalOptimind.g:5639:1: rule__Connection__TaskoutputAssignment_3_1 : ( ( ruleEString ) ) ;
+    // InternalOptimind.g:5765:1: rule__Connection__TaskoutputAssignment_3_1 : ( ( ruleEString ) ) ;
     public final void rule__Connection__TaskoutputAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:5643:1: ( ( ( ruleEString ) ) )
-            // InternalOptimind.g:5644:2: ( ( ruleEString ) )
+            // InternalOptimind.g:5769:1: ( ( ( ruleEString ) ) )
+            // InternalOptimind.g:5770:2: ( ( ruleEString ) )
             {
-            // InternalOptimind.g:5644:2: ( ( ruleEString ) )
-            // InternalOptimind.g:5645:3: ( ruleEString )
+            // InternalOptimind.g:5770:2: ( ( ruleEString ) )
+            // InternalOptimind.g:5771:3: ( ruleEString )
             {
              before(grammarAccess.getConnectionAccess().getTaskoutputTaskOutputCrossReference_3_1_0()); 
-            // InternalOptimind.g:5646:3: ( ruleEString )
-            // InternalOptimind.g:5647:4: ruleEString
+            // InternalOptimind.g:5772:3: ( ruleEString )
+            // InternalOptimind.g:5773:4: ruleEString
             {
              before(grammarAccess.getConnectionAccess().getTaskoutputTaskOutputEStringParserRuleCall_3_1_0_1()); 
             pushFollow(FOLLOW_2);
@@ -17082,17 +17460,17 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__LibraryFunction__NameAssignment_2"
-    // InternalOptimind.g:5658:1: rule__LibraryFunction__NameAssignment_2 : ( ruleEString ) ;
+    // InternalOptimind.g:5784:1: rule__LibraryFunction__NameAssignment_2 : ( ruleEString ) ;
     public final void rule__LibraryFunction__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:5662:1: ( ( ruleEString ) )
-            // InternalOptimind.g:5663:2: ( ruleEString )
+            // InternalOptimind.g:5788:1: ( ( ruleEString ) )
+            // InternalOptimind.g:5789:2: ( ruleEString )
             {
-            // InternalOptimind.g:5663:2: ( ruleEString )
-            // InternalOptimind.g:5664:3: ruleEString
+            // InternalOptimind.g:5789:2: ( ruleEString )
+            // InternalOptimind.g:5790:3: ruleEString
             {
              before(grammarAccess.getLibraryFunctionAccess().getNameEStringParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -17123,17 +17501,17 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__LibraryFunction__FunctionAssignment_5"
-    // InternalOptimind.g:5673:1: rule__LibraryFunction__FunctionAssignment_5 : ( ruleEString ) ;
+    // InternalOptimind.g:5799:1: rule__LibraryFunction__FunctionAssignment_5 : ( ruleEString ) ;
     public final void rule__LibraryFunction__FunctionAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:5677:1: ( ( ruleEString ) )
-            // InternalOptimind.g:5678:2: ( ruleEString )
+            // InternalOptimind.g:5803:1: ( ( ruleEString ) )
+            // InternalOptimind.g:5804:2: ( ruleEString )
             {
-            // InternalOptimind.g:5678:2: ( ruleEString )
-            // InternalOptimind.g:5679:3: ruleEString
+            // InternalOptimind.g:5804:2: ( ruleEString )
+            // InternalOptimind.g:5805:3: ruleEString
             {
              before(grammarAccess.getLibraryFunctionAccess().getFunctionEStringParserRuleCall_5_0()); 
             pushFollow(FOLLOW_2);
@@ -17164,17 +17542,17 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__LibraryFunction__InputsAssignment_6_0"
-    // InternalOptimind.g:5688:1: rule__LibraryFunction__InputsAssignment_6_0 : ( ruleInput ) ;
+    // InternalOptimind.g:5814:1: rule__LibraryFunction__InputsAssignment_6_0 : ( ruleInput ) ;
     public final void rule__LibraryFunction__InputsAssignment_6_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:5692:1: ( ( ruleInput ) )
-            // InternalOptimind.g:5693:2: ( ruleInput )
+            // InternalOptimind.g:5818:1: ( ( ruleInput ) )
+            // InternalOptimind.g:5819:2: ( ruleInput )
             {
-            // InternalOptimind.g:5693:2: ( ruleInput )
-            // InternalOptimind.g:5694:3: ruleInput
+            // InternalOptimind.g:5819:2: ( ruleInput )
+            // InternalOptimind.g:5820:3: ruleInput
             {
              before(grammarAccess.getLibraryFunctionAccess().getInputsInputParserRuleCall_6_0_0()); 
             pushFollow(FOLLOW_2);
@@ -17205,17 +17583,17 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__LibraryFunction__InputsAssignment_6_1"
-    // InternalOptimind.g:5703:1: rule__LibraryFunction__InputsAssignment_6_1 : ( ruleInput ) ;
+    // InternalOptimind.g:5829:1: rule__LibraryFunction__InputsAssignment_6_1 : ( ruleInput ) ;
     public final void rule__LibraryFunction__InputsAssignment_6_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:5707:1: ( ( ruleInput ) )
-            // InternalOptimind.g:5708:2: ( ruleInput )
+            // InternalOptimind.g:5833:1: ( ( ruleInput ) )
+            // InternalOptimind.g:5834:2: ( ruleInput )
             {
-            // InternalOptimind.g:5708:2: ( ruleInput )
-            // InternalOptimind.g:5709:3: ruleInput
+            // InternalOptimind.g:5834:2: ( ruleInput )
+            // InternalOptimind.g:5835:3: ruleInput
             {
              before(grammarAccess.getLibraryFunctionAccess().getInputsInputParserRuleCall_6_1_0()); 
             pushFollow(FOLLOW_2);
@@ -17246,17 +17624,17 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__LibraryFunction__OutputsAssignment_7_0"
-    // InternalOptimind.g:5718:1: rule__LibraryFunction__OutputsAssignment_7_0 : ( ruleOutput ) ;
+    // InternalOptimind.g:5844:1: rule__LibraryFunction__OutputsAssignment_7_0 : ( ruleOutput ) ;
     public final void rule__LibraryFunction__OutputsAssignment_7_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:5722:1: ( ( ruleOutput ) )
-            // InternalOptimind.g:5723:2: ( ruleOutput )
+            // InternalOptimind.g:5848:1: ( ( ruleOutput ) )
+            // InternalOptimind.g:5849:2: ( ruleOutput )
             {
-            // InternalOptimind.g:5723:2: ( ruleOutput )
-            // InternalOptimind.g:5724:3: ruleOutput
+            // InternalOptimind.g:5849:2: ( ruleOutput )
+            // InternalOptimind.g:5850:3: ruleOutput
             {
              before(grammarAccess.getLibraryFunctionAccess().getOutputsOutputParserRuleCall_7_0_0()); 
             pushFollow(FOLLOW_2);
@@ -17287,17 +17665,17 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__LibraryFunction__OutputsAssignment_7_1"
-    // InternalOptimind.g:5733:1: rule__LibraryFunction__OutputsAssignment_7_1 : ( ruleOutput ) ;
+    // InternalOptimind.g:5859:1: rule__LibraryFunction__OutputsAssignment_7_1 : ( ruleOutput ) ;
     public final void rule__LibraryFunction__OutputsAssignment_7_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:5737:1: ( ( ruleOutput ) )
-            // InternalOptimind.g:5738:2: ( ruleOutput )
+            // InternalOptimind.g:5863:1: ( ( ruleOutput ) )
+            // InternalOptimind.g:5864:2: ( ruleOutput )
             {
-            // InternalOptimind.g:5738:2: ( ruleOutput )
-            // InternalOptimind.g:5739:3: ruleOutput
+            // InternalOptimind.g:5864:2: ( ruleOutput )
+            // InternalOptimind.g:5865:3: ruleOutput
             {
              before(grammarAccess.getLibraryFunctionAccess().getOutputsOutputParserRuleCall_7_1_0()); 
             pushFollow(FOLLOW_2);
@@ -17328,17 +17706,17 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Input__NameAssignment_2"
-    // InternalOptimind.g:5748:1: rule__Input__NameAssignment_2 : ( ruleEString ) ;
+    // InternalOptimind.g:5874:1: rule__Input__NameAssignment_2 : ( ruleEString ) ;
     public final void rule__Input__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:5752:1: ( ( ruleEString ) )
-            // InternalOptimind.g:5753:2: ( ruleEString )
+            // InternalOptimind.g:5878:1: ( ( ruleEString ) )
+            // InternalOptimind.g:5879:2: ( ruleEString )
             {
-            // InternalOptimind.g:5753:2: ( ruleEString )
-            // InternalOptimind.g:5754:3: ruleEString
+            // InternalOptimind.g:5879:2: ( ruleEString )
+            // InternalOptimind.g:5880:3: ruleEString
             {
              before(grammarAccess.getInputAccess().getNameEStringParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -17369,17 +17747,17 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Input__TypeAsStringAssignment_3_1"
-    // InternalOptimind.g:5763:1: rule__Input__TypeAsStringAssignment_3_1 : ( ruleType ) ;
+    // InternalOptimind.g:5889:1: rule__Input__TypeAsStringAssignment_3_1 : ( ruleType ) ;
     public final void rule__Input__TypeAsStringAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:5767:1: ( ( ruleType ) )
-            // InternalOptimind.g:5768:2: ( ruleType )
+            // InternalOptimind.g:5893:1: ( ( ruleType ) )
+            // InternalOptimind.g:5894:2: ( ruleType )
             {
-            // InternalOptimind.g:5768:2: ( ruleType )
-            // InternalOptimind.g:5769:3: ruleType
+            // InternalOptimind.g:5894:2: ( ruleType )
+            // InternalOptimind.g:5895:3: ruleType
             {
              before(grammarAccess.getInputAccess().getTypeAsStringTypeParserRuleCall_3_1_0()); 
             pushFollow(FOLLOW_2);
@@ -17410,17 +17788,17 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Input__ValueAsStringAssignment_4_1"
-    // InternalOptimind.g:5778:1: rule__Input__ValueAsStringAssignment_4_1 : ( ruleEString ) ;
+    // InternalOptimind.g:5904:1: rule__Input__ValueAsStringAssignment_4_1 : ( ruleEString ) ;
     public final void rule__Input__ValueAsStringAssignment_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:5782:1: ( ( ruleEString ) )
-            // InternalOptimind.g:5783:2: ( ruleEString )
+            // InternalOptimind.g:5908:1: ( ( ruleEString ) )
+            // InternalOptimind.g:5909:2: ( ruleEString )
             {
-            // InternalOptimind.g:5783:2: ( ruleEString )
-            // InternalOptimind.g:5784:3: ruleEString
+            // InternalOptimind.g:5909:2: ( ruleEString )
+            // InternalOptimind.g:5910:3: ruleEString
             {
              before(grammarAccess.getInputAccess().getValueAsStringEStringParserRuleCall_4_1_0()); 
             pushFollow(FOLLOW_2);
@@ -17451,17 +17829,17 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Output__NameAssignment_2"
-    // InternalOptimind.g:5793:1: rule__Output__NameAssignment_2 : ( ruleEString ) ;
+    // InternalOptimind.g:5919:1: rule__Output__NameAssignment_2 : ( ruleEString ) ;
     public final void rule__Output__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:5797:1: ( ( ruleEString ) )
-            // InternalOptimind.g:5798:2: ( ruleEString )
+            // InternalOptimind.g:5923:1: ( ( ruleEString ) )
+            // InternalOptimind.g:5924:2: ( ruleEString )
             {
-            // InternalOptimind.g:5798:2: ( ruleEString )
-            // InternalOptimind.g:5799:3: ruleEString
+            // InternalOptimind.g:5924:2: ( ruleEString )
+            // InternalOptimind.g:5925:3: ruleEString
             {
              before(grammarAccess.getOutputAccess().getNameEStringParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -17492,17 +17870,17 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Output__TypeAsStringAssignment_3_1"
-    // InternalOptimind.g:5808:1: rule__Output__TypeAsStringAssignment_3_1 : ( ruleType ) ;
+    // InternalOptimind.g:5934:1: rule__Output__TypeAsStringAssignment_3_1 : ( ruleType ) ;
     public final void rule__Output__TypeAsStringAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:5812:1: ( ( ruleType ) )
-            // InternalOptimind.g:5813:2: ( ruleType )
+            // InternalOptimind.g:5938:1: ( ( ruleType ) )
+            // InternalOptimind.g:5939:2: ( ruleType )
             {
-            // InternalOptimind.g:5813:2: ( ruleType )
-            // InternalOptimind.g:5814:3: ruleType
+            // InternalOptimind.g:5939:2: ( ruleType )
+            // InternalOptimind.g:5940:3: ruleType
             {
              before(grammarAccess.getOutputAccess().getTypeAsStringTypeParserRuleCall_3_1_0()); 
             pushFollow(FOLLOW_2);
@@ -17533,17 +17911,17 @@ public class InternalOptimindParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Output__ValueAsStringAssignment_4_1"
-    // InternalOptimind.g:5823:1: rule__Output__ValueAsStringAssignment_4_1 : ( ruleEString ) ;
+    // InternalOptimind.g:5949:1: rule__Output__ValueAsStringAssignment_4_1 : ( ruleEString ) ;
     public final void rule__Output__ValueAsStringAssignment_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalOptimind.g:5827:1: ( ( ruleEString ) )
-            // InternalOptimind.g:5828:2: ( ruleEString )
+            // InternalOptimind.g:5953:1: ( ( ruleEString ) )
+            // InternalOptimind.g:5954:2: ( ruleEString )
             {
-            // InternalOptimind.g:5828:2: ( ruleEString )
-            // InternalOptimind.g:5829:3: ruleEString
+            // InternalOptimind.g:5954:2: ( ruleEString )
+            // InternalOptimind.g:5955:3: ruleEString
             {
              before(grammarAccess.getOutputAccess().getValueAsStringEStringParserRuleCall_4_1_0()); 
             pushFollow(FOLLOW_2);

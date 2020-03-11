@@ -2,7 +2,7 @@
  */
 package com.altran.optimind.model.workflow.provider;
 
-import com.altran.optimind.model.workflow.For;
+import com.altran.optimind.model.workflow.ForStatement;
 import com.altran.optimind.model.workflow.WorkflowPackage;
 
 import java.util.Collection;
@@ -17,19 +17,19 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link com.altran.optimind.model.workflow.For} object.
+ * This is the item provider adapter for a {@link com.altran.optimind.model.workflow.ForStatement} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ForItemProvider extends WhileItemProvider {
+public class ForStatementItemProvider extends WhileStatementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ForItemProvider(AdapterFactory adapterFactory) {
+	public ForStatementItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -60,9 +60,10 @@ public class ForItemProvider extends WhileItemProvider {
 	protected void addFromPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_For_from_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_For_from_feature", "_UI_For_type"),
-						WorkflowPackage.Literals.FOR__FROM, true, false, false,
+						getResourceLocator(), getString("_UI_ForStatement_from_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_ForStatement_from_feature",
+								"_UI_ForStatement_type"),
+						WorkflowPackage.Literals.FOR_STATEMENT__FROM, true, false, false,
 						ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
 	}
 
@@ -75,9 +76,10 @@ public class ForItemProvider extends WhileItemProvider {
 	protected void addToPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_For_to_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_For_to_feature", "_UI_For_type"),
-						WorkflowPackage.Literals.FOR__TO, true, false, false,
+						getResourceLocator(), getString("_UI_ForStatement_to_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_ForStatement_to_feature",
+								"_UI_ForStatement_type"),
+						WorkflowPackage.Literals.FOR_STATEMENT__TO, true, false, false,
 						ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
 	}
 
@@ -90,21 +92,22 @@ public class ForItemProvider extends WhileItemProvider {
 	protected void addIncrementPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_For_increment_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_For_increment_feature", "_UI_For_type"),
-						WorkflowPackage.Literals.FOR__INCREMENT, true, false, false,
+						getResourceLocator(), getString("_UI_ForStatement_increment_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_ForStatement_increment_feature",
+								"_UI_ForStatement_type"),
+						WorkflowPackage.Literals.FOR_STATEMENT__INCREMENT, true, false, false,
 						ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
 	}
 
 	/**
-	 * This returns For.gif.
+	 * This returns ForStatement.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/For"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/ForStatement"));
 	}
 
 	/**
@@ -125,9 +128,9 @@ public class ForItemProvider extends WhileItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((For) object).getName();
-		return label == null || label.length() == 0 ? getString("_UI_For_type")
-				: getString("_UI_For_type") + " " + label;
+		String label = ((ForStatement) object).getName();
+		return label == null || label.length() == 0 ? getString("_UI_ForStatement_type")
+				: getString("_UI_ForStatement_type") + " " + label;
 	}
 
 	/**
@@ -141,10 +144,10 @@ public class ForItemProvider extends WhileItemProvider {
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(For.class)) {
-		case WorkflowPackage.FOR__FROM:
-		case WorkflowPackage.FOR__TO:
-		case WorkflowPackage.FOR__INCREMENT:
+		switch (notification.getFeatureID(ForStatement.class)) {
+		case WorkflowPackage.FOR_STATEMENT__FROM:
+		case WorkflowPackage.FOR_STATEMENT__TO:
+		case WorkflowPackage.FOR_STATEMENT__INCREMENT:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}
