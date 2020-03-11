@@ -5,10 +5,13 @@ package com.altran.generator;
 
 import com.altran.Utils.Utils;
 import com.altran.generator.CustomTaskRunnerGenerator;
+import com.altran.generator.JavaCodeGenerator;
 import com.altran.generator.LibraryFunctionGenerator;
 import com.altran.generator.PythonCodeGenerator;
 import com.altran.graphs.DotGraphGenerator;
+import com.altran.optimind.model.workflow.Language;
 import com.altran.optimind.model.workflow.Workflow;
+import com.google.common.base.Objects;
 import java.io.File;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.emf.ecore.EObject;
@@ -31,11 +34,19 @@ public class OptimindGenerator extends AbstractGenerator {
       Workflow workflow = this.getWorkflowFromResource(resource);
       String resourcePath = this.getResourceFilePath(resource);
       new DotGraphGenerator(resourcePath, workflow).createDotFile();
-      String pythonFilePath = this.createPythonFilePath(resourcePath);
-      new PythonCodeGenerator(workflow, pythonFilePath).generate();
+      String filePath = this.createFilePath(resourcePath, workflow.getLanguage());
+      Language _language = workflow.getLanguage();
+      boolean _equals = Objects.equal(_language, Language.PYTHON);
+      if (_equals) {
+        new PythonCodeGenerator(workflow, filePath).generate();
+      } else {
+        new JavaCodeGenerator(workflow, filePath).generate();
+      }
       String scriptsPackagePath = this.createPackagePath(resourcePath);
-      new LibraryFunctionGenerator(workflow, scriptsPackagePath).generate();
-      new CustomTaskRunnerGenerator(workflow, scriptsPackagePath).generate();
+      Language _language_1 = workflow.getLanguage();
+      new LibraryFunctionGenerator(workflow, scriptsPackagePath, _language_1).generate();
+      Language _language_2 = workflow.getLanguage();
+      new CustomTaskRunnerGenerator(workflow, scriptsPackagePath, _language_2).generate();
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }
@@ -69,7 +80,7 @@ public class OptimindGenerator extends AbstractGenerator {
     return _xblockexpression;
   }
   
-  public String createPythonFilePath(final String workflowFilePath) {
+  public String createFilePath(final String workflowFilePath, final Language language) {
     String _xblockexpression = null;
     {
       String name = null;
@@ -80,7 +91,14 @@ public class OptimindGenerator extends AbstractGenerator {
       } else {
         name = workflowFilePath;
       }
-      _xblockexpression = (name + ".py");
+      String _xifexpression = null;
+      boolean _equals = Objects.equal(language, Language.PYTHON);
+      if (_equals) {
+        _xifexpression = (name + ".py");
+      } else {
+        _xifexpression = (name + ".java");
+      }
+      _xblockexpression = _xifexpression;
     }
     return _xblockexpression;
   }

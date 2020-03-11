@@ -1,8 +1,10 @@
 package com.altran.generator;
 
 import com.altran.optimind.model.workflow.Input;
+import com.altran.optimind.model.workflow.Language;
 import com.altran.optimind.model.workflow.LibraryFunction;
 import com.altran.optimind.model.workflow.Workflow;
+import com.google.common.base.Objects;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.PrintWriter;
@@ -25,28 +27,42 @@ public class LibraryFunctionGenerator {
   @Accessors(AccessorType.PUBLIC_GETTER)
   private int cammaCounter = 0;
   
-  public LibraryFunctionGenerator(final Workflow workflow, final String path) {
+  @Accessors(AccessorType.PUBLIC_GETTER)
+  private Language language;
+  
+  public LibraryFunctionGenerator(final Workflow workflow, final String path, final Language language) {
     this.workflow = workflow;
     this.libraryFunctionPackagePath = path;
+    this.language = language;
   }
   
   public void generate() {
     EList<EObject> children = this.workflow.eContents();
     for (final EObject child : children) {
       if ((child instanceof LibraryFunction)) {
-        this.createLibFunctionPythonFile(((LibraryFunction)child));
+        this.createLibFunctionFile(((LibraryFunction)child));
         this.cammaCounter = 0;
       }
     }
   }
   
-  public void createLibFunctionPythonFile(final LibraryFunction function) {
-    String _generateFileContent = this.generateFileContent(function);
-    String _name = function.getName();
-    String _plus = (this.libraryFunctionPackagePath + _name);
-    String _plus_1 = (_plus + ".");
-    String _plus_2 = (_plus_1 + "py");
-    this.writeContent(_generateFileContent, _plus_2);
+  public void createLibFunctionFile(final LibraryFunction function) {
+    boolean _equals = Objects.equal(this.language, Language.PYTHON);
+    if (_equals) {
+      String _generateFileContent = this.generateFileContent(function);
+      String _name = function.getName();
+      String _plus = (this.libraryFunctionPackagePath + _name);
+      String _plus_1 = (_plus + ".");
+      String _plus_2 = (_plus_1 + "py");
+      this.writeContent(_generateFileContent, _plus_2);
+    } else {
+      String _generateFileContent_1 = this.generateFileContent(function);
+      String _name_1 = function.getName();
+      String _plus_3 = (this.libraryFunctionPackagePath + _name_1);
+      String _plus_4 = (_plus_3 + ".");
+      String _plus_5 = (_plus_4 + "java");
+      this.writeContent(_generateFileContent_1, _plus_5);
+    }
   }
   
   public String generateFileContent(final LibraryFunction libfunction) {
@@ -183,5 +199,10 @@ public class LibraryFunctionGenerator {
   @Pure
   public int getCammaCounter() {
     return this.cammaCounter;
+  }
+  
+  @Pure
+  public Language getLanguage() {
+    return this.language;
   }
 }

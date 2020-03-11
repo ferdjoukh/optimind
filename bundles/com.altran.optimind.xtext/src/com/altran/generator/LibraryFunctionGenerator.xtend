@@ -8,17 +8,20 @@ import java.io.PrintWriter
 import java.io.BufferedWriter
 import java.io.FileWriter
 import com.altran.optimind.model.workflow.Input
+import com.altran.optimind.model.workflow.Language
 
 class LibraryFunctionGenerator {
 	
 	@Accessors(PUBLIC_GETTER) var Workflow workflow
 	@Accessors(PUBLIC_GETTER) var String libraryFunctionPackagePath
 	@Accessors(PUBLIC_GETTER) var int cammaCounter=0
+	@Accessors(PUBLIC_GETTER) var Language language
 	
-	new(Workflow workflow, String path) {
+	new(Workflow workflow, String path, Language language) {
 		
 		this.workflow = workflow
 		this.libraryFunctionPackagePath = path
+		this.language = language ; 
 		
 	}
 	
@@ -27,14 +30,21 @@ class LibraryFunctionGenerator {
 		var children = workflow.eContents
 		for (EObject child : children) {
 			if (child instanceof LibraryFunction){
-				createLibFunctionPythonFile(child)
+				createLibFunctionFile(child)
 				cammaCounter=0
 			}
 		}
 	}
 	
-	def createLibFunctionPythonFile(LibraryFunction function) {
-		writeContent( generateFileContent(function), libraryFunctionPackagePath+function.name+"."+"py")
+	def createLibFunctionFile(LibraryFunction function) {
+		if(language == Language.PYTHON)
+		{
+			writeContent( generateFileContent(function), libraryFunctionPackagePath+function.name+"."+"py")		
+		}
+		else
+		{
+			writeContent( generateFileContent(function), libraryFunctionPackagePath+function.name+"."+"java")	
+		}
 		
 	}
 	

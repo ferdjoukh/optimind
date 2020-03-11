@@ -10,16 +10,19 @@ import java.io.FileWriter
 import com.altran.optimind.model.workflow.TaskInput
 import com.altran.optimind.model.workflow.Setter
 import com.altran.optimind.model.workflow.Connection
+import com.altran.optimind.model.workflow.Language
 
 class CustomTaskRunnerGenerator {
 	
 	@Accessors(PUBLIC_GETTER) var Workflow workflow
 	@Accessors(PUBLIC_GETTER) var String scriptsPackagePath
 	@Accessors(PUBLIC_GETTER) var int cammaCounter=0
+	@Accessors(PUBLIC_GETTER) var Language language
 	
-	new(Workflow workflow, String path) {
+	new(Workflow workflow, String path, Language lang) {
 		this.workflow = workflow
 		this.scriptsPackagePath = path
+		this.language = lang
 	}
 	
 	def generate() {
@@ -31,7 +34,14 @@ class CustomTaskRunnerGenerator {
 	}
 	
 	def createCustomTaskRunnerFile(CustomTask task) {
-		writeContent( generateFileContent(task), scriptsPackagePath+task.name+"."+"py")
+		if(language == Language.PYTHON)
+		{
+			writeContent( generateFileContent(task), scriptsPackagePath+task.name+"."+"py")	
+		}
+		else
+		{
+			writeContent( generateFileContent(task), scriptsPackagePath+task.name+"."+"java")
+		}	
 	}
 	
 	def String generateFileContent(CustomTask task) {
