@@ -49,59 +49,59 @@ class LibraryFunctionGenerator {
 	}
 	def String generateFileJavaContent(LibraryFunction libfunction){
 		'''
-		package scripts;
-		// ==================================================================================================
-		// MODULE IMPORT
-		// ==================================================================================================
-								
-		// ==================================================================================================
-		«var inputs= libfunction.inputs»
-		«var int size= inputs.size»
-		// ==================================================================================================
-		public class «libfunction.name» 
-		// ==================================================================================================
-		{
-			«var outputName=libfunction.outputs.get(0).name»
-			public static int «outputName» («FOR Input input : inputs» «input.typeAsString» «input.name»«IF cammaCounter<size-1»«increamentCammaCounter»,«ENDIF»«ENDFOR») {
-								
-				// Write your code after this line 
-						
-				return «outputName»(«FOR Input input : inputs»«input.name»«IF cammaCounter<size-1»«increamentCammaCounter»,«ENDIF»«ENDFOR»);
-				
-			}
-		}
+			package scripts;
+			// ==================================================================================================
+			// MODULE IMPORT
+			// ==================================================================================================
 									
-				
+			// ==================================================================================================
+			«var inputs= libfunction.inputs»
+			«var int size= inputs.size»
+			// ==================================================================================================
+			public class «libfunction.name» 
+			// ==================================================================================================
+			{
+				«var outputName=libfunction.outputs.get(0).name»
+				public static int «outputName» («FOR Input input : inputs» «input.typeAsString» «input.name»«IF cammaCounter<size-1»«increamentCammaCounter»,«ENDIF»«ENDFOR») {
+							
+					// Write your code after this line 
+					«var int size1= inputs.size»	
+					«reInitCammaCounter»	
+					return «outputName»(«FOR Input input : inputs» «input.name»«IF cammaCounter<size1-1»«increamentCammaCounter»,«ENDIF»«ENDFOR»);
+					
+				}
+			}
+										
+					
 		'''
 	}
 	
 	def String generateFilePythonContent(LibraryFunction libfunction) {
 		
-		'''
-		
-		
-		# ==================================================================================================
-		# Library Functions
-		# ==================================================================================================
-		«var inputs= libfunction.inputs»
-		«var int size= inputs.size»
-		def «libfunction.name» («FOR Input input : inputs» «input.name»«IF cammaCounter<size-1»«increamentCammaCounter»,«ENDIF»«ENDFOR»):
-			"""
-			This Library Function is designed to perform the operation "«libfunction.function»"
+		'''		
 			
-			«FOR Input input : inputs»
-				:param «input.name»: description
-				:type «input.name»: «input.typeAsString»
-			«ENDFOR»
-			«var outputName=libfunction.outputs.get(0).name»
-			:return «outputName»: results Description
-			:rtype «outputName»: «libfunction.outputs.get(0).typeAsString»
-			"""
-		
-			# Write your code after this line 
-		
-			return «outputName»
-		# ==================================================================================================
+			# ==================================================================================================
+			# Library Functions
+			# ==================================================================================================
+			«var inputs= libfunction.inputs»
+			«var int size= inputs.size»
+			def «libfunction.name» («FOR Input input : inputs» «input.name»«IF cammaCounter<size-1»«increamentCammaCounter»,«ENDIF»«ENDFOR»):
+				"""
+				This Library Function is designed to perform the operation "«libfunction.function»"
+				
+				«FOR Input input : inputs»
+					:param «input.name»: description
+					:type «input.name»: «input.typeAsString»
+				«ENDFOR»
+				«var outputName=libfunction.outputs.get(0).name»
+				:return «outputName»: results Description
+				:rtype «outputName»: «libfunction.outputs.get(0).typeAsString»
+				"""
+			
+				# Write your code after this line 
+			
+				return «outputName»
+			# ==================================================================================================
 		'''
 	}
 	
@@ -114,5 +114,9 @@ class LibraryFunctionGenerator {
 	
 	def void increamentCammaCounter(){
 		cammaCounter++
+	}
+	
+	def void reInitCammaCounter(){
+		cammaCounter = 0
 	}
 }

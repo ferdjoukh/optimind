@@ -272,7 +272,7 @@ public class DotGraphGenerator {
             _builder.append(_name_1, "\t\t\t\t\t");
             _builder.append(" [shape=none,style=filled,color=black,fillcolor=none,label = <");
             _builder.newLineIfNotEmpty();
-            _builder.append("\t\t\t\t\t");
+            _builder.append("\t\t\t\t\t\t");
             _builder.append("<TABLE BORDER=\"0\" CELLBORDER=\"1\" CELLSPACING=\"4\" CELLPADDING=\"4\">");
             _builder.newLine();
             _builder.append("\t");
@@ -331,14 +331,14 @@ public class DotGraphGenerator {
             _builder.append(_taskOutputsHTML, "\t");
             _builder.append(" <TD BORDER=\"0\"></TD></TR>");
             _builder.newLineIfNotEmpty();
-            _builder.append("\t\t\t\t\t");
+            _builder.append("\t\t\t\t\t\t");
             _builder.append("</TABLE>>];");
             _builder.newLine();
           }
         }
       }
     }
-    _builder.append("\t\t");
+    _builder.append("\t");
     _builder.newLine();
     _builder.append("}");
     _builder.newLine();

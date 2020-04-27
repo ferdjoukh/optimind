@@ -46,46 +46,46 @@ class CustomTaskRunnerGenerator {
 	
 	def String generateFileContent(CustomTask task) {
 		'''
-		# ==================================================================================================
-		# MODULE IMPORT
-		# ==================================================================================================
-		
-		# ==================================================================================================
-		
-		
-		# ==================================================================================================
-		# Custom Task Runner
-		# ==================================================================================================
-		«var inputs= task.inputs»
-		«var int size= inputs.size»
-		def «task.name» («FOR TaskInput input : inputs» «input.name»«IF cammaCounter<size-1»«increamentCammaCounter»,«ENDIF»«ENDFOR»):
-			"""
-			This Runner is designed to perform the operation "«task.runner»"
-			«FOR TaskInput input : inputs»
-				:param «input.name»: description
-				«IF input instanceof Setter»
-				:type  «input.name»: «input.typeAsString»
-				«ELSEIF input instanceof Connection»
-				:type  «input.name»: «input.taskoutput.typeAsString»	
+			# ==================================================================================================
+			# MODULE IMPORT
+			# ==================================================================================================
+			
+			# ==================================================================================================
+			
+			
+			# ==================================================================================================
+			# Custom Task Runner
+			# ==================================================================================================
+			«var inputs= task.inputs»
+			«var int size= inputs.size»
+			def «task.name» («FOR TaskInput input : inputs» «input.name»«IF cammaCounter<size-1»«increamentCammaCounter»,«ENDIF»«ENDFOR»):
+				"""
+				This Runner is designed to perform the operation "«task.runner»"
+				«FOR TaskInput input : inputs»
+					:param «input.name»: description
+					«IF input instanceof Setter»
+						:type  «input.name»: «input.typeAsString»
+					«ELSEIF input instanceof Connection»
+						:type  «input.name»: «input.taskoutput.typeAsString»	
+					«ENDIF»
+					
+				«ENDFOR»
+				«var output=task.outputs»
+				«IF output.empty »
+					# Write your code after this line 
+					"""
+				«ELSE»
+					:return «output.get(0).typeAsString»: results Description
+					:rtype «output.get(0).typeAsString»: «task.outputs.get(0).typeAsString»
+					"""
+										
+					# Write your code after this line 
+										
+					return «output.get(0).typeAsString»	
 				«ENDIF»
 				
-			«ENDFOR»
-			«var output=task.outputs»
-			«IF output.empty »
-			# Write your code after this line 
-			"""
-			«ELSE»
-			:return «output.get(0).typeAsString»: results Description
-			:rtype «output.get(0).typeAsString»: «task.outputs.get(0).typeAsString»
-			"""
-								
-			# Write your code after this line 
-								
-			return «output.get(0).typeAsString»	
-			«ENDIF»
-			
-			
-		# ==================================================================================================
+				
+			# ==================================================================================================
 		'''
 	}
 	

@@ -119,23 +119,30 @@ public class LibraryFunctionGenerator {
     }
     _builder.append(") {");
     _builder.newLineIfNotEmpty();
-    _builder.append("\t\t\t\t\t\t");
+    _builder.append("\t\t\t\t");
     _builder.newLine();
     _builder.append("\t\t");
     _builder.append("// Write your code after this line ");
     _builder.newLine();
-    _builder.append("\t\t\t\t");
-    _builder.newLine();
+    _builder.append("\t\t");
+    int size1 = inputs.size();
+    _builder.append("\t");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t\t");
+    this.reInitCammaCounter();
+    _builder.append("\t");
+    _builder.newLineIfNotEmpty();
     _builder.append("\t\t");
     _builder.append("return ");
     _builder.append(outputName, "\t\t");
     _builder.append("(");
     {
       for(final Input input_1 : inputs) {
+        _builder.append(" ");
         String _name_2 = input_1.getName();
         _builder.append(_name_2, "\t\t");
         {
-          if ((this.cammaCounter < (size - 1))) {
+          if ((this.cammaCounter < (size1 - 1))) {
             this.increamentCammaCounter();
             _builder.append(",");
           }
@@ -160,7 +167,6 @@ public class LibraryFunctionGenerator {
   
   public String generateFilePythonContent(final LibraryFunction libfunction) {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.newLine();
     _builder.newLine();
     _builder.append("# ==================================================================================================");
     _builder.newLine();
@@ -268,6 +274,10 @@ public class LibraryFunctionGenerator {
   
   public void increamentCammaCounter() {
     this.cammaCounter++;
+  }
+  
+  public void reInitCammaCounter() {
+    this.cammaCounter = 0;
   }
   
   @Pure
