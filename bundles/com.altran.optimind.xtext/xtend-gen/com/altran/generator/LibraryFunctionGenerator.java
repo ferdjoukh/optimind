@@ -63,6 +63,300 @@ public class LibraryFunctionGenerator {
       String _plus_5 = (_plus_4 + "java");
       this.writeContent(_generateFileJavaContent, _plus_5);
     }
+    this.writeContent(this.generateBaseTaskClass(), (this.libraryFunctionPackagePath + "BaseTask.java"));
+    this.writeContent(this.generateLibraryTaskClass(), (this.libraryFunctionPackagePath + "LibraryTask.java"));
+  }
+  
+  public String generateBaseTaskClass() {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("package scripts;");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("import java.util.ArrayList;");
+    _builder.newLine();
+    _builder.append("import java.util.List;");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("public class BaseTask {");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("String m_nameBaseTask; ");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("List<LibraryTask> m_listTask; ");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("public BaseTask(String name, Object nullObject1, Object nullObject2)");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("{");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("this.m_nameBaseTask = name ; ");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("this.m_listTask = new ArrayList<LibraryTask>();");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("public void addTaskToList(LibraryTask task)");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("{");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("m_listTask.add(task); ");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("public void add_setter(String nameLibrary, int value)");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("{");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("LibraryTask selectedLib = null ; ");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("for (LibraryTask lib : m_listTask)");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("{");
+    _builder.newLine();
+    _builder.append("\t\t\t");
+    _builder.append("if(lib.m_libraryFunction instanceof Factorial)");
+    _builder.newLine();
+    _builder.append("\t\t\t");
+    _builder.append("{");
+    _builder.newLine();
+    _builder.append("\t\t\t\t");
+    _builder.append("if(nameLibrary == m_nameBaseTask + \".\" + lib.m_nameTask + \".n\")");
+    _builder.newLine();
+    _builder.append("\t\t\t\t");
+    _builder.append("{");
+    _builder.newLine();
+    _builder.append("\t\t\t\t\t");
+    _builder.append("selectedLib = lib ; ");
+    _builder.newLine();
+    _builder.append("\t\t\t\t");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.append("\t\t\t");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.append("\t\t\t");
+    _builder.append("else");
+    _builder.newLine();
+    _builder.append("\t\t\t");
+    _builder.append("{");
+    _builder.newLine();
+    _builder.append("\t\t\t\t");
+    _builder.append("if(lib.m_libraryFunction instanceof DifFunction)");
+    _builder.newLine();
+    _builder.append("\t\t\t\t");
+    _builder.append("{");
+    _builder.newLine();
+    _builder.append("\t\t\t\t\t");
+    _builder.append("if(nameLibrary == m_nameBaseTask + \".\" + lib.m_nameTask + \".a\" || nameLibrary == m_nameBaseTask + \".\" + lib.m_nameTask + \".b\")");
+    _builder.newLine();
+    _builder.append("\t\t\t\t\t");
+    _builder.append("{");
+    _builder.newLine();
+    _builder.append("\t\t\t\t\t\t");
+    _builder.append("selectedLib = lib ; ");
+    _builder.newLine();
+    _builder.append("\t\t\t\t\t");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.append("\t\t\t\t");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.append("\t\t\t");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.append("\t\t\t");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("if(selectedLib.m_libraryFunction instanceof Factorial)");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("{");
+    _builder.newLine();
+    _builder.append("\t\t\t");
+    _builder.append("selectedLib.m_libFact.set_n(value);");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("else");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("{");
+    _builder.newLine();
+    _builder.append("\t\t\t");
+    _builder.append("if(selectedLib.m_libraryFunction instanceof DifFunction)");
+    _builder.newLine();
+    _builder.append("\t\t\t");
+    _builder.append("{");
+    _builder.newLine();
+    _builder.append("\t\t\t\t");
+    _builder.append("if(nameLibrary == m_nameBaseTask + \".\" + selectedLib.m_nameTask + \".a\")");
+    _builder.newLine();
+    _builder.append("\t\t\t\t");
+    _builder.append("{");
+    _builder.newLine();
+    _builder.append("\t\t\t\t\t");
+    _builder.append("selectedLib.m_libDif.set_a(value);");
+    _builder.newLine();
+    _builder.append("\t\t\t\t");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.append("\t\t\t\t");
+    _builder.append("else");
+    _builder.newLine();
+    _builder.append("\t\t\t\t");
+    _builder.append("{");
+    _builder.newLine();
+    _builder.append("\t\t\t\t\t");
+    _builder.append("selectedLib.m_libDif.set_b(value);");
+    _builder.newLine();
+    _builder.append("\t\t\t\t");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.append("\t\t\t\t");
+    _builder.newLine();
+    _builder.append("\t\t\t");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("public void create_connection(LibraryTask task1, String variableName, LibraryTask task2, String variableName2)");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("{");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("public void create_connection(BaseTask task1, String variableName, LibraryTask task2, String variableName2)");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("{");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.newLine();
+    _builder.append("}");
+    _builder.newLine();
+    return _builder.toString();
+  }
+  
+  public String generateLibraryTaskClass() {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("package scripts;");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("public class LibraryTask {");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("String m_nameTask ; ");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("BaseTask m_baseTaskParent; ");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("Object m_libraryFunction;");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("Factorial m_libFact ; ");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("DifFunction m_libDif; ");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("RecombineFunction m_libRecombine; ");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("public LibraryTask(String name, BaseTask baseTask, Object nullObject, Object libraryFunction)");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("{");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("this.m_nameTask = name ; ");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("this.m_baseTaskParent = baseTask ; ");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("this.m_libraryFunction = libraryFunction; ");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("if(libraryFunction instanceof Factorial)");
+    _builder.newLine();
+    _builder.append("\t\t\t");
+    _builder.append("this.m_libFact = (Factorial) libraryFunction; ");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("if(libraryFunction instanceof DifFunction)");
+    _builder.newLine();
+    _builder.append("\t\t\t");
+    _builder.append("this.m_libDif = (DifFunction) libraryFunction; ");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("if(libraryFunction instanceof RecombineFunction)");
+    _builder.newLine();
+    _builder.append("\t\t\t");
+    _builder.append("this.m_libRecombine = (RecombineFunction) libraryFunction;");
+    _builder.newLine();
+    _builder.append("\t\t\t\t");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("}\t");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("}");
+    _builder.newLine();
+    _builder.newLine();
+    return _builder.toString();
   }
   
   public String generateFileJavaContent(final LibraryFunction libfunction) {
@@ -98,19 +392,44 @@ public class LibraryFunctionGenerator {
     String outputName = libfunction.getOutputs().get(0).getName();
     _builder.newLineIfNotEmpty();
     _builder.append("\t");
-    _builder.append("public static int ");
-    _builder.append(outputName, "\t");
-    _builder.append(" (");
     {
       for(final Input input : inputs) {
-        _builder.append(" ");
         String _typeAsString = input.getTypeAsString();
         _builder.append(_typeAsString, "\t");
         _builder.append(" ");
         String _name_1 = input.getName();
         _builder.append(_name_1, "\t");
         {
-          if ((this.cammaCounter < (size - 1))) {
+          if ((this.cammaCounter < size)) {
+            this.increamentCammaCounter();
+            _builder.append(";");
+          }
+        }
+      }
+    }
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t");
+    int size1 = inputs.size();
+    _builder.append("\t");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t");
+    this.reInitCammaCounter();
+    _builder.append("\t");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t");
+    _builder.append("public static int ");
+    _builder.append(outputName, "\t");
+    _builder.append(" (");
+    {
+      for(final Input input_1 : inputs) {
+        _builder.append(" ");
+        String _typeAsString_1 = input_1.getTypeAsString();
+        _builder.append(_typeAsString_1, "\t");
+        _builder.append(" ");
+        String _name_2 = input_1.getName();
+        _builder.append(_name_2, "\t");
+        {
+          if ((this.cammaCounter < (size1 - 1))) {
             this.increamentCammaCounter();
             _builder.append(",");
           }
@@ -125,7 +444,7 @@ public class LibraryFunctionGenerator {
     _builder.append("// Write your code after this line ");
     _builder.newLine();
     _builder.append("\t\t");
-    int size1 = inputs.size();
+    int size2 = inputs.size();
     _builder.append("\t");
     _builder.newLineIfNotEmpty();
     _builder.append("\t\t");
@@ -137,12 +456,12 @@ public class LibraryFunctionGenerator {
     _builder.append(outputName, "\t\t");
     _builder.append("(");
     {
-      for(final Input input_1 : inputs) {
+      for(final Input input_2 : inputs) {
         _builder.append(" ");
-        String _name_2 = input_1.getName();
-        _builder.append(_name_2, "\t\t");
+        String _name_3 = input_2.getName();
+        _builder.append(_name_3, "\t\t");
         {
-          if ((this.cammaCounter < (size1 - 1))) {
+          if ((this.cammaCounter < (size2 - 1))) {
             this.increamentCammaCounter();
             _builder.append(",");
           }
@@ -155,6 +474,32 @@ public class LibraryFunctionGenerator {
     _builder.newLine();
     _builder.append("\t");
     _builder.append("}");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.newLine();
+    _builder.append("\t");
+    {
+      for(final Input input_3 : inputs) {
+        _builder.append(" public void set_");
+        String _name_4 = input_3.getName();
+        _builder.append(_name_4, "\t");
+        _builder.append("(");
+        String _typeAsString_2 = input_3.getTypeAsString();
+        _builder.append(_typeAsString_2, "\t");
+        _builder.append(" value) {this.");
+        String _name_5 = input_3.getName();
+        _builder.append(_name_5, "\t");
+        _builder.append(" = value;} ");
+        {
+          if ((this.cammaCounter < (size - 1))) {
+            this.increamentCammaCounter();
+            _builder.append(" \\n ");
+          }
+        }
+      }
+    }
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t");
     _builder.newLine();
     _builder.append("}");
     _builder.newLine();

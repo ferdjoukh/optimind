@@ -46,7 +46,127 @@ class LibraryFunctionGenerator {
 			writeContent( generateFileJavaContent(function), libraryFunctionPackagePath+function.name+"."+"java")	
 		}
 		
+		writeContent( generateBaseTaskClass(), libraryFunctionPackagePath+"BaseTask.java")	
+		writeContent( generateLibraryTaskClass(), libraryFunctionPackagePath+"LibraryTask.java")	
 	}
+	
+	def String generateBaseTaskClass(){
+		'''
+		package scripts;
+		
+		import java.util.ArrayList;
+		import java.util.List;
+		
+		public class BaseTask {
+		
+			String m_nameBaseTask; 
+			List<LibraryTask> m_listTask; 
+			
+			public BaseTask(String name, Object nullObject1, Object nullObject2)
+			{
+				this.m_nameBaseTask = name ; 
+				this.m_listTask = new ArrayList<LibraryTask>();
+			}
+			
+			public void addTaskToList(LibraryTask task)
+			{
+				m_listTask.add(task); 
+			}
+			
+			public void add_setter(String nameLibrary, int value)
+			{
+				LibraryTask selectedLib = null ; 
+				for (LibraryTask lib : m_listTask)
+				{
+					if(lib.m_libraryFunction instanceof Factorial)
+					{
+						if(nameLibrary == m_nameBaseTask + "." + lib.m_nameTask + ".n")
+						{
+							selectedLib = lib ; 
+						}
+					}
+					else
+					{
+						if(lib.m_libraryFunction instanceof DifFunction)
+						{
+							if(nameLibrary == m_nameBaseTask + "." + lib.m_nameTask + ".a" || nameLibrary == m_nameBaseTask + "." + lib.m_nameTask + ".b")
+							{
+								selectedLib = lib ; 
+							}
+						}
+					}
+					
+				}
+				
+				if(selectedLib.m_libraryFunction instanceof Factorial)
+				{
+					selectedLib.m_libFact.set_n(value);
+				}
+				else
+				{
+					if(selectedLib.m_libraryFunction instanceof DifFunction)
+					{
+						if(nameLibrary == m_nameBaseTask + "." + selectedLib.m_nameTask + ".a")
+						{
+							selectedLib.m_libDif.set_a(value);
+						}
+						else
+						{
+							selectedLib.m_libDif.set_b(value);
+						}
+						
+					}
+				}
+			}
+			
+			public void create_connection(LibraryTask task1, String variableName, LibraryTask task2, String variableName2)
+			{
+				
+			}
+			
+			public void create_connection(BaseTask task1, String variableName, LibraryTask task2, String variableName2)
+			{
+				
+			}
+			
+		}
+		'''
+	}
+	
+	def String generateLibraryTaskClass()
+	{
+		'''
+		package scripts;
+		
+		public class LibraryTask {
+		
+			String m_nameTask ; 
+			BaseTask m_baseTaskParent; 
+			Object m_libraryFunction;
+			Factorial m_libFact ; 
+			DifFunction m_libDif; 
+			RecombineFunction m_libRecombine; 
+			
+			public LibraryTask(String name, BaseTask baseTask, Object nullObject, Object libraryFunction)
+			{
+				this.m_nameTask = name ; 
+				this.m_baseTaskParent = baseTask ; 
+				this.m_libraryFunction = libraryFunction; 
+				
+				if(libraryFunction instanceof Factorial)
+					this.m_libFact = (Factorial) libraryFunction; 
+				if(libraryFunction instanceof DifFunction)
+					this.m_libDif = (DifFunction) libraryFunction; 
+				if(libraryFunction instanceof RecombineFunction)
+					this.m_libRecombine = (RecombineFunction) libraryFunction;
+						
+			}	
+		
+		}
+		
+		'''
+	}
+	
 	def String generateFileJavaContent(LibraryFunction libfunction){
 		'''
 			package scripts;
@@ -62,14 +182,20 @@ class LibraryFunctionGenerator {
 			// ==================================================================================================
 			{
 				«var outputName=libfunction.outputs.get(0).name»
-				public static int «outputName» («FOR Input input : inputs» «input.typeAsString» «input.name»«IF cammaCounter<size-1»«increamentCammaCounter»,«ENDIF»«ENDFOR») {
+				«FOR Input input : inputs»«input.typeAsString» «input.name»«IF cammaCounter<size»«increamentCammaCounter»;«ENDIF»«ENDFOR»
+				«var int size1= inputs.size»	
+				«reInitCammaCounter»	
+				public static int «outputName» («FOR Input input : inputs» «input.typeAsString» «input.name»«IF cammaCounter<size1-1»«increamentCammaCounter»,«ENDIF»«ENDFOR») {
 							
 					// Write your code after this line 
-					«var int size1= inputs.size»	
+					«var int size2= inputs.size»	
 					«reInitCammaCounter»	
-					return «outputName»(«FOR Input input : inputs» «input.name»«IF cammaCounter<size1-1»«increamentCammaCounter»,«ENDIF»«ENDFOR»);
+					return «outputName»(«FOR Input input : inputs» «input.name»«IF cammaCounter<size2-1»«increamentCammaCounter»,«ENDIF»«ENDFOR»);
 					
 				}
+				
+				«FOR Input input : inputs» public void set_«input.name»(«input.typeAsString» value) {this.«input.name» = value;} «IF cammaCounter<size-1»«increamentCammaCounter» \n «ENDIF»«ENDFOR»
+				
 			}
 										
 					
