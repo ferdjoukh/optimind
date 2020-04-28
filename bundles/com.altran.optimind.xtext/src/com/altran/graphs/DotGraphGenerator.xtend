@@ -150,8 +150,7 @@ import com.altran.optimind.model.workflow.CustomTask
 		
 			«««»«FOR basetask : workflow.tasks.filter(BaseTask)»
 			«generateCluster(workflow.baseTask)»
-			«««»«ENDFOR»	
-			
+			«»			
 			//Connections
 			«var allConnections = EcoreUtil2.getAllContentsOfType(workflow, Connection)»
 			
@@ -167,55 +166,55 @@ import com.altran.optimind.model.workflow.CustomTask
 	
 	def String generateCluster(BaseTask baseTask){
 		'''
-		subgraph cluster«this.cluster++» {
-			«var toto = "pouet"»
-			style=filled;
-			fillcolor=white;
-			color=blue;
-			margin=20;
-			label = "«baseTask.name»";
-			
-			//Children
-			«FOR task : baseTask.children»
-				«IF task instanceof BaseTask»
-					«generateCluster(task)»
-				«ELSE»
-					««««task.name» [shape=record,style=filled,color=black,fillcolor=white,label="{ «taskInputs(task)» | {«task.name»} | «taskOutputs(task)» }"];
-					«task.name» [shape=none,style=filled,color=black,fillcolor=none,label = <
-					<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="4" CELLPADDING="4">
-						<TR><TD BORDER="0"></TD>«taskInputsHTML(task)» <TD BORDER="0"></TD></TR>
-						<TR><TD BGCOLOR="gray" COLSPAN="«maxIO(task)+2»">«task.name»</TD></TR>
-						
-						«IF task instanceof LibraryTask»
-						<TR><TD BGCOLOR="blue" COLSPAN="«maxIO(task)+2»">«task.libraryfunction.name»</TD></TR>
-						«ENDIF»
-						
-						«IF task instanceof CustomTask»
-						<TR><TD BGCOLOR="lightblue" COLSPAN="«maxIO(task)+2»">«task.runner»</TD></TR>
-						«ENDIF»
-						
-						<TR><TD BORDER="0"></TD>«taskOutputsHTML(task)» <TD BORDER="0"></TD></TR>
-					</TABLE>>];
-				«ENDIF»	
-			«ENDFOR»
+			subgraph cluster«this.cluster++» {
+				«var toto = "pouet"»
+				style=filled;
+				fillcolor=white;
+				color=blue;
+				margin=20;
+				label = "«baseTask.name»";
 				
-		}
+				//Children
+				«FOR task : baseTask.children»
+					«IF task instanceof BaseTask»
+						«generateCluster(task)»
+					«ELSE»
+						««««task.name» [shape=record,style=filled,color=black,fillcolor=white,label="{ «taskInputs(task)» | {«task.name»} | «taskOutputs(task)» }"];
+					«task.name» [shape=none,style=filled,color=black,fillcolor=none,label = <
+						<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="4" CELLPADDING="4">
+							<TR><TD BORDER="0"></TD>«taskInputsHTML(task)» <TD BORDER="0"></TD></TR>
+							<TR><TD BGCOLOR="gray" COLSPAN="«maxIO(task)+2»">«task.name»</TD></TR>
+							
+							«IF task instanceof LibraryTask»
+								<TR><TD BGCOLOR="blue" COLSPAN="«maxIO(task)+2»">«task.libraryfunction.name»</TD></TR>
+							«ENDIF»
+							
+							«IF task instanceof CustomTask»
+								<TR><TD BGCOLOR="lightblue" COLSPAN="«maxIO(task)+2»">«task.runner»</TD></TR>
+							«ENDIF»
+							
+							<TR><TD BORDER="0"></TD>«taskOutputsHTML(task)» <TD BORDER="0"></TD></TR>
+						</TABLE>>];
+					«ENDIF»	
+				«ENDFOR»
+				
+			}
 		'''
 	}
 	
 	def taskOutputsHTML(AbstractTask task) {
 		'''
-		«FOR output : task.outputs BEFORE '' SEPARATOR '' AFTER ''»
-			<TD PORT="«output.name»" BGCOLOR="green" BORDER="0">«output.name»</TD>			
-		«ENDFOR»
+			«FOR output : task.outputs BEFORE '' SEPARATOR '' AFTER ''»
+				<TD PORT="«output.name»" BGCOLOR="green" BORDER="0">«output.name»</TD>			
+			«ENDFOR»
 		'''	
 	}
 	
 	def taskInputsHTML(AbstractTask task) {
 		'''
-		«FOR input : task.inputs BEFORE '' SEPARATOR '' AFTER ''»
-			<TD PORT="«input.name»" BGCOLOR="yellow" BORDER="0">«input.name»</TD>			
-		«ENDFOR»
+			«FOR input : task.inputs BEFORE '' SEPARATOR '' AFTER ''»
+				<TD PORT="«input.name»" BGCOLOR="yellow" BORDER="0">«input.name»</TD>			
+			«ENDFOR»
 		'''	
 	}
 	
@@ -229,21 +228,21 @@ import com.altran.optimind.model.workflow.CustomTask
 	
 	def taskOutputs(AbstractTask task) {
 		'''
-		{
-		«FOR output : task.outputs BEFORE '' SEPARATOR '|' AFTER ''»
-			<«output.name»> «output.name»
-		«ENDFOR»
-		}
+			{
+			«FOR output : task.outputs BEFORE '' SEPARATOR '|' AFTER ''»
+				<«output.name»> «output.name»
+			«ENDFOR»
+			}
 		'''	
 	}
 	
 	def taskInputs(AbstractTask task) {
 		'''
-		{
-		«FOR input : task.inputs BEFORE '' SEPARATOR '|' AFTER ''»
-			<«input.name»> «input.name»
-		«ENDFOR»
-		}
+			{
+			«FOR input : task.inputs BEFORE '' SEPARATOR '|' AFTER ''»
+				<«input.name»> «input.name»
+			«ENDFOR»
+			}
 		'''	
 	}
 	

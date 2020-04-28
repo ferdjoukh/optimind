@@ -32,16 +32,10 @@
 		</buildCommand>
 	</buildSpec>
 	<natures>
+		<nature>org.eclipse.sirius.nature.modelingproject</nature>
 		<nature>org.eclipse.m2e.core.maven2Nature</nature>
 		<nature>org.eclipse.xtext.ui.shared.xtextNature</nature>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 		<nature>org.eclipse.pde.PluginNature</nature>
 	</natures>
-	<linkedResources>
-		<link>
-			<name>com.altran.optimind.model.workflow</name>
-			<type>2</type>
-			<location>C:/Users/AdminEtu/Desktop/Project Workflow/Master-ICE/optimind_rcp/bundles/com.altran.optimind.model.workflow</location>
-		</link>
-	</linkedResources>
 </projectDescription>

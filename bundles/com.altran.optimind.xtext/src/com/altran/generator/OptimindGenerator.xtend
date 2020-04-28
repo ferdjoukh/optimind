@@ -6,6 +6,7 @@ package com.altran.generator
 import com.altran.Utils.Utils
 import com.altran.graphs.DotGraphGenerator
 import com.altran.optimind.model.workflow.Workflow
+import com.altran.optimind.model.workflow.Language
 import java.io.File
 import org.eclipse.core.resources.IFile
 import org.eclipse.emf.ecore.resource.Resource
@@ -26,13 +27,19 @@ class OptimindGenerator extends AbstractGenerator {
 		
 		var String resourcePath = getResourceFilePath(resource)
 		new DotGraphGenerator(resourcePath, workflow).createDotFile()
+		var String filePath =createFilePath(resourcePath, workflow.language)
 		
-		var String pythonFilePath =createPythonFilePath(resourcePath)
-		new PythonCodeGenerator(workflow,pythonFilePath).generate()
-		
+		if(workflow.language == Language.PYTHON)
+		{
+			new PythonCodeGenerator(workflow,filePath).generate()	
+		}	
+		else
+			new JavaCodeGenerator(workflow,filePath).generate()			
+					
 		var String scriptsPackagePath = createPackagePath(resourcePath)
-		new LibraryFunctionGenerator(workflow,scriptsPackagePath).generate()
-		new CustomTaskRunnerGenerator(workflow, scriptsPackagePath).generate()
+		
+		new LibraryFunctionGenerator(workflow,scriptsPackagePath, workflow.language).generate()	
+		new CustomTaskRunnerGenerator(workflow, scriptsPackagePath, workflow.language).generate()
 		
 	}
 	
@@ -57,7 +64,7 @@ class OptimindGenerator extends AbstractGenerator {
 		file.path
 	}
 	
-	def String createPythonFilePath(String workflowFilePath) {
+	def String createFilePath(String workflowFilePath, Language language) {
 		var String name
 		
 		if (workflowFilePath.contains(".")) {
@@ -66,8 +73,12 @@ class OptimindGenerator extends AbstractGenerator {
 		}else {
 			name = workflowFilePath;
 		}
-		
-		name + ".py";
+		if(language == Language.PYTHON)
+		{
+			name + ".py";
+		}	
+		else
+			name + ".java"; 
 	}
 	
 	def Workflow getWorkflowFromResource(Resource resource){

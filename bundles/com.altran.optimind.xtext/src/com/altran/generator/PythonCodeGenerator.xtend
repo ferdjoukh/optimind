@@ -151,11 +151,11 @@ import com.altran.optimind.model.workflow.Setter
 					«var connectionContainer=connection.eContainer as AbstractTask»
 					«var outputContainer=connection.taskoutput.eContainer as AbstractTask»
 					«IF connectionContainer.eContainer === outputContainer.eContainer»
-					«workflow.baseTask.name».create_connection(«outputContainer.name», "«connection.taskoutput.name»",«connectionContainer.name», "«connection.name»" )
+						«workflow.baseTask.name».create_connection(«outputContainer.name», "«connection.taskoutput.name»",«connectionContainer.name», "«connection.name»" )
 					«ELSEIF connectionContainer.eContainer.eContainer instanceof Workflow »
-					«workflow.baseTask.name».create_connection(«(outputContainer.eContainer as AbstractTask).name», "«outputContainer.name+"."+connection.taskoutput.name»",«connectionContainer.name», "«connection.name»" )
+						«workflow.baseTask.name».create_connection(«(outputContainer.eContainer as AbstractTask).name», "«outputContainer.name+"."+connection.taskoutput.name»",«connectionContainer.name», "«connection.name»" )
 					«ELSEIF outputContainer.eContainer.eContainer instanceof Workflow  »
-					«workflow.baseTask.name».create_connection(«outputContainer.name», "«connection.taskoutput.name»",«(connectionContainer.eContainer as AbstractTask).name», "«connectionContainer.name+"."+connection.name»" )
+						«workflow.baseTask.name».create_connection(«outputContainer.name», "«connection.taskoutput.name»",«(connectionContainer.eContainer as AbstractTask).name», "«connectionContainer.name+"."+connection.name»" )
 					«ELSE»
 						«checkNextParentBaseTask(connectionContainer.eContainer as AbstractTask,
 							connectionContainer.name+"."+connection.name,
@@ -172,11 +172,11 @@ import com.altran.optimind.model.workflow.Setter
 		String outputExternalName) {
 		'''
 			«IF connectionParent.eContainer === outputParent.eContainer»
-			«workflow.baseTask.name».create_connection(«outputParent.name», "«outputExternalName»",«connectionParent.name», "«connectionExternalName»" )
+				«workflow.baseTask.name».create_connection(«outputParent.name», "«outputExternalName»",«connectionParent.name», "«connectionExternalName»" )
 			«ELSEIF connectionParent.eContainer.eContainer instanceof Workflow »
-			«workflow.baseTask.name».create_connection(«(outputParent.eContainer as AbstractTask).name», "«outputParent.name+"."+outputExternalName»",«connectionParent.name», "«connectionExternalName»" )
+				«workflow.baseTask.name».create_connection(«(outputParent.eContainer as AbstractTask).name», "«outputParent.name+"."+outputExternalName»",«connectionParent.name», "«connectionExternalName»" )
 			«ELSEIF outputParent.eContainer.eContainer instanceof Workflow  »
-			«workflow.baseTask.name».create_connection(«outputParent.name», "«outputExternalName»",«(connectionParent.eContainer as AbstractTask).name», "«connectionParent.name+"."+connectionExternalName»" )
+				«workflow.baseTask.name».create_connection(«outputParent.name», "«outputExternalName»",«(connectionParent.eContainer as AbstractTask).name», "«connectionParent.name+"."+connectionExternalName»" )
 			«ELSE»
 				«checkNextParentBaseTask(connectionParent.eContainer as AbstractTask,
 					connectionParent.name+"."+connectionExternalName,
