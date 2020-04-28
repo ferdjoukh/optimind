@@ -52,6 +52,8 @@ class LibraryFunctionGenerator {
 	
 	def String generateBaseTaskClass(){
 		'''
+		«var allLibraryFunction = workflow.functions»
+		
 		package scripts;
 		
 		import java.util.ArrayList;
@@ -75,48 +77,7 @@ class LibraryFunctionGenerator {
 			
 			public void add_setter(String nameLibrary, int value)
 			{
-				LibraryTask selectedLib = null ; 
-				for (LibraryTask lib : m_listTask)
-				{
-					if(lib.m_libraryFunction instanceof Factorial)
-					{
-						if(nameLibrary == m_nameBaseTask + "." + lib.m_nameTask + ".n")
-						{
-							selectedLib = lib ; 
-						}
-					}
-					else
-					{
-						if(lib.m_libraryFunction instanceof DifFunction)
-						{
-							if(nameLibrary == m_nameBaseTask + "." + lib.m_nameTask + ".a" || nameLibrary == m_nameBaseTask + "." + lib.m_nameTask + ".b")
-							{
-								selectedLib = lib ; 
-							}
-						}
-					}
-					
-				}
 				
-				if(selectedLib.m_libraryFunction instanceof Factorial)
-				{
-					selectedLib.m_libFact.set_n(value);
-				}
-				else
-				{
-					if(selectedLib.m_libraryFunction instanceof DifFunction)
-					{
-						if(nameLibrary == m_nameBaseTask + "." + selectedLib.m_nameTask + ".a")
-						{
-							selectedLib.m_libDif.set_a(value);
-						}
-						else
-						{
-							selectedLib.m_libDif.set_b(value);
-						}
-						
-					}
-				}
 			}
 			
 			public void create_connection(LibraryTask task1, String variableName, LibraryTask task2, String variableName2)
@@ -143,9 +104,6 @@ class LibraryFunctionGenerator {
 			String m_nameTask ; 
 			BaseTask m_baseTaskParent; 
 			Object m_libraryFunction;
-			Factorial m_libFact ; 
-			DifFunction m_libDif; 
-			RecombineFunction m_libRecombine; 
 			
 			public LibraryTask(String name, BaseTask baseTask, Object nullObject, Object libraryFunction)
 			{
@@ -153,12 +111,7 @@ class LibraryFunctionGenerator {
 				this.m_baseTaskParent = baseTask ; 
 				this.m_libraryFunction = libraryFunction; 
 				
-				if(libraryFunction instanceof Factorial)
-					this.m_libFact = (Factorial) libraryFunction; 
-				if(libraryFunction instanceof DifFunction)
-					this.m_libDif = (DifFunction) libraryFunction; 
-				if(libraryFunction instanceof RecombineFunction)
-					this.m_libRecombine = (RecombineFunction) libraryFunction;
+				
 						
 			}	
 		
@@ -195,6 +148,8 @@ class LibraryFunctionGenerator {
 				}
 				
 				«FOR Input input : inputs» public void set_«input.name»(«input.typeAsString» value) {this.«input.name» = value;} «IF cammaCounter<size-1»«increamentCammaCounter» \n «ENDIF»«ENDFOR»
+				
+				«FOR Input input : inputs» public «input.typeAsString» get_«input.name»() {return this.«input.name»;} «IF cammaCounter<size-1»«increamentCammaCounter» \n «ENDIF»«ENDFOR»
 				
 			}
 										
