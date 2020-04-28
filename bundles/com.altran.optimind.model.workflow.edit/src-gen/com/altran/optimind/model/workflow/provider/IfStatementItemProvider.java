@@ -154,6 +154,15 @@ public class IfStatementItemProvider extends AbstractStatementItemProvider {
 		newChildDescriptors.add(createChildParameter(WorkflowPackage.Literals.IF_STATEMENT__THEN,
 				WorkflowFactory.eINSTANCE.createCustomTask()));
 
+		newChildDescriptors.add(createChildParameter(WorkflowPackage.Literals.IF_STATEMENT__THEN,
+				WorkflowFactory.eINSTANCE.createWhileStatement()));
+
+		newChildDescriptors.add(createChildParameter(WorkflowPackage.Literals.IF_STATEMENT__THEN,
+				WorkflowFactory.eINSTANCE.createForStatement()));
+
+		newChildDescriptors.add(createChildParameter(WorkflowPackage.Literals.IF_STATEMENT__THEN,
+				WorkflowFactory.eINSTANCE.createIfStatement()));
+
 		newChildDescriptors.add(createChildParameter(WorkflowPackage.Literals.IF_STATEMENT__ELSE,
 				WorkflowFactory.eINSTANCE.createBaseTask()));
 
@@ -162,6 +171,15 @@ public class IfStatementItemProvider extends AbstractStatementItemProvider {
 
 		newChildDescriptors.add(createChildParameter(WorkflowPackage.Literals.IF_STATEMENT__ELSE,
 				WorkflowFactory.eINSTANCE.createCustomTask()));
+
+		newChildDescriptors.add(createChildParameter(WorkflowPackage.Literals.IF_STATEMENT__ELSE,
+				WorkflowFactory.eINSTANCE.createWhileStatement()));
+
+		newChildDescriptors.add(createChildParameter(WorkflowPackage.Literals.IF_STATEMENT__ELSE,
+				WorkflowFactory.eINSTANCE.createForStatement()));
+
+		newChildDescriptors.add(createChildParameter(WorkflowPackage.Literals.IF_STATEMENT__ELSE,
+				WorkflowFactory.eINSTANCE.createIfStatement()));
 	}
 
 	/**

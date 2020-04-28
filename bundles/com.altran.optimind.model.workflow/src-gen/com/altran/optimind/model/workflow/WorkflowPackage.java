@@ -324,22 +324,13 @@ public interface WorkflowPackage extends EPackage {
 	int BASE_TASK__CHILDREN = ABSTRACT_TASK_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Abstractstatement</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BASE_TASK__ABSTRACTSTATEMENT = ABSTRACT_TASK_FEATURE_COUNT + 1;
-
-	/**
 	 * The number of structural features of the '<em>Base Task</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BASE_TASK_FEATURE_COUNT = ABSTRACT_TASK_FEATURE_COUNT + 2;
+	int BASE_TASK_FEATURE_COUNT = ABSTRACT_TASK_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Base Task</em>' class.
@@ -1112,13 +1103,40 @@ public interface WorkflowPackage extends EPackage {
 	int ABSTRACT_STATEMENT__NAME = NAMED_ELEMENT__NAME;
 
 	/**
+	 * The feature id for the '<em><b>Inputs</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_STATEMENT__INPUTS = NAMED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Outputs</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_STATEMENT__OUTPUTS = NAMED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Status</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_STATEMENT__STATUS = NAMED_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
 	 * The feature id for the '<em><b>Condition</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_STATEMENT__CONDITION = NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int ABSTRACT_STATEMENT__CONDITION = NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Abstract Statement</em>' class.
@@ -1127,7 +1145,7 @@ public interface WorkflowPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_STATEMENT_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int ABSTRACT_STATEMENT_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of operations of the '<em>Abstract Statement</em>' class.
@@ -1156,6 +1174,33 @@ public interface WorkflowPackage extends EPackage {
 	 * @ordered
 	 */
 	int WHILE_STATEMENT__NAME = ABSTRACT_STATEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Inputs</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WHILE_STATEMENT__INPUTS = ABSTRACT_STATEMENT__INPUTS;
+
+	/**
+	 * The feature id for the '<em><b>Outputs</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WHILE_STATEMENT__OUTPUTS = ABSTRACT_STATEMENT__OUTPUTS;
+
+	/**
+	 * The feature id for the '<em><b>Status</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WHILE_STATEMENT__STATUS = ABSTRACT_STATEMENT__STATUS;
 
 	/**
 	 * The feature id for the '<em><b>Condition</b></em>' attribute.
@@ -1211,6 +1256,33 @@ public interface WorkflowPackage extends EPackage {
 	 * @ordered
 	 */
 	int FOR_STATEMENT__NAME = WHILE_STATEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Inputs</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FOR_STATEMENT__INPUTS = WHILE_STATEMENT__INPUTS;
+
+	/**
+	 * The feature id for the '<em><b>Outputs</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FOR_STATEMENT__OUTPUTS = WHILE_STATEMENT__OUTPUTS;
+
+	/**
+	 * The feature id for the '<em><b>Status</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FOR_STATEMENT__STATUS = WHILE_STATEMENT__STATUS;
 
 	/**
 	 * The feature id for the '<em><b>Condition</b></em>' attribute.
@@ -1293,6 +1365,33 @@ public interface WorkflowPackage extends EPackage {
 	 * @ordered
 	 */
 	int IF_STATEMENT__NAME = ABSTRACT_STATEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Inputs</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IF_STATEMENT__INPUTS = ABSTRACT_STATEMENT__INPUTS;
+
+	/**
+	 * The feature id for the '<em><b>Outputs</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IF_STATEMENT__OUTPUTS = ABSTRACT_STATEMENT__OUTPUTS;
+
+	/**
+	 * The feature id for the '<em><b>Status</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IF_STATEMENT__STATUS = ABSTRACT_STATEMENT__STATUS;
 
 	/**
 	 * The feature id for the '<em><b>Condition</b></em>' attribute.
@@ -1485,17 +1584,6 @@ public interface WorkflowPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getBaseTask_Children();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link com.altran.optimind.model.workflow.BaseTask#getAbstractstatement <em>Abstractstatement</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Abstractstatement</em>'.
-	 * @see com.altran.optimind.model.workflow.BaseTask#getAbstractstatement()
-	 * @see #getBaseTask()
-	 * @generated
-	 */
-	EReference getBaseTask_Abstractstatement();
 
 	/**
 	 * Returns the meta object for class '{@link com.altran.optimind.model.workflow.TaskOutput <em>Task Output</em>}'.
@@ -1991,14 +2079,6 @@ public interface WorkflowPackage extends EPackage {
 		 * @generated
 		 */
 		EReference BASE_TASK__CHILDREN = eINSTANCE.getBaseTask_Children();
-
-		/**
-		 * The meta object literal for the '<em><b>Abstractstatement</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference BASE_TASK__ABSTRACTSTATEMENT = eINSTANCE.getBaseTask_Abstractstatement();
 
 		/**
 		 * The meta object literal for the '{@link com.altran.optimind.model.workflow.impl.TaskOutputImpl <em>Task Output</em>}' class.

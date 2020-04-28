@@ -35,7 +35,6 @@
     <genClasses ecoreClass="workflow.ecore#//SimpleTask"/>
     <genClasses ecoreClass="workflow.ecore#//BaseTask">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference workflow.ecore#//BaseTask/children"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference workflow.ecore#//BaseTask/abstractstatement"/>
     </genClasses>
     <genClasses ecoreClass="workflow.ecore#//TaskOutput"/>
     <genClasses ecoreClass="workflow.ecore#//TaskInput"/>

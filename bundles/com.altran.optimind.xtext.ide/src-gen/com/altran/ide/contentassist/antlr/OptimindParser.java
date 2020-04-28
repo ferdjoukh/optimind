@@ -36,7 +36,8 @@ public class OptimindParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getEStringAccess().getAlternatives(), "rule__EString__Alternatives");
 			builder.put(grammarAccess.getTypeAccess().getAlternatives(), "rule__Type__Alternatives");
 			builder.put(grammarAccess.getAbstractStatementAccess().getAlternatives(), "rule__AbstractStatement__Alternatives");
-			builder.put(grammarAccess.getBaseTaskAccess().getAlternatives_7(), "rule__BaseTask__Alternatives_7");
+			builder.put(grammarAccess.getBaseTaskAccess().getChildrenAlternatives_7_0_0(), "rule__BaseTask__ChildrenAlternatives_7_0_0");
+			builder.put(grammarAccess.getBaseTaskAccess().getChildrenAlternatives_7_1_0(), "rule__BaseTask__ChildrenAlternatives_7_1_0");
 			builder.put(grammarAccess.getProgLanguageAccess().getAlternatives(), "rule__ProgLanguage__Alternatives");
 			builder.put(grammarAccess.getTaskStatusAccess().getAlternatives(), "rule__TaskStatus__Alternatives");
 			builder.put(grammarAccess.getWorkflowAccess().getGroup(), "rule__Workflow__Group__0");
@@ -55,6 +56,7 @@ public class OptimindParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getBaseTaskAccess().getGroup_5_3(), "rule__BaseTask__Group_5_3__0");
 			builder.put(grammarAccess.getBaseTaskAccess().getGroup_6(), "rule__BaseTask__Group_6__0");
 			builder.put(grammarAccess.getBaseTaskAccess().getGroup_6_3(), "rule__BaseTask__Group_6_3__0");
+			builder.put(grammarAccess.getBaseTaskAccess().getGroup_7(), "rule__BaseTask__Group_7__0");
 			builder.put(grammarAccess.getLibraryTaskAccess().getGroup(), "rule__LibraryTask__Group__0");
 			builder.put(grammarAccess.getLibraryTaskAccess().getGroup_4(), "rule__LibraryTask__Group_4__0");
 			builder.put(grammarAccess.getLibraryTaskAccess().getGroup_5(), "rule__LibraryTask__Group_5__0");
@@ -106,7 +108,7 @@ public class OptimindParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getBaseTaskAccess().getOutputsAssignment_6_2(), "rule__BaseTask__OutputsAssignment_6_2");
 			builder.put(grammarAccess.getBaseTaskAccess().getOutputsAssignment_6_3_1(), "rule__BaseTask__OutputsAssignment_6_3_1");
 			builder.put(grammarAccess.getBaseTaskAccess().getChildrenAssignment_7_0(), "rule__BaseTask__ChildrenAssignment_7_0");
-			builder.put(grammarAccess.getBaseTaskAccess().getAbstractstatementAssignment_7_1(), "rule__BaseTask__AbstractstatementAssignment_7_1");
+			builder.put(grammarAccess.getBaseTaskAccess().getChildrenAssignment_7_1(), "rule__BaseTask__ChildrenAssignment_7_1");
 			builder.put(grammarAccess.getLibraryTaskAccess().getNameAssignment_2(), "rule__LibraryTask__NameAssignment_2");
 			builder.put(grammarAccess.getLibraryTaskAccess().getStatusAssignment_4_1(), "rule__LibraryTask__StatusAssignment_4_1");
 			builder.put(grammarAccess.getLibraryTaskAccess().getInputsAssignment_5_0(), "rule__LibraryTask__InputsAssignment_5_0");

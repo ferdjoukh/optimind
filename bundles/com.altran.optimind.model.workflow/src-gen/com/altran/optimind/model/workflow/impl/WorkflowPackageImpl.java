@@ -389,15 +389,6 @@ public class WorkflowPackageImpl extends EPackageImpl implements WorkflowPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getBaseTask_Abstractstatement() {
-		return (EReference) baseTaskEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getTaskOutput() {
 		return taskOutputEClass;
 	}
@@ -753,7 +744,6 @@ public class WorkflowPackageImpl extends EPackageImpl implements WorkflowPackage
 
 		baseTaskEClass = createEClass(BASE_TASK);
 		createEReference(baseTaskEClass, BASE_TASK__CHILDREN);
-		createEReference(baseTaskEClass, BASE_TASK__ABSTRACTSTATEMENT);
 
 		taskOutputEClass = createEClass(TASK_OUTPUT);
 
@@ -861,6 +851,7 @@ public class WorkflowPackageImpl extends EPackageImpl implements WorkflowPackage
 		outputEClass.getESuperTypes().add(this.getTypedElement());
 		whileStatementEClass.getESuperTypes().add(this.getAbstractStatement());
 		abstractStatementEClass.getESuperTypes().add(this.getNamedElement());
+		abstractStatementEClass.getESuperTypes().add(this.getAbstractTask());
 		forStatementEClass.getESuperTypes().add(this.getWhileStatement());
 		ifStatementEClass.getESuperTypes().add(this.getAbstractStatement());
 
@@ -899,9 +890,6 @@ public class WorkflowPackageImpl extends EPackageImpl implements WorkflowPackage
 		initEReference(getBaseTask_Children(), this.getAbstractTask(), null, "children", null, 0, -1, BaseTask.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getBaseTask_Abstractstatement(), this.getAbstractStatement(), null, "abstractstatement", null, 0,
-				-1, BaseTask.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
-				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(taskOutputEClass, TaskOutput.class, "TaskOutput", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);

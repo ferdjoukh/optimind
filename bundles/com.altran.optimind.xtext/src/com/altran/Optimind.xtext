@@ -88,9 +88,7 @@ BaseTask returns BaseTask:
 	('status' status=TaskStatus)?
 	('inputs' '{' inputs+=TaskInput ("," inputs+=TaskInput)* '}')?
 	('outputs' '{' outputs+=TaskOutput ("," outputs+=TaskOutput)* '}')?
-	(children+=AbstractTask | abstractstatement+=AbstractStatement)*
-	//(children+=AbstractTask (children+=AbstractTask)*)? 
-	//(abstractstatement+=AbstractStatement)* 
+	(children+=(AbstractTask | AbstractStatement) (children+=(AbstractTask | AbstractStatement))*)? 
 	'}';
 
 LibraryTask returns LibraryTask:

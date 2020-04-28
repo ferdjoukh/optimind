@@ -62,7 +62,6 @@ public class BaseTaskItemProvider extends AbstractTaskItemProvider {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(WorkflowPackage.Literals.BASE_TASK__CHILDREN);
-			childrenFeatures.add(WorkflowPackage.Literals.BASE_TASK__ABSTRACTSTATEMENT);
 		}
 		return childrenFeatures;
 	}
@@ -127,7 +126,6 @@ public class BaseTaskItemProvider extends AbstractTaskItemProvider {
 
 		switch (notification.getFeatureID(BaseTask.class)) {
 		case WorkflowPackage.BASE_TASK__CHILDREN:
-		case WorkflowPackage.BASE_TASK__ABSTRACTSTATEMENT:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -154,13 +152,13 @@ public class BaseTaskItemProvider extends AbstractTaskItemProvider {
 		newChildDescriptors.add(createChildParameter(WorkflowPackage.Literals.BASE_TASK__CHILDREN,
 				WorkflowFactory.eINSTANCE.createCustomTask()));
 
-		newChildDescriptors.add(createChildParameter(WorkflowPackage.Literals.BASE_TASK__ABSTRACTSTATEMENT,
+		newChildDescriptors.add(createChildParameter(WorkflowPackage.Literals.BASE_TASK__CHILDREN,
 				WorkflowFactory.eINSTANCE.createWhileStatement()));
 
-		newChildDescriptors.add(createChildParameter(WorkflowPackage.Literals.BASE_TASK__ABSTRACTSTATEMENT,
+		newChildDescriptors.add(createChildParameter(WorkflowPackage.Literals.BASE_TASK__CHILDREN,
 				WorkflowFactory.eINSTANCE.createForStatement()));
 
-		newChildDescriptors.add(createChildParameter(WorkflowPackage.Literals.BASE_TASK__ABSTRACTSTATEMENT,
+		newChildDescriptors.add(createChildParameter(WorkflowPackage.Literals.BASE_TASK__CHILDREN,
 				WorkflowFactory.eINSTANCE.createIfStatement()));
 	}
 

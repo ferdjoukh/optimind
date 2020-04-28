@@ -151,6 +151,15 @@ public class WhileStatementItemProvider extends AbstractStatementItemProvider {
 
 		newChildDescriptors.add(createChildParameter(WorkflowPackage.Literals.WHILE_STATEMENT__ABSTRACTTASK,
 				WorkflowFactory.eINSTANCE.createCustomTask()));
+
+		newChildDescriptors.add(createChildParameter(WorkflowPackage.Literals.WHILE_STATEMENT__ABSTRACTTASK,
+				WorkflowFactory.eINSTANCE.createWhileStatement()));
+
+		newChildDescriptors.add(createChildParameter(WorkflowPackage.Literals.WHILE_STATEMENT__ABSTRACTTASK,
+				WorkflowFactory.eINSTANCE.createForStatement()));
+
+		newChildDescriptors.add(createChildParameter(WorkflowPackage.Literals.WHILE_STATEMENT__ABSTRACTTASK,
+				WorkflowFactory.eINSTANCE.createIfStatement()));
 	}
 
 }

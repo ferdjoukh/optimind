@@ -18,6 +18,11 @@ import org.eclipse.xtext.EcoreUtil2
 import org.osgi.framework.Bundle
 import com.altran.optimind.model.workflow.LibraryTask
 import com.altran.optimind.model.workflow.CustomTask
+import com.altran.optimind.model.workflow.AbstractStatement
+import com.altran.optimind.model.workflow.WhileStatement
+import com.altran.optimind.model.workflow.IfStatement
+import org.eclipse.xtext.tasks.Task
+import com.altran.optimind.model.workflow.ForStatement
 
 @Accessors class DotGraphGenerator {
 	
@@ -165,40 +170,88 @@ import com.altran.optimind.model.workflow.CustomTask
 		}'''
 	}
 	
-	def String generateCluster(BaseTask baseTask){
+	def String generateCluster(AbstractTask baseTask) {
+		'''
+			subgraph cluster«this.cluster++» {
+				style=filled;
+				fillcolor=white;
+				color=blue;
+				margin=20;
+				label = "«baseTask.name»";
+				
+				//Children
+				«IF baseTask instanceof BaseTask»
+					«FOR task : baseTask.children»
+						«IF task instanceof BaseTask»
+							«generateCluster(task)»
+						«ELSEIF task instanceof AbstractStatement»
+							«generateStatementCluster(task)»
+						«ELSE»
+							««««task.name» [shape=record,style=filled,color=black,fillcolor=white,label="{ «taskInputs(task)» | {«task.name»} | «taskOutputs(task)» }"];
+						«generateTask(task)»
+						«ENDIF»	
+					«ENDFOR»
+				«ELSEIF baseTask instanceof AbstractStatement»
+					«generateStatementCluster(baseTask)»
+				«ENDIF»
+				}
+		'''
+	}
+	
+	def generateTask(AbstractTask task) {
+		'''
+			«task.name» [shape=none,style=filled,color=black,fillcolor=none,label = <
+							<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="4" CELLPADDING="4">
+								<TR><TD BORDER="0"></TD>«taskInputsHTML(task)» <TD BORDER="0"></TD></TR>
+								<TR><TD BGCOLOR="gray" COLSPAN="«maxIO(task)+2»">«task.name»</TD></TR>
+								
+								«IF task instanceof LibraryTask»
+									<TR><TD BGCOLOR="blue" COLSPAN="«maxIO(task)+2»">«task.libraryfunction.name»</TD></TR>
+								«ENDIF»
+								
+								«IF task instanceof CustomTask»
+									<TR><TD BGCOLOR="lightblue" COLSPAN="«maxIO(task)+2»">«task.runner»</TD></TR>
+								«ENDIF»
+								
+								<TR><TD BORDER="0"></TD>«taskOutputsHTML(task)» <TD BORDER="0"></TD></TR>
+							</TABLE>>]; 
+		'''
+	}
+	
+	def generateStatementCluster(AbstractStatement statement) {
 		'''
 		subgraph cluster«this.cluster++» {
-			«var toto = "pouet"»
-			style=filled;
+			style=rounded;
 			fillcolor=white;
-			color=blue;
+			color=red;
 			margin=20;
-			label = "«baseTask.name»";
+			label = "
+			«IF statement instanceof WhileStatement»
+				While «statement.condition»
+			«ELSEIF statement instanceof ForStatement»
+				For 
+			«ELSEIF statement instanceof IfStatement»
+				If
+			«ELSE»
+				Statement
+			«ENDIF»
+			, do :";
 			
-			//Children
-			«FOR task : baseTask.children»
-				«IF task instanceof BaseTask»
-					«generateCluster(task)»
-				«ELSE»
+			«IF statement instanceof WhileStatement»
+				«IF statement.abstracttask instanceof CustomTask»
 					««««task.name» [shape=record,style=filled,color=black,fillcolor=white,label="{ «taskInputs(task)» | {«task.name»} | «taskOutputs(task)» }"];
-					«task.name» [shape=none,style=filled,color=black,fillcolor=none,label = <
-					<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="4" CELLPADDING="4">
-						<TR><TD BORDER="0"></TD>«taskInputsHTML(task)» <TD BORDER="0"></TD></TR>
-						<TR><TD BGCOLOR="gray" COLSPAN="«maxIO(task)+2»">«task.name»</TD></TR>
-						
-						«IF task instanceof LibraryTask»
-						<TR><TD BGCOLOR="blue" COLSPAN="«maxIO(task)+2»">«task.libraryfunction.name»</TD></TR>
-						«ENDIF»
-						
-						«IF task instanceof CustomTask»
-						<TR><TD BGCOLOR="lightblue" COLSPAN="«maxIO(task)+2»">«task.runner»</TD></TR>
-						«ENDIF»
-						
-						<TR><TD BORDER="0"></TD>«taskOutputsHTML(task)» <TD BORDER="0"></TD></TR>
-					</TABLE>>];
+					«generateTask(statement.abstracttask)»
+				«ELSE»
+					«generateCluster(statement.abstracttask)»
 				«ENDIF»	
-			«ENDFOR»
-				
+			«ELSEIF statement instanceof IfStatement»
+				IF
+				«statement.condition»
+				THEN
+				«generateCluster(statement.then)»
+				ELSE
+				«generateCluster(statement.^else)»
+			«ENDIF»	
 		}
 		'''
 	}

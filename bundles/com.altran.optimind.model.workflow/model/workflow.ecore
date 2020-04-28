@@ -21,8 +21,6 @@
   <eClassifiers xsi:type="ecore:EClass" name="BaseTask" eSuperTypes="#//AbstractTask">
     <eStructuralFeatures xsi:type="ecore:EReference" name="children" upperBound="-1"
         eType="#//AbstractTask" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="abstractstatement" upperBound="-1"
-        eType="#//AbstractStatement" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TaskOutput" eSuperTypes="#//NamedElement #//TypedElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="TaskInput" abstract="true" eSuperTypes="#//NamedElement"/>
@@ -71,7 +69,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="abstracttask" lowerBound="1"
         eType="#//AbstractTask" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AbstractStatement" abstract="true" eSuperTypes="#//NamedElement">
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractStatement" abstract="true" eSuperTypes="#//NamedElement #//AbstractTask">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="condition" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ForStatement" eSuperTypes="#//WhileStatement">
