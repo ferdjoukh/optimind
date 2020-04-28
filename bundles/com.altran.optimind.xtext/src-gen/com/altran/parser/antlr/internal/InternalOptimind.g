@@ -1093,44 +1093,79 @@ ruleBaseTask returns [EObject current=null]
 		(
 			(
 				(
-					{
-						newCompositeNode(grammarAccess.getBaseTaskAccess().getChildrenAbstractTaskParserRuleCall_7_0_0());
-					}
-					lv_children_18_0=ruleAbstractTask
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getBaseTaskRule());
+					(
+						{
+							newCompositeNode(grammarAccess.getBaseTaskAccess().getChildrenAbstractTaskParserRuleCall_7_0_0_0());
 						}
-						add(
-							$current,
-							"children",
-							lv_children_18_0,
-							"com.altran.Optimind.AbstractTask");
-						afterParserOrEnumRuleCall();
-					}
+						lv_children_18_1=ruleAbstractTask
+						{
+							if ($current==null) {
+								$current = createModelElementForParent(grammarAccess.getBaseTaskRule());
+							}
+							add(
+								$current,
+								"children",
+								lv_children_18_1,
+								"com.altran.Optimind.AbstractTask");
+							afterParserOrEnumRuleCall();
+						}
+						    |
+						{
+							newCompositeNode(grammarAccess.getBaseTaskAccess().getChildrenAbstractStatementParserRuleCall_7_0_0_1());
+						}
+						lv_children_18_2=ruleAbstractStatement
+						{
+							if ($current==null) {
+								$current = createModelElementForParent(grammarAccess.getBaseTaskRule());
+							}
+							add(
+								$current,
+								"children",
+								lv_children_18_2,
+								"com.altran.Optimind.AbstractStatement");
+							afterParserOrEnumRuleCall();
+						}
+					)
 				)
 			)
-			    |
 			(
 				(
-					{
-						newCompositeNode(grammarAccess.getBaseTaskAccess().getAbstractstatementAbstractStatementParserRuleCall_7_1_0());
-					}
-					lv_abstractstatement_19_0=ruleAbstractStatement
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getBaseTaskRule());
+					(
+						{
+							newCompositeNode(grammarAccess.getBaseTaskAccess().getChildrenAbstractTaskParserRuleCall_7_1_0_0());
 						}
-						add(
-							$current,
-							"abstractstatement",
-							lv_abstractstatement_19_0,
-							"com.altran.Optimind.AbstractStatement");
-						afterParserOrEnumRuleCall();
-					}
+						lv_children_19_1=ruleAbstractTask
+						{
+							if ($current==null) {
+								$current = createModelElementForParent(grammarAccess.getBaseTaskRule());
+							}
+							add(
+								$current,
+								"children",
+								lv_children_19_1,
+								"com.altran.Optimind.AbstractTask");
+							afterParserOrEnumRuleCall();
+						}
+						    |
+						{
+							newCompositeNode(grammarAccess.getBaseTaskAccess().getChildrenAbstractStatementParserRuleCall_7_1_0_1());
+						}
+						lv_children_19_2=ruleAbstractStatement
+						{
+							if ($current==null) {
+								$current = createModelElementForParent(grammarAccess.getBaseTaskRule());
+							}
+							add(
+								$current,
+								"children",
+								lv_children_19_2,
+								"com.altran.Optimind.AbstractStatement");
+							afterParserOrEnumRuleCall();
+						}
+					)
 				)
-			)
-		)*
+			)*
+		)?
 		otherlv_20='}'
 		{
 			newLeafNode(otherlv_20, grammarAccess.getBaseTaskAccess().getRightCurlyBracketKeyword_8());

@@ -18,7 +18,7 @@ package com.altran.optimind.model.workflow;
  * @model abstract="true"
  * @generated
  */
-public interface AbstractStatement extends NamedElement {
+public interface AbstractStatement extends NamedElement, AbstractTask {
 	/**
 	 * Returns the value of the '<em><b>Condition</b></em>' attribute.
 	 * <!-- begin-user-doc -->

@@ -99,7 +99,7 @@ public class OptimindSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *         status=TaskStatus? 
 	 *         (inputs+=TaskInput inputs+=TaskInput*)? 
 	 *         (outputs+=TaskOutput outputs+=TaskOutput*)? 
-	 *         (children+=AbstractTask | abstractstatement+=AbstractStatement)*
+	 *         ((children+=AbstractTask | children+=AbstractStatement) children+=AbstractTask? (children+=AbstractStatement? children+=AbstractTask?)*)?
 	 *     )
 	 */
 	protected void sequence_BaseTask(ISerializationContext context, BaseTask semanticObject) {

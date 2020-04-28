@@ -2,7 +2,6 @@
  */
 package com.altran.optimind.model.workflow.impl;
 
-import com.altran.optimind.model.workflow.AbstractStatement;
 import com.altran.optimind.model.workflow.AbstractTask;
 import com.altran.optimind.model.workflow.BaseTask;
 import com.altran.optimind.model.workflow.WorkflowPackage;
@@ -28,7 +27,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link com.altran.optimind.model.workflow.impl.BaseTaskImpl#getChildren <em>Children</em>}</li>
- *   <li>{@link com.altran.optimind.model.workflow.impl.BaseTaskImpl#getAbstractstatement <em>Abstractstatement</em>}</li>
  * </ul>
  *
  * @generated
@@ -43,16 +41,6 @@ public class BaseTaskImpl extends AbstractTaskImpl implements BaseTask {
 	 * @ordered
 	 */
 	protected EList<AbstractTask> children;
-
-	/**
-	 * The cached value of the '{@link #getAbstractstatement() <em>Abstractstatement</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAbstractstatement()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<AbstractStatement> abstractstatement;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -91,26 +79,11 @@ public class BaseTaskImpl extends AbstractTaskImpl implements BaseTask {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<AbstractStatement> getAbstractstatement() {
-		if (abstractstatement == null) {
-			abstractstatement = new EObjectContainmentEList<AbstractStatement>(AbstractStatement.class, this,
-					WorkflowPackage.BASE_TASK__ABSTRACTSTATEMENT);
-		}
-		return abstractstatement;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case WorkflowPackage.BASE_TASK__CHILDREN:
 			return ((InternalEList<?>) getChildren()).basicRemove(otherEnd, msgs);
-		case WorkflowPackage.BASE_TASK__ABSTRACTSTATEMENT:
-			return ((InternalEList<?>) getAbstractstatement()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -125,8 +98,6 @@ public class BaseTaskImpl extends AbstractTaskImpl implements BaseTask {
 		switch (featureID) {
 		case WorkflowPackage.BASE_TASK__CHILDREN:
 			return getChildren();
-		case WorkflowPackage.BASE_TASK__ABSTRACTSTATEMENT:
-			return getAbstractstatement();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -144,10 +115,6 @@ public class BaseTaskImpl extends AbstractTaskImpl implements BaseTask {
 			getChildren().clear();
 			getChildren().addAll((Collection<? extends AbstractTask>) newValue);
 			return;
-		case WorkflowPackage.BASE_TASK__ABSTRACTSTATEMENT:
-			getAbstractstatement().clear();
-			getAbstractstatement().addAll((Collection<? extends AbstractStatement>) newValue);
-			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -163,9 +130,6 @@ public class BaseTaskImpl extends AbstractTaskImpl implements BaseTask {
 		case WorkflowPackage.BASE_TASK__CHILDREN:
 			getChildren().clear();
 			return;
-		case WorkflowPackage.BASE_TASK__ABSTRACTSTATEMENT:
-			getAbstractstatement().clear();
-			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -180,8 +144,6 @@ public class BaseTaskImpl extends AbstractTaskImpl implements BaseTask {
 		switch (featureID) {
 		case WorkflowPackage.BASE_TASK__CHILDREN:
 			return children != null && !children.isEmpty();
-		case WorkflowPackage.BASE_TASK__ABSTRACTSTATEMENT:
-			return abstractstatement != null && !abstractstatement.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

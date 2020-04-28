@@ -278,6 +278,8 @@ public class WorkflowSwitch<T> extends Switch<T> {
 			if (result == null)
 				result = caseAbstractStatement(whileStatement);
 			if (result == null)
+				result = caseAbstractTask(whileStatement);
+			if (result == null)
 				result = caseNamedElement(whileStatement);
 			if (result == null)
 				result = defaultCase(theEObject);
@@ -286,6 +288,8 @@ public class WorkflowSwitch<T> extends Switch<T> {
 		case WorkflowPackage.ABSTRACT_STATEMENT: {
 			AbstractStatement abstractStatement = (AbstractStatement) theEObject;
 			T result = caseAbstractStatement(abstractStatement);
+			if (result == null)
+				result = caseAbstractTask(abstractStatement);
 			if (result == null)
 				result = caseNamedElement(abstractStatement);
 			if (result == null)
@@ -300,6 +304,8 @@ public class WorkflowSwitch<T> extends Switch<T> {
 			if (result == null)
 				result = caseAbstractStatement(forStatement);
 			if (result == null)
+				result = caseAbstractTask(forStatement);
+			if (result == null)
 				result = caseNamedElement(forStatement);
 			if (result == null)
 				result = defaultCase(theEObject);
@@ -310,6 +316,8 @@ public class WorkflowSwitch<T> extends Switch<T> {
 			T result = caseIfStatement(ifStatement);
 			if (result == null)
 				result = caseAbstractStatement(ifStatement);
+			if (result == null)
+				result = caseAbstractTask(ifStatement);
 			if (result == null)
 				result = caseNamedElement(ifStatement);
 			if (result == null)

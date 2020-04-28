@@ -18,6 +18,11 @@ import org.eclipse.xtext.EcoreUtil2
 import org.osgi.framework.Bundle
 import com.altran.optimind.model.workflow.LibraryTask
 import com.altran.optimind.model.workflow.CustomTask
+import com.altran.optimind.model.workflow.AbstractStatement
+import com.altran.optimind.model.workflow.WhileStatement
+import com.altran.optimind.model.workflow.IfStatement
+import org.eclipse.xtext.tasks.Task
+import com.altran.optimind.model.workflow.ForStatement
 
 @Accessors class DotGraphGenerator {
 	
@@ -113,7 +118,7 @@ import com.altran.optimind.model.workflow.CustomTask
 	}
 	
 	def createPdfFile(String dot, String pdf) {
-		var String cmd = '''«dotCommandWindows» -Tpdf «dot» -o «pdf»''';
+		var String cmd = '''ï¿½dotCommandWindowsï¿½ -Tpdf ï¿½dotï¿½ -o ï¿½pdfï¿½''';
 		try {
 			Runtime.getRuntime().exec(cmd);
 			System.out.println("[OK] " + pdf +" file generated");
@@ -126,7 +131,7 @@ import com.altran.optimind.model.workflow.CustomTask
 	
 	def createPngFile(String dot, String png) {
 		
-		var String cmd = '''«dotCommandWindows» -Tpng «dot» -o «png»'''
+		var String cmd = '''ï¿½dotCommandWindowsï¿½ -Tpng ï¿½dotï¿½ -o ï¿½pngï¿½'''
 		try {
 			Runtime.getRuntime().exec(cmd);
 			System.out.println("[OK] " + png +" file generated");
@@ -146,75 +151,123 @@ import com.altran.optimind.model.workflow.CustomTask
 //	}
 			
 	def String generateGraphContent(Workflow workflow){
-		'''digraph «workflow.name» {
+		'''digraph ï¿½workflow.nameï¿½ {
 		
-			«««»«FOR basetask : workflow.tasks.filter(BaseTask)»
-			«generateCluster(workflow.baseTask)»
-			«»			
+			ï¿½ï¿½ï¿½ï¿½ï¿½FOR basetask : workflow.tasks.filter(BaseTask)ï¿½
+			ï¿½generateCluster(workflow.baseTask)ï¿½
+			ï¿½ï¿½			
 			//Connections
-			«var allConnections = EcoreUtil2.getAllContentsOfType(workflow, Connection)»
+			ï¿½var allConnections = EcoreUtil2.getAllContentsOfType(workflow, Connection)ï¿½
 			
-			«FOR connection : allConnections» 
-				«var inputTask = connection.eContainer as AbstractTask»
-				«var inputRef = connection.name»
-				«var outputTask = connection.taskoutput.eContainer as AbstractTask»
-				«var outputRef = connection.taskoutput.name»
-				«outputTask.name»:«outputRef» -> «inputTask.name»:«inputRef» ; 	
-			«ENDFOR» 	
+			ï¿½FOR connection : allConnectionsï¿½ 
+				ï¿½var inputTask = connection.eContainer as AbstractTaskï¿½
+				ï¿½var inputRef = connection.nameï¿½
+				ï¿½var outputTask = connection.taskoutput.eContainer as AbstractTaskï¿½
+				ï¿½var outputRef = connection.taskoutput.nameï¿½
+				ï¿½outputTask.nameï¿½:ï¿½outputRefï¿½ -> ï¿½inputTask.nameï¿½:ï¿½inputRefï¿½ ; 	
+			ï¿½ENDFORï¿½ 	
 		}'''
 	}
 	
-	def String generateCluster(BaseTask baseTask){
+	def String generateCluster(AbstractTask baseTask) {
 		'''
-			subgraph cluster«this.cluster++» {
-				«var toto = "pouet"»
+			subgraph clusterï¿½this.cluster++ï¿½ {
 				style=filled;
 				fillcolor=white;
 				color=blue;
 				margin=20;
-				label = "«baseTask.name»";
+				label = "ï¿½baseTask.nameï¿½";
 				
 				//Children
-				«FOR task : baseTask.children»
-					«IF task instanceof BaseTask»
-						«generateCluster(task)»
-					«ELSE»
-						««««task.name» [shape=record,style=filled,color=black,fillcolor=white,label="{ «taskInputs(task)» | {«task.name»} | «taskOutputs(task)» }"];
-					«task.name» [shape=none,style=filled,color=black,fillcolor=none,label = <
-						<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="4" CELLPADDING="4">
-							<TR><TD BORDER="0"></TD>«taskInputsHTML(task)» <TD BORDER="0"></TD></TR>
-							<TR><TD BGCOLOR="gray" COLSPAN="«maxIO(task)+2»">«task.name»</TD></TR>
-							
-							«IF task instanceof LibraryTask»
-								<TR><TD BGCOLOR="blue" COLSPAN="«maxIO(task)+2»">«task.libraryfunction.name»</TD></TR>
-							«ENDIF»
-							
-							«IF task instanceof CustomTask»
-								<TR><TD BGCOLOR="lightblue" COLSPAN="«maxIO(task)+2»">«task.runner»</TD></TR>
-							«ENDIF»
-							
-							<TR><TD BORDER="0"></TD>«taskOutputsHTML(task)» <TD BORDER="0"></TD></TR>
-						</TABLE>>];
-					«ENDIF»	
-				«ENDFOR»
-				
-			}
+				ï¿½IF baseTask instanceof BaseTaskï¿½
+					ï¿½FOR task : baseTask.childrenï¿½
+						ï¿½IF task instanceof BaseTaskï¿½
+							ï¿½generateCluster(task)ï¿½
+						ï¿½ELSEIF task instanceof AbstractStatementï¿½
+							ï¿½generateStatementCluster(task)ï¿½
+						ï¿½ELSEï¿½
+							ï¿½ï¿½ï¿½ï¿½task.nameï¿½ [shape=record,style=filled,color=black,fillcolor=white,label="{ ï¿½taskInputs(task)ï¿½ | {ï¿½task.nameï¿½} | ï¿½taskOutputs(task)ï¿½ }"];
+						ï¿½generateTask(task)ï¿½
+						ï¿½ENDIFï¿½	
+					ï¿½ENDFORï¿½
+				ï¿½ELSEIF baseTask instanceof AbstractStatementï¿½
+					ï¿½generateStatementCluster(baseTask)ï¿½
+				ï¿½ENDIFï¿½
+				}
+		'''
+	}
+	
+	def generateTask(AbstractTask task) {
+		'''
+			ï¿½task.nameï¿½ [shape=none,style=filled,color=black,fillcolor=none,label = <
+							<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="4" CELLPADDING="4">
+								<TR><TD BORDER="0"></TD>ï¿½taskInputsHTML(task)ï¿½ <TD BORDER="0"></TD></TR>
+								<TR><TD BGCOLOR="gray" COLSPAN="ï¿½maxIO(task)+2ï¿½">ï¿½task.nameï¿½</TD></TR>
+								
+								ï¿½IF task instanceof LibraryTaskï¿½
+									<TR><TD BGCOLOR="blue" COLSPAN="ï¿½maxIO(task)+2ï¿½">ï¿½task.libraryfunction.nameï¿½</TD></TR>
+								ï¿½ENDIFï¿½
+								
+								ï¿½IF task instanceof CustomTaskï¿½
+									<TR><TD BGCOLOR="lightblue" COLSPAN="ï¿½maxIO(task)+2ï¿½">ï¿½task.runnerï¿½</TD></TR>
+								ï¿½ENDIFï¿½
+								
+								<TR><TD BORDER="0"></TD>ï¿½taskOutputsHTML(task)ï¿½ <TD BORDER="0"></TD></TR>
+							</TABLE>>]; 
+		'''
+	}
+	
+	def generateStatementCluster(AbstractStatement statement) {
+		'''
+		subgraph clusterï¿½this.cluster++ï¿½ {
+			style=rounded;
+			fillcolor=white;
+			color=red;
+			margin=20;
+			label = "
+			ï¿½IF statement instanceof WhileStatementï¿½
+				While ï¿½statement.conditionï¿½
+			ï¿½ELSEIF statement instanceof ForStatementï¿½
+				For 
+			ï¿½ELSEIF statement instanceof IfStatementï¿½
+				If
+			ï¿½ELSEï¿½
+				Statement
+			ï¿½ENDIFï¿½
+			, do :";
+			
+			ï¿½IF statement instanceof WhileStatementï¿½
+				ï¿½IF statement.abstracttask instanceof CustomTaskï¿½
+					ï¿½ï¿½ï¿½ï¿½task.nameï¿½ [shape=record,style=filled,color=black,fillcolor=white,label="{ ï¿½taskInputs(task)ï¿½ | {ï¿½task.nameï¿½} | ï¿½taskOutputs(task)ï¿½ }"];
+					ï¿½generateTask(statement.abstracttask)ï¿½
+				ï¿½ELSEï¿½
+					ï¿½generateCluster(statement.abstracttask)ï¿½
+				ï¿½ENDIFï¿½	
+			ï¿½ELSEIF statement instanceof IfStatementï¿½
+				IF
+				ï¿½statement.conditionï¿½
+				THEN
+				ï¿½generateCluster(statement.then)ï¿½
+				ELSE
+				ï¿½generateCluster(statement.^else)ï¿½
+			ï¿½ENDIFï¿½	
+		}
 		'''
 	}
 	
 	def taskOutputsHTML(AbstractTask task) {
 		'''
-			«FOR output : task.outputs BEFORE '' SEPARATOR '' AFTER ''»
-				<TD PORT="«output.name»" BGCOLOR="green" BORDER="0">«output.name»</TD>			
-			«ENDFOR»
+			ï¿½FOR output : task.outputs BEFORE '' SEPARATOR '' AFTER ''ï¿½
+				<TD PORT="ï¿½output.nameï¿½" BGCOLOR="green" BORDER="0">ï¿½output.nameï¿½</TD>			
+			ï¿½ENDFORï¿½
 		'''	
 	}
 	
 	def taskInputsHTML(AbstractTask task) {
 		'''
-			«FOR input : task.inputs BEFORE '' SEPARATOR '' AFTER ''»
-				<TD PORT="«input.name»" BGCOLOR="yellow" BORDER="0">«input.name»</TD>			
-			«ENDFOR»
+			ï¿½FOR input : task.inputs BEFORE '' SEPARATOR '' AFTER ''ï¿½
+				<TD PORT="ï¿½input.nameï¿½" BGCOLOR="yellow" BORDER="0">ï¿½input.nameï¿½</TD>			
+			ï¿½ENDFORï¿½
 		'''	
 	}
 	
@@ -229,9 +282,9 @@ import com.altran.optimind.model.workflow.CustomTask
 	def taskOutputs(AbstractTask task) {
 		'''
 			{
-			«FOR output : task.outputs BEFORE '' SEPARATOR '|' AFTER ''»
-				<«output.name»> «output.name»
-			«ENDFOR»
+			ï¿½FOR output : task.outputs BEFORE '' SEPARATOR '|' AFTER ''ï¿½
+				<ï¿½output.nameï¿½> ï¿½output.nameï¿½
+			ï¿½ENDFORï¿½
 			}
 		'''	
 	}
@@ -239,9 +292,9 @@ import com.altran.optimind.model.workflow.CustomTask
 	def taskInputs(AbstractTask task) {
 		'''
 			{
-			«FOR input : task.inputs BEFORE '' SEPARATOR '|' AFTER ''»
-				<«input.name»> «input.name»
-			«ENDFOR»
+			ï¿½FOR input : task.inputs BEFORE '' SEPARATOR '|' AFTER ''ï¿½
+				<ï¿½input.nameï¿½> ï¿½input.nameï¿½
+			ï¿½ENDFORï¿½
 			}
 		'''	
 	}

@@ -49,8 +49,12 @@ public class OptimindGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		//Workflow:
-		//	{Workflow} 'Workflow' name=EString '{' ('Language' language=ProgLanguage)? baseTask=BaseTask?
-		//	(functions+=LibraryFunction functions+=LibraryFunction*)? '}';
+		//	{Workflow}
+		//	'Workflow'
+		//	name=EString
+		//	'{' ('Language' language=ProgLanguage)?
+		//	baseTask=BaseTask? (functions+=LibraryFunction functions+=LibraryFunction*)?
+		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{Workflow} 'Workflow' name=EString '{' ('Language' language=ProgLanguage)? baseTask=BaseTask?
@@ -216,7 +220,9 @@ public class OptimindGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cValueAsStringEStringParserRuleCall_4_1_0 = (RuleCall)cValueAsStringAssignment_4_1.eContents().get(0);
 		
 		//TaskOutput:
-		//	{TaskOutput} 'Output' name=EString ('type' typeAsString=Type)? ('value' valueAsString=EString)?;
+		//	{TaskOutput}
+		//	'Output'
+		//	name=EString ('type' typeAsString=Type)? ('value' valueAsString=EString)?;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{TaskOutput} 'Output' name=EString ('type' typeAsString=Type)? ('value' valueAsString=EString)?
@@ -304,8 +310,15 @@ public class OptimindGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_12 = (Keyword)cGroup.eContents().get(12);
 		
 		//For ForStatement:
-		//	{ForStatement} 'For' name=EString '{' 'from' from=EInt 'to' to=EInt 'increment' increment=EInt 'do'
-		//	abstracttask=AbstractTask '}';
+		//	{ForStatement}
+		//	'For'
+		//	name=EString
+		//	'{'
+		//	'from' from=EInt
+		//	'to' to=EInt
+		//	'increment' increment=EInt
+		//	'do' abstracttask=AbstractTask
+		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{ForStatement} 'For' name=EString '{' 'from' from=EInt 'to' to=EInt 'increment' increment=EInt 'do'
@@ -383,7 +396,13 @@ public class OptimindGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
 		
 		//While WhileStatement:
-		//	{WhileStatement} 'While' name=EString '{' 'condition' condition=EString 'do' abstracttask=AbstractTask '}';
+		//	{WhileStatement}
+		//	'While'
+		//	name=EString
+		//	'{'
+		//	'condition' condition=EString
+		//	'do' abstracttask=AbstractTask
+		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{WhileStatement} 'While' name=EString '{' 'condition' condition=EString 'do' abstracttask=AbstractTask '}'
@@ -446,8 +465,13 @@ public class OptimindGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_9 = (Keyword)cGroup.eContents().get(9);
 		
 		//If IfStatement:
-		//	{IfStatement} 'If' name=EString '{' 'condition' condition=EString 'then' then=AbstractTask ('else'
-		//	else=AbstractTask)? '}';
+		//	{IfStatement}
+		//	'If'
+		//	name=EString
+		//	'{'
+		//	'condition' condition=EString
+		//	'then' then=AbstractTask ('else' else=AbstractTask)?
+		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{IfStatement} 'If' name=EString '{' 'condition' condition=EString 'then' then=AbstractTask ('else' else=AbstractTask)?
@@ -534,28 +558,30 @@ public class OptimindGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cOutputsAssignment_6_3_1 = (Assignment)cGroup_6_3.eContents().get(1);
 		private final RuleCall cOutputsTaskOutputParserRuleCall_6_3_1_0 = (RuleCall)cOutputsAssignment_6_3_1.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_6_4 = (Keyword)cGroup_6.eContents().get(4);
-		private final Alternatives cAlternatives_7 = (Alternatives)cGroup.eContents().get(7);
-		private final Assignment cChildrenAssignment_7_0 = (Assignment)cAlternatives_7.eContents().get(0);
-		private final RuleCall cChildrenAbstractTaskParserRuleCall_7_0_0 = (RuleCall)cChildrenAssignment_7_0.eContents().get(0);
-		private final Assignment cAbstractstatementAssignment_7_1 = (Assignment)cAlternatives_7.eContents().get(1);
-		private final RuleCall cAbstractstatementAbstractStatementParserRuleCall_7_1_0 = (RuleCall)cAbstractstatementAssignment_7_1.eContents().get(0);
+		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
+		private final Assignment cChildrenAssignment_7_0 = (Assignment)cGroup_7.eContents().get(0);
+		private final Alternatives cChildrenAlternatives_7_0_0 = (Alternatives)cChildrenAssignment_7_0.eContents().get(0);
+		private final RuleCall cChildrenAbstractTaskParserRuleCall_7_0_0_0 = (RuleCall)cChildrenAlternatives_7_0_0.eContents().get(0);
+		private final RuleCall cChildrenAbstractStatementParserRuleCall_7_0_0_1 = (RuleCall)cChildrenAlternatives_7_0_0.eContents().get(1);
+		private final Assignment cChildrenAssignment_7_1 = (Assignment)cGroup_7.eContents().get(1);
+		private final Alternatives cChildrenAlternatives_7_1_0 = (Alternatives)cChildrenAssignment_7_1.eContents().get(0);
+		private final RuleCall cChildrenAbstractTaskParserRuleCall_7_1_0_0 = (RuleCall)cChildrenAlternatives_7_1_0.eContents().get(0);
+		private final RuleCall cChildrenAbstractStatementParserRuleCall_7_1_0_1 = (RuleCall)cChildrenAlternatives_7_1_0.eContents().get(1);
 		private final Keyword cRightCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
 		
 		//BaseTask:
-		//	{BaseTask} 'BaseTask' name=EString '{' ('status' status=TaskStatus)? ('inputs' '{' inputs+=TaskInput (","
-		//	inputs+=TaskInput)* '}')? ('outputs' '{' outputs+=TaskOutput ("," outputs+=TaskOutput)* '}')? (children+=AbstractTask
-		//	| abstractstatement+=AbstractStatement)* //(children+=AbstractTask (children+=AbstractTask)*)? 
-		//
-		//	//(abstractstatement+=AbstractStatement)* 
-		// '}';
+		//	{BaseTask}
+		//	'BaseTask'
+		//	name=EString
+		//	'{' ('status' status=TaskStatus)? ('inputs' '{' inputs+=TaskInput ("," inputs+=TaskInput)* '}')? ('outputs' '{'
+		//	outputs+=TaskOutput ("," outputs+=TaskOutput)* '}')? (children+=(AbstractTask | AbstractStatement)
+		//	children+=(AbstractTask | AbstractStatement)*)?
+		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{BaseTask} 'BaseTask' name=EString '{' ('status' status=TaskStatus)? ('inputs' '{' inputs+=TaskInput (","
-		//inputs+=TaskInput)* '}')? ('outputs' '{' outputs+=TaskOutput ("," outputs+=TaskOutput)* '}')? (children+=AbstractTask
-		//| abstractstatement+=AbstractStatement)* //(children+=AbstractTask (children+=AbstractTask)*)? 
-		//
-		////(abstractstatement+=AbstractStatement)* 
-		// '}'
+		//inputs+=TaskInput)* '}')? ('outputs' '{' outputs+=TaskOutput ("," outputs+=TaskOutput)* '}')? (children+=(AbstractTask
+		//| AbstractStatement) children+=(AbstractTask | AbstractStatement)*)? '}'
 		public Group getGroup() { return cGroup; }
 		
 		//{BaseTask}
@@ -645,24 +671,34 @@ public class OptimindGrammarAccess extends AbstractGrammarElementFinder {
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_6_4() { return cRightCurlyBracketKeyword_6_4; }
 		
-		//(children+=AbstractTask | abstractstatement+=AbstractStatement)*
-		public Alternatives getAlternatives_7() { return cAlternatives_7; }
+		//(children+=(AbstractTask | AbstractStatement) children+=(AbstractTask | AbstractStatement)*)?
+		public Group getGroup_7() { return cGroup_7; }
 		
-		//children+=AbstractTask
+		//children+=(AbstractTask | AbstractStatement)
 		public Assignment getChildrenAssignment_7_0() { return cChildrenAssignment_7_0; }
 		
-		//AbstractTask
-		public RuleCall getChildrenAbstractTaskParserRuleCall_7_0_0() { return cChildrenAbstractTaskParserRuleCall_7_0_0; }
+		//(AbstractTask | AbstractStatement)
+		public Alternatives getChildrenAlternatives_7_0_0() { return cChildrenAlternatives_7_0_0; }
 		
-		//abstractstatement+=AbstractStatement
-		public Assignment getAbstractstatementAssignment_7_1() { return cAbstractstatementAssignment_7_1; }
+		//AbstractTask
+		public RuleCall getChildrenAbstractTaskParserRuleCall_7_0_0_0() { return cChildrenAbstractTaskParserRuleCall_7_0_0_0; }
 		
 		//AbstractStatement
-		public RuleCall getAbstractstatementAbstractStatementParserRuleCall_7_1_0() { return cAbstractstatementAbstractStatementParserRuleCall_7_1_0; }
+		public RuleCall getChildrenAbstractStatementParserRuleCall_7_0_0_1() { return cChildrenAbstractStatementParserRuleCall_7_0_0_1; }
 		
-		////(children+=AbstractTask (children+=AbstractTask)*)? 
-		// //(abstractstatement+=AbstractStatement)* 
-		// '}'
+		//children+=(AbstractTask | AbstractStatement)*
+		public Assignment getChildrenAssignment_7_1() { return cChildrenAssignment_7_1; }
+		
+		//(AbstractTask | AbstractStatement)
+		public Alternatives getChildrenAlternatives_7_1_0() { return cChildrenAlternatives_7_1_0; }
+		
+		//AbstractTask
+		public RuleCall getChildrenAbstractTaskParserRuleCall_7_1_0_0() { return cChildrenAbstractTaskParserRuleCall_7_1_0_0; }
+		
+		//AbstractStatement
+		public RuleCall getChildrenAbstractStatementParserRuleCall_7_1_0_1() { return cChildrenAbstractStatementParserRuleCall_7_1_0_1; }
+		
+		//'}'
 		public Keyword getRightCurlyBracketKeyword_8() { return cRightCurlyBracketKeyword_8; }
 	}
 	public class LibraryTaskElements extends AbstractParserRuleElementFinder {
@@ -695,8 +731,12 @@ public class OptimindGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
 		
 		//LibraryTask:
-		//	{LibraryTask} 'LibraryTask' name=EString '{' ('status' status=TaskStatus)? (inputs+=TaskInput inputs+=TaskInput*)?
-		//	(outputs+=TaskOutput outputs+=TaskOutput*)? ('Libraryfunction' libraryfunction=[LibraryFunction|EString])? '}';
+		//	{LibraryTask}
+		//	'LibraryTask'
+		//	name=EString
+		//	'{' ('status' status=TaskStatus)? (inputs+=TaskInput inputs+=TaskInput*)? (outputs+=TaskOutput outputs+=TaskOutput*)?
+		//	('Libraryfunction' libraryfunction=[LibraryFunction|EString])?
+		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{LibraryTask} 'LibraryTask' name=EString '{' ('status' status=TaskStatus)? (inputs+=TaskInput inputs+=TaskInput*)?
@@ -807,8 +847,12 @@ public class OptimindGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
 		
 		//CustomTask:
-		//	{CustomTask} 'Task' name=EString '{' ('status' status=TaskStatus)? (inputs+=TaskInput inputs+=TaskInput*)?
-		//	(outputs+=TaskOutput outputs+=TaskOutput*)? ('runner' runner=EString)? '}';
+		//	{CustomTask}
+		//	'Task'
+		//	name=EString
+		//	'{' ('status' status=TaskStatus)? (inputs+=TaskInput inputs+=TaskInput*)? (outputs+=TaskOutput outputs+=TaskOutput*)?
+		//	('runner' runner=EString)?
+		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{CustomTask} 'Task' name=EString '{' ('status' status=TaskStatus)? (inputs+=TaskInput inputs+=TaskInput*)?
@@ -904,7 +948,9 @@ public class OptimindGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cValueAsStringEStringParserRuleCall_4_1_0 = (RuleCall)cValueAsStringAssignment_4_1.eContents().get(0);
 		
 		//Setter:
-		//	{Setter} 'Setter' name=EString ('type' typeAsString=Type)? ('value' valueAsString=EString)?;
+		//	{Setter}
+		//	'Setter'
+		//	name=EString ('type' typeAsString=Type)? ('value' valueAsString=EString)?;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{Setter} 'Setter' name=EString ('type' typeAsString=Type)? ('value' valueAsString=EString)?
@@ -960,7 +1006,9 @@ public class OptimindGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cTaskoutputTaskOutputEStringParserRuleCall_3_1_0_1 = (RuleCall)cTaskoutputTaskOutputCrossReference_3_1_0.eContents().get(1);
 		
 		//Connection:
-		//	{Connection} 'Connection' name=EString ('to' taskoutput=[TaskOutput|EString])?;
+		//	{Connection}
+		//	'Connection'
+		//	name=EString ('to' taskoutput=[TaskOutput|EString])?;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{Connection} 'Connection' name=EString ('to' taskoutput=[TaskOutput|EString])?
@@ -1017,8 +1065,12 @@ public class OptimindGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
 		
 		//LibraryFunction:
-		//	{LibraryFunction} 'LibraryFunction' name=EString '{' 'function' function=EString (inputs+=Input inputs+=Input*)?
-		//	(outputs+=Output outputs+=Output*)? '}';
+		//	{LibraryFunction}
+		//	'LibraryFunction'
+		//	name=EString
+		//	'{'
+		//	'function' function=EString (inputs+=Input inputs+=Input*)? (outputs+=Output outputs+=Output*)?
+		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{LibraryFunction} 'LibraryFunction' name=EString '{' 'function' function=EString (inputs+=Input inputs+=Input*)?
@@ -1099,7 +1151,9 @@ public class OptimindGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cValueAsStringEStringParserRuleCall_4_1_0 = (RuleCall)cValueAsStringAssignment_4_1.eContents().get(0);
 		
 		//Input:
-		//	{Input} 'Input' name=EString ('type' typeAsString=Type)? ('value' valueAsString=EString)?;
+		//	{Input}
+		//	'Input'
+		//	name=EString ('type' typeAsString=Type)? ('value' valueAsString=EString)?;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{Input} 'Input' name=EString ('type' typeAsString=Type)? ('value' valueAsString=EString)?
@@ -1158,7 +1212,9 @@ public class OptimindGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cValueAsStringEStringParserRuleCall_4_1_0 = (RuleCall)cValueAsStringAssignment_4_1.eContents().get(0);
 		
 		//Output:
-		//	{Output} 'Output' name=EString ('type' typeAsString=Type)? ('value' valueAsString=EString)?;
+		//	{Output}
+		//	'Output'
+		//	name=EString ('type' typeAsString=Type)? ('value' valueAsString=EString)?;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{Output} 'Output' name=EString ('type' typeAsString=Type)? ('value' valueAsString=EString)?
@@ -1354,8 +1410,12 @@ public class OptimindGrammarAccess extends AbstractGrammarElementFinder {
 
 	
 	//Workflow:
-	//	{Workflow} 'Workflow' name=EString '{' ('Language' language=ProgLanguage)? baseTask=BaseTask?
-	//	(functions+=LibraryFunction functions+=LibraryFunction*)? '}';
+	//	{Workflow}
+	//	'Workflow'
+	//	name=EString
+	//	'{' ('Language' language=ProgLanguage)?
+	//	baseTask=BaseTask? (functions+=LibraryFunction functions+=LibraryFunction*)?
+	//	'}';
 	public WorkflowElements getWorkflowAccess() {
 		return pWorkflow;
 	}
@@ -1415,7 +1475,9 @@ public class OptimindGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//TaskOutput:
-	//	{TaskOutput} 'Output' name=EString ('type' typeAsString=Type)? ('value' valueAsString=EString)?;
+	//	{TaskOutput}
+	//	'Output'
+	//	name=EString ('type' typeAsString=Type)? ('value' valueAsString=EString)?;
 	public TaskOutputElements getTaskOutputAccess() {
 		return pTaskOutput;
 	}
@@ -1435,8 +1497,15 @@ public class OptimindGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//For ForStatement:
-	//	{ForStatement} 'For' name=EString '{' 'from' from=EInt 'to' to=EInt 'increment' increment=EInt 'do'
-	//	abstracttask=AbstractTask '}';
+	//	{ForStatement}
+	//	'For'
+	//	name=EString
+	//	'{'
+	//	'from' from=EInt
+	//	'to' to=EInt
+	//	'increment' increment=EInt
+	//	'do' abstracttask=AbstractTask
+	//	'}';
 	public ForElements getForAccess() {
 		return pFor;
 	}
@@ -1446,7 +1515,13 @@ public class OptimindGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//While WhileStatement:
-	//	{WhileStatement} 'While' name=EString '{' 'condition' condition=EString 'do' abstracttask=AbstractTask '}';
+	//	{WhileStatement}
+	//	'While'
+	//	name=EString
+	//	'{'
+	//	'condition' condition=EString
+	//	'do' abstracttask=AbstractTask
+	//	'}';
 	public WhileElements getWhileAccess() {
 		return pWhile;
 	}
@@ -1456,8 +1531,13 @@ public class OptimindGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//If IfStatement:
-	//	{IfStatement} 'If' name=EString '{' 'condition' condition=EString 'then' then=AbstractTask ('else'
-	//	else=AbstractTask)? '}';
+	//	{IfStatement}
+	//	'If'
+	//	name=EString
+	//	'{'
+	//	'condition' condition=EString
+	//	'then' then=AbstractTask ('else' else=AbstractTask)?
+	//	'}';
 	public IfElements getIfAccess() {
 		return pIf;
 	}
@@ -1487,12 +1567,13 @@ public class OptimindGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//BaseTask:
-	//	{BaseTask} 'BaseTask' name=EString '{' ('status' status=TaskStatus)? ('inputs' '{' inputs+=TaskInput (","
-	//	inputs+=TaskInput)* '}')? ('outputs' '{' outputs+=TaskOutput ("," outputs+=TaskOutput)* '}')? (children+=AbstractTask
-	//	| abstractstatement+=AbstractStatement)* //(children+=AbstractTask (children+=AbstractTask)*)? 
-	//
-	//	//(abstractstatement+=AbstractStatement)* 
-	// '}';
+	//	{BaseTask}
+	//	'BaseTask'
+	//	name=EString
+	//	'{' ('status' status=TaskStatus)? ('inputs' '{' inputs+=TaskInput ("," inputs+=TaskInput)* '}')? ('outputs' '{'
+	//	outputs+=TaskOutput ("," outputs+=TaskOutput)* '}')? (children+=(AbstractTask | AbstractStatement)
+	//	children+=(AbstractTask | AbstractStatement)*)?
+	//	'}';
 	public BaseTaskElements getBaseTaskAccess() {
 		return pBaseTask;
 	}
@@ -1502,8 +1583,12 @@ public class OptimindGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//LibraryTask:
-	//	{LibraryTask} 'LibraryTask' name=EString '{' ('status' status=TaskStatus)? (inputs+=TaskInput inputs+=TaskInput*)?
-	//	(outputs+=TaskOutput outputs+=TaskOutput*)? ('Libraryfunction' libraryfunction=[LibraryFunction|EString])? '}';
+	//	{LibraryTask}
+	//	'LibraryTask'
+	//	name=EString
+	//	'{' ('status' status=TaskStatus)? (inputs+=TaskInput inputs+=TaskInput*)? (outputs+=TaskOutput outputs+=TaskOutput*)?
+	//	('Libraryfunction' libraryfunction=[LibraryFunction|EString])?
+	//	'}';
 	public LibraryTaskElements getLibraryTaskAccess() {
 		return pLibraryTask;
 	}
@@ -1513,8 +1598,12 @@ public class OptimindGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//CustomTask:
-	//	{CustomTask} 'Task' name=EString '{' ('status' status=TaskStatus)? (inputs+=TaskInput inputs+=TaskInput*)?
-	//	(outputs+=TaskOutput outputs+=TaskOutput*)? ('runner' runner=EString)? '}';
+	//	{CustomTask}
+	//	'Task'
+	//	name=EString
+	//	'{' ('status' status=TaskStatus)? (inputs+=TaskInput inputs+=TaskInput*)? (outputs+=TaskOutput outputs+=TaskOutput*)?
+	//	('runner' runner=EString)?
+	//	'}';
 	public CustomTaskElements getCustomTaskAccess() {
 		return pCustomTask;
 	}
@@ -1524,7 +1613,9 @@ public class OptimindGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Setter:
-	//	{Setter} 'Setter' name=EString ('type' typeAsString=Type)? ('value' valueAsString=EString)?;
+	//	{Setter}
+	//	'Setter'
+	//	name=EString ('type' typeAsString=Type)? ('value' valueAsString=EString)?;
 	public SetterElements getSetterAccess() {
 		return pSetter;
 	}
@@ -1534,7 +1625,9 @@ public class OptimindGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Connection:
-	//	{Connection} 'Connection' name=EString ('to' taskoutput=[TaskOutput|EString])?;
+	//	{Connection}
+	//	'Connection'
+	//	name=EString ('to' taskoutput=[TaskOutput|EString])?;
 	public ConnectionElements getConnectionAccess() {
 		return pConnection;
 	}
@@ -1544,8 +1637,12 @@ public class OptimindGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//LibraryFunction:
-	//	{LibraryFunction} 'LibraryFunction' name=EString '{' 'function' function=EString (inputs+=Input inputs+=Input*)?
-	//	(outputs+=Output outputs+=Output*)? '}';
+	//	{LibraryFunction}
+	//	'LibraryFunction'
+	//	name=EString
+	//	'{'
+	//	'function' function=EString (inputs+=Input inputs+=Input*)? (outputs+=Output outputs+=Output*)?
+	//	'}';
 	public LibraryFunctionElements getLibraryFunctionAccess() {
 		return pLibraryFunction;
 	}
@@ -1555,7 +1652,9 @@ public class OptimindGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Input:
-	//	{Input} 'Input' name=EString ('type' typeAsString=Type)? ('value' valueAsString=EString)?;
+	//	{Input}
+	//	'Input'
+	//	name=EString ('type' typeAsString=Type)? ('value' valueAsString=EString)?;
 	public InputElements getInputAccess() {
 		return pInput;
 	}
@@ -1565,7 +1664,9 @@ public class OptimindGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Output:
-	//	{Output} 'Output' name=EString ('type' typeAsString=Type)? ('value' valueAsString=EString)?;
+	//	{Output}
+	//	'Output'
+	//	name=EString ('type' typeAsString=Type)? ('value' valueAsString=EString)?;
 	public OutputElements getOutputAccess() {
 		return pOutput;
 	}

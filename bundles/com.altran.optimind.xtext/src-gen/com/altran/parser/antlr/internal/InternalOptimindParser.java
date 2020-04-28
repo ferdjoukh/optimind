@@ -2220,7 +2220,7 @@ public class InternalOptimindParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBaseTask"
-    // InternalOptimind.g:910:1: ruleBaseTask returns [EObject current=null] : ( () otherlv_1= 'BaseTask' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'status' ( (lv_status_5_0= ruleTaskStatus ) ) )? (otherlv_6= 'inputs' otherlv_7= '{' ( (lv_inputs_8_0= ruleTaskInput ) ) (otherlv_9= ',' ( (lv_inputs_10_0= ruleTaskInput ) ) )* otherlv_11= '}' )? (otherlv_12= 'outputs' otherlv_13= '{' ( (lv_outputs_14_0= ruleTaskOutput ) ) (otherlv_15= ',' ( (lv_outputs_16_0= ruleTaskOutput ) ) )* otherlv_17= '}' )? ( ( (lv_children_18_0= ruleAbstractTask ) ) | ( (lv_abstractstatement_19_0= ruleAbstractStatement ) ) )* otherlv_20= '}' ) ;
+    // InternalOptimind.g:910:1: ruleBaseTask returns [EObject current=null] : ( () otherlv_1= 'BaseTask' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'status' ( (lv_status_5_0= ruleTaskStatus ) ) )? (otherlv_6= 'inputs' otherlv_7= '{' ( (lv_inputs_8_0= ruleTaskInput ) ) (otherlv_9= ',' ( (lv_inputs_10_0= ruleTaskInput ) ) )* otherlv_11= '}' )? (otherlv_12= 'outputs' otherlv_13= '{' ( (lv_outputs_14_0= ruleTaskOutput ) ) (otherlv_15= ',' ( (lv_outputs_16_0= ruleTaskOutput ) ) )* otherlv_17= '}' )? ( ( ( (lv_children_18_1= ruleAbstractTask | lv_children_18_2= ruleAbstractStatement ) ) ) ( ( (lv_children_19_1= ruleAbstractTask | lv_children_19_2= ruleAbstractStatement ) ) )* )? otherlv_20= '}' ) ;
     public final EObject ruleBaseTask() throws RecognitionException {
         EObject current = null;
 
@@ -2248,20 +2248,24 @@ public class InternalOptimindParser extends AbstractInternalAntlrParser {
 
         EObject lv_outputs_16_0 = null;
 
-        EObject lv_children_18_0 = null;
+        EObject lv_children_18_1 = null;
 
-        EObject lv_abstractstatement_19_0 = null;
+        EObject lv_children_18_2 = null;
+
+        EObject lv_children_19_1 = null;
+
+        EObject lv_children_19_2 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalOptimind.g:916:2: ( ( () otherlv_1= 'BaseTask' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'status' ( (lv_status_5_0= ruleTaskStatus ) ) )? (otherlv_6= 'inputs' otherlv_7= '{' ( (lv_inputs_8_0= ruleTaskInput ) ) (otherlv_9= ',' ( (lv_inputs_10_0= ruleTaskInput ) ) )* otherlv_11= '}' )? (otherlv_12= 'outputs' otherlv_13= '{' ( (lv_outputs_14_0= ruleTaskOutput ) ) (otherlv_15= ',' ( (lv_outputs_16_0= ruleTaskOutput ) ) )* otherlv_17= '}' )? ( ( (lv_children_18_0= ruleAbstractTask ) ) | ( (lv_abstractstatement_19_0= ruleAbstractStatement ) ) )* otherlv_20= '}' ) )
-            // InternalOptimind.g:917:2: ( () otherlv_1= 'BaseTask' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'status' ( (lv_status_5_0= ruleTaskStatus ) ) )? (otherlv_6= 'inputs' otherlv_7= '{' ( (lv_inputs_8_0= ruleTaskInput ) ) (otherlv_9= ',' ( (lv_inputs_10_0= ruleTaskInput ) ) )* otherlv_11= '}' )? (otherlv_12= 'outputs' otherlv_13= '{' ( (lv_outputs_14_0= ruleTaskOutput ) ) (otherlv_15= ',' ( (lv_outputs_16_0= ruleTaskOutput ) ) )* otherlv_17= '}' )? ( ( (lv_children_18_0= ruleAbstractTask ) ) | ( (lv_abstractstatement_19_0= ruleAbstractStatement ) ) )* otherlv_20= '}' )
+            // InternalOptimind.g:916:2: ( ( () otherlv_1= 'BaseTask' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'status' ( (lv_status_5_0= ruleTaskStatus ) ) )? (otherlv_6= 'inputs' otherlv_7= '{' ( (lv_inputs_8_0= ruleTaskInput ) ) (otherlv_9= ',' ( (lv_inputs_10_0= ruleTaskInput ) ) )* otherlv_11= '}' )? (otherlv_12= 'outputs' otherlv_13= '{' ( (lv_outputs_14_0= ruleTaskOutput ) ) (otherlv_15= ',' ( (lv_outputs_16_0= ruleTaskOutput ) ) )* otherlv_17= '}' )? ( ( ( (lv_children_18_1= ruleAbstractTask | lv_children_18_2= ruleAbstractStatement ) ) ) ( ( (lv_children_19_1= ruleAbstractTask | lv_children_19_2= ruleAbstractStatement ) ) )* )? otherlv_20= '}' ) )
+            // InternalOptimind.g:917:2: ( () otherlv_1= 'BaseTask' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'status' ( (lv_status_5_0= ruleTaskStatus ) ) )? (otherlv_6= 'inputs' otherlv_7= '{' ( (lv_inputs_8_0= ruleTaskInput ) ) (otherlv_9= ',' ( (lv_inputs_10_0= ruleTaskInput ) ) )* otherlv_11= '}' )? (otherlv_12= 'outputs' otherlv_13= '{' ( (lv_outputs_14_0= ruleTaskOutput ) ) (otherlv_15= ',' ( (lv_outputs_16_0= ruleTaskOutput ) ) )* otherlv_17= '}' )? ( ( ( (lv_children_18_1= ruleAbstractTask | lv_children_18_2= ruleAbstractStatement ) ) ) ( ( (lv_children_19_1= ruleAbstractTask | lv_children_19_2= ruleAbstractStatement ) ) )* )? otherlv_20= '}' )
             {
-            // InternalOptimind.g:917:2: ( () otherlv_1= 'BaseTask' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'status' ( (lv_status_5_0= ruleTaskStatus ) ) )? (otherlv_6= 'inputs' otherlv_7= '{' ( (lv_inputs_8_0= ruleTaskInput ) ) (otherlv_9= ',' ( (lv_inputs_10_0= ruleTaskInput ) ) )* otherlv_11= '}' )? (otherlv_12= 'outputs' otherlv_13= '{' ( (lv_outputs_14_0= ruleTaskOutput ) ) (otherlv_15= ',' ( (lv_outputs_16_0= ruleTaskOutput ) ) )* otherlv_17= '}' )? ( ( (lv_children_18_0= ruleAbstractTask ) ) | ( (lv_abstractstatement_19_0= ruleAbstractStatement ) ) )* otherlv_20= '}' )
-            // InternalOptimind.g:918:3: () otherlv_1= 'BaseTask' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'status' ( (lv_status_5_0= ruleTaskStatus ) ) )? (otherlv_6= 'inputs' otherlv_7= '{' ( (lv_inputs_8_0= ruleTaskInput ) ) (otherlv_9= ',' ( (lv_inputs_10_0= ruleTaskInput ) ) )* otherlv_11= '}' )? (otherlv_12= 'outputs' otherlv_13= '{' ( (lv_outputs_14_0= ruleTaskOutput ) ) (otherlv_15= ',' ( (lv_outputs_16_0= ruleTaskOutput ) ) )* otherlv_17= '}' )? ( ( (lv_children_18_0= ruleAbstractTask ) ) | ( (lv_abstractstatement_19_0= ruleAbstractStatement ) ) )* otherlv_20= '}'
+            // InternalOptimind.g:917:2: ( () otherlv_1= 'BaseTask' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'status' ( (lv_status_5_0= ruleTaskStatus ) ) )? (otherlv_6= 'inputs' otherlv_7= '{' ( (lv_inputs_8_0= ruleTaskInput ) ) (otherlv_9= ',' ( (lv_inputs_10_0= ruleTaskInput ) ) )* otherlv_11= '}' )? (otherlv_12= 'outputs' otherlv_13= '{' ( (lv_outputs_14_0= ruleTaskOutput ) ) (otherlv_15= ',' ( (lv_outputs_16_0= ruleTaskOutput ) ) )* otherlv_17= '}' )? ( ( ( (lv_children_18_1= ruleAbstractTask | lv_children_18_2= ruleAbstractStatement ) ) ) ( ( (lv_children_19_1= ruleAbstractTask | lv_children_19_2= ruleAbstractStatement ) ) )* )? otherlv_20= '}' )
+            // InternalOptimind.g:918:3: () otherlv_1= 'BaseTask' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'status' ( (lv_status_5_0= ruleTaskStatus ) ) )? (otherlv_6= 'inputs' otherlv_7= '{' ( (lv_inputs_8_0= ruleTaskInput ) ) (otherlv_9= ',' ( (lv_inputs_10_0= ruleTaskInput ) ) )* otherlv_11= '}' )? (otherlv_12= 'outputs' otherlv_13= '{' ( (lv_outputs_14_0= ruleTaskOutput ) ) (otherlv_15= ',' ( (lv_outputs_16_0= ruleTaskOutput ) ) )* otherlv_17= '}' )? ( ( ( (lv_children_18_1= ruleAbstractTask | lv_children_18_2= ruleAbstractStatement ) ) ) ( ( (lv_children_19_1= ruleAbstractTask | lv_children_19_2= ruleAbstractStatement ) ) )* )? otherlv_20= '}'
             {
             // InternalOptimind.g:918:3: ()
             // InternalOptimind.g:919:4: 
@@ -2603,100 +2607,204 @@ public class InternalOptimindParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalOptimind.g:1093:3: ( ( (lv_children_18_0= ruleAbstractTask ) ) | ( (lv_abstractstatement_19_0= ruleAbstractStatement ) ) )*
-            loop18:
-            do {
-                int alt18=3;
-                int LA18_0 = input.LA(1);
+            // InternalOptimind.g:1093:3: ( ( ( (lv_children_18_1= ruleAbstractTask | lv_children_18_2= ruleAbstractStatement ) ) ) ( ( (lv_children_19_1= ruleAbstractTask | lv_children_19_2= ruleAbstractStatement ) ) )* )?
+            int alt21=2;
+            int LA21_0 = input.LA(1);
 
-                if ( (LA18_0==28||LA18_0==33||LA18_0==35) ) {
-                    alt18=1;
-                }
-                else if ( (LA18_0==18||LA18_0==23||LA18_0==25) ) {
-                    alt18=2;
-                }
+            if ( (LA21_0==18||LA21_0==23||LA21_0==25||LA21_0==28||LA21_0==33||LA21_0==35) ) {
+                alt21=1;
+            }
+            switch (alt21) {
+                case 1 :
+                    // InternalOptimind.g:1094:4: ( ( (lv_children_18_1= ruleAbstractTask | lv_children_18_2= ruleAbstractStatement ) ) ) ( ( (lv_children_19_1= ruleAbstractTask | lv_children_19_2= ruleAbstractStatement ) ) )*
+                    {
+                    // InternalOptimind.g:1094:4: ( ( (lv_children_18_1= ruleAbstractTask | lv_children_18_2= ruleAbstractStatement ) ) )
+                    // InternalOptimind.g:1095:5: ( (lv_children_18_1= ruleAbstractTask | lv_children_18_2= ruleAbstractStatement ) )
+                    {
+                    // InternalOptimind.g:1095:5: ( (lv_children_18_1= ruleAbstractTask | lv_children_18_2= ruleAbstractStatement ) )
+                    // InternalOptimind.g:1096:6: (lv_children_18_1= ruleAbstractTask | lv_children_18_2= ruleAbstractStatement )
+                    {
+                    // InternalOptimind.g:1096:6: (lv_children_18_1= ruleAbstractTask | lv_children_18_2= ruleAbstractStatement )
+                    int alt18=2;
+                    int LA18_0 = input.LA(1);
 
+                    if ( (LA18_0==28||LA18_0==33||LA18_0==35) ) {
+                        alt18=1;
+                    }
+                    else if ( (LA18_0==18||LA18_0==23||LA18_0==25) ) {
+                        alt18=2;
+                    }
+                    else {
+                        NoViableAltException nvae =
+                            new NoViableAltException("", 18, 0, input);
 
-                switch (alt18) {
-            	case 1 :
-            	    // InternalOptimind.g:1094:4: ( (lv_children_18_0= ruleAbstractTask ) )
-            	    {
-            	    // InternalOptimind.g:1094:4: ( (lv_children_18_0= ruleAbstractTask ) )
-            	    // InternalOptimind.g:1095:5: (lv_children_18_0= ruleAbstractTask )
-            	    {
-            	    // InternalOptimind.g:1095:5: (lv_children_18_0= ruleAbstractTask )
-            	    // InternalOptimind.g:1096:6: lv_children_18_0= ruleAbstractTask
-            	    {
+                        throw nvae;
+                    }
+                    switch (alt18) {
+                        case 1 :
+                            // InternalOptimind.g:1097:7: lv_children_18_1= ruleAbstractTask
+                            {
 
-            	    						newCompositeNode(grammarAccess.getBaseTaskAccess().getChildrenAbstractTaskParserRuleCall_7_0_0());
-            	    					
-            	    pushFollow(FOLLOW_28);
-            	    lv_children_18_0=ruleAbstractTask();
+                            							newCompositeNode(grammarAccess.getBaseTaskAccess().getChildrenAbstractTaskParserRuleCall_7_0_0_0());
+                            						
+                            pushFollow(FOLLOW_28);
+                            lv_children_18_1=ruleAbstractTask();
 
-            	    state._fsp--;
-
-
-            	    						if (current==null) {
-            	    							current = createModelElementForParent(grammarAccess.getBaseTaskRule());
-            	    						}
-            	    						add(
-            	    							current,
-            	    							"children",
-            	    							lv_children_18_0,
-            	    							"com.altran.Optimind.AbstractTask");
-            	    						afterParserOrEnumRuleCall();
-            	    					
-
-            	    }
-
-
-            	    }
+                            state._fsp--;
 
 
-            	    }
-            	    break;
-            	case 2 :
-            	    // InternalOptimind.g:1114:4: ( (lv_abstractstatement_19_0= ruleAbstractStatement ) )
-            	    {
-            	    // InternalOptimind.g:1114:4: ( (lv_abstractstatement_19_0= ruleAbstractStatement ) )
-            	    // InternalOptimind.g:1115:5: (lv_abstractstatement_19_0= ruleAbstractStatement )
-            	    {
-            	    // InternalOptimind.g:1115:5: (lv_abstractstatement_19_0= ruleAbstractStatement )
-            	    // InternalOptimind.g:1116:6: lv_abstractstatement_19_0= ruleAbstractStatement
-            	    {
+                            							if (current==null) {
+                            								current = createModelElementForParent(grammarAccess.getBaseTaskRule());
+                            							}
+                            							add(
+                            								current,
+                            								"children",
+                            								lv_children_18_1,
+                            								"com.altran.Optimind.AbstractTask");
+                            							afterParserOrEnumRuleCall();
+                            						
 
-            	    						newCompositeNode(grammarAccess.getBaseTaskAccess().getAbstractstatementAbstractStatementParserRuleCall_7_1_0());
-            	    					
-            	    pushFollow(FOLLOW_28);
-            	    lv_abstractstatement_19_0=ruleAbstractStatement();
+                            }
+                            break;
+                        case 2 :
+                            // InternalOptimind.g:1113:7: lv_children_18_2= ruleAbstractStatement
+                            {
 
-            	    state._fsp--;
+                            							newCompositeNode(grammarAccess.getBaseTaskAccess().getChildrenAbstractStatementParserRuleCall_7_0_0_1());
+                            						
+                            pushFollow(FOLLOW_28);
+                            lv_children_18_2=ruleAbstractStatement();
 
-
-            	    						if (current==null) {
-            	    							current = createModelElementForParent(grammarAccess.getBaseTaskRule());
-            	    						}
-            	    						add(
-            	    							current,
-            	    							"abstractstatement",
-            	    							lv_abstractstatement_19_0,
-            	    							"com.altran.Optimind.AbstractStatement");
-            	    						afterParserOrEnumRuleCall();
-            	    					
-
-            	    }
+                            state._fsp--;
 
 
-            	    }
+                            							if (current==null) {
+                            								current = createModelElementForParent(grammarAccess.getBaseTaskRule());
+                            							}
+                            							add(
+                            								current,
+                            								"children",
+                            								lv_children_18_2,
+                            								"com.altran.Optimind.AbstractStatement");
+                            							afterParserOrEnumRuleCall();
+                            						
+
+                            }
+                            break;
+
+                    }
 
 
-            	    }
-            	    break;
+                    }
 
-            	default :
-            	    break loop18;
-                }
-            } while (true);
+
+                    }
+
+                    // InternalOptimind.g:1131:4: ( ( (lv_children_19_1= ruleAbstractTask | lv_children_19_2= ruleAbstractStatement ) ) )*
+                    loop20:
+                    do {
+                        int alt20=2;
+                        int LA20_0 = input.LA(1);
+
+                        if ( (LA20_0==18||LA20_0==23||LA20_0==25||LA20_0==28||LA20_0==33||LA20_0==35) ) {
+                            alt20=1;
+                        }
+
+
+                        switch (alt20) {
+                    	case 1 :
+                    	    // InternalOptimind.g:1132:5: ( (lv_children_19_1= ruleAbstractTask | lv_children_19_2= ruleAbstractStatement ) )
+                    	    {
+                    	    // InternalOptimind.g:1132:5: ( (lv_children_19_1= ruleAbstractTask | lv_children_19_2= ruleAbstractStatement ) )
+                    	    // InternalOptimind.g:1133:6: (lv_children_19_1= ruleAbstractTask | lv_children_19_2= ruleAbstractStatement )
+                    	    {
+                    	    // InternalOptimind.g:1133:6: (lv_children_19_1= ruleAbstractTask | lv_children_19_2= ruleAbstractStatement )
+                    	    int alt19=2;
+                    	    int LA19_0 = input.LA(1);
+
+                    	    if ( (LA19_0==28||LA19_0==33||LA19_0==35) ) {
+                    	        alt19=1;
+                    	    }
+                    	    else if ( (LA19_0==18||LA19_0==23||LA19_0==25) ) {
+                    	        alt19=2;
+                    	    }
+                    	    else {
+                    	        NoViableAltException nvae =
+                    	            new NoViableAltException("", 19, 0, input);
+
+                    	        throw nvae;
+                    	    }
+                    	    switch (alt19) {
+                    	        case 1 :
+                    	            // InternalOptimind.g:1134:7: lv_children_19_1= ruleAbstractTask
+                    	            {
+
+                    	            							newCompositeNode(grammarAccess.getBaseTaskAccess().getChildrenAbstractTaskParserRuleCall_7_1_0_0());
+                    	            						
+                    	            pushFollow(FOLLOW_28);
+                    	            lv_children_19_1=ruleAbstractTask();
+
+                    	            state._fsp--;
+
+
+                    	            							if (current==null) {
+                    	            								current = createModelElementForParent(grammarAccess.getBaseTaskRule());
+                    	            							}
+                    	            							add(
+                    	            								current,
+                    	            								"children",
+                    	            								lv_children_19_1,
+                    	            								"com.altran.Optimind.AbstractTask");
+                    	            							afterParserOrEnumRuleCall();
+                    	            						
+
+                    	            }
+                    	            break;
+                    	        case 2 :
+                    	            // InternalOptimind.g:1150:7: lv_children_19_2= ruleAbstractStatement
+                    	            {
+
+                    	            							newCompositeNode(grammarAccess.getBaseTaskAccess().getChildrenAbstractStatementParserRuleCall_7_1_0_1());
+                    	            						
+                    	            pushFollow(FOLLOW_28);
+                    	            lv_children_19_2=ruleAbstractStatement();
+
+                    	            state._fsp--;
+
+
+                    	            							if (current==null) {
+                    	            								current = createModelElementForParent(grammarAccess.getBaseTaskRule());
+                    	            							}
+                    	            							add(
+                    	            								current,
+                    	            								"children",
+                    	            								lv_children_19_2,
+                    	            								"com.altran.Optimind.AbstractStatement");
+                    	            							afterParserOrEnumRuleCall();
+                    	            						
+
+                    	            }
+                    	            break;
+
+                    	    }
+
+
+                    	    }
+
+
+                    	    }
+                    	    break;
+
+                    	default :
+                    	    break loop20;
+                        }
+                    } while (true);
+
+
+                    }
+                    break;
+
+            }
 
             otherlv_20=(Token)match(input,14,FOLLOW_2); 
 
@@ -2725,7 +2833,7 @@ public class InternalOptimindParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleLibraryTask"
-    // InternalOptimind.g:1142:1: entryRuleLibraryTask returns [EObject current=null] : iv_ruleLibraryTask= ruleLibraryTask EOF ;
+    // InternalOptimind.g:1177:1: entryRuleLibraryTask returns [EObject current=null] : iv_ruleLibraryTask= ruleLibraryTask EOF ;
     public final EObject entryRuleLibraryTask() throws RecognitionException {
         EObject current = null;
 
@@ -2733,8 +2841,8 @@ public class InternalOptimindParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalOptimind.g:1142:52: (iv_ruleLibraryTask= ruleLibraryTask EOF )
-            // InternalOptimind.g:1143:2: iv_ruleLibraryTask= ruleLibraryTask EOF
+            // InternalOptimind.g:1177:52: (iv_ruleLibraryTask= ruleLibraryTask EOF )
+            // InternalOptimind.g:1178:2: iv_ruleLibraryTask= ruleLibraryTask EOF
             {
              newCompositeNode(grammarAccess.getLibraryTaskRule()); 
             pushFollow(FOLLOW_1);
@@ -2761,7 +2869,7 @@ public class InternalOptimindParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleLibraryTask"
-    // InternalOptimind.g:1149:1: ruleLibraryTask returns [EObject current=null] : ( () otherlv_1= 'LibraryTask' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'status' ( (lv_status_5_0= ruleTaskStatus ) ) )? ( ( (lv_inputs_6_0= ruleTaskInput ) ) ( (lv_inputs_7_0= ruleTaskInput ) )* )? ( ( (lv_outputs_8_0= ruleTaskOutput ) ) ( (lv_outputs_9_0= ruleTaskOutput ) )* )? (otherlv_10= 'Libraryfunction' ( ( ruleEString ) ) )? otherlv_12= '}' ) ;
+    // InternalOptimind.g:1184:1: ruleLibraryTask returns [EObject current=null] : ( () otherlv_1= 'LibraryTask' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'status' ( (lv_status_5_0= ruleTaskStatus ) ) )? ( ( (lv_inputs_6_0= ruleTaskInput ) ) ( (lv_inputs_7_0= ruleTaskInput ) )* )? ( ( (lv_outputs_8_0= ruleTaskOutput ) ) ( (lv_outputs_9_0= ruleTaskOutput ) )* )? (otherlv_10= 'Libraryfunction' ( ( ruleEString ) ) )? otherlv_12= '}' ) ;
     public final EObject ruleLibraryTask() throws RecognitionException {
         EObject current = null;
 
@@ -2787,14 +2895,14 @@ public class InternalOptimindParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalOptimind.g:1155:2: ( ( () otherlv_1= 'LibraryTask' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'status' ( (lv_status_5_0= ruleTaskStatus ) ) )? ( ( (lv_inputs_6_0= ruleTaskInput ) ) ( (lv_inputs_7_0= ruleTaskInput ) )* )? ( ( (lv_outputs_8_0= ruleTaskOutput ) ) ( (lv_outputs_9_0= ruleTaskOutput ) )* )? (otherlv_10= 'Libraryfunction' ( ( ruleEString ) ) )? otherlv_12= '}' ) )
-            // InternalOptimind.g:1156:2: ( () otherlv_1= 'LibraryTask' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'status' ( (lv_status_5_0= ruleTaskStatus ) ) )? ( ( (lv_inputs_6_0= ruleTaskInput ) ) ( (lv_inputs_7_0= ruleTaskInput ) )* )? ( ( (lv_outputs_8_0= ruleTaskOutput ) ) ( (lv_outputs_9_0= ruleTaskOutput ) )* )? (otherlv_10= 'Libraryfunction' ( ( ruleEString ) ) )? otherlv_12= '}' )
+            // InternalOptimind.g:1190:2: ( ( () otherlv_1= 'LibraryTask' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'status' ( (lv_status_5_0= ruleTaskStatus ) ) )? ( ( (lv_inputs_6_0= ruleTaskInput ) ) ( (lv_inputs_7_0= ruleTaskInput ) )* )? ( ( (lv_outputs_8_0= ruleTaskOutput ) ) ( (lv_outputs_9_0= ruleTaskOutput ) )* )? (otherlv_10= 'Libraryfunction' ( ( ruleEString ) ) )? otherlv_12= '}' ) )
+            // InternalOptimind.g:1191:2: ( () otherlv_1= 'LibraryTask' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'status' ( (lv_status_5_0= ruleTaskStatus ) ) )? ( ( (lv_inputs_6_0= ruleTaskInput ) ) ( (lv_inputs_7_0= ruleTaskInput ) )* )? ( ( (lv_outputs_8_0= ruleTaskOutput ) ) ( (lv_outputs_9_0= ruleTaskOutput ) )* )? (otherlv_10= 'Libraryfunction' ( ( ruleEString ) ) )? otherlv_12= '}' )
             {
-            // InternalOptimind.g:1156:2: ( () otherlv_1= 'LibraryTask' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'status' ( (lv_status_5_0= ruleTaskStatus ) ) )? ( ( (lv_inputs_6_0= ruleTaskInput ) ) ( (lv_inputs_7_0= ruleTaskInput ) )* )? ( ( (lv_outputs_8_0= ruleTaskOutput ) ) ( (lv_outputs_9_0= ruleTaskOutput ) )* )? (otherlv_10= 'Libraryfunction' ( ( ruleEString ) ) )? otherlv_12= '}' )
-            // InternalOptimind.g:1157:3: () otherlv_1= 'LibraryTask' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'status' ( (lv_status_5_0= ruleTaskStatus ) ) )? ( ( (lv_inputs_6_0= ruleTaskInput ) ) ( (lv_inputs_7_0= ruleTaskInput ) )* )? ( ( (lv_outputs_8_0= ruleTaskOutput ) ) ( (lv_outputs_9_0= ruleTaskOutput ) )* )? (otherlv_10= 'Libraryfunction' ( ( ruleEString ) ) )? otherlv_12= '}'
+            // InternalOptimind.g:1191:2: ( () otherlv_1= 'LibraryTask' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'status' ( (lv_status_5_0= ruleTaskStatus ) ) )? ( ( (lv_inputs_6_0= ruleTaskInput ) ) ( (lv_inputs_7_0= ruleTaskInput ) )* )? ( ( (lv_outputs_8_0= ruleTaskOutput ) ) ( (lv_outputs_9_0= ruleTaskOutput ) )* )? (otherlv_10= 'Libraryfunction' ( ( ruleEString ) ) )? otherlv_12= '}' )
+            // InternalOptimind.g:1192:3: () otherlv_1= 'LibraryTask' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'status' ( (lv_status_5_0= ruleTaskStatus ) ) )? ( ( (lv_inputs_6_0= ruleTaskInput ) ) ( (lv_inputs_7_0= ruleTaskInput ) )* )? ( ( (lv_outputs_8_0= ruleTaskOutput ) ) ( (lv_outputs_9_0= ruleTaskOutput ) )* )? (otherlv_10= 'Libraryfunction' ( ( ruleEString ) ) )? otherlv_12= '}'
             {
-            // InternalOptimind.g:1157:3: ()
-            // InternalOptimind.g:1158:4: 
+            // InternalOptimind.g:1192:3: ()
+            // InternalOptimind.g:1193:4: 
             {
 
             				current = forceCreateModelElement(
@@ -2808,11 +2916,11 @@ public class InternalOptimindParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getLibraryTaskAccess().getLibraryTaskKeyword_1());
             		
-            // InternalOptimind.g:1168:3: ( (lv_name_2_0= ruleEString ) )
-            // InternalOptimind.g:1169:4: (lv_name_2_0= ruleEString )
+            // InternalOptimind.g:1203:3: ( (lv_name_2_0= ruleEString ) )
+            // InternalOptimind.g:1204:4: (lv_name_2_0= ruleEString )
             {
-            // InternalOptimind.g:1169:4: (lv_name_2_0= ruleEString )
-            // InternalOptimind.g:1170:5: lv_name_2_0= ruleEString
+            // InternalOptimind.g:1204:4: (lv_name_2_0= ruleEString )
+            // InternalOptimind.g:1205:5: lv_name_2_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getLibraryTaskAccess().getNameEStringParserRuleCall_2_0());
@@ -2843,26 +2951,26 @@ public class InternalOptimindParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_3, grammarAccess.getLibraryTaskAccess().getLeftCurlyBracketKeyword_3());
             		
-            // InternalOptimind.g:1191:3: (otherlv_4= 'status' ( (lv_status_5_0= ruleTaskStatus ) ) )?
-            int alt19=2;
-            int LA19_0 = input.LA(1);
+            // InternalOptimind.g:1226:3: (otherlv_4= 'status' ( (lv_status_5_0= ruleTaskStatus ) ) )?
+            int alt22=2;
+            int LA22_0 = input.LA(1);
 
-            if ( (LA19_0==29) ) {
-                alt19=1;
+            if ( (LA22_0==29) ) {
+                alt22=1;
             }
-            switch (alt19) {
+            switch (alt22) {
                 case 1 :
-                    // InternalOptimind.g:1192:4: otherlv_4= 'status' ( (lv_status_5_0= ruleTaskStatus ) )
+                    // InternalOptimind.g:1227:4: otherlv_4= 'status' ( (lv_status_5_0= ruleTaskStatus ) )
                     {
                     otherlv_4=(Token)match(input,29,FOLLOW_22); 
 
                     				newLeafNode(otherlv_4, grammarAccess.getLibraryTaskAccess().getStatusKeyword_4_0());
                     			
-                    // InternalOptimind.g:1196:4: ( (lv_status_5_0= ruleTaskStatus ) )
-                    // InternalOptimind.g:1197:5: (lv_status_5_0= ruleTaskStatus )
+                    // InternalOptimind.g:1231:4: ( (lv_status_5_0= ruleTaskStatus ) )
+                    // InternalOptimind.g:1232:5: (lv_status_5_0= ruleTaskStatus )
                     {
-                    // InternalOptimind.g:1197:5: (lv_status_5_0= ruleTaskStatus )
-                    // InternalOptimind.g:1198:6: lv_status_5_0= ruleTaskStatus
+                    // InternalOptimind.g:1232:5: (lv_status_5_0= ruleTaskStatus )
+                    // InternalOptimind.g:1233:6: lv_status_5_0= ruleTaskStatus
                     {
 
                     						newCompositeNode(grammarAccess.getLibraryTaskAccess().getStatusTaskStatusEnumRuleCall_4_1_0());
@@ -2895,22 +3003,22 @@ public class InternalOptimindParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalOptimind.g:1216:3: ( ( (lv_inputs_6_0= ruleTaskInput ) ) ( (lv_inputs_7_0= ruleTaskInput ) )* )?
-            int alt21=2;
-            int LA21_0 = input.LA(1);
+            // InternalOptimind.g:1251:3: ( ( (lv_inputs_6_0= ruleTaskInput ) ) ( (lv_inputs_7_0= ruleTaskInput ) )* )?
+            int alt24=2;
+            int LA24_0 = input.LA(1);
 
-            if ( ((LA21_0>=37 && LA21_0<=38)) ) {
-                alt21=1;
+            if ( ((LA24_0>=37 && LA24_0<=38)) ) {
+                alt24=1;
             }
-            switch (alt21) {
+            switch (alt24) {
                 case 1 :
-                    // InternalOptimind.g:1217:4: ( (lv_inputs_6_0= ruleTaskInput ) ) ( (lv_inputs_7_0= ruleTaskInput ) )*
+                    // InternalOptimind.g:1252:4: ( (lv_inputs_6_0= ruleTaskInput ) ) ( (lv_inputs_7_0= ruleTaskInput ) )*
                     {
-                    // InternalOptimind.g:1217:4: ( (lv_inputs_6_0= ruleTaskInput ) )
-                    // InternalOptimind.g:1218:5: (lv_inputs_6_0= ruleTaskInput )
+                    // InternalOptimind.g:1252:4: ( (lv_inputs_6_0= ruleTaskInput ) )
+                    // InternalOptimind.g:1253:5: (lv_inputs_6_0= ruleTaskInput )
                     {
-                    // InternalOptimind.g:1218:5: (lv_inputs_6_0= ruleTaskInput )
-                    // InternalOptimind.g:1219:6: lv_inputs_6_0= ruleTaskInput
+                    // InternalOptimind.g:1253:5: (lv_inputs_6_0= ruleTaskInput )
+                    // InternalOptimind.g:1254:6: lv_inputs_6_0= ruleTaskInput
                     {
 
                     						newCompositeNode(grammarAccess.getLibraryTaskAccess().getInputsTaskInputParserRuleCall_5_0_0());
@@ -2937,23 +3045,23 @@ public class InternalOptimindParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalOptimind.g:1236:4: ( (lv_inputs_7_0= ruleTaskInput ) )*
-                    loop20:
+                    // InternalOptimind.g:1271:4: ( (lv_inputs_7_0= ruleTaskInput ) )*
+                    loop23:
                     do {
-                        int alt20=2;
-                        int LA20_0 = input.LA(1);
+                        int alt23=2;
+                        int LA23_0 = input.LA(1);
 
-                        if ( ((LA20_0>=37 && LA20_0<=38)) ) {
-                            alt20=1;
+                        if ( ((LA23_0>=37 && LA23_0<=38)) ) {
+                            alt23=1;
                         }
 
 
-                        switch (alt20) {
+                        switch (alt23) {
                     	case 1 :
-                    	    // InternalOptimind.g:1237:5: (lv_inputs_7_0= ruleTaskInput )
+                    	    // InternalOptimind.g:1272:5: (lv_inputs_7_0= ruleTaskInput )
                     	    {
-                    	    // InternalOptimind.g:1237:5: (lv_inputs_7_0= ruleTaskInput )
-                    	    // InternalOptimind.g:1238:6: lv_inputs_7_0= ruleTaskInput
+                    	    // InternalOptimind.g:1272:5: (lv_inputs_7_0= ruleTaskInput )
+                    	    // InternalOptimind.g:1273:6: lv_inputs_7_0= ruleTaskInput
                     	    {
 
                     	    						newCompositeNode(grammarAccess.getLibraryTaskAccess().getInputsTaskInputParserRuleCall_5_1_0());
@@ -2982,7 +3090,7 @@ public class InternalOptimindParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop20;
+                    	    break loop23;
                         }
                     } while (true);
 
@@ -2992,22 +3100,22 @@ public class InternalOptimindParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalOptimind.g:1256:3: ( ( (lv_outputs_8_0= ruleTaskOutput ) ) ( (lv_outputs_9_0= ruleTaskOutput ) )* )?
-            int alt23=2;
-            int LA23_0 = input.LA(1);
+            // InternalOptimind.g:1291:3: ( ( (lv_outputs_8_0= ruleTaskOutput ) ) ( (lv_outputs_9_0= ruleTaskOutput ) )* )?
+            int alt26=2;
+            int LA26_0 = input.LA(1);
 
-            if ( (LA23_0==15) ) {
-                alt23=1;
+            if ( (LA26_0==15) ) {
+                alt26=1;
             }
-            switch (alt23) {
+            switch (alt26) {
                 case 1 :
-                    // InternalOptimind.g:1257:4: ( (lv_outputs_8_0= ruleTaskOutput ) ) ( (lv_outputs_9_0= ruleTaskOutput ) )*
+                    // InternalOptimind.g:1292:4: ( (lv_outputs_8_0= ruleTaskOutput ) ) ( (lv_outputs_9_0= ruleTaskOutput ) )*
                     {
-                    // InternalOptimind.g:1257:4: ( (lv_outputs_8_0= ruleTaskOutput ) )
-                    // InternalOptimind.g:1258:5: (lv_outputs_8_0= ruleTaskOutput )
+                    // InternalOptimind.g:1292:4: ( (lv_outputs_8_0= ruleTaskOutput ) )
+                    // InternalOptimind.g:1293:5: (lv_outputs_8_0= ruleTaskOutput )
                     {
-                    // InternalOptimind.g:1258:5: (lv_outputs_8_0= ruleTaskOutput )
-                    // InternalOptimind.g:1259:6: lv_outputs_8_0= ruleTaskOutput
+                    // InternalOptimind.g:1293:5: (lv_outputs_8_0= ruleTaskOutput )
+                    // InternalOptimind.g:1294:6: lv_outputs_8_0= ruleTaskOutput
                     {
 
                     						newCompositeNode(grammarAccess.getLibraryTaskAccess().getOutputsTaskOutputParserRuleCall_6_0_0());
@@ -3034,23 +3142,23 @@ public class InternalOptimindParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalOptimind.g:1276:4: ( (lv_outputs_9_0= ruleTaskOutput ) )*
-                    loop22:
+                    // InternalOptimind.g:1311:4: ( (lv_outputs_9_0= ruleTaskOutput ) )*
+                    loop25:
                     do {
-                        int alt22=2;
-                        int LA22_0 = input.LA(1);
+                        int alt25=2;
+                        int LA25_0 = input.LA(1);
 
-                        if ( (LA22_0==15) ) {
-                            alt22=1;
+                        if ( (LA25_0==15) ) {
+                            alt25=1;
                         }
 
 
-                        switch (alt22) {
+                        switch (alt25) {
                     	case 1 :
-                    	    // InternalOptimind.g:1277:5: (lv_outputs_9_0= ruleTaskOutput )
+                    	    // InternalOptimind.g:1312:5: (lv_outputs_9_0= ruleTaskOutput )
                     	    {
-                    	    // InternalOptimind.g:1277:5: (lv_outputs_9_0= ruleTaskOutput )
-                    	    // InternalOptimind.g:1278:6: lv_outputs_9_0= ruleTaskOutput
+                    	    // InternalOptimind.g:1312:5: (lv_outputs_9_0= ruleTaskOutput )
+                    	    // InternalOptimind.g:1313:6: lv_outputs_9_0= ruleTaskOutput
                     	    {
 
                     	    						newCompositeNode(grammarAccess.getLibraryTaskAccess().getOutputsTaskOutputParserRuleCall_6_1_0());
@@ -3079,7 +3187,7 @@ public class InternalOptimindParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop22;
+                    	    break loop25;
                         }
                     } while (true);
 
@@ -3089,26 +3197,26 @@ public class InternalOptimindParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalOptimind.g:1296:3: (otherlv_10= 'Libraryfunction' ( ( ruleEString ) ) )?
-            int alt24=2;
-            int LA24_0 = input.LA(1);
+            // InternalOptimind.g:1331:3: (otherlv_10= 'Libraryfunction' ( ( ruleEString ) ) )?
+            int alt27=2;
+            int LA27_0 = input.LA(1);
 
-            if ( (LA24_0==34) ) {
-                alt24=1;
+            if ( (LA27_0==34) ) {
+                alt27=1;
             }
-            switch (alt24) {
+            switch (alt27) {
                 case 1 :
-                    // InternalOptimind.g:1297:4: otherlv_10= 'Libraryfunction' ( ( ruleEString ) )
+                    // InternalOptimind.g:1332:4: otherlv_10= 'Libraryfunction' ( ( ruleEString ) )
                     {
                     otherlv_10=(Token)match(input,34,FOLLOW_3); 
 
                     				newLeafNode(otherlv_10, grammarAccess.getLibraryTaskAccess().getLibraryfunctionKeyword_7_0());
                     			
-                    // InternalOptimind.g:1301:4: ( ( ruleEString ) )
-                    // InternalOptimind.g:1302:5: ( ruleEString )
+                    // InternalOptimind.g:1336:4: ( ( ruleEString ) )
+                    // InternalOptimind.g:1337:5: ( ruleEString )
                     {
-                    // InternalOptimind.g:1302:5: ( ruleEString )
-                    // InternalOptimind.g:1303:6: ruleEString
+                    // InternalOptimind.g:1337:5: ( ruleEString )
+                    // InternalOptimind.g:1338:6: ruleEString
                     {
 
                     						if (current==null) {
@@ -3165,7 +3273,7 @@ public class InternalOptimindParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleCustomTask"
-    // InternalOptimind.g:1326:1: entryRuleCustomTask returns [EObject current=null] : iv_ruleCustomTask= ruleCustomTask EOF ;
+    // InternalOptimind.g:1361:1: entryRuleCustomTask returns [EObject current=null] : iv_ruleCustomTask= ruleCustomTask EOF ;
     public final EObject entryRuleCustomTask() throws RecognitionException {
         EObject current = null;
 
@@ -3173,8 +3281,8 @@ public class InternalOptimindParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalOptimind.g:1326:51: (iv_ruleCustomTask= ruleCustomTask EOF )
-            // InternalOptimind.g:1327:2: iv_ruleCustomTask= ruleCustomTask EOF
+            // InternalOptimind.g:1361:51: (iv_ruleCustomTask= ruleCustomTask EOF )
+            // InternalOptimind.g:1362:2: iv_ruleCustomTask= ruleCustomTask EOF
             {
              newCompositeNode(grammarAccess.getCustomTaskRule()); 
             pushFollow(FOLLOW_1);
@@ -3201,7 +3309,7 @@ public class InternalOptimindParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCustomTask"
-    // InternalOptimind.g:1333:1: ruleCustomTask returns [EObject current=null] : ( () otherlv_1= 'Task' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'status' ( (lv_status_5_0= ruleTaskStatus ) ) )? ( ( (lv_inputs_6_0= ruleTaskInput ) ) ( (lv_inputs_7_0= ruleTaskInput ) )* )? ( ( (lv_outputs_8_0= ruleTaskOutput ) ) ( (lv_outputs_9_0= ruleTaskOutput ) )* )? (otherlv_10= 'runner' ( (lv_runner_11_0= ruleEString ) ) )? otherlv_12= '}' ) ;
+    // InternalOptimind.g:1368:1: ruleCustomTask returns [EObject current=null] : ( () otherlv_1= 'Task' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'status' ( (lv_status_5_0= ruleTaskStatus ) ) )? ( ( (lv_inputs_6_0= ruleTaskInput ) ) ( (lv_inputs_7_0= ruleTaskInput ) )* )? ( ( (lv_outputs_8_0= ruleTaskOutput ) ) ( (lv_outputs_9_0= ruleTaskOutput ) )* )? (otherlv_10= 'runner' ( (lv_runner_11_0= ruleEString ) ) )? otherlv_12= '}' ) ;
     public final EObject ruleCustomTask() throws RecognitionException {
         EObject current = null;
 
@@ -3229,14 +3337,14 @@ public class InternalOptimindParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalOptimind.g:1339:2: ( ( () otherlv_1= 'Task' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'status' ( (lv_status_5_0= ruleTaskStatus ) ) )? ( ( (lv_inputs_6_0= ruleTaskInput ) ) ( (lv_inputs_7_0= ruleTaskInput ) )* )? ( ( (lv_outputs_8_0= ruleTaskOutput ) ) ( (lv_outputs_9_0= ruleTaskOutput ) )* )? (otherlv_10= 'runner' ( (lv_runner_11_0= ruleEString ) ) )? otherlv_12= '}' ) )
-            // InternalOptimind.g:1340:2: ( () otherlv_1= 'Task' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'status' ( (lv_status_5_0= ruleTaskStatus ) ) )? ( ( (lv_inputs_6_0= ruleTaskInput ) ) ( (lv_inputs_7_0= ruleTaskInput ) )* )? ( ( (lv_outputs_8_0= ruleTaskOutput ) ) ( (lv_outputs_9_0= ruleTaskOutput ) )* )? (otherlv_10= 'runner' ( (lv_runner_11_0= ruleEString ) ) )? otherlv_12= '}' )
+            // InternalOptimind.g:1374:2: ( ( () otherlv_1= 'Task' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'status' ( (lv_status_5_0= ruleTaskStatus ) ) )? ( ( (lv_inputs_6_0= ruleTaskInput ) ) ( (lv_inputs_7_0= ruleTaskInput ) )* )? ( ( (lv_outputs_8_0= ruleTaskOutput ) ) ( (lv_outputs_9_0= ruleTaskOutput ) )* )? (otherlv_10= 'runner' ( (lv_runner_11_0= ruleEString ) ) )? otherlv_12= '}' ) )
+            // InternalOptimind.g:1375:2: ( () otherlv_1= 'Task' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'status' ( (lv_status_5_0= ruleTaskStatus ) ) )? ( ( (lv_inputs_6_0= ruleTaskInput ) ) ( (lv_inputs_7_0= ruleTaskInput ) )* )? ( ( (lv_outputs_8_0= ruleTaskOutput ) ) ( (lv_outputs_9_0= ruleTaskOutput ) )* )? (otherlv_10= 'runner' ( (lv_runner_11_0= ruleEString ) ) )? otherlv_12= '}' )
             {
-            // InternalOptimind.g:1340:2: ( () otherlv_1= 'Task' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'status' ( (lv_status_5_0= ruleTaskStatus ) ) )? ( ( (lv_inputs_6_0= ruleTaskInput ) ) ( (lv_inputs_7_0= ruleTaskInput ) )* )? ( ( (lv_outputs_8_0= ruleTaskOutput ) ) ( (lv_outputs_9_0= ruleTaskOutput ) )* )? (otherlv_10= 'runner' ( (lv_runner_11_0= ruleEString ) ) )? otherlv_12= '}' )
-            // InternalOptimind.g:1341:3: () otherlv_1= 'Task' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'status' ( (lv_status_5_0= ruleTaskStatus ) ) )? ( ( (lv_inputs_6_0= ruleTaskInput ) ) ( (lv_inputs_7_0= ruleTaskInput ) )* )? ( ( (lv_outputs_8_0= ruleTaskOutput ) ) ( (lv_outputs_9_0= ruleTaskOutput ) )* )? (otherlv_10= 'runner' ( (lv_runner_11_0= ruleEString ) ) )? otherlv_12= '}'
+            // InternalOptimind.g:1375:2: ( () otherlv_1= 'Task' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'status' ( (lv_status_5_0= ruleTaskStatus ) ) )? ( ( (lv_inputs_6_0= ruleTaskInput ) ) ( (lv_inputs_7_0= ruleTaskInput ) )* )? ( ( (lv_outputs_8_0= ruleTaskOutput ) ) ( (lv_outputs_9_0= ruleTaskOutput ) )* )? (otherlv_10= 'runner' ( (lv_runner_11_0= ruleEString ) ) )? otherlv_12= '}' )
+            // InternalOptimind.g:1376:3: () otherlv_1= 'Task' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' (otherlv_4= 'status' ( (lv_status_5_0= ruleTaskStatus ) ) )? ( ( (lv_inputs_6_0= ruleTaskInput ) ) ( (lv_inputs_7_0= ruleTaskInput ) )* )? ( ( (lv_outputs_8_0= ruleTaskOutput ) ) ( (lv_outputs_9_0= ruleTaskOutput ) )* )? (otherlv_10= 'runner' ( (lv_runner_11_0= ruleEString ) ) )? otherlv_12= '}'
             {
-            // InternalOptimind.g:1341:3: ()
-            // InternalOptimind.g:1342:4: 
+            // InternalOptimind.g:1376:3: ()
+            // InternalOptimind.g:1377:4: 
             {
 
             				current = forceCreateModelElement(
@@ -3250,11 +3358,11 @@ public class InternalOptimindParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getCustomTaskAccess().getTaskKeyword_1());
             		
-            // InternalOptimind.g:1352:3: ( (lv_name_2_0= ruleEString ) )
-            // InternalOptimind.g:1353:4: (lv_name_2_0= ruleEString )
+            // InternalOptimind.g:1387:3: ( (lv_name_2_0= ruleEString ) )
+            // InternalOptimind.g:1388:4: (lv_name_2_0= ruleEString )
             {
-            // InternalOptimind.g:1353:4: (lv_name_2_0= ruleEString )
-            // InternalOptimind.g:1354:5: lv_name_2_0= ruleEString
+            // InternalOptimind.g:1388:4: (lv_name_2_0= ruleEString )
+            // InternalOptimind.g:1389:5: lv_name_2_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getCustomTaskAccess().getNameEStringParserRuleCall_2_0());
@@ -3285,26 +3393,26 @@ public class InternalOptimindParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_3, grammarAccess.getCustomTaskAccess().getLeftCurlyBracketKeyword_3());
             		
-            // InternalOptimind.g:1375:3: (otherlv_4= 'status' ( (lv_status_5_0= ruleTaskStatus ) ) )?
-            int alt25=2;
-            int LA25_0 = input.LA(1);
+            // InternalOptimind.g:1410:3: (otherlv_4= 'status' ( (lv_status_5_0= ruleTaskStatus ) ) )?
+            int alt28=2;
+            int LA28_0 = input.LA(1);
 
-            if ( (LA25_0==29) ) {
-                alt25=1;
+            if ( (LA28_0==29) ) {
+                alt28=1;
             }
-            switch (alt25) {
+            switch (alt28) {
                 case 1 :
-                    // InternalOptimind.g:1376:4: otherlv_4= 'status' ( (lv_status_5_0= ruleTaskStatus ) )
+                    // InternalOptimind.g:1411:4: otherlv_4= 'status' ( (lv_status_5_0= ruleTaskStatus ) )
                     {
                     otherlv_4=(Token)match(input,29,FOLLOW_22); 
 
                     				newLeafNode(otherlv_4, grammarAccess.getCustomTaskAccess().getStatusKeyword_4_0());
                     			
-                    // InternalOptimind.g:1380:4: ( (lv_status_5_0= ruleTaskStatus ) )
-                    // InternalOptimind.g:1381:5: (lv_status_5_0= ruleTaskStatus )
+                    // InternalOptimind.g:1415:4: ( (lv_status_5_0= ruleTaskStatus ) )
+                    // InternalOptimind.g:1416:5: (lv_status_5_0= ruleTaskStatus )
                     {
-                    // InternalOptimind.g:1381:5: (lv_status_5_0= ruleTaskStatus )
-                    // InternalOptimind.g:1382:6: lv_status_5_0= ruleTaskStatus
+                    // InternalOptimind.g:1416:5: (lv_status_5_0= ruleTaskStatus )
+                    // InternalOptimind.g:1417:6: lv_status_5_0= ruleTaskStatus
                     {
 
                     						newCompositeNode(grammarAccess.getCustomTaskAccess().getStatusTaskStatusEnumRuleCall_4_1_0());
@@ -3337,22 +3445,22 @@ public class InternalOptimindParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalOptimind.g:1400:3: ( ( (lv_inputs_6_0= ruleTaskInput ) ) ( (lv_inputs_7_0= ruleTaskInput ) )* )?
-            int alt27=2;
-            int LA27_0 = input.LA(1);
+            // InternalOptimind.g:1435:3: ( ( (lv_inputs_6_0= ruleTaskInput ) ) ( (lv_inputs_7_0= ruleTaskInput ) )* )?
+            int alt30=2;
+            int LA30_0 = input.LA(1);
 
-            if ( ((LA27_0>=37 && LA27_0<=38)) ) {
-                alt27=1;
+            if ( ((LA30_0>=37 && LA30_0<=38)) ) {
+                alt30=1;
             }
-            switch (alt27) {
+            switch (alt30) {
                 case 1 :
-                    // InternalOptimind.g:1401:4: ( (lv_inputs_6_0= ruleTaskInput ) ) ( (lv_inputs_7_0= ruleTaskInput ) )*
+                    // InternalOptimind.g:1436:4: ( (lv_inputs_6_0= ruleTaskInput ) ) ( (lv_inputs_7_0= ruleTaskInput ) )*
                     {
-                    // InternalOptimind.g:1401:4: ( (lv_inputs_6_0= ruleTaskInput ) )
-                    // InternalOptimind.g:1402:5: (lv_inputs_6_0= ruleTaskInput )
+                    // InternalOptimind.g:1436:4: ( (lv_inputs_6_0= ruleTaskInput ) )
+                    // InternalOptimind.g:1437:5: (lv_inputs_6_0= ruleTaskInput )
                     {
-                    // InternalOptimind.g:1402:5: (lv_inputs_6_0= ruleTaskInput )
-                    // InternalOptimind.g:1403:6: lv_inputs_6_0= ruleTaskInput
+                    // InternalOptimind.g:1437:5: (lv_inputs_6_0= ruleTaskInput )
+                    // InternalOptimind.g:1438:6: lv_inputs_6_0= ruleTaskInput
                     {
 
                     						newCompositeNode(grammarAccess.getCustomTaskAccess().getInputsTaskInputParserRuleCall_5_0_0());
@@ -3379,23 +3487,23 @@ public class InternalOptimindParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalOptimind.g:1420:4: ( (lv_inputs_7_0= ruleTaskInput ) )*
-                    loop26:
+                    // InternalOptimind.g:1455:4: ( (lv_inputs_7_0= ruleTaskInput ) )*
+                    loop29:
                     do {
-                        int alt26=2;
-                        int LA26_0 = input.LA(1);
+                        int alt29=2;
+                        int LA29_0 = input.LA(1);
 
-                        if ( ((LA26_0>=37 && LA26_0<=38)) ) {
-                            alt26=1;
+                        if ( ((LA29_0>=37 && LA29_0<=38)) ) {
+                            alt29=1;
                         }
 
 
-                        switch (alt26) {
+                        switch (alt29) {
                     	case 1 :
-                    	    // InternalOptimind.g:1421:5: (lv_inputs_7_0= ruleTaskInput )
+                    	    // InternalOptimind.g:1456:5: (lv_inputs_7_0= ruleTaskInput )
                     	    {
-                    	    // InternalOptimind.g:1421:5: (lv_inputs_7_0= ruleTaskInput )
-                    	    // InternalOptimind.g:1422:6: lv_inputs_7_0= ruleTaskInput
+                    	    // InternalOptimind.g:1456:5: (lv_inputs_7_0= ruleTaskInput )
+                    	    // InternalOptimind.g:1457:6: lv_inputs_7_0= ruleTaskInput
                     	    {
 
                     	    						newCompositeNode(grammarAccess.getCustomTaskAccess().getInputsTaskInputParserRuleCall_5_1_0());
@@ -3424,7 +3532,7 @@ public class InternalOptimindParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop26;
+                    	    break loop29;
                         }
                     } while (true);
 
@@ -3434,22 +3542,22 @@ public class InternalOptimindParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalOptimind.g:1440:3: ( ( (lv_outputs_8_0= ruleTaskOutput ) ) ( (lv_outputs_9_0= ruleTaskOutput ) )* )?
-            int alt29=2;
-            int LA29_0 = input.LA(1);
+            // InternalOptimind.g:1475:3: ( ( (lv_outputs_8_0= ruleTaskOutput ) ) ( (lv_outputs_9_0= ruleTaskOutput ) )* )?
+            int alt32=2;
+            int LA32_0 = input.LA(1);
 
-            if ( (LA29_0==15) ) {
-                alt29=1;
+            if ( (LA32_0==15) ) {
+                alt32=1;
             }
-            switch (alt29) {
+            switch (alt32) {
                 case 1 :
-                    // InternalOptimind.g:1441:4: ( (lv_outputs_8_0= ruleTaskOutput ) ) ( (lv_outputs_9_0= ruleTaskOutput ) )*
+                    // InternalOptimind.g:1476:4: ( (lv_outputs_8_0= ruleTaskOutput ) ) ( (lv_outputs_9_0= ruleTaskOutput ) )*
                     {
-                    // InternalOptimind.g:1441:4: ( (lv_outputs_8_0= ruleTaskOutput ) )
-                    // InternalOptimind.g:1442:5: (lv_outputs_8_0= ruleTaskOutput )
+                    // InternalOptimind.g:1476:4: ( (lv_outputs_8_0= ruleTaskOutput ) )
+                    // InternalOptimind.g:1477:5: (lv_outputs_8_0= ruleTaskOutput )
                     {
-                    // InternalOptimind.g:1442:5: (lv_outputs_8_0= ruleTaskOutput )
-                    // InternalOptimind.g:1443:6: lv_outputs_8_0= ruleTaskOutput
+                    // InternalOptimind.g:1477:5: (lv_outputs_8_0= ruleTaskOutput )
+                    // InternalOptimind.g:1478:6: lv_outputs_8_0= ruleTaskOutput
                     {
 
                     						newCompositeNode(grammarAccess.getCustomTaskAccess().getOutputsTaskOutputParserRuleCall_6_0_0());
@@ -3476,23 +3584,23 @@ public class InternalOptimindParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalOptimind.g:1460:4: ( (lv_outputs_9_0= ruleTaskOutput ) )*
-                    loop28:
+                    // InternalOptimind.g:1495:4: ( (lv_outputs_9_0= ruleTaskOutput ) )*
+                    loop31:
                     do {
-                        int alt28=2;
-                        int LA28_0 = input.LA(1);
+                        int alt31=2;
+                        int LA31_0 = input.LA(1);
 
-                        if ( (LA28_0==15) ) {
-                            alt28=1;
+                        if ( (LA31_0==15) ) {
+                            alt31=1;
                         }
 
 
-                        switch (alt28) {
+                        switch (alt31) {
                     	case 1 :
-                    	    // InternalOptimind.g:1461:5: (lv_outputs_9_0= ruleTaskOutput )
+                    	    // InternalOptimind.g:1496:5: (lv_outputs_9_0= ruleTaskOutput )
                     	    {
-                    	    // InternalOptimind.g:1461:5: (lv_outputs_9_0= ruleTaskOutput )
-                    	    // InternalOptimind.g:1462:6: lv_outputs_9_0= ruleTaskOutput
+                    	    // InternalOptimind.g:1496:5: (lv_outputs_9_0= ruleTaskOutput )
+                    	    // InternalOptimind.g:1497:6: lv_outputs_9_0= ruleTaskOutput
                     	    {
 
                     	    						newCompositeNode(grammarAccess.getCustomTaskAccess().getOutputsTaskOutputParserRuleCall_6_1_0());
@@ -3521,7 +3629,7 @@ public class InternalOptimindParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop28;
+                    	    break loop31;
                         }
                     } while (true);
 
@@ -3531,26 +3639,26 @@ public class InternalOptimindParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalOptimind.g:1480:3: (otherlv_10= 'runner' ( (lv_runner_11_0= ruleEString ) ) )?
-            int alt30=2;
-            int LA30_0 = input.LA(1);
+            // InternalOptimind.g:1515:3: (otherlv_10= 'runner' ( (lv_runner_11_0= ruleEString ) ) )?
+            int alt33=2;
+            int LA33_0 = input.LA(1);
 
-            if ( (LA30_0==36) ) {
-                alt30=1;
+            if ( (LA33_0==36) ) {
+                alt33=1;
             }
-            switch (alt30) {
+            switch (alt33) {
                 case 1 :
-                    // InternalOptimind.g:1481:4: otherlv_10= 'runner' ( (lv_runner_11_0= ruleEString ) )
+                    // InternalOptimind.g:1516:4: otherlv_10= 'runner' ( (lv_runner_11_0= ruleEString ) )
                     {
                     otherlv_10=(Token)match(input,36,FOLLOW_3); 
 
                     				newLeafNode(otherlv_10, grammarAccess.getCustomTaskAccess().getRunnerKeyword_7_0());
                     			
-                    // InternalOptimind.g:1485:4: ( (lv_runner_11_0= ruleEString ) )
-                    // InternalOptimind.g:1486:5: (lv_runner_11_0= ruleEString )
+                    // InternalOptimind.g:1520:4: ( (lv_runner_11_0= ruleEString ) )
+                    // InternalOptimind.g:1521:5: (lv_runner_11_0= ruleEString )
                     {
-                    // InternalOptimind.g:1486:5: (lv_runner_11_0= ruleEString )
-                    // InternalOptimind.g:1487:6: lv_runner_11_0= ruleEString
+                    // InternalOptimind.g:1521:5: (lv_runner_11_0= ruleEString )
+                    // InternalOptimind.g:1522:6: lv_runner_11_0= ruleEString
                     {
 
                     						newCompositeNode(grammarAccess.getCustomTaskAccess().getRunnerEStringParserRuleCall_7_1_0());
@@ -3610,7 +3718,7 @@ public class InternalOptimindParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSetter"
-    // InternalOptimind.g:1513:1: entryRuleSetter returns [EObject current=null] : iv_ruleSetter= ruleSetter EOF ;
+    // InternalOptimind.g:1548:1: entryRuleSetter returns [EObject current=null] : iv_ruleSetter= ruleSetter EOF ;
     public final EObject entryRuleSetter() throws RecognitionException {
         EObject current = null;
 
@@ -3618,8 +3726,8 @@ public class InternalOptimindParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalOptimind.g:1513:47: (iv_ruleSetter= ruleSetter EOF )
-            // InternalOptimind.g:1514:2: iv_ruleSetter= ruleSetter EOF
+            // InternalOptimind.g:1548:47: (iv_ruleSetter= ruleSetter EOF )
+            // InternalOptimind.g:1549:2: iv_ruleSetter= ruleSetter EOF
             {
              newCompositeNode(grammarAccess.getSetterRule()); 
             pushFollow(FOLLOW_1);
@@ -3646,7 +3754,7 @@ public class InternalOptimindParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSetter"
-    // InternalOptimind.g:1520:1: ruleSetter returns [EObject current=null] : ( () otherlv_1= 'Setter' ( (lv_name_2_0= ruleEString ) ) (otherlv_3= 'type' ( (lv_typeAsString_4_0= ruleType ) ) )? (otherlv_5= 'value' ( (lv_valueAsString_6_0= ruleEString ) ) )? ) ;
+    // InternalOptimind.g:1555:1: ruleSetter returns [EObject current=null] : ( () otherlv_1= 'Setter' ( (lv_name_2_0= ruleEString ) ) (otherlv_3= 'type' ( (lv_typeAsString_4_0= ruleType ) ) )? (otherlv_5= 'value' ( (lv_valueAsString_6_0= ruleEString ) ) )? ) ;
     public final EObject ruleSetter() throws RecognitionException {
         EObject current = null;
 
@@ -3664,14 +3772,14 @@ public class InternalOptimindParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalOptimind.g:1526:2: ( ( () otherlv_1= 'Setter' ( (lv_name_2_0= ruleEString ) ) (otherlv_3= 'type' ( (lv_typeAsString_4_0= ruleType ) ) )? (otherlv_5= 'value' ( (lv_valueAsString_6_0= ruleEString ) ) )? ) )
-            // InternalOptimind.g:1527:2: ( () otherlv_1= 'Setter' ( (lv_name_2_0= ruleEString ) ) (otherlv_3= 'type' ( (lv_typeAsString_4_0= ruleType ) ) )? (otherlv_5= 'value' ( (lv_valueAsString_6_0= ruleEString ) ) )? )
+            // InternalOptimind.g:1561:2: ( ( () otherlv_1= 'Setter' ( (lv_name_2_0= ruleEString ) ) (otherlv_3= 'type' ( (lv_typeAsString_4_0= ruleType ) ) )? (otherlv_5= 'value' ( (lv_valueAsString_6_0= ruleEString ) ) )? ) )
+            // InternalOptimind.g:1562:2: ( () otherlv_1= 'Setter' ( (lv_name_2_0= ruleEString ) ) (otherlv_3= 'type' ( (lv_typeAsString_4_0= ruleType ) ) )? (otherlv_5= 'value' ( (lv_valueAsString_6_0= ruleEString ) ) )? )
             {
-            // InternalOptimind.g:1527:2: ( () otherlv_1= 'Setter' ( (lv_name_2_0= ruleEString ) ) (otherlv_3= 'type' ( (lv_typeAsString_4_0= ruleType ) ) )? (otherlv_5= 'value' ( (lv_valueAsString_6_0= ruleEString ) ) )? )
-            // InternalOptimind.g:1528:3: () otherlv_1= 'Setter' ( (lv_name_2_0= ruleEString ) ) (otherlv_3= 'type' ( (lv_typeAsString_4_0= ruleType ) ) )? (otherlv_5= 'value' ( (lv_valueAsString_6_0= ruleEString ) ) )?
+            // InternalOptimind.g:1562:2: ( () otherlv_1= 'Setter' ( (lv_name_2_0= ruleEString ) ) (otherlv_3= 'type' ( (lv_typeAsString_4_0= ruleType ) ) )? (otherlv_5= 'value' ( (lv_valueAsString_6_0= ruleEString ) ) )? )
+            // InternalOptimind.g:1563:3: () otherlv_1= 'Setter' ( (lv_name_2_0= ruleEString ) ) (otherlv_3= 'type' ( (lv_typeAsString_4_0= ruleType ) ) )? (otherlv_5= 'value' ( (lv_valueAsString_6_0= ruleEString ) ) )?
             {
-            // InternalOptimind.g:1528:3: ()
-            // InternalOptimind.g:1529:4: 
+            // InternalOptimind.g:1563:3: ()
+            // InternalOptimind.g:1564:4: 
             {
 
             				current = forceCreateModelElement(
@@ -3685,11 +3793,11 @@ public class InternalOptimindParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getSetterAccess().getSetterKeyword_1());
             		
-            // InternalOptimind.g:1539:3: ( (lv_name_2_0= ruleEString ) )
-            // InternalOptimind.g:1540:4: (lv_name_2_0= ruleEString )
+            // InternalOptimind.g:1574:3: ( (lv_name_2_0= ruleEString ) )
+            // InternalOptimind.g:1575:4: (lv_name_2_0= ruleEString )
             {
-            // InternalOptimind.g:1540:4: (lv_name_2_0= ruleEString )
-            // InternalOptimind.g:1541:5: lv_name_2_0= ruleEString
+            // InternalOptimind.g:1575:4: (lv_name_2_0= ruleEString )
+            // InternalOptimind.g:1576:5: lv_name_2_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getSetterAccess().getNameEStringParserRuleCall_2_0());
@@ -3716,26 +3824,26 @@ public class InternalOptimindParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalOptimind.g:1558:3: (otherlv_3= 'type' ( (lv_typeAsString_4_0= ruleType ) ) )?
-            int alt31=2;
-            int LA31_0 = input.LA(1);
+            // InternalOptimind.g:1593:3: (otherlv_3= 'type' ( (lv_typeAsString_4_0= ruleType ) ) )?
+            int alt34=2;
+            int LA34_0 = input.LA(1);
 
-            if ( (LA31_0==16) ) {
-                alt31=1;
+            if ( (LA34_0==16) ) {
+                alt34=1;
             }
-            switch (alt31) {
+            switch (alt34) {
                 case 1 :
-                    // InternalOptimind.g:1559:4: otherlv_3= 'type' ( (lv_typeAsString_4_0= ruleType ) )
+                    // InternalOptimind.g:1594:4: otherlv_3= 'type' ( (lv_typeAsString_4_0= ruleType ) )
                     {
                     otherlv_3=(Token)match(input,16,FOLLOW_3); 
 
                     				newLeafNode(otherlv_3, grammarAccess.getSetterAccess().getTypeKeyword_3_0());
                     			
-                    // InternalOptimind.g:1563:4: ( (lv_typeAsString_4_0= ruleType ) )
-                    // InternalOptimind.g:1564:5: (lv_typeAsString_4_0= ruleType )
+                    // InternalOptimind.g:1598:4: ( (lv_typeAsString_4_0= ruleType ) )
+                    // InternalOptimind.g:1599:5: (lv_typeAsString_4_0= ruleType )
                     {
-                    // InternalOptimind.g:1564:5: (lv_typeAsString_4_0= ruleType )
-                    // InternalOptimind.g:1565:6: lv_typeAsString_4_0= ruleType
+                    // InternalOptimind.g:1599:5: (lv_typeAsString_4_0= ruleType )
+                    // InternalOptimind.g:1600:6: lv_typeAsString_4_0= ruleType
                     {
 
                     						newCompositeNode(grammarAccess.getSetterAccess().getTypeAsStringTypeParserRuleCall_3_1_0());
@@ -3768,26 +3876,26 @@ public class InternalOptimindParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalOptimind.g:1583:3: (otherlv_5= 'value' ( (lv_valueAsString_6_0= ruleEString ) ) )?
-            int alt32=2;
-            int LA32_0 = input.LA(1);
+            // InternalOptimind.g:1618:3: (otherlv_5= 'value' ( (lv_valueAsString_6_0= ruleEString ) ) )?
+            int alt35=2;
+            int LA35_0 = input.LA(1);
 
-            if ( (LA32_0==17) ) {
-                alt32=1;
+            if ( (LA35_0==17) ) {
+                alt35=1;
             }
-            switch (alt32) {
+            switch (alt35) {
                 case 1 :
-                    // InternalOptimind.g:1584:4: otherlv_5= 'value' ( (lv_valueAsString_6_0= ruleEString ) )
+                    // InternalOptimind.g:1619:4: otherlv_5= 'value' ( (lv_valueAsString_6_0= ruleEString ) )
                     {
                     otherlv_5=(Token)match(input,17,FOLLOW_3); 
 
                     				newLeafNode(otherlv_5, grammarAccess.getSetterAccess().getValueKeyword_4_0());
                     			
-                    // InternalOptimind.g:1588:4: ( (lv_valueAsString_6_0= ruleEString ) )
-                    // InternalOptimind.g:1589:5: (lv_valueAsString_6_0= ruleEString )
+                    // InternalOptimind.g:1623:4: ( (lv_valueAsString_6_0= ruleEString ) )
+                    // InternalOptimind.g:1624:5: (lv_valueAsString_6_0= ruleEString )
                     {
-                    // InternalOptimind.g:1589:5: (lv_valueAsString_6_0= ruleEString )
-                    // InternalOptimind.g:1590:6: lv_valueAsString_6_0= ruleEString
+                    // InternalOptimind.g:1624:5: (lv_valueAsString_6_0= ruleEString )
+                    // InternalOptimind.g:1625:6: lv_valueAsString_6_0= ruleEString
                     {
 
                     						newCompositeNode(grammarAccess.getSetterAccess().getValueAsStringEStringParserRuleCall_4_1_0());
@@ -3843,7 +3951,7 @@ public class InternalOptimindParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleConnection"
-    // InternalOptimind.g:1612:1: entryRuleConnection returns [EObject current=null] : iv_ruleConnection= ruleConnection EOF ;
+    // InternalOptimind.g:1647:1: entryRuleConnection returns [EObject current=null] : iv_ruleConnection= ruleConnection EOF ;
     public final EObject entryRuleConnection() throws RecognitionException {
         EObject current = null;
 
@@ -3851,8 +3959,8 @@ public class InternalOptimindParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalOptimind.g:1612:51: (iv_ruleConnection= ruleConnection EOF )
-            // InternalOptimind.g:1613:2: iv_ruleConnection= ruleConnection EOF
+            // InternalOptimind.g:1647:51: (iv_ruleConnection= ruleConnection EOF )
+            // InternalOptimind.g:1648:2: iv_ruleConnection= ruleConnection EOF
             {
              newCompositeNode(grammarAccess.getConnectionRule()); 
             pushFollow(FOLLOW_1);
@@ -3879,7 +3987,7 @@ public class InternalOptimindParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleConnection"
-    // InternalOptimind.g:1619:1: ruleConnection returns [EObject current=null] : ( () otherlv_1= 'Connection' ( (lv_name_2_0= ruleEString ) ) (otherlv_3= 'to' ( ( ruleEString ) ) )? ) ;
+    // InternalOptimind.g:1654:1: ruleConnection returns [EObject current=null] : ( () otherlv_1= 'Connection' ( (lv_name_2_0= ruleEString ) ) (otherlv_3= 'to' ( ( ruleEString ) ) )? ) ;
     public final EObject ruleConnection() throws RecognitionException {
         EObject current = null;
 
@@ -3892,14 +4000,14 @@ public class InternalOptimindParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalOptimind.g:1625:2: ( ( () otherlv_1= 'Connection' ( (lv_name_2_0= ruleEString ) ) (otherlv_3= 'to' ( ( ruleEString ) ) )? ) )
-            // InternalOptimind.g:1626:2: ( () otherlv_1= 'Connection' ( (lv_name_2_0= ruleEString ) ) (otherlv_3= 'to' ( ( ruleEString ) ) )? )
+            // InternalOptimind.g:1660:2: ( ( () otherlv_1= 'Connection' ( (lv_name_2_0= ruleEString ) ) (otherlv_3= 'to' ( ( ruleEString ) ) )? ) )
+            // InternalOptimind.g:1661:2: ( () otherlv_1= 'Connection' ( (lv_name_2_0= ruleEString ) ) (otherlv_3= 'to' ( ( ruleEString ) ) )? )
             {
-            // InternalOptimind.g:1626:2: ( () otherlv_1= 'Connection' ( (lv_name_2_0= ruleEString ) ) (otherlv_3= 'to' ( ( ruleEString ) ) )? )
-            // InternalOptimind.g:1627:3: () otherlv_1= 'Connection' ( (lv_name_2_0= ruleEString ) ) (otherlv_3= 'to' ( ( ruleEString ) ) )?
+            // InternalOptimind.g:1661:2: ( () otherlv_1= 'Connection' ( (lv_name_2_0= ruleEString ) ) (otherlv_3= 'to' ( ( ruleEString ) ) )? )
+            // InternalOptimind.g:1662:3: () otherlv_1= 'Connection' ( (lv_name_2_0= ruleEString ) ) (otherlv_3= 'to' ( ( ruleEString ) ) )?
             {
-            // InternalOptimind.g:1627:3: ()
-            // InternalOptimind.g:1628:4: 
+            // InternalOptimind.g:1662:3: ()
+            // InternalOptimind.g:1663:4: 
             {
 
             				current = forceCreateModelElement(
@@ -3913,11 +4021,11 @@ public class InternalOptimindParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getConnectionAccess().getConnectionKeyword_1());
             		
-            // InternalOptimind.g:1638:3: ( (lv_name_2_0= ruleEString ) )
-            // InternalOptimind.g:1639:4: (lv_name_2_0= ruleEString )
+            // InternalOptimind.g:1673:3: ( (lv_name_2_0= ruleEString ) )
+            // InternalOptimind.g:1674:4: (lv_name_2_0= ruleEString )
             {
-            // InternalOptimind.g:1639:4: (lv_name_2_0= ruleEString )
-            // InternalOptimind.g:1640:5: lv_name_2_0= ruleEString
+            // InternalOptimind.g:1674:4: (lv_name_2_0= ruleEString )
+            // InternalOptimind.g:1675:5: lv_name_2_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getConnectionAccess().getNameEStringParserRuleCall_2_0());
@@ -3944,26 +4052,26 @@ public class InternalOptimindParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalOptimind.g:1657:3: (otherlv_3= 'to' ( ( ruleEString ) ) )?
-            int alt33=2;
-            int LA33_0 = input.LA(1);
+            // InternalOptimind.g:1692:3: (otherlv_3= 'to' ( ( ruleEString ) ) )?
+            int alt36=2;
+            int LA36_0 = input.LA(1);
 
-            if ( (LA33_0==20) ) {
-                alt33=1;
+            if ( (LA36_0==20) ) {
+                alt36=1;
             }
-            switch (alt33) {
+            switch (alt36) {
                 case 1 :
-                    // InternalOptimind.g:1658:4: otherlv_3= 'to' ( ( ruleEString ) )
+                    // InternalOptimind.g:1693:4: otherlv_3= 'to' ( ( ruleEString ) )
                     {
                     otherlv_3=(Token)match(input,20,FOLLOW_3); 
 
                     				newLeafNode(otherlv_3, grammarAccess.getConnectionAccess().getToKeyword_3_0());
                     			
-                    // InternalOptimind.g:1662:4: ( ( ruleEString ) )
-                    // InternalOptimind.g:1663:5: ( ruleEString )
+                    // InternalOptimind.g:1697:4: ( ( ruleEString ) )
+                    // InternalOptimind.g:1698:5: ( ruleEString )
                     {
-                    // InternalOptimind.g:1663:5: ( ruleEString )
-                    // InternalOptimind.g:1664:6: ruleEString
+                    // InternalOptimind.g:1698:5: ( ruleEString )
+                    // InternalOptimind.g:1699:6: ruleEString
                     {
 
                     						if (current==null) {
@@ -4016,7 +4124,7 @@ public class InternalOptimindParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleLibraryFunction"
-    // InternalOptimind.g:1683:1: entryRuleLibraryFunction returns [EObject current=null] : iv_ruleLibraryFunction= ruleLibraryFunction EOF ;
+    // InternalOptimind.g:1718:1: entryRuleLibraryFunction returns [EObject current=null] : iv_ruleLibraryFunction= ruleLibraryFunction EOF ;
     public final EObject entryRuleLibraryFunction() throws RecognitionException {
         EObject current = null;
 
@@ -4024,8 +4132,8 @@ public class InternalOptimindParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalOptimind.g:1683:56: (iv_ruleLibraryFunction= ruleLibraryFunction EOF )
-            // InternalOptimind.g:1684:2: iv_ruleLibraryFunction= ruleLibraryFunction EOF
+            // InternalOptimind.g:1718:56: (iv_ruleLibraryFunction= ruleLibraryFunction EOF )
+            // InternalOptimind.g:1719:2: iv_ruleLibraryFunction= ruleLibraryFunction EOF
             {
              newCompositeNode(grammarAccess.getLibraryFunctionRule()); 
             pushFollow(FOLLOW_1);
@@ -4052,7 +4160,7 @@ public class InternalOptimindParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleLibraryFunction"
-    // InternalOptimind.g:1690:1: ruleLibraryFunction returns [EObject current=null] : ( () otherlv_1= 'LibraryFunction' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' otherlv_4= 'function' ( (lv_function_5_0= ruleEString ) ) ( ( (lv_inputs_6_0= ruleInput ) ) ( (lv_inputs_7_0= ruleInput ) )* )? ( ( (lv_outputs_8_0= ruleOutput ) ) ( (lv_outputs_9_0= ruleOutput ) )* )? otherlv_10= '}' ) ;
+    // InternalOptimind.g:1725:1: ruleLibraryFunction returns [EObject current=null] : ( () otherlv_1= 'LibraryFunction' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' otherlv_4= 'function' ( (lv_function_5_0= ruleEString ) ) ( ( (lv_inputs_6_0= ruleInput ) ) ( (lv_inputs_7_0= ruleInput ) )* )? ( ( (lv_outputs_8_0= ruleOutput ) ) ( (lv_outputs_9_0= ruleOutput ) )* )? otherlv_10= '}' ) ;
     public final EObject ruleLibraryFunction() throws RecognitionException {
         EObject current = null;
 
@@ -4077,14 +4185,14 @@ public class InternalOptimindParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalOptimind.g:1696:2: ( ( () otherlv_1= 'LibraryFunction' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' otherlv_4= 'function' ( (lv_function_5_0= ruleEString ) ) ( ( (lv_inputs_6_0= ruleInput ) ) ( (lv_inputs_7_0= ruleInput ) )* )? ( ( (lv_outputs_8_0= ruleOutput ) ) ( (lv_outputs_9_0= ruleOutput ) )* )? otherlv_10= '}' ) )
-            // InternalOptimind.g:1697:2: ( () otherlv_1= 'LibraryFunction' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' otherlv_4= 'function' ( (lv_function_5_0= ruleEString ) ) ( ( (lv_inputs_6_0= ruleInput ) ) ( (lv_inputs_7_0= ruleInput ) )* )? ( ( (lv_outputs_8_0= ruleOutput ) ) ( (lv_outputs_9_0= ruleOutput ) )* )? otherlv_10= '}' )
+            // InternalOptimind.g:1731:2: ( ( () otherlv_1= 'LibraryFunction' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' otherlv_4= 'function' ( (lv_function_5_0= ruleEString ) ) ( ( (lv_inputs_6_0= ruleInput ) ) ( (lv_inputs_7_0= ruleInput ) )* )? ( ( (lv_outputs_8_0= ruleOutput ) ) ( (lv_outputs_9_0= ruleOutput ) )* )? otherlv_10= '}' ) )
+            // InternalOptimind.g:1732:2: ( () otherlv_1= 'LibraryFunction' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' otherlv_4= 'function' ( (lv_function_5_0= ruleEString ) ) ( ( (lv_inputs_6_0= ruleInput ) ) ( (lv_inputs_7_0= ruleInput ) )* )? ( ( (lv_outputs_8_0= ruleOutput ) ) ( (lv_outputs_9_0= ruleOutput ) )* )? otherlv_10= '}' )
             {
-            // InternalOptimind.g:1697:2: ( () otherlv_1= 'LibraryFunction' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' otherlv_4= 'function' ( (lv_function_5_0= ruleEString ) ) ( ( (lv_inputs_6_0= ruleInput ) ) ( (lv_inputs_7_0= ruleInput ) )* )? ( ( (lv_outputs_8_0= ruleOutput ) ) ( (lv_outputs_9_0= ruleOutput ) )* )? otherlv_10= '}' )
-            // InternalOptimind.g:1698:3: () otherlv_1= 'LibraryFunction' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' otherlv_4= 'function' ( (lv_function_5_0= ruleEString ) ) ( ( (lv_inputs_6_0= ruleInput ) ) ( (lv_inputs_7_0= ruleInput ) )* )? ( ( (lv_outputs_8_0= ruleOutput ) ) ( (lv_outputs_9_0= ruleOutput ) )* )? otherlv_10= '}'
+            // InternalOptimind.g:1732:2: ( () otherlv_1= 'LibraryFunction' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' otherlv_4= 'function' ( (lv_function_5_0= ruleEString ) ) ( ( (lv_inputs_6_0= ruleInput ) ) ( (lv_inputs_7_0= ruleInput ) )* )? ( ( (lv_outputs_8_0= ruleOutput ) ) ( (lv_outputs_9_0= ruleOutput ) )* )? otherlv_10= '}' )
+            // InternalOptimind.g:1733:3: () otherlv_1= 'LibraryFunction' ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' otherlv_4= 'function' ( (lv_function_5_0= ruleEString ) ) ( ( (lv_inputs_6_0= ruleInput ) ) ( (lv_inputs_7_0= ruleInput ) )* )? ( ( (lv_outputs_8_0= ruleOutput ) ) ( (lv_outputs_9_0= ruleOutput ) )* )? otherlv_10= '}'
             {
-            // InternalOptimind.g:1698:3: ()
-            // InternalOptimind.g:1699:4: 
+            // InternalOptimind.g:1733:3: ()
+            // InternalOptimind.g:1734:4: 
             {
 
             				current = forceCreateModelElement(
@@ -4098,11 +4206,11 @@ public class InternalOptimindParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getLibraryFunctionAccess().getLibraryFunctionKeyword_1());
             		
-            // InternalOptimind.g:1709:3: ( (lv_name_2_0= ruleEString ) )
-            // InternalOptimind.g:1710:4: (lv_name_2_0= ruleEString )
+            // InternalOptimind.g:1744:3: ( (lv_name_2_0= ruleEString ) )
+            // InternalOptimind.g:1745:4: (lv_name_2_0= ruleEString )
             {
-            // InternalOptimind.g:1710:4: (lv_name_2_0= ruleEString )
-            // InternalOptimind.g:1711:5: lv_name_2_0= ruleEString
+            // InternalOptimind.g:1745:4: (lv_name_2_0= ruleEString )
+            // InternalOptimind.g:1746:5: lv_name_2_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getLibraryFunctionAccess().getNameEStringParserRuleCall_2_0());
@@ -4137,11 +4245,11 @@ public class InternalOptimindParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_4, grammarAccess.getLibraryFunctionAccess().getFunctionKeyword_4());
             		
-            // InternalOptimind.g:1736:3: ( (lv_function_5_0= ruleEString ) )
-            // InternalOptimind.g:1737:4: (lv_function_5_0= ruleEString )
+            // InternalOptimind.g:1771:3: ( (lv_function_5_0= ruleEString ) )
+            // InternalOptimind.g:1772:4: (lv_function_5_0= ruleEString )
             {
-            // InternalOptimind.g:1737:4: (lv_function_5_0= ruleEString )
-            // InternalOptimind.g:1738:5: lv_function_5_0= ruleEString
+            // InternalOptimind.g:1772:4: (lv_function_5_0= ruleEString )
+            // InternalOptimind.g:1773:5: lv_function_5_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getLibraryFunctionAccess().getFunctionEStringParserRuleCall_5_0());
@@ -4168,22 +4276,22 @@ public class InternalOptimindParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalOptimind.g:1755:3: ( ( (lv_inputs_6_0= ruleInput ) ) ( (lv_inputs_7_0= ruleInput ) )* )?
-            int alt35=2;
-            int LA35_0 = input.LA(1);
+            // InternalOptimind.g:1790:3: ( ( (lv_inputs_6_0= ruleInput ) ) ( (lv_inputs_7_0= ruleInput ) )* )?
+            int alt38=2;
+            int LA38_0 = input.LA(1);
 
-            if ( (LA35_0==41) ) {
-                alt35=1;
+            if ( (LA38_0==41) ) {
+                alt38=1;
             }
-            switch (alt35) {
+            switch (alt38) {
                 case 1 :
-                    // InternalOptimind.g:1756:4: ( (lv_inputs_6_0= ruleInput ) ) ( (lv_inputs_7_0= ruleInput ) )*
+                    // InternalOptimind.g:1791:4: ( (lv_inputs_6_0= ruleInput ) ) ( (lv_inputs_7_0= ruleInput ) )*
                     {
-                    // InternalOptimind.g:1756:4: ( (lv_inputs_6_0= ruleInput ) )
-                    // InternalOptimind.g:1757:5: (lv_inputs_6_0= ruleInput )
+                    // InternalOptimind.g:1791:4: ( (lv_inputs_6_0= ruleInput ) )
+                    // InternalOptimind.g:1792:5: (lv_inputs_6_0= ruleInput )
                     {
-                    // InternalOptimind.g:1757:5: (lv_inputs_6_0= ruleInput )
-                    // InternalOptimind.g:1758:6: lv_inputs_6_0= ruleInput
+                    // InternalOptimind.g:1792:5: (lv_inputs_6_0= ruleInput )
+                    // InternalOptimind.g:1793:6: lv_inputs_6_0= ruleInput
                     {
 
                     						newCompositeNode(grammarAccess.getLibraryFunctionAccess().getInputsInputParserRuleCall_6_0_0());
@@ -4210,23 +4318,23 @@ public class InternalOptimindParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalOptimind.g:1775:4: ( (lv_inputs_7_0= ruleInput ) )*
-                    loop34:
+                    // InternalOptimind.g:1810:4: ( (lv_inputs_7_0= ruleInput ) )*
+                    loop37:
                     do {
-                        int alt34=2;
-                        int LA34_0 = input.LA(1);
+                        int alt37=2;
+                        int LA37_0 = input.LA(1);
 
-                        if ( (LA34_0==41) ) {
-                            alt34=1;
+                        if ( (LA37_0==41) ) {
+                            alt37=1;
                         }
 
 
-                        switch (alt34) {
+                        switch (alt37) {
                     	case 1 :
-                    	    // InternalOptimind.g:1776:5: (lv_inputs_7_0= ruleInput )
+                    	    // InternalOptimind.g:1811:5: (lv_inputs_7_0= ruleInput )
                     	    {
-                    	    // InternalOptimind.g:1776:5: (lv_inputs_7_0= ruleInput )
-                    	    // InternalOptimind.g:1777:6: lv_inputs_7_0= ruleInput
+                    	    // InternalOptimind.g:1811:5: (lv_inputs_7_0= ruleInput )
+                    	    // InternalOptimind.g:1812:6: lv_inputs_7_0= ruleInput
                     	    {
 
                     	    						newCompositeNode(grammarAccess.getLibraryFunctionAccess().getInputsInputParserRuleCall_6_1_0());
@@ -4255,7 +4363,7 @@ public class InternalOptimindParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop34;
+                    	    break loop37;
                         }
                     } while (true);
 
@@ -4265,22 +4373,22 @@ public class InternalOptimindParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalOptimind.g:1795:3: ( ( (lv_outputs_8_0= ruleOutput ) ) ( (lv_outputs_9_0= ruleOutput ) )* )?
-            int alt37=2;
-            int LA37_0 = input.LA(1);
+            // InternalOptimind.g:1830:3: ( ( (lv_outputs_8_0= ruleOutput ) ) ( (lv_outputs_9_0= ruleOutput ) )* )?
+            int alt40=2;
+            int LA40_0 = input.LA(1);
 
-            if ( (LA37_0==15) ) {
-                alt37=1;
+            if ( (LA40_0==15) ) {
+                alt40=1;
             }
-            switch (alt37) {
+            switch (alt40) {
                 case 1 :
-                    // InternalOptimind.g:1796:4: ( (lv_outputs_8_0= ruleOutput ) ) ( (lv_outputs_9_0= ruleOutput ) )*
+                    // InternalOptimind.g:1831:4: ( (lv_outputs_8_0= ruleOutput ) ) ( (lv_outputs_9_0= ruleOutput ) )*
                     {
-                    // InternalOptimind.g:1796:4: ( (lv_outputs_8_0= ruleOutput ) )
-                    // InternalOptimind.g:1797:5: (lv_outputs_8_0= ruleOutput )
+                    // InternalOptimind.g:1831:4: ( (lv_outputs_8_0= ruleOutput ) )
+                    // InternalOptimind.g:1832:5: (lv_outputs_8_0= ruleOutput )
                     {
-                    // InternalOptimind.g:1797:5: (lv_outputs_8_0= ruleOutput )
-                    // InternalOptimind.g:1798:6: lv_outputs_8_0= ruleOutput
+                    // InternalOptimind.g:1832:5: (lv_outputs_8_0= ruleOutput )
+                    // InternalOptimind.g:1833:6: lv_outputs_8_0= ruleOutput
                     {
 
                     						newCompositeNode(grammarAccess.getLibraryFunctionAccess().getOutputsOutputParserRuleCall_7_0_0());
@@ -4307,23 +4415,23 @@ public class InternalOptimindParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalOptimind.g:1815:4: ( (lv_outputs_9_0= ruleOutput ) )*
-                    loop36:
+                    // InternalOptimind.g:1850:4: ( (lv_outputs_9_0= ruleOutput ) )*
+                    loop39:
                     do {
-                        int alt36=2;
-                        int LA36_0 = input.LA(1);
+                        int alt39=2;
+                        int LA39_0 = input.LA(1);
 
-                        if ( (LA36_0==15) ) {
-                            alt36=1;
+                        if ( (LA39_0==15) ) {
+                            alt39=1;
                         }
 
 
-                        switch (alt36) {
+                        switch (alt39) {
                     	case 1 :
-                    	    // InternalOptimind.g:1816:5: (lv_outputs_9_0= ruleOutput )
+                    	    // InternalOptimind.g:1851:5: (lv_outputs_9_0= ruleOutput )
                     	    {
-                    	    // InternalOptimind.g:1816:5: (lv_outputs_9_0= ruleOutput )
-                    	    // InternalOptimind.g:1817:6: lv_outputs_9_0= ruleOutput
+                    	    // InternalOptimind.g:1851:5: (lv_outputs_9_0= ruleOutput )
+                    	    // InternalOptimind.g:1852:6: lv_outputs_9_0= ruleOutput
                     	    {
 
                     	    						newCompositeNode(grammarAccess.getLibraryFunctionAccess().getOutputsOutputParserRuleCall_7_1_0());
@@ -4352,7 +4460,7 @@ public class InternalOptimindParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop36;
+                    	    break loop39;
                         }
                     } while (true);
 
@@ -4389,7 +4497,7 @@ public class InternalOptimindParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleInput"
-    // InternalOptimind.g:1843:1: entryRuleInput returns [EObject current=null] : iv_ruleInput= ruleInput EOF ;
+    // InternalOptimind.g:1878:1: entryRuleInput returns [EObject current=null] : iv_ruleInput= ruleInput EOF ;
     public final EObject entryRuleInput() throws RecognitionException {
         EObject current = null;
 
@@ -4397,8 +4505,8 @@ public class InternalOptimindParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalOptimind.g:1843:46: (iv_ruleInput= ruleInput EOF )
-            // InternalOptimind.g:1844:2: iv_ruleInput= ruleInput EOF
+            // InternalOptimind.g:1878:46: (iv_ruleInput= ruleInput EOF )
+            // InternalOptimind.g:1879:2: iv_ruleInput= ruleInput EOF
             {
              newCompositeNode(grammarAccess.getInputRule()); 
             pushFollow(FOLLOW_1);
@@ -4425,7 +4533,7 @@ public class InternalOptimindParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleInput"
-    // InternalOptimind.g:1850:1: ruleInput returns [EObject current=null] : ( () otherlv_1= 'Input' ( (lv_name_2_0= ruleEString ) ) (otherlv_3= 'type' ( (lv_typeAsString_4_0= ruleType ) ) )? (otherlv_5= 'value' ( (lv_valueAsString_6_0= ruleEString ) ) )? ) ;
+    // InternalOptimind.g:1885:1: ruleInput returns [EObject current=null] : ( () otherlv_1= 'Input' ( (lv_name_2_0= ruleEString ) ) (otherlv_3= 'type' ( (lv_typeAsString_4_0= ruleType ) ) )? (otherlv_5= 'value' ( (lv_valueAsString_6_0= ruleEString ) ) )? ) ;
     public final EObject ruleInput() throws RecognitionException {
         EObject current = null;
 
@@ -4443,14 +4551,14 @@ public class InternalOptimindParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalOptimind.g:1856:2: ( ( () otherlv_1= 'Input' ( (lv_name_2_0= ruleEString ) ) (otherlv_3= 'type' ( (lv_typeAsString_4_0= ruleType ) ) )? (otherlv_5= 'value' ( (lv_valueAsString_6_0= ruleEString ) ) )? ) )
-            // InternalOptimind.g:1857:2: ( () otherlv_1= 'Input' ( (lv_name_2_0= ruleEString ) ) (otherlv_3= 'type' ( (lv_typeAsString_4_0= ruleType ) ) )? (otherlv_5= 'value' ( (lv_valueAsString_6_0= ruleEString ) ) )? )
+            // InternalOptimind.g:1891:2: ( ( () otherlv_1= 'Input' ( (lv_name_2_0= ruleEString ) ) (otherlv_3= 'type' ( (lv_typeAsString_4_0= ruleType ) ) )? (otherlv_5= 'value' ( (lv_valueAsString_6_0= ruleEString ) ) )? ) )
+            // InternalOptimind.g:1892:2: ( () otherlv_1= 'Input' ( (lv_name_2_0= ruleEString ) ) (otherlv_3= 'type' ( (lv_typeAsString_4_0= ruleType ) ) )? (otherlv_5= 'value' ( (lv_valueAsString_6_0= ruleEString ) ) )? )
             {
-            // InternalOptimind.g:1857:2: ( () otherlv_1= 'Input' ( (lv_name_2_0= ruleEString ) ) (otherlv_3= 'type' ( (lv_typeAsString_4_0= ruleType ) ) )? (otherlv_5= 'value' ( (lv_valueAsString_6_0= ruleEString ) ) )? )
-            // InternalOptimind.g:1858:3: () otherlv_1= 'Input' ( (lv_name_2_0= ruleEString ) ) (otherlv_3= 'type' ( (lv_typeAsString_4_0= ruleType ) ) )? (otherlv_5= 'value' ( (lv_valueAsString_6_0= ruleEString ) ) )?
+            // InternalOptimind.g:1892:2: ( () otherlv_1= 'Input' ( (lv_name_2_0= ruleEString ) ) (otherlv_3= 'type' ( (lv_typeAsString_4_0= ruleType ) ) )? (otherlv_5= 'value' ( (lv_valueAsString_6_0= ruleEString ) ) )? )
+            // InternalOptimind.g:1893:3: () otherlv_1= 'Input' ( (lv_name_2_0= ruleEString ) ) (otherlv_3= 'type' ( (lv_typeAsString_4_0= ruleType ) ) )? (otherlv_5= 'value' ( (lv_valueAsString_6_0= ruleEString ) ) )?
             {
-            // InternalOptimind.g:1858:3: ()
-            // InternalOptimind.g:1859:4: 
+            // InternalOptimind.g:1893:3: ()
+            // InternalOptimind.g:1894:4: 
             {
 
             				current = forceCreateModelElement(
@@ -4464,11 +4572,11 @@ public class InternalOptimindParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getInputAccess().getInputKeyword_1());
             		
-            // InternalOptimind.g:1869:3: ( (lv_name_2_0= ruleEString ) )
-            // InternalOptimind.g:1870:4: (lv_name_2_0= ruleEString )
+            // InternalOptimind.g:1904:3: ( (lv_name_2_0= ruleEString ) )
+            // InternalOptimind.g:1905:4: (lv_name_2_0= ruleEString )
             {
-            // InternalOptimind.g:1870:4: (lv_name_2_0= ruleEString )
-            // InternalOptimind.g:1871:5: lv_name_2_0= ruleEString
+            // InternalOptimind.g:1905:4: (lv_name_2_0= ruleEString )
+            // InternalOptimind.g:1906:5: lv_name_2_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getInputAccess().getNameEStringParserRuleCall_2_0());
@@ -4495,26 +4603,26 @@ public class InternalOptimindParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalOptimind.g:1888:3: (otherlv_3= 'type' ( (lv_typeAsString_4_0= ruleType ) ) )?
-            int alt38=2;
-            int LA38_0 = input.LA(1);
+            // InternalOptimind.g:1923:3: (otherlv_3= 'type' ( (lv_typeAsString_4_0= ruleType ) ) )?
+            int alt41=2;
+            int LA41_0 = input.LA(1);
 
-            if ( (LA38_0==16) ) {
-                alt38=1;
+            if ( (LA41_0==16) ) {
+                alt41=1;
             }
-            switch (alt38) {
+            switch (alt41) {
                 case 1 :
-                    // InternalOptimind.g:1889:4: otherlv_3= 'type' ( (lv_typeAsString_4_0= ruleType ) )
+                    // InternalOptimind.g:1924:4: otherlv_3= 'type' ( (lv_typeAsString_4_0= ruleType ) )
                     {
                     otherlv_3=(Token)match(input,16,FOLLOW_3); 
 
                     				newLeafNode(otherlv_3, grammarAccess.getInputAccess().getTypeKeyword_3_0());
                     			
-                    // InternalOptimind.g:1893:4: ( (lv_typeAsString_4_0= ruleType ) )
-                    // InternalOptimind.g:1894:5: (lv_typeAsString_4_0= ruleType )
+                    // InternalOptimind.g:1928:4: ( (lv_typeAsString_4_0= ruleType ) )
+                    // InternalOptimind.g:1929:5: (lv_typeAsString_4_0= ruleType )
                     {
-                    // InternalOptimind.g:1894:5: (lv_typeAsString_4_0= ruleType )
-                    // InternalOptimind.g:1895:6: lv_typeAsString_4_0= ruleType
+                    // InternalOptimind.g:1929:5: (lv_typeAsString_4_0= ruleType )
+                    // InternalOptimind.g:1930:6: lv_typeAsString_4_0= ruleType
                     {
 
                     						newCompositeNode(grammarAccess.getInputAccess().getTypeAsStringTypeParserRuleCall_3_1_0());
@@ -4547,26 +4655,26 @@ public class InternalOptimindParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalOptimind.g:1913:3: (otherlv_5= 'value' ( (lv_valueAsString_6_0= ruleEString ) ) )?
-            int alt39=2;
-            int LA39_0 = input.LA(1);
+            // InternalOptimind.g:1948:3: (otherlv_5= 'value' ( (lv_valueAsString_6_0= ruleEString ) ) )?
+            int alt42=2;
+            int LA42_0 = input.LA(1);
 
-            if ( (LA39_0==17) ) {
-                alt39=1;
+            if ( (LA42_0==17) ) {
+                alt42=1;
             }
-            switch (alt39) {
+            switch (alt42) {
                 case 1 :
-                    // InternalOptimind.g:1914:4: otherlv_5= 'value' ( (lv_valueAsString_6_0= ruleEString ) )
+                    // InternalOptimind.g:1949:4: otherlv_5= 'value' ( (lv_valueAsString_6_0= ruleEString ) )
                     {
                     otherlv_5=(Token)match(input,17,FOLLOW_3); 
 
                     				newLeafNode(otherlv_5, grammarAccess.getInputAccess().getValueKeyword_4_0());
                     			
-                    // InternalOptimind.g:1918:4: ( (lv_valueAsString_6_0= ruleEString ) )
-                    // InternalOptimind.g:1919:5: (lv_valueAsString_6_0= ruleEString )
+                    // InternalOptimind.g:1953:4: ( (lv_valueAsString_6_0= ruleEString ) )
+                    // InternalOptimind.g:1954:5: (lv_valueAsString_6_0= ruleEString )
                     {
-                    // InternalOptimind.g:1919:5: (lv_valueAsString_6_0= ruleEString )
-                    // InternalOptimind.g:1920:6: lv_valueAsString_6_0= ruleEString
+                    // InternalOptimind.g:1954:5: (lv_valueAsString_6_0= ruleEString )
+                    // InternalOptimind.g:1955:6: lv_valueAsString_6_0= ruleEString
                     {
 
                     						newCompositeNode(grammarAccess.getInputAccess().getValueAsStringEStringParserRuleCall_4_1_0());
@@ -4622,7 +4730,7 @@ public class InternalOptimindParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleOutput"
-    // InternalOptimind.g:1942:1: entryRuleOutput returns [EObject current=null] : iv_ruleOutput= ruleOutput EOF ;
+    // InternalOptimind.g:1977:1: entryRuleOutput returns [EObject current=null] : iv_ruleOutput= ruleOutput EOF ;
     public final EObject entryRuleOutput() throws RecognitionException {
         EObject current = null;
 
@@ -4630,8 +4738,8 @@ public class InternalOptimindParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalOptimind.g:1942:47: (iv_ruleOutput= ruleOutput EOF )
-            // InternalOptimind.g:1943:2: iv_ruleOutput= ruleOutput EOF
+            // InternalOptimind.g:1977:47: (iv_ruleOutput= ruleOutput EOF )
+            // InternalOptimind.g:1978:2: iv_ruleOutput= ruleOutput EOF
             {
              newCompositeNode(grammarAccess.getOutputRule()); 
             pushFollow(FOLLOW_1);
@@ -4658,7 +4766,7 @@ public class InternalOptimindParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleOutput"
-    // InternalOptimind.g:1949:1: ruleOutput returns [EObject current=null] : ( () otherlv_1= 'Output' ( (lv_name_2_0= ruleEString ) ) (otherlv_3= 'type' ( (lv_typeAsString_4_0= ruleType ) ) )? (otherlv_5= 'value' ( (lv_valueAsString_6_0= ruleEString ) ) )? ) ;
+    // InternalOptimind.g:1984:1: ruleOutput returns [EObject current=null] : ( () otherlv_1= 'Output' ( (lv_name_2_0= ruleEString ) ) (otherlv_3= 'type' ( (lv_typeAsString_4_0= ruleType ) ) )? (otherlv_5= 'value' ( (lv_valueAsString_6_0= ruleEString ) ) )? ) ;
     public final EObject ruleOutput() throws RecognitionException {
         EObject current = null;
 
@@ -4676,14 +4784,14 @@ public class InternalOptimindParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalOptimind.g:1955:2: ( ( () otherlv_1= 'Output' ( (lv_name_2_0= ruleEString ) ) (otherlv_3= 'type' ( (lv_typeAsString_4_0= ruleType ) ) )? (otherlv_5= 'value' ( (lv_valueAsString_6_0= ruleEString ) ) )? ) )
-            // InternalOptimind.g:1956:2: ( () otherlv_1= 'Output' ( (lv_name_2_0= ruleEString ) ) (otherlv_3= 'type' ( (lv_typeAsString_4_0= ruleType ) ) )? (otherlv_5= 'value' ( (lv_valueAsString_6_0= ruleEString ) ) )? )
+            // InternalOptimind.g:1990:2: ( ( () otherlv_1= 'Output' ( (lv_name_2_0= ruleEString ) ) (otherlv_3= 'type' ( (lv_typeAsString_4_0= ruleType ) ) )? (otherlv_5= 'value' ( (lv_valueAsString_6_0= ruleEString ) ) )? ) )
+            // InternalOptimind.g:1991:2: ( () otherlv_1= 'Output' ( (lv_name_2_0= ruleEString ) ) (otherlv_3= 'type' ( (lv_typeAsString_4_0= ruleType ) ) )? (otherlv_5= 'value' ( (lv_valueAsString_6_0= ruleEString ) ) )? )
             {
-            // InternalOptimind.g:1956:2: ( () otherlv_1= 'Output' ( (lv_name_2_0= ruleEString ) ) (otherlv_3= 'type' ( (lv_typeAsString_4_0= ruleType ) ) )? (otherlv_5= 'value' ( (lv_valueAsString_6_0= ruleEString ) ) )? )
-            // InternalOptimind.g:1957:3: () otherlv_1= 'Output' ( (lv_name_2_0= ruleEString ) ) (otherlv_3= 'type' ( (lv_typeAsString_4_0= ruleType ) ) )? (otherlv_5= 'value' ( (lv_valueAsString_6_0= ruleEString ) ) )?
+            // InternalOptimind.g:1991:2: ( () otherlv_1= 'Output' ( (lv_name_2_0= ruleEString ) ) (otherlv_3= 'type' ( (lv_typeAsString_4_0= ruleType ) ) )? (otherlv_5= 'value' ( (lv_valueAsString_6_0= ruleEString ) ) )? )
+            // InternalOptimind.g:1992:3: () otherlv_1= 'Output' ( (lv_name_2_0= ruleEString ) ) (otherlv_3= 'type' ( (lv_typeAsString_4_0= ruleType ) ) )? (otherlv_5= 'value' ( (lv_valueAsString_6_0= ruleEString ) ) )?
             {
-            // InternalOptimind.g:1957:3: ()
-            // InternalOptimind.g:1958:4: 
+            // InternalOptimind.g:1992:3: ()
+            // InternalOptimind.g:1993:4: 
             {
 
             				current = forceCreateModelElement(
@@ -4697,11 +4805,11 @@ public class InternalOptimindParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getOutputAccess().getOutputKeyword_1());
             		
-            // InternalOptimind.g:1968:3: ( (lv_name_2_0= ruleEString ) )
-            // InternalOptimind.g:1969:4: (lv_name_2_0= ruleEString )
+            // InternalOptimind.g:2003:3: ( (lv_name_2_0= ruleEString ) )
+            // InternalOptimind.g:2004:4: (lv_name_2_0= ruleEString )
             {
-            // InternalOptimind.g:1969:4: (lv_name_2_0= ruleEString )
-            // InternalOptimind.g:1970:5: lv_name_2_0= ruleEString
+            // InternalOptimind.g:2004:4: (lv_name_2_0= ruleEString )
+            // InternalOptimind.g:2005:5: lv_name_2_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getOutputAccess().getNameEStringParserRuleCall_2_0());
@@ -4728,26 +4836,26 @@ public class InternalOptimindParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalOptimind.g:1987:3: (otherlv_3= 'type' ( (lv_typeAsString_4_0= ruleType ) ) )?
-            int alt40=2;
-            int LA40_0 = input.LA(1);
+            // InternalOptimind.g:2022:3: (otherlv_3= 'type' ( (lv_typeAsString_4_0= ruleType ) ) )?
+            int alt43=2;
+            int LA43_0 = input.LA(1);
 
-            if ( (LA40_0==16) ) {
-                alt40=1;
+            if ( (LA43_0==16) ) {
+                alt43=1;
             }
-            switch (alt40) {
+            switch (alt43) {
                 case 1 :
-                    // InternalOptimind.g:1988:4: otherlv_3= 'type' ( (lv_typeAsString_4_0= ruleType ) )
+                    // InternalOptimind.g:2023:4: otherlv_3= 'type' ( (lv_typeAsString_4_0= ruleType ) )
                     {
                     otherlv_3=(Token)match(input,16,FOLLOW_3); 
 
                     				newLeafNode(otherlv_3, grammarAccess.getOutputAccess().getTypeKeyword_3_0());
                     			
-                    // InternalOptimind.g:1992:4: ( (lv_typeAsString_4_0= ruleType ) )
-                    // InternalOptimind.g:1993:5: (lv_typeAsString_4_0= ruleType )
+                    // InternalOptimind.g:2027:4: ( (lv_typeAsString_4_0= ruleType ) )
+                    // InternalOptimind.g:2028:5: (lv_typeAsString_4_0= ruleType )
                     {
-                    // InternalOptimind.g:1993:5: (lv_typeAsString_4_0= ruleType )
-                    // InternalOptimind.g:1994:6: lv_typeAsString_4_0= ruleType
+                    // InternalOptimind.g:2028:5: (lv_typeAsString_4_0= ruleType )
+                    // InternalOptimind.g:2029:6: lv_typeAsString_4_0= ruleType
                     {
 
                     						newCompositeNode(grammarAccess.getOutputAccess().getTypeAsStringTypeParserRuleCall_3_1_0());
@@ -4780,26 +4888,26 @@ public class InternalOptimindParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalOptimind.g:2012:3: (otherlv_5= 'value' ( (lv_valueAsString_6_0= ruleEString ) ) )?
-            int alt41=2;
-            int LA41_0 = input.LA(1);
+            // InternalOptimind.g:2047:3: (otherlv_5= 'value' ( (lv_valueAsString_6_0= ruleEString ) ) )?
+            int alt44=2;
+            int LA44_0 = input.LA(1);
 
-            if ( (LA41_0==17) ) {
-                alt41=1;
+            if ( (LA44_0==17) ) {
+                alt44=1;
             }
-            switch (alt41) {
+            switch (alt44) {
                 case 1 :
-                    // InternalOptimind.g:2013:4: otherlv_5= 'value' ( (lv_valueAsString_6_0= ruleEString ) )
+                    // InternalOptimind.g:2048:4: otherlv_5= 'value' ( (lv_valueAsString_6_0= ruleEString ) )
                     {
                     otherlv_5=(Token)match(input,17,FOLLOW_3); 
 
                     				newLeafNode(otherlv_5, grammarAccess.getOutputAccess().getValueKeyword_4_0());
                     			
-                    // InternalOptimind.g:2017:4: ( (lv_valueAsString_6_0= ruleEString ) )
-                    // InternalOptimind.g:2018:5: (lv_valueAsString_6_0= ruleEString )
+                    // InternalOptimind.g:2052:4: ( (lv_valueAsString_6_0= ruleEString ) )
+                    // InternalOptimind.g:2053:5: (lv_valueAsString_6_0= ruleEString )
                     {
-                    // InternalOptimind.g:2018:5: (lv_valueAsString_6_0= ruleEString )
-                    // InternalOptimind.g:2019:6: lv_valueAsString_6_0= ruleEString
+                    // InternalOptimind.g:2053:5: (lv_valueAsString_6_0= ruleEString )
+                    // InternalOptimind.g:2054:6: lv_valueAsString_6_0= ruleEString
                     {
 
                     						newCompositeNode(grammarAccess.getOutputAccess().getValueAsStringEStringParserRuleCall_4_1_0());
@@ -4855,7 +4963,7 @@ public class InternalOptimindParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleProgLanguage"
-    // InternalOptimind.g:2041:1: ruleProgLanguage returns [Enumerator current=null] : ( (enumLiteral_0= 'Python' ) | (enumLiteral_1= 'Java' ) ) ;
+    // InternalOptimind.g:2076:1: ruleProgLanguage returns [Enumerator current=null] : ( (enumLiteral_0= 'Python' ) | (enumLiteral_1= 'Java' ) ) ;
     public final Enumerator ruleProgLanguage() throws RecognitionException {
         Enumerator current = null;
 
@@ -4866,31 +4974,31 @@ public class InternalOptimindParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalOptimind.g:2047:2: ( ( (enumLiteral_0= 'Python' ) | (enumLiteral_1= 'Java' ) ) )
-            // InternalOptimind.g:2048:2: ( (enumLiteral_0= 'Python' ) | (enumLiteral_1= 'Java' ) )
+            // InternalOptimind.g:2082:2: ( ( (enumLiteral_0= 'Python' ) | (enumLiteral_1= 'Java' ) ) )
+            // InternalOptimind.g:2083:2: ( (enumLiteral_0= 'Python' ) | (enumLiteral_1= 'Java' ) )
             {
-            // InternalOptimind.g:2048:2: ( (enumLiteral_0= 'Python' ) | (enumLiteral_1= 'Java' ) )
-            int alt42=2;
-            int LA42_0 = input.LA(1);
+            // InternalOptimind.g:2083:2: ( (enumLiteral_0= 'Python' ) | (enumLiteral_1= 'Java' ) )
+            int alt45=2;
+            int LA45_0 = input.LA(1);
 
-            if ( (LA42_0==42) ) {
-                alt42=1;
+            if ( (LA45_0==42) ) {
+                alt45=1;
             }
-            else if ( (LA42_0==43) ) {
-                alt42=2;
+            else if ( (LA45_0==43) ) {
+                alt45=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 42, 0, input);
+                    new NoViableAltException("", 45, 0, input);
 
                 throw nvae;
             }
-            switch (alt42) {
+            switch (alt45) {
                 case 1 :
-                    // InternalOptimind.g:2049:3: (enumLiteral_0= 'Python' )
+                    // InternalOptimind.g:2084:3: (enumLiteral_0= 'Python' )
                     {
-                    // InternalOptimind.g:2049:3: (enumLiteral_0= 'Python' )
-                    // InternalOptimind.g:2050:4: enumLiteral_0= 'Python'
+                    // InternalOptimind.g:2084:3: (enumLiteral_0= 'Python' )
+                    // InternalOptimind.g:2085:4: enumLiteral_0= 'Python'
                     {
                     enumLiteral_0=(Token)match(input,42,FOLLOW_2); 
 
@@ -4904,10 +5012,10 @@ public class InternalOptimindParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalOptimind.g:2057:3: (enumLiteral_1= 'Java' )
+                    // InternalOptimind.g:2092:3: (enumLiteral_1= 'Java' )
                     {
-                    // InternalOptimind.g:2057:3: (enumLiteral_1= 'Java' )
-                    // InternalOptimind.g:2058:4: enumLiteral_1= 'Java'
+                    // InternalOptimind.g:2092:3: (enumLiteral_1= 'Java' )
+                    // InternalOptimind.g:2093:4: enumLiteral_1= 'Java'
                     {
                     enumLiteral_1=(Token)match(input,43,FOLLOW_2); 
 
@@ -4943,7 +5051,7 @@ public class InternalOptimindParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTaskStatus"
-    // InternalOptimind.g:2068:1: ruleTaskStatus returns [Enumerator current=null] : ( (enumLiteral_0= 'FINISHED' ) | (enumLiteral_1= 'PREPARED' ) | (enumLiteral_2= 'NOT_PREPARED' ) | (enumLiteral_3= 'PROCESSING' ) ) ;
+    // InternalOptimind.g:2103:1: ruleTaskStatus returns [Enumerator current=null] : ( (enumLiteral_0= 'FINISHED' ) | (enumLiteral_1= 'PREPARED' ) | (enumLiteral_2= 'NOT_PREPARED' ) | (enumLiteral_3= 'PROCESSING' ) ) ;
     public final Enumerator ruleTaskStatus() throws RecognitionException {
         Enumerator current = null;
 
@@ -4956,45 +5064,45 @@ public class InternalOptimindParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalOptimind.g:2074:2: ( ( (enumLiteral_0= 'FINISHED' ) | (enumLiteral_1= 'PREPARED' ) | (enumLiteral_2= 'NOT_PREPARED' ) | (enumLiteral_3= 'PROCESSING' ) ) )
-            // InternalOptimind.g:2075:2: ( (enumLiteral_0= 'FINISHED' ) | (enumLiteral_1= 'PREPARED' ) | (enumLiteral_2= 'NOT_PREPARED' ) | (enumLiteral_3= 'PROCESSING' ) )
+            // InternalOptimind.g:2109:2: ( ( (enumLiteral_0= 'FINISHED' ) | (enumLiteral_1= 'PREPARED' ) | (enumLiteral_2= 'NOT_PREPARED' ) | (enumLiteral_3= 'PROCESSING' ) ) )
+            // InternalOptimind.g:2110:2: ( (enumLiteral_0= 'FINISHED' ) | (enumLiteral_1= 'PREPARED' ) | (enumLiteral_2= 'NOT_PREPARED' ) | (enumLiteral_3= 'PROCESSING' ) )
             {
-            // InternalOptimind.g:2075:2: ( (enumLiteral_0= 'FINISHED' ) | (enumLiteral_1= 'PREPARED' ) | (enumLiteral_2= 'NOT_PREPARED' ) | (enumLiteral_3= 'PROCESSING' ) )
-            int alt43=4;
+            // InternalOptimind.g:2110:2: ( (enumLiteral_0= 'FINISHED' ) | (enumLiteral_1= 'PREPARED' ) | (enumLiteral_2= 'NOT_PREPARED' ) | (enumLiteral_3= 'PROCESSING' ) )
+            int alt46=4;
             switch ( input.LA(1) ) {
             case 44:
                 {
-                alt43=1;
+                alt46=1;
                 }
                 break;
             case 45:
                 {
-                alt43=2;
+                alt46=2;
                 }
                 break;
             case 46:
                 {
-                alt43=3;
+                alt46=3;
                 }
                 break;
             case 47:
                 {
-                alt43=4;
+                alt46=4;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 43, 0, input);
+                    new NoViableAltException("", 46, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt43) {
+            switch (alt46) {
                 case 1 :
-                    // InternalOptimind.g:2076:3: (enumLiteral_0= 'FINISHED' )
+                    // InternalOptimind.g:2111:3: (enumLiteral_0= 'FINISHED' )
                     {
-                    // InternalOptimind.g:2076:3: (enumLiteral_0= 'FINISHED' )
-                    // InternalOptimind.g:2077:4: enumLiteral_0= 'FINISHED'
+                    // InternalOptimind.g:2111:3: (enumLiteral_0= 'FINISHED' )
+                    // InternalOptimind.g:2112:4: enumLiteral_0= 'FINISHED'
                     {
                     enumLiteral_0=(Token)match(input,44,FOLLOW_2); 
 
@@ -5008,10 +5116,10 @@ public class InternalOptimindParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalOptimind.g:2084:3: (enumLiteral_1= 'PREPARED' )
+                    // InternalOptimind.g:2119:3: (enumLiteral_1= 'PREPARED' )
                     {
-                    // InternalOptimind.g:2084:3: (enumLiteral_1= 'PREPARED' )
-                    // InternalOptimind.g:2085:4: enumLiteral_1= 'PREPARED'
+                    // InternalOptimind.g:2119:3: (enumLiteral_1= 'PREPARED' )
+                    // InternalOptimind.g:2120:4: enumLiteral_1= 'PREPARED'
                     {
                     enumLiteral_1=(Token)match(input,45,FOLLOW_2); 
 
@@ -5025,10 +5133,10 @@ public class InternalOptimindParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalOptimind.g:2092:3: (enumLiteral_2= 'NOT_PREPARED' )
+                    // InternalOptimind.g:2127:3: (enumLiteral_2= 'NOT_PREPARED' )
                     {
-                    // InternalOptimind.g:2092:3: (enumLiteral_2= 'NOT_PREPARED' )
-                    // InternalOptimind.g:2093:4: enumLiteral_2= 'NOT_PREPARED'
+                    // InternalOptimind.g:2127:3: (enumLiteral_2= 'NOT_PREPARED' )
+                    // InternalOptimind.g:2128:4: enumLiteral_2= 'NOT_PREPARED'
                     {
                     enumLiteral_2=(Token)match(input,46,FOLLOW_2); 
 
@@ -5042,10 +5150,10 @@ public class InternalOptimindParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalOptimind.g:2100:3: (enumLiteral_3= 'PROCESSING' )
+                    // InternalOptimind.g:2135:3: (enumLiteral_3= 'PROCESSING' )
                     {
-                    // InternalOptimind.g:2100:3: (enumLiteral_3= 'PROCESSING' )
-                    // InternalOptimind.g:2101:4: enumLiteral_3= 'PROCESSING'
+                    // InternalOptimind.g:2135:3: (enumLiteral_3= 'PROCESSING' )
+                    // InternalOptimind.g:2136:4: enumLiteral_3= 'PROCESSING'
                     {
                     enumLiteral_3=(Token)match(input,47,FOLLOW_2); 
 
