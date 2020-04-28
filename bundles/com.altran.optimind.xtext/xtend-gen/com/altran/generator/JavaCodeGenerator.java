@@ -41,6 +41,30 @@ public class JavaCodeGenerator {
     this.writeContent(this.generateFileContent());
   }
   
+  public String generateCustomTaskFile(final CustomTask task) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("package scripts;");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("// ==================================================================================================");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("// MODULE IMPORT");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("// ==================================================================================================");
+    _builder.newLine();
+    _builder.append("\t\t\t\t\t\t\t");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("// ==================================================================================================");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.newLine();
+    _builder.newLine();
+    return _builder.toString();
+  }
+  
   public String generateFileContent() {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("// ==================================================================================================");
@@ -66,9 +90,8 @@ public class JavaCodeGenerator {
     _builder.append("{");
     _builder.newLine();
     _builder.append("\t");
-    String _generateClassContent = this.generateClassContent();
-    _builder.append(_generateClassContent, "\t");
-    _builder.newLineIfNotEmpty();
+    _builder.append("//generateClassContent");
+    _builder.newLine();
     _builder.append("}");
     _builder.newLine();
     _builder.newLine();

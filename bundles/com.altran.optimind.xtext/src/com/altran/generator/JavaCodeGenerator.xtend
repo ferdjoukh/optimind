@@ -26,7 +26,28 @@ import com.altran.optimind.model.workflow.Setter
 	
 	def generate() {
 		writeContent(generateFileContent)
+			
 	}
+	
+	
+	
+	
+	
+	
+	def String generateCustomTaskFile(CustomTask task) {
+		'''
+			package scripts;
+				// ==================================================================================================
+				// MODULE IMPORT
+				// ==================================================================================================
+										
+				// ==================================================================================================
+				
+			
+		'''
+	}
+	
+	
 	
 	def String generateFileContent() {
 
@@ -41,7 +62,7 @@ import com.altran.optimind.model.workflow.Setter
 			public class «workflow.name» 
 			// ==================================================================================================
 			{
-				«generateClassContent»
+				//generateClassContent
 			}
 			
 				
