@@ -14,6 +14,7 @@ import com.altran.optimind.model.workflow.Setter
 import com.altran.optimind.model.workflow.BaseTask
 import com.altran.optimind.model.workflow.Connection
 import org.eclipse.xtext.EcoreUtil2
+import com.altran.optimind.model.workflow.CustomTask
 
 class LibraryFunctionGenerator {
 	
@@ -72,7 +73,7 @@ class LibraryFunctionGenerator {
 						private «setter.typeAsString» «setter.name» = «setter.valueAsString»;
 						public void set_«setter.name»(«setter.typeAsString» value) {this.«setter.name» = value;} ; 										
 						public «setter.typeAsString» get_«setter.name»() {return this.«setter.name»;}; 
-					
+
 					«ENDFOR»
 					
 					//All Outputs 
@@ -95,6 +96,7 @@ class LibraryFunctionGenerator {
 			
 		'''
 	}
+	
 	
 	def String generateTaskFile(BaseTask task) {
 		
@@ -174,8 +176,7 @@ class LibraryFunctionGenerator {
 	
 	def String generateFilePythonContent(LibraryFunction libfunction) {
 		
-		'''		
-			
+		'''					
 			# ==================================================================================================
 			# Library Functions
 			# ==================================================================================================

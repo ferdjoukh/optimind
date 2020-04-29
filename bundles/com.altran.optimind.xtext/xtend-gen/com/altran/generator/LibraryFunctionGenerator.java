@@ -157,7 +157,6 @@ public class LibraryFunctionGenerator {
         _builder.append(_name_5, "\t\t");
         _builder.append(";}; ");
         _builder.newLineIfNotEmpty();
-        _builder.append("\t\t\t\t\t");
         _builder.newLine();
       }
     }
@@ -459,7 +458,6 @@ public class LibraryFunctionGenerator {
   
   public String generateFilePythonContent(final LibraryFunction libfunction) {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.newLine();
     _builder.append("# ==================================================================================================");
     _builder.newLine();
     _builder.append("# Library Functions");
