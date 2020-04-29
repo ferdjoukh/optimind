@@ -1084,6 +1084,361 @@ public interface WorkflowPackage extends EPackage {
 	int OUTPUT_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link com.altran.optimind.model.workflow.impl.AbstractStatementImpl <em>Abstract Statement</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see com.altran.optimind.model.workflow.impl.AbstractStatementImpl
+	 * @see com.altran.optimind.model.workflow.impl.WorkflowPackageImpl#getAbstractStatement()
+	 * @generated
+	 */
+	int ABSTRACT_STATEMENT = 19;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_STATEMENT__NAME = NAMED_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Inputs</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_STATEMENT__INPUTS = NAMED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Outputs</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_STATEMENT__OUTPUTS = NAMED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Status</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_STATEMENT__STATUS = NAMED_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Condition</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_STATEMENT__CONDITION = NAMED_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The number of structural features of the '<em>Abstract Statement</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_STATEMENT_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 4;
+
+	/**
+	 * The number of operations of the '<em>Abstract Statement</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_STATEMENT_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link com.altran.optimind.model.workflow.impl.WhileStatementImpl <em>While Statement</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see com.altran.optimind.model.workflow.impl.WhileStatementImpl
+	 * @see com.altran.optimind.model.workflow.impl.WorkflowPackageImpl#getWhileStatement()
+	 * @generated
+	 */
+	int WHILE_STATEMENT = 18;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WHILE_STATEMENT__NAME = ABSTRACT_STATEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Inputs</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WHILE_STATEMENT__INPUTS = ABSTRACT_STATEMENT__INPUTS;
+
+	/**
+	 * The feature id for the '<em><b>Outputs</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WHILE_STATEMENT__OUTPUTS = ABSTRACT_STATEMENT__OUTPUTS;
+
+	/**
+	 * The feature id for the '<em><b>Status</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WHILE_STATEMENT__STATUS = ABSTRACT_STATEMENT__STATUS;
+
+	/**
+	 * The feature id for the '<em><b>Condition</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WHILE_STATEMENT__CONDITION = ABSTRACT_STATEMENT__CONDITION;
+
+	/**
+	 * The feature id for the '<em><b>Abstracttask</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WHILE_STATEMENT__ABSTRACTTASK = ABSTRACT_STATEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>While Statement</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WHILE_STATEMENT_FEATURE_COUNT = ABSTRACT_STATEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>While Statement</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WHILE_STATEMENT_OPERATION_COUNT = ABSTRACT_STATEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link com.altran.optimind.model.workflow.impl.ForStatementImpl <em>For Statement</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see com.altran.optimind.model.workflow.impl.ForStatementImpl
+	 * @see com.altran.optimind.model.workflow.impl.WorkflowPackageImpl#getForStatement()
+	 * @generated
+	 */
+	int FOR_STATEMENT = 20;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FOR_STATEMENT__NAME = WHILE_STATEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Inputs</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FOR_STATEMENT__INPUTS = WHILE_STATEMENT__INPUTS;
+
+	/**
+	 * The feature id for the '<em><b>Outputs</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FOR_STATEMENT__OUTPUTS = WHILE_STATEMENT__OUTPUTS;
+
+	/**
+	 * The feature id for the '<em><b>Status</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FOR_STATEMENT__STATUS = WHILE_STATEMENT__STATUS;
+
+	/**
+	 * The feature id for the '<em><b>Condition</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FOR_STATEMENT__CONDITION = WHILE_STATEMENT__CONDITION;
+
+	/**
+	 * The feature id for the '<em><b>Abstracttask</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FOR_STATEMENT__ABSTRACTTASK = WHILE_STATEMENT__ABSTRACTTASK;
+
+	/**
+	 * The feature id for the '<em><b>From</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FOR_STATEMENT__FROM = WHILE_STATEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>To</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FOR_STATEMENT__TO = WHILE_STATEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Increment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FOR_STATEMENT__INCREMENT = WHILE_STATEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of structural features of the '<em>For Statement</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FOR_STATEMENT_FEATURE_COUNT = WHILE_STATEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The number of operations of the '<em>For Statement</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FOR_STATEMENT_OPERATION_COUNT = WHILE_STATEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link com.altran.optimind.model.workflow.impl.IfStatementImpl <em>If Statement</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see com.altran.optimind.model.workflow.impl.IfStatementImpl
+	 * @see com.altran.optimind.model.workflow.impl.WorkflowPackageImpl#getIfStatement()
+	 * @generated
+	 */
+	int IF_STATEMENT = 21;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IF_STATEMENT__NAME = ABSTRACT_STATEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Inputs</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IF_STATEMENT__INPUTS = ABSTRACT_STATEMENT__INPUTS;
+
+	/**
+	 * The feature id for the '<em><b>Outputs</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IF_STATEMENT__OUTPUTS = ABSTRACT_STATEMENT__OUTPUTS;
+
+	/**
+	 * The feature id for the '<em><b>Status</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IF_STATEMENT__STATUS = ABSTRACT_STATEMENT__STATUS;
+
+	/**
+	 * The feature id for the '<em><b>Condition</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IF_STATEMENT__CONDITION = ABSTRACT_STATEMENT__CONDITION;
+
+	/**
+	 * The feature id for the '<em><b>Then</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IF_STATEMENT__THEN = ABSTRACT_STATEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Else</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IF_STATEMENT__ELSE = ABSTRACT_STATEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>If Statement</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IF_STATEMENT_FEATURE_COUNT = ABSTRACT_STATEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>If Statement</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IF_STATEMENT_OPERATION_COUNT = ABSTRACT_STATEMENT_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link com.altran.optimind.model.workflow.TaskStatus <em>Task Status</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1091,7 +1446,7 @@ public interface WorkflowPackage extends EPackage {
 	 * @see com.altran.optimind.model.workflow.impl.WorkflowPackageImpl#getTaskStatus()
 	 * @generated
 	 */
-	int TASK_STATUS = 18;
+	int TASK_STATUS = 22;
 
 	/**
 	 * The meta object id for the '{@link com.altran.optimind.model.workflow.Language <em>Language</em>}' enum.
@@ -1101,7 +1456,7 @@ public interface WorkflowPackage extends EPackage {
 	 * @see com.altran.optimind.model.workflow.impl.WorkflowPackageImpl#getLanguage()
 	 * @generated
 	 */
-	int LANGUAGE = 19;
+	int LANGUAGE = 23;
 
 	/**
 	 * Returns the meta object for class '{@link com.altran.optimind.model.workflow.AbstractTask <em>Abstract Task</em>}'.
@@ -1460,6 +1815,123 @@ public interface WorkflowPackage extends EPackage {
 	EClass getOutput();
 
 	/**
+	 * Returns the meta object for class '{@link com.altran.optimind.model.workflow.WhileStatement <em>While Statement</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>While Statement</em>'.
+	 * @see com.altran.optimind.model.workflow.WhileStatement
+	 * @generated
+	 */
+	EClass getWhileStatement();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link com.altran.optimind.model.workflow.WhileStatement#getAbstracttask <em>Abstracttask</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Abstracttask</em>'.
+	 * @see com.altran.optimind.model.workflow.WhileStatement#getAbstracttask()
+	 * @see #getWhileStatement()
+	 * @generated
+	 */
+	EReference getWhileStatement_Abstracttask();
+
+	/**
+	 * Returns the meta object for class '{@link com.altran.optimind.model.workflow.AbstractStatement <em>Abstract Statement</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Abstract Statement</em>'.
+	 * @see com.altran.optimind.model.workflow.AbstractStatement
+	 * @generated
+	 */
+	EClass getAbstractStatement();
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.altran.optimind.model.workflow.AbstractStatement#getCondition <em>Condition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Condition</em>'.
+	 * @see com.altran.optimind.model.workflow.AbstractStatement#getCondition()
+	 * @see #getAbstractStatement()
+	 * @generated
+	 */
+	EAttribute getAbstractStatement_Condition();
+
+	/**
+	 * Returns the meta object for class '{@link com.altran.optimind.model.workflow.ForStatement <em>For Statement</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>For Statement</em>'.
+	 * @see com.altran.optimind.model.workflow.ForStatement
+	 * @generated
+	 */
+	EClass getForStatement();
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.altran.optimind.model.workflow.ForStatement#getFrom <em>From</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>From</em>'.
+	 * @see com.altran.optimind.model.workflow.ForStatement#getFrom()
+	 * @see #getForStatement()
+	 * @generated
+	 */
+	EAttribute getForStatement_From();
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.altran.optimind.model.workflow.ForStatement#getTo <em>To</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>To</em>'.
+	 * @see com.altran.optimind.model.workflow.ForStatement#getTo()
+	 * @see #getForStatement()
+	 * @generated
+	 */
+	EAttribute getForStatement_To();
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.altran.optimind.model.workflow.ForStatement#getIncrement <em>Increment</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Increment</em>'.
+	 * @see com.altran.optimind.model.workflow.ForStatement#getIncrement()
+	 * @see #getForStatement()
+	 * @generated
+	 */
+	EAttribute getForStatement_Increment();
+
+	/**
+	 * Returns the meta object for class '{@link com.altran.optimind.model.workflow.IfStatement <em>If Statement</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>If Statement</em>'.
+	 * @see com.altran.optimind.model.workflow.IfStatement
+	 * @generated
+	 */
+	EClass getIfStatement();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link com.altran.optimind.model.workflow.IfStatement#getThen <em>Then</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Then</em>'.
+	 * @see com.altran.optimind.model.workflow.IfStatement#getThen()
+	 * @see #getIfStatement()
+	 * @generated
+	 */
+	EReference getIfStatement_Then();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link com.altran.optimind.model.workflow.IfStatement#getElse <em>Else</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Else</em>'.
+	 * @see com.altran.optimind.model.workflow.IfStatement#getElse()
+	 * @see #getIfStatement()
+	 * @generated
+	 */
+	EReference getIfStatement_Else();
+
+	/**
 	 * Returns the meta object for enum '{@link com.altran.optimind.model.workflow.TaskStatus <em>Task Status</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1809,6 +2281,102 @@ public interface WorkflowPackage extends EPackage {
 		 * @generated
 		 */
 		EClass OUTPUT = eINSTANCE.getOutput();
+
+		/**
+		 * The meta object literal for the '{@link com.altran.optimind.model.workflow.impl.WhileStatementImpl <em>While Statement</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see com.altran.optimind.model.workflow.impl.WhileStatementImpl
+		 * @see com.altran.optimind.model.workflow.impl.WorkflowPackageImpl#getWhileStatement()
+		 * @generated
+		 */
+		EClass WHILE_STATEMENT = eINSTANCE.getWhileStatement();
+
+		/**
+		 * The meta object literal for the '<em><b>Abstracttask</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference WHILE_STATEMENT__ABSTRACTTASK = eINSTANCE.getWhileStatement_Abstracttask();
+
+		/**
+		 * The meta object literal for the '{@link com.altran.optimind.model.workflow.impl.AbstractStatementImpl <em>Abstract Statement</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see com.altran.optimind.model.workflow.impl.AbstractStatementImpl
+		 * @see com.altran.optimind.model.workflow.impl.WorkflowPackageImpl#getAbstractStatement()
+		 * @generated
+		 */
+		EClass ABSTRACT_STATEMENT = eINSTANCE.getAbstractStatement();
+
+		/**
+		 * The meta object literal for the '<em><b>Condition</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ABSTRACT_STATEMENT__CONDITION = eINSTANCE.getAbstractStatement_Condition();
+
+		/**
+		 * The meta object literal for the '{@link com.altran.optimind.model.workflow.impl.ForStatementImpl <em>For Statement</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see com.altran.optimind.model.workflow.impl.ForStatementImpl
+		 * @see com.altran.optimind.model.workflow.impl.WorkflowPackageImpl#getForStatement()
+		 * @generated
+		 */
+		EClass FOR_STATEMENT = eINSTANCE.getForStatement();
+
+		/**
+		 * The meta object literal for the '<em><b>From</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FOR_STATEMENT__FROM = eINSTANCE.getForStatement_From();
+
+		/**
+		 * The meta object literal for the '<em><b>To</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FOR_STATEMENT__TO = eINSTANCE.getForStatement_To();
+
+		/**
+		 * The meta object literal for the '<em><b>Increment</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FOR_STATEMENT__INCREMENT = eINSTANCE.getForStatement_Increment();
+
+		/**
+		 * The meta object literal for the '{@link com.altran.optimind.model.workflow.impl.IfStatementImpl <em>If Statement</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see com.altran.optimind.model.workflow.impl.IfStatementImpl
+		 * @see com.altran.optimind.model.workflow.impl.WorkflowPackageImpl#getIfStatement()
+		 * @generated
+		 */
+		EClass IF_STATEMENT = eINSTANCE.getIfStatement();
+
+		/**
+		 * The meta object literal for the '<em><b>Then</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference IF_STATEMENT__THEN = eINSTANCE.getIfStatement_Then();
+
+		/**
+		 * The meta object literal for the '<em><b>Else</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference IF_STATEMENT__ELSE = eINSTANCE.getIfStatement_Else();
 
 		/**
 		 * The meta object literal for the '{@link com.altran.optimind.model.workflow.TaskStatus <em>Task Status</em>}' enum.

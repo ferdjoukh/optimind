@@ -151,6 +151,15 @@ public class BaseTaskItemProvider extends AbstractTaskItemProvider {
 
 		newChildDescriptors.add(createChildParameter(WorkflowPackage.Literals.BASE_TASK__CHILDREN,
 				WorkflowFactory.eINSTANCE.createCustomTask()));
+
+		newChildDescriptors.add(createChildParameter(WorkflowPackage.Literals.BASE_TASK__CHILDREN,
+				WorkflowFactory.eINSTANCE.createWhileStatement()));
+
+		newChildDescriptors.add(createChildParameter(WorkflowPackage.Literals.BASE_TASK__CHILDREN,
+				WorkflowFactory.eINSTANCE.createForStatement()));
+
+		newChildDescriptors.add(createChildParameter(WorkflowPackage.Literals.BASE_TASK__CHILDREN,
+				WorkflowFactory.eINSTANCE.createIfStatement()));
 	}
 
 }

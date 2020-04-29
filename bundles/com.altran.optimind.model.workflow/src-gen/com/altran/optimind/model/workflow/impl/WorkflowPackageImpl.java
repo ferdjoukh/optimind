@@ -2,10 +2,13 @@
  */
 package com.altran.optimind.model.workflow.impl;
 
+import com.altran.optimind.model.workflow.AbstractStatement;
 import com.altran.optimind.model.workflow.AbstractTask;
 import com.altran.optimind.model.workflow.BaseTask;
 import com.altran.optimind.model.workflow.Connection;
 import com.altran.optimind.model.workflow.CustomTask;
+import com.altran.optimind.model.workflow.ForStatement;
+import com.altran.optimind.model.workflow.IfStatement;
 import com.altran.optimind.model.workflow.Input;
 import com.altran.optimind.model.workflow.IsInitSetter;
 import com.altran.optimind.model.workflow.IsNotInitSetter;
@@ -21,6 +24,7 @@ import com.altran.optimind.model.workflow.TaskInput;
 import com.altran.optimind.model.workflow.TaskOutput;
 import com.altran.optimind.model.workflow.TaskStatus;
 import com.altran.optimind.model.workflow.TypedElement;
+import com.altran.optimind.model.workflow.WhileStatement;
 import com.altran.optimind.model.workflow.Workflow;
 import com.altran.optimind.model.workflow.WorkflowFactory;
 import com.altran.optimind.model.workflow.WorkflowPackage;
@@ -165,6 +169,34 @@ public class WorkflowPackageImpl extends EPackageImpl implements WorkflowPackage
 	 * @generated
 	 */
 	private EClass outputEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass whileStatementEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass abstractStatementEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass forStatementEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass ifStatementEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -555,6 +587,105 @@ public class WorkflowPackageImpl extends EPackageImpl implements WorkflowPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getWhileStatement() {
+		return whileStatementEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getWhileStatement_Abstracttask() {
+		return (EReference) whileStatementEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getAbstractStatement() {
+		return abstractStatementEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getAbstractStatement_Condition() {
+		return (EAttribute) abstractStatementEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getForStatement() {
+		return forStatementEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getForStatement_From() {
+		return (EAttribute) forStatementEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getForStatement_To() {
+		return (EAttribute) forStatementEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getForStatement_Increment() {
+		return (EAttribute) forStatementEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getIfStatement() {
+		return ifStatementEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getIfStatement_Then() {
+		return (EReference) ifStatementEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getIfStatement_Else() {
+		return (EReference) ifStatementEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getTaskStatus() {
 		return taskStatusEEnum;
 	}
@@ -649,6 +780,21 @@ public class WorkflowPackageImpl extends EPackageImpl implements WorkflowPackage
 
 		outputEClass = createEClass(OUTPUT);
 
+		whileStatementEClass = createEClass(WHILE_STATEMENT);
+		createEReference(whileStatementEClass, WHILE_STATEMENT__ABSTRACTTASK);
+
+		abstractStatementEClass = createEClass(ABSTRACT_STATEMENT);
+		createEAttribute(abstractStatementEClass, ABSTRACT_STATEMENT__CONDITION);
+
+		forStatementEClass = createEClass(FOR_STATEMENT);
+		createEAttribute(forStatementEClass, FOR_STATEMENT__FROM);
+		createEAttribute(forStatementEClass, FOR_STATEMENT__TO);
+		createEAttribute(forStatementEClass, FOR_STATEMENT__INCREMENT);
+
+		ifStatementEClass = createEClass(IF_STATEMENT);
+		createEReference(ifStatementEClass, IF_STATEMENT__THEN);
+		createEReference(ifStatementEClass, IF_STATEMENT__ELSE);
+
 		// Create enums
 		taskStatusEEnum = createEEnum(TASK_STATUS);
 		languageEEnum = createEEnum(LANGUAGE);
@@ -703,6 +849,11 @@ public class WorkflowPackageImpl extends EPackageImpl implements WorkflowPackage
 		inputEClass.getESuperTypes().add(this.getNamedElement());
 		outputEClass.getESuperTypes().add(this.getNamedElement());
 		outputEClass.getESuperTypes().add(this.getTypedElement());
+		whileStatementEClass.getESuperTypes().add(this.getAbstractStatement());
+		abstractStatementEClass.getESuperTypes().add(this.getNamedElement());
+		abstractStatementEClass.getESuperTypes().add(this.getAbstractTask());
+		forStatementEClass.getESuperTypes().add(this.getWhileStatement());
+		ifStatementEClass.getESuperTypes().add(this.getAbstractStatement());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(abstractTaskEClass, AbstractTask.class, "AbstractTask", IS_ABSTRACT, !IS_INTERFACE,
@@ -799,6 +950,36 @@ public class WorkflowPackageImpl extends EPackageImpl implements WorkflowPackage
 		initEClass(inputEClass, Input.class, "Input", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(outputEClass, Output.class, "Output", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(whileStatementEClass, WhileStatement.class, "WhileStatement", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getWhileStatement_Abstracttask(), this.getAbstractTask(), null, "abstracttask", null, 1, 1,
+				WhileStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(abstractStatementEClass, AbstractStatement.class, "AbstractStatement", IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getAbstractStatement_Condition(), ecorePackage.getEString(), "condition", null, 0, 1,
+				AbstractStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+
+		initEClass(forStatementEClass, ForStatement.class, "ForStatement", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getForStatement_From(), ecorePackage.getEInt(), "from", null, 0, 1, ForStatement.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getForStatement_To(), ecorePackage.getEInt(), "to", null, 0, 1, ForStatement.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getForStatement_Increment(), ecorePackage.getEInt(), "increment", null, 0, 1, ForStatement.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(ifStatementEClass, IfStatement.class, "IfStatement", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getIfStatement_Then(), this.getAbstractTask(), null, "then", null, 1, 1, IfStatement.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getIfStatement_Else(), this.getAbstractTask(), null, "else", null, 0, 1, IfStatement.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(taskStatusEEnum, TaskStatus.class, "TaskStatus");
