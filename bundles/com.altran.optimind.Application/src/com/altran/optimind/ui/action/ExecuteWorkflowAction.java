@@ -27,7 +27,7 @@ public class ExecuteWorkflowAction extends Action{
 		setText("Run");
 
 		ImageDescriptor imageDesc = AbstractUIPlugin.imageDescriptorFromPlugin(Activator.PLUGIN_ID,
-				"icons//transform.gif");
+				"icons//finish_flag.png");
 		setImageDescriptor(imageDesc);
 	}
 	
