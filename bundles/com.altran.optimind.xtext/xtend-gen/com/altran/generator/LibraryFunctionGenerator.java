@@ -2,6 +2,7 @@ package com.altran.generator;
 
 import com.altran.optimind.model.workflow.AbstractTask;
 import com.altran.optimind.model.workflow.BaseTask;
+import com.altran.optimind.model.workflow.Connection;
 import com.altran.optimind.model.workflow.Input;
 import com.altran.optimind.model.workflow.Language;
 import com.altran.optimind.model.workflow.LibraryFunction;
@@ -112,7 +113,8 @@ public class LibraryFunctionGenerator {
     _builder.append("\t");
     _builder.append("{");
     _builder.newLine();
-    _builder.append("\t\t\t\t\t\t");
+    _builder.append("\t\t");
+    _builder.append("//All Inputs ");
     _builder.newLine();
     _builder.append("\t\t");
     List<Setter> allSetter = EcoreUtil2.<Setter>getAllContentsOfType(task, Setter.class);
@@ -155,9 +157,14 @@ public class LibraryFunctionGenerator {
         _builder.append(_name_5, "\t\t");
         _builder.append(";}; ");
         _builder.newLineIfNotEmpty();
+        _builder.append("\t\t\t\t\t");
+        _builder.newLine();
       }
     }
     _builder.append("\t\t");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("//All Outputs ");
     _builder.newLine();
     {
       EList<TaskOutput> _outputs = task.getOutputs();
@@ -202,7 +209,16 @@ public class LibraryFunctionGenerator {
         _builder.append(";}; ");
         _builder.newLineIfNotEmpty();
         _builder.append("\t\t");
-        _builder.append("\t\t\t\t\t");
+        _builder.newLine();
+      }
+    }
+    _builder.append("\t\t");
+    List<Connection> allConnection = EcoreUtil2.<Connection>getAllContentsOfType(task, Connection.class);
+    _builder.newLineIfNotEmpty();
+    {
+      for(final Connection connection : allConnection) {
+        _builder.append("\t\t");
+        _builder.append("\t");
         _builder.newLine();
       }
     }
@@ -211,7 +227,8 @@ public class LibraryFunctionGenerator {
     _builder.append("\t\t");
     _builder.append("public void run(){");
     _builder.newLine();
-    _builder.append("\t\t");
+    _builder.append("\t\t\t");
+    _builder.append("//Write you code here to execute ");
     _builder.newLine();
     _builder.append("\t\t");
     _builder.newLine();
