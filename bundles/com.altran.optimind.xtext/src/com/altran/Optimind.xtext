@@ -23,6 +23,10 @@ TaskInput returns TaskInput:
 
 EString returns ecore::EString:
 	STRING | ID;
+
+EInt returns ecore::EInt: 
+	INT;
+
 	
 Type returns ecore::EString:
 	STRING | ID
@@ -32,6 +36,43 @@ TaskOutput returns TaskOutput:
 	{TaskOutput}
 	'Output'
 	name=EString ('type' typeAsString=Type)? ('value' valueAsString=EString)?;
+
+AbstractStatement returns AbstractStatement:
+	 For | While | If;
+
+
+For returns ForStatement:
+	{ForStatement}
+	'For'
+	name=EString
+	'{'
+		'from' from=EInt
+		'to' to=EInt
+		'increment' increment=EInt
+		'do' abstracttask=AbstractTask
+	'}'
+;
+
+While returns WhileStatement:
+	{WhileStatement}
+	'While'
+	name=EString
+	'{'
+		'condition' condition=EString
+		'do' abstracttask=AbstractTask
+	'}'
+;
+
+If returns IfStatement:
+	{IfStatement}
+	'If'
+	name=EString
+	'{'
+		'condition' condition=EString
+		'then' then=AbstractTask
+		('else' else=AbstractTask)?
+	'}'
+;
 
 enum ProgLanguage returns Language:
 	Python='Python' | Java='Java';
@@ -47,7 +88,7 @@ BaseTask returns BaseTask:
 	('status' status=TaskStatus)?
 	('inputs' '{' inputs+=TaskInput ("," inputs+=TaskInput)* '}')?
 	('outputs' '{' outputs+=TaskOutput ("," outputs+=TaskOutput)* '}')?
-	(children+=AbstractTask (children+=AbstractTask)*)?
+	(children+=(AbstractTask | AbstractStatement) (children+=(AbstractTask | AbstractStatement))*)? 
 	'}';
 
 LibraryTask returns LibraryTask:

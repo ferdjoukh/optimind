@@ -94,6 +94,7 @@ public class LibraryFunctionImpl extends NamedElementImpl implements LibraryFunc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Output> getOutputs() {
 		if (outputs == null) {
 			outputs = new EObjectContainmentEList<Output>(Output.class, this,
@@ -107,6 +108,7 @@ public class LibraryFunctionImpl extends NamedElementImpl implements LibraryFunc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Input> getInputs() {
 		if (inputs == null) {
 			inputs = new EObjectContainmentEList<Input>(Input.class, this, WorkflowPackage.LIBRARY_FUNCTION__INPUTS);
@@ -119,6 +121,7 @@ public class LibraryFunctionImpl extends NamedElementImpl implements LibraryFunc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getFunction() {
 		return function;
 	}
@@ -128,6 +131,7 @@ public class LibraryFunctionImpl extends NamedElementImpl implements LibraryFunc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setFunction(String newFunction) {
 		String oldFunction = function;
 		function = newFunction;

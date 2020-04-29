@@ -18,6 +18,12 @@ import org.eclipse.xtext.EcoreUtil2
 import org.osgi.framework.Bundle
 import com.altran.optimind.model.workflow.LibraryTask
 import com.altran.optimind.model.workflow.CustomTask
+import com.altran.optimind.model.workflow.AbstractStatement
+import com.altran.optimind.model.workflow.WhileStatement
+import com.altran.optimind.model.workflow.IfStatement
+import org.eclipse.xtext.tasks.Task
+import com.altran.optimind.model.workflow.ForStatement
+import com.altran.optimind.model.workflow.SimpleTask
 
 @Accessors class DotGraphGenerator {
 	
@@ -35,6 +41,7 @@ import com.altran.optimind.model.workflow.CustomTask
     
     
 	var int cluster = 0;
+	var int ifelse = 0;
 	
 	new(String filePath){
 		
@@ -164,10 +171,9 @@ import com.altran.optimind.model.workflow.CustomTask
 		}'''
 	}
 	
-	def String generateCluster(BaseTask baseTask){
+	def String generateCluster(AbstractTask baseTask) {
 		'''
 			subgraph cluster«this.cluster++» {
-				«var toto = "pouet"»
 				style=filled;
 				fillcolor=white;
 				color=blue;
@@ -175,29 +181,105 @@ import com.altran.optimind.model.workflow.CustomTask
 				label = "«baseTask.name»";
 				
 				//Children
-				«FOR task : baseTask.children»
-					«IF task instanceof BaseTask»
-						«generateCluster(task)»
-					«ELSE»
-						««««task.name» [shape=record,style=filled,color=black,fillcolor=white,label="{ «taskInputs(task)» | {«task.name»} | «taskOutputs(task)» }"];
-					«task.name» [shape=none,style=filled,color=black,fillcolor=none,label = <
-						<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="4" CELLPADDING="4">
-							<TR><TD BORDER="0"></TD>«taskInputsHTML(task)» <TD BORDER="0"></TD></TR>
-							<TR><TD BGCOLOR="gray" COLSPAN="«maxIO(task)+2»">«task.name»</TD></TR>
-							
-							«IF task instanceof LibraryTask»
-								<TR><TD BGCOLOR="blue" COLSPAN="«maxIO(task)+2»">«task.libraryfunction.name»</TD></TR>
-							«ENDIF»
-							
-							«IF task instanceof CustomTask»
-								<TR><TD BGCOLOR="lightblue" COLSPAN="«maxIO(task)+2»">«task.runner»</TD></TR>
-							«ENDIF»
-							
-							<TR><TD BORDER="0"></TD>«taskOutputsHTML(task)» <TD BORDER="0"></TD></TR>
-						</TABLE>>];
-					«ENDIF»	
-				«ENDFOR»
+				«IF baseTask instanceof BaseTask»
+					«FOR task : baseTask.children»
+						«IF task instanceof BaseTask»
+							«generateCluster(task)»
+						«ELSEIF task instanceof AbstractStatement»
+							«generateStatementCluster(task)»
+						«ELSE»
+							««««task.name» [shape=record,style=filled,color=black,fillcolor=white,label="{ «taskInputs(task)» | {«task.name»} | «taskOutputs(task)» }"];
+							«generateTask(task)»
+						«ENDIF»	
+					«ENDFOR»
+				«ELSEIF baseTask instanceof AbstractStatement»
+					«generateStatementCluster(baseTask)»
+				«ENDIF»
+				}
+		'''
+	}
+	
+	def generateTask(AbstractTask task) {
+		'''
+			«task.name» [shape=none,style=filled,color=black,fillcolor=none,label = <
+							<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="4" CELLPADDING="4">
+								<TR><TD BORDER="0"></TD>«taskInputsHTML(task)» <TD BORDER="0"></TD></TR>
+								<TR><TD BGCOLOR="gray" COLSPAN="«maxIO(task)+2»">«task.name»</TD></TR>
+								
+								«IF task instanceof LibraryTask»
+									<TR><TD BGCOLOR="blue" COLSPAN="«maxIO(task)+2»">«task.libraryfunction.name»</TD></TR>
+								«ENDIF»
+								
+								«IF task instanceof CustomTask»
+									<TR><TD BGCOLOR="lightblue" COLSPAN="«maxIO(task)+2»">«task.runner»</TD></TR>
+								«ENDIF»
+								
+								<TR><TD BORDER="0"></TD>«taskOutputsHTML(task)» <TD BORDER="0"></TD></TR>
+							</TABLE>>]; 
+		'''
+	}
+	
+	def generateStatementCluster(AbstractStatement statement) {
+		'''
+			subgraph cluster«this.cluster++» {
+				style=rounded;
+				fillcolor=white;
+				color=red;
+				margin=20;
+				label = "«IF statement instanceof ForStatement»For"
+				«ELSEIF statement instanceof WhileStatement»While"
+				«ELSEIF statement instanceof IfStatement»If"
+				«ELSE»Statement"
+				«ENDIF»
 				
+				«IF statement instanceof ForStatement»
+					"From :«statement.from»"->"To :«statement.to»"->"Incr :«statement.increment»";
+					«IF statement.abstracttask instanceof SimpleTask»
+						«generateTask(statement.abstracttask)»
+					«ELSE»
+						«generateCluster(statement.abstracttask)»
+					«ENDIF»	
+				«ELSEIF statement instanceof WhileStatement»
+					«IF statement.abstracttask instanceof SimpleTask»
+						«generateTask(statement.abstracttask)»
+					«ELSE»
+						«generateCluster(statement.abstracttask)»
+					«ENDIF»	
+				«ELSEIF statement instanceof IfStatement»
+					«var idIfElse = this.ifelse++»
+					subgraph clusterIf«idIfElse» {
+								style=rounded;
+								fillcolor=white;
+								color=red;
+								margin=20;
+								label = THEN
+								
+								«IF statement.then instanceof SimpleTask»
+									«generateTask(statement.then)»
+								«ELSE»
+									«generateCluster(statement.then)»
+								«ENDIF»
+					}
+					
+					
+					«IF statement.^else !== null»
+						
+							subgraph clusterElse«idIfElse» {
+												style=rounded;
+												fillcolor=white;
+												color=red;
+												margin=20;
+												label = ELSE
+													
+												«IF statement.^else instanceof SimpleTask»
+													«generateTask(statement.^else)»
+												«ELSE»
+													«generateCluster(statement.^else)»
+												«ENDIF»
+										}
+							
+					«ENDIF»	
+				«ENDIF»	
 			}
 		'''
 	}

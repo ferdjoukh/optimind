@@ -418,11 +418,81 @@ public class WorkflowItemProviderAdapterFactory extends WorkflowAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link com.altran.optimind.model.workflow.WhileStatement} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected WhileStatementItemProvider whileStatementItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link com.altran.optimind.model.workflow.WhileStatement}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createWhileStatementAdapter() {
+		if (whileStatementItemProvider == null) {
+			whileStatementItemProvider = new WhileStatementItemProvider(this);
+		}
+
+		return whileStatementItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link com.altran.optimind.model.workflow.ForStatement} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ForStatementItemProvider forStatementItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link com.altran.optimind.model.workflow.ForStatement}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createForStatementAdapter() {
+		if (forStatementItemProvider == null) {
+			forStatementItemProvider = new ForStatementItemProvider(this);
+		}
+
+		return forStatementItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link com.altran.optimind.model.workflow.IfStatement} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected IfStatementItemProvider ifStatementItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link com.altran.optimind.model.workflow.IfStatement}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createIfStatementAdapter() {
+		if (ifStatementItemProvider == null) {
+			ifStatementItemProvider = new IfStatementItemProvider(this);
+		}
+
+		return ifStatementItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ComposeableAdapterFactory getRootAdapterFactory() {
 		return parentAdapterFactory == null ? this : parentAdapterFactory.getRootAdapterFactory();
 	}
@@ -433,6 +503,7 @@ public class WorkflowItemProviderAdapterFactory extends WorkflowAdapterFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setParentAdapterFactory(ComposedAdapterFactory parentAdapterFactory) {
 		this.parentAdapterFactory = parentAdapterFactory;
 	}
@@ -481,6 +552,7 @@ public class WorkflowItemProviderAdapterFactory extends WorkflowAdapterFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void addListener(INotifyChangedListener notifyChangedListener) {
 		changeNotifier.addListener(notifyChangedListener);
 	}
@@ -491,6 +563,7 @@ public class WorkflowItemProviderAdapterFactory extends WorkflowAdapterFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void removeListener(INotifyChangedListener notifyChangedListener) {
 		changeNotifier.removeListener(notifyChangedListener);
 	}
@@ -501,6 +574,7 @@ public class WorkflowItemProviderAdapterFactory extends WorkflowAdapterFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void fireNotifyChanged(Notification notification) {
 		changeNotifier.fireNotifyChanged(notification);
 
@@ -515,6 +589,7 @@ public class WorkflowItemProviderAdapterFactory extends WorkflowAdapterFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void dispose() {
 		if (typedElementItemProvider != null)
 			typedElementItemProvider.dispose();
@@ -546,6 +621,12 @@ public class WorkflowItemProviderAdapterFactory extends WorkflowAdapterFactory
 			inputItemProvider.dispose();
 		if (outputItemProvider != null)
 			outputItemProvider.dispose();
+		if (whileStatementItemProvider != null)
+			whileStatementItemProvider.dispose();
+		if (forStatementItemProvider != null)
+			forStatementItemProvider.dispose();
+		if (ifStatementItemProvider != null)
+			ifStatementItemProvider.dispose();
 	}
 
 }

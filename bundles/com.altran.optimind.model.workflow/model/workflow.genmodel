@@ -63,5 +63,20 @@
     <genClasses ecoreClass="workflow.ecore#//IsNotInitSetter"/>
     <genClasses ecoreClass="workflow.ecore#//Input"/>
     <genClasses ecoreClass="workflow.ecore#//Output"/>
+    <genClasses ecoreClass="workflow.ecore#//WhileStatement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference workflow.ecore#//WhileStatement/abstracttask"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="workflow.ecore#//AbstractStatement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute workflow.ecore#//AbstractStatement/condition"/>
+    </genClasses>
+    <genClasses ecoreClass="workflow.ecore#//ForStatement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute workflow.ecore#//ForStatement/from"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute workflow.ecore#//ForStatement/to"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute workflow.ecore#//ForStatement/increment"/>
+    </genClasses>
+    <genClasses ecoreClass="workflow.ecore#//IfStatement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference workflow.ecore#//IfStatement/then"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference workflow.ecore#//IfStatement/else"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

@@ -11,6 +11,8 @@ public class Messages extends NLS {
 	public static String HelloWorldFile_Description;
 	public static String EmptyWorkflow_Label;
 	public static String EmptyWorkflow_Description;
+	public static String LoopProject_Label;
+	public static String LoopProject_Description;
 	
 	static {
 	// initialize resource bundle

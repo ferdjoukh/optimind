@@ -4,6 +4,7 @@
 package com.altran.ui.wizard;
 
 import com.altran.ui.wizard.HelloWorldProject;
+import com.altran.ui.wizard.LoopProject;
 import org.eclipse.xtext.ui.wizard.template.AbstractProjectTemplate;
 import org.eclipse.xtext.ui.wizard.template.IProjectTemplateProvider;
 
@@ -17,6 +18,7 @@ public class OptimindProjectTemplateProvider implements IProjectTemplateProvider
   @Override
   public AbstractProjectTemplate[] getProjectTemplates() {
     HelloWorldProject _helloWorldProject = new HelloWorldProject();
-    return new AbstractProjectTemplate[] { _helloWorldProject };
+    LoopProject _loopProject = new LoopProject();
+    return new AbstractProjectTemplate[] { _helloWorldProject, _loopProject };
   }
 }

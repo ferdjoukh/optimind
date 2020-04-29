@@ -4,9 +4,11 @@ import com.altran.optimind.model.workflow.AbstractTask;
 import com.altran.optimind.model.workflow.BaseTask;
 import com.altran.optimind.model.workflow.Connection;
 import com.altran.optimind.model.workflow.CustomTask;
+import com.altran.optimind.model.workflow.ForStatement;
 import com.altran.optimind.model.workflow.LibraryFunction;
 import com.altran.optimind.model.workflow.LibraryTask;
 import com.altran.optimind.model.workflow.Setter;
+import com.altran.optimind.model.workflow.WhileStatement;
 import com.altran.optimind.model.workflow.Workflow;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -41,6 +43,24 @@ public class JavaCodeGenerator {
     this.writeContent(this.generateFileContent());
   }
   
+  public String generateLoopCode() {
+    StringConcatenation _builder = new StringConcatenation();
+    List<ForStatement> allloopFor = EcoreUtil2.<ForStatement>getAllContentsOfType(this.workflow, ForStatement.class);
+    _builder.newLineIfNotEmpty();
+    List<WhileStatement> allloopWhile = EcoreUtil2.<WhileStatement>getAllContentsOfType(this.workflow, WhileStatement.class);
+    _builder.newLineIfNotEmpty();
+    _builder.newLine();
+    {
+      for(final ForStatement loop : allloopFor) {
+        _builder.append("\t");
+        _builder.newLine();
+      }
+    }
+    _builder.newLine();
+    _builder.newLine();
+    return _builder.toString();
+  }
+  
   public String generateFileContent() {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("// ==================================================================================================");
@@ -66,9 +86,8 @@ public class JavaCodeGenerator {
     _builder.append("{");
     _builder.newLine();
     _builder.append("\t");
-    String _generateClassContent = this.generateClassContent();
-    _builder.append(_generateClassContent, "\t");
-    _builder.newLineIfNotEmpty();
+    _builder.append("//generateClassContent»");
+    _builder.newLine();
     _builder.append("}");
     _builder.newLine();
     _builder.newLine();
@@ -170,6 +189,20 @@ public class JavaCodeGenerator {
     try {
       PrintWriter writer = null;
       FileWriter _fileWriter = new FileWriter(this.javaFilePath);
+      BufferedWriter _bufferedWriter = new BufferedWriter(_fileWriter);
+      PrintWriter _printWriter = new PrintWriter(_bufferedWriter);
+      writer = _printWriter;
+      writer.write(content);
+      writer.close();
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  public void writeContent(final String content, final String path) {
+    try {
+      PrintWriter writer = null;
+      FileWriter _fileWriter = new FileWriter(path);
       BufferedWriter _bufferedWriter = new BufferedWriter(_fileWriter);
       PrintWriter _printWriter = new PrintWriter(_bufferedWriter);
       writer = _printWriter;
