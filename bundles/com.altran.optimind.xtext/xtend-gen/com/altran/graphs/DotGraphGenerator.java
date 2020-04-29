@@ -56,6 +56,8 @@ public class DotGraphGenerator {
   
   private int cluster = 0;
   
+  private int ifelse = 0;
+  
   public DotGraphGenerator(final String filePath) {
     String _get = this.bundlePath.split("file:")[1];
     String _plus = (_get + this.dotCommandWindows);
@@ -391,76 +393,191 @@ public class DotGraphGenerator {
     _builder.newLine();
     _builder.append("\t");
     _builder.append("label = \"");
-    _builder.newLine();
     {
-      if ((statement instanceof WhileStatement)) {
-        _builder.append("\t");
-        _builder.append("While ");
-        String _condition = ((WhileStatement)statement).getCondition();
-        _builder.append(_condition, "\t");
+      if ((statement instanceof ForStatement)) {
+        _builder.append("For\"");
         _builder.newLineIfNotEmpty();
+        _builder.append("\t");
       } else {
-        if ((statement instanceof ForStatement)) {
+        if ((statement instanceof WhileStatement)) {
+          _builder.append("While");
+          _builder.newLineIfNotEmpty();
           _builder.append("\t");
-          _builder.append("For ");
-          _builder.newLine();
         } else {
           if ((statement instanceof IfStatement)) {
+            _builder.append("If\"");
+            _builder.newLineIfNotEmpty();
             _builder.append("\t");
-            _builder.append("If");
-            _builder.newLine();
           } else {
-            _builder.append("\t");
-            _builder.append("Statement");
-            _builder.newLine();
+            _builder.append("Statement\"");
+            _builder.newLineIfNotEmpty();
           }
         }
       }
     }
     _builder.append("\t");
-    _builder.append(", do :\";");
-    _builder.newLine();
-    _builder.append("\t");
     _builder.newLine();
     {
-      if ((statement instanceof WhileStatement)) {
+      if ((statement instanceof ForStatement)) {
+        _builder.append("\t");
+        _builder.append("\"From :");
+        int _from = ((ForStatement)statement).getFrom();
+        _builder.append(_from, "\t");
+        _builder.append("\"->\"To :");
+        int _to = ((ForStatement)statement).getTo();
+        _builder.append(_to, "\t");
+        _builder.append("\"->\"Incr :");
+        int _increment = ((ForStatement)statement).getIncrement();
+        _builder.append(_increment, "\t");
+        _builder.append("\";");
+        _builder.newLineIfNotEmpty();
         {
-          AbstractTask _abstracttask = ((WhileStatement)statement).getAbstracttask();
+          AbstractTask _abstracttask = ((ForStatement)statement).getAbstracttask();
           if ((_abstracttask instanceof CustomTask)) {
             _builder.append("\t");
-            CharSequence _generateTask = this.generateTask(((WhileStatement)statement).getAbstracttask());
+            CharSequence _generateTask = this.generateTask(((ForStatement)statement).getAbstracttask());
             _builder.append(_generateTask, "\t");
             _builder.newLineIfNotEmpty();
           } else {
             _builder.append("\t");
-            String _generateCluster = this.generateCluster(((WhileStatement)statement).getAbstracttask());
+            String _generateCluster = this.generateCluster(((ForStatement)statement).getAbstracttask());
             _builder.append(_generateCluster, "\t");
             _builder.newLineIfNotEmpty();
           }
         }
       } else {
-        if ((statement instanceof IfStatement)) {
-          _builder.append("\t");
-          _builder.append("IF");
-          _builder.newLine();
-          _builder.append("\t");
-          String _condition_1 = ((IfStatement)statement).getCondition();
-          _builder.append(_condition_1, "\t");
-          _builder.newLineIfNotEmpty();
-          _builder.append("\t");
-          _builder.append("THEN");
-          _builder.newLine();
-          _builder.append("\t");
-          String _generateCluster_1 = this.generateCluster(((IfStatement)statement).getThen());
-          _builder.append(_generateCluster_1, "\t");
-          _builder.newLineIfNotEmpty();
-          _builder.append("\t");
-          _builder.append("ELSE");
-          _builder.newLine();
-          _builder.append("\t");
-          String _generateCluster_2 = this.generateCluster(((IfStatement)statement).getElse());
-          _builder.append(_generateCluster_2, "\t");
-          _builder.newLineIfNotEmpty();
+        if ((statement instanceof WhileStatement)) {
+          {
+            AbstractTask _abstracttask_1 = ((WhileStatement)statement).getAbstracttask();
+            if ((_abstracttask_1 instanceof CustomTask)) {
+              _builder.append("\t");
+              CharSequence _generateTask_1 = this.generateTask(((WhileStatement)statement).getAbstracttask());
+              _builder.append(_generateTask_1, "\t");
+              _builder.newLineIfNotEmpty();
+            } else {
+              _builder.append("\t");
+              String _generateCluster_1 = this.generateCluster(((WhileStatement)statement).getAbstracttask());
+              _builder.append(_generateCluster_1, "\t");
+              _builder.newLineIfNotEmpty();
+            }
+          }
+        } else {
+          if ((statement instanceof IfStatement)) {
+            _builder.append("\t");
+            int idIfElse = this.ifelse++;
+            _builder.newLineIfNotEmpty();
+            _builder.append("\t");
+            _builder.append("subgraph clusterIf");
+            _builder.append(idIfElse, "\t");
+            _builder.append(" {");
+            _builder.newLineIfNotEmpty();
+            _builder.append("\t");
+            _builder.append("\t\t\t");
+            _builder.append("style=rounded;");
+            _builder.newLine();
+            _builder.append("\t");
+            _builder.append("\t\t\t");
+            _builder.append("fillcolor=white;");
+            _builder.newLine();
+            _builder.append("\t");
+            _builder.append("\t\t\t");
+            _builder.append("color=red;");
+            _builder.newLine();
+            _builder.append("\t");
+            _builder.append("\t\t\t");
+            _builder.append("margin=20;");
+            _builder.newLine();
+            _builder.append("\t");
+            _builder.append("\t\t\t");
+            _builder.append("label = THEN");
+            _builder.newLine();
+            _builder.append("\t");
+            _builder.append("\t\t\t");
+            _builder.newLine();
+            {
+              AbstractTask _then = ((IfStatement)statement).getThen();
+              if ((_then instanceof CustomTask)) {
+                _builder.append("\t");
+                _builder.append("\t\t\t");
+                CharSequence _generateTask_2 = this.generateTask(((IfStatement)statement).getThen());
+                _builder.append(_generateTask_2, "\t\t\t\t");
+                _builder.newLineIfNotEmpty();
+              } else {
+                _builder.append("\t");
+                _builder.append("\t\t\t");
+                String _generateCluster_2 = this.generateCluster(((IfStatement)statement).getThen());
+                _builder.append(_generateCluster_2, "\t\t\t\t");
+                _builder.newLineIfNotEmpty();
+              }
+            }
+            _builder.append("\t");
+            _builder.append("}");
+            _builder.newLine();
+            _builder.append("\t");
+            _builder.newLine();
+            _builder.append("\t");
+            _builder.newLine();
+            {
+              AbstractTask _else = ((IfStatement)statement).getElse();
+              boolean _tripleNotEquals = (_else != null);
+              if (_tripleNotEquals) {
+                _builder.append("\t");
+                _builder.newLine();
+                _builder.append("\t");
+                _builder.append("\t");
+                _builder.append("subgraph clusterElse");
+                _builder.append(idIfElse, "\t\t");
+                _builder.append(" {");
+                _builder.newLineIfNotEmpty();
+                _builder.append("\t");
+                _builder.append("\t\t\t\t\t\t");
+                _builder.append("style=rounded;");
+                _builder.newLine();
+                _builder.append("\t");
+                _builder.append("\t\t\t\t\t\t");
+                _builder.append("fillcolor=white;");
+                _builder.newLine();
+                _builder.append("\t");
+                _builder.append("\t\t\t\t\t\t");
+                _builder.append("color=red;");
+                _builder.newLine();
+                _builder.append("\t");
+                _builder.append("\t\t\t\t\t\t");
+                _builder.append("margin=20;");
+                _builder.newLine();
+                _builder.append("\t");
+                _builder.append("\t\t\t\t\t\t");
+                _builder.append("label = ELSE");
+                _builder.newLine();
+                _builder.append("\t");
+                _builder.append("\t\t\t\t\t\t\t");
+                _builder.newLine();
+                {
+                  AbstractTask _else_1 = ((IfStatement)statement).getElse();
+                  if ((_else_1 instanceof CustomTask)) {
+                    _builder.append("\t");
+                    _builder.append("\t\t\t\t\t\t");
+                    CharSequence _generateTask_3 = this.generateTask(((IfStatement)statement).getElse());
+                    _builder.append(_generateTask_3, "\t\t\t\t\t\t\t");
+                    _builder.newLineIfNotEmpty();
+                  } else {
+                    _builder.append("\t");
+                    _builder.append("\t\t\t\t\t\t");
+                    String _generateCluster_3 = this.generateCluster(((IfStatement)statement).getElse());
+                    _builder.append(_generateCluster_3, "\t\t\t\t\t\t\t");
+                    _builder.newLineIfNotEmpty();
+                  }
+                }
+                _builder.append("\t");
+                _builder.append("\t\t\t\t");
+                _builder.append("}");
+                _builder.newLine();
+                _builder.append("\t");
+                _builder.append("\t");
+                _builder.newLine();
+              }
+            }
+          }
         }
       }
     }
@@ -657,5 +774,14 @@ public class DotGraphGenerator {
   
   public void setCluster(final int cluster) {
     this.cluster = cluster;
+  }
+  
+  @Pure
+  public int getIfelse() {
+    return this.ifelse;
+  }
+  
+  public void setIfelse(final int ifelse) {
+    this.ifelse = ifelse;
   }
 }

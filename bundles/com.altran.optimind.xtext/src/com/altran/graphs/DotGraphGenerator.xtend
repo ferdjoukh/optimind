@@ -40,6 +40,7 @@ import com.altran.optimind.model.workflow.ForStatement
     
     
 	var int cluster = 0;
+	var int ifelse = 0;
 	
 	new(String filePath){
 		
@@ -187,7 +188,7 @@ import com.altran.optimind.model.workflow.ForStatement
 							�generateStatementCluster(task)�
 						�ELSE�
 							����task.name� [shape=record,style=filled,color=black,fillcolor=white,label="{ �taskInputs(task)� | {�task.name�} | �taskOutputs(task)� }"];
-						�generateTask(task)�
+							�generateTask(task)�
 						�ENDIF�	
 					�ENDFOR�
 				�ELSEIF baseTask instanceof AbstractStatement�
@@ -224,32 +225,59 @@ import com.altran.optimind.model.workflow.ForStatement
 			fillcolor=white;
 			color=red;
 			margin=20;
-			label = "
-			�IF statement instanceof WhileStatement�
-				While �statement.condition�
-			�ELSEIF statement instanceof ForStatement�
-				For 
-			�ELSEIF statement instanceof IfStatement�
-				If
-			�ELSE�
-				Statement
+			label = "�IF statement instanceof ForStatement�For"
+			�ELSEIF statement instanceof WhileStatement�While
+			�ELSEIF statement instanceof IfStatement�If"
+			�ELSE�Statement"
 			�ENDIF�
-			, do :";
 			
-			�IF statement instanceof WhileStatement�
+			�IF statement instanceof ForStatement�
+				"From :�statement.from�"->"To :�statement.to�"->"Incr :�statement.increment�";
 				�IF statement.abstracttask instanceof CustomTask�
-					����task.name� [shape=record,style=filled,color=black,fillcolor=white,label="{ �taskInputs(task)� | {�task.name�} | �taskOutputs(task)� }"];
+					�generateTask(statement.abstracttask)�
+				�ELSE�
+					�generateCluster(statement.abstracttask)�
+				�ENDIF�	
+			�ELSEIF statement instanceof WhileStatement�
+				�IF statement.abstracttask instanceof CustomTask�
 					�generateTask(statement.abstracttask)�
 				�ELSE�
 					�generateCluster(statement.abstracttask)�
 				�ENDIF�	
 			�ELSEIF statement instanceof IfStatement�
-				IF
-				�statement.condition�
-				THEN
-				�generateCluster(statement.then)�
-				ELSE
-				�generateCluster(statement.^else)�
+				�var idIfElse = this.ifelse++�
+				subgraph clusterIf�idIfElse� {
+							style=rounded;
+							fillcolor=white;
+							color=red;
+							margin=20;
+							label = THEN
+							
+							�IF statement.then instanceof CustomTask�
+								�generateTask(statement.then)�
+							�ELSE�
+									�generateCluster(statement.then)�
+							�ENDIF�
+				}
+				
+				
+				�IF statement.^else !== null�
+				
+					subgraph clusterElse�idIfElse� {
+										style=rounded;
+										fillcolor=white;
+										color=red;
+										margin=20;
+										label = ELSE
+											
+										�IF statement.^else instanceof CustomTask�
+											�generateTask(statement.^else)�
+										�ELSE�
+											�generateCluster(statement.^else)�
+										�ENDIF�
+								}
+					
+				�ENDIF�	
 			�ENDIF�	
 		}
 		'''
