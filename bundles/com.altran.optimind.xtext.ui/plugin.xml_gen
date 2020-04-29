@@ -26,11 +26,11 @@
 		<handler
 			class="com.altran.ui.OptimindExecutableExtensionFactory:org.eclipse.xtext.ui.editor.handler.ValidateActionHandler"
 			commandId="com.altran.Optimind.validate">
-			<activeWhen>
-				<reference
+		<activeWhen>
+			<reference
 					definitionId="com.altran.Optimind.Editor.opened">
-				</reference>
-			</activeWhen>
+			</reference>
+		</activeWhen>
 		</handler>
 		<!-- copy qualified name -->
 		<handler
@@ -119,38 +119,38 @@
 	</extension>
 	<extension
 		point="org.eclipse.ui.commands">
-		<command
+	<command
 			description="Trigger expensive validation"
 			id="com.altran.Optimind.validate"
 			name="Validate">
-		</command>
-		<!-- copy qualified name -->
-		<command
+	</command>
+	<!-- copy qualified name -->
+	<command
 			id="org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedName"
 			categoryId="org.eclipse.ui.category.edit"
 			description="Copy the qualified name for the selected element"
 			name="Copy Qualified Name">
-		</command>
-		<command
+	</command>
+	<command
 			id="org.eclipse.xtext.ui.editor.copyqualifiedname.OutlineCopyQualifiedName"
 			categoryId="org.eclipse.ui.category.edit"
 			description="Copy the qualified name for the selected element"
 			name="Copy Qualified Name">
-		</command>
+	</command>
 	</extension>
 	<extension point="org.eclipse.ui.menus">
 		<menuContribution
 			locationURI="popup:#TextEditorContext?after=group.edit">
-			<command
-				commandId="com.altran.Optimind.validate"
-				style="push"
-				tooltip="Trigger expensive validation">
-				<visibleWhen checkEnabled="false">
-					<reference
-						definitionId="com.altran.Optimind.Editor.opened">
-					</reference>
-				</visibleWhen>
-			</command>
+			 <command
+				 commandId="com.altran.Optimind.validate"
+				 style="push"
+				 tooltip="Trigger expensive validation">
+			<visibleWhen checkEnabled="false">
+				<reference
+					definitionId="com.altran.Optimind.Editor.opened">
+				</reference>
+			</visibleWhen>
+		</command>
 		</menuContribution>
 		<!-- copy qualified name -->
 		<menuContribution locationURI="popup:#TextEditorContext?after=copy">
@@ -462,11 +462,11 @@
 		</wizard>
 	</extension>
 	<extension
-		point="org.eclipse.xtext.ui.projectTemplate">
-		<projectTemplateProvider
-			class="com.altran.ui.OptimindExecutableExtensionFactory:com.altran.ui.wizard.OptimindProjectTemplateProvider"
-			grammarName="com.altran.Optimind">
-		</projectTemplateProvider>
+	      point="org.eclipse.xtext.ui.projectTemplate">
+	   <projectTemplateProvider
+	         class="com.altran.ui.wizard.OptimindProjectTemplateProvider"
+	         grammarName="com.altran.Optimind">
+	   </projectTemplateProvider>
 	</extension>
 	<extension
 		point="org.eclipse.ui.perspectiveExtensions">
@@ -490,11 +490,11 @@
 		</wizard>
 	</extension>
 	<extension
-		point="org.eclipse.xtext.ui.fileTemplate">
-		<fileTemplateProvider
-			class="com.altran.ui.OptimindExecutableExtensionFactory:com.altran.ui.wizard.OptimindFileTemplateProvider"
-			grammarName="com.altran.Optimind">
-		</fileTemplateProvider>
+	      point="org.eclipse.xtext.ui.fileTemplate">
+	   <fileTemplateProvider
+	         class="com.altran.ui.wizard.OptimindFileTemplateProvider"
+	         grammarName="com.altran.Optimind">
+	   </fileTemplateProvider>
 	</extension>
 	<extension
 		point="org.eclipse.ui.perspectiveExtensions">
