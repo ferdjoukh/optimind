@@ -23,6 +23,7 @@ import com.altran.optimind.model.workflow.WhileStatement
 import com.altran.optimind.model.workflow.IfStatement
 import org.eclipse.xtext.tasks.Task
 import com.altran.optimind.model.workflow.ForStatement
+import com.altran.optimind.model.workflow.SimpleTask
 
 @Accessors class DotGraphGenerator {
 	
@@ -233,13 +234,13 @@ import com.altran.optimind.model.workflow.ForStatement
 			
 			�IF statement instanceof ForStatement�
 				"From :�statement.from�"->"To :�statement.to�"->"Incr :�statement.increment�";
-				�IF statement.abstracttask instanceof CustomTask�
+				�IF statement.abstracttask instanceof SimpleTask�
 					�generateTask(statement.abstracttask)�
 				�ELSE�
 					�generateCluster(statement.abstracttask)�
 				�ENDIF�	
 			�ELSEIF statement instanceof WhileStatement�
-				�IF statement.abstracttask instanceof CustomTask�
+				�IF statement.abstracttask instanceof SimpleTask�
 					�generateTask(statement.abstracttask)�
 				�ELSE�
 					�generateCluster(statement.abstracttask)�
@@ -253,7 +254,7 @@ import com.altran.optimind.model.workflow.ForStatement
 							margin=20;
 							label = THEN
 							
-							�IF statement.then instanceof CustomTask�
+							�IF statement.then instanceof SimpleTask�
 								�generateTask(statement.then)�
 							�ELSE�
 									�generateCluster(statement.then)�
@@ -270,7 +271,7 @@ import com.altran.optimind.model.workflow.ForStatement
 										margin=20;
 										label = ELSE
 											
-										�IF statement.^else instanceof CustomTask�
+										�IF statement.^else instanceof SimpleTask�
 											�generateTask(statement.^else)�
 										�ELSE�
 											�generateCluster(statement.^else)�

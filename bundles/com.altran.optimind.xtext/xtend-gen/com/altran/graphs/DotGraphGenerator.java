@@ -8,6 +8,7 @@ import com.altran.optimind.model.workflow.CustomTask;
 import com.altran.optimind.model.workflow.ForStatement;
 import com.altran.optimind.model.workflow.IfStatement;
 import com.altran.optimind.model.workflow.LibraryTask;
+import com.altran.optimind.model.workflow.SimpleTask;
 import com.altran.optimind.model.workflow.TaskInput;
 import com.altran.optimind.model.workflow.TaskOutput;
 import com.altran.optimind.model.workflow.WhileStatement;
@@ -433,7 +434,7 @@ public class DotGraphGenerator {
         _builder.newLineIfNotEmpty();
         {
           AbstractTask _abstracttask = ((ForStatement)statement).getAbstracttask();
-          if ((_abstracttask instanceof CustomTask)) {
+          if ((_abstracttask instanceof SimpleTask)) {
             _builder.append("\t");
             CharSequence _generateTask = this.generateTask(((ForStatement)statement).getAbstracttask());
             _builder.append(_generateTask, "\t");
@@ -449,7 +450,7 @@ public class DotGraphGenerator {
         if ((statement instanceof WhileStatement)) {
           {
             AbstractTask _abstracttask_1 = ((WhileStatement)statement).getAbstracttask();
-            if ((_abstracttask_1 instanceof CustomTask)) {
+            if ((_abstracttask_1 instanceof SimpleTask)) {
               _builder.append("\t");
               CharSequence _generateTask_1 = this.generateTask(((WhileStatement)statement).getAbstracttask());
               _builder.append(_generateTask_1, "\t");
@@ -496,7 +497,7 @@ public class DotGraphGenerator {
             _builder.newLine();
             {
               AbstractTask _then = ((IfStatement)statement).getThen();
-              if ((_then instanceof CustomTask)) {
+              if ((_then instanceof SimpleTask)) {
                 _builder.append("\t");
                 _builder.append("\t\t\t");
                 CharSequence _generateTask_2 = this.generateTask(((IfStatement)statement).getThen());
@@ -554,7 +555,7 @@ public class DotGraphGenerator {
                 _builder.newLine();
                 {
                   AbstractTask _else_1 = ((IfStatement)statement).getElse();
-                  if ((_else_1 instanceof CustomTask)) {
+                  if ((_else_1 instanceof SimpleTask)) {
                     _builder.append("\t");
                     _builder.append("\t\t\t\t\t\t");
                     CharSequence _generateTask_3 = this.generateTask(((IfStatement)statement).getElse());
