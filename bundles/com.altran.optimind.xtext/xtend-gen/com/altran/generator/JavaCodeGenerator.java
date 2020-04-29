@@ -41,6 +41,14 @@ public class JavaCodeGenerator {
     this.writeContent(this.generateFileContent());
   }
   
+  public String generateLoopCode() {
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe method or field libraryFunction is undefined"
+      + "\nThe method or field libraryFunction is undefined"
+      + "\nname cannot be resolved"
+      + "\nname cannot be resolved");
+  }
+  
   public String generateFileContent() {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("// ==================================================================================================");
@@ -169,6 +177,20 @@ public class JavaCodeGenerator {
     try {
       PrintWriter writer = null;
       FileWriter _fileWriter = new FileWriter(this.javaFilePath);
+      BufferedWriter _bufferedWriter = new BufferedWriter(_fileWriter);
+      PrintWriter _printWriter = new PrintWriter(_bufferedWriter);
+      writer = _printWriter;
+      writer.write(content);
+      writer.close();
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  public void writeContent(final String content, final String path) {
+    try {
+      PrintWriter writer = null;
+      FileWriter _fileWriter = new FileWriter(path);
       BufferedWriter _bufferedWriter = new BufferedWriter(_fileWriter);
       PrintWriter _printWriter = new PrintWriter(_bufferedWriter);
       writer = _printWriter;

@@ -67,6 +67,7 @@ public class InputImpl extends TypedElementImpl implements Input {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -76,6 +77,7 @@ public class InputImpl extends TypedElementImpl implements Input {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;

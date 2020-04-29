@@ -59,6 +59,7 @@ public class LibraryTaskImpl extends SimpleTaskImpl implements LibraryTask {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public LibraryFunction getLibraryfunction() {
 		if (libraryfunction != null && libraryfunction.eIsProxy()) {
 			InternalEObject oldLibraryfunction = (InternalEObject) libraryfunction;
@@ -86,6 +87,7 @@ public class LibraryTaskImpl extends SimpleTaskImpl implements LibraryTask {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setLibraryfunction(LibraryFunction newLibraryfunction) {
 		LibraryFunction oldLibraryfunction = libraryfunction;
 		libraryfunction = newLibraryfunction;

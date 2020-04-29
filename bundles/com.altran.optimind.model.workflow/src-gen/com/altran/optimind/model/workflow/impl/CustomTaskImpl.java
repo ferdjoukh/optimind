@@ -69,6 +69,7 @@ public class CustomTaskImpl extends SimpleTaskImpl implements CustomTask {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getRunner() {
 		return runner;
 	}
@@ -78,6 +79,7 @@ public class CustomTaskImpl extends SimpleTaskImpl implements CustomTask {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setRunner(String newRunner) {
 		String oldRunner = runner;
 		runner = newRunner;

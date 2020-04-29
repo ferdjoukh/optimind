@@ -157,6 +157,7 @@ public class LibraryFunctionGenerator {
         _builder.append(_name_5, "\t\t");
         _builder.append(";}; ");
         _builder.newLineIfNotEmpty();
+        _builder.append("\t\t\t");
         _builder.newLine();
       }
     }
@@ -168,46 +169,42 @@ public class LibraryFunctionGenerator {
     {
       EList<TaskOutput> _outputs = task.getOutputs();
       for(final TaskOutput otput : _outputs) {
-        _builder.append("\t\t");
         _builder.append("private ");
         String _typeAsString_3 = otput.getTypeAsString();
-        _builder.append(_typeAsString_3, "\t\t");
+        _builder.append(_typeAsString_3);
         _builder.append(" ");
         String _name_6 = otput.getName();
-        _builder.append(_name_6, "\t\t");
+        _builder.append(_name_6);
         _builder.append(" = ");
         String _name_7 = task.getLibraryfunction().getName();
-        _builder.append(_name_7, "\t\t");
+        _builder.append(_name_7);
         _builder.append(".");
         String _name_8 = otput.getName();
-        _builder.append(_name_8, "\t\t");
+        _builder.append(_name_8);
         _builder.append("(this);");
         _builder.newLineIfNotEmpty();
-        _builder.append("\t\t");
         _builder.append("public void set_");
         String _name_9 = otput.getName();
-        _builder.append(_name_9, "\t\t");
+        _builder.append(_name_9);
         _builder.append("(");
         String _typeAsString_4 = otput.getTypeAsString();
-        _builder.append(_typeAsString_4, "\t\t");
+        _builder.append(_typeAsString_4);
         _builder.append(" value) {this.");
         String _name_10 = otput.getName();
-        _builder.append(_name_10, "\t\t");
+        _builder.append(_name_10);
         _builder.append(" = value;} ; \t\t\t\t\t\t\t\t\t\t");
         _builder.newLineIfNotEmpty();
-        _builder.append("\t\t");
         _builder.append("public ");
         String _typeAsString_5 = otput.getTypeAsString();
-        _builder.append(_typeAsString_5, "\t\t");
+        _builder.append(_typeAsString_5);
         _builder.append(" get_");
         String _name_11 = otput.getName();
-        _builder.append(_name_11, "\t\t");
+        _builder.append(_name_11);
         _builder.append("() {return this.");
         String _name_12 = otput.getName();
-        _builder.append(_name_12, "\t\t");
+        _builder.append(_name_12);
         _builder.append(";}; ");
         _builder.newLineIfNotEmpty();
-        _builder.append("\t\t");
         _builder.newLine();
       }
     }
@@ -216,8 +213,7 @@ public class LibraryFunctionGenerator {
     _builder.newLineIfNotEmpty();
     {
       for(final Connection connection : allConnection) {
-        _builder.append("\t\t");
-        _builder.append("\t");
+        _builder.append("\t\t\t\t");
         _builder.newLine();
       }
     }
@@ -226,7 +222,7 @@ public class LibraryFunctionGenerator {
     _builder.append("\t\t");
     _builder.append("public void run(){");
     _builder.newLine();
-    _builder.append("\t\t\t");
+    _builder.append("\t");
     _builder.append("//Write you code here to execute ");
     _builder.newLine();
     _builder.append("\t\t");
@@ -389,10 +385,10 @@ public class LibraryFunctionGenerator {
     _builder.newLine();
     _builder.append("\t");
     _builder.newLine();
-    _builder.append("\t\t");
+    _builder.append("\t");
     _builder.append("return 0;");
     _builder.newLine();
-    _builder.append("\t\t");
+    _builder.append("\t");
     _builder.newLine();
     _builder.append("\t");
     _builder.append("}");

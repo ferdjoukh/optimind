@@ -63,23 +63,23 @@ class CustomTaskRunnerGenerator {
 						private «setter.typeAsString» «setter.name» = «setter.valueAsString»;
 						public void set_«setter.name»(«setter.typeAsString» value) {this.«setter.name» = value;} ; 										
 						public «setter.typeAsString» get_«setter.name»() {return this.«setter.name»;}; 
-
+			
 					«ENDFOR»
 					
 					//All Outputs 
 					«FOR otput : task.outputs»
-						private «otput.typeAsString» «otput.name»;
-						public void set_«otput.name»(«otput.typeAsString» value) {this.«otput.name» = value;} ; 										
-						public «otput.typeAsString» get_«otput.name»() {return this.«otput.name»;}; 
-						
+				private «otput.typeAsString» «otput.name»;
+				public void set_«otput.name»(«otput.typeAsString» value) {this.«otput.name» = value;} ; 										
+				public «otput.typeAsString» get_«otput.name»() {return this.«otput.name»;}; 
+				
 					«ENDFOR»
 					«var allConnection = EcoreUtil2.getAllContentsOfType(task, Connection)»
 					«FOR connection : allConnection»
-						
+				
 					«ENDFOR»
 					
 					public void run(){
-						//Write you code here to execute 
+				//Write you code here to execute 
 					
 					}
 				}

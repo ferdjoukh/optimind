@@ -12,6 +12,8 @@ import com.altran.optimind.model.workflow.LibraryTask
 import com.altran.optimind.model.workflow.CustomTask
 import com.altran.optimind.model.workflow.Connection
 import com.altran.optimind.model.workflow.Setter
+import com.altran.optimind.model.workflow.ForStatement
+import com.altran.optimind.model.workflow.WhileStatement
 
 @Accessors class JavaCodeGenerator {
 	
@@ -26,6 +28,21 @@ import com.altran.optimind.model.workflow.Setter
 	
 	def generate() {
 		writeContent(generateFileContent)
+		
+	}
+	
+	def String generateLoopCode()
+	{
+		'''
+			«var allloopFor = EcoreUtil2.getAllContentsOfType(workflow, ForStatement)»
+			«var allloopWhile = EcoreUtil2.getAllContentsOfType(workflow, WhileStatement)»
+			
+			«FOR loop : allloopFor» 
+				«libraryFunction.name» m_«libraryFunction.name»;
+			«ENDFOR»
+			
+			
+		'''
 	}
 	
 	def String generateFileContent() {
@@ -94,6 +111,13 @@ import com.altran.optimind.model.workflow.Setter
 	def writeContent(String content) {
 		var PrintWriter writer;
 		writer = new PrintWriter(new BufferedWriter(new FileWriter(this.javaFilePath)));
+		writer.write(content)
+		writer.close();
+	}
+	
+	def writeContent(String content,String path) {
+		var PrintWriter writer;
+		writer = new PrintWriter(new BufferedWriter(new FileWriter(path)));
 		writer.write(content)
 		writer.close();
 	}

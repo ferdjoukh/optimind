@@ -73,6 +73,7 @@ public class IfStatementImpl extends AbstractStatementImpl implements IfStatemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public AbstractTask getThen() {
 		return then;
 	}
@@ -101,6 +102,7 @@ public class IfStatementImpl extends AbstractStatementImpl implements IfStatemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setThen(AbstractTask newThen) {
 		if (newThen != then) {
 			NotificationChain msgs = null;
@@ -123,6 +125,7 @@ public class IfStatementImpl extends AbstractStatementImpl implements IfStatemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public AbstractTask getElse() {
 		return else_;
 	}
@@ -151,6 +154,7 @@ public class IfStatementImpl extends AbstractStatementImpl implements IfStatemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setElse(AbstractTask newElse) {
 		if (newElse != else_) {
 			NotificationChain msgs = null;

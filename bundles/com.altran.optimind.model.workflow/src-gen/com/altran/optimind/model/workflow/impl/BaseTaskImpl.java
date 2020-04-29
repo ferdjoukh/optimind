@@ -66,6 +66,7 @@ public class BaseTaskImpl extends AbstractTaskImpl implements BaseTask {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<AbstractTask> getChildren() {
 		if (children == null) {
 			children = new EObjectContainmentEList<AbstractTask>(AbstractTask.class, this,

@@ -71,6 +71,7 @@ public class SetterImpl extends TypedElementImpl implements Setter {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -80,6 +81,7 @@ public class SetterImpl extends TypedElementImpl implements Setter {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;

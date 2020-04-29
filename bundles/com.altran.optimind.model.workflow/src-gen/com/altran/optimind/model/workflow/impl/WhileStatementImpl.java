@@ -62,6 +62,7 @@ public class WhileStatementImpl extends AbstractStatementImpl implements WhileSt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public AbstractTask getAbstracttask() {
 		return abstracttask;
 	}
@@ -90,6 +91,7 @@ public class WhileStatementImpl extends AbstractStatementImpl implements WhileSt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setAbstracttask(AbstractTask newAbstracttask) {
 		if (newAbstracttask != abstracttask) {
 			NotificationChain msgs = null;

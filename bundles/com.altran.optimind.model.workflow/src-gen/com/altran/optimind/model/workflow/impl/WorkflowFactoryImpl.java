@@ -137,6 +137,7 @@ public class WorkflowFactoryImpl extends EFactoryImpl implements WorkflowFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TypedElement createTypedElement() {
 		TypedElementImpl typedElement = new TypedElementImpl();
 		return typedElement;
@@ -147,6 +148,7 @@ public class WorkflowFactoryImpl extends EFactoryImpl implements WorkflowFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public NamedElement createNamedElement() {
 		NamedElementImpl namedElement = new NamedElementImpl();
 		return namedElement;
@@ -157,6 +159,7 @@ public class WorkflowFactoryImpl extends EFactoryImpl implements WorkflowFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public BaseTask createBaseTask() {
 		BaseTaskImpl baseTask = new BaseTaskImpl();
 		return baseTask;
@@ -167,6 +170,7 @@ public class WorkflowFactoryImpl extends EFactoryImpl implements WorkflowFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TaskOutput createTaskOutput() {
 		TaskOutputImpl taskOutput = new TaskOutputImpl();
 		return taskOutput;
@@ -177,6 +181,7 @@ public class WorkflowFactoryImpl extends EFactoryImpl implements WorkflowFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public LibraryFunction createLibraryFunction() {
 		LibraryFunctionImpl libraryFunction = new LibraryFunctionImpl();
 		return libraryFunction;
@@ -187,6 +192,7 @@ public class WorkflowFactoryImpl extends EFactoryImpl implements WorkflowFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public LibraryTask createLibraryTask() {
 		LibraryTaskImpl libraryTask = new LibraryTaskImpl();
 		return libraryTask;
@@ -197,6 +203,7 @@ public class WorkflowFactoryImpl extends EFactoryImpl implements WorkflowFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Workflow createWorkflow() {
 		WorkflowImpl workflow = new WorkflowImpl();
 		return workflow;
@@ -207,6 +214,7 @@ public class WorkflowFactoryImpl extends EFactoryImpl implements WorkflowFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Setter createSetter() {
 		SetterImpl setter = new SetterImpl();
 		return setter;
@@ -217,6 +225,7 @@ public class WorkflowFactoryImpl extends EFactoryImpl implements WorkflowFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Connection createConnection() {
 		ConnectionImpl connection = new ConnectionImpl();
 		return connection;
@@ -227,6 +236,7 @@ public class WorkflowFactoryImpl extends EFactoryImpl implements WorkflowFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public CustomTask createCustomTask() {
 		CustomTaskImpl customTask = new CustomTaskImpl();
 		return customTask;
@@ -237,6 +247,7 @@ public class WorkflowFactoryImpl extends EFactoryImpl implements WorkflowFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Nsetter createNsetter() {
 		NsetterImpl nsetter = new NsetterImpl();
 		return nsetter;
@@ -247,6 +258,7 @@ public class WorkflowFactoryImpl extends EFactoryImpl implements WorkflowFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public IsInitSetter createIsInitSetter() {
 		IsInitSetterImpl isInitSetter = new IsInitSetterImpl();
 		return isInitSetter;
@@ -257,6 +269,7 @@ public class WorkflowFactoryImpl extends EFactoryImpl implements WorkflowFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public IsNotInitSetter createIsNotInitSetter() {
 		IsNotInitSetterImpl isNotInitSetter = new IsNotInitSetterImpl();
 		return isNotInitSetter;
@@ -267,6 +280,7 @@ public class WorkflowFactoryImpl extends EFactoryImpl implements WorkflowFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Input createInput() {
 		InputImpl input = new InputImpl();
 		return input;
@@ -277,6 +291,7 @@ public class WorkflowFactoryImpl extends EFactoryImpl implements WorkflowFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Output createOutput() {
 		OutputImpl output = new OutputImpl();
 		return output;
@@ -287,6 +302,7 @@ public class WorkflowFactoryImpl extends EFactoryImpl implements WorkflowFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public WhileStatement createWhileStatement() {
 		WhileStatementImpl whileStatement = new WhileStatementImpl();
 		return whileStatement;
@@ -297,6 +313,7 @@ public class WorkflowFactoryImpl extends EFactoryImpl implements WorkflowFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ForStatement createForStatement() {
 		ForStatementImpl forStatement = new ForStatementImpl();
 		return forStatement;
@@ -307,6 +324,7 @@ public class WorkflowFactoryImpl extends EFactoryImpl implements WorkflowFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public IfStatement createIfStatement() {
 		IfStatementImpl ifStatement = new IfStatementImpl();
 		return ifStatement;
@@ -361,6 +379,7 @@ public class WorkflowFactoryImpl extends EFactoryImpl implements WorkflowFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public WorkflowPackage getWorkflowPackage() {
 		return (WorkflowPackage) getEPackage();
 	}
