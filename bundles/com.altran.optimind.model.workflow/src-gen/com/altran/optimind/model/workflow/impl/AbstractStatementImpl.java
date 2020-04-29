@@ -119,6 +119,7 @@ public abstract class AbstractStatementImpl extends NamedElementImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<TaskInput> getInputs() {
 		if (inputs == null) {
 			inputs = new EObjectContainmentEList<TaskInput>(TaskInput.class, this,
@@ -132,6 +133,7 @@ public abstract class AbstractStatementImpl extends NamedElementImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<TaskOutput> getOutputs() {
 		if (outputs == null) {
 			outputs = new EObjectContainmentEList<TaskOutput>(TaskOutput.class, this,
@@ -145,6 +147,7 @@ public abstract class AbstractStatementImpl extends NamedElementImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TaskStatus getStatus() {
 		return status;
 	}
@@ -154,6 +157,7 @@ public abstract class AbstractStatementImpl extends NamedElementImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setStatus(TaskStatus newStatus) {
 		TaskStatus oldStatus = status;
 		status = newStatus == null ? STATUS_EDEFAULT : newStatus;
@@ -167,6 +171,7 @@ public abstract class AbstractStatementImpl extends NamedElementImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getCondition() {
 		return condition;
 	}
@@ -176,6 +181,7 @@ public abstract class AbstractStatementImpl extends NamedElementImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setCondition(String newCondition) {
 		String oldCondition = condition;
 		condition = newCondition;

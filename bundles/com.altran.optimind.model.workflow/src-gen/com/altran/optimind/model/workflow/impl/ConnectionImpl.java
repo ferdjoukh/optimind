@@ -61,6 +61,7 @@ public class ConnectionImpl extends TaskInputImpl implements Connection {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public TaskOutput getTaskoutput() {
 		if (taskoutput != null && taskoutput.eIsProxy()) {
 			InternalEObject oldTaskoutput = (InternalEObject) taskoutput;
@@ -88,6 +89,7 @@ public class ConnectionImpl extends TaskInputImpl implements Connection {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setTaskoutput(TaskOutput newTaskoutput) {
 		TaskOutput oldTaskoutput = taskoutput;
 		taskoutput = newTaskoutput;

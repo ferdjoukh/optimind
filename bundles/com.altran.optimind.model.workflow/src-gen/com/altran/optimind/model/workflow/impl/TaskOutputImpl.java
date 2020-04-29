@@ -91,6 +91,7 @@ public class TaskOutputImpl extends NamedElementImpl implements TaskOutput {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getTypeAsString() {
 		return typeAsString;
 	}
@@ -100,6 +101,7 @@ public class TaskOutputImpl extends NamedElementImpl implements TaskOutput {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setTypeAsString(String newTypeAsString) {
 		String oldTypeAsString = typeAsString;
 		typeAsString = newTypeAsString;
@@ -113,6 +115,7 @@ public class TaskOutputImpl extends NamedElementImpl implements TaskOutput {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getValueAsString() {
 		return valueAsString;
 	}
@@ -122,6 +125,7 @@ public class TaskOutputImpl extends NamedElementImpl implements TaskOutput {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setValueAsString(String newValueAsString) {
 		String oldValueAsString = valueAsString;
 		valueAsString = newValueAsString;

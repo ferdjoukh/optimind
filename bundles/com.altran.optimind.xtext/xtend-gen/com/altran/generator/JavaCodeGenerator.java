@@ -41,28 +41,12 @@ public class JavaCodeGenerator {
     this.writeContent(this.generateFileContent());
   }
   
-  public String generateCustomTaskFile(final CustomTask task) {
-    StringConcatenation _builder = new StringConcatenation();
-    _builder.append("package scripts;");
-    _builder.newLine();
-    _builder.append("\t");
-    _builder.append("// ==================================================================================================");
-    _builder.newLine();
-    _builder.append("\t");
-    _builder.append("// MODULE IMPORT");
-    _builder.newLine();
-    _builder.append("\t");
-    _builder.append("// ==================================================================================================");
-    _builder.newLine();
-    _builder.append("\t\t\t\t\t\t\t");
-    _builder.newLine();
-    _builder.append("\t");
-    _builder.append("// ==================================================================================================");
-    _builder.newLine();
-    _builder.append("\t");
-    _builder.newLine();
-    _builder.newLine();
-    return _builder.toString();
+  public String generateLoopCode() {
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe method or field libraryFunction is undefined"
+      + "\nThe method or field libraryFunction is undefined"
+      + "\nname cannot be resolved"
+      + "\nname cannot be resolved");
   }
   
   public String generateFileContent() {
@@ -90,7 +74,7 @@ public class JavaCodeGenerator {
     _builder.append("{");
     _builder.newLine();
     _builder.append("\t");
-    _builder.append("//generateClassContent");
+    _builder.append("//generateClassContent»");
     _builder.newLine();
     _builder.append("}");
     _builder.newLine();
@@ -193,6 +177,20 @@ public class JavaCodeGenerator {
     try {
       PrintWriter writer = null;
       FileWriter _fileWriter = new FileWriter(this.javaFilePath);
+      BufferedWriter _bufferedWriter = new BufferedWriter(_fileWriter);
+      PrintWriter _printWriter = new PrintWriter(_bufferedWriter);
+      writer = _printWriter;
+      writer.write(content);
+      writer.close();
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  public void writeContent(final String content, final String path) {
+    try {
+      PrintWriter writer = null;
+      FileWriter _fileWriter = new FileWriter(path);
       BufferedWriter _bufferedWriter = new BufferedWriter(_fileWriter);
       PrintWriter _printWriter = new PrintWriter(_bufferedWriter);
       writer = _printWriter;

@@ -102,6 +102,7 @@ public class WorkflowImpl extends NamedElementImpl implements Workflow {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public BaseTask getBaseTask() {
 		return baseTask;
 	}
@@ -130,6 +131,7 @@ public class WorkflowImpl extends NamedElementImpl implements Workflow {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setBaseTask(BaseTask newBaseTask) {
 		if (newBaseTask != baseTask) {
 			NotificationChain msgs = null;
@@ -152,6 +154,7 @@ public class WorkflowImpl extends NamedElementImpl implements Workflow {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<LibraryFunction> getFunctions() {
 		if (functions == null) {
 			functions = new EObjectContainmentEList<LibraryFunction>(LibraryFunction.class, this,
@@ -165,6 +168,7 @@ public class WorkflowImpl extends NamedElementImpl implements Workflow {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Language getLanguage() {
 		return language;
 	}
@@ -174,6 +178,7 @@ public class WorkflowImpl extends NamedElementImpl implements Workflow {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setLanguage(Language newLanguage) {
 		Language oldLanguage = language;
 		language = newLanguage == null ? LANGUAGE_EDEFAULT : newLanguage;

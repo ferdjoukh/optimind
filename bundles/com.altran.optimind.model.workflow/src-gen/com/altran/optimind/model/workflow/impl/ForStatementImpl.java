@@ -111,6 +111,7 @@ public class ForStatementImpl extends WhileStatementImpl implements ForStatement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int getFrom() {
 		return from;
 	}
@@ -120,6 +121,7 @@ public class ForStatementImpl extends WhileStatementImpl implements ForStatement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setFrom(int newFrom) {
 		int oldFrom = from;
 		from = newFrom;
@@ -132,6 +134,7 @@ public class ForStatementImpl extends WhileStatementImpl implements ForStatement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int getTo() {
 		return to;
 	}
@@ -141,6 +144,7 @@ public class ForStatementImpl extends WhileStatementImpl implements ForStatement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setTo(int newTo) {
 		int oldTo = to;
 		to = newTo;
@@ -153,6 +157,7 @@ public class ForStatementImpl extends WhileStatementImpl implements ForStatement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public int getIncrement() {
 		return increment;
 	}
@@ -162,6 +167,7 @@ public class ForStatementImpl extends WhileStatementImpl implements ForStatement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setIncrement(int newIncrement) {
 		int oldIncrement = increment;
 		increment = newIncrement;

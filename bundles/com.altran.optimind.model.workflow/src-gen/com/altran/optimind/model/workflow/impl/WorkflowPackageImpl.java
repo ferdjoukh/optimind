@@ -281,6 +281,7 @@ public class WorkflowPackageImpl extends EPackageImpl implements WorkflowPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getAbstractTask() {
 		return abstractTaskEClass;
 	}
@@ -290,6 +291,7 @@ public class WorkflowPackageImpl extends EPackageImpl implements WorkflowPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getAbstractTask_Inputs() {
 		return (EReference) abstractTaskEClass.getEStructuralFeatures().get(0);
 	}
@@ -299,6 +301,7 @@ public class WorkflowPackageImpl extends EPackageImpl implements WorkflowPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getAbstractTask_Outputs() {
 		return (EReference) abstractTaskEClass.getEStructuralFeatures().get(1);
 	}
@@ -308,6 +311,7 @@ public class WorkflowPackageImpl extends EPackageImpl implements WorkflowPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getAbstractTask_Status() {
 		return (EAttribute) abstractTaskEClass.getEStructuralFeatures().get(2);
 	}
@@ -317,6 +321,7 @@ public class WorkflowPackageImpl extends EPackageImpl implements WorkflowPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getTypedElement() {
 		return typedElementEClass;
 	}
@@ -326,6 +331,7 @@ public class WorkflowPackageImpl extends EPackageImpl implements WorkflowPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getTypedElement_TypeAsString() {
 		return (EAttribute) typedElementEClass.getEStructuralFeatures().get(0);
 	}
@@ -335,6 +341,7 @@ public class WorkflowPackageImpl extends EPackageImpl implements WorkflowPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getTypedElement_ValueAsString() {
 		return (EAttribute) typedElementEClass.getEStructuralFeatures().get(1);
 	}
@@ -344,6 +351,7 @@ public class WorkflowPackageImpl extends EPackageImpl implements WorkflowPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getNamedElement() {
 		return namedElementEClass;
 	}
@@ -353,6 +361,7 @@ public class WorkflowPackageImpl extends EPackageImpl implements WorkflowPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getNamedElement_Name() {
 		return (EAttribute) namedElementEClass.getEStructuralFeatures().get(0);
 	}
@@ -362,6 +371,7 @@ public class WorkflowPackageImpl extends EPackageImpl implements WorkflowPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSimpleTask() {
 		return simpleTaskEClass;
 	}
@@ -371,6 +381,7 @@ public class WorkflowPackageImpl extends EPackageImpl implements WorkflowPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getBaseTask() {
 		return baseTaskEClass;
 	}
@@ -380,6 +391,7 @@ public class WorkflowPackageImpl extends EPackageImpl implements WorkflowPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getBaseTask_Children() {
 		return (EReference) baseTaskEClass.getEStructuralFeatures().get(0);
 	}
@@ -389,6 +401,7 @@ public class WorkflowPackageImpl extends EPackageImpl implements WorkflowPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getTaskOutput() {
 		return taskOutputEClass;
 	}
@@ -398,6 +411,7 @@ public class WorkflowPackageImpl extends EPackageImpl implements WorkflowPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getTaskInput() {
 		return taskInputEClass;
 	}
@@ -407,6 +421,7 @@ public class WorkflowPackageImpl extends EPackageImpl implements WorkflowPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getLibraryFunction() {
 		return libraryFunctionEClass;
 	}
@@ -416,6 +431,7 @@ public class WorkflowPackageImpl extends EPackageImpl implements WorkflowPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getLibraryFunction_Outputs() {
 		return (EReference) libraryFunctionEClass.getEStructuralFeatures().get(0);
 	}
@@ -425,6 +441,7 @@ public class WorkflowPackageImpl extends EPackageImpl implements WorkflowPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getLibraryFunction_Inputs() {
 		return (EReference) libraryFunctionEClass.getEStructuralFeatures().get(1);
 	}
@@ -434,6 +451,7 @@ public class WorkflowPackageImpl extends EPackageImpl implements WorkflowPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getLibraryFunction_Function() {
 		return (EAttribute) libraryFunctionEClass.getEStructuralFeatures().get(2);
 	}
@@ -443,6 +461,7 @@ public class WorkflowPackageImpl extends EPackageImpl implements WorkflowPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getLibraryTask() {
 		return libraryTaskEClass;
 	}
@@ -452,6 +471,7 @@ public class WorkflowPackageImpl extends EPackageImpl implements WorkflowPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getLibraryTask_Libraryfunction() {
 		return (EReference) libraryTaskEClass.getEStructuralFeatures().get(0);
 	}
@@ -461,6 +481,7 @@ public class WorkflowPackageImpl extends EPackageImpl implements WorkflowPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getWorkflow() {
 		return workflowEClass;
 	}
@@ -470,6 +491,7 @@ public class WorkflowPackageImpl extends EPackageImpl implements WorkflowPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getWorkflow_BaseTask() {
 		return (EReference) workflowEClass.getEStructuralFeatures().get(0);
 	}
@@ -479,6 +501,7 @@ public class WorkflowPackageImpl extends EPackageImpl implements WorkflowPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getWorkflow_Functions() {
 		return (EReference) workflowEClass.getEStructuralFeatures().get(1);
 	}
@@ -488,6 +511,7 @@ public class WorkflowPackageImpl extends EPackageImpl implements WorkflowPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getWorkflow_Language() {
 		return (EAttribute) workflowEClass.getEStructuralFeatures().get(2);
 	}
@@ -497,6 +521,7 @@ public class WorkflowPackageImpl extends EPackageImpl implements WorkflowPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSetter() {
 		return setterEClass;
 	}
@@ -506,6 +531,7 @@ public class WorkflowPackageImpl extends EPackageImpl implements WorkflowPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getConnection() {
 		return connectionEClass;
 	}
@@ -515,6 +541,7 @@ public class WorkflowPackageImpl extends EPackageImpl implements WorkflowPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getConnection_Taskoutput() {
 		return (EReference) connectionEClass.getEStructuralFeatures().get(0);
 	}
@@ -524,6 +551,7 @@ public class WorkflowPackageImpl extends EPackageImpl implements WorkflowPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getCustomTask() {
 		return customTaskEClass;
 	}
@@ -533,6 +561,7 @@ public class WorkflowPackageImpl extends EPackageImpl implements WorkflowPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getCustomTask_Runner() {
 		return (EAttribute) customTaskEClass.getEStructuralFeatures().get(0);
 	}
@@ -542,6 +571,7 @@ public class WorkflowPackageImpl extends EPackageImpl implements WorkflowPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getNsetter() {
 		return nsetterEClass;
 	}
@@ -551,6 +581,7 @@ public class WorkflowPackageImpl extends EPackageImpl implements WorkflowPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getIsInitSetter() {
 		return isInitSetterEClass;
 	}
@@ -560,6 +591,7 @@ public class WorkflowPackageImpl extends EPackageImpl implements WorkflowPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getIsNotInitSetter() {
 		return isNotInitSetterEClass;
 	}
@@ -569,6 +601,7 @@ public class WorkflowPackageImpl extends EPackageImpl implements WorkflowPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getInput() {
 		return inputEClass;
 	}
@@ -578,6 +611,7 @@ public class WorkflowPackageImpl extends EPackageImpl implements WorkflowPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getOutput() {
 		return outputEClass;
 	}
@@ -587,6 +621,7 @@ public class WorkflowPackageImpl extends EPackageImpl implements WorkflowPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getWhileStatement() {
 		return whileStatementEClass;
 	}
@@ -596,6 +631,7 @@ public class WorkflowPackageImpl extends EPackageImpl implements WorkflowPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getWhileStatement_Abstracttask() {
 		return (EReference) whileStatementEClass.getEStructuralFeatures().get(0);
 	}
@@ -605,6 +641,7 @@ public class WorkflowPackageImpl extends EPackageImpl implements WorkflowPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getAbstractStatement() {
 		return abstractStatementEClass;
 	}
@@ -614,6 +651,7 @@ public class WorkflowPackageImpl extends EPackageImpl implements WorkflowPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getAbstractStatement_Condition() {
 		return (EAttribute) abstractStatementEClass.getEStructuralFeatures().get(0);
 	}
@@ -623,6 +661,7 @@ public class WorkflowPackageImpl extends EPackageImpl implements WorkflowPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getForStatement() {
 		return forStatementEClass;
 	}
@@ -632,6 +671,7 @@ public class WorkflowPackageImpl extends EPackageImpl implements WorkflowPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getForStatement_From() {
 		return (EAttribute) forStatementEClass.getEStructuralFeatures().get(0);
 	}
@@ -641,6 +681,7 @@ public class WorkflowPackageImpl extends EPackageImpl implements WorkflowPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getForStatement_To() {
 		return (EAttribute) forStatementEClass.getEStructuralFeatures().get(1);
 	}
@@ -650,6 +691,7 @@ public class WorkflowPackageImpl extends EPackageImpl implements WorkflowPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getForStatement_Increment() {
 		return (EAttribute) forStatementEClass.getEStructuralFeatures().get(2);
 	}
@@ -659,6 +701,7 @@ public class WorkflowPackageImpl extends EPackageImpl implements WorkflowPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getIfStatement() {
 		return ifStatementEClass;
 	}
@@ -668,6 +711,7 @@ public class WorkflowPackageImpl extends EPackageImpl implements WorkflowPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getIfStatement_Then() {
 		return (EReference) ifStatementEClass.getEStructuralFeatures().get(0);
 	}
@@ -677,6 +721,7 @@ public class WorkflowPackageImpl extends EPackageImpl implements WorkflowPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getIfStatement_Else() {
 		return (EReference) ifStatementEClass.getEStructuralFeatures().get(1);
 	}
@@ -686,6 +731,7 @@ public class WorkflowPackageImpl extends EPackageImpl implements WorkflowPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getTaskStatus() {
 		return taskStatusEEnum;
 	}
@@ -695,6 +741,7 @@ public class WorkflowPackageImpl extends EPackageImpl implements WorkflowPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getLanguage() {
 		return languageEEnum;
 	}
@@ -704,6 +751,7 @@ public class WorkflowPackageImpl extends EPackageImpl implements WorkflowPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public WorkflowFactory getWorkflowFactory() {
 		return (WorkflowFactory) getEFactoryInstance();
 	}

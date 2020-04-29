@@ -13,7 +13,7 @@ import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 
 import com.altran.optimind.application.Activator;
-import com.altran.optimind.application.View;;
+import com.altran.optimind.application.View;
 
 public class ShowGraphAction extends Action {
 
