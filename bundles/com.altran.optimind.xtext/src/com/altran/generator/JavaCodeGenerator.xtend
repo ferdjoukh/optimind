@@ -40,8 +40,7 @@ import com.altran.optimind.model.workflow.WhileStatement
 			«FOR loop : allloopFor» 
 				
 			«ENDFOR»
-			
-			
+						
 		'''
 	}
 	

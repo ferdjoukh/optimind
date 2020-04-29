@@ -21,10 +21,11 @@ import org.eclipse.xtext.generator.IGeneratorContext
  */
 class OptimindGenerator extends AbstractGenerator {
 
+	var Workflow m_workflow ; 
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
 		
 		var Workflow workflow = getWorkflowFromResource(resource)
-		
+		m_workflow = workflow;
 		var String resourcePath = getResourceFilePath(resource)
 		new DotGraphGenerator(resourcePath, workflow).createDotFile()
 		var String filePath =createFilePath(resourcePath, workflow.language)
@@ -67,11 +68,13 @@ class OptimindGenerator extends AbstractGenerator {
 	def String createFilePath(String workflowFilePath, Language language) {
 		var String name
 		
-		if (workflowFilePath.contains(".")) {
-			var int last = workflowFilePath.lastIndexOf(".");
-			name = workflowFilePath.substring(0, last);
+		if (workflowFilePath.contains("\\")) {
+			var int last = workflowFilePath.lastIndexOf("\\");
+			name = workflowFilePath.substring(0, last) + "\\" + m_workflow.name;
+			
+			
 		}else {
-			name = workflowFilePath;
+			name = workflowFilePath;		
 		}
 		if(language == Language.PYTHON)
 		{

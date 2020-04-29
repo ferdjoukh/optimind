@@ -28,10 +28,13 @@ import org.eclipse.xtext.xbase.lib.Exceptions;
  */
 @SuppressWarnings("all")
 public class OptimindGenerator extends AbstractGenerator {
+  private Workflow m_workflow;
+  
   @Override
   public void doGenerate(final Resource resource, final IFileSystemAccess2 fsa, final IGeneratorContext context) {
     try {
       Workflow workflow = this.getWorkflowFromResource(resource);
+      this.m_workflow = workflow;
       String resourcePath = this.getResourceFilePath(resource);
       new DotGraphGenerator(resourcePath, workflow).createDotFile();
       String filePath = this.createFilePath(resourcePath, workflow.getLanguage());
@@ -84,10 +87,14 @@ public class OptimindGenerator extends AbstractGenerator {
     String _xblockexpression = null;
     {
       String name = null;
-      boolean _contains = workflowFilePath.contains(".");
+      boolean _contains = workflowFilePath.contains("\\");
       if (_contains) {
-        int last = workflowFilePath.lastIndexOf(".");
-        name = workflowFilePath.substring(0, last);
+        int last = workflowFilePath.lastIndexOf("\\");
+        String _substring = workflowFilePath.substring(0, last);
+        String _plus = (_substring + "\\");
+        String _name = this.m_workflow.getName();
+        String _plus_1 = (_plus + _name);
+        name = _plus_1;
       } else {
         name = workflowFilePath;
       }

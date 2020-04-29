@@ -56,7 +56,7 @@ public class JavaCodeGenerator {
         _builder.newLine();
       }
     }
-    _builder.newLine();
+    _builder.append("\t\t\t");
     _builder.newLine();
     return _builder.toString();
   }

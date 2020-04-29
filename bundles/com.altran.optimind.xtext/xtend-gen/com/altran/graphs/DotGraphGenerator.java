@@ -28,6 +28,7 @@ import org.eclipse.xtend.lib.annotations.Accessors;
 import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.EcoreUtil2;
 import org.eclipse.xtext.xbase.lib.Exceptions;
+import org.eclipse.xtext.xbase.lib.InputOutput;
 import org.eclipse.xtext.xbase.lib.Pure;
 import org.osgi.framework.Bundle;
 
@@ -65,13 +66,18 @@ public class DotGraphGenerator {
     this.dotCommandWindows = _plus;
     this.workflowFilePath = filePath;
     String name = null;
-    boolean _contains = this.workflowFilePath.contains(".");
+    boolean _contains = this.workflowFilePath.contains("\\");
     if (_contains) {
-      int last = this.workflowFilePath.lastIndexOf(".");
-      name = this.workflowFilePath.substring(0, last);
+      int last = this.workflowFilePath.lastIndexOf("\\");
+      String _substring = this.workflowFilePath.substring(0, last);
+      String _plus_1 = (_substring + "\\");
+      String _name = this.workflow.getName();
+      String _plus_2 = (_plus_1 + _name);
+      name = _plus_2;
     } else {
       name = this.workflowFilePath;
     }
+    InputOutput.<String>println((("[---" + name) + "-------]"));
     this.dotFilePath = (name + ".dot");
     this.pngFilePath = (name + ".png");
     this.pdfFilePath = (name + ".pdf");
@@ -84,13 +90,18 @@ public class DotGraphGenerator {
     this.workflow = workflow;
     this.workflowFilePath = filePath;
     String name = null;
-    boolean _contains = this.workflowFilePath.contains(".");
+    boolean _contains = this.workflowFilePath.contains("\\");
     if (_contains) {
-      int last = this.workflowFilePath.lastIndexOf(".");
-      name = this.workflowFilePath.substring(0, last);
+      int last = this.workflowFilePath.lastIndexOf("\\");
+      String _substring = this.workflowFilePath.substring(0, last);
+      String _plus_1 = (_substring + "\\");
+      String _name = workflow.getName();
+      String _plus_2 = (_plus_1 + _name);
+      name = _plus_2;
     } else {
       name = this.workflowFilePath;
     }
+    InputOutput.<String>println((("---------" + name) + "--------"));
     this.dotFilePath = (name + ".dot");
     this.pngFilePath = (name + ".png");
     this.pdfFilePath = (name + ".pdf");
