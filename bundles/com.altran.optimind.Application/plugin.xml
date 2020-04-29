@@ -137,6 +137,19 @@
             </adapt>
          </enablement>
       </actionProvider>
+      <actionProvider
+            class="com.altran.optimind.ui.action.ExecuteWorkflowActionProvider"
+            id="com.altran.optimind.ui.action.run">
+         <enablement>
+            <adapt
+                  type="org.eclipse.core.resources.IResource">
+               <test
+                     property="org.eclipse.core.resources.name"
+                     value="*.optimind">
+               </test>
+            </adapt>
+         </enablement>
+      </actionProvider>
    </extension>
    <extension
          point="org.eclipse.ui.navigator.viewer">
@@ -148,6 +161,9 @@
             </actionExtension>
             <actionExtension
                   pattern="com.altran.optimind.ui.action.showGraph">
+            </actionExtension>
+            <actionExtension
+                  pattern="com.altran.optimind.ui.action.run">
             </actionExtension>
          </includes>
       </viewerActionBinding>
