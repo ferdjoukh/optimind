@@ -157,8 +157,7 @@ import com.altran.optimind.model.workflow.SimpleTask
 		
 			«««»«FOR basetask : workflow.tasks.filter(BaseTask)»
 			«generateCluster(workflow.baseTask)»
-			«««»«ENDFOR»	
-			
+			«»			
 			//Connections
 			«var allConnections = EcoreUtil2.getAllContentsOfType(workflow, Connection)»
 			
@@ -222,82 +221,82 @@ import com.altran.optimind.model.workflow.SimpleTask
 	
 	def generateStatementCluster(AbstractStatement statement) {
 		'''
-		subgraph cluster«this.cluster++» {
-			style=rounded;
-			fillcolor=white;
-			color=red;
-			margin=20;
-			label = "«IF statement instanceof ForStatement»For"
-			«ELSEIF statement instanceof WhileStatement»While
-			«ELSEIF statement instanceof IfStatement»If"
-			«ELSE»Statement"
-			«ENDIF»
-			
-			«IF statement instanceof ForStatement»
-				"From :«statement.from»"->"To :«statement.to»"->"Incr :«statement.increment»";
-				«IF statement.abstracttask instanceof SimpleTask»
-					«generateTask(statement.abstracttask)»
-				«ELSE»
-					«generateCluster(statement.abstracttask)»
-				«ENDIF»	
-			«ELSEIF statement instanceof WhileStatement»
-				«IF statement.abstracttask instanceof SimpleTask»
-					«generateTask(statement.abstracttask)»
-				«ELSE»
-					«generateCluster(statement.abstracttask)»
-				«ENDIF»	
-			«ELSEIF statement instanceof IfStatement»
-				«var idIfElse = this.ifelse++»
-				subgraph clusterIf«idIfElse» {
-							style=rounded;
-							fillcolor=white;
-							color=red;
-							margin=20;
-							label = THEN
-							
-							«IF statement.then instanceof SimpleTask»
-								«generateTask(statement.then)»
-							«ELSE»
+			subgraph cluster«this.cluster++» {
+				style=rounded;
+				fillcolor=white;
+				color=red;
+				margin=20;
+				label = "«IF statement instanceof ForStatement»For"
+				«ELSEIF statement instanceof WhileStatement»While"
+				«ELSEIF statement instanceof IfStatement»If"
+				«ELSE»Statement"
+				«ENDIF»
+				
+				«IF statement instanceof ForStatement»
+					"From :«statement.from»"->"To :«statement.to»"->"Incr :«statement.increment»";
+					«IF statement.abstracttask instanceof SimpleTask»
+						«generateTask(statement.abstracttask)»
+					«ELSE»
+						«generateCluster(statement.abstracttask)»
+					«ENDIF»	
+				«ELSEIF statement instanceof WhileStatement»
+					«IF statement.abstracttask instanceof SimpleTask»
+						«generateTask(statement.abstracttask)»
+					«ELSE»
+						«generateCluster(statement.abstracttask)»
+					«ENDIF»	
+				«ELSEIF statement instanceof IfStatement»
+					«var idIfElse = this.ifelse++»
+					subgraph clusterIf«idIfElse» {
+								style=rounded;
+								fillcolor=white;
+								color=red;
+								margin=20;
+								label = THEN
+								
+								«IF statement.then instanceof SimpleTask»
+									«generateTask(statement.then)»
+								«ELSE»
 									«generateCluster(statement.then)»
-							«ENDIF»
-				}
-				
-				
-				«IF statement.^else !== null»
-				
-					subgraph clusterElse«idIfElse» {
-										style=rounded;
-										fillcolor=white;
-										color=red;
-										margin=20;
-										label = ELSE
-											
-										«IF statement.^else instanceof SimpleTask»
-											«generateTask(statement.^else)»
-										«ELSE»
-											«generateCluster(statement.^else)»
-										«ENDIF»
-								}
+								«ENDIF»
+					}
 					
+					
+					«IF statement.^else !== null»
+						
+							subgraph clusterElse«idIfElse» {
+												style=rounded;
+												fillcolor=white;
+												color=red;
+												margin=20;
+												label = ELSE
+													
+												«IF statement.^else instanceof SimpleTask»
+													«generateTask(statement.^else)»
+												«ELSE»
+													«generateCluster(statement.^else)»
+												«ENDIF»
+										}
+							
+					«ENDIF»	
 				«ENDIF»	
-			«ENDIF»	
-		}
+			}
 		'''
 	}
 	
 	def taskOutputsHTML(AbstractTask task) {
 		'''
-		«FOR output : task.outputs BEFORE '' SEPARATOR '' AFTER ''»
-			<TD PORT="«output.name»" BGCOLOR="green" BORDER="0">«output.name»</TD>			
-		«ENDFOR»
+			«FOR output : task.outputs BEFORE '' SEPARATOR '' AFTER ''»
+				<TD PORT="«output.name»" BGCOLOR="green" BORDER="0">«output.name»</TD>			
+			«ENDFOR»
 		'''	
 	}
 	
 	def taskInputsHTML(AbstractTask task) {
 		'''
-		«FOR input : task.inputs BEFORE '' SEPARATOR '' AFTER ''»
-			<TD PORT="«input.name»" BGCOLOR="yellow" BORDER="0">«input.name»</TD>			
-		«ENDFOR»
+			«FOR input : task.inputs BEFORE '' SEPARATOR '' AFTER ''»
+				<TD PORT="«input.name»" BGCOLOR="yellow" BORDER="0">«input.name»</TD>			
+			«ENDFOR»
 		'''	
 	}
 	
@@ -311,21 +310,21 @@ import com.altran.optimind.model.workflow.SimpleTask
 	
 	def taskOutputs(AbstractTask task) {
 		'''
-		{
-		«FOR output : task.outputs BEFORE '' SEPARATOR '|' AFTER ''»
-			<«output.name»> «output.name»
-		«ENDFOR»
-		}
+			{
+			«FOR output : task.outputs BEFORE '' SEPARATOR '|' AFTER ''»
+				<«output.name»> «output.name»
+			«ENDFOR»
+			}
 		'''	
 	}
 	
 	def taskInputs(AbstractTask task) {
 		'''
-		{
-		«FOR input : task.inputs BEFORE '' SEPARATOR '|' AFTER ''»
-			<«input.name»> «input.name»
-		«ENDFOR»
-		}
+			{
+			«FOR input : task.inputs BEFORE '' SEPARATOR '|' AFTER ''»
+				<«input.name»> «input.name»
+			«ENDFOR»
+			}
 		'''	
 	}
 	

@@ -401,7 +401,7 @@ public class DotGraphGenerator {
         _builder.append("\t");
       } else {
         if ((statement instanceof WhileStatement)) {
-          _builder.append("While");
+          _builder.append("While\"");
           _builder.newLineIfNotEmpty();
           _builder.append("\t");
         } else {
