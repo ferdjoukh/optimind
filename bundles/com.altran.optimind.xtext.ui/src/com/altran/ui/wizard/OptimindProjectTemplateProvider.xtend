@@ -21,7 +21,7 @@ import static org.eclipse.core.runtime.IStatus.*
  */
 class OptimindProjectTemplateProvider implements IProjectTemplateProvider {
 	override getProjectTemplates() {
-		#[new HelloWorldProject] 
+		#[new HelloWorldProject, new LoopProject]; 
 	}
 }
 
@@ -67,6 +67,103 @@ final class HelloWorldProject {
 			''')
 			addFile('''src/scripts/«workflow».py''', '''
 				
+			''')
+		])
+	}
+}
+
+@ProjectTemplate(label="Loop Workflow", icon="project_template.png", description="<p><b>Loop Workflow</b></p>
+<p>This is an example of loop usage in the workflow you can create with Optimind. It contains an example of a For Loop an a While Loop.</p>")
+final class LoopProject {
+	val advanced = check("Advanced:", false)
+	val advancedGroup = group("Properties")
+	val workflow = text("Workflow name:", "loopExample", advancedGroup) 
+	val path = text("Package:", "workflow", "The package path to place the files in", advancedGroup)
+
+	override protected updateVariables() {
+		workflow.enabled = advanced.value
+		path.enabled = advanced.value
+		if (!advanced.value) {
+			workflow.value = "loopExample"
+			path.value = "workflow"
+		}
+	}
+
+	override protected validate() {
+		if (path.value.matches('[a-z][a-z0-9_]*(/[a-z][a-z0-9_]*)*'))
+			null
+		else
+			new Status(ERROR, "Wizard", "'" + path + "' is not a valid package name")
+	}
+
+	override generateProjects(IProjectGenerator generator) {
+		generator.generate(new PluginProjectFactory => [
+			projectName = projectInfo.projectName
+			location = projectInfo.locationPath
+			projectNatures += #[JavaCore.NATURE_ID, "org.eclipse.pde.PluginNature", XtextProjectHelper.NATURE_ID]
+			builderIds += #[JavaCore.BUILDER_ID, XtextProjectHelper.BUILDER_ID]
+			folders += "src"
+			addFile('''src/«path»/«workflow».optimind''', '''
+				Workflow loopExample {
+					Language Java
+					BaseTask principalBaseTask {
+						
+						Task independantTask{
+							runner "independantTask.java"
+						}
+						
+						BaseTask loopBaseTask {
+							
+							Task task1 { 
+								Output map type File
+								Output flow type File
+								Output configuration type File  
+								runner "task1.java"
+							}
+							
+							Task task2 {
+								Connection map to "task1.map"
+								Connection flow to "task1.flow"
+								Connection testOutput to "loopBaseTask.whileLoopExample.whileTask.whileLoopOutput"
+								Output stats type File 
+								runner "task2.java"
+							}
+							
+							Task task3 {
+								Connection stats to "loopBaseTask.task2.stats"
+								runner "task3.java"
+							}
+							
+							While whileLoopExample{
+								condition "testOutput.isEmpty() = true "
+								do Task whileTask{
+									Connection config to "task1.configuration"
+									Output whileLoopOutput type File
+									runner "myTasks.java"
+								}
+							}
+							
+							For forLoopExample{
+								from 1
+								to 10
+								increment 2
+								do Task forLoopTask{
+									runner "forLoopTask.java"
+								}
+							}
+									
+							If ifStatementExample{
+								condition "[].isEmpty() = true"
+								then Task ifStatementTask{
+									runner "ifStatementTask.java"
+								}
+							}
+						}		
+					}
+				}
+			''')
+			addFile('''src/scripts/«workflow».java''', '''
+			
 			''')
 		])
 	}
