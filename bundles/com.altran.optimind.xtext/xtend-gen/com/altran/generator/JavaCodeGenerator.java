@@ -4,9 +4,11 @@ import com.altran.optimind.model.workflow.AbstractTask;
 import com.altran.optimind.model.workflow.BaseTask;
 import com.altran.optimind.model.workflow.Connection;
 import com.altran.optimind.model.workflow.CustomTask;
+import com.altran.optimind.model.workflow.ForStatement;
 import com.altran.optimind.model.workflow.LibraryFunction;
 import com.altran.optimind.model.workflow.LibraryTask;
 import com.altran.optimind.model.workflow.Setter;
+import com.altran.optimind.model.workflow.WhileStatement;
 import com.altran.optimind.model.workflow.Workflow;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -42,11 +44,21 @@ public class JavaCodeGenerator {
   }
   
   public String generateLoopCode() {
-    throw new Error("Unresolved compilation problems:"
-      + "\nThe method or field libraryFunction is undefined"
-      + "\nThe method or field libraryFunction is undefined"
-      + "\nname cannot be resolved"
-      + "\nname cannot be resolved");
+    StringConcatenation _builder = new StringConcatenation();
+    List<ForStatement> allloopFor = EcoreUtil2.<ForStatement>getAllContentsOfType(this.workflow, ForStatement.class);
+    _builder.newLineIfNotEmpty();
+    List<WhileStatement> allloopWhile = EcoreUtil2.<WhileStatement>getAllContentsOfType(this.workflow, WhileStatement.class);
+    _builder.newLineIfNotEmpty();
+    _builder.newLine();
+    {
+      for(final ForStatement loop : allloopFor) {
+        _builder.append("\t");
+        _builder.newLine();
+      }
+    }
+    _builder.newLine();
+    _builder.newLine();
+    return _builder.toString();
   }
   
   public String generateFileContent() {

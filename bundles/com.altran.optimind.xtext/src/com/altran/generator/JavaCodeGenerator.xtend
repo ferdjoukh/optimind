@@ -38,7 +38,7 @@ import com.altran.optimind.model.workflow.WhileStatement
 			«var allloopWhile = EcoreUtil2.getAllContentsOfType(workflow, WhileStatement)»
 			
 			«FOR loop : allloopFor» 
-				«libraryFunction.name» m_«libraryFunction.name»;
+				
 			«ENDFOR»
 			
 			
