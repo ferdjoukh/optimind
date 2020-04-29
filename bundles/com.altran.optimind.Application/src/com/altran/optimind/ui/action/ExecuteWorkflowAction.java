@@ -33,6 +33,6 @@ public class ExecuteWorkflowAction extends Action{
 	
 	@Override
 	public void run() {
-		System.out.println("J'exécute le workflow !!!");
+		System.out.println("J'exÃ©cute le workflow !!!");
 	}
 }
