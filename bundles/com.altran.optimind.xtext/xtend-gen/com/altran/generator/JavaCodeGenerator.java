@@ -4,11 +4,9 @@ import com.altran.optimind.model.workflow.AbstractTask;
 import com.altran.optimind.model.workflow.BaseTask;
 import com.altran.optimind.model.workflow.Connection;
 import com.altran.optimind.model.workflow.CustomTask;
-import com.altran.optimind.model.workflow.ForStatement;
 import com.altran.optimind.model.workflow.LibraryFunction;
 import com.altran.optimind.model.workflow.LibraryTask;
 import com.altran.optimind.model.workflow.Setter;
-import com.altran.optimind.model.workflow.WhileStatement;
 import com.altran.optimind.model.workflow.Workflow;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -43,24 +41,6 @@ public class JavaCodeGenerator {
     this.writeContent(this.generateFileContent());
   }
   
-  public String generateLoopCode() {
-    StringConcatenation _builder = new StringConcatenation();
-    List<ForStatement> allloopFor = EcoreUtil2.<ForStatement>getAllContentsOfType(this.workflow, ForStatement.class);
-    _builder.newLineIfNotEmpty();
-    List<WhileStatement> allloopWhile = EcoreUtil2.<WhileStatement>getAllContentsOfType(this.workflow, WhileStatement.class);
-    _builder.newLineIfNotEmpty();
-    _builder.newLine();
-    {
-      for(final ForStatement loop : allloopFor) {
-        _builder.append("\t");
-        _builder.newLine();
-      }
-    }
-    _builder.newLine();
-    _builder.newLine();
-    return _builder.toString();
-  }
-  
   public String generateFileContent() {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("// ==================================================================================================");
@@ -69,10 +49,12 @@ public class JavaCodeGenerator {
     _builder.newLine();
     _builder.append("// ==================================================================================================");
     _builder.newLine();
+    _builder.append("\t");
     _builder.newLine();
     String _generateImports = this.generateImports();
     _builder.append(_generateImports);
     _builder.newLineIfNotEmpty();
+    _builder.append("\t");
     _builder.newLine();
     _builder.append("// ==================================================================================================");
     _builder.newLine();
@@ -90,8 +72,9 @@ public class JavaCodeGenerator {
     _builder.newLine();
     _builder.append("}");
     _builder.newLine();
-    _builder.newLine();
     _builder.append("\t");
+    _builder.newLine();
+    _builder.append("\t\t");
     _builder.newLine();
     return _builder.toString();
   }
@@ -100,9 +83,11 @@ public class JavaCodeGenerator {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("package workflow;");
     _builder.newLine();
+    _builder.append("\t");
     _builder.newLine();
     _builder.append("import scripts.*; ");
     _builder.newLine();
+    _builder.append("\t");
     _builder.newLine();
     return _builder.toString();
   }

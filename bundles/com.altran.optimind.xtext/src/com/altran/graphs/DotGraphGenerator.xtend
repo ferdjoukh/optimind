@@ -49,14 +49,14 @@ import com.altran.optimind.model.workflow.SimpleTask
 		this.workflowFilePath = filePath;
 		var String name
 		
-		if (workflowFilePath.contains(".")) {
-			var int last = workflowFilePath.lastIndexOf(".");
-			name = workflowFilePath.substring(0, last);
+		if (workflowFilePath.contains("\\")) {
+			var int last = workflowFilePath.lastIndexOf("\\");
+			name = workflowFilePath.substring(0, last) + "\\" + workflow.name;
 			//String extension = workflowFilePath.substring(last+1);
 		}else {
 			name = workflowFilePath;
 		}
-		
+		println("[---" + name + "-------]");
 		this.dotFilePath = name + ".dot";	
 		this.pngFilePath = name + ".png";
 		this.pdfFilePath = name + ".pdf";
@@ -70,14 +70,15 @@ import com.altran.optimind.model.workflow.SimpleTask
 		this.workflowFilePath = filePath;
 		var String name
 		
-		if (workflowFilePath.contains(".")) {
-			var int last = workflowFilePath.lastIndexOf(".");
-			name = workflowFilePath.substring(0, last);
+		if (workflowFilePath.contains("\\")) {
+			var int last = workflowFilePath.lastIndexOf("\\");
+			name = workflowFilePath.substring(0, last) + "\\" + workflow.name;
 			//String extension = workflowFilePath.substring(last+1);
 		}else {
 			name = workflowFilePath;
 		}
 		
+		println("---------"+name+"--------");
 		this.dotFilePath = name + ".dot";	
 		this.pngFilePath = name + ".png";
 		this.pdfFilePath = name + ".pdf";

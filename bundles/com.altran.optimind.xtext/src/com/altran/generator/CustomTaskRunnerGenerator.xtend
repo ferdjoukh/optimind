@@ -11,6 +11,9 @@ import com.altran.optimind.model.workflow.TaskInput
 import com.altran.optimind.model.workflow.Setter
 import com.altran.optimind.model.workflow.Connection
 import com.altran.optimind.model.workflow.Language
+import com.altran.optimind.model.workflow.WhileStatement
+import com.altran.optimind.model.workflow.AbstractTask
+import com.altran.optimind.model.workflow.ForStatement
 
 class CustomTaskRunnerGenerator {
 	
@@ -41,49 +44,81 @@ class CustomTaskRunnerGenerator {
 		else
 		{
 			writeContent( generateLibraryTaskFile(task), scriptsPackagePath+task.name+"."+"java")
+			for (WhileStatement loop : EcoreUtil2.getAllContentsOfType(workflow, WhileStatement))
+			{
+				writeContent(generateLoopCodeWhile(loop), scriptsPackagePath+loop.name+"."+"java")
+			} 	
 		}	
+	}
+	
+	
+	def String generateLoopCodeWhile(WhileStatement loop)
+	{
+		
+		'''		
+		package scripts;			
+		// ==================================================================================================
+		public class «loop.name» 
+		// ==================================================================================================
+		{
+			//generateClassContent»
+			«var AbstractTask task = loop.abstracttask»
+			«task.name» m_«task.name»;
+			 					
+			public «task.name» getTask() { return m_«task.name» ;}
+			 					
+			public boolean verify()
+			{
+				//Here you can write your code
+				return true;	
+			}
+			 					
+			 	
+		}					
+
+		'''
 	}
 	
 	def String generateLibraryTaskFile(CustomTask task){
 		'''
-			package scripts;
-			import java.io.File;
-				// ==================================================================================================
-				// MODULE IMPORT
-				// ==================================================================================================
+		package scripts;
+		import java.io.File;
+		// ==================================================================================================
+		// MODULE IMPORT
+		// ==================================================================================================
 										
-				// ==================================================================================================
-				// ==================================================================================================
-				public class «task.name» 
-				// ==================================================================================================
-				{
-					//All Inputs 
-					«var allSetter = EcoreUtil2.getAllContentsOfType(task, Setter)»
-					«FOR setter : allSetter»
-						private «setter.typeAsString» «setter.name» = «setter.valueAsString»;
-						public void set_«setter.name»(«setter.typeAsString» value) {this.«setter.name» = value;} ; 										
-						public «setter.typeAsString» get_«setter.name»() {return this.«setter.name»;}; 
+		// ==================================================================================================
+		// ==================================================================================================
+		public class «task.name» 
+		// ==================================================================================================
+		{
+			//All Inputs 
+			«var allSetter = EcoreUtil2.getAllContentsOfType(task, Setter)»
+			«FOR setter : allSetter»
+			private «setter.typeAsString» «setter.name» = «setter.valueAsString»;
+			public void set_«setter.name»(«setter.typeAsString» value) {this.«setter.name» = value;} ; 										
+			public «setter.typeAsString» get_«setter.name»() {return this.«setter.name»;}; 
+						
+			«ENDFOR»
 				
-				«ENDFOR»
+			//All Outputs 
+			«FOR otput : task.outputs»
+			private «otput.typeAsString» «otput.name»;
+			public void set_«otput.name»(«otput.typeAsString» value) {this.«otput.name» = value;} ; 										
+			public «otput.typeAsString» get_«otput.name»() {return this.«otput.name»;}; 
+						
+			«ENDFOR»
+			«var allConnection = EcoreUtil2.getAllContentsOfType(task, Connection)»
+			«FOR connection : allConnection»
+						
+			«ENDFOR»
 				
-				//All Outputs 
-				«FOR otput : task.outputs»
-					private «otput.typeAsString» «otput.name»;
-					public void set_«otput.name»(«otput.typeAsString» value) {this.«otput.name» = value;} ; 										
-					public «otput.typeAsString» get_«otput.name»() {return this.«otput.name»;}; 
+			public void run(){
+				//Write your code after this line
 					
-					«ENDFOR»
-					«var allConnection = EcoreUtil2.getAllContentsOfType(task, Connection)»
-					«FOR connection : allConnection»
-						
-						«ENDFOR»
-						
-						public void run(){
-						//Write you code here to execute 
-							
-							}
-						}
-						
+			}
+		}
+				
 		'''
 	}
 	
