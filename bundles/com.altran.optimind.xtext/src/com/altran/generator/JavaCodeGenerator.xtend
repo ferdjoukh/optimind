@@ -14,6 +14,7 @@ import com.altran.optimind.model.workflow.Connection
 import com.altran.optimind.model.workflow.Setter
 import com.altran.optimind.model.workflow.ForStatement
 import com.altran.optimind.model.workflow.WhileStatement
+import org.eclipse.emf.ecore.EObject
 
 @Accessors class JavaCodeGenerator {
 	
@@ -28,37 +29,25 @@ import com.altran.optimind.model.workflow.WhileStatement
 	
 	def generate() {
 		writeContent(generateFileContent)
-		
 	}
 	
-	def String generateLoopCode()
-	{
-		'''
-			«var allloopFor = EcoreUtil2.getAllContentsOfType(workflow, ForStatement)»
-			«var allloopWhile = EcoreUtil2.getAllContentsOfType(workflow, WhileStatement)»
-			
-			«FOR loop : allloopFor» 
-				
-			«ENDFOR»
-						
-		'''
-	}
+	
 	
 	def String generateFileContent() {
 
 		'''
-			// ==================================================================================================
-			// MODULE IMPORT
-			// ==================================================================================================
+		// ==================================================================================================
+		// MODULE IMPORT
+		// ==================================================================================================
 			
-			«generateImports»
+		«generateImports»
 			
-			// ==================================================================================================
-			public class «workflow.name» 
-			// ==================================================================================================
-			{
-				//generateClassContent»
-			}
+		// ==================================================================================================
+		public class «workflow.name» 
+		// ==================================================================================================
+		{
+			//generateClassContent»
+		}
 			
 				
 		'''
@@ -66,9 +55,9 @@ import com.altran.optimind.model.workflow.WhileStatement
 	
 	def String generateImports() {
 		'''
-			package workflow;
+		package workflow;
 			
-			import scripts.*; 
+		import scripts.*; 
 			
 		'''
 	}

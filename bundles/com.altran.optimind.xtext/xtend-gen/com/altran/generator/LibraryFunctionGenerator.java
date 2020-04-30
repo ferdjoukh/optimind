@@ -3,12 +3,14 @@ package com.altran.generator;
 import com.altran.optimind.model.workflow.AbstractTask;
 import com.altran.optimind.model.workflow.BaseTask;
 import com.altran.optimind.model.workflow.Connection;
+import com.altran.optimind.model.workflow.ForStatement;
 import com.altran.optimind.model.workflow.Input;
 import com.altran.optimind.model.workflow.Language;
 import com.altran.optimind.model.workflow.LibraryFunction;
 import com.altran.optimind.model.workflow.LibraryTask;
 import com.altran.optimind.model.workflow.Setter;
 import com.altran.optimind.model.workflow.TaskOutput;
+import com.altran.optimind.model.workflow.WhileStatement;
 import com.altran.optimind.model.workflow.Workflow;
 import com.google.common.base.Objects;
 import java.io.BufferedWriter;
@@ -54,8 +56,7 @@ public class LibraryFunctionGenerator {
     }
   }
   
-  public String createLibFunctionFile(final LibraryFunction function) {
-    String _xifexpression = null;
+  public void createLibFunctionFile(final LibraryFunction function) {
     boolean _equals = Objects.equal(this.language, Language.PYTHON);
     if (_equals) {
       String _generateFilePythonContent = this.generateFilePythonContent(function);
@@ -65,180 +66,249 @@ public class LibraryFunctionGenerator {
       String _plus_2 = (_plus_1 + "py");
       this.writeContent(_generateFilePythonContent, _plus_2);
     } else {
-      String _xblockexpression = null;
-      {
-        String _generateFileJavaContent = this.generateFileJavaContent(function);
-        String _name_1 = function.getName();
-        String _plus_3 = (this.libraryFunctionPackagePath + _name_1);
-        String _plus_4 = (_plus_3 + ".");
-        String _plus_5 = (_plus_4 + "java");
-        this.writeContent(_generateFileJavaContent, _plus_5);
-        _xblockexpression = this.generateTaskFile(this.workflow.getBaseTask());
+      String _generateFileJavaContent = this.generateFileJavaContent(function);
+      String _name_1 = function.getName();
+      String _plus_3 = (this.libraryFunctionPackagePath + _name_1);
+      String _plus_4 = (_plus_3 + ".");
+      String _plus_5 = (_plus_4 + "java");
+      this.writeContent(_generateFileJavaContent, _plus_5);
+      this.generateTaskFile(this.workflow.getBaseTask());
+      List<WhileStatement> _allContentsOfType = EcoreUtil2.<WhileStatement>getAllContentsOfType(this.workflow, WhileStatement.class);
+      for (final WhileStatement loop : _allContentsOfType) {
+        String _generateLoopCodeWhile = this.generateLoopCodeWhile(loop);
+        String _name_2 = loop.getName();
+        String _plus_6 = (this.libraryFunctionPackagePath + _name_2);
+        String _plus_7 = (_plus_6 + ".");
+        String _plus_8 = (_plus_7 + "java");
+        this.writeContent(_generateLoopCodeWhile, _plus_8);
       }
-      _xifexpression = _xblockexpression;
     }
-    return _xifexpression;
   }
   
   public String generateLibraryTaskFile(final LibraryTask task) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("package scripts;");
     _builder.newLine();
-    _builder.append("\t");
     _builder.append("// ==================================================================================================");
     _builder.newLine();
-    _builder.append("\t");
     _builder.append("// MODULE IMPORT");
     _builder.newLine();
-    _builder.append("\t");
     _builder.append("// ==================================================================================================");
     _builder.newLine();
-    _builder.append("\t\t\t\t\t\t\t");
+    _builder.append("\t\t\t\t\t\t\t\t");
     _builder.newLine();
-    _builder.append("\t");
     _builder.append("// ==================================================================================================");
     _builder.newLine();
-    _builder.append("\t");
     _builder.append("// ==================================================================================================");
     _builder.newLine();
-    _builder.append("\t");
     _builder.append("public class ");
     String _name = task.getName();
-    _builder.append(_name, "\t");
+    _builder.append(_name);
     _builder.append(" ");
     _builder.newLineIfNotEmpty();
-    _builder.append("\t");
     _builder.append("// ==================================================================================================");
     _builder.newLine();
-    _builder.append("\t");
     _builder.append("{");
     _builder.newLine();
-    _builder.append("\t\t");
+    _builder.append("\t");
     _builder.append("//All Inputs ");
     _builder.newLine();
-    _builder.append("\t\t");
+    _builder.append("\t");
     List<Setter> allSetter = EcoreUtil2.<Setter>getAllContentsOfType(task, Setter.class);
     _builder.newLineIfNotEmpty();
     {
       for(final Setter setter : allSetter) {
-        _builder.append("\t\t");
+        _builder.append("\t");
         _builder.append("private ");
         String _typeAsString = setter.getTypeAsString();
-        _builder.append(_typeAsString, "\t\t");
+        _builder.append(_typeAsString, "\t");
         _builder.append(" ");
         String _name_1 = setter.getName();
-        _builder.append(_name_1, "\t\t");
+        _builder.append(_name_1, "\t");
         _builder.append(" = ");
         String _valueAsString = setter.getValueAsString();
-        _builder.append(_valueAsString, "\t\t");
+        _builder.append(_valueAsString, "\t");
         _builder.append(";");
         _builder.newLineIfNotEmpty();
-        _builder.append("\t\t");
+        _builder.append("\t");
         _builder.append("public void set_");
         String _name_2 = setter.getName();
-        _builder.append(_name_2, "\t\t");
+        _builder.append(_name_2, "\t");
         _builder.append("(");
         String _typeAsString_1 = setter.getTypeAsString();
-        _builder.append(_typeAsString_1, "\t\t");
+        _builder.append(_typeAsString_1, "\t");
         _builder.append(" value) {this.");
         String _name_3 = setter.getName();
-        _builder.append(_name_3, "\t\t");
+        _builder.append(_name_3, "\t");
         _builder.append(" = value;} ; \t\t\t\t\t\t\t\t\t\t");
         _builder.newLineIfNotEmpty();
-        _builder.append("\t\t");
+        _builder.append("\t");
         _builder.append("public ");
         String _typeAsString_2 = setter.getTypeAsString();
-        _builder.append(_typeAsString_2, "\t\t");
+        _builder.append(_typeAsString_2, "\t");
         _builder.append(" get_");
         String _name_4 = setter.getName();
-        _builder.append(_name_4, "\t\t");
+        _builder.append(_name_4, "\t");
         _builder.append("() {return this.");
         String _name_5 = setter.getName();
-        _builder.append(_name_5, "\t\t");
+        _builder.append(_name_5, "\t");
         _builder.append(";}; ");
         _builder.newLineIfNotEmpty();
-        _builder.append("\t\t");
+        _builder.append("\t");
+        _builder.append("\t\t\t");
         _builder.newLine();
       }
     }
-    _builder.append("\t");
-    _builder.newLine();
     _builder.append("\t\t");
+    _builder.newLine();
+    _builder.append("\t");
     _builder.append("//All Outputs ");
     _builder.newLine();
     {
       EList<TaskOutput> _outputs = task.getOutputs();
       for(final TaskOutput otput : _outputs) {
-        _builder.append("\t\t");
+        _builder.append("\t");
         _builder.append("private ");
         String _typeAsString_3 = otput.getTypeAsString();
-        _builder.append(_typeAsString_3, "\t\t");
+        _builder.append(_typeAsString_3, "\t");
         _builder.append(" ");
         String _name_6 = otput.getName();
-        _builder.append(_name_6, "\t\t");
+        _builder.append(_name_6, "\t");
         _builder.append(" = ");
         String _name_7 = task.getLibraryfunction().getName();
-        _builder.append(_name_7, "\t\t");
+        _builder.append(_name_7, "\t");
         _builder.append(".");
         String _name_8 = otput.getName();
-        _builder.append(_name_8, "\t\t");
+        _builder.append(_name_8, "\t");
         _builder.append("(this);");
         _builder.newLineIfNotEmpty();
-        _builder.append("\t\t");
+        _builder.append("\t");
         _builder.append("public void set_");
         String _name_9 = otput.getName();
-        _builder.append(_name_9, "\t\t");
+        _builder.append(_name_9, "\t");
         _builder.append("(");
         String _typeAsString_4 = otput.getTypeAsString();
-        _builder.append(_typeAsString_4, "\t\t");
+        _builder.append(_typeAsString_4, "\t");
         _builder.append(" value) {this.");
         String _name_10 = otput.getName();
-        _builder.append(_name_10, "\t\t");
+        _builder.append(_name_10, "\t");
         _builder.append(" = value;} ; \t\t\t\t\t\t\t\t\t\t");
         _builder.newLineIfNotEmpty();
-        _builder.append("\t\t");
+        _builder.append("\t");
         _builder.append("public ");
         String _typeAsString_5 = otput.getTypeAsString();
-        _builder.append(_typeAsString_5, "\t\t");
+        _builder.append(_typeAsString_5, "\t");
         _builder.append(" get_");
         String _name_11 = otput.getName();
-        _builder.append(_name_11, "\t\t");
+        _builder.append(_name_11, "\t");
         _builder.append("() {return this.");
         String _name_12 = otput.getName();
-        _builder.append(_name_12, "\t\t");
+        _builder.append(_name_12, "\t");
         _builder.append(";}; ");
         _builder.newLineIfNotEmpty();
-        _builder.append("\t\t");
-        _builder.newLine();
-      }
-    }
-    _builder.append("\t\t");
-    List<Connection> allConnection = EcoreUtil2.<Connection>getAllContentsOfType(task, Connection.class);
-    _builder.newLineIfNotEmpty();
-    {
-      for(final Connection connection : allConnection) {
-        _builder.append("\t\t");
         _builder.append("\t");
+        _builder.append("\t\t\t");
         _builder.newLine();
       }
     }
     _builder.append("\t");
-    _builder.newLine();
+    List<Connection> allConnection = EcoreUtil2.<Connection>getAllContentsOfType(task, Connection.class);
+    _builder.newLineIfNotEmpty();
+    {
+      for(final Connection connection : allConnection) {
+        _builder.append("\t");
+        _builder.append("\t\t\t");
+        _builder.newLine();
+      }
+    }
     _builder.append("\t\t");
+    _builder.newLine();
+    _builder.append("\t");
     _builder.append("public void run(){");
     _builder.newLine();
     _builder.append("\t\t");
     _builder.append("//Write your code after this line ");
     _builder.newLine();
+    _builder.append("\t\t");
+    _builder.newLine();
     _builder.append("\t");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.append("}");
     _builder.newLine();
     _builder.append("\t\t");
-    _builder.append("}");
+    _builder.newLine();
+    return _builder.toString();
+  }
+  
+  public String generateLoopCodeFor() {
+    StringConcatenation _builder = new StringConcatenation();
+    List<ForStatement> allloopFor = EcoreUtil2.<ForStatement>getAllContentsOfType(this.workflow, ForStatement.class);
+    _builder.newLineIfNotEmpty();
+    return _builder.toString();
+  }
+  
+  public String generateLoopCodeWhile(final WhileStatement loop) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("package scripts;\t");
+    _builder.newLine();
+    _builder.append("// ==================================================================================================");
+    _builder.newLine();
+    _builder.append("public class ");
+    String _name = loop.getName();
+    _builder.append(_name);
+    _builder.append(" ");
+    _builder.newLineIfNotEmpty();
+    _builder.append("// ==================================================================================================");
+    _builder.newLine();
+    _builder.append("{");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("//generateClassContent»");
+    _builder.newLine();
+    _builder.append("\t");
+    AbstractTask task = loop.getAbstracttask();
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t");
+    String _typeName = task.getClass().getTypeName();
+    _builder.append(_typeName, "\t");
+    _builder.append(" ");
+    String _name_1 = task.getName();
+    _builder.append(_name_1, "\t");
+    _builder.append(";");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t \t\t\t\t\t");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("public ");
+    String _typeName_1 = task.getClass().getTypeName();
+    _builder.append(_typeName_1, "\t");
+    _builder.append(" getTask() { return ");
+    String _name_2 = task.getName();
+    _builder.append(_name_2, "\t");
+    _builder.append(" ;}");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t \t\t\t\t\t");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("public boolean verify()");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("{");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("//Here you can write your code");
+    _builder.newLine();
+    _builder.append("\t \t");
+    _builder.append("return true;\t\t\t \t\t\t\t\t\t");
     _builder.newLine();
     _builder.append("\t");
     _builder.append("}");
     _builder.newLine();
-    _builder.append("\t");
+    _builder.append("\t \t\t\t\t\t");
+    _builder.newLine();
+    _builder.append("}\t\t\t\t\t");
+    _builder.newLine();
     _builder.newLine();
     return _builder.toString();
   }
@@ -286,9 +356,11 @@ public class LibraryFunctionGenerator {
     _builder.newLine();
     _builder.append("// ==================================================================================================");
     _builder.newLine();
+    _builder.append("\t");
     _builder.newLine();
     _builder.append("// ==================================================================================================");
     _builder.newLine();
+    _builder.append("\t");
     _builder.newLine();
     _builder.append("// ==================================================================================================");
     _builder.newLine();
@@ -301,10 +373,13 @@ public class LibraryFunctionGenerator {
     _builder.newLine();
     _builder.append("{");
     _builder.newLine();
+    _builder.append("\t");
     _builder.newLine();
+    _builder.append("\t");
     _builder.newLine();
     _builder.append("}");
     _builder.newLine();
+    _builder.append("\t");
     _builder.newLine();
     return _builder.toString();
   }
@@ -319,7 +394,7 @@ public class LibraryFunctionGenerator {
     _builder.newLine();
     _builder.append("// ==================================================================================================");
     _builder.newLine();
-    _builder.append("\t\t\t\t\t\t");
+    _builder.append("\t\t\t\t\t\t\t");
     _builder.newLine();
     _builder.append("// ==================================================================================================");
     _builder.newLine();
@@ -371,22 +446,20 @@ public class LibraryFunctionGenerator {
     _builder.append(outputName, "\t");
     _builder.append(" (Object task) {");
     _builder.newLineIfNotEmpty();
-    _builder.append("\t");
+    _builder.append("\t\t");
     _builder.newLine();
-    _builder.append("\t");
+    _builder.append("\t\t");
     _builder.append("// Write your code after this line ");
     _builder.newLine();
-    _builder.append("\t");
+    _builder.append("\t\t");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("return 0;\t\t\t\t");
     _builder.newLine();
     _builder.append("\t");
-    _builder.append("return 0;");
+    _builder.append("}\t");
     _builder.newLine();
-    _builder.append("\t");
-    _builder.newLine();
-    _builder.append("\t");
-    _builder.append("}");
-    _builder.newLine();
-    _builder.append("\t");
+    _builder.append("\t\t");
     _builder.newLine();
     _builder.append("\t");
     {
@@ -410,7 +483,7 @@ public class LibraryFunctionGenerator {
       }
     }
     _builder.newLineIfNotEmpty();
-    _builder.append("\t");
+    _builder.append("\t\t");
     _builder.newLine();
     _builder.append("\t");
     {
@@ -434,13 +507,10 @@ public class LibraryFunctionGenerator {
       }
     }
     _builder.newLineIfNotEmpty();
-    _builder.append("\t");
+    _builder.append("\t\t");
     _builder.newLine();
     _builder.append("}");
     _builder.newLine();
-    _builder.append("\t\t\t\t\t\t\t");
-    _builder.newLine();
-    _builder.append("\t\t");
     _builder.newLine();
     return _builder.toString();
   }

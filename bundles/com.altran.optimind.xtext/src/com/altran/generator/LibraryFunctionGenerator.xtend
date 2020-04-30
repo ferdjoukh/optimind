@@ -15,6 +15,9 @@ import com.altran.optimind.model.workflow.BaseTask
 import com.altran.optimind.model.workflow.Connection
 import org.eclipse.xtext.EcoreUtil2
 import com.altran.optimind.model.workflow.CustomTask
+import com.altran.optimind.model.workflow.AbstractTask
+import com.altran.optimind.model.workflow.WhileStatement
+import com.altran.optimind.model.workflow.ForStatement
 
 class LibraryFunctionGenerator {
 	
@@ -49,51 +52,92 @@ class LibraryFunctionGenerator {
 		}
 		else
 		{
+			
 			writeContent( generateFileJavaContent(function), libraryFunctionPackagePath+function.name+"."+"java")
 			generateTaskFile(workflow.baseTask)
+			for (WhileStatement loop : EcoreUtil2.getAllContentsOfType(workflow, WhileStatement))
+			{
+				writeContent(generateLoopCodeWhile(loop), libraryFunctionPackagePath+loop.name+"."+"java")
+			} 				
+			
 		}	
 		
 	}
 	
 	def String generateLibraryTaskFile(LibraryTask task){
 		'''
-			package scripts;
-				// ==================================================================================================
-				// MODULE IMPORT
-				// ==================================================================================================
+		package scripts;
+		// ==================================================================================================
+		// MODULE IMPORT
+		// ==================================================================================================
 										
-				// ==================================================================================================
-				// ==================================================================================================
-				public class «task.name» 
-				// ==================================================================================================
-				{
-					//All Inputs 
-					«var allSetter = EcoreUtil2.getAllContentsOfType(task, Setter)»
-					«FOR setter : allSetter»
-						private «setter.typeAsString» «setter.name» = «setter.valueAsString»;
-						public void set_«setter.name»(«setter.typeAsString» value) {this.«setter.name» = value;} ; 										
-						public «setter.typeAsString» get_«setter.name»() {return this.«setter.name»;}; 
+		// ==================================================================================================
+		// ==================================================================================================
+		public class «task.name» 
+		// ==================================================================================================
+		{
+			//All Inputs 
+			«var allSetter = EcoreUtil2.getAllContentsOfType(task, Setter)»
+			«FOR setter : allSetter»
+			private «setter.typeAsString» «setter.name» = «setter.valueAsString»;
+			public void set_«setter.name»(«setter.typeAsString» value) {this.«setter.name» = value;} ; 										
+			public «setter.typeAsString» get_«setter.name»() {return this.«setter.name»;}; 
 						
-					«ENDFOR»
+			«ENDFOR»
 				
-					//All Outputs 
-					«FOR otput : task.outputs»
-						private «otput.typeAsString» «otput.name» = «task.libraryfunction.name».«otput.name»(this);
-						public void set_«otput.name»(«otput.typeAsString» value) {this.«otput.name» = value;} ; 										
-						public «otput.typeAsString» get_«otput.name»() {return this.«otput.name»;}; 
+			//All Outputs 
+			«FOR otput : task.outputs»
+			private «otput.typeAsString» «otput.name» = «task.libraryfunction.name».«otput.name»(this);
+			public void set_«otput.name»(«otput.typeAsString» value) {this.«otput.name» = value;} ; 										
+			public «otput.typeAsString» get_«otput.name»() {return this.«otput.name»;}; 
 						
-					«ENDFOR»
-					«var allConnection = EcoreUtil2.getAllContentsOfType(task, Connection)»
-					«FOR connection : allConnection»
+			«ENDFOR»
+			«var allConnection = EcoreUtil2.getAllContentsOfType(task, Connection)»
+			«FOR connection : allConnection»
 						
-					«ENDFOR»
+			«ENDFOR»
 				
-					public void run(){
-					//Write your code after this line 
+			public void run(){
+				//Write your code after this line 
 				
-					}
-				}
+			}
+		}
 				
+		'''
+	}
+	
+	
+	def String generateLoopCodeFor()
+	{
+		'''
+		«var allloopFor = EcoreUtil2.getAllContentsOfType(workflow, ForStatement)»
+		'''
+		
+	}
+	
+	def String generateLoopCodeWhile(WhileStatement loop)
+	{
+		
+		'''				
+		package scripts;	
+		// ==================================================================================================
+		public class «loop.name» 
+		// ==================================================================================================
+		{
+			//generateClassContent»
+			«var AbstractTask task = loop.abstracttask»
+			«task.class.typeName» «task.name»;
+			 					
+			public «task.class.typeName» getTask() { return «task.name» ;}
+			 					
+			public boolean verify()
+			{
+				//Here you can write your code
+			 	return true;			 						
+			}
+			 					
+		}					
+
 		'''
 	}
 	
@@ -119,57 +163,55 @@ class LibraryFunctionGenerator {
 	
 	def String generateBaseTaskFile(BaseTask task){
 		'''
-			package scripts;
-			// ==================================================================================================
-			// MODULE IMPORT
-			// ==================================================================================================
+		package scripts;
+		// ==================================================================================================
+		// MODULE IMPORT
+		// ==================================================================================================
 			
-			// ==================================================================================================
+		// ==================================================================================================
 			
-			// ==================================================================================================
-			public class «task.name» 
-			// ==================================================================================================
-			{
+		// ==================================================================================================
+		public class «task.name» 
+		// ==================================================================================================
+		{
 			
 			
-			}
+		}
 			
 		'''
 	}
 
 	def String generateFileJavaContent(LibraryFunction libfunction){
 		'''
-			package scripts;
-			// ==================================================================================================
-			// MODULE IMPORT
-			// ==================================================================================================
+		package scripts;
+		// ==================================================================================================
+		// MODULE IMPORT
+		// ==================================================================================================
 									
-			// ==================================================================================================
-			«var inputs= libfunction.inputs»
-			«var int size= inputs.size»
-			// ==================================================================================================
-			public class «libfunction.name» 
-			// ==================================================================================================
-			{
-				«var outputName=libfunction.outputs.get(0).name»
-				«FOR Input input : inputs»«input.typeAsString» «input.name»«IF cammaCounter<size»«increamentCammaCounter»;«ENDIF»«ENDFOR»
-				«var int size1= inputs.size»	
-				«reInitCammaCounter»	
-				public static int «outputName» (Object task) {
+		// ==================================================================================================
+		«var inputs= libfunction.inputs»
+		«var int size= inputs.size»
+		// ==================================================================================================
+		public class «libfunction.name» 
+		// ==================================================================================================
+		{
+			«var outputName=libfunction.outputs.get(0).name»
+			«FOR Input input : inputs»«input.typeAsString» «input.name»«IF cammaCounter<size»«increamentCammaCounter»;«ENDIF»«ENDFOR»
+			«var int size1= inputs.size»	
+			«reInitCammaCounter»	
+			public static int «outputName» (Object task) {
 				
 				// Write your code after this line 
 				
-				return 0;
+				return 0;				
+			}	
 				
-				}
+			«FOR Input input : inputs» public void set_«input.name»(«input.typeAsString» value) {this.«input.name» = value;} «IF cammaCounter<size-1»«increamentCammaCounter»  «ENDIF»«ENDFOR»
 				
-				«FOR Input input : inputs» public void set_«input.name»(«input.typeAsString» value) {this.«input.name» = value;} «IF cammaCounter<size-1»«increamentCammaCounter»  «ENDIF»«ENDFOR»
+			«FOR Input input : inputs» public «input.typeAsString» get_«input.name»() {return this.«input.name»;} «IF cammaCounter<size-1»«increamentCammaCounter» «ENDIF»«ENDFOR»
 				
-				«FOR Input input : inputs» public «input.typeAsString» get_«input.name»() {return this.«input.name»;} «IF cammaCounter<size-1»«increamentCammaCounter» «ENDIF»«ENDFOR»
-				
-			}
-										
-					
+		}
+		
 		'''
 	}
 	
