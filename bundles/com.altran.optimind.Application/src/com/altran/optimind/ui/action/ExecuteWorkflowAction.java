@@ -44,12 +44,12 @@ public class ExecuteWorkflowAction extends Action{
 	@Override
 	public void run() {
 		IStructuredSelection selection = (IStructuredSelection) selectionProvider.getSelection();
-		File workflowFile =(File) selection.getFirstElement();	
+		File workflowFile =(File) selection.getFirstElement();
 		ResourceSet resourceSet = new ResourceSetImpl();
 		URI fileURI = URI.createFileURI(workflowFile.getLocationURI().getPath());
 		Resource resource = resourceSet.getResource(fileURI, true);
 		Workflow rootpackage = (Workflow) resource.getContents().get(0);
-		ArrayList<BaseTask> tabBaseTask = new ArrayList<BaseTask>();
+		
 		BaseTask baseTask = rootpackage.getBaseTask();
 		for(int i = 0; i < baseTask.getChildren().size(); i++) {
 			switch(baseTask.getChildren().get(i).eClass().getName()) {
@@ -70,6 +70,21 @@ public class ExecuteWorkflowAction extends Action{
 							CustomTask newCustomTask = (CustomTask) newBaseTask.getChildren().get(x);
 							System.out.println(newCustomTask);
 							System.out.println(newCustomTask.getInputs());
+							Class<?> classType;
+							try {
+								System.out.println(rootpackage.getLanguage().name());
+								if(rootpackage.getLanguage().name().equals("JAVA")) {
+									System.out.println(workflowFile.getLocationURI().getPath().substring(1, workflowFile.getLocationURI().getPath().lastIndexOf("workflow/")).concat("scripts/").concat(newCustomTask.getName()).concat(".java"));
+									classType = Class.forName(workflowFile.getLocationURI().getPath().substring(1, workflowFile.getLocationURI().getPath().lastIndexOf("workflow/")).concat("scripts/").concat(newCustomTask.getName()).concat(".java"));
+								} else {
+									System.out.println(workflowFile.getLocationURI().getPath().substring(1, workflowFile.getLocationURI().getPath().lastIndexOf("workflow/")).concat("scripts/").concat(newCustomTask.getName()).concat(".py"));
+									classType = Class.forName(workflowFile.getLocationURI().getPath().substring(1, workflowFile.getLocationURI().getPath().lastIndexOf("workflow/")).concat("scripts/").concat(newCustomTask.getName()).concat(".py"));
+								}
+								System.out.println(classType.toString());
+							} catch (ClassNotFoundException e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							}
 							break;
 						case "LibraryTask" :
 							LibraryTask newLibraryTask = (LibraryTask) newBaseTask.getChildren().get(x);
