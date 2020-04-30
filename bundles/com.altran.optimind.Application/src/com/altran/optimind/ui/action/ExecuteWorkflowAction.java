@@ -19,6 +19,7 @@ import com.altran.optimind.application.Activator;
 import com.altran.optimind.application.View;
 import com.altran.optimind.model.workflow.AbstractTask;
 import com.altran.optimind.model.workflow.BaseTask;
+import com.altran.optimind.model.workflow.Connection;
 import com.altran.optimind.model.workflow.CustomTask;
 import com.altran.optimind.model.workflow.LibraryTask;
 import com.altran.optimind.model.workflow.Workflow;
@@ -54,11 +55,15 @@ public class ExecuteWorkflowAction extends Action{
 			switch(baseTask.getChildren().get(i).eClass().getName()) {
 				case "CustomTask" :
 					CustomTask customTask = (CustomTask) baseTask.getChildren().get(i);
+					System.out.println(customTask.getInputs());
 					break;
 				case "LibraryTask" :
 					LibraryTask libraryTask = (LibraryTask) baseTask.getChildren().get(i);
+					System.out.println(libraryTask.getInputs());
 					break;
 				case "BaseTask" :
+					BaseTask newBaseTask = (BaseTask) baseTask.getChildren().get(i);
+					System.out.println(newBaseTask.getInputs());
 					break;
 				default :
 					break;
