@@ -55,15 +55,31 @@ public class ExecuteWorkflowAction extends Action{
 			switch(baseTask.getChildren().get(i).eClass().getName()) {
 				case "CustomTask" :
 					CustomTask customTask = (CustomTask) baseTask.getChildren().get(i);
-					System.out.println(customTask.getInputs());
+					System.out.println(customTask);
 					break;
 				case "LibraryTask" :
 					LibraryTask libraryTask = (LibraryTask) baseTask.getChildren().get(i);
-					System.out.println(libraryTask.getInputs());
+					System.out.println(libraryTask);
 					break;
 				case "BaseTask" :
 					BaseTask newBaseTask = (BaseTask) baseTask.getChildren().get(i);
-					System.out.println(newBaseTask.getInputs());
+					System.out.println(newBaseTask);
+					for(int x = 0; x < newBaseTask.getChildren().size(); x++) {
+						switch(newBaseTask.getChildren().get(i).eClass().getName()) {
+						case "CustomTask" :
+							CustomTask newCustomTask = (CustomTask) newBaseTask.getChildren().get(x);
+							System.out.println(newCustomTask);
+							System.out.println(newCustomTask.getInputs());
+							break;
+						case "LibraryTask" :
+							LibraryTask newLibraryTask = (LibraryTask) newBaseTask.getChildren().get(x);
+							System.out.println(newLibraryTask);
+							System.out.println(newLibraryTask.getInputs());
+							break;
+						default :
+							break;
+						}
+					}
 					break;
 				default :
 					break;
