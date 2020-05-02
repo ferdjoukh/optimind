@@ -66,9 +66,7 @@
     <genClasses ecoreClass="workflow.ecore#//WhileStatement">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference workflow.ecore#//WhileStatement/abstracttask"/>
     </genClasses>
-    <genClasses image="false" ecoreClass="workflow.ecore#//AbstractStatement">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute workflow.ecore#//AbstractStatement/condition"/>
-    </genClasses>
+    <genClasses image="false" ecoreClass="workflow.ecore#//AbstractStatement"/>
     <genClasses ecoreClass="workflow.ecore#//ForStatement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute workflow.ecore#//ForStatement/from"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute workflow.ecore#//ForStatement/to"/>

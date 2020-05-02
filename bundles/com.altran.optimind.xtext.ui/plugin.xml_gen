@@ -462,11 +462,11 @@
 		</wizard>
 	</extension>
 	<extension
-		point="org.eclipse.xtext.ui.projectTemplate">
-		<projectTemplateProvider
-			class="com.altran.ui.OptimindExecutableExtensionFactory:com.altran.ui.wizard.OptimindProjectTemplateProvider"
-			grammarName="com.altran.Optimind">
-		</projectTemplateProvider>
+	      point="org.eclipse.xtext.ui.projectTemplate">
+	   <projectTemplateProvider
+	         class="com.altran.ui.wizard.OptimindProjectTemplateProvider"
+	         grammarName="com.altran.Optimind">
+	   </projectTemplateProvider>
 	</extension>
 	<extension
 		point="org.eclipse.ui.perspectiveExtensions">
@@ -490,11 +490,11 @@
 		</wizard>
 	</extension>
 	<extension
-		point="org.eclipse.xtext.ui.fileTemplate">
-		<fileTemplateProvider
-			class="com.altran.ui.OptimindExecutableExtensionFactory:com.altran.ui.wizard.OptimindFileTemplateProvider"
-			grammarName="com.altran.Optimind">
-		</fileTemplateProvider>
+	      point="org.eclipse.xtext.ui.fileTemplate">
+	   <fileTemplateProvider
+	         class="com.altran.ui.wizard.OptimindFileTemplateProvider"
+	         grammarName="com.altran.Optimind">
+	   </fileTemplateProvider>
 	</extension>
 	<extension
 		point="org.eclipse.ui.perspectiveExtensions">

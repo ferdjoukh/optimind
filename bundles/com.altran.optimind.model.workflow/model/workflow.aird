@@ -273,10 +273,6 @@
         <children xmi:type="notation:Node" xmi:id="_7lAUcF4zEeqQEvEALNSm5w" type="2003" element="_7krkUF4zEeqQEvEALNSm5w">
           <children xmi:type="notation:Node" xmi:id="_7lA7gF4zEeqQEvEALNSm5w" type="5007"/>
           <children xmi:type="notation:Node" xmi:id="_7lA7gV4zEeqQEvEALNSm5w" type="7004">
-            <children xmi:type="notation:Node" xmi:id="_DFts0F40EeqQEvEALNSm5w" type="3010" element="_DE3_UF40EeqQEvEALNSm5w">
-              <styles xmi:type="notation:FontStyle" xmi:id="_DFts0V40EeqQEvEALNSm5w" fontColor="2697711" fontName="Segoe UI" fontHeight="8"/>
-              <layoutConstraint xmi:type="notation:Location" xmi:id="_DFts0l40EeqQEvEALNSm5w"/>
-            </children>
             <styles xmi:type="notation:SortingStyle" xmi:id="_7lA7gl4zEeqQEvEALNSm5w"/>
             <styles xmi:type="notation:FilteringStyle" xmi:id="_7lA7g14zEeqQEvEALNSm5w"/>
           </children>
@@ -1495,14 +1491,6 @@
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@conditionnalStyles.1/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
-      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_DE3_UF40EeqQEvEALNSm5w" name="condition : EString" tooltipText="">
-        <target xmi:type="ecore:EAttribute" href="workflow.ecore#//AbstractStatement/condition"/>
-        <semanticElements xmi:type="ecore:EAttribute" href="workflow.ecore#//AbstractStatement/condition"/>
-        <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_KsvvoF40EeqQEvEALNSm5w" labelAlignment="LEFT">
-          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
-        </ownedStyle>
-        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
-      </ownedElements>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_qgweYF41EeqQEvEALNSm5w" sourceNode="_53yksF4zEeqQEvEALNSm5w" targetNode="_7krkUF4zEeqQEvEALNSm5w">
       <target xmi:type="ecore:EClass" href="workflow.ecore#//WhileStatement"/>

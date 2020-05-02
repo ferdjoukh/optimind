@@ -29,7 +29,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link com.altran.optimind.model.workflow.impl.AbstractStatementImpl#getInputs <em>Inputs</em>}</li>
  *   <li>{@link com.altran.optimind.model.workflow.impl.AbstractStatementImpl#getOutputs <em>Outputs</em>}</li>
  *   <li>{@link com.altran.optimind.model.workflow.impl.AbstractStatementImpl#getStatus <em>Status</em>}</li>
- *   <li>{@link com.altran.optimind.model.workflow.impl.AbstractStatementImpl#getCondition <em>Condition</em>}</li>
  * </ul>
  *
  * @generated
@@ -74,26 +73,6 @@ public abstract class AbstractStatementImpl extends NamedElementImpl implements 
 	 * @ordered
 	 */
 	protected TaskStatus status = STATUS_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getCondition() <em>Condition</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCondition()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String CONDITION_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getCondition() <em>Condition</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCondition()
-	 * @generated
-	 * @ordered
-	 */
-	protected String condition = CONDITION_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -172,30 +151,6 @@ public abstract class AbstractStatementImpl extends NamedElementImpl implements 
 	 * @generated
 	 */
 	@Override
-	public String getCondition() {
-		return condition;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setCondition(String newCondition) {
-		String oldCondition = condition;
-		condition = newCondition;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WorkflowPackage.ABSTRACT_STATEMENT__CONDITION,
-					oldCondition, condition));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case WorkflowPackage.ABSTRACT_STATEMENT__INPUTS:
@@ -220,8 +175,6 @@ public abstract class AbstractStatementImpl extends NamedElementImpl implements 
 			return getOutputs();
 		case WorkflowPackage.ABSTRACT_STATEMENT__STATUS:
 			return getStatus();
-		case WorkflowPackage.ABSTRACT_STATEMENT__CONDITION:
-			return getCondition();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -246,9 +199,6 @@ public abstract class AbstractStatementImpl extends NamedElementImpl implements 
 		case WorkflowPackage.ABSTRACT_STATEMENT__STATUS:
 			setStatus((TaskStatus) newValue);
 			return;
-		case WorkflowPackage.ABSTRACT_STATEMENT__CONDITION:
-			setCondition((String) newValue);
-			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -270,9 +220,6 @@ public abstract class AbstractStatementImpl extends NamedElementImpl implements 
 		case WorkflowPackage.ABSTRACT_STATEMENT__STATUS:
 			setStatus(STATUS_EDEFAULT);
 			return;
-		case WorkflowPackage.ABSTRACT_STATEMENT__CONDITION:
-			setCondition(CONDITION_EDEFAULT);
-			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -291,8 +238,6 @@ public abstract class AbstractStatementImpl extends NamedElementImpl implements 
 			return outputs != null && !outputs.isEmpty();
 		case WorkflowPackage.ABSTRACT_STATEMENT__STATUS:
 			return status != STATUS_EDEFAULT;
-		case WorkflowPackage.ABSTRACT_STATEMENT__CONDITION:
-			return CONDITION_EDEFAULT == null ? condition != null : !CONDITION_EDEFAULT.equals(condition);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -354,8 +299,6 @@ public abstract class AbstractStatementImpl extends NamedElementImpl implements 
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (status: ");
 		result.append(status);
-		result.append(", condition: ");
-		result.append(condition);
 		result.append(')');
 		return result.toString();
 	}

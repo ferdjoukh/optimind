@@ -200,7 +200,6 @@ public class WorkflowActionBarContributor extends EditingDomainActionBarContribu
 		// Force an update because Eclipse hides empty menus now.
 		//
 		submenuManager.addMenuListener(new IMenuListener() {
-			@Override
 			public void menuAboutToShow(IMenuManager menuManager) {
 				menuManager.updateAll(true);
 			}

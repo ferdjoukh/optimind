@@ -58,7 +58,6 @@ While returns WhileStatement:
 	'While'
 	name=EString
 	'{'
-		'condition' condition=EString
 		'do' abstracttask=AbstractTask
 	'}'
 ;
@@ -68,7 +67,6 @@ If returns IfStatement:
 	'If'
 	name=EString
 	'{'
-		'condition' condition=EString
 		'then' then=AbstractTask
 		('else' else=AbstractTask)?
 	'}'

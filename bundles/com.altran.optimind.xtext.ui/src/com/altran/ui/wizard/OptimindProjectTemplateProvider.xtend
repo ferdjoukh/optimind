@@ -135,7 +135,6 @@ final class LoopProject {
 							}
 							
 							While whileLoopExample{
-								condition "testOutput.isEmpty() = true "
 								do Task whileTask{
 									Connection config to "task1.configuration"
 									Output whileLoopOutput type File
@@ -153,7 +152,6 @@ final class LoopProject {
 							}
 									
 							If ifStatementExample{
-								condition "[].isEmpty() = true"
 								then Task ifStatementTask{
 									runner "ifStatementTask.java"
 								}

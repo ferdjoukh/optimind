@@ -69,9 +69,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="abstracttask" lowerBound="1"
         eType="#//AbstractTask" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AbstractStatement" abstract="true" eSuperTypes="#//NamedElement #//AbstractTask">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="condition" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractStatement" abstract="true" eSuperTypes="#//NamedElement #//AbstractTask"/>
   <eClassifiers xsi:type="ecore:EClass" name="ForStatement" eSuperTypes="#//WhileStatement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="from" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="to" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>

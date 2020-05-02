@@ -163,9 +163,6 @@ public final class LoopProject extends AbstractProjectTemplate {
       _builder_1.append("While whileLoopExample{");
       _builder_1.newLine();
       _builder_1.append("\t\t\t\t");
-      _builder_1.append("condition \"testOutput.isEmpty() = true \"");
-      _builder_1.newLine();
-      _builder_1.append("\t\t\t\t");
       _builder_1.append("do Task whileTask{");
       _builder_1.newLine();
       _builder_1.append("\t\t\t\t\t");
@@ -213,9 +210,6 @@ public final class LoopProject extends AbstractProjectTemplate {
       _builder_1.newLine();
       _builder_1.append("\t\t\t");
       _builder_1.append("If ifStatementExample{");
-      _builder_1.newLine();
-      _builder_1.append("\t\t\t\t");
-      _builder_1.append("condition \"[].isEmpty() = true\"");
       _builder_1.newLine();
       _builder_1.append("\t\t\t\t");
       _builder_1.append("then Task ifStatementTask{");

@@ -652,16 +652,6 @@ public class WorkflowPackageImpl extends EPackageImpl implements WorkflowPackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getAbstractStatement_Condition() {
-		return (EAttribute) abstractStatementEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getForStatement() {
 		return forStatementEClass;
 	}
@@ -832,7 +822,6 @@ public class WorkflowPackageImpl extends EPackageImpl implements WorkflowPackage
 		createEReference(whileStatementEClass, WHILE_STATEMENT__ABSTRACTTASK);
 
 		abstractStatementEClass = createEClass(ABSTRACT_STATEMENT);
-		createEAttribute(abstractStatementEClass, ABSTRACT_STATEMENT__CONDITION);
 
 		forStatementEClass = createEClass(FOR_STATEMENT);
 		createEAttribute(forStatementEClass, FOR_STATEMENT__FROM);
@@ -1007,9 +996,6 @@ public class WorkflowPackageImpl extends EPackageImpl implements WorkflowPackage
 
 		initEClass(abstractStatementEClass, AbstractStatement.class, "AbstractStatement", IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getAbstractStatement_Condition(), ecorePackage.getEString(), "condition", null, 0, 1,
-				AbstractStatement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
-				!IS_DERIVED, IS_ORDERED);
 
 		initEClass(forStatementEClass, ForStatement.class, "ForStatement", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);

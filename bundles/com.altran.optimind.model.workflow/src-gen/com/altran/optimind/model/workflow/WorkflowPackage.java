@@ -1130,22 +1130,13 @@ public interface WorkflowPackage extends EPackage {
 	int ABSTRACT_STATEMENT__STATUS = NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Condition</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ABSTRACT_STATEMENT__CONDITION = NAMED_ELEMENT_FEATURE_COUNT + 3;
-
-	/**
 	 * The number of structural features of the '<em>Abstract Statement</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_STATEMENT_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 4;
+	int ABSTRACT_STATEMENT_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Abstract Statement</em>' class.
@@ -1201,15 +1192,6 @@ public interface WorkflowPackage extends EPackage {
 	 * @ordered
 	 */
 	int WHILE_STATEMENT__STATUS = ABSTRACT_STATEMENT__STATUS;
-
-	/**
-	 * The feature id for the '<em><b>Condition</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WHILE_STATEMENT__CONDITION = ABSTRACT_STATEMENT__CONDITION;
 
 	/**
 	 * The feature id for the '<em><b>Abstracttask</b></em>' containment reference.
@@ -1283,15 +1265,6 @@ public interface WorkflowPackage extends EPackage {
 	 * @ordered
 	 */
 	int FOR_STATEMENT__STATUS = WHILE_STATEMENT__STATUS;
-
-	/**
-	 * The feature id for the '<em><b>Condition</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FOR_STATEMENT__CONDITION = WHILE_STATEMENT__CONDITION;
 
 	/**
 	 * The feature id for the '<em><b>Abstracttask</b></em>' containment reference.
@@ -1392,15 +1365,6 @@ public interface WorkflowPackage extends EPackage {
 	 * @ordered
 	 */
 	int IF_STATEMENT__STATUS = ABSTRACT_STATEMENT__STATUS;
-
-	/**
-	 * The feature id for the '<em><b>Condition</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IF_STATEMENT__CONDITION = ABSTRACT_STATEMENT__CONDITION;
 
 	/**
 	 * The feature id for the '<em><b>Then</b></em>' containment reference.
@@ -1844,17 +1808,6 @@ public interface WorkflowPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getAbstractStatement();
-
-	/**
-	 * Returns the meta object for the attribute '{@link com.altran.optimind.model.workflow.AbstractStatement#getCondition <em>Condition</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Condition</em>'.
-	 * @see com.altran.optimind.model.workflow.AbstractStatement#getCondition()
-	 * @see #getAbstractStatement()
-	 * @generated
-	 */
-	EAttribute getAbstractStatement_Condition();
 
 	/**
 	 * Returns the meta object for class '{@link com.altran.optimind.model.workflow.ForStatement <em>For Statement</em>}'.
@@ -2309,14 +2262,6 @@ public interface WorkflowPackage extends EPackage {
 		 * @generated
 		 */
 		EClass ABSTRACT_STATEMENT = eINSTANCE.getAbstractStatement();
-
-		/**
-		 * The meta object literal for the '<em><b>Condition</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ABSTRACT_STATEMENT__CONDITION = eINSTANCE.getAbstractStatement_Condition();
 
 		/**
 		 * The meta object literal for the '{@link com.altran.optimind.model.workflow.impl.ForStatementImpl <em>For Statement</em>}' class.

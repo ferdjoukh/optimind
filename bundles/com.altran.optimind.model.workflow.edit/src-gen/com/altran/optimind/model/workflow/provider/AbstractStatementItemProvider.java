@@ -46,7 +46,6 @@ public class AbstractStatementItemProvider extends NamedElementItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addStatusPropertyDescriptor(object);
-			addConditionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -64,22 +63,6 @@ public class AbstractStatementItemProvider extends NamedElementItemProvider {
 						getString("_UI_PropertyDescriptor_description", "_UI_AbstractTask_status_feature",
 								"_UI_AbstractTask_type"),
 						WorkflowPackage.Literals.ABSTRACT_TASK__STATUS, true, false, false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Condition feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addConditionPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_AbstractStatement_condition_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_AbstractStatement_condition_feature",
-								"_UI_AbstractStatement_type"),
-						WorkflowPackage.Literals.ABSTRACT_STATEMENT__CONDITION, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
@@ -150,7 +133,6 @@ public class AbstractStatementItemProvider extends NamedElementItemProvider {
 
 		switch (notification.getFeatureID(AbstractStatement.class)) {
 		case WorkflowPackage.ABSTRACT_STATEMENT__STATUS:
-		case WorkflowPackage.ABSTRACT_STATEMENT__CONDITION:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		case WorkflowPackage.ABSTRACT_STATEMENT__INPUTS:
